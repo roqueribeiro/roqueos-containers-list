@@ -1,0 +1,95 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "utilities",
+      "name": "Utilities",
+      "icon": "build",
+      "description": "System utilities and tools"
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "icon": "movie",
+      "description": "Media servers and players"
+    },
+    {
+      "id": "network",
+      "name": "Network",
+      "icon": "lan",
+      "description": "Network tools and services"
+    },
+    {
+      "id": "development",
+      "name": "Development",
+      "icon": "code",
+      "description": "Development tools and IDEs"
+    },
+    {
+      "id": "home-automation",
+      "name": "Home Automation",
+      "icon": "home",
+      "description": "Smart home and IoT"
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "icon": "work",
+      "description": "Productivity and office tools"
+    },
+    {
+      "id": "storage",
+      "name": "Storage",
+      "icon": "storage",
+      "description": "File storage and sync"
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "icon": "security",
+      "description": "Security and privacy tools"
+    },
+    {
+      "id": "ai",
+      "name": "AI & Machine Learning",
+      "icon": "smart_toy",
+      "description": "AI assistants and ML tools"
+    },
+    {
+      "id": "gaming",
+      "name": "Gaming",
+      "icon": "sports_esports",
+      "description": "Game servers and tools"
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "icon": "chat",
+      "description": "Chat and communication"
+    },
+    {
+      "id": "finance",
+      "name": "Finance",
+      "icon": "account_balance",
+      "description": "Finance and crypto"
+    },
+    {
+      "id": "monitoring",
+      "name": "Monitoring",
+      "icon": "monitoring",
+      "description": "System monitoring and analytics"
+    },
+    {
+      "id": "backup",
+      "name": "Backup",
+      "icon": "backup",
+      "description": "Backup and recovery"
+    },
+    {
+      "id": "other",
+      "name": "Other",
+      "icon": "apps",
+      "description": "Other applications"
+    }
+  ]
+}

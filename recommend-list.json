@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "recommend": [
+    "portainer",
+    "heimdall",
+    "filebrowser",
+    "code-server",
+    "nextcloud",
+    "jellyfin",
+    "plex",
+    "homeassistant",
+    "pi-hole",
+    "nginx-proxy-manager"
+  ]
+}

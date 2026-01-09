@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "featured": [
+    "portainer",
+    "nextcloud",
+    "jellyfin",
+    "homeassistant",
+    "code-server"
+  ]
+}
