@@ -81,7 +81,7 @@ x-casaos:
     - amd64
     - arm
     - arm64
-    - "386"
+    - '386'
   main: tailscale
   category: Network
   developer: Tailscale Inc.
@@ -141,7 +141,7 @@ x-casaos:
       - Subnet routing for secure network-wide access
       - Exit nodes for safe internet browsing
       - MagicDNS for simplified device discovery
-      
+
       **Learn More:**
       - [Tailscale Official Website](https://tailscale.com)
       - [Tailscale GitHub Repository](https://github.com/tailscale/tailscale)
@@ -267,7 +267,7 @@ x-casaos:
       - Routage de sous-réseau pour un accès sécurisé à l'ensemble du réseau
       - Nœuds de sortie pour une navigation internet sécurisée
       - MagicDNS pour simplifier la découverte d'appareils
-      
+
       **En savoir plus :**
       - [Site officiel Tailscale](https://tailscale.com)
       - [Dépôt GitHub Tailscale](https://github.com/tailscale/tailscale)
@@ -288,7 +288,7 @@ x-casaos:
       - Subnetz-Routing für sicheren netzwerkweiten Zugriff
       - Exit-Knoten für sicheres Internet-Browsing
       - MagicDNS zur vereinfachten Geräteerkennung
-      
+
       **Mehr erfahren:**
       - [Tailscale Offizielle Website](https://tailscale.com)
       - [Tailscale GitHub Repository](https://github.com/tailscale/tailscale)
@@ -421,9 +421,9 @@ x-casaos:
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tailscale/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tailscale/screenshot-1.png
-  thumbnail: ""
-  scheme: ""
-  port_map: "5252"
+  thumbnail: ''
+  scheme: http
+  port_map: '5252'
   index: /
   title:
     en_US: Tailscale

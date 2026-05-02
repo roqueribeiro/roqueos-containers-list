@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8090
-        published: "8090"
+        published: '8090'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -30,28 +30,27 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: "Run Mylar3 as specified uid."
+            en_us: Run Mylar3 as specified uid.
         - container: PGID
           description:
-            en_us: "Run Mylar3 as specified gid."
+            en_us: Run Mylar3 as specified gid.
         - container: TZ
           description:
             en_us: TimeZone
       ports:
-        - container: "8090"
+        - container: '8090'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: "Mylar3 config directory"
+            en_us: Mylar3 config directory
         - container: /comics
           description:
-            en_us: "Mylar3 Comics directory"
+            en_us: Mylar3 Comics directory
         - container: /downloads
           description:
-            en_us: "Mylar3 downloads directory"
+            en_us: Mylar3 downloads directory
     container_name: mylar3
 x-casaos:
   architectures:
@@ -99,4 +98,7 @@ x-casaos:
   tips: {}
   title:
     en_us: Mylar3
-  port_map: "8090"
+  port_map: '8090'
+  scheme: http
+x-roqueos:
+  mountShared: true

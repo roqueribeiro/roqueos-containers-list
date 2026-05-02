@@ -5,11 +5,11 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "256M"
+          memory: 256M
     network_mode: bridge
     ports:
       - target: 80
-        published: "10380"
+        published: '10380'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -18,11 +18,10 @@ services:
         target: /data
     x-casaos:
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
-
       volumes:
         - container: /data
           description:
@@ -76,4 +75,5 @@ x-casaos:
   title:
     en_us: Vaultwarden
   index: /
-  port_map: "10380"
+  port_map: '10380'
+  scheme: http

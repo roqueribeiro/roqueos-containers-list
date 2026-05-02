@@ -11,7 +11,7 @@ services:
     image: pymedusa/medusa:master
     ports:
       - target: 8081
-        published: "8081"
+        published: '8081'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -46,7 +46,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Medusa/screenshot-5.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Medusa/screenshot-6.png
   index: /
-  port_map: "8081"
+  port_map: '8081'
   scheme: http
   store_app_id: medusa
   title:

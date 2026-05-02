@@ -5,7 +5,7 @@ services:
     container_name: alist-sync
     restart: unless-stopped
     ports:
-      - "52441:52441"
+      - '52441:52441'
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/data
@@ -18,7 +18,7 @@ x-casaos:
       description:
         en_us: Set the timezone for the alist-sync application.
   ports:
-    - container: "52441"
+    - container: '52441'
       description:
         en_us: The port used by alist-sync for its service.
   volumes:
@@ -49,7 +49,6 @@ x-casaos:
   tagline:
     en_us: An Alist storage synchronization tool based on the Web interface.
     zh_cn: 一个基于 Web 界面的 Alist 存储同步工具。
-
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist-Sync/thumbnail.png
   title:
     en_us: Alist-Sync
@@ -57,4 +56,7 @@ x-casaos:
     before_install:
       en_us: The default login password is admin/admin.
       zh_cn: 默认登录密码 admin/admin。
-  port_map: "52441"
+  port_map: '52441'
+  scheme: http
+x-roqueos:
+  mountShared: true

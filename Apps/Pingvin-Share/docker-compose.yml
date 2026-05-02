@@ -1,12 +1,11 @@
 name: pingvin-share
-
 services:
   pingvin-share:
-    image: stonith404/pingvin-share
+    image: stonith404/pingvin-share:latest
     restart: unless-stopped
     ports:
       - target: 3000
-        published: "3410"
+        published: '3410'
         protocol: tcp
     environment:
       TRUST_PROXY: false
@@ -41,7 +40,7 @@ services:
             tr_TR: Ters proxy yapılandırmaları için proxy güven ayarı
             zh_CN: 反向代理配置的代理信任设置
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
             de_DE: Pingvin-Share Web-Interface-Port
             el_GR: Θύρα διασύνδεσης web Pingvin-Share
@@ -93,7 +92,6 @@ services:
             sv_SE: Frontend bildkatalog för anpassade logotyper och ikoner
             tr_TR: Özel logolar ve simgeler için ön uç görüntü dizini
             zh_CN: 自定义徽标和图标的前端图像目录
-
 x-casaos:
   title:
     de_DE: Pingvin-Share
@@ -112,21 +110,21 @@ x-casaos:
     tr_TR: Pingvin-Share
     zh_CN: Pingvin-Share
   tagline:
-    de_DE: "Selbst gehostete Dateifreigabe mit modernem Web-Interface"
-    el_GR: "Αυτο-φιλοξενούμενη κοινή χρήση αρχείων με σύγχρονο web περιβάλλον"
-    en_GB: "Self-hosted file sharing with a modern web interface"
-    en_US: "Self-hosted file sharing with a modern web interface"
-    fr_FR: "Partage de fichiers auto-hébergé avec une interface web moderne"
-    hr_HR: "Samostalno hostano dijeljenje datoteka s modernim web sučeljem"
-    it_IT: "Condivisione file self-hosted con interfaccia web moderna"
-    ja_JP: "モダンなWebインターフェースを備えたセルフホスト型ファイル共有"
-    ko_KR: "현대적인 웹 인터페이스를 갖춘 자체 호스팅 파일 공유"
-    nb_NO: "Selv-hostet fildeling med et moderne web-grensesnitt"
-    pt_PT: "Partilha de ficheiros auto-hospedada com uma interface web moderna"
-    ru_RU: "Самостоятельно размещенный обмен файлами с современным веб-интерфейсом"
-    sv_SE: "Självhostad fildelning med ett modernt webbgränssnitt"
-    tr_TR: "Modern web arayüzü ile kendi kendine barındırılan dosya paylaşımı"
-    zh_CN: "具有现代Web界面的自托管文件共享"
+    de_DE: Selbst gehostete Dateifreigabe mit modernem Web-Interface
+    el_GR: Αυτο-φιλοξενούμενη κοινή χρήση αρχείων με σύγχρονο web περιβάλλον
+    en_GB: Self-hosted file sharing with a modern web interface
+    en_US: Self-hosted file sharing with a modern web interface
+    fr_FR: Partage de fichiers auto-hébergé avec une interface web moderne
+    hr_HR: Samostalno hostano dijeljenje datoteka s modernim web sučeljem
+    it_IT: Condivisione file self-hosted con interfaccia web moderna
+    ja_JP: モダンなWebインターフェースを備えたセルフホスト型ファイル共有
+    ko_KR: 현대적인 웹 인터페이스를 갖춘 자체 호스팅 파일 공유
+    nb_NO: Selv-hostet fildeling med et moderne web-grensesnitt
+    pt_PT: Partilha de ficheiros auto-hospedada com uma interface web moderna
+    ru_RU: Самостоятельно размещенный обмен файлами с современным веб-интерфейсом
+    sv_SE: Självhostad fildelning med ett modernt webbgränssnitt
+    tr_TR: Modern web arayüzü ile kendi kendine barındırılan dosya paylaşımı
+    zh_CN: 具有现代Web界面的自托管文件共享
   description:
     de_DE: |
       Pingvin-Share ist eine selbstgehostete Dateifreigabe-Anwendung, die mit Nextcloud-Apps kompatibel ist und eine moderne, intuitive Weboberfläche bietet. Sie ermöglicht es Benutzern, Dateien sicher zu speichern, zu organisieren und zu teilen, ohne auf externe Cloud-Dienste angewiesen zu sein. Die Anwendung unterstützt verschiedene Authentifizierungsmethoden und bietet Funktionen wie Freigabelinks, Benutzerkonten und eine responsive Oberfläche.
@@ -142,7 +140,6 @@ x-casaos:
 
       **Mehr erfahren:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     el_GR: |
       Το Pingvin-Share είναι μια αυτο-φιλοξενούμενη εφαρμογή κοινής χρήσης αρχείων συμβατή με εφαρμογές Nextcloud και προσφέρει ένα σύγχρονο, διαισθητικό web περιβάλλον. Επιτρέπει στους χρήστες να αποθηκεύουν, να οργανώνουν και να μοιράζονται αρχεία με ασφάλεια χωρίς να βασίζονται σε εξωτερικές υπηρεσίες cloud. Η εφαρμογή υποστηρίζει διάφορες μεθόδους αυθεντικοποίησης και παρέχει λειτουργίες όπως σύνδεσμοι κοινής χρήσης, λογαριασμοί χρηστών και responsive διεπαφή.
 
@@ -157,7 +154,6 @@ x-casaos:
 
       **Μάθετε περισσότερα:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     en_GB: |
       Pingvin-Share is a self-hosted file sharing application compatible with Nextcloud apps, offering a modern and intuitive web interface. It enables users to securely store, organise, and share files without relying on external cloud services. The application supports multiple authentication methods and provides features such as share links, user accounts, and a responsive interface.
 
@@ -172,7 +168,6 @@ x-casaos:
 
       **Learn more:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     en_US: |
       Pingvin-Share is a self-hosted file sharing application compatible with Nextcloud apps, offering a modern and intuitive web interface. It enables users to securely store, organize, and share files without relying on external cloud services. The application supports multiple authentication methods and provides features such as share links, user accounts, and a responsive interface.
 
@@ -187,7 +182,6 @@ x-casaos:
 
       **Learn more:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     fr_FR: |
       Pingvin-Share est une application de partage de fichiers auto-hébergée compatible avec les applications Nextcloud, offrant une interface web moderne et intuitive. Elle permet aux utilisateurs de stocker, d’organiser et de partager des fichiers en toute sécurité sans dépendre de services cloud externes. L’application prend en charge plusieurs méthodes d’authentification et propose des fonctionnalités telles que des liens de partage, des comptes utilisateurs et une interface responsive.
 
@@ -202,7 +196,6 @@ x-casaos:
 
       **En savoir plus :**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     hr_HR: |
       Pingvin-Share je samostalno hostana aplikacija za dijeljenje datoteka kompatibilna s Nextcloud aplikacijama, koja nudi moderno i intuitivno web sučelje. Omogućuje korisnicima sigurno spremanje, organiziranje i dijeljenje datoteka bez oslanjanja na vanjske cloud usluge. Aplikacija podržava više metoda autentikacije i nudi funkcije poput poveznica za dijeljenje, korisničkih računa i responzivnog sučelja.
 
@@ -217,7 +210,6 @@ x-casaos:
 
       **Saznajte više:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     it_IT: |
       Pingvin-Share è un'applicazione di condivisione file self-hosted compatibile con le app Nextcloud, che offre un'interfaccia web moderna e intuitiva. Consente agli utenti di archiviare, organizzare e condividere file in modo sicuro senza dipendere da servizi cloud esterni. L'applicazione supporta più metodi di autenticazione e offre funzionalità come link di condivisione, account utente e un'interfaccia responsive.
 
@@ -232,7 +224,6 @@ x-casaos:
 
       **Scopri di più:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     ja_JP: |
       Pingvin-ShareはNextcloudアプリと互換性のあるセルフホスト型のファイル共有アプリケーションで、モダンで直感的なWebインターフェースを提供します。外部のクラウドサービスに依存せず、ファイルを安全に保存・整理・共有できます。複数の認証方式をサポートし、共有リンク、ユーザーアカウント、レスポンシブなUIなどの機能を備えています。
 
@@ -247,7 +238,6 @@ x-casaos:
 
       **詳細：**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     ko_KR: |
       Pingvin-Share는 Nextcloud 앱과 호환되는 자체 호스팅 파일 공유 애플리케이션으로, 현대적이고 직관적인 웹 인터페이스를 제공합니다. 외부 클라우드 서비스에 의존하지 않고 파일을 안전하게 저장, 정리 및 공유할 수 있습니다. 다양한 인증 방식을 지원하며 공유 링크, 사용자 계정, 반응형 인터페이스 등의 기능을 제공합니다.
 
@@ -262,7 +252,6 @@ x-casaos:
 
       **자세히 알아보기:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     nb_NO: |
       Pingvin-Share er en selv-hostet fildelingsapplikasjon som er kompatibel med Nextcloud-apper og tilbyr et moderne og intuitivt webgrensesnitt. Den lar brukere lagre, organisere og dele filer sikkert uten å være avhengig av eksterne skytjenester. Applikasjonen støtter flere autentiseringsmetoder og tilbyr funksjoner som delelenker, brukerkontoer og et responsivt grensesnitt.
 
@@ -277,7 +266,6 @@ x-casaos:
 
       **Les mer:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     pt_PT: |
       Pingvin-Share é uma aplicação de partilha de ficheiros auto-hospedada compatível com aplicações Nextcloud, oferecendo uma interface web moderna e intuitiva. Permite aos utilizadores armazenar, organizar e partilhar ficheiros de forma segura sem depender de serviços cloud externos. A aplicação suporta vários métodos de autenticação e fornece funcionalidades como links de partilha, contas de utilizador e uma interface responsiva.
 
@@ -292,7 +280,6 @@ x-casaos:
 
       **Saiba mais:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     ru_RU: |
       Pingvin-Share — это самостоятельно размещаемое приложение для обмена файлами, совместимое с приложениями Nextcloud и предлагающее современный и интуитивно понятный веб-интерфейс. Оно позволяет пользователям безопасно хранить, организовывать и делиться файлами без зависимости от внешних облачных сервисов. Приложение поддерживает несколько методов аутентификации и предоставляет такие функции, как ссылки для обмена, учетные записи пользователей и адаптивный интерфейс.
 
@@ -307,7 +294,6 @@ x-casaos:
 
       **Подробнее:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     sv_SE: |
       Pingvin-Share är en självhostad fildelningsapplikation som är kompatibel med Nextcloud-appar och erbjuder ett modernt och intuitivt webbgränssnitt. Den gör det möjligt för användare att lagra, organisera och dela filer säkert utan att förlita sig på externa molntjänster. Applikationen stöder flera autentiseringsmetoder och erbjuder funktioner som delningslänkar, användarkonton och ett responsivt gränssnitt.
 
@@ -322,7 +308,6 @@ x-casaos:
 
       **Läs mer:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     tr_TR: |
       Pingvin-Share, Nextcloud uygulamalarıyla uyumlu, modern ve sezgisel bir web arayüzü sunan kendi kendine barındırılan bir dosya paylaşım uygulamasıdır. Kullanıcıların harici bulut hizmetlerine bağlı kalmadan dosyaları güvenli bir şekilde depolamasına, düzenlemesine ve paylaşmasına olanak tanır. Uygulama birden fazla kimlik doğrulama yöntemini destekler ve paylaşım bağlantıları, kullanıcı hesapları ve duyarlı bir arayüz gibi özellikler sunar.
 
@@ -337,7 +322,6 @@ x-casaos:
 
       **Daha fazla bilgi:**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
     zh_CN: |
       Pingvin-Share是一个与Nextcloud应用兼容的自托管文件共享应用，提供现代、直观的Web界面。它允许用户安全地存储、整理和共享文件，而无需依赖外部云服务。该应用支持多种身份验证方法，并提供共享链接、用户账户和响应式界面等功能。
 
@@ -352,20 +336,20 @@ x-casaos:
 
       **了解更多：**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
-
-
   category: Utilities
   author: stonith404
   developer: stonith404
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pingvin-Share/icon.png
-  screenshot_link: 
+  screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pingvin-Share/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pingvin-Share/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pingvin-Share/screenshot-3.png
   main: pingvin-share
-  port_map: "3410"
+  port_map: '3410'
   architectures:
     - amd64
     - arm64
   index: /
   scheme: http
+x-roqueos:
+  mountShared: true

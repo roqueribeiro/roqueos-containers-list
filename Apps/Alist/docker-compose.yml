@@ -5,11 +5,11 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "64M"
+          memory: 64M
     network_mode: bridge
     ports:
       - target: 5244
-        published: "5244"
+        published: '5244'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -18,7 +18,7 @@ services:
         target: /opt/alist/data
     x-casaos:
       ports:
-        - container: "5244"
+        - container: '5244'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
@@ -135,7 +135,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-4.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-5.png
   main: alist
-  port_map: "5244"
+  port_map: '5244'
   scheme: http
   tagline:
     en_US: Mount your cloud drive on your home NAS

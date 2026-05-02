@@ -5,14 +5,14 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "512M"
+          memory: 512M
     network_mode: bridge
     ports:
       - target: 80
-        published: "10081"
+        published: '10081'
         protocol: tcp
       - target: 443
-        published: "10443"
+        published: '10443'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -21,16 +21,14 @@ services:
         target: /var/www/html
     x-casaos:
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
-
-        - container: "443"
+        - container: '443'
           description:
             en_us: WebUI HTTPS Port
             zh_cn: WebUI HTTPS 端口
-
       volumes:
         - container: /var/www/html
           description:
@@ -42,7 +40,7 @@ x-casaos:
     - amd64
     - arm
     - arm64
-    - "386"
+    - '386'
     - mips64le
     - ppc64le
     - s390x
@@ -52,9 +50,9 @@ x-casaos:
   description:
     en_us: |
       Discover the ultimate solution for remote collaboration with Nextcloud. Unlike traditional office software, Nextcloud seamlessly integrates files, communication, and productivity tools into one platform, enhancing teamwork and streamlining your workflow. Say goodbye to the limitations of conventional tools and embrace a new era of collaboration.
-      
+
       Nextcloud stands out with its robust features tailored for every need. Enjoy secure file storage, real-time communication via Talk, comprehensive groupware, and powerful office integration, all in one place. Experience these top-notch features at an affordable price, making it accessible for everyone to elevate their collaboration game.
-      
+
       Deploying Nextcloud on a Zima private cloud device brings unparalleled convenience. Benefit from unlimited storage, secure data privacy, local network speeds, and multi-device access, ensuring you have everything you need at your fingertips.
     zh_cn: |
       发现远程协作的终极解决方案——Nextcloud。不同于传统的办公软件，Nextcloud 将文件、通信和生产力工具无缝整合到一个平台中，增强团队合作并简化您的工作流程。告别传统工具的局限，迎接协作新时代。
@@ -100,4 +98,7 @@ x-casaos:
   title:
     en_us: Nextcloud
   index: /
-  port_map: "10081"
+  port_map: '10081'
+  scheme: https
+x-roqueos:
+  mountShared: true

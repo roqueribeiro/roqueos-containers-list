@@ -2,8 +2,8 @@ name: tautulli
 services:
   tautulli:
     environment:
-      PGID: "1000"
-      PUID: "1000"
+      PGID: '1000'
+      PUID: '1000'
       TZ: Europe/London
     image: linuxserver/tautulli:2.13.2
     deploy:
@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8181
-        published: "8181"
+        published: '8181'
     restart: unless-stopped
     volumes:
       - type: bind
@@ -23,23 +23,22 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "8181"
+        - container: '8181'
           description:
-            en_us: ""
-          protocol: ""
-
+            en_us: ''
+          protocol: ''
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
     container_name: tautulli
 x-casaos:
   architectures:
@@ -88,4 +87,5 @@ x-casaos:
   title:
     en_us: Tautulli
   index: /
-  port_map: "8181"
+  port_map: '8181'
+  scheme: http

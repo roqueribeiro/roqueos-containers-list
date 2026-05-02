@@ -4,7 +4,7 @@ services:
     image: spout8301/holoplay:1.12.3
     ports:
       - target: 3000
-        published: "3000"
+        published: '3000'
         protocol: tcp
     privileged: true
     restart: unless-stopped
@@ -12,7 +12,7 @@ services:
 x-casaos:
   architectures:
     - amd64
-    - "386"
+    - '386'
     - arm64
     - arm
   main: holoplay
@@ -39,4 +39,5 @@ x-casaos:
   title:
     en_us: HoloPlay
   index: /
-  port_map: "3000"
+  port_map: '3000'
+  scheme: http

@@ -7,10 +7,10 @@ services:
       PUID: $PUID
       PGID: $PGID
       TZ: $TZ
-      MYSQL_ROOT_PASSWORD: 'casaos'
-      MYSQL_DATABASE: 'casaos'
-      MYSQL_USER: 'casaos'
-      MYSQL_PASSWORD: 'casaos'
+      MYSQL_ROOT_PASSWORD: casaos
+      MYSQL_DATABASE: casaos
+      MYSQL_USER: casaos
+      MYSQL_PASSWORD: casaos
       REMOTE_SQL: ''
     x-casaos:
       envs:
@@ -40,7 +40,7 @@ services:
             en_us: Set this to ingest sql files from an http/https endpoint (comma seperated array).
     ports:
       - target: 3306
-        published: "3306"
+        published: '3306'
         protocol: tcp
     volumes:
       - type: bind
@@ -102,19 +102,19 @@ x-casaos:
 
       Він побудований на цінностях продуктивності, стабільності та відкритості, а Фонд MariaDB гарантує, що приймаються внески на основі технічних заслуг. Серед останніх нових функцій: розширена кластеризація з Galera Cluster 4, функції сумісності з Oracle Database та тимчасові таблиці даних, що дозволяють запитувати дані так, як вони були в будь-який момент у минулому.
   tagline:
-    en_us: "MariaDB Server is one of the most popular database servers in the world. It's made by the original developers of MySQL and guaranteed to stay open source."
-    zh_cn: "MariaDB Server 是世界上最受欢迎的数据库服务器之一。它由 MySQL 的原始开发者创建，并保证始终保持开源。"
-    ar_sa: "خادم MariaDB هو واحد من أكثر خوادم قواعد البيانات شهرة في العالم. صُنع بواسطة المطورين الأصليين لـ MySQL ومضمون أن يبقى مفتوح المصدر."
-    de_de: "MariaDB Server ist einer der beliebtesten Datenbankserver der Welt. Er wurde von den ursprünglichen Entwicklern von MySQL entwickelt und bleibt garantiert Open Source."
-    es_es: "MariaDB Server es uno de los servidores de bases de datos más populares del mundo. Está creado por los desarrolladores originales de MySQL y garantiza ser de código abierto."
-    fr_fr: "MariaDB Server est l'un des serveurs de bases de données les plus populaires au monde. Il est créé par les développeurs originaux de MySQL et garantit de rester open source."
-    hu_hu: "A MariaDB Server a világ egyik legnépszerűbb adatbázis-szervere. Az eredeti MySQL fejlesztői készítették, és garantáltan nyílt forráskódú marad."
-    it_it: "MariaDB Server è uno dei server di database più popolari al mondo. È stato creato dagli sviluppatori originali di MySQL e garantisce di rimanere open source."
-    ru_ru: "Сервер MariaDB является одним из самых популярных серверов баз данных в мире. Он создан оригинальными разработчиками MySQL и гарантированно остается открытым исходным кодом."
-    pl_pl: "Serwer MariaDB jest jednym z najpopularniejszych serwerów baz danych na świecie. Został stworzony przez oryginalnych twórców MySQL i gwarantuje pozostanie otwartym źródłem."
-    pt_br: "O MariaDB Server é um dos servidores de banco de dados mais populares do mundo. É feito pelos desenvolvedores originais do MySQL e garantido para permanecer como código aberto."
-    sv_se: "MariaDB Server är en av världens mest populära databasservrar. Den är skapad av de ursprungliga utvecklarna av MySQL och garanteras att förbli öppen källkod."
-    uk_ua: "Сервер MariaDB є одним з найпопулярніших серверів баз даних у світі. Він створений оригінальними розробниками MySQL і гарантується його відкритість."
+    en_us: MariaDB Server is one of the most popular database servers in the world. It's made by the original developers of MySQL and guaranteed to stay open source.
+    zh_cn: MariaDB Server 是世界上最受欢迎的数据库服务器之一。它由 MySQL 的原始开发者创建，并保证始终保持开源。
+    ar_sa: خادم MariaDB هو واحد من أكثر خوادم قواعد البيانات شهرة في العالم. صُنع بواسطة المطورين الأصليين لـ MySQL ومضمون أن يبقى مفتوح المصدر.
+    de_de: MariaDB Server ist einer der beliebtesten Datenbankserver der Welt. Er wurde von den ursprünglichen Entwicklern von MySQL entwickelt und bleibt garantiert Open Source.
+    es_es: MariaDB Server es uno de los servidores de bases de datos más populares del mundo. Está creado por los desarrolladores originales de MySQL y garantiza ser de código abierto.
+    fr_fr: MariaDB Server est l'un des serveurs de bases de données les plus populaires au monde. Il est créé par les développeurs originaux de MySQL et garantit de rester open source.
+    hu_hu: A MariaDB Server a világ egyik legnépszerűbb adatbázis-szervere. Az eredeti MySQL fejlesztői készítették, és garantáltan nyílt forráskódú marad.
+    it_it: MariaDB Server è uno dei server di database più popolari al mondo. È stato creato dagli sviluppatori originali di MySQL e garantisce di rimanere open source.
+    ru_ru: Сервер MariaDB является одним из самых популярных серверов баз данных в мире. Он создан оригинальными разработчиками MySQL и гарантированно остается открытым исходным кодом.
+    pl_pl: Serwer MariaDB jest jednym z najpopularniejszych serwerów baz danych na świecie. Został stworzony przez oryginalnych twórców MySQL i gwarantuje pozostanie otwartym źródłem.
+    pt_br: O MariaDB Server é um dos servidores de banco de dados mais populares do mundo. É feito pelos desenvolvedores originais do MySQL e garantido para permanecer como código aberto.
+    sv_se: MariaDB Server är en av världens mest populära databasservrar. Den är skapad av de ursprungliga utvecklarna av MySQL och garanteras att förbli öppen källkod.
+    uk_ua: Сервер MariaDB є одним з найпопулярніших серверів баз даних у світі. Він створений оригінальними розробниками MySQL і гарантується його відкритість.
   developer: MariaDB Foundation
   author: WisdomSky
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MariaDB/icon.png
@@ -130,3 +130,4 @@ x-casaos:
   title:
     en_us: MariaDB
   category: Developer
+  scheme: http

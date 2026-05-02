@@ -44,7 +44,6 @@ services:
           description:
             en_us: Run OpenHAB as specified gid.
             zh_cn: 以指定的gid运行OpenHAB。
-
       volumes:
         - container: /etc/localtime
           description:
@@ -117,4 +116,5 @@ x-casaos:
   title:
     en_us: OpenHAB
   index: /
-  port_map: "8080"
+  port_map: '8080'
+  scheme: http

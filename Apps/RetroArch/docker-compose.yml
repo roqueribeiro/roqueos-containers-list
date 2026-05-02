@@ -11,14 +11,14 @@ services:
     environment:
       - ROOT_WWW_PATH="/var/www/html"
     ports:
-      - "8183:80"
+      - '8183:80'
     x-casaos:
       envs:
-        - container: "ROOT_WWW_PATH"
+        - container: ROOT_WWW_PATH
           description:
             en_US: ROOT_WWW_PATH
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -66,7 +66,7 @@ x-casaos:
       Designed for ease of use, RetroArch-web requires no complex software installation, running seamlessly in browsers. Its flexible configuration options let users customize controller setups, visual filters, and audio settings to suit individual preferences. With broad cross-platform compatibility, it ensures stable performance across devices, offering retro gaming enthusiasts a consistent experience on the go.
 
       Backed by an active open-source community, RetroArch-web continually improves performance and expands supported game platforms. Whether revisiting classic arcade titles or exploring vintage console games, RetroArch-web stands out as the ideal choice for retro gamers, combining powerful emulation with a user-friendly interface.
-   
+
       **Key Features:**
       - Polished interface for browsing game collections with thumbnails and animated backgrounds
       - Supports multiple emulators and game engines for running classic games and discs
@@ -87,7 +87,7 @@ x-casaos:
       Designed for simplicity, RetroArch-web requires no complex software installation and runs seamlessly in browsers. Its flexible configuration options allow users to customise controller setups, visual filters, and audio settings to suit individual preferences. With broad cross-platform compatibility, it ensures stable performance across devices, providing retro gaming enthusiasts with a consistent experience on the go.
 
       Supported by an active open-source community, RetroArch-web continually improves performance and expands supported game platforms. Whether revisiting classic arcade titles or exploring vintage console games, RetroArch-web is the ideal choice for retro gamers, combining powerful emulation with a user-friendly interface.
-    
+
       **Key Features:**
       - Polished interface for browsing game collections with thumbnails and animated backgrounds
       - Supports multiple emulators and game engines for running classic games and discs
@@ -108,7 +108,7 @@ x-casaos:
       Progettato per essere facile da usare, RetroArch-web non richiede installazioni complesse e funziona perfettamente nei browser. Le sue opzioni di configurazione flessibili permettono agli utenti di personalizzare i controller, i filtri visivi e le impostazioni audio secondo le proprie preferenze. Grazie all'ampia compatibilità multipiattaforma, assicura prestazioni stabili su tutti i dispositivi, offrendo agli appassionati di giochi retrò un'esperienza coerente ovunque si trovino.
 
       Sostenuto da una comunità open source attiva, RetroArch-web migliora continuamente le prestazioni ed espande le piattaforme di gioco supportate. Che si tratti di rivivere i classici arcade o di esplorare vecchie console, RetroArch-web si distingue come la scelta ideale per i giocatori retrò, unendo potenti capacità di emulazione a un'interfaccia intuitiva.
-    
+
       **Caratteristiche Principali:**
       - Interfaccia elegante per sfogliare le collezioni di giochi con miniature e sfondi animati
       - Supporta più emulatori e motori di gioco per eseguire giochi classici e dischi
@@ -129,7 +129,7 @@ x-casaos:
       RetroArch-web er designet for enkel bruk og krever ingen komplisert programvareinstallasjon, og kjører sømløst i nettlesere. Fleksible konfigurasjonsalternativer lar brukere tilpasse kontrolleroppsett, visuelle filtre og lydinnstillinger etter egne preferanser. Med bred plattformkompatibilitet sikrer den stabil ytelse på tvers av enheter, og gir retrospillentusiaster en konsistent opplevelse uansett hvor de er.
 
       Støttet av et aktivt åpen kildekode-miljø, forbedres RetroArch-web kontinuerlig og utvider støtten for flere spillplattformer. Enten du vil gjenoppleve klassiske arkadespill eller utforske gamle konsollspill, er RetroArch-web det ideelle valget for retrospillere, med kraftig emulering og brukervennlig grensesnitt.
-    
+
       **Hovedfunksjoner:**
       - Polert grensesnitt for å bla gjennom spillsamlinger med miniatyrbilder og animerte bakgrunner
       - Støtter flere emulatorer og spillmotorer for å kjøre klassiske spill og disker
@@ -150,7 +150,7 @@ x-casaos:
       RetroArch-web 的设计注重简单易用，无需安装复杂软件，仅通过浏览器即可运行游戏。其灵活的配置选项允许用户自定义控制器设置、画面滤镜和音效，满足不同玩家的个性化需求。同时，它支持多平台兼容性，确保在各种设备上都能稳定运行，为复古游戏爱好者提供无缝的跨设备体验。
 
       RetroArch-web 凭借开源社区的持续支持，不断优化性能并扩展支持的游戏平台。无论是重温经典街机游戏还是探索老式主机作品，RetroArch-web 都以其强大的模拟能力和用户友好的界面，成为复古游戏玩家的理想选择。
-    
+
       **主要功能: **
       - 美观的界面，浏览游戏集合，支持缩略图和动态背景
       - 支持多种模拟器和游戏引擎，运行经典游戏和光盘
@@ -171,7 +171,7 @@ x-casaos:
       RetroArch-webは使いやすさを重視して設計されており、複雑なソフトウェアのインストールは不要で、ブラウザ上でシームレスに動作します。柔軟な設定オプションにより、ユーザーはコントローラーの設定、ビジュアルフィルター、オーディオ設定を個別にカスタマイズできます。幅広いクロスプラットフォーム互換性により、さまざまなデバイスで安定したパフォーマンスを保証し、レトロゲーム愛好家に一貫した体験を提供します。
 
       活発なオープンソースコミュニティに支えられ、RetroArch-webは継続的にパフォーマンスを向上させ、対応するゲームプラットフォームを拡大しています。クラシックなアーケードタイトルを再訪する場合でも、ヴィンテージコンソールゲームを探索する場合でも、RetroArch-webは強力なエミュレーションと使いやすいインターフェースを兼ね備えたレトロゲーマーに最適な選択肢です。
-    
+
       **主な機能:**
       - サムネイルとアニメーション背景でゲームコレクションを閲覧する洗練されたインターフェース
       - クラシックゲームやディスクを実行するための複数のエミュレーターとゲームエンジンをサポート
@@ -192,7 +192,7 @@ x-casaos:
       RetroArch-web은 사용의 편리함을 위해 설계되어 복잡한 소프트웨어 설치 없이 브라우저에서 원활하게 실행됩니다. 유연한 구성 옵션을 통해 사용자는 컨트롤러 설정, 시각적 필터, 오디오 설정을 개별적으로 맞춤화할 수 있습니다. 폭넓은 크로스 플랫폼 호환성으로 다양한 기기에서 안정적인 성능을 보장하며, 레트로 게임 애호가에게 일관된 경험을 제공합니다.
 
       활발한 오픈 소스 커뮤니티의 지원을 받아 RetroArch-web은 지속적으로 성능을 개선하고 지원하는 게임 플랫폼을 확장하고 있습니다. 고전 아케이드 게임을 다시 즐기거나 빈티지 콘솔 게임을 탐험하든, RetroArch-web은 강력한 에뮬레이션과 사용자 친화적인 인터페이스를 결합한 레트로 게이머에게 최적의 선택입니다.
-    
+
       **주요 기능:**
       - 썸네일과 애니메이션 배경으로 게임 컬렉션을 탐색할 수 있는 세련된 인터페이스
       - 클래식 게임과 디스크 실행을 위한 다중 에뮬레이터 및 게임 엔진 지원
@@ -213,7 +213,7 @@ x-casaos:
       Conçu pour être facile à utiliser, RetroArch-web ne nécessite aucune installation logicielle complexe et fonctionne parfaitement dans les navigateurs. Ses options de configuration flexibles permettent aux utilisateurs de personnaliser les paramètres des manettes, les filtres visuels et les réglages audio selon leurs préférences. Grâce à une large compatibilité multiplateforme, il assure des performances stables sur tous les appareils, offrant aux passionnés de jeux rétro une expérience cohérente en déplacement.
 
       Soutenu par une communauté open source active, RetroArch-web améliore continuellement ses performances et élargit les plateformes de jeux prises en charge. Que vous revisitiez des titres d'arcade classiques ou exploriez des jeux de consoles vintage, RetroArch-web s'impose comme le choix idéal pour les amateurs de jeux rétro, alliant une émulation puissante à une interface conviviale.
-    
+
       **Fonctionnalités Principales :**
       - Interface soignée pour parcourir les collections de jeux avec vignettes et arrière-plans animés
       - Prend en charge plusieurs émulateurs et moteurs de jeu pour exécuter des jeux classiques et des disques
@@ -234,7 +234,7 @@ x-casaos:
       RetroArch-web ist benutzerfreundlich gestaltet und erfordert keine komplexe Softwareinstallation, sondern läuft nahtlos im Browser. Flexible Konfigurationsoptionen ermöglichen es den Benutzern, Controller-Einstellungen, visuelle Filter und Audioeinstellungen individuell anzupassen. Mit breiter plattformübergreifender Kompatibilität sorgt es für stabile Leistung auf allen Geräten und bietet Retro-Gaming-Enthusiasten ein konsistentes Erlebnis unterwegs.
 
       Unterstützt von einer aktiven Open-Source-Community verbessert RetroArch-web kontinuierlich die Leistung und erweitert die unterstützten Spieleplattformen. Ob Sie klassische Arcade-Titel erneut erleben oder Vintage-Konsolenspiele erkunden, RetroArch-web ist die ideale Wahl für Retro-Gamer und kombiniert leistungsstarke Emulation mit einer benutzerfreundlichen Oberfläche.
-    
+
       **Hauptmerkmale:**
       - Elegante Benutzeroberfläche zum Durchsuchen von Spielesammlungen mit Miniaturbildern und animierten Hintergründen
       - Unterstützt mehrere Emulatoren und Spiel-Engines zum Ausführen klassischer Spiele und Discs
@@ -255,7 +255,7 @@ x-casaos:
       RetroArch-web är utformad för att vara enkel att använda och kräver ingen komplicerad programvaruinstallation, utan körs smidigt i webbläsaren. Flexibla konfigurationsalternativ gör att användare kan anpassa kontrollinställningar, visuella filter och ljudinställningar efter egna önskemål. Med bred plattforms-kompatibilitet säkerställer den stabil prestanda på alla enheter och ger retrospelsentusiaster en konsekvent upplevelse var de än är.
 
       Med stöd av ett aktivt open source-community förbättras RetroArch-web kontinuerligt och utökar stödet för fler spelplattformar. Oavsett om du återbesöker klassiska arkadspel eller utforskar gamla konsolspel är RetroArch-web det perfekta valet för retrospelare, med kraftfull emulering och ett användarvänligt gränssnitt.
-    
+
       **Huvudfunktioner:**
       - Polerat gränssnitt för att bläddra i spelsamlingar med miniatyrbilder och animerade bakgrunder
       - Stöder flera emulatorer och spelmotorer för att köra klassiska spel och skivor
@@ -276,7 +276,7 @@ x-casaos:
       Σχεδιασμένο για ευκολία στη χρήση, το RetroArch-web δεν απαιτεί πολύπλοκη εγκατάσταση λογισμικού και λειτουργεί απρόσκοπτα στους περιηγητές. Οι ευέλικτες επιλογές διαμόρφωσης επιτρέπουν στους χρήστες να προσαρμόζουν τις ρυθμίσεις του χειριστηρίου, τα οπτικά φίλτρα και τις ρυθμίσεις ήχου σύμφωνα με τις προτιμήσεις τους. Με ευρεία συμβατότητα μεταξύ πλατφορμών, διασφαλίζει σταθερή απόδοση σε όλες τις συσκευές, προσφέροντας στους λάτρεις των ρετρό παιχνιδιών μια συνεπή εμπειρία εν κινήσει.
 
       Με την υποστήριξη μιας ενεργής κοινότητας ανοιχτού κώδικα, το RetroArch-web βελτιώνει συνεχώς την απόδοση και επεκτείνει τις υποστηριζόμενες πλατφόρμες παιχνιδιών. Είτε επισκέπτεστε ξανά κλασικούς τίτλους arcade είτε εξερευνάτε παλιές κονσόλες, το RetroArch-web ξεχωρίζει ως η ιδανική επιλογή για τους ρετρό gamers, συνδυάζοντας ισχυρή εξομοίωση με φιλικό προς το χρήστη περιβάλλον.
-    
+
       **Βασικά Χαρακτηριστικά:**
       - Κομψή διεπαφή για περιήγηση σε συλλογές παιχνιδιών με μικρογραφίες και κινούμενα φόντα
       - Υποστηρίζει πολλαπλούς εξομοιωτές και μηχανές παιχνιδιών για εκτέλεση κλασικών παιχνιδιών και δίσκων
@@ -297,7 +297,7 @@ x-casaos:
       Dizajniran za jednostavnost korištenja, RetroArch-web ne zahtijeva složenu instalaciju softvera i radi besprijekorno u preglednicima. Fleksibilne opcije konfiguracije omogućuju korisnicima prilagodbu postavki kontrolera, vizualnih filtera i zvuka prema vlastitim željama. Sa širokom kompatibilnošću između platformi, osigurava stabilne performanse na svim uređajima, nudeći ljubiteljima retro igara dosljedno iskustvo u pokretu.
 
       Uz podršku aktivne open-source zajednice, RetroArch-web neprestano poboljšava performanse i proširuje podržane platforme za igre. Bilo da ponovno posjećujete klasične arkadne naslove ili istražujete stare konzole, RetroArch-web se ističe kao idealan izbor za retro igrače, kombinirajući snažnu emulaciju s korisnički prijateljskim sučeljem.
-    
+
       **Ključne Značajke:**
       - Uglađeno sučelje za pregledavanje kolekcija igara s minijaturama i animiranim pozadinama
       - Podržava više emulatora i game engine-a za pokretanje klasičnih igara i diskova
@@ -318,7 +318,7 @@ x-casaos:
       Concebido para ser fácil de usar, o RetroArch-web não requer instalação de software complexa e funciona perfeitamente nos navegadores. As suas opções de configuração flexíveis permitem aos utilizadores personalizar as definições do comando, filtros visuais e definições de áudio de acordo com as preferências individuais. Com ampla compatibilidade entre plataformas, garante um desempenho estável em todos os dispositivos, oferecendo aos entusiastas de jogos retro uma experiência consistente em qualquer lugar.
 
       Apoiado por uma comunidade open source ativa, o RetroArch-web melhora continuamente o desempenho e expande as plataformas de jogos suportadas. Quer esteja a revisitar títulos clássicos de arcada ou a explorar consolas antigas, o RetroArch-web destaca-se como a escolha ideal para os jogadores retro, combinando uma emulação poderosa com uma interface amigável.
-    
+
       **Funcionalidades Principais:**
       - Interface polida para navegar coleções de jogos com miniaturas e fundos animados
       - Suporta múltiplos emuladores e motores de jogo para executar jogos clássicos e discos
@@ -339,7 +339,7 @@ x-casaos:
       RetroArch-web разработан для простоты использования, не требует сложной установки программного обеспечения и работает непосредственно в браузере. Гибкие параметры конфигурации позволяют пользователям настраивать контроллеры, визуальные фильтры и аудионастройки по своему вкусу. Благодаря широкой кроссплатформенной совместимости обеспечивается стабильная работа на различных устройствах, предоставляя поклонникам ретро-игр единый опыт в любом месте.
 
       Благодаря поддержке активного сообщества с открытым исходным кодом, RetroArch-web постоянно совершенствует производительность и расширяет поддерживаемые игровые платформы. Независимо от того, возвращаетесь ли вы к классическим аркадным играм или исследуете старые консоли, RetroArch-web — идеальный выбор для ретро-геймеров, сочетая мощную эмуляцию с удобным интерфейсом.
-    
+
       **Ключевые Особенности:**
       - Отполированный интерфейс для просмотра коллекций игр с миниатюрами и анимированными фонами
       - Поддержка множественных эмуляторов и игровых движков для запуска классических игр и дисков
@@ -360,7 +360,7 @@ x-casaos:
       Kullanım kolaylığı için tasarlanan RetroArch-web, karmaşık yazılım kurulumuna ihtiyaç duymaz ve tarayıcılarda sorunsuz çalışır. Esnek yapılandırma seçenekleri, kullanıcıların denetleyici ayarlarını, görsel filtreleri ve ses ayarlarını bireysel tercihlere göre özelleştirmesine olanak tanır. Geniş çapraz platform uyumluluğu ile cihazlar arasında istikrarlı performans sağlar ve retro oyun meraklılarına her yerde tutarlı bir deneyim sunar.
 
       Aktif bir açık kaynak topluluğu tarafından desteklenen RetroArch-web, performansını sürekli olarak geliştirir ve desteklenen oyun platformlarını genişletir. İster klasik arcade oyunlarını yeniden ziyaret edin, ister eski konsol oyunlarını keşfedin, RetroArch-web güçlü emülasyonu ve kullanıcı dostu arayüzüyle retro oyuncular için ideal bir seçimdir.
-    
+
       **Ana Özellikler:**
       - Küçük resimler ve animasyonlu arka planlarla oyun koleksiyonlarını göz atmak için cilalı arayüz
       - Klasik oyunları ve diskleri çalıştırmak için birden fazla emülatör ve oyun motorunu destekler
@@ -380,9 +380,9 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RetroArch/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RetroArch/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RetroArch/screenshot-3.png
-  thumbnail: ""
+  thumbnail: ''
   scheme: http
-  port_map: "8183"
+  port_map: '8183'
   index: /
   title:
     en_US: RetroArch

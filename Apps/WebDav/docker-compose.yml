@@ -19,7 +19,7 @@ services:
       icon: https://icon.casaos.io/main/all/webdav.png
     ports:
       - target: 80
-        published: "5005"
+        published: '5005'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -31,7 +31,7 @@ services:
 x-casaos:
   architectures:
     - amd64
-    - "386"
+    - '386'
     - arm64
     - arm
   main: webdav
@@ -73,18 +73,20 @@ x-casaos:
     before_install:
       en_us: |
         Default Account
-        
+
         | Username | Password |
         |----------|----------|
         | `casaos`    | `casaos` |
-
       zh_cn: |
         默认账号
-        
+
         | Username | Password   |
         | -------- | ---------- |
         | `casaos`    | `casaos` |
   title:
     en_us: WebDAV
   index: /
-  port_map: "5005"
+  port_map: '5005'
+  scheme: http
+x-roqueos:
+  mountShared: true

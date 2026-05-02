@@ -14,7 +14,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8083
-        published: "8083"
+        published: '8083'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -28,28 +28,27 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
         - container: DOCKER_MODS
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "8083"
+        - container: '8083'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /books
           description:
-            en_us: ""
+            en_us: ''
     container_name: calibre-web
 x-casaos:
   architectures:
@@ -106,4 +105,7 @@ x-casaos:
   title:
     en_us: Calibre-web
   index: /
-  port_map: "8083"
+  port_map: '8083'
+  scheme: http
+x-roqueos:
+  mountShared: true

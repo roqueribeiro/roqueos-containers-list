@@ -11,7 +11,7 @@ services:
     image: liwei2633/gopeed:v1.8.3
     ports:
       - target: 9999
-        published: "9999"
+        published: '9999'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -25,7 +25,7 @@ services:
     privileged: false
     x-casaos:
       ports:
-        - container: "9999"
+        - container: '9999'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -78,7 +78,6 @@ services:
             pt_PT: Pasta de downloads Gopeed
             ru_RU: Папка загрузок Gopeed
             tr_TR: Gopeed indirme klasörü
-
 x-casaos:
   architectures:
     - amd64
@@ -369,4 +368,7 @@ x-casaos:
     en_us: Gopeed
     pt_br: Gopeed
   index: /
-  port_map: "9999"
+  port_map: '9999'
+  scheme: http
+x-roqueos:
+  mountShared: true

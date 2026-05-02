@@ -3,7 +3,7 @@ services:
   n8n:
     environment:
       TZ: $TZ
-      N8N_SECURE_COOKIE: "false"
+      N8N_SECURE_COOKIE: 'false'
     image: n8nio/n8n:1.123.0
     deploy:
       resources:
@@ -12,7 +12,7 @@ services:
     network_mode: bridge
     ports:
       - target: 5678
-        published: "5678"
+        published: '5678'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -26,7 +26,7 @@ services:
             en_us: TimeZone
             zh_cn: 时区
       ports:
-        - container: "5678"
+        - container: '5678'
           description:
             en_us: web port
             zh_cn: web 端口
@@ -36,7 +36,6 @@ services:
             en_us: n8n directory.
             zh_cn: n8n 目录。
     container_name: n8n
-
 x-casaos:
   architectures:
     - amd64
@@ -240,7 +239,6 @@ x-casaos:
 
       2. [n8n Resmi Şablon Kütüphanesi](https://n8n.io/workflows/): 
       Şablon kütüphanesi, pazarlama otomasyonu, veri analizi ve müşteri desteği gibi senaryolar için 900’den fazla kullanıma hazır iş akışı sunar. Örneğin, bir şablon Shopify’i Mailchimp’e bağlayabilir, yeni müşterileri otomatik olarak e-posta listelerine ekleyebilir ve hoş geldiniz e-postaları gönderebilir, böylece otomasyon teknik olmayan kullanıcılar için de erişilebilir hale gelir. LangChain ile müşteri sorgularını işleme gibi yapay zekâ odaklı iş akışları, n8n’in akıllı etkileşimlerdeki gücünü vurgular.
-
   developer: n8n
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/N8n/icon.png
   screenshot_link:
@@ -268,4 +266,5 @@ x-casaos:
   title:
     en_us: n8n
   index: /
-  port_map: "5678"
+  port_map: '5678'
+  scheme: http

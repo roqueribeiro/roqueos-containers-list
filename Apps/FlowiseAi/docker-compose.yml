@@ -18,11 +18,10 @@ services:
       - FLOWISE_USERNAME=casaos
       - FLOWISE_PASSWORD=casaos
     ports:
-      - 3025:3025
+      - '3025:3025'
     volumes:
       - /DATA/AppData/$AppID:/root/.flowise
     entrypoint: /bin/sh -c "sleep 3; flowise start"
-
 x-casaos:
   architectures:
     - amd64
@@ -363,6 +362,6 @@ x-casaos:
     tr_TR: AI Ajanları ve LLM iş akışları oluşturmak için açık kaynak generatif AI geliştirme platformu
   title:
     en_US: Flowise
-  port_map: "3025"
+  port_map: '3025'
   scheme: http
   index: /

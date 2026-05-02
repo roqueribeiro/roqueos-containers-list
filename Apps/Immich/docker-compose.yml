@@ -1,5 +1,4 @@
 name: immich
-
 services:
   immich-server:
     deploy:
@@ -26,7 +25,6 @@ services:
       disable: false
     networks:
       - immich
-
   immich-machine-learning:
     container_name: immich-machine-learning
     hostname: immich-machine-learning
@@ -42,7 +40,6 @@ services:
       disable: false
     networks:
       - immich
-
   redis:
     container_name: immich-redis
     hostname: immich-redis
@@ -54,7 +51,6 @@ services:
     restart: unless-stopped
     networks:
       - immich
-
   database:
     container_name: immich-postgres
     hostname: immich-postgres
@@ -72,29 +68,25 @@ services:
       start_interval: 30s
       start_period: 5m
     command:
-      [
-        'postgres',
-        '-c',
-        'shared_preload_libraries=vectors.so',
-        '-c',
-        'search_path="$$user", public, vectors',
-        '-c',
-        'logging_collector=on',
-        '-c',
-        'max_wal_size=2GB',
-        '-c',
-        'shared_buffers=512MB',
-        '-c',
-        'wal_compression=on',
-      ]
+      - postgres
+      - '-c'
+      - shared_preload_libraries=vectors.so
+      - '-c'
+      - search_path="$$user", public, vectors
+      - '-c'
+      - logging_collector=on
+      - '-c'
+      - max_wal_size=2GB
+      - '-c'
+      - shared_buffers=512MB
+      - '-c'
+      - wal_compression=on
     restart: unless-stopped
     networks:
       - immich
-
 networks:
   immich:
     name: immich
-
 x-casaos:
   architectures:
     - amd64
@@ -231,7 +223,6 @@ x-casaos:
       Immich, mobil cihazlardan otomatik yedekleme, medya tarama için şık bir web tabanlı arayüz ve yüz tanıma ile nesne algılama gibi gelişmiş özellikleriyle öne çıkar. Medyalarınızı konuma göre düzenleyebilir, 4K video oynatımının keyfini çıkarabilir ve hatta RAW fotoğrafları yönetebilirsiniz. Ayrıca, çok kullanıcılı destek sayesinde arkadaşlarınız ve ailenizle anıları paylaşmak çok kolay. En iyi yanı? Immich, bu güçlü özellikleri düşük maliyetle sunarak bütçenizi zorlamadan birinci sınıf bir deneyim sağlar.
 
       Immich'i Zima gibi özel bir bulut cihazına kurmak, eşsiz bir kolaylık sunar. Sınırsız depolama kapasitesinin, yıldırım hızında yerel ağ hızlarının ve birden fazla cihazdan kolay erişimin keyfini çıkarın. Zima özel bulutunuzdaki immich ile medyalarınız her zaman parmaklarınızın ucunda, evinizde güvenli ve emniyettedir.
-
   tagline:
     en_US: Self-hosted media management solution
     en_GB: Self-hosted media management solution
@@ -417,6 +408,6 @@ x-casaos:
         2. immich-server sekmesinde, Volumes bölümünde albüm depolama konumunuzu eşleştirin (varsayılan `/DATA/Gallery/immich`).
 
         Tam proje dokümantasyonu ve kurulum talimatları için lütfen [buraya](https://immich.app) bakın.
-  port_map: "2283"
+  port_map: '2283'
   scheme: http
   index: /

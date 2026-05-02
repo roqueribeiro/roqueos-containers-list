@@ -9,13 +9,13 @@ services:
     network_mode: bridge
     ports:
       - target: 8000
-        published: "8000"
+        published: '8000'
         protocol: tcp
       - target: 9000
-        published: "9000"
+        published: '9000'
         protocol: tcp
       - target: 9443
-        published: "9443"
+        published: '9443'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -27,7 +27,7 @@ services:
         target: /var/run/docker.sock
     x-casaos:
       ports:
-        - container: "9000"
+        - container: '9000'
           description:
             en_US: Portainer Web UI Port
             en_GB: Portainer Web UI Port
@@ -44,7 +44,7 @@ services:
             pt_PT: Porta Interface Web Portainer
             ru_RU: Порт Веб-Интерфейса Portainer
             tr_TR: Portainer Web UI Portu
-        - container: "9443"
+        - container: '9443'
           description:
             en_US: Portainer Web UI Port(https)
             en_GB: Portainer Web UI Port(https)
@@ -94,7 +94,7 @@ x-casaos:
       The tool's core features include multi-platform support, resource management, and real-time monitoring. It supports managing various container platforms, covering containers, images, volumes, and networks. Users can quickly create, deploy, and manage containers via a “smart” graphical interface or comprehensive API, without needing deep command-line expertise. It provides real-time container status monitoring, log viewing, and configuration management, ensuring efficient control over application operations.
 
       Its design philosophy is to “simplify container complexity” with an intuitive interface and default settings that lower the technical barrier. Users can manage containerized applications without complex configurations, saving time and boosting efficiency. It is completely free, with data stored locally, ensuring full user control. Community support via GitHub Discussions and Slack, along with rich documentation and regular updates, enhances the user experience, making it suitable for learning container technology or managing small projects.
-  
+
       **Key Features:**
       - Intuitive Web interface for simplified containerized app management
       - Supports multiple container platforms for unified resource management
@@ -111,7 +111,7 @@ x-casaos:
       The tool's core features include multi-platform support, resource management, and real-time monitoring. It supports managing various container platforms, covering containers, images, volumes, and networks. Users can quickly create, deploy, and manage containers via a "smart" graphical interface or comprehensive API, without needing deep command-line expertise. It provides real-time container status monitoring, log viewing, and configuration management, ensuring efficient control over application operations.
 
       Its design philosophy is to "simplify container complexity" with an intuitive interface and default settings that lower the technical barrier. Users can manage containerised applications without complex configurations, saving time and boosting efficiency. It is completely free, with data stored locally, ensuring full user control. Community support via GitHub Discussions and Slack, along with rich documentation and regular updates, enhances the user experience, making it suitable for learning container technology or managing small projects.
-  
+
       **Key Features:**
       - Intuitive Web interface for simplified containerised app management
       - Supports multiple container platforms for unified resource management
@@ -128,7 +128,7 @@ x-casaos:
       Le funzionalità principali dello strumento includono supporto multi-piattaforma, gestione delle risorse e monitoraggio in tempo reale. Supporta la gestione di varie piattaforme container, coprendo container, immagini, volumi e reti. Gli utenti possono rapidamente creare, distribuire e gestire container tramite un'interfaccia grafica "intelligente" o API complete, senza necessità di esperienza approfondita da riga di comando. Fornisce monitoraggio in tempo reale dello stato dei container, visualizzazione log e gestione configurazioni, garantendo controllo efficiente delle operazioni applicative.
 
       La sua filosofia di design è "semplificare la complessità dei container" con un'interfaccia intuitiva e impostazioni predefinite che abbassano la barriera tecnica. Gli utenti possono gestire applicazioni containerizzate senza configurazioni complesse, risparmiando tempo e aumentando l'efficienza. È completamente gratuito, con dati memorizzati localmente, garantendo pieno controllo utente. Il supporto della community tramite GitHub Discussions e Slack, insieme a documentazione ricca e aggiornamenti regolari, migliora l'esperienza utente, rendendolo adatto per apprendere la tecnologia container o gestire piccoli progetti.
-  
+
       **Caratteristiche Principali:**
       - Interfaccia Web intuitiva per gestione semplificata app containerizzate
       - Supporta piattaforme container multiple per gestione risorse unificata
@@ -145,7 +145,7 @@ x-casaos:
       Verktøyets hovedfunksjoner inkluderer multi-plattformstøtte, ressursadministrering og sanntidsovervåking. Det støtter administrering av ulike containerplattformer, som dekker containere, bilder, volumer og nettverk. Brukere kan raskt opprette, distribuere og administrere containere via et "smart" grafisk grensesnitt eller omfattende API, uten behov for dyp kommandolinjekompetanse. Det gir sanntidsovervåking av containerstatus, loggvisning og konfigurasjonsadministrering, som sikrer effektiv kontroll over applikasjonsoperasjoner.
 
       Designfilosofien er å "forenkle containerkompleksitet" med et intuitivt grensesnitt og standardinnstillinger som senker den tekniske barrieren. Brukere kan administrere containeriserte applikasjoner uten komplekse konfigurasjoner, spare tid og øke effektiviteten. Det er helt gratis, med data lagret lokalt, som sikrer full brukerkontroll. Communitystøtte via GitHub Discussions og Slack, sammen med rik dokumentasjon og regelmessige oppdateringer, forbedrer brukeropplevelsen, som gjør det egnet for å lære containerteknologi eller administrere små prosjekter.
-  
+
       **Hovedfunksjoner:**
       - Intuitivt webgrensesnitt for forenklet containerisert appstyringsadministrering
       - Støtter flere containerplattformer for enhetlig ressursadministrering
@@ -162,7 +162,7 @@ x-casaos:
       该工具的核心功能包括多平台支持、资源管理和实时监控。它支持管理多种容器平台，覆盖容器、镜像、卷、网络等资源。用户可通过“智能”图形界面或全面的 API 快速创建、部署和管理容器，无需深入的命令行知识。它提供实时容器状态监控、日志查看和配置管理功能，确保用户能够高效掌控应用运行情况。
 
       它的设计理念是“简化容器的复杂性”，通过直观的界面和默认设置，降低技术门槛。用户无需复杂配置即可管理容器化应用，节省时间并提高效率。它完全免费，数据存储在本地，确保用户完全掌控数据。社区通过 GitHub Discussions 和 Slack 提供支持，丰富的文档和定期更新进一步增强用户体验，适合学习容器技术或管理小型项目。
-      
+
       **主要功能：**
       - 直观 Web 界面，简化容器化应用管理
       - 支持多种容器平台，统一管理资源
@@ -179,7 +179,7 @@ x-casaos:
       このツールの中核機能には、マルチプラットフォームサポート、リソース管理、リアルタイム監視が含まれます。コンテナ、イメージ、ボリューム、ネットワークをカバーする様々なコンテナプラットフォームの管理をサポートします。ユーザーは「スマート」グラフィカルインターフェースまたは包括的なAPIを介して、深いコマンドライン専門知識を必要とせずに、コンテナを迅速に作成、デプロイ、管理できます。リアルタイムコンテナステータス監視、ログ表示、設定管理を提供し、アプリケーション操作の効率的な制御を確保します。
 
       その設計哲学は、直感的なインターフェースとデフォルト設定で「コンテナの複雑さを簡素化」し、技術的ハードルを下げることです。ユーザーは複雑な設定なしでコンテナ化されたアプリケーションを管理でき、時間を節約し効率を向上させます。完全に無料で、データはローカルに保存され、ユーザーの完全な制御を保証します。GitHub DiscussionsとSlackを通じたコミュニティサポート、豊富なドキュメントと定期的な更新により、ユーザーエクスペリエンスが向上し、コンテナ技術の学習や小規模プロジェクトの管理に適しています。
-  
+
       **主な機能：**
       - コンテナ化されたアプリ管理を簡素化する直感的なWebインターフェース
       - 統合リソース管理のための複数コンテナプラットフォームサポート
@@ -196,7 +196,7 @@ x-casaos:
       이 도구의 핵심 기능에는 멀티 플랫폼 지원, 리소스 관리 및 실시간 모니터링이 포함됩니다. 컨테이너, 이미지, 볼륨 및 네트워크를 포괄하는 다양한 컨테이너 플랫폼 관리를 지원합니다. 사용자는 깊은 명령줄 전문 지식 없이도 "스마트" 그래픽 인터페이스 또는 포괄적인 API를 통해 컨테이너를 빠르게 생성, 배포 및 관리할 수 있습니다. 실시간 컨테이너 상태 모니터링, 로그 보기 및 구성 관리를 제공하여 애플리케이션 작업의 효율적인 제어를 보장합니다.
 
       설계 철학은 직관적인 인터페이스와 기본 설정으로 "컨테이너 복잡성을 단순화"하여 기술적 장벽을 낮추는 것입니다. 사용자는 복잡한 구성 없이 컨테이너화된 애플리케이션을 관리할 수 있어 시간을 절약하고 효율성을 향상시킵니다. 완전히 무료이며, 데이터는 로컬에 저장되어 전체 사용자 제어를 보장합니다. GitHub Discussions 및 Slack을 통한 커뮤니티 지원, 풍부한 문서 및 정기 업데이트와 함께 사용자 경험을 향상시켜 컨테이너 기술 학습이나 소규모 프로젝트 관리에 적합합니다.
-  
+
       **주요 기능:**
       - 단순화된 컨테이너화된 앱 관리를 위한 직관적인 웹 인터페이스
       - 통합 리소스 관리를 위한 다중 컨테이너 플랫폼 지원
@@ -213,7 +213,7 @@ x-casaos:
       Les fonctionnalités principales de l'outil incluent le support multi-plateforme, la gestion des ressources et la surveillance en temps réel. Il prend en charge la gestion de diverses plateformes de conteneurs, couvrant conteneurs, images, volumes et réseaux. Les utilisateurs peuvent rapidement créer, déployer et gérer des conteneurs via une interface graphique "intelligente" ou une API complète, sans nécessiter d'expertise approfondie en ligne de commande. Il fournit une surveillance en temps réel du statut des conteneurs, la visualisation des journaux et la gestion de configuration, assurant un contrôle efficace des opérations d'application.
 
       Sa philosophie de conception est de "simplifier la complexité des conteneurs" avec une interface intuitive et des paramètres par défaut qui abaissent la barrière technique. Les utilisateurs peuvent gérer des applications conteneurisées sans configurations complexes, économisant du temps et améliorant l'efficacité. Il est entièrement gratuit, avec des données stockées localement, assurant un contrôle utilisateur complet. Le support communautaire via GitHub Discussions et Slack, ainsi qu'une riche documentation et des mises à jour régulières, améliore l'expérience utilisateur, le rendant adapté pour apprendre la technologie des conteneurs ou gérer de petits projets.
-  
+
       **Fonctionnalités Clés :**
       - Interface Web intuitive pour la gestion simplifiée d'applications conteneurisées
       - Prend en charge plusieurs plateformes de conteneurs pour une gestion unifiée des ressources
@@ -230,7 +230,7 @@ x-casaos:
       Die Kernfunktionen des Tools umfassen Multi-Plattform-Unterstützung, Ressourcenmanagement und Echtzeit-Überwachung. Es unterstützt die Verwaltung verschiedener Container-Plattformen und deckt Container, Images, Volumes und Netzwerke ab. Benutzer können Container schnell über eine "intelligente" grafische Oberfläche oder umfassende API erstellen, bereitstellen und verwalten, ohne tiefgreifende Kommandozeilen-Expertise zu benötigen. Es bietet Echtzeit-Container-Status-Überwachung, Log-Anzeige und Konfigurationsmanagement, um eine effiziente Kontrolle über Anwendungsoperationen zu gewährleisten.
 
       Seine Design-Philosophie ist es, "Container-Komplexität zu vereinfachen" mit einer intuitiven Oberfläche und Standardeinstellungen, die die technische Barriere senken. Benutzer können containerisierte Anwendungen ohne komplexe Konfigurationen verwalten, Zeit sparen und die Effizienz steigern. Es ist völlig kostenlos, mit lokal gespeicherten Daten, die vollständige Benutzerkontrolle gewährleisten. Community-Support über GitHub Discussions und Slack, zusammen mit reichhaltiger Dokumentation und regelmäßigen Updates, verbessert die Benutzererfahrung und macht es geeignet für das Erlernen von Container-Technologie oder die Verwaltung kleiner Projekte.
-  
+
       **Hauptmerkmale:**
       - Intuitive Web-Oberfläche für vereinfachte containerisierte App-Verwaltung
       - Unterstützt mehrere Container-Plattformen für einheitliches Ressourcenmanagement
@@ -247,7 +247,7 @@ x-casaos:
       Verktygets kärnfunktioner inkluderar multi-plattformsstöd, resurshantering och realtidsövervakning. Det stöder hantering av olika containerplattformar, täcker containrar, bilder, volymer och nätverk. Användare kan snabbt skapa, distribuera och hantera containrar via ett "smart" grafiskt gränssnitt eller omfattande API, utan att behöva djupgående kommandoradsexpertis. Det tillhandahåller realtidsövervakning av containerstatus, loggvisning och konfigurationshantering, vilket säkerställer effektiv kontroll över applikationsoperationer.
 
       Dess designfilosofi är att "förenkla containerkomplexitet" med ett intuitivt gränssnitt och standardinställningar som sänker den tekniska barriären. Användare kan hantera containeriserade applikationer utan komplexa konfigurationer, spara tid och öka effektiviteten. Det är helt gratis, med data lagrad lokalt, vilket säkerställer full användarkontroll. Communitystöd via GitHub Discussions och Slack, tillsammans med rik dokumentation och regelbundna uppdateringar, förbättrar användarupplevelsen, vilket gör det lämpligt för att lära sig containerteknologi eller hantera små projekt.
-  
+
       **Nyckelfunktioner:**
       - Intuitivt webbgränssnitt för förenklad containeriserad apphantering
       - Stöder flera containerplattformar för enhetlig resurshantering
@@ -264,7 +264,7 @@ x-casaos:
       Τα βασικά χαρακτηριστικά του εργαλείου περιλαμβάνουν υποστήριξη πολλαπλών πλατφορμών, διαχείριση πόρων και παρακολούθηση σε πραγματικό χρόνο. Υποστηρίζει τη διαχείριση διαφόρων πλατφορμών κοντέινερ, καλύπτοντας κοντέινερ, εικόνες, τόμους και δίκτυα. Οι χρήστες μπορούν γρήγορα να δημιουργήσουν, να αναπτύξουν και να διαχειριστούν κοντέινερ μέσω μιας "έξυπνης" γραφικής διεπαφής ή περιεκτικού API, χωρίς να χρειάζονται βαθιά εμπειρία γραμμής εντολών. Παρέχει παρακολούθηση κατάστασης κοντέινερ σε πραγματικό χρόνο, προβολή αρχείων καταγραφής και διαχείριση διαμόρφωσης, εξασφαλίζοντας αποτελεσματικό έλεγχο των λειτουργιών εφαρμογών.
 
       Η φιλοσοφία σχεδιασμού του είναι να "απλοποιήσει την πολυπλοκότητα των κοντέινερ" με μια διαισθητική διεπαφή και προεπιλεγμένες ρυθμίσεις που μειώνουν το τεχνικό εμπόδιο. Οι χρήστες μπορούν να διαχειριστούν εφαρμογές με κοντέινερ χωρίς πολύπλοκες διαμορφώσεις, εξοικονομώντας χρόνο και αυξάνοντας την αποτελεσματικότητα. Είναι εντελώς δωρεάν, με δεδομένα αποθηκευμένα τοπικά, εξασφαλίζοντας πλήρη έλεγχο χρήστη. Η υποστήριξη κοινότητας μέσω GitHub Discussions και Slack, μαζί με πλούσια τεκμηρίωση και τακτικές ενημερώσεις, ενισχύει την εμπειρία χρήστη, καθιστώντας το κατάλληλο για εκμάθηση τεχνολογίας κοντέινερ ή διαχείριση μικρών έργων.
-  
+
       **Βασικά Χαρακτηριστικά:**
       - Διαισθητική διεπαφή Ιστού για απλοποιημένη διαχείριση εφαρμογών με κοντέινερ
       - Υποστηρίζει πολλαπλές πλατφόρμες κοντέινερ για ενιαία διαχείριση πόρων
@@ -281,7 +281,7 @@ x-casaos:
       Ključne značajke alata uključuju podršku za više platformi, upravljanje resursima i nadzor u stvarnom vremenu. Podržava upravljanje različitim platformama kontejnera, pokrivajući kontejnere, slike, volumene i mreže. Korisnici mogu brzo kreirati, implementirati i upravljati kontejnerima putem "pametnog" grafičkog sučelja ili sveobuhvatnog API-ja, bez potrebe za duboku stručnost naredbenog reda. Omogućuje nadzor stanja kontejnera u stvarnom vremenu, pregled zapisnika i upravljanje konfiguracijama, osiguravajući učinkovitu kontrolu nad operacijama aplikacija.
 
       Njegova filozofija dizajna je "pojednostaviti složenost kontejnera" s intuitivnim sučeljem i zadanim postavkama koje smanjuju tehničku barijeru. Korisnici mogu upravljati kontejnerskim aplikacijama bez složenih konfiguracija, štediti vrijeme i povećati učinkovitost. Potpuno je besplatan, s podacima pohranjenim lokalno, osiguravajući potpunu kontrolu korisnika. Podrška zajednice putem GitHub Discussions i Slack, zajedno s bogatom dokumentacijom i redovitim ažuriranjima, poboljšava korisničko iskustvo, čineći ga prikladnim za učenje tehnologije kontejnera ili upravljanje malim projektima.
-  
+
       **Ključne značajke:**
       - Intuitivno Web sučelje za pojednostavljeno upravljanje kontejnerskim aplikacijama
       - Podržava više platformi kontejnera za jedinstveno upravljanje resursima
@@ -298,7 +298,7 @@ x-casaos:
       As características principais da ferramenta incluem suporte multi-plataforma, gestão de recursos e monitorização em tempo real. Suporta a gestão de várias plataformas de contentores, cobrindo contentores, imagens, volumes e redes. Os utilizadores podem rapidamente criar, implementar e gerir contentores através de uma interface gráfica "inteligente" ou API abrangente, sem necessitar de conhecimento profundo de linha de comandos. Proporciona monitorização em tempo real do estado dos contentores, visualização de registos e gestão de configuração, garantindo controlo eficiente das operações das aplicações.
 
       A sua filosofia de design é "simplificar a complexidade dos contentores" com uma interface intuitiva e configurações predefinidas que reduzem a barreira técnica. Os utilizadores podem gerir aplicações contentorizadas sem configurações complexas, poupando tempo e aumentando a eficiência. É completamente gratuito, com dados armazenados localmente, garantindo controlo total do utilizador. O suporte da comunidade através de GitHub Discussions e Slack, juntamente com documentação rica e actualizações regulares, melhora a experiência do utilizador, tornando-o adequado para aprender tecnologia de contentores ou gerir pequenos projectos.
-  
+
       **Características Principais:**
       - Interface Web intuitiva para gestão simplificada de aplicações contentorizadas
       - Suporta múltiplas plataformas de contentores para gestão unificada de recursos
@@ -315,7 +315,7 @@ x-casaos:
       Основные функции инструмента включают поддержку множественных платформ, управление ресурсами и мониторинг в реальном времени. Он поддерживает управление различными платформами контейнеров, покрывая контейнеры, образы, тома и сети. Пользователи могут быстро создавать, развертывать и управлять контейнерами через "умный" графический интерфейс или комплексный API, не требуя глубоких знаний командной строки. Он обеспечивает мониторинг статуса контейнеров в реальном времени, просмотр журналов и управление конфигурацией, гарантируя эффективный контроль операций приложений.
 
       Его философия дизайна — "упростить сложность контейнеров" с интуитивным интерфейсом и настройками по умолчанию, которые снижают технический барьер. Пользователи могут управлять контейнеризированными приложениями без сложных конфигураций, экономя время и повышая эффективность. Он полностью бесплатен, с данными, хранящимися локально, обеспечивая полный контроль пользователя. Поддержка сообщества через GitHub Discussions и Slack, вместе с богатой документацией и регулярными обновлениями, улучшает пользовательский опыт, делая его подходящим для изучения технологии контейнеров или управления небольшими проектами.
-  
+
       **Ключевые Особенности:**
       - Интуитивный веб-интерфейс для упрощенного управления контейнеризированными приложениями
       - Поддержка множественных платформ контейнеров для единого управления ресурсами
@@ -332,7 +332,7 @@ x-casaos:
       Aracın temel özellikleri çok platformlu destek, kaynak yönetimi ve gerçek zamanlı izleme içerir. Konteynerler, görüntüler, hacimler ve ağları kapsayan çeşitli konteyner platformlarının yönetimini destekler. Kullanıcılar, derin komut satırı uzmanlığına ihtiyaç duymadan "akıllı" grafik arayüz veya kapsamlı API aracılığıyla konteynerleri hızla oluşturabilir, dağıtabilir ve yönetebilir. Gerçek zamanlı konteyner durumu izleme, günlük görüntüleme ve yapılandırma yönetimi sağlayarak uygulama işlemlerinin verimli kontrolünü garanti eder.
 
       Tasarım felsefesi, teknik engeli düşüren sezgisel arayüz ve varsayılan ayarlarla "konteyner karmaşıklığını basitleştirmek"tir. Kullanıcılar karmaşık yapılandırmalar olmadan konteynerleştirilmiş uygulamaları yönetebilir, zaman tasarrufu yapabilir ve verimliliği artırabilir. Tamamen ücretsizdir, veriler yerel olarak saklanır ve tam kullanıcı kontrolü sağlar. GitHub Discussions ve Slack aracılığıyla topluluk desteği, zengin dokümantasyon ve düzenli güncellemelerle birlikte kullanıcı deneyimini geliştirir, konteyner teknolojisini öğrenmek veya küçük projeleri yönetmek için uygun hale getirir.
-  
+
       **Temel Özellikler:**
       - Basitleştirilmiş konteynerleştirilmiş uygulama yönetimi için sezgisel Web arayüzü
       - Birleşik kaynak yönetimi için çoklu konteyner platformu desteği
@@ -365,10 +365,10 @@ x-casaos:
     ru_RU: Легкий интерфейс управления Docker
     tr_TR: Hafif Docker yönetim arayüzü
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/thumbnail.png
-  tips:
+  tips: null
   main: portainer
   title:
     en_US: Portainer
   index: /
-  port_map: "9000"
+  port_map: '9000'
   scheme: http

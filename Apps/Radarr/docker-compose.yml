@@ -9,11 +9,11 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "256M"
+          memory: 256M
     network_mode: bridge
     ports:
       - target: 7878
-        published: "7878"
+        published: '7878'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -41,11 +41,10 @@ services:
             en_us: Run Radarr as specified gid.
             zh_cn: 以指定的gid运行Radarr
       ports:
-        - container: "7878"
+        - container: '7878'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
-
       volumes:
         - container: /config
           description:
@@ -107,4 +106,7 @@ x-casaos:
   title:
     en_us: Radarr
   index: /
-  port_map: "7878"
+  port_map: '7878'
+  scheme: http
+x-roqueos:
+  mountShared: true

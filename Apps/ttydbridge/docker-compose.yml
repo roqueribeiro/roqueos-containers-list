@@ -8,8 +8,6 @@ services:
           memory: 8M
     environment:
       - EXEC_DIR=/opt
-      # - HTTP_PASSWORD=password
-      # - HTTP_USERNAME=admin
       - PORT=2222
       - START_COMMAND=login
     image: cp0204/ttydbridge:v0.0.3
@@ -18,6 +16,10 @@ services:
     pid: host
     privileged: true
     restart: unless-stopped
+    ports:
+      - target: 2222
+        published: '2222'
+        protocol: tcp
     volumes:
       - type: bind
         source: /opt
@@ -38,11 +40,11 @@ x-casaos:
     zh_cn: |
       ttydBridge 如一座“桥”，连通了宿主机环境，让你在浏览器中轻松访问和使用宿主机终端。它基于 ttyd 构建，并以容器化的方式运行，提供了安全、便捷的远程终端体验。
   developer: Cp0204
-  hostname: ""
+  hostname: ''
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ttydbridge/icon.png
   index: /
   main: ttydbridge
-  port_map: "2222"
+  port_map: '2222'
   scheme: http
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ttydbridge/screenshot-1.png
@@ -53,11 +55,9 @@ x-casaos:
     zh_cn: 在浏览器中轻松访问宿主机终端
   tips:
     before_install:
-      en_us: >
+      en_us: |
         1. Default to using Linux system user authentication.
-
         2. You can increase HTTP authentication by setting the `HTTP_USERNAME` and `HTTP_PASSWORD` variables.
-
         [Official DOC](https://hub.docker.com/r/cp0204/ttydbridge)
       zh_cn: |
         1. 默认使用 Linux 系统用户鉴权。

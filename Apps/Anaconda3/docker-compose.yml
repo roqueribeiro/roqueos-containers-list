@@ -11,7 +11,7 @@ services:
       - PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     ports:
       - target: 8888
-        published: "8888"
+        published: '8888'
         protocol: tcp
     volumes:
       - type: bind
@@ -19,25 +19,23 @@ services:
         target: /opt/notebooks
     command:
       - /bin/bash
-      - -c
-      - conda install -c conda-forge jupyterlab -y --quiet && jupyter lab
-        --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser
-        --allow-root
+      - '-c'
+      - conda install -c conda-forge jupyterlab -y --quiet && jupyter lab --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root
     labels:
       icon: https://cdn.jsdelivr.net/gh/LisonEvf/CasaOS-AppStore@main/Apps/Anaconda3/icon.png
     x-casaos:
       envs:
         - container: PATH
           description:
-            en_us: ""
+            en_us: ''
         - container: LANG
           description:
-            en_us: ""
+            en_us: ''
         - container: LC_ALL
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "8888"
+        - container: '8888'
           description:
             en_us: JupyterLab
       volumes:
@@ -59,8 +57,8 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/screenshot-3.png
   scheme: http
-  hostname: ""
-  port_map: "8888"
+  hostname: ''
+  port_map: '8888'
   index: /
   description:
     en_us: Your machine learning Env work with Jupyter Lab

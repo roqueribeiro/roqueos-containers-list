@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 80
-        published: "10180"
+        published: '10180'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -38,11 +38,10 @@ services:
             en_us: Run FileBrowser as specified gid.
             zh_cn: 以指定的组ID运行FileBrowser
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_us: WebUI Port
             zh_cn: WebUI端口
-
       volumes:
         - container: /db
           description:
@@ -113,4 +112,7 @@ x-casaos:
   title:
     en_us: FileBrowser
   index: /
-  port_map: "10180"
+  port_map: '10180'
+  scheme: http
+x-roqueos:
+  mountShared: true

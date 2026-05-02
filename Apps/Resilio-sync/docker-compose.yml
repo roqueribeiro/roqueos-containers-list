@@ -9,10 +9,10 @@ services:
     network_mode: bridge
     ports:
       - target: 55555
-        published: "55555"
+        published: '55555'
         protocol: tcp
       - target: 8888
-        published: "8888"
+        published: '8888'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -64,10 +64,13 @@ x-casaos:
     uk_ua: Розкрийте потужність безперервної синхронізації файлів.
   author: self
   category: File Sync
-  hostname: ""
+  hostname: ''
   index: /
-  port_map: "8888"
+  port_map: '8888'
   scheme: http
   store_app_id: resilio-sync
   title:
     en_us: resilio-sync
+  main: resilio-sync
+x-roqueos:
+  mountShared: true

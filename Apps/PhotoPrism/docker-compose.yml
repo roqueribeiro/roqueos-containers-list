@@ -3,17 +3,17 @@ services:
   photoprism:
     environment:
       PHOTOPRISM_ADMIN_PASSWORD: casaos
-      PHOTOPRISM_UPLOAD_NSFW: "true"
+      PHOTOPRISM_UPLOAD_NSFW: 'true'
       TZ: $TZ
     image: photoprism/photoprism:250228
     deploy:
       resources:
         reservations:
-          memory: "512M"
+          memory: 512M
     network_mode: bridge
     ports:
       - target: 2342
-        published: "2342"
+        published: '2342'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -38,11 +38,10 @@ services:
             en_us: The password of admin
             zh_cn: 管理员密码
       ports:
-        - container: "2342"
+        - container: '2342'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
-
       volumes:
         - container: /photoprism/storage
           description:
@@ -130,4 +129,7 @@ x-casaos:
   title:
     en_us: PhotoPrism
   index: /
-  port_map: "2342"
+  port_map: '2342'
+  scheme: http
+x-roqueos:
+  mountShared: true

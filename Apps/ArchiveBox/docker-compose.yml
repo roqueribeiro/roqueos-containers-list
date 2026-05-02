@@ -14,7 +14,7 @@ services:
       - archivebox_sonic
     ports:
       - target: 8000
-        published: "18010"
+        published: '18010'
         protocol: tcp
     volumes:
       - type: bind
@@ -32,12 +32,18 @@ services:
       - SEARCH_BACKEND_HOST_NAME=archivebox_sonic
       - SEARCH_BACKEND_PASSWORD=SomeSecretPassword
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8000"]
+      test:
+        - CMD
+        - wget
+        - '--no-verbose'
+        - '--tries=1'
+        - '--spider'
+        - http://localhost:8000
       interval: 1m
       timeout: 3s
     x-casaos:
       ports:
-        - container: "8000"
+        - container: '8000'
           description:
             en_US: ArchiveBox Web Interface Port
             en_GB: ArchiveBox Web Interface Port
@@ -243,7 +249,6 @@ services:
             pt_PT: Palavra-passe do Backend de Busca
             ru_RU: Пароль поискового бэкенда
             tr_TR: Arama Backend Parolası
-
   archivebox_scheduler:
     image: archivebox/archivebox:0.7.3
     container_name: archivebox_scheduler
@@ -256,7 +261,11 @@ services:
       - archivebox_network
     depends_on:
       - archivebox_sonic
-    command: ["schedule", "--foreground", "--update", "--every=day"]
+    command:
+      - schedule
+      - '--foreground'
+      - '--update'
+      - '--every=day'
     environment:
       - TIMEOUT=120
       - SEARCH_BACKEND_ENGINE=sonic
@@ -354,7 +363,6 @@ services:
             pt_PT: Palavra-passe do Backend de Busca
             ru_RU: Пароль поискового бэкенда
             tr_TR: Arama Backend Parolası
-
   archivebox_sonic:
     image: archivebox/sonic:1.4.9
     container_name: archivebox_sonic
@@ -410,7 +418,6 @@ services:
             pt_PT: Palavra-passe do Backend de Busca
             ru_RU: Пароль поискового бэкенда
             tr_TR: Arama Backend Parolası
-
   archivebox_novnc:
     image: theasp/novnc:latest
     container_name: archivebox_novnc
@@ -423,7 +430,7 @@ services:
       - archivebox_network
     ports:
       - target: 8080
-        published: "18082"
+        published: '18082'
         protocol: tcp
     environment:
       - DISPLAY_WIDTH=1920
@@ -431,7 +438,7 @@ services:
       - RUN_XTERM=no
     x-casaos:
       ports:
-        - container: "8080"
+        - container: '8080'
           description:
             en_US: NoVNC Web Interface Port
             en_GB: NoVNC Web Interface Port
@@ -500,11 +507,9 @@ services:
             pt_PT: Executar Terminal XTerm
             ru_RU: Запустить терминал XTerm
             tr_TR: XTerm Terminalini Çalıştır
-
 networks:
   archivebox_network:
     driver: bridge
-
 x-casaos:
   architectures:
     - amd64
@@ -531,13 +536,13 @@ x-casaos:
   description:
     en_US: |
       ArchiveBox is a powerful, self-hosted internet archiving solution that allows you to create your own personal archive of web pages, PDFs, videos, and more. It functions as a personal internet archive, saving content in multiple formats for long-term preservation.
-      
+
       The system consists of multiple components:
       - **ArchiveBox**: The main application providing the web interface and archiving capabilities
       - **Sonic**: A fast search backend for full-text search across archived content
       - **ArchiveBox Scheduler**: A background service for scheduled archiving tasks
       - **NoVNC**: A web-based VNC client for browser-based archiving
-      
+
       **Key Features:**
       - Save web pages in multiple formats (HTML, PDF, screenshots, etc.)
       - Full-text search across all archived content
@@ -545,20 +550,20 @@ x-casaos:
       - Browser-based archiving with NoVNC
       - User authentication and access control
       - Extract and save media files (videos, audio, PDFs, etc.)
-      
+
       **Learn More:**
       - [ArchiveBox Official Website](https://archivebox.io)
       - [ArchiveBox GitHub Repository](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Documentation](https://github.com/ArchiveBox/ArchiveBox/wiki)
     en_GB: |
       ArchiveBox is a powerful, self-hosted internet archiving solution that allows you to create your own personal archive of web pages, PDFs, videos, and more. It functions as a personal internet archive, saving content in multiple formats for long-term preservation.
-      
+
       The system consists of multiple components:
       - **ArchiveBox**: The main application providing the web interface and archiving capabilities
       - **Sonic**: A fast search backend for full-text search across archived content
       - **ArchiveBox Scheduler**: A background service for scheduled archiving tasks
       - **NoVNC**: A web-based VNC client for browser-based archiving
-      
+
       **Key Features:**
       - Save web pages in multiple formats (HTML, PDF, screenshots, etc.)
       - Full-text search across all archived content
@@ -566,20 +571,20 @@ x-casaos:
       - Browser-based archiving with NoVNC
       - User authentication and access control
       - Extract and save media files (videos, audio, PDFs, etc.)
-      
+
       **Learn More:**
       - [ArchiveBox Official Website](https://archivebox.io)
       - [ArchiveBox GitHub Repository](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Documentation](https://github.com/ArchiveBox/ArchiveBox/wiki)
     it_IT: |
       ArchiveBox è una potente soluzione di archiviazione internet self-hosted che ti permette di creare il tuo archivio personale di pagine web, PDF, video e altro ancora. Funziona come un archivio internet personale, salvando i contenuti in più formati per la conservazione a lungo termine.
-      
+
       Il sistema è composto da più componenti:
       - **ArchiveBox**: L'applicazione principale che fornisce l'interfaccia web e le capacità di archiviazione
       - **Sonic**: Un backend di ricerca veloce per la ricerca full-text nei contenuti archiviati
       - **ArchiveBox Scheduler**: Un servizio in background per le attività di archiviazione pianificate
       - **NoVNC**: Un client VNC basato sul web per l'archiviazione basata su browser
-      
+
       **Caratteristiche principali:**
       - Salva pagine web in più formati (HTML, PDF, screenshot, ecc.)
       - Ricerca full-text su tutti i contenuti archiviati
@@ -587,20 +592,20 @@ x-casaos:
       - Archiviazione basata su browser con NoVNC
       - Autenticazione utente e controllo degli accessi
       - Estrai e salva file multimediali (video, audio, PDF, ecc.)
-      
+
       **Scopri di più:**
       - [Sito web ufficiale di ArchiveBox](https://archivebox.io)
       - [Repository GitHub di ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Documentazione](https://github.com/ArchiveBox/ArchiveBox/wiki)
     nb_NO: |
       ArchiveBox er en kraftfull, selvbetjent internettarkiveringsløsning som lar deg lage ditt eget personlige arkiv av nettsider, PDF-er, videoer og mer. Den fungerer som et personlig internettarkiv, og lagrer innhold i flere formater for langtidsbevaring.
-      
+
       Systemet består av flere komponenter:
       - **ArchiveBox**: Hovedapplikasjonen som gir webgrensesnitt og arkiveringsmuligheter
       - **Sonic**: Et rask søkebackend for fulltekstsøk i arkivert innhold
       - **ArchiveBox Scheduler**: En bakgrunnstjeneste for planlagte arkiveringsoppgaver
       - **NoVNC**: En nettleserbasert VNC-klient for nettleserbasert arkivering
-      
+
       **Nøkkelegenskaper:**
       - Lagre nettsider i flere formater (HTML, PDF, skjermbilder, etc.)
       - Fulltekstsøk på alt arkivert innhold
@@ -608,20 +613,20 @@ x-casaos:
       - Nettleserbasert arkivering med NoVNC
       - Brukerautentisering og tilgangskontroll
       - Ekstraher og lagre mediefiler (videoer, lyd, PDF-er, etc.)
-      
+
       **Lær mer:**
       - [ArchiveBox offisielt nettsted](https://archivebox.io)
       - [ArchiveBox GitHub Repository](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Dokumentasjon](https://github.com/ArchiveBox/ArchiveBox/wiki)
     zh_CN: |
       ArchiveBox是一个强大的自托管互联网存档解决方案，允许您创建自己的网页、PDF、视频等个人存档。它作为个人互联网存档运行，以多种格式保存内容以供长期保存。
-      
+
       该系统由多个组件组成：
       - **ArchiveBox**: 提供Web界面和存档功能的主应用程序
       - **Sonic**: 用于在存档内容中进行全文搜索的快速搜索后端
       - **ArchiveBox Scheduler**: 用于计划存档任务的后台服务
       - **NoVNC**: 用于基于浏览器的存档的基于Web的VNC客户端
-      
+
       **主要功能：**
       - 以多种格式保存网页（HTML、PDF、截图等）
       - 在所有存档内容中进行全文搜索
@@ -629,20 +634,20 @@ x-casaos:
       - 使用NoVNC进行基于浏览器的存档
       - 用户身份验证和访问控制
       - 提取和保存媒体文件（视频、音频、PDF等）
-      
+
       **了解更多：**
       - [ArchiveBox官方网站](https://archivebox.io)
       - [ArchiveBox GitHub仓库](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox 文档](https://github.com/ArchiveBox/ArchiveBox/wiki)
     ja_JP: |
       ArchiveBoxは、Webページ、PDF、ビデオなどの独自の個人アーカイブを作成できる強力なセルフホスト型インターネットアーカイブソリューションです。個人用インターネットアーカイブとして機能し、長期保存のために複数の形式でコンテンツを保存します。
-      
+
       このシステムは複数のコンポーネントで構成されています：
       - **ArchiveBox**: Webインターフェースとアーカイブ機能を提供するメインアプリケーション
       - **Sonic**: アーカイブされたコンテンツ全体で全文検索を行うための高速検索バックエンド
       - **ArchiveBox Scheduler**: スケジュールされたアーカイブタスク用のバックグラウンドサービス
       - **NoVNC**: ブラウザベースのアーカイブ用のWebベースのVNCクライアント
-      
+
       **主な機能：**
       - 複数の形式でWebページを保存（HTML、PDF、スクリーンショットなど）
       - すべてのアーカイブされたコンテンツで全文検索
@@ -650,20 +655,20 @@ x-casaos:
       - NoVNCを使用したブラウザベースのアーカイブ
       - ユーザー認証とアクセス制御
       - メディアファイルの抽出と保存（ビデオ、オーディオ、PDFなど）
-      
+
       **詳細情報：**
       - [ArchiveBox公式ウェブサイト](https://archivebox.io)
       - [ArchiveBox GitHubリポジトリ](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox ドキュメント](https://github.com/ArchiveBox/ArchiveBox/wiki)
     ko_KR: |
       ArchiveBox는 웹 페이지, PDF, 비디오 등의 개인 아카이브를 생성할 수 있는 강력한 셀프 호스팅 인터넷 아카이빙 솔루션입니다. 장기 보존을 위해 여러 형식으로 콘텐츠를 저장하는 개인 인터넷 아카이브로 기능합니다.
-      
+
       이 시스템은 여러 구성 요소로 이루어져 있습니다:
       - **ArchiveBox**: 웹 인터페이스와 아카이빙 기능을 제공하는 주요 애플리케이션
       - **Sonic**: 아카이브된 콘텐츠 전체에서 전체 텍스트 검색을 위한 빠른 검색 백엔드
       - **ArchiveBox Scheduler**: 예약된 아카이빙 작업을 위한 백그라운드 서비스
       - **NoVNC**: 브라우저 기반 아카이빙을 위한 웹 기반 VNC 클라이언트
-      
+
       **주요 기능:**
       - 여러 형식으로 웹 페이지 저장(HTML, PDF, 스크린샷 등)
       - 모든 아카이브된 콘텐츠에서 전체 텍스트 검색
@@ -671,20 +676,20 @@ x-casaos:
       - NoVNC를 사용한 브라우저 기반 아카이빙
       - 사용자 인증 및 접근 제어
       - 미디어 파일 추출 및 저장(비디오, 오디오, PDF 등)
-      
+
       **더 알아보기:**
       - [ArchiveBox 공식 웹사이트](https://archivebox.io)
       - [ArchiveBox GitHub 저장소](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox 문서](https://github.com/ArchiveBox/ArchiveBox/wiki)
     fr_FR: |
       ArchiveBox est une puissante solution d'archivage Internet auto-hébergée qui vous permet de créer votre propre archive personnelle de pages Web, de PDF, de vidéos et plus encore. Elle fonctionne comme une archive Internet personnelle, sauvegardant le contenu dans plusieurs formats pour une préservation à long terme.
-      
+
       Le système se compose de plusieurs composants :
       - **ArchiveBox** : L'application principale fournissant l'interface Web et les capacités d'archivage
       - **Sonic** : Un backend de recherche rapide pour la recherche en texte intégral dans le contenu archivé
       - **ArchiveBox Scheduler** : Un service d'arrière-plan pour les tâches d'archivage planifiées
       - **NoVNC** : Un client VNC basé sur le Web pour l'archivage basé sur le navigateur
-      
+
       **Fonctionnalités clés :**
       - Sauvegardez les pages Web dans plusieurs formats (HTML, PDF, captures d'écran, etc.)
       - Recherche en texte intégral dans tout le contenu archivé
@@ -692,20 +697,20 @@ x-casaos:
       - Archivage basé sur le navigateur avec NoVNC
       - Authentification utilisateur et contrôle d'accès
       - Extrayez et sauvegardez des fichiers multimédias (vidéos, audio, PDF, etc.)
-      
+
       **En savoir plus :**
       - [Site officiel d'ArchiveBox](https://archivebox.io)
       - [Dépôt GitHub d'ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Documentation](https://github.com/ArchiveBox/ArchiveBox/wiki)
     de_DE: |
       ArchiveBox ist eine leistungsstarke, selbst gehostete Internet-Archivierungslösung, mit der Sie Ihr eigenes persönliches Archiv von Webseiten, PDFs, Videos und mehr erstellen können. Es funktioniert als persönliches Internet-Archiv und speichert Inhalte in mehreren Formaten für die langfristige Aufbewahrung.
-      
+
       Das System besteht aus mehreren Komponenten:
       - **ArchiveBox**: Die Hauptanwendung, die die Weboberfläche und Archivierungsfunktionen bereitstellt
       - **Sonic**: Ein schnelles Such-Backend für die Volltextsuche in archivierten Inhalten
       - **ArchiveBox Scheduler**: Ein Hintergrunddienst für geplante Archivierungsaufgaben
       - **NoVNC**: Ein webbasierter VNC-Client für die browserbasierte Archivierung
-      
+
       **Hauptmerkmale:**
       - Speichern Sie Webseiten in mehreren Formaten (HTML, PDF, Screenshots, etc.)
       - Volltextsuche über alle archivierten Inhalte
@@ -713,20 +718,20 @@ x-casaos:
       - Browserbasierte Archivierung mit NoVNC
       - Benutzerauthentifizierung und Zugriffskontrolle
       - Extrahieren und Speichern von Mediendateien (Videos, Audio, PDFs, etc.)
-      
+
       **Mehr erfahren:**
       - [ArchiveBox offizielle Website](https://archivebox.io)
       - [ArchiveBox GitHub Repository](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Dokumentation](https://github.com/ArchiveBox/ArchiveBox/wiki)
     sv_SE: |
       ArchiveBox är en kraftfull, självhostad internetarkiveringslösning som låter dig skapa ditt eget personliga arkiv av webbsidor, PDF:er, videor och mer. Den fungerar som ett personligt internetarkiv och sparar innehåll i flera format för långtidsbevarande.
-      
+
       Systemet består av flera komponenter:
       - **ArchiveBox**: Huvudapplikationen som tillhandahåller webbgränssnitt och arkiveringsfunktioner
       - **Sonic**: Ett snabbt sökbackend för fulltextsökning över arkiverat innehåll
       - **ArchiveBox Scheduler**: En bakgrundstjänst för schemalagda arkiveringsuppgifter
       - **NoVNC**: En webbaserad VNC-klient för webbläsarbaserad arkivering
-      
+
       **Nyckelfunktioner:**
       - Spara webbsidor i flera format (HTML, PDF, skärmdumpar, etc.)
       - Fulltextsökning över allt arkiverat innehåll
@@ -734,20 +739,20 @@ x-casaos:
       - Webbläsarbaserad arkivering med NoVNC
       - Användarautentisering och åtkomstkontroll
       - Extrahera och spara mediefiler (videor, ljud, PDF:er, etc.)
-      
+
       **Läs mer:**
       - [ArchiveBox officiella webbplats](https://archivebox.io)
       - [ArchiveBox GitHub Repository](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Dokumentation](https://github.com/ArchiveBox/ArchiveBox/wiki)
     el_GR: |
       Το ArchiveBox είναι μια ισχυρή, αυτο-φιλοξενούμενη λύση αρχειοθέτησης διαδικτύου που σας επιτρέπει να δημιουργήσετε το δικό σας προσωπικό αρχείο ιστοσελίδων, PDF, βίντεο και άλλα. Λειτουργεί ως προσωπικό αρχείο διαδικτύου, αποθηκεύοντας περιεχόμενο σε πολλαπλές μορφές για μακροπρόθεσμη διατήρηση.
-      
+
       Το σύστημα αποτελείται από πολλαπλά στοιχεία:
       - **ArchiveBox**: Η κύρια εφαρμογή που παρέχει τη διαδικτυακή διεπαφή και τις δυνατότητες αρχειοθέτησης
       - **Sonic**: Ένα γρήγορο backend αναζήτησης για πλήρη αναζήτηση κειμένου σε αρχειοθετημένο περιεχόμενο
       - **ArchiveBox Scheduler**: Μια υπηρεσία παρασκηνίου για προγραμματισμένες εργασίες αρχειοθέτησης
       - **NoVNC**: Ένας web-based VNC client για αρχειοθέτηση βασισμένη σε πρόγραμμα περιήγησης
-      
+
       **Βασικά Χαρακτηριστικά:**
       - Αποθήκευση ιστοσελίδων σε πολλαπλές μορφές (HTML, PDF, στιγμιότυπα οθόνης, κ.λπ.)
       - Πλήρη αναζήτηση κειμένου σε όλο το αρχειοθετημένο περιεχόμενο
@@ -755,20 +760,20 @@ x-casaos:
       - Αρχειοθέτηση βασισμένη σε πρόγραμμα περιήγησης με NoVNC
       - Ταυτοποίηση χρήστη και έλεγχος πρόσβασης
       - Εξαγωγή και αποθήκευση αρχείων πολυμέσων (βίντεο, ήχος, PDF, κ.λπ.)
-      
+
       **Μάθετε Περισσότερα:**
       - [Επίσημη Ιστοσελίδα ArchiveBox](https://archivebox.io)
       - [Αποθήκη GitHub ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Τεκμηρίωση](https://github.com/ArchiveBox/ArchiveBox/wiki)
     hr_HR: |
       ArchiveBox je snažno, samo-hostano rješenje za arhiviranje interneta koje vam omogućuje stvaranje vlastitog osobnog arhiva web stranica, PDF-ova, videozapisa i više. Funkcionira kao osobni internet arhiv, pohranjujući sadržaj u više formata za dugoročno čuvanje.
-      
+
       Sustav se sastoji od više komponenti:
       - **ArchiveBox**: Glavna aplikacija koja pruža web sučelje i mogućnosti arhiviranja
       - **Sonic**: Brz backend za pretraživanje za pretragu cjelokupnog teksta u arhiviranom sadržaju
       - **ArchiveBox Scheduler**: Usluga u pozadini za zakazane zadatke arhiviranja
       - **NoVNC**: Web-based VNC klijent za arhiviranje temeljeno na pregledniku
-      
+
       **Ključne značajke:**
       - Pohranjivanje web stranica u više formata (HTML, PDF, snimke zaslona, itd.)
       - Pretraga cjelokupnog teksta u svom arhiviranom sadržaju
@@ -776,20 +781,20 @@ x-casaos:
       - Arhiviranje temeljeno na pregledniku s NoVNC-om
       - Autentifikacija korisnika i kontrola pristupa
       - Ekstrakcija i pohrana medijskih datoteka (videozapisi, audio, PDF-ovi, itd.)
-      
+
       **Saznajte više:**
       - [Službena web stranica ArchiveBox](https://archivebox.io)
       - [ArchiveBox GitHub Repozitorij](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Dokumentacija](https://github.com/ArchiveBox/ArchiveBox/wiki)
     pt_PT: |
       ArchiveBox é uma poderosa solução de arquivamento de internet auto-hospedada que lhe permite criar o seu próprio arquivo pessoal de páginas web, PDFs, vídeos e mais. Funciona como um arquivo de internet pessoal, guardando conteúdo em múltiplos formatos para preservação a longo prazo.
-      
+
       O sistema consiste em múltiplos componentes:
       - **ArchiveBox**: A aplicação principal que fornece a interface web e capacidades de arquivamento
       - **Sonic**: Um backend de pesquisa rápido para pesquisa de texto completo em conteúdo arquivado
       - **ArchiveBox Scheduler**: Um serviço de fundo para tarefas de arquivamento agendadas
       - **NoVNC**: Um cliente VNC baseado na web para arquivamento baseado em navegador
-      
+
       **Características Principais:**
       - Guardar páginas web em múltiplos formatos (HTML, PDF, capturas de ecrã, etc.)
       - Pesquisa de texto completo em todo o conteúdo arquivado
@@ -797,20 +802,20 @@ x-casaos:
       - Arquivamento baseado em navegador com NoVNC
       - Autenticação de utilizador e controlo de acesso
       - Extrair e guardar ficheiros multimédia (vídeos, áudio, PDFs, etc.)
-      
+
       **Saiba Mais:**
       - [Website Oficial ArchiveBox](https://archivebox.io)
       - [Repositório GitHub ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Documentação](https://github.com/ArchiveBox/ArchiveBox/wiki)
     ru_RU: |
       ArchiveBox - это мощное самохостинговое решение для архивирования интернета, которое позволяет создавать собственный личный архив веб-страниц, PDF-файлов, видео и многого другого. Оно функционирует как личный интернет-архив, сохраняя контент в нескольких форматах для долгосрочного хранения.
-      
+
       Система состоит из нескольких компонентов:
       - **ArchiveBox**: Основное приложение, предоставляющее веб-интерфейс и возможности архивирования
       - **Sonic**: Быстрый бэкенд поиска для полнотекстового поиска по заархивированному контенту
       - **ArchiveBox Scheduler**: Фоновая служба для запланированных задач архивирования
       - **NoVNC**: Веб-клиент VNC для архивирования на основе браузера
-      
+
       **Ключевые особенности:**
       - Сохранение веб-страниц в нескольких форматах (HTML, PDF, скриншоты и т.д.)
       - Полнотекстовый поиск по всему заархивированному контенту
@@ -818,20 +823,20 @@ x-casaos:
       - Архивирование на основе браузера с помощью NoVNC
       - Аутентификация пользователей и контроль доступа
       - Извлечение и сохранение медиафайлов (видео, аудио, PDF и т.д.)
-      
+
       **Узнать больше:**
       - [Официальный сайт ArchiveBox](https://archivebox.io)
       - [Репозиторий ArchiveBox на GitHub](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Документация](https://github.com/ArchiveBox/ArchiveBox/wiki)
     tr_TR: |
       ArchiveBox, web sayfalarının, PDF'lerin, videoların ve daha fazlasının kendi kişisel arşivinizi oluşturmanıza olanak tanıyan güçlü, kendi kendine barındırılan bir internet arşivleme çözümüdür. Uzun süreli koruma için içeriği birden çok formatta kaydeden kişisel bir internet arşivi olarak işlev görür.
-      
+
       Sistem birden fazla bileşenden oluşur:
       - **ArchiveBox**: Web arayüzünü ve arşivleme yeteneklerini sağlayan ana uygulama
       - **Sonic**: Arşivlenmiş içeriklerde tam metin araması için hızlı bir arama arka ucu
       - **ArchiveBox Scheduler**: Zamanlanmış arşivleme görevleri için bir arka plan hizmeti
       - **NoVNC**: Tarayıcı tabanlı arşivleme için web tabanlı bir VNC istemcisi
-      
+
       **Ana Özellikler:**
       - Web sayfalarını birden çok formatta kaydetme (HTML, PDF, ekran görüntüleri vb.)
       - Tüm arşivlenmiş içerikte tam metin arama
@@ -839,7 +844,7 @@ x-casaos:
       - NoVNC ile tarayıcı tabanlı arşivleme
       - Kullanıcı kimlik doğrulaması ve erişim kontrolü
       - Medya dosyalarını çıkarma ve kaydetme (videolar, ses, PDF'ler vb.)
-      
+
       **Daha Fazla Bilgi Edinin:**
       - [ArchiveBox Resmi Web Sitesi](https://archivebox.io)
       - [ArchiveBox GitHub Deposu](https://github.com/ArchiveBox/ArchiveBox)
@@ -849,98 +854,98 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/screenshot-3.png
-  thumbnail: "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/thumbnail.png"
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/thumbnail.png
   scheme: http
-  port_map: "18010"
+  port_map: '18010'
   tips:
     before_install:
       en_US: |
         **Default Account**
-        
+
         | Username | Password |
         |----------|----------|
         | `casaos`    | `casaos` |
       en_GB: |
         **Default Account**
-        
+
         | Username | Password |
         |----------|----------|
         | `casaos`    | `casaos` |
       it_IT: |
         **Account Predefinito**
-        
+
         | Nome utente | Password |
         |-------------|----------|
         | `casaos`    | `casaos` |
       nb_NO: |
         **Standardkonto**
-        
+
         | Brukernavn | Passord |
         |------------|---------|
         | `casaos`   | `casaos` |
       zh_CN: |
         **默认账户**
-        
+
         | 用户名 | 密码 |
         |--------|------|
         | `casaos` | `casaos` |
       ja_JP: |
         **デフォルトアカウント**
-        
+
         | ユーザー名 | パスワード |
         |------------|------------|
         | `casaos`   | `casaos`   |
       ko_KR: |
         **기본 계정**
-        
+
         | 사용자 이름 | 비밀번호 |
         |-------------|----------|
         | `casaos`    | `casaos`  |
       fr_FR: |
         **Compte par Défaut**
-        
+
         | Nom d'utilisateur | Mot de passe |
         |-------------------|--------------|
         | `casaos`          | `casaos`      |
       de_DE: |
         **Standardkonto**
-        
+
         | Benutzername | Passwort |
         |--------------|----------|
         | `casaos`     | `casaos`  |
       sv_SE: |
         **Standardkonto**
-        
+
         | Användarnamn | Lösenord |
         |--------------|----------|
         | `casaos`     | `casaos`  |
       el_GR: |
         **Προεπιλεγμένος Λογαριασμός**
-        
+
         | Όνομα Χρήστη | Κωδικός Πρόσβασης |
         |---------------|-------------------|
         | `casaos`      | `casaos`          |
       hr_HR: |
         **Zadani Račun**
-        
+
         | Korisničko ime | Lozinka |
         |----------------|---------|
         | `casaos`       | `casaos` |
       pt_PT: |
         **Conta Padrão**
-        
+
         | Nome de Utilizador | Palavra-passe |
         |--------------------|----------------|
         | `casaos`           | `casaos`       |
       ru_RU: |
         **Учетная запись по умолчанию**
-        
+
         | Имя пользователя | Пароль |
         |------------------|--------|
         | `casaos`         | `casaos` |
       tr_TR: |
         **Varsayılan Hesap**
-        
+
         | Kullanıcı Adı | Parola |
         |---------------|--------|
         | `casaos`      | `casaos` |
@@ -961,3 +966,5 @@ x-casaos:
     pt_PT: ArchiveBox
     ru_RU: ArchiveBox
     tr_TR: ArchiveBox
+x-roqueos:
+  mountShared: true

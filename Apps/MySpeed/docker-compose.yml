@@ -9,7 +9,7 @@ services:
     image: germannewsmaker/myspeed:1.0.9
     ports:
       - target: 5216
-        published: "5216"
+        published: '5216'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -20,7 +20,7 @@ services:
     privileged: false
     x-casaos:
       ports:
-        - container: "5216"
+        - container: '5216'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
@@ -30,7 +30,6 @@ services:
           description:
             en_us: MySpeed data folder
             zh_cn: MySpeed数据文件夹
-
 x-casaos:
   architectures:
     - amd64
@@ -57,4 +56,5 @@ x-casaos:
     en_us: MySpeed
     pt_br: MySpeed
   index: /
-  port_map: "5216"
+  port_map: '5216'
+  scheme: http

@@ -48,3 +48,4 @@ x-casaos:
   store_app_id: playit-agent
   title:
     en_us: Playit Agent
+  scheme: http

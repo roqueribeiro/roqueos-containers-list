@@ -2,14 +2,14 @@ name: filedrop
 services:
   filedrop:
     environment:
-      PGID: $PGID # Preset Group ID
-      PUID: $PUID # Preset User ID
+      PGID: $PGID
+      PUID: $PUID
       TZ: $TZ
     image: noecl/filedrop:1.0.1
     deploy:
       resources:
         reservations:
-          memory: "2048M"
+          memory: 2048M
     restart: unless-stopped
     x-casaos:
       envs:
@@ -25,10 +25,10 @@ services:
       volumes:
         - container: /var/file_drop_files
           description:
-            en_us: "Directory where your files are stored"
+            en_us: Directory where your files are stored
     ports:
       - target: 8000
-        published: "8000"
+        published: '8000'
         protocol: tcp
     volumes:
       - type: bind
@@ -72,20 +72,20 @@ x-casaos:
     ko_kr: |
       FileDrop은 가족, 친구 또는 동료와 파일을 쉽게 공유할 수 있는 자체 호스팅 파일 공유 서비스입니다. 사용하기 쉽고 리소스를 적게 사용하도록 설계되었습니다.
   tagline:
-    en_us: "FileDrop is a free, open source file sharing service"
-    zh_cn: "FileDrop 是一项免费的开放源代码文件共享服务。"
-    ar_sa: "FileDrop هي خدمة مشاركة ملفات مجانية ومفتوحة المصدر"
-    de_de: "FileDrop ist ein kostenloser Open-Source-Dienst zur gemeinsamen Nutzung von Dateien."
-    es_es: "FileDrop es un servicio gratuito de código abierto para compartir archivos."
-    fr_fr: "FileDrop est un service de partage de fichiers, open source et gratuit"
-    hu_hu: "A FileDrop egy ingyenes, nyílt forráskódú fájlmegosztó szolgáltatás."
-    it_it: "FileDrop è un servizio di condivisione di file gratuito e open source."
-    ru_ru: "FileDrop - это бесплатный файлообменный сервис с открытым исходным кодом."
-    pl_pl: "FileDrop to darmowa usługa udostępniania plików typu open source."
-    pt_br: "O FileDrop é um serviço de partilha de ficheiros gratuito e de código aberto."
-    sv_se: "FileDrop är en gratis fildelningstjänst med öppen källkod."
-    uk_ua: "FileDrop - це безкоштовний сервіс обміну файлами з відкритим вихідним кодом."
-    ko_kr: "FileDrop은 무료 오픈 소스 파일 공유 서비스입니다."
+    en_us: FileDrop is a free, open source file sharing service
+    zh_cn: FileDrop 是一项免费的开放源代码文件共享服务。
+    ar_sa: FileDrop هي خدمة مشاركة ملفات مجانية ومفتوحة المصدر
+    de_de: FileDrop ist ein kostenloser Open-Source-Dienst zur gemeinsamen Nutzung von Dateien.
+    es_es: FileDrop es un servicio gratuito de código abierto para compartir archivos.
+    fr_fr: FileDrop est un service de partage de fichiers, open source et gratuit
+    hu_hu: A FileDrop egy ingyenes, nyílt forráskódú fájlmegosztó szolgáltatás.
+    it_it: FileDrop è un servizio di condivisione di file gratuito e open source.
+    ru_ru: FileDrop - это бесплатный файлообменный сервис с открытым исходным кодом.
+    pl_pl: FileDrop to darmowa usługa udostępniania plików typu open source.
+    pt_br: O FileDrop é um serviço de partilha de ficheiros gratuito e de código aberto.
+    sv_se: FileDrop är en gratis fildelningstjänst med öppen källkod.
+    uk_ua: FileDrop - це безкоштовний сервіс обміну файлами з відкритим вихідним кодом.
+    ko_kr: FileDrop은 무료 오픈 소스 파일 공유 서비스입니다.
   developer: Noé Favier (noe.favier@outlook.com)
   author: Noé Favier
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Filedrop/icon.png
@@ -94,4 +94,7 @@ x-casaos:
   title:
     en_us: FileDrop
   category: Cloud
-  port_map: "8000"
+  port_map: '8000'
+  scheme: http
+x-roqueos:
+  mountShared: true

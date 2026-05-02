@@ -9,11 +9,11 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "256M"
+          memory: 256M
     network_mode: bridge
     ports:
       - target: 8989
-        published: "8989"
+        published: '8989'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -41,11 +41,10 @@ services:
             en_us: Run Sonarr as specified gid.
             zh_cn: 以指定的gid运行Sonarr
       ports:
-        - container: "8989"
+        - container: '8989'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
-
       volumes:
         - container: /config
           description:
@@ -107,4 +106,7 @@ x-casaos:
   title:
     en_us: Sonarr
   index: /
-  port_map: "8989"
+  port_map: '8989'
+  scheme: http
+x-roqueos:
+  mountShared: true

@@ -9,12 +9,12 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: "3080"
+        published: '3080'
         protocol: tcp
     restart: unless-stopped
     x-casaos:
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
             en_us: WebUI HTTP Port
     container_name: chatbot-ui
@@ -60,4 +60,5 @@ x-casaos:
   title:
     en_us: Chatbot UI
   index: /
-  port_map: "3080"
+  port_map: '3080'
+  scheme: http

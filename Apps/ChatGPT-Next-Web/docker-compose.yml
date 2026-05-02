@@ -5,9 +5,9 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-      CODE: ""
-      PROXY_URL: ""
-      BASE_URL: "https://api.openai.com"
+      CODE: ''
+      PROXY_URL: ''
+      BASE_URL: https://api.openai.com
     image: yidadaa/chatgpt-next-web:v2.16.1
     deploy:
       resources:
@@ -16,33 +16,32 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: "3000"
+        published: '3000'
         protocol: tcp
     restart: unless-stopped
     x-casaos:
       envs:
         - container: TZ
           description:
-            en_us: "timezone"
-            zh_cn: "时区"
+            en_us: timezone
+            zh_cn: 时区
         - container: CODE
           description:
             en_us: Access password, separated by comma.
             zh_cn: 访问密码，用英文逗号分隔。
         - container: PROXY_URL
           description:
-            en_us: "http proxy"
-            zh_cn: "http 代理"
+            en_us: http proxy
+            zh_cn: http 代理
         - container: BASE_URL
           description:
             en_us: Override OpenAI API request base URL.
             zh_cn: 覆盖 OpenAI API 请求基础 URL。
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
-
     container_name: chatgpt-next-web
 x-casaos:
   architectures:
@@ -66,4 +65,5 @@ x-casaos:
   tips: {}
   title:
     en_us: ChatGPT Next Web
-  port_map: "3000"
+  port_map: '3000'
+  scheme: http

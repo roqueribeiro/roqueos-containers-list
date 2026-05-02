@@ -9,19 +9,19 @@ services:
     network_mode: bridge
     ports:
       - target: 53
-        published: "531"
+        published: '531'
         protocol: tcp
       - target: 53
-        published: "531"
+        published: '531'
         protocol: udp
       - target: 3000
-        published: "3001"
+        published: '3001'
         protocol: tcp
       - target: 853
-        published: "853"
+        published: '853'
         protocol: tcp
       - target: 784
-        published: "784"
+        published: '784'
         protocol: udp
     restart: unless-stopped
     volumes:
@@ -33,33 +33,32 @@ services:
         target: /opt/adguardhome/conf
     x-casaos:
       ports:
-        - container: "53"
+        - container: '53'
           description:
-            en_us: ""
-        - container: "53"
+            en_us: ''
+        - container: '53'
           description:
-            en_us: ""
-        - container: "3000"
+            en_us: ''
+        - container: '3000'
           description:
-            en_us: ""
-        - container: "853"
+            en_us: ''
+        - container: '853'
           description:
-            en_us: ""
-        - container: "784"
+            en_us: ''
+        - container: '784'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /opt/adguardhome/work
           description:
-            en_us: ""
+            en_us: ''
         - container: /opt/adguardhome/conf
           description:
-            en_us: ""
+            en_us: ''
     container_name: adguard-home
 x-casaos:
   architectures:
-    - "386"
+    - '386'
     - amd64
     - arm
     - arm64
@@ -70,11 +69,11 @@ x-casaos:
   description:
     en_us: |
       Difference from Traditional Ad Blockers. Unlike traditional ad-blocking plugins that work only on individual devices, AdGuard Home offers a network-wide solution. By setting it up, you can block ads and trackers across all your home devices without needing to install any additional software on each device. This means comprehensive protection with minimal effort.
-      
+
       How AdGuard Home Works and How to Use It. AdGuard Home functions as a DNS server that reroutes tracking domains to a "black hole," effectively preventing your devices from connecting to these servers. This blocks ads and trackers not only on your computer but also on your smartphone and smart home devices. To start using AdGuard Home, deploy it on your device, then change the DNS address assigned by DHCP on your router to the IP address of your AdGuard Home server.
-      
+
       Benefits of Deploying AdGuard Home on Zima Private Cloud. Deploying AdGuard Home on a Zima device simplifies network-wide ad and tracker blocking, providing a seamless and secure browsing experience for all your home devices. With Zima, you gain the flexibility to monitor network activity and create custom filtering rules tailored to your needs.
-    zh_cn: | 
+    zh_cn: |
       与传统广告拦截器的不同之处。不同于仅在单个设备上工作的传统广告拦截插件，AdGuard Home 提供了一种网络范围的解决方案。通过设置它，您可以在所有家庭设备上屏蔽广告和跟踪器，而无需在每个设备上安装额外的软件。这意味着以最少的努力获得全面的保护。
 
       AdGuard Home 的工作原理及使用方法。AdGuard Home 作为一个 DNS 服务器，通过将跟踪域重定向到“黑洞”来有效地防止您的设备连接到这些服务器。这不仅能在您的计算机上屏蔽广告和跟踪器，还能在您的智能手机和智能家居设备上实现。要开始使用 AdGuard Home，请将其部署在您的设备上，然后将路由器通过 DHCP 分配的 DNS 地址更改为 AdGuard Home 服务器的 IP 地址。
@@ -116,4 +115,5 @@ x-casaos:
   title:
     en_us: AdGuard Home
   index: /
-  port_map: "3001"
+  port_map: '3001'
+  scheme: http

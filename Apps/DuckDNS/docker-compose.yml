@@ -3,19 +3,18 @@ services:
   duckdns:
     image: lscr.io/linuxserver/duckdns:latest
     container_name: duckdns
-    network_mode: host #optional
+    network_mode: host
     environment:
-      - PUID=1000 #optional
-      - PGID=1000 #optional
-      - TZ=Etc/UTC #optional
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
       - SUBDOMAINS=subdomain1,subdomain2
       - TOKEN=token
-      - UPDATE_IP=ipv6 #optional
-      - LOG_FILE=false #optional
+      - UPDATE_IP=ipv6
+      - LOG_FILE=false
     volumes:
-      - /DATA/AppData/duckdns:/config #optional
+      - /DATA/AppData/duckdns:/config
     restart: unless-stopped
-
 x-casaos:
   architectures:
     - amd64
@@ -62,13 +61,12 @@ x-casaos:
         Will update IPv6 address by default. You can modify it by settings.
 
         Please register sub-domain on https://www.duckdns.org/ and gain your token.
-
       zh_cn: |
         请注意
         将默认更新IPv6，你可以在设置面板更改。
 
         请在https://www.duckdns.org/注册子域名并获取token。
-
   title:
     en_us: duckdns
   index: /
+  scheme: http

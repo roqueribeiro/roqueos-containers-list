@@ -42,6 +42,6 @@ x-casaos:
       zh_cn: 默认登录账号 `666`，默认登录密码 `666`,提示：`每次更新前，请记得备份好配置`
   title:
     en_us: Lucky
-  port_map: "16601"
+  port_map: '16601'
   scheme: http
   store_app_id: lucky

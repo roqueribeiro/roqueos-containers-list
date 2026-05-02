@@ -9,7 +9,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8000
-        published: "8000"
+        published: '8000'
         protocol: tcp
     restart: always
     volumes:
@@ -18,18 +18,18 @@ services:
         target: /2fauth
     x-casaos:
       ports:
-        - container: "8000"
+        - container: '8000'
           description:
-            en_us: ""
+            en_us: ''
       volumes:
         - container: /2fauth
           description:
-            en_us: ""
+            en_us: ''
     container_name: 2fauth
 x-casaos:
   architectures:
     - amd64
-    - "386"
+    - '386'
     - arm64
     - arm
   main: 2fauth
@@ -74,4 +74,5 @@ x-casaos:
   title:
     en_us: 2FAuth
   index: /
-  port_map: "8000"
+  port_map: '8000'
+  scheme: http

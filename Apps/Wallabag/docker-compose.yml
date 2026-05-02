@@ -10,7 +10,7 @@ services:
     network_mode: bridge
     ports:
       - target: 80
-        published: "25661"
+        published: '25661'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -21,7 +21,13 @@ services:
       SYMFONY__ENV__DOMAIN_NAME: http://<IP>:25661
       SYMFONY__ENV__SERVER_NAME: Wallabag
     healthcheck:
-      test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost/api/info"]
+      test:
+        - CMD
+        - wget
+        - '--no-verbose'
+        - '--tries=1'
+        - '--spider'
+        - http://localhost/api/info
       interval: 1m
       timeout: 3s
     x-casaos:
@@ -79,7 +85,7 @@ services:
             ru_RU: Имя сервера
             tr_TR: Sunucu adı
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_US: Wallabag HTTP Port
             en_GB: Wallabag HTTP Port
@@ -455,38 +461,38 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Wallabag/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Wallabag/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Wallabag/screenshot-3.png
-  thumbnail: ""
+  thumbnail: ''
   tips:
     before_install:
       en_US: |
         You need to set the environment variable `SYMFONY__ENV__DOMAIN_NAME` to your domain name or IP address, which can be modified through the Wallabag settings page.
-        
+
         **Default Account**
-        
+
         | Username | Password |
         |----------|----------|
         | `wallabag`    | `wallabag` |
       en_GB: |
         You need to set the environment variable `SYMFONY__ENV__DOMAIN_NAME` to your domain name or IP address, which can be modified through the Wallabag settings page.
-        
+
         **Default Account**
-        
+
         | Username | Password |
         |----------|----------|
         | `wallabag`    | `wallabag` |
       it_IT: |
         È necessario impostare la variabile d'ambiente `SYMFONY__ENV__DOMAIN_NAME` al tuo nome di dominio o indirizzo IP, che può essere modificato attraverso la pagina delle impostazioni di Wallabag.
-        
+
         **Account Predefinito**
-        
+
         | Nome Utente | Password |
         |-------------|----------|
         | `wallabag`  | `wallabag` |
       nb_NO: |
         Du må sette miljøvariabelen `SYMFONY__ENV__DOMAIN_NAME` til ditt domenenavn eller IP-adresse, som kan endres gjennom Wallabag-innstillingssiden.
-        
+
         **Standard Konto**
-        
+
         | Username | Password |
         |----------|----------|
         | `wallabag`    | `wallabag` |
@@ -494,92 +500,92 @@ x-casaos:
         需要将环境变量 `SYMFONY__ENV__DOMAIN_NAME` 设置为你的域名或者 IP 地址，可以通过 Wallabag 的设置页面进行修改。
 
         **默认账号**
-        
+
         | 用户名 | 密码   |
         | -------- | ---------- |
         | `wallabag`    | `wallabag` |
       ja_JP: |
         環境変数 `SYMFONY__ENV__DOMAIN_NAME` をあなたのドメイン名またはIPアドレスに設定する必要があります。これはWallabag設定ページから変更できます。
-        
+
         **デフォルトアカウント**
-        
+
         | ユーザー名 | パスワード |
         |-----------|-----------|
         | `wallabag` | `wallabag` |
       ko_KR: |
         환경변수 `SYMFONY__ENV__DOMAIN_NAME`을 도메인 이름이나 IP 주소로 설정해야 합니다. 이는 Wallabag 설정 페이지에서 수정할 수 있습니다.
-        
+
         **기본 계정**
-        
+
         | 사용자명 | 비밀번호 |
         |---------|---------|
         | `wallabag` | `wallabag` |
       fr_FR: |
         Vous devez définir la variable d'environnement `SYMFONY__ENV__DOMAIN_NAME` sur votre nom de domaine ou adresse IP, qui peut être modifiée via la page des paramètres Wallabag.
-        
+
         **Compte Par Défaut**
-        
+
         | Nom d'utilisateur | Mot de passe |
         |-------------------|--------------|
         | `wallabag`        | `wallabag`   |
       de_DE: |
         Sie müssen die Umgebungsvariable `SYMFONY__ENV__DOMAIN_NAME` auf Ihren Domainnamen oder Ihre IP-Adresse setzen, die über die Wallabag-Einstellungsseite geändert werden kann.
-        
+
         **Standard-Konto**
-        
+
         | Benutzername | Passwort |
         |--------------|----------|
         | `wallabag`   | `wallabag` |
       sv_SE: |
         Du behöver ställa in miljövariabeln `SYMFONY__ENV__DOMAIN_NAME` till ditt domännamn eller IP-adress, som kan ändras genom Wallabag-inställningssidan.
-        
+
         **Standardkonto**
-        
+
         | Användarnamn | Lösenord |
         |--------------|----------|
         | `wallabag`   | `wallabag` |
       el_GR: |
         Πρέπει να ορίσετε τη μεταβλητή περιβάλλοντος `SYMFONY__ENV__DOMAIN_NAME` στο όνομα τομέα ή τη διεύθυνση IP σας, που μπορεί να τροποποιηθεί μέσω της σελίδας ρυθμίσεων Wallabag.
-        
+
         **Προεπιλεγμένος Λογαριασμός**
-        
+
         | Όνομα Χρήστη | Κωδικός |
         |---------------|---------|
         | `wallabag`    | `wallabag` |
       hr_HR: |
         Morate postaviti varijablu okruženja `SYMFONY__ENV__DOMAIN_NAME` na vaše ime domene ili IP adresu, što se može promijeniti kroz Wallabag stranicu postavki.
-        
+
         **Zadani Račun**
-        
+
         | Korisničko ime | Lozinka |
         |----------------|---------|
         | `wallabag`     | `wallabag` |
       pt_PT: |
         Precisa de definir a variável de ambiente `SYMFONY__ENV__DOMAIN_NAME` para o seu nome de domínio ou endereço IP, que pode ser modificado através da página de configurações do Wallabag.
-        
+
         **Conta Predefinida**
-        
+
         | Nome de Utilizador | Palavra-passe |
         |-------------------|---------------|
         | `wallabag`        | `wallabag`    |
       ru_RU: |
         Вам нужно установить переменную окружения `SYMFONY__ENV__DOMAIN_NAME` на ваше доменное имя или IP-адрес, которое можно изменить через страницу настроек Wallabag.
-        
+
         **Учётная запись по умолчанию**
-        
+
         | Имя пользователя | Пароль |
         |------------------|--------|
         | `wallabag`       | `wallabag` |
       tr_TR: |
         Çevre değişkeni `SYMFONY__ENV__DOMAIN_NAME`'i alan adınız veya IP adresiniz olarak ayarlamanız gerekir, bu Wallabag ayarlar sayfasından değiştirilebilir.
-        
+
         **Varsayılan Hesap**
-        
+
         | Kullanıcı Adı | Şifre |
         |---------------|-------|
         | `wallabag`    | `wallabag` |
   scheme: http
-  port_map: "25661"
+  port_map: '25661'
   index: /
   title:
     en_US: Wallabag

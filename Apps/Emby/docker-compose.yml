@@ -8,8 +8,8 @@ services:
       - /dev/video11:/dev/video11
       - /dev/video12:/dev/video12
     environment:
-      PGID: "1000"
-      PUID: "1000"
+      PGID: '1000'
+      PUID: '1000'
       TZ: $TZ
     image: linuxserver/emby:4.9.1
     deploy:
@@ -19,10 +19,10 @@ services:
     network_mode: bridge
     ports:
       - target: 8096
-        published: "8096"
+        published: '8096'
         protocol: tcp
       - target: 8920
-        published: "8920"
+        published: '8920'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -39,32 +39,30 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "8096"
+        - container: '8096'
           description:
-            en_us: ""
-
-        - container: "8920"
+            en_us: ''
+        - container: '8920'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /data/tvshows
           description:
-            en_us: ""
+            en_us: ''
         - container: /data/movies
           description:
-            en_us: ""
+            en_us: ''
     container_name: emby
 x-casaos:
   architectures:
@@ -401,4 +399,7 @@ x-casaos:
   title:
     en_US: Emby
   index: /
-  port_map: "8096"
+  port_map: '8096'
+  scheme: http
+x-roqueos:
+  mountShared: true

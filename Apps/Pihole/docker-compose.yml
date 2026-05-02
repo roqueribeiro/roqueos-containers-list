@@ -13,16 +13,16 @@ services:
     network_mode: bridge
     ports:
       - target: 80
-        published: "8800"
+        published: '8800'
         protocol: tcp
       - target: 53
-        published: "53"
+        published: '53'
         protocol: tcp
       - target: 53
-        published: "53"
+        published: '53'
         protocol: udp
       - target: 443
-        published: "8443"
+        published: '8443'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -85,7 +85,7 @@ services:
             ru_RU: Режим прослушивания DNS
             tr_TR: DNS dinleme modu
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -102,8 +102,7 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP порт WebUI
             tr_TR: WebUI HTTP Portu
-
-        - container: "53"
+        - container: '53'
           description:
             en_US: Pi-hole DNS port
             en_GB: Pi-hole DNS port
@@ -120,8 +119,7 @@ services:
             pt_PT: Porta DNS Pi-hole
             ru_RU: DNS порт Pi-hole
             tr_TR: Pi-hole DNS portu
-
-        - container: "53"
+        - container: '53'
           description:
             en_US: Pi-hole DNS port
             en_GB: Pi-hole DNS port
@@ -139,8 +137,7 @@ services:
             ru_RU: DNS порт Pi-hole
             tr_TR: Pi-hole DNS portu
           protocol: udp
-
-        - container: "443"
+        - container: '443'
           description:
             en_US: Pi-hole HTTPS port
             en_GB: Pi-hole HTTPS port
@@ -158,7 +155,6 @@ services:
             ru_RU: HTTPS порт Pi-hole
             tr_TR: Pi-hole HTTPS portu
           protocol: tcp
-
       volumes:
         - container: /etc/pihole
           description:
@@ -182,7 +178,7 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-    - "386"
+    - '386'
     - arm
   main: pihole
   author: CasaOS Team
@@ -531,4 +527,5 @@ x-casaos:
   title:
     en_US: Pi-hole
   index: /admin
-  port_map: "8800"
+  port_map: '8800'
+  scheme: https

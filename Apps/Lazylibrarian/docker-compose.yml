@@ -14,7 +14,7 @@ services:
     network_mode: bridge
     ports:
       - target: 5299
-        published: "5299"
+        published: '5299'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -31,31 +31,30 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: "Run LazyLibrarian as specified UID"
+            en_us: Run LazyLibrarian as specified UID
         - container: PGID
           description:
-            en_us: "Run LazyLibrarian as specified GID"
+            en_us: Run LazyLibrarian as specified GID
         - container: TZ
           description:
-            en_us: "TimeZone"
+            en_us: TimeZone
         - container: DOCKER_MODS
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "5299"
+        - container: '5299'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /downloads
           description:
-            en_us:  "LazyLibrarian downloads directory"
+            en_us: LazyLibrarian downloads directory
         - container: /books
           description:
-            en_us:  "LazyLibrarian Books directory"
+            en_us: LazyLibrarian Books directory
         - container: /config
           description:
-            en_us:  "LazyLibrarian config directory"
+            en_us: LazyLibrarian config directory
     container_name: lazylibrarian
 x-casaos:
   architectures:
@@ -102,4 +101,7 @@ x-casaos:
   tips: {}
   title:
     en_us: Lazylibrarian
-  port_map: "5299"
+  port_map: '5299'
+  scheme: http
+x-roqueos:
+  mountShared: true

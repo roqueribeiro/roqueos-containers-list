@@ -3,8 +3,8 @@ services:
   ombi:
     environment:
       BASE_URL: /ombi
-      PGID: "1000"
-      PUID: "1000"
+      PGID: '1000'
+      PUID: '1000'
       TZ: Europe/London
     image: linuxserver/ombi:4.47.1
     deploy:
@@ -14,7 +14,7 @@ services:
     network_mode: bridge
     ports:
       - target: 3579
-        published: "3579"
+        published: '3579'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -25,25 +25,24 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
         - container: BASE_URL
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "3579"
+        - container: '3579'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
     container_name: ombi
 x-casaos:
   architectures:
@@ -90,4 +89,7 @@ x-casaos:
   tips: {}
   title:
     en_us: Ombi
-  port_map: "3579"
+  port_map: '3579'
+  scheme: http
+x-roqueos:
+  mountShared: true

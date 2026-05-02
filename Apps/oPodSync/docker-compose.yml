@@ -1,5 +1,4 @@
 name: opodsync
-
 services:
   opodsync:
     image: ganeshlab/opodsync:latest
@@ -10,7 +9,7 @@ services:
           memory: 512M
     ports:
       - target: 8080
-        published: "8086"
+        published: '8086'
         protocol: tcp
     volumes:
       - type: bind
@@ -36,7 +35,7 @@ services:
             tr_TR: Sunucu ve podcast'ler için veri dizini
             zh_CN: 服务器和播客的数据目录
       ports:
-        - container: "8080"
+        - container: '8080'
           description:
             de_DE: Web-Interface-Port
             el_GR: Θύρα διασύνδεσης web
@@ -53,7 +52,6 @@ services:
             sv_SE: Webbgränssnittsport
             tr_TR: Web arayüzü portu
             zh_CN: Web界面端口
-
 x-casaos:
   title:
     de_DE: oPodSync
@@ -72,21 +70,21 @@ x-casaos:
     tr_TR: oPodSync
     zh_CN: oPodSync
   tagline:
-    de_DE: "Podcast-Synchronisationsdienst"
-    el_GR: "Υπηρεσία συγχρονισμού podcasts"
-    en_GB: "Podcast synchronization service"
-    en_US: "Podcast synchronization service"
-    fr_FR: "Service de synchronisation de podcasts"
-    hr_HR: "Usluga sinkronizacije podcasta"
-    it_IT: "Servizio di sincronizzazione podcast"
-    ja_JP: "ポッドキャスト同期サービス"
-    ko_KR: "팟캐스트 동기화 서비스"
-    nb_NO: "Podcast-synkroniseringstjeneste"
-    pt_PT: "Serviço de sincronização de podcasts"
-    ru_RU: "Сервис синхронизации подкастов"
-    sv_SE: "Podcast-synkroniseringstjänst"
-    tr_TR: "Podcast senkronizasyon hizmeti"
-    zh_CN: "播客同步服务"
+    de_DE: Podcast-Synchronisationsdienst
+    el_GR: Υπηρεσία συγχρονισμού podcasts
+    en_GB: Podcast synchronization service
+    en_US: Podcast synchronization service
+    fr_FR: Service de synchronisation de podcasts
+    hr_HR: Usluga sinkronizacije podcasta
+    it_IT: Servizio di sincronizzazione podcast
+    ja_JP: ポッドキャスト同期サービス
+    ko_KR: 팟캐스트 동기화 서비스
+    nb_NO: Podcast-synkroniseringstjeneste
+    pt_PT: Serviço de sincronização de podcasts
+    ru_RU: Сервис синхронизации подкастов
+    sv_SE: Podcast-synkroniseringstjänst
+    tr_TR: Podcast senkronizasyon hizmeti
+    zh_CN: 播客同步服务
   description:
     de_DE: |
       oPodSync ist ein Podcast-Synchronisationsdienst, der es Benutzern ermöglicht, ihre Podcast-Abonnements und Hörfortschritte über verschiedene Geräte hinweg zu synchronisieren. Es bietet eine serverseitige Lösung für die Verwaltung von Podcast-Daten und stellt sicher, dass Benutzer nahtlos zwischen ihren Geräten wechseln können.
@@ -101,7 +99,6 @@ x-casaos:
 
       **Mehr Erfahren:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     el_GR: |
       Το oPodSync είναι μια υπηρεσία συγχρονισμού podcasts που επιτρέπει στους χρήστες να συγχρονίζουν τις συνδρομές και την πρόοδο ακρόασης των podcasts τους σε διαφορετικές συσκευές. Παρέχει μια λύση από την πλευρά του διακομιστή για τη διαχείριση δεδομένων podcasts και διασφαλίζει ότι οι χρήστες μπορούν να αλλάζουν απρόσκοπτα μεταξύ των συσκευών τους.
 
@@ -115,7 +112,6 @@ x-casaos:
 
       **Μάθετε Περισσότερα:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     en_GB: |
       oPodSync is a podcast synchronization service that allows users to sync their podcast subscriptions and listening progress across multiple devices. It provides a server-side solution for managing podcast data and ensures that users can seamlessly switch between their devices.
 
@@ -129,7 +125,6 @@ x-casaos:
 
       **Learn More:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     en_US: |
       oPodSync is a podcast synchronization service that allows users to sync their podcast subscriptions and listening progress across multiple devices. It provides a server-side solution for managing podcast data and ensures that users can seamlessly switch between their devices.
 
@@ -143,7 +138,6 @@ x-casaos:
 
       **Learn More:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     fr_FR: |
       oPodSync est un service de synchronisation de podcasts qui permet aux utilisateurs de synchroniser leurs abonnements aux podcasts et leur progression d'écoute sur plusieurs appareils. Il fournit une solution côté serveur pour gérer les données des podcasts et garantit que les utilisateurs peuvent passer sans problème d'un appareil à l'autre.
 
@@ -157,7 +151,6 @@ x-casaos:
 
       **En Savoir Plus:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     hr_HR: |
       oPodSync je usluga sinkronizacije podcasta koja omogućuje korisnicima sinkronizaciju njihovih pretplata na podcaste i napretka slušanja na više uređaja. Pruža rješenje na strani poslužitelja za upravljanje podacima podcasta i osigurava da korisnici mogu neprimjetno prelaziti s jednog uređaja na drugi.
 
@@ -171,7 +164,6 @@ x-casaos:
 
       **Saznajte Više:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     it_IT: |
       oPodSync è un servizio di sincronizzazione di podcast che consente agli utenti di sincronizzare le loro iscrizioni ai podcast e i progressi di ascolto su più dispositivi. Fornisce una soluzione lato server per gestire i dati dei podcast e assicura che gli utenti possano passare senza problemi da un dispositivo all'altro.
 
@@ -185,7 +177,6 @@ x-casaos:
 
       **Scopri di Più:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     ja_JP: |
       oPodSyncは、複数のデバイス間でポッドキャストの購読と聴取進捗を同期できるポッドキャスト同期サービスです。ポッドキャストデータを管理するためのサーバーサイドソリューションを提供し、ユーザーがデバイス間をシームレスに切り替えられるようにします。
 
@@ -199,7 +190,6 @@ x-casaos:
 
       **詳細情報：**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     ko_KR: |
       oPodSync는 사용자가 여러 장치에서 팟캐스트 구독 및 청취 진행 상황을 동기화할 수 있는 팟캐스트 동기화 서비스입니다. 팟캐스트 데이터를 관리하기 위한 서버 측 솔루션을 제공하며 사용자가 장치 간을 원활하게 전환할 수 있도록 합니다.
 
@@ -213,7 +203,6 @@ x-casaos:
 
       **자세히 알아보기:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     nb_NO: |
       oPodSync er en podcast-synkroniseringstjeneste som lar brukere synkronisere sine podcast-abonnementer og lyttefremskritt på tvers av flere enheter. Den gir en server-side løsning for å administrere podcast-data og sikrer at brukere kan sømløst bytte mellom enhetene sine.
 
@@ -227,7 +216,6 @@ x-casaos:
 
       **Lær Mer:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     pt_PT: |
       O oPodSync é um serviço de sincronização de podcasts que permite aos utilizadores sincronizar as suas subscrições de podcasts e progresso de audição em múltiplos dispositivos. Fornece uma solução do lado do servidor para gerir dados de podcasts e garante que os utilizadores possam alternar sem problemas entre os seus dispositivos.
 
@@ -241,7 +229,6 @@ x-casaos:
 
       **Saiba Mais:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     ru_RU: |
       oPodSync - это сервис синхронизации подкастов, который позволяет пользователям синхронизировать свои подписки на подкасты и прогресс прослушивания на нескольких устройствах. Он предоставляет серверное решение для управления данными подкастов и обеспечивает бесшовный переход пользователей между своими устройствами.
 
@@ -255,7 +242,6 @@ x-casaos:
 
       **Узнать Больше:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     sv_SE: |
       oPodSync är en podcast-synkroniseringstjänst som låter användare synkronisera sina podcast-prenumerationer och lyssningsframsteg över flera enheter. Den erbjuder en server-side lösning för att hantera podcast-data och säkerställer att användare kan sömlöst växla mellan sina enheter.
 
@@ -269,7 +255,6 @@ x-casaos:
 
       **Läs Mer:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     tr_TR: |
       oPodSync, kullanıcıların podcast aboneliklerini ve dinleme ilerlemelerini birden fazla cihaz arasında senkronize etmelerine olanak tanıyan bir podcast senkronizasyon hizmetidir. Podcast verilerini yönetmek için sunucu tarafı bir çözüm sunar ve kullanıcıların cihazları arasında sorunsuz bir şekilde geçiş yapmasını sağlar.
 
@@ -283,7 +268,6 @@ x-casaos:
 
       **Daha Fazla Bilgi:**
       - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
-
     zh_CN: |
       oPodSync是一个播客同步服务，允许用户在多个设备间同步他们的播客订阅和收听进度。它提供了一个服务器端的解决方案来管理播客数据，并确保用户可以在他们的设备之间无缝切换。
 
@@ -301,7 +285,7 @@ x-casaos:
   category: Utilities
   author: ganeshlab
   main: opodsync
-  port_map: "8086"
+  port_map: '8086'
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/oPodSync/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/oPodSync/screenshot-1.png

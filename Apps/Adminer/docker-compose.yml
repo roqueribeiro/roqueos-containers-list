@@ -8,10 +8,10 @@ services:
           memory: 32M
     restart: unless-stopped
     ports:
-      - 8080:8080
+      - '8080:8080'
     x-casaos:
       ports:
-        - container: "8080"
+        - container: '8080'
           description:
             en_us: Adminer HTTP Port
             zh_cn: Adminer HTTP 端口
@@ -40,3 +40,4 @@ x-casaos:
   title:
     en_us: Adminer
   port_map: '8080'
+  scheme: http

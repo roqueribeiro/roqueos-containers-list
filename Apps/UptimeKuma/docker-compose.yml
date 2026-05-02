@@ -5,11 +5,11 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "128M"
+          memory: 128M
     network_mode: bridge
     ports:
       - target: 3001
-        published: "3001"
+        published: '3001'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -18,7 +18,7 @@ services:
         target: /app/data
     x-casaos:
       ports:
-        - container: "3001"
+        - container: '3001'
           description:
             en_US: WebUI Port
             en_GB: WebUI Port
@@ -35,7 +35,6 @@ services:
             pt_PT: Porta WebUI
             ru_RU: Порт WebUI
             tr_TR: WebUI Portu
-
       volumes:
         - container: /app/data
           description:
@@ -393,4 +392,5 @@ x-casaos:
   title:
     en_US: Uptime Kuma
   index: /
-  port_map: "3001"
+  port_map: '3001'
+  scheme: http

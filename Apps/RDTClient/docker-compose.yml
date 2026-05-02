@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-      UMASK: "002"
+      UMASK: '002'
     cpu_shares: 50
     command: []
     container_name: rdtclient
@@ -18,7 +18,7 @@ services:
       icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RDTClient/icon.png
     ports:
       - target: 6500
-        published: "6500"
+        published: '6500'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -31,18 +31,27 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
-  architectures:                  # a list of architectures that the app supports
-      - amd64
-      - arm
-      - arm64
+  architectures:
+    - amd64
+    - arm
+    - arm64
   author: calganaygun
   category: Downloader
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RDTClient/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RDTClient/screenshot-1.png
   index: /
-  port_map: "6500"
+  port_map: '6500'
   scheme: http
   store_app_id: rdtclient
+  tagline:
+    en_us: Web-based torrent client for Real-Debrid, Premiumize and AllDebrid
+    pt_br: Cliente de torrent web para Real-Debrid, Premiumize e AllDebrid
+  description:
+    en_us: RDT-Client (Real-Debrid Torrent Client) is a web interface that lets you add torrents to your Real-Debrid, Premiumize, or AllDebrid account and downloads the resulting files directly to your server. It exposes a qBittorrent-compatible API so the *arr stack (Sonarr, Radarr, Lidarr) can drive it transparently.
+    pt_br: RDT-Client (Real-Debrid Torrent Client) é uma interface web que adiciona torrents à sua conta Real-Debrid, Premiumize ou AllDebrid e baixa os arquivos direto pro servidor. Expõe uma API compatível com qBittorrent para que o stack *arr (Sonarr, Radarr, Lidarr) consiga consumir sem mexer em nada.
   title:
     en_us: Real-Debrid Torrent Client
+  main: rdtclient
+x-roqueos:
+  mountShared: true

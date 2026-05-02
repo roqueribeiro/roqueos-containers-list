@@ -12,30 +12,31 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-      CPU_FALLBACK: "true"
+      CPU_FALLBACK: 'true'
       NVIDIA_VISIBLE_DEVICES: all
     image: linuxserver/jellyfin:10.10.6
     deploy:
       resources:
         reservations:
-          memory: "256M"
+          memory: 256M
           devices:
             - driver: nvidia
               count: all
-              capabilities: [gpu]
+              capabilities:
+                - gpu
     network_mode: bridge
     ports:
       - target: 8096
-        published: "8097"
+        published: '8097'
         protocol: tcp
       - target: 8920
-        published: "8921"
+        published: '8921'
         protocol: tcp
       - target: 7359
-        published: "7359"
+        published: '7359'
         protocol: tcp
       - target: 1900
-        published: "1901"
+        published: '1901'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -67,26 +68,22 @@ services:
             en_us: The autodiscovery response domain or IP address.
             zh_cn: 自动发现响应域名或IP地址
       ports:
-        - container: "8096"
+        - container: '8096'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
-
-        - container: "8920"
+        - container: '8920'
           description:
             en_us: WebUI HTTPS Port
             zh_cn: WebUI HTTPS端口
-
-        - container: "7359"
+        - container: '7359'
           description:
             en_us: Jellyfin auto-discovery Port
             zh_cn: Jellyfin自动发现端口
-
-        - container: "1900"
+        - container: '1900'
           description:
             en_us: Jellyfin DLNA Port
             zh_cn: Jellyfin DLNA端口
-
       volumes:
         - container: /config
           description:
@@ -157,4 +154,7 @@ x-casaos:
   title:
     en_us: Jellyfin(Nvidia GPU)
   index: /
-  port_map: "8097"
+  port_map: '8097'
+  scheme: http
+x-roqueos:
+  mountShared: true

@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8080
-        published: "3080"
+        published: '3080'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -24,10 +24,10 @@ services:
       envs:
         - container: TZ
           description:
-            en_us: "timezone"
-            zh_cn: "时区"
+            en_us: timezone
+            zh_cn: 时区
       ports:
-        - container: "3080"
+        - container: '3080'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
@@ -51,5 +51,6 @@ x-casaos:
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/LabelStudio/thumbnail.jpg
   tips: {}
   title:
-    en_us: Label Studio   
-  port_map: "3080"
+    en_us: Label Studio
+  port_map: '3080'
+  scheme: http

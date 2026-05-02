@@ -11,31 +11,31 @@ services:
       - romm-network
     restart: unless-stopped
     ports:
-      - "8285:8080"
+      - '8285:8080'
     environment:
       - DB_HOST=romm-db
-      - DB_NAME=romm # Should match MARIADB_DATABASE in mariadb
-      - DB_USER=romm-user # Should match MARIADB_USER in mariadb
-      - DB_PASSWD=casaos # Should match MARIADB_PASSWORD in mariadb
-      - ROMM_AUTH_SECRET_KEY="" # Generate a key with `openssl rand -hex 32`
-      - IGDB_CLIENT_ID="" # Generate an ID and SECRET in IGDB
-      - IGDB_CLIENT_SECRET="" # https://api-docs.igdb.com/#account-creation
-      - SCREENSCRAPER_USER="" # Use your ScreenScraper username and password
-      - SCREENSCRAPER_PASSWORD="" # https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper
-      - STEAMGRIDDB_API_KEY="" # https://github.com/rommapp/romm/wiki/Metadata-Providers#steamgriddb
+      - DB_NAME=romm
+      - DB_USER=romm-user
+      - DB_PASSWD=casaos
+      - ROMM_AUTH_SECRET_KEY=""
+      - IGDB_CLIENT_ID=""
+      - IGDB_CLIENT_SECRET=""
+      - SCREENSCRAPER_USER=""
+      - SCREENSCRAPER_PASSWORD=""
+      - STEAMGRIDDB_API_KEY=""
     volumes:
-      - /DATA/AppData/$AppID/resources:/romm/resources # Resources fetched from IGDB (covers, screenshots, etc.)
-      - /DATA/AppData/$AppID/redis-data:/redis-data # Cached data for background tasks
-      - /DATA/AppData/$AppID/library:/romm/library # Your game library. Check https://github.com/rommapp/romm?tab=readme-ov-file#folder-structure for more details.
-      - /DATA/AppData/$AppID/assets:/romm/assets # Uploaded saves, states, etc.
-      - /DATA/AppData/$AppID/config:/romm/config # Path where config.yml is stored
+      - /DATA/AppData/$AppID/resources:/romm/resources
+      - /DATA/AppData/$AppID/redis-data:/redis-data
+      - /DATA/AppData/$AppID/library:/romm/library
+      - /DATA/AppData/$AppID/assets:/romm/assets
+      - /DATA/AppData/$AppID/config:/romm/config
     depends_on:
       romm-db:
         condition: service_healthy
         restart: true
     x-casaos:
       ports:
-        - container: "8080"
+        - container: '8080'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -209,21 +209,21 @@ services:
             tr_TR: Veritabanı Şifresi
         - container: ROMM_AUTH_SECRET_KEY
           description:
-            en_US: "Authentication Secret Key: Generate a key with `openssl rand -hex 32`"
-            en_GB: "Authentication Secret Key: Generate a key with `openssl rand -hex 32`"
-            it_IT: "Chiave segreta di autenticazione: genera una chiave con `openssl rand -hex 32`"
-            nb_NO: "Autentiseringsnøkkel: Generer en nøkkel med `openssl rand -hex 32`"
-            zh_CN: "认证密钥：使用 `openssl rand -hex 32` 生成密钥"
-            ja_JP: "認証シークレットキー：`openssl rand -hex 32` でキーを生成"
-            ko_KR: "인증 비밀 키: `openssl rand -hex 32`로 키 생성"
-            fr_FR: "Clé secrète d'authentification : générez une clé avec `openssl rand -hex 32`"
-            de_DE: "Authentifizierungsgeheimschlüssel: Generieren Sie einen Schlüssel mit `openssl rand -hex 32`"
-            sv_SE: "Autentiseringsnyckel: Generera en nyckel med `openssl rand -hex 32`"
-            el_GR: "Μυστικό κλειδί ελέγχου ταυτότητας: Δημιουργήστε ένα κλειδί με `openssl rand -hex 32`"
-            hr_HR: "Tajni ključ za autentikaciju: Generirajte ključ pomoću `openssl rand -hex 32`"
-            pt_PT: "Chave secreta de autenticação: Gerar uma chave com `openssl rand -hex 32`"
-            ru_RU: "Секретный ключ аутентификации: сгенерируйте ключ с помощью `openssl rand -hex 32`"
-            tr_TR: "Kimlik Doğrulama Gizli Anahtarı: `openssl rand -hex 32` ile anahtar oluşturun"
+            en_US: 'Authentication Secret Key: Generate a key with `openssl rand -hex 32`'
+            en_GB: 'Authentication Secret Key: Generate a key with `openssl rand -hex 32`'
+            it_IT: 'Chiave segreta di autenticazione: genera una chiave con `openssl rand -hex 32`'
+            nb_NO: 'Autentiseringsnøkkel: Generer en nøkkel med `openssl rand -hex 32`'
+            zh_CN: 认证密钥：使用 `openssl rand -hex 32` 生成密钥
+            ja_JP: 認証シークレットキー：`openssl rand -hex 32` でキーを生成
+            ko_KR: '인증 비밀 키: `openssl rand -hex 32`로 키 생성'
+            fr_FR: 'Clé secrète d''authentification : générez une clé avec `openssl rand -hex 32`'
+            de_DE: 'Authentifizierungsgeheimschlüssel: Generieren Sie einen Schlüssel mit `openssl rand -hex 32`'
+            sv_SE: 'Autentiseringsnyckel: Generera en nyckel med `openssl rand -hex 32`'
+            el_GR: 'Μυστικό κλειδί ελέγχου ταυτότητας: Δημιουργήστε ένα κλειδί με `openssl rand -hex 32`'
+            hr_HR: 'Tajni ključ za autentikaciju: Generirajte ključ pomoću `openssl rand -hex 32`'
+            pt_PT: 'Chave secreta de autenticação: Gerar uma chave com `openssl rand -hex 32`'
+            ru_RU: 'Секретный ключ аутентификации: сгенерируйте ключ с помощью `openssl rand -hex 32`'
+            tr_TR: 'Kimlik Doğrulama Gizli Anahtarı: `openssl rand -hex 32` ile anahtar oluşturun'
         - container: IGDB_CLIENT_ID
           description:
             en_US: IGDB Client ID
@@ -243,21 +243,21 @@ services:
             tr_TR: IGDB İstemci Kimliği
         - container: IGDB_CLIENT_SECRET
           description:
-            en_US: "IGDB Client Secret: https://api-docs.igdb.com/#account-creation"
-            en_GB: "IGDB Client Secret: https://api-docs.igdb.com/#account-creation"
-            it_IT: "Segreto client IGDB: https://api-docs.igdb.com/#account-creation"
-            nb_NO: "IGDB-klienthemmelighet: https://api-docs.igdb.com/#account-creation"
-            zh_CN: "IGDB 客户端密钥：https://api-docs.igdb.com/#account-creation"
-            ja_JP: "IGDB クライアントシークレット：https://api-docs.igdb.com/#account-creation"
-            ko_KR: "IGDB 클라이언트 시크릿: https://api-docs.igdb.com/#account-creation"
-            fr_FR: "Secret client IGDB : https://api-docs.igdb.com/#account-creation"
-            de_DE: "IGDB-Client-Geheimnis: https://api-docs.igdb.com/#account-creation"
-            sv_SE: "IGDB-klienthemlighet: https://api-docs.igdb.com/#account-creation"
-            el_GR: "Μυστικό πελάτη IGDB: https://api-docs.igdb.com/#account-creation"
-            hr_HR: "IGDB tajni ključ klijenta: https://api-docs.igdb.com/#account-creation"
-            pt_PT: "Segredo do cliente IGDB: https://api-docs.igdb.com/#account-creation"
-            ru_RU: "Секрет клиента IGDB: https://api-docs.igdb.com/#account-creation"
-            tr_TR: "IGDB İstemci Gizli Anahtarı: https://api-docs.igdb.com/#account-creation"
+            en_US: 'IGDB Client Secret: https://api-docs.igdb.com/#account-creation'
+            en_GB: 'IGDB Client Secret: https://api-docs.igdb.com/#account-creation'
+            it_IT: 'Segreto client IGDB: https://api-docs.igdb.com/#account-creation'
+            nb_NO: 'IGDB-klienthemmelighet: https://api-docs.igdb.com/#account-creation'
+            zh_CN: IGDB 客户端密钥：https://api-docs.igdb.com/#account-creation
+            ja_JP: IGDB クライアントシークレット：https://api-docs.igdb.com/#account-creation
+            ko_KR: 'IGDB 클라이언트 시크릿: https://api-docs.igdb.com/#account-creation'
+            fr_FR: 'Secret client IGDB : https://api-docs.igdb.com/#account-creation'
+            de_DE: 'IGDB-Client-Geheimnis: https://api-docs.igdb.com/#account-creation'
+            sv_SE: 'IGDB-klienthemlighet: https://api-docs.igdb.com/#account-creation'
+            el_GR: 'Μυστικό πελάτη IGDB: https://api-docs.igdb.com/#account-creation'
+            hr_HR: 'IGDB tajni ključ klijenta: https://api-docs.igdb.com/#account-creation'
+            pt_PT: 'Segredo do cliente IGDB: https://api-docs.igdb.com/#account-creation'
+            ru_RU: 'Секрет клиента IGDB: https://api-docs.igdb.com/#account-creation'
+            tr_TR: 'IGDB İstemci Gizli Anahtarı: https://api-docs.igdb.com/#account-creation'
         - container: SCREENSCRAPER_USER
           description:
             en_US: ScreenScraper Username
@@ -277,38 +277,38 @@ services:
             tr_TR: ScreenScraper Kullanıcı Adı
         - container: SCREENSCRAPER_PASSWORD
           description:
-            en_US: "ScreenScraper Password: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            en_GB: "ScreenScraper Password: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            it_IT: "Password ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            nb_NO: "ScreenScraper-passord: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            zh_CN: "ScreenScraper 密码：https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            ja_JP: "ScreenScraper パスワード：https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            ko_KR: "ScreenScraper 비밀번호: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            fr_FR: "Mot de passe ScreenScraper : https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            de_DE: "ScreenScraper-Passwort: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            sv_SE: "ScreenScraper-lösenord: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            el_GR: "Κωδικός πρόσβασης ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            hr_HR: "Lozinka ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            pt_PT: "Palavra-passe ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            ru_RU: "Пароль ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
-            tr_TR: "ScreenScraper Şifresi: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper"
+            en_US: 'ScreenScraper Password: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            en_GB: 'ScreenScraper Password: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            it_IT: 'Password ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            nb_NO: 'ScreenScraper-passord: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            zh_CN: ScreenScraper 密码：https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper
+            ja_JP: ScreenScraper パスワード：https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper
+            ko_KR: 'ScreenScraper 비밀번호: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            fr_FR: 'Mot de passe ScreenScraper : https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            de_DE: 'ScreenScraper-Passwort: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            sv_SE: 'ScreenScraper-lösenord: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            el_GR: 'Κωδικός πρόσβασης ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            hr_HR: 'Lozinka ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            pt_PT: 'Palavra-passe ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            ru_RU: 'Пароль ScreenScraper: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
+            tr_TR: 'ScreenScraper Şifresi: https://docs.romm.app/latest/Getting-Started/Metadata-Providers/#screenscraper'
         - container: STEAMGRIDDB_API_KEY
           description:
-            en_US: "SteamGridDB API Key: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            en_GB: "SteamGridDB API Key: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            it_IT: "Chiave API SteamGridDB: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            nb_NO: "SteamGridDB API-nøkkel: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            zh_CN: "SteamGridDB API 密钥：https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            ja_JP: "SteamGridDB API キー：https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            ko_KR: "SteamGridDB API 키: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            fr_FR: "Clé API SteamGridDB : https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            de_DE: "SteamGridDB-API-Schlüssel: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            sv_SE: "SteamGridDB API-nyckel: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            el_GR: "Κλειδί API SteamGridDB: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            hr_HR: "SteamGridDB API ključ: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            pt_PT: "Chave API SteamGridDB: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            ru_RU: "Ключ API SteamGridDB: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
-            tr_TR: "SteamGridDB API Anahtarı: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb"
+            en_US: 'SteamGridDB API Key: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            en_GB: 'SteamGridDB API Key: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            it_IT: 'Chiave API SteamGridDB: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            nb_NO: 'SteamGridDB API-nøkkel: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            zh_CN: SteamGridDB API 密钥：https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb
+            ja_JP: SteamGridDB API キー：https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb
+            ko_KR: 'SteamGridDB API 키: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            fr_FR: 'Clé API SteamGridDB : https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            de_DE: 'SteamGridDB-API-Schlüssel: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            sv_SE: 'SteamGridDB API-nyckel: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            el_GR: 'Κλειδί API SteamGridDB: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            hr_HR: 'SteamGridDB API ključ: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            pt_PT: 'Chave API SteamGridDB: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            ru_RU: 'Ключ API SteamGridDB: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
+            tr_TR: 'SteamGridDB API Anahtarı: https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb'
   romm-db:
     image: mariadb:11.8.2
     container_name: romm-db
@@ -316,14 +316,18 @@ services:
     networks:
       - romm-network
     environment:
-      - MARIADB_ROOT_PASSWORD=casaos # Use a unique, secure password
+      - MARIADB_ROOT_PASSWORD=casaos
       - MARIADB_DATABASE=romm
       - MARIADB_USER=romm-user
       - MARIADB_PASSWORD=casaos
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
     healthcheck:
-      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      test:
+        - CMD
+        - healthcheck.sh
+        - '--connect'
+        - '--innodb_initialized'
       start_period: 30s
       start_interval: 10s
       interval: 10s
@@ -452,7 +456,7 @@ x-casaos:
       The app's core features include robust library management and seamless gameplay. It fetches metadata from IGDB, Screenscraper, and MobyGames, and custom artwork from SteamGridDB, enhancing the visual appeal of collections. Users can play games directly in the browser using EmulatorJS and RuffleRS, with support for multi-disk games, DLCs, patches, and manuals. It also enables parsing and filtering by filename tags for tailored organization. Additionally, it supports multi-user accounts with limited access permissions, allowing library sharing with friends and displaying RetroAchievements.
 
       It can be flexibly deployed on personal servers or NAS devices, with official apps for Playnite and muOS enhancing cross-device access. Users can upload, update, or delete games via the Web interface, with community support documentation expanding functionality. Whether managing a personal retro game library or sharing with others, the app's intuitive interface and high customizability deliver a modern game management platform, meeting diverse needs.
-    
+
       **Key Features:**
       - Scan and enhance your game library with metadata from IGDB, Screenscraper and MobyGames
       - Fetch custom artwork from SteamGridDB
@@ -474,7 +478,7 @@ x-casaos:
       The app's core features include robust library management and seamless gameplay. It fetches metadata from IGDB, Screenscraper, and MobyGames, and custom artwork from SteamGridDB, enhancing the visual appeal of collections. Users can play games directly in the browser using EmulatorJS and RuffleRS, with support for multi-disk games, DLCs, patches, and manuals. It also enables parsing and filtering by filename tags for tailored organisation. Additionally, it supports multi-user accounts with limited access permissions, allowing library sharing with friends and displaying RetroAchievements.
 
       It can be flexibly deployed on personal servers or NAS devices, with official apps for Playnite and muOS enhancing cross-device access. Users can upload, update, or delete games via the Web interface, with community support documentation expanding functionality. Whether managing a personal retro game library or sharing with others, the app's intuitive interface and high customisability deliver a modern game management platform, meeting diverse nee
-      
+
       **Key Features:**
       - Scan and enhance your game library with metadata from IGDB, Screenscraper and MobyGames
       - Fetch custom artwork from SteamGridDB
@@ -496,7 +500,7 @@ x-casaos:
       Le funzionalità principali includono una gestione robusta della libreria e un gameplay fluido. Recupera i metadati da IGDB, Screenscraper e MobyGames, e le grafiche personalizzate da SteamGridDB, migliorando l'aspetto visivo delle raccolte. Gli utenti possono giocare direttamente dal browser tramite EmulatorJS e RuffleRS, con supporto per giochi multi-disco, DLC, patch e manuali. Permette anche il parsing e il filtraggio tramite tag nei nomi file per un'organizzazione su misura. Inoltre, supporta account multiutente con permessi limitati, consentendo la condivisione della libreria con amici e la visualizzazione dei RetroAchievements.
 
       Può essere distribuito su server personali o dispositivi NAS, con app ufficiali per Playnite e muOS che migliorano l'accesso multi-dispositivo. Gli utenti possono caricare, aggiornare o eliminare giochi tramite l'interfaccia Web, con documentazione di supporto della community che amplia le funzionalità. Che si tratti di gestire una libreria di giochi retrò personale o di condividerla con altri, l'interfaccia intuitiva e l'elevata personalizzazione offrono una piattaforma di gestione moderna per soddisfare ogni esigenza.
-    
+
       **Caratteristiche Principali:**
       - Scansiona e migliora la tua libreria di giochi con metadati da IGDB, Screenscraper e MobyGames
       - Ottieni grafiche personalizzate da SteamGridDB
@@ -518,7 +522,7 @@ x-casaos:
       Appens kjernefunksjoner inkluderer robust bibliotekadministrasjon og sømløs spilling. Den henter metadata fra IGDB, Screenscraper og MobyGames, samt tilpasset grafikk fra SteamGridDB, som forbedrer det visuelle inntrykket av samlingene. Brukere kan spille direkte i nettleseren med EmulatorJS og RuffleRS, med støtte for multidiskspill, DLC, oppdateringer og manualer. Den muliggjør også parsing og filtrering etter filnavntagger for skreddersydd organisering. I tillegg støtter den flere brukerkontoer med begrensede tilgangsrettigheter, slik at man kan dele biblioteket med venner og vise RetroAchievements.
 
       Den kan distribueres fleksibelt på personlige servere eller NAS-enheter, med offisielle apper for Playnite og muOS som forbedrer tilgang på tvers av enheter. Brukere kan laste opp, oppdatere eller slette spill via webgrensesnittet, med fellesskapsdokumentasjon som utvider funksjonaliteten. Enten du administrerer et personlig retrospillbibliotek eller deler med andre, gir appens intuitive grensesnitt og høye tilpasningsmuligheter en moderne plattform for spilladministrasjon som dekker ulike behov.
-    
+
       **Hovedfunksjoner:**
       - Skann og forbedre spillbiblioteket ditt med metadata fra IGDB, Screenscraper og MobyGames
       - Hent tilpassede illustrasjoner fra SteamGridDB
@@ -540,7 +544,7 @@ x-casaos:
       该应用的核心功能包括强大的库管理和无缝的游戏体验。它通过 IGDB、Screenscraper 和 MobyGames 获取元数据，通过 SteamGridDB 抓取自定义艺术图片，提升收藏的视觉效果。用户可直接在浏览器中使用 EmulatorJS 和 RuffleRS 玩游戏，支持多磁盘游戏、DLC、补丁和手册。它还支持文件名标签解析和自定义过滤，帮助用户按需整理内容。此外，它允许创建多用户账户，设置有限访问权限，与朋友共享收藏，展示 RetroAchievements 的成就。
 
       它可灵活部署于个人服务器或 NAS 设备，支持 Playnite 和 muOS 的官方应用，增强跨设备体验。用户可通过 Web 界面随时上传、更新或删除游戏，社区提供的支持文档进一步扩展功能。无论是管理个人复古游戏库还是与他人分享，该应用以直观界面和高自定义性，提供现代化游戏管理平台，满足多样化需求。
-    
+
       **主要功能：**
       - 使用来自 IGDB、Screenscraper 和 MobyGames 的元数据扫描和增强您的游戏库
       - 从 SteamGridDB 获取自定义艺术图片
@@ -562,7 +566,7 @@ x-casaos:
       アプリの主な機能には、堅牢なライブラリ管理とシームレスなゲームプレイが含まれます。IGDB、Screenscraper、MobyGamesからメタデータを取得し、SteamGridDBからカスタムアートワークを取得してコレクションのビジュアルを強化します。ユーザーはEmulatorJSやRuffleRSを使ってブラウザ上で直接ゲームをプレイでき、マルチディスクゲーム、DLC、パッチ、マニュアルにも対応。ファイル名タグによる解析やフィルタリングも可能で、柔軟な整理ができます。さらに、アクセス権が制限されたマルチユーザーアカウントをサポートし、友人とライブラリを共有したり、RetroAchievementsを表示したりできます。
 
       PlayniteやmuOSの公式アプリにより、個人サーバーやNASデバイスに柔軟に導入でき、クロスデバイスアクセスが強化されます。Webインターフェースを通じてゲームのアップロード、更新、削除が可能で、コミュニティによるサポートドキュメントで機能が拡張されます。個人のレトロゲームライブラリを管理する場合でも、他者と共有する場合でも、直感的なインターフェースと高いカスタマイズ性により、多様なニーズに応える現代的なゲーム管理プラットフォームを提供します。
-    
+
       **主な機能:**
       - IGDB、Screenscraper、MobyGamesからのメタデータでゲームライブラリをスキャンして強化
       - SteamGridDBからカスタムアートワークを取得
@@ -584,7 +588,7 @@ x-casaos:
       앱의 핵심 기능에는 강력한 라이브러리 관리와 원활한 게임 플레이가 포함됩니다. IGDB, Screenscraper, MobyGames에서 메타데이터를 가져오고 SteamGridDB에서 맞춤형 아트워크를 가져와 컬렉션의 시각적 매력을 높입니다. 사용자는 EmulatorJS 및 RuffleRS를 사용하여 브라우저에서 직접 게임을 플레이할 수 있으며, 멀티디스크 게임, DLC, 패치 및 매뉴얼을 지원합니다. 또한 파일명 태그별로 파싱 및 필터링이 가능하여 맞춤형 정리가 가능합니다. 추가로, 제한된 접근 권한을 가진 다중 사용자 계정을 지원하여 친구와 라이브러리를 공유하거나 RetroAchievements를 표시할 수 있습니다.
 
       Playnite 및 muOS의 공식 앱을 통해 개인 서버나 NAS 장치에 유연하게 배포할 수 있으며, 크로스 디바이스 액세스가 향상됩니다. 웹 인터페이스를 통해 게임을 업로드, 업데이트 또는 삭제할 수 있으며, 커뮤니티 지원 문서로 기능이 확장됩니다. 개인 레트로 게임 라이브러리를 관리하거나 다른 사람과 공유하든, 앱의 직관적인 인터페이스와 높은 맞춤화 기능은 다양한 요구를 충족하는 현대적인 게임 관리 플랫폼을 제공합니다.
-    
+
       **주요 기능:**
       - IGDB, Screenscraper 및 MobyGames의 메타데이터로 게임 라이브러리를 스캔하고 강화
       - SteamGridDB에서 사용자 정의 아트워크 가져오기
@@ -606,7 +610,7 @@ x-casaos:
       Les principales fonctionnalités de l'application incluent une gestion robuste de la bibliothèque et un gameplay fluide. Elle récupère les métadonnées depuis IGDB, Screenscraper et MobyGames, ainsi que des illustrations personnalisées depuis SteamGridDB, améliorant l'aspect visuel des collections. Les utilisateurs peuvent jouer directement dans le navigateur avec EmulatorJS et RuffleRS, avec prise en charge des jeux multi-disques, des DLC, des patchs et des manuels. Elle permet également l'analyse et le filtrage par balises de nom de fichier pour une organisation sur mesure. De plus, elle prend en charge les comptes multi-utilisateurs avec des autorisations d'accès limitées, permettant le partage de la bibliothèque avec des amis et l'affichage des RetroAchievements.
 
       Elle peut être déployée de manière flexible sur des serveurs personnels ou des appareils NAS, avec des applications officielles pour Playnite et muOS améliorant l'accès multi-appareils. Les utilisateurs peuvent télécharger, mettre à jour ou supprimer des jeux via l'interface Web, avec une documentation communautaire élargissant les fonctionnalités. Que vous gériez une bibliothèque de jeux rétro personnelle ou que vous la partagiez avec d'autres, l'interface intuitive et la grande personnalisation de l'application offrent une plateforme de gestion moderne répondant à des besoins variés.
-    
+
       **Fonctionnalités Principales :**
       - Scannez et améliorez votre bibliothèque de jeux avec des métadonnées d'IGDB, Screenscraper et MobyGames
       - Récupérez des illustrations personnalisées depuis SteamGridDB
@@ -628,7 +632,7 @@ x-casaos:
       Zu den Kernfunktionen der App gehören eine robuste Bibliotheksverwaltung und nahtloses Gameplay. Sie ruft Metadaten von IGDB, Screenscraper und MobyGames sowie benutzerdefinierte Grafiken von SteamGridDB ab, um die visuelle Attraktivität der Sammlungen zu steigern. Benutzer können Spiele direkt im Browser mit EmulatorJS und RuffleRS spielen, mit Unterstützung für Multi-Disk-Spiele, DLCs, Patches und Handbücher. Außerdem ermöglicht sie das Parsen und Filtern nach Dateinamen-Tags für eine maßgeschneiderte Organisation. Zusätzlich unterstützt sie Multi-User-Konten mit eingeschränkten Zugriffsrechten, sodass Bibliotheken mit Freunden geteilt und RetroAchievements angezeigt werden können.
 
       Sie kann flexibel auf persönlichen Servern oder NAS-Geräten bereitgestellt werden, mit offiziellen Apps für Playnite und muOS, die den geräteübergreifenden Zugriff verbessern. Benutzer können Spiele über die Weboberfläche hochladen, aktualisieren oder löschen, wobei die Community-Dokumentation die Funktionalität erweitert. Ob Sie eine persönliche Retro-Spielbibliothek verwalten oder mit anderen teilen, die intuitive Benutzeroberfläche und die hohe Anpassungsfähigkeit der App bieten eine moderne Plattform für das Spielmanagement, die unterschiedlichen Anforderungen gerecht wird.
-    
+
       **Hauptmerkmale:**
       - Scannen und verbessern Sie Ihre Spielebibliothek mit Metadaten von IGDB, Screenscraper und MobyGames
       - Holen Sie sich benutzerdefinierte Grafiken von SteamGridDB
@@ -650,7 +654,7 @@ x-casaos:
       Appens kärnfunktioner inkluderar robust bibliotekshantering och sömlös spelupplevelse. Den hämtar metadata från IGDB, Screenscraper och MobyGames samt anpassad grafik från SteamGridDB, vilket förbättrar samlingarnas visuella intryck. Användare kan spela spel direkt i webbläsaren med EmulatorJS och RuffleRS, med stöd för multidiskspel, DLC, patchar och manualer. Den möjliggör även tolkning och filtrering efter filnamnstaggar för skräddarsydd organisering. Dessutom stöder den flera användarkonton med begränsade åtkomsträttigheter, vilket möjliggör delning av biblioteket med vänner och visning av RetroAchievements.
 
       Den kan distribueras flexibelt på personliga servrar eller NAS-enheter, med officiella appar för Playnite och muOS som förbättrar åtkomsten mellan enheter. Användare kan ladda upp, uppdatera eller ta bort spel via webbgränssnittet, med gemenskapsdokumentation som utökar funktionaliteten. Oavsett om du hanterar ett personligt retrospelsbibliotek eller delar med andra, ger appens intuitiva gränssnitt och höga anpassningsbarhet en modern plattform för spelhantering som möter olika behov.
-    
+
       **Huvudfunktioner:**
       - Skanna och förbättra ditt spelbibliotek med metadata från IGDB, Screenscraper och MobyGames
       - Hämta anpassad konst från SteamGridDB
@@ -672,7 +676,7 @@ x-casaos:
       Τα βασικά χαρακτηριστικά της εφαρμογής περιλαμβάνουν ισχυρή διαχείριση βιβλιοθήκης και απρόσκοπτο gameplay. Λαμβάνει μεταδεδομένα από IGDB, Screenscraper και MobyGames, καθώς και προσαρμοσμένα γραφικά από το SteamGridDB, ενισχύοντας την οπτική απήχηση των συλλογών. Οι χρήστες μπορούν να παίζουν παιχνίδια απευθείας στο πρόγραμμα περιήγησης χρησιμοποιώντας EmulatorJS και RuffleRS, με υποστήριξη για παιχνίδια πολλαπλών δίσκων, DLC, ενημερώσεις και εγχειρίδια. Επιπλέον, επιτρέπει την ανάλυση και το φιλτράρισμα με βάση ετικέτες ονομάτων αρχείων για προσαρμοσμένη οργάνωση. Υποστηρίζει επίσης πολλαπλούς λογαριασμούς χρηστών με περιορισμένα δικαιώματα πρόσβασης, επιτρέποντας την κοινή χρήση της βιβλιοθήκης με φίλους και την εμφάνιση των RetroAchievements.
 
       Μπορεί να αναπτυχθεί ευέλικτα σε προσωπικούς διακομιστές ή συσκευές NAS, με επίσημες εφαρμογές για Playnite και muOS που ενισχύουν την πρόσβαση μεταξύ συσκευών. Οι χρήστες μπορούν να ανεβάζουν, να ενημερώνουν ή να διαγράφουν παιχνίδια μέσω της διεπαφής Web, με τεκμηρίωση υποστήριξης της κοινότητας που επεκτείνει τη λειτουργικότητα. Είτε διαχειρίζεστε μια προσωπική βιβλιοθήκη ρετρό παιχνιδιών είτε τη μοιράζεστε με άλλους, η διαισθητική διεπαφή και η υψηλή προσαρμοστικότητα της εφαρμογής προσφέρουν μια σύγχρονη πλατφόρμα διαχείρισης παιχνιδιών που καλύπτει ποικίλες ανάγκες.
-    
+
       **Βασικά Χαρακτηριστικά:**
       - Σαρώστε και βελτιώστε τη βιβλιοθήκη παιχνιδιών σας με μεταδεδομένα από IGDB, Screenscraper και MobyGames
       - Λάβετε προσαρμοσμένα γραφικά από το SteamGridDB
@@ -694,7 +698,7 @@ x-casaos:
       Osnovne značajke aplikacije uključuju robusno upravljanje bibliotekom i besprijekorno igranje. Dohvaća metapodatke s IGDB-a, Screenscrapera i MobyGamesa, kao i prilagođene grafike sa SteamGridDB-a, poboljšavajući vizualni dojam kolekcija. Korisnici mogu igrati igre izravno u pregledniku koristeći EmulatorJS i RuffleRS, uz podršku za igre na više diskova, DLC-ove, zakrpe i priručnike. Također omogućuje parsiranje i filtriranje prema oznakama u nazivima datoteka za prilagođenu organizaciju. Dodatno, podržava više korisničkih računa s ograničenim pristupom, omogućujući dijeljenje biblioteke s prijateljima i prikaz RetroAchievementsa.
 
       Može se fleksibilno implementirati na osobnim poslužiteljima ili NAS uređajima, uz službene aplikacije za Playnite i muOS koje poboljšavaju pristup na više uređaja. Korisnici mogu učitavati, ažurirati ili brisati igre putem web sučelja, a dokumentacija zajednice proširuje funkcionalnost. Bilo da upravljate osobnom retro kolekcijom igara ili je dijelite s drugima, intuitivno sučelje i visoka prilagodljivost aplikacije nude modernu platformu za upravljanje igrama koja zadovoljava raznolike potrebe.
-    
+
       **Ključne Značajke:**
       - Skenirajte i poboljšajte svoju biblioteku igara s metapodacima iz IGDB-a, Screenscrapera i MobyGamesa
       - Dohvatite prilagođene grafike sa SteamGridDB-a
@@ -716,7 +720,7 @@ x-casaos:
       As principais funcionalidades incluem uma gestão robusta da biblioteca e uma jogabilidade fluida. Obtém metadados do IGDB, Screenscraper e MobyGames, e arte personalizada do SteamGridDB, melhorando o aspeto visual das coleções. Os utilizadores podem jogar diretamente no navegador usando EmulatorJS e RuffleRS, com suporte para jogos multi-disco, DLCs, patches e manuais. Permite também a análise e filtragem por tags de nomes de ficheiros para organização personalizada. Além disso, suporta contas multiutilizador com permissões de acesso limitadas, permitindo a partilha da biblioteca com amigos e a exibição de RetroAchievements.
 
       Pode ser implementado de forma flexível em servidores pessoais ou dispositivos NAS, com aplicações oficiais para Playnite e muOS que melhoram o acesso entre dispositivos. Os utilizadores podem carregar, atualizar ou eliminar jogos através da interface Web, com documentação de suporte da comunidade que expande a funcionalidade. Quer esteja a gerir uma biblioteca pessoal de jogos retro ou a partilhá-la com outros, a interface intuitiva e a elevada personalização da aplicação oferecem uma plataforma de gestão de jogos moderna que responde a diversas necessidades.
-    
+
       **Funcionalidades Principais:**
       - Digitalize e melhore a sua biblioteca de jogos com metadados do IGDB, Screenscraper e MobyGames
       - Obtenha arte personalizada do SteamGridDB
@@ -738,7 +742,7 @@ x-casaos:
       Ключевые функции приложения включают в себя надежное управление библиотекой и бесшовный игровой процесс. Оно получает метаданные из IGDB, Screenscraper и MobyGames, а также пользовательские иллюстрации из SteamGridDB, улучшая визуальную привлекательность коллекций. Пользователи могут играть в игры прямо в браузере с помощью EmulatorJS и RuffleRS, с поддержкой игр на нескольких дисках, DLC, патчей и руководств. Также поддерживается разбор и фильтрация по тегам в именах файлов для индивидуальной организации. Кроме того, поддерживаются многопользовательские аккаунты с ограниченными правами доступа, что позволяет делиться библиотекой с друзьями и отображать достижения RetroAchievements.
 
       Приложение может гибко развертываться на личных серверах или NAS-устройствах, с официальными приложениями для Playnite и muOS, расширяющими доступ между устройствами. Пользователи могут загружать, обновлять или удалять игры через веб-интерфейс, а документация сообщества расширяет функциональность. Независимо от того, управляете ли вы личной ретро-игровой библиотекой или делитесь ею с другими, интуитивно понятный интерфейс и высокая настраиваемость приложения обеспечивают современную платформу для управления играми, отвечающую разнообразным потребностям.
-    
+
       **Ключевые Особенности:**
       - Сканируйте и улучшайте свою игровую библиотеку с метаданными из IGDB, Screenscraper и MobyGames
       - Получайте пользовательские иллюстрации из SteamGridDB
@@ -760,7 +764,7 @@ x-casaos:
       Uygulamanın temel özellikleri arasında sağlam kütüphane yönetimi ve sorunsuz oyun deneyimi bulunur. IGDB, Screenscraper ve MobyGames'ten meta veriler ve SteamGridDB'den özel sanat eserleri alarak koleksiyonların görsel çekiciliğini artırır. Kullanıcılar, EmulatorJS ve RuffleRS kullanarak oyunları doğrudan tarayıcıda oynayabilir, çoklu diskli oyunlar, DLC'ler, yamalar ve kılavuzlar için destek sunar. Ayrıca, dosya adı etiketlerine göre ayrıştırma ve filtreleme yapılmasına olanak tanır. Ek olarak, sınırlı erişim izinlerine sahip çoklu kullanıcı hesaplarını destekler, böylece kütüphaneyi arkadaşlarla paylaşabilir ve RetroAchievements'ı görüntüleyebilirsiniz.
 
       Playnite ve muOS için resmi uygulamalarla kişisel sunucularda veya NAS cihazlarında esnek bir şekilde dağıtılabilir, cihazlar arası erişimi artırır. Kullanıcılar, Web arayüzü üzerinden oyun yükleyebilir, güncelleyebilir veya silebilir ve topluluk destekli belgelerle işlevsellik genişletilebilir. İster kişisel bir retro oyun kütüphanesini yönetin ister başkalarıyla paylaşın, uygulamanın sezgisel arayüzü ve yüksek özelleştirilebilirliği, çeşitli ihtiyaçları karşılayan modern bir oyun yönetim platformu sunar.
-    
+
       **Ana Özellikler:**
       - IGDB, Screenscraper ve MobyGames'ten meta verilerle oyun kütüphanenizi tarayın ve geliştirin
       - SteamGridDB'den özel sanat eserlerini alın
@@ -783,9 +787,11 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RomM/screenshot-3.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RomM/screenshot-4.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RomM/screenshot-5.png
-  thumbnail: ""
+  thumbnail: ''
   scheme: http
-  port_map: "8285"
+  port_map: '8285'
   index: /
   title:
     en_US: RomM
+x-roqueos:
+  mountShared: true

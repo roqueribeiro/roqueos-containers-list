@@ -10,11 +10,11 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "512M"
+          memory: 512M
     network_mode: bridge
     ports:
       - target: 7860
-        published: "7860"
+        published: '7860'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -51,4 +51,4 @@ x-casaos:
   title:
     en_us: Stable Diffusion
   index: /
-  port_map: "7860"
+  port_map: '7860'

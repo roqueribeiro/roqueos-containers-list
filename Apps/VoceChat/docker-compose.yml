@@ -11,7 +11,7 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: "3009"
+        published: '3009'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -25,7 +25,7 @@ services:
             en_us: TimeZone
             zh_cn: 时区
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
@@ -160,4 +160,5 @@ x-casaos:
   title:
     en_us: VoceChat
   index: /
-  port_map: "3009"
+  port_map: '3009'
+  scheme: http

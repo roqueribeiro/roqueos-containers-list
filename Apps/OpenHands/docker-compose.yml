@@ -5,12 +5,11 @@ services:
     container_name: openhands
     environment:
       - SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.49-nikolaik
-      #- SANDBOX_USER_ID=${SANDBOX_USER_ID:-1234} # enable this only if you want a specific non-root sandbox user but you will have to manually adjust permissions of ~/.openhands for this user
       - WORKSPACE_MOUNT_PATH=/DATA/AppData/$AppID/workspace
     ports:
-      - "13333:3000"
+      - '13333:3000'
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - host.docker.internal:host-gateway
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /DATA/AppData/$AppID/openhands:/.openhands
@@ -19,7 +18,7 @@ services:
     tty: true
     x-casaos:
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
             en_US: OpenHands Web Interface Port
             en_GB: OpenHands Web Interface Port
@@ -166,7 +165,7 @@ x-casaos:
   description:
     en_US: |
       OpenHands is an open-source AI-powered coding assistant that provides developers with intelligent code completion, generation, and debugging capabilities. It runs in a sandboxed environment to ensure security and isolation while allowing access to various development tools and resources.
-      
+
       **Key Features:**
       - AI-powered code completion and generation
       - Interactive debugging and error resolution
@@ -174,14 +173,14 @@ x-casaos:
       - Secure sandboxed execution environment
       - Customizable runtime configurations
       - Integration with Docker for containerized workflows
-      
+
       **Learn More:**
       - [OpenHands Official Website](https://www.all-hands.dev)
       - [OpenHands GitHub Repository](https://github.com/All-Hands-AI/OpenHands)
       - [Documentation](https://docs.all-hands.dev)
     en_GB: |
       OpenHands is an open-source AI-powered coding assistant that provides developers with intelligent code completion, generation and debugging capabilities. It runs in a sandboxed environment to ensure security and isolation while allowing access to various development tools and resources.
-      
+
       **Key Features:**
       - AI-powered code completion and generation
       - Interactive debugging and error resolution
@@ -189,14 +188,14 @@ x-casaos:
       - Secure sandboxed execution environment
       - Customisable runtime configurations
       - Integration with Docker for containerised workflows
-      
+
       **Learn More:**
       - [OpenHands Official Website](https://www.all-hands.dev)
       - [OpenHands GitHub Repository](https://github.com/All-Hands-AI/OpenHands)
       - [Documentation](https://docs.all-hands.dev)
     it_IT: |
       OpenHands è un assistente per la programmazione open source basato su AI che fornisce agli sviluppatori funzionalità intelligenti di completamento, generazione e debug del codice. Funziona in un ambiente sandbox per garantire sicurezza e isolamento, consentendo al contempo l'accesso a vari strumenti e risorse di sviluppo.
-      
+
       **Caratteristiche principali:**
       - Completamento e generazione del codice basati su AI
       - Debug interattivo e risoluzione degli errori
@@ -204,14 +203,14 @@ x-casaos:
       - Ambiente di esecuzione sandbox sicuro
       - Configurazioni di runtime personalizzabili
       - Integrazione con Docker per flussi di lavoro containerizzati
-      
+
       **Scopri di più:**
       - [Sito web ufficiale di OpenHands](https://www.all-hands.dev)
       - [Repository GitHub di OpenHands](https://github.com/All-Hands-AI/OpenHands)
       - [Documentazione](https://docs.all-hands.dev)
     nb_NO: |
       OpenHands er en åpen kildekode AI-drevet kodeassistent som gir utviklere intelligent kodedekning, generering og feilsøkingsmuligheter. Det kjører i et sandkasse-miljø for å sikre sikkerhet og isolasjon, samtidig som det gir tilgang til ulike utviklingsverktøy og ressurser.
-      
+
       **Nøkkelegenskaper:**
       - AI-drevet kodedekning og generering
       - Interaktiv feilsøking og feilløsning
@@ -219,14 +218,14 @@ x-casaos:
       - Sikkert sandkasse-kjøremiljø
       - Tilpassbare kjøretidskonfigurasjoner
       - Integrasjon med Docker for containeriserte arbeidsflyter
-      
+
       **Lær mer:**
       - [OpenHands offisielt nettsted](https://www.all-hands.dev)
       - [OpenHands GitHub Repository](https://github.com/All-Hands-AI/OpenHands)
       - [Dokumentasjon](https://docs.all-hands.dev)
     zh_CN: |
       OpenHands是一个开源的AI驱动编程助手，为开发人员提供智能代码补全、生成和调试功能。它在沙盒环境中运行，确保安全和隔离，同时允许访问各种开发工具和资源。
-      
+
       **主要功能：**
       - AI驱动的代码补全和生成
       - 交互式调试和错误解决
@@ -234,14 +233,14 @@ x-casaos:
       - 安全的沙盒执行环境
       - 可定制的运行时配置
       - 与Docker集成，实现容器化工作流
-      
+
       **了解更多：**
       - [OpenHands官方网站](https://www.all-hands.dev)
       - [OpenHands GitHub仓库](https://github.com/All-Hands-AI/OpenHands)
       - [文档](https://docs.all-hands.dev)
     ja_JP: |
       OpenHandsは、開発者にインテリジェントなコード補完、生成、デバッグ機能を提供するオープンソースのAI駆動型コーディングアシスタントです。セキュリティと分離を確保しながら、さまざまな開発ツールやリソースへのアクセスを可能にするサンドボックス環境で実行されます。
-      
+
       **主な機能：**
       - AI駆動のコード補完と生成
       - インタラクティブなデバッグとエラー解決
@@ -249,14 +248,14 @@ x-casaos:
       - 安全なサンドボックス実行環境
       - カスタマイズ可能なランタイム構成
       - コンテナ化されたワークフローのためのDockerとの統合
-      
+
       **詳細情報：**
       - [OpenHands公式ウェブサイト](https://www.all-hands.dev)
       - [OpenHands GitHubリポジトリ](https://github.com/All-Hands-AI/OpenHands)
       - [ドキュメント](https://docs.all-hands.dev)
     ko_KR: |
       OpenHands는 개발자에게 지능적인 코드 완성, 생성 및 디버깅 기능을 제공하는 오픈소스 AI 기반 코딩 어시스턴트입니다. 다양한 개발 도구와 리소스에 대한 액세스를 허용하면서 보안과 격리를 보장하는 샌드박스 환경에서 실행됩니다.
-      
+
       **주요 기능:**
       - AI 기반 코드 완성 및 생성
       - 대화형 디버깅 및 오류 해결
@@ -264,14 +263,14 @@ x-casaos:
       - 안전한 샌드박스 실행 환경
       - 사용자 정의 가능한 런타임 구성
       - 컨테이너화된 워크플로우를 위한 Docker 통합
-      
+
       **더 알아보기:**
       - [OpenHands 공식 웹사이트](https://www.all-hands.dev)
       - [OpenHands GitHub 저장소](https://github.com/All-Hands-AI/OpenHands)
       - [문서](https://docs.all-hands.dev)
     fr_FR: |
       OpenHands est un assistant de codage open source alimenté par l'IA qui fournit aux développeurs des capacités intelligentes de complétion, de génération et de débogage de code. Il s'exécute dans un environnement de bac à sable pour assurer la sécurité et l'isolement tout en permettant l'accès à divers outils et ressources de développement.
-      
+
       **Fonctionnalités clés :**
       - Complétion et génération de code alimentées par l'IA
       - Débogage interactif et résolution d'erreurs
@@ -279,14 +278,14 @@ x-casaos:
       - Environnement d'exécution sécurisé en bac à sable
       - Configurations d'exécution personnalisables
       - Intégration avec Docker pour les flux de travail conteneurisés
-      
+
       **En savoir plus :**
       - [Site officiel d'OpenHands](https://www.all-hands.dev)
       - [Dépôt GitHub d'OpenHands](https://github.com/All-Hands-AI/OpenHands)
       - [Documentation](https://docs.all-hands.dev)
     de_DE: |
       OpenHands ist ein Open-Source-KI-gestützter Codierungsassistent, der Entwicklern intelligente Code-Vervollständigung, -Generierung und Debugging-Fähigkeiten bietet. Er läuft in einer Sandbox-Umgebung, um Sicherheit und Isolation zu gewährleisten, während der Zugriff auf verschiedene Entwicklungstools und Ressourcen ermöglicht wird.
-      
+
       **Hauptmerkmale:**
       - KI-gestützte Code-Vervollständigung und -Generierung
       - Interaktives Debugging und Fehlerbehebung
@@ -294,14 +293,14 @@ x-casaos:
       - Sichere Sandbox-Ausführungsumgebung
       - Anpassbare Laufzeitkonfigurationen
       - Integration mit Docker für containerisierte Workflows
-      
+
       **Mehr erfahren:**
       - [OpenHands offizielle Website](https://www.all-hands.dev)
       - [OpenHands GitHub Repository](https://github.com/All-Hands-AI/OpenHands)
       - [Dokumentation](https://docs.all-hands.dev)
     sv_SE: |
       OpenHands är en öppen källkod AI-driven kodningsassistent som ger utvecklare intelligent kodkomplettering, generering och felsökningsförmåga. Den körs i en sandlådemiljö för att säkerställa säkerhet och isolering samtidigt som den ger tillgång till olika utvecklingsverktyg och resurser.
-      
+
       **Nyckelfunktioner:**
       - AI-driven kodkomplettering och generering
       - Interaktiv felsökning och felresolution
@@ -309,14 +308,14 @@ x-casaos:
       - Säker sandlådekörningsmiljö
       - Anpassningsbara körtidskonfigurationer
       - Integration med Docker för containeriserade arbetsflöden
-      
+
       **Läs mer:**
       - [OpenHands officiella webbplats](https://www.all-hands.dev)
       - [OpenHands GitHub Repository](https://github.com/All-Hands-AI/OpenHands)
       - [Dokumentation](https://docs.all-hands.dev)
     el_GR: |
       Το OpenHands είναι ένας βοηθός προγραμματισμού ανοιχτού κώδικα με βάση την τεχνητή νοημοσύνη που παρέχει στους προγραμματιστές έξυπνες δυνατότητες συμπλήρωσης, δημιουργίας και αποσφαλμάτωσης κώδικα. Εκτελείται σε περιβάλλον sandbox για να εξασφαλίσει ασφάλεια και απομόνωση, επιτρέποντας ταυτόχρονα την πρόσβαση σε διάφορα εργαλεία και πόρους ανάπτυξης.
-      
+
       **Βασικά Χαρακτηριστικά:**
       - Συμπλήρωση και δημιουργία κώδικα με βάση την τεχνητή νοημοσύνη
       - Διαδραστική αποσφάλματωση και επίλυση σφαλμάτων
@@ -324,14 +323,14 @@ x-casaos:
       - Ασφαλές περιβάλλον εκτέλεσης sandbox
       - Προσαρμόσιμες διαμορφώσεις χρόνου εκτέλεσης
       - Ενσωμάτωση με Docker για containerized workflows
-      
+
       **Μάθετε Περισσότερα:**
       - [Επίσημη Ιστοσελίδα OpenHands](https://www.all-hands.dev)
       - [Αποθήκη GitHub OpenHands](https://github.com/All-Hands-AI/OpenHands)
       - [Τεκμηρίωση](https://docs.all-hands.dev)
     hr_HR: |
       OpenHands je open-source AI pokretani asistent za kodiranje koji pruža programerima inteligentno dovršavanje koda, generiranje i mogućnosti otklanjanja pogrešaka. Radi u sandbox okruženju kako bi osigurao sigurnost i izolaciju, istovremeno dopuštajući pristup raznim razvojnim alatima i resursima.
-      
+
       **Ključne značajke:**
       - AI pokretano dovršavanje i generiranje koda
       - Interaktivno otklanjanje pogrešaka i rješavanje problema
@@ -339,14 +338,14 @@ x-casaos:
       - Sigurno sandbox izvršno okruženje
       - Prilagodljive konfiguracije izvršavanja
       - Integracija s Dockerom za containerizirane radne tijekove
-      
+
       **Saznajte više:**
       - [Službena web stranica OpenHands](https://www.all-hands.dev)
       - [OpenHands GitHub Repozitorij](https://github.com/All-Hands-AI/OpenHands)
       - [Dokumentacija](https://docs.all-hands.dev)
     pt_PT: |
       OpenHands é um assistente de codificação de código aberto alimentado por IA que fornece aos programadores capacidades inteligentes de conclusão, geração e depuração de código. Ele é executado num ambiente sandbox para garantir segurança e isolamento, permitindo ao mesmo tempo o acesso a várias ferramentas e recursos de desenvolvimento.
-      
+
       **Características Principais:**
       - Conclusão e geração de código alimentadas por IA
       - Depuração interativa e resolução de erros
@@ -354,14 +353,14 @@ x-casaos:
       - Ambiente de execução sandbox seguro
       - Configurações de runtime personalizáveis
       - Integração com Docker para fluxos de trabalho contentorizados
-      
+
       **Saiba Mais:**
       - [Website Oficial OpenHands](https://www.all-hands.dev)
       - [Repositório GitHub OpenHands](https://github.com/All-Hands-AI/OpenHands)
       - [Documentação](https://docs.all-hands.dev)
     ru_RU: |
       OpenHands - это ассистент программирования с открытым исходным кодом на основе ИИ, который предоставляет разработчикам интеллектуальные возможности автодополнения, генерации и отладки кода. Он работает в изолированной среде для обеспечения безопасности и изоляции, позволяя при этом доступ к различным инструментам и ресурсам разработки.
-      
+
       **Ключевые особенности:**
       - Автодополнение и генерация кода на основе ИИ
       - Интерактивная отладка и устранение ошибок
@@ -369,14 +368,14 @@ x-casaos:
       - Безопасная изолированная среда выполнения
       - Настраиваемые конфигурации среды выполнения
       - Интеграция с Docker для контейнеризированных рабочих процессов
-      
+
       **Узнать больше:**
       - [Официальный сайт OpenHands](https://www.all-hands.dev)
       - [Репозиторий OpenHands на GitHub](https://github.com/All-Hands-AI/OpenHands)
       - [Документация](https://docs.all-hands.dev)
     tr_TR: |
       OpenHands, geliştiricilere akıllı kod tamamlama, oluşturma ve hata ayıklama yetenekleri sağlayan açık kaynaklı bir AI destekli kodlama asistanıdır. Güvenlik ve izolasyonu sağlamak için sandbox bir ortamda çalışırken çeşitli geliştirme araçlarına ve kaynaklara erişime izin verir.
-      
+
       **Ana Özellikler:**
       - AI destekli kod tamamlama ve oluşturma
       - Etkileşimli hata ayıklama ve sorun çözme
@@ -384,7 +383,7 @@ x-casaos:
       - Güvenli sandbox yürütme ortamı
       - Özelleştirilebilir çalışma zamanı yapılandırmaları
       - Kapsayıcılı iş akışları için Docker entegrasyonu
-      
+
       **Daha Fazla Bilgi Edinin:**
       - [OpenHands Resmi Web Sitesi](https://www.all-hands.dev)
       - [OpenHands GitHub Deposu](https://github.com/All-Hands-AI/OpenHands)
@@ -394,9 +393,9 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenHands/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenHands/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenHands/screenshot-3.png
-  thumbnail: ""
+  thumbnail: ''
   scheme: http
-  port_map: "13333"
+  port_map: '13333'
   index: /
   title:
     en_US: OpenHands

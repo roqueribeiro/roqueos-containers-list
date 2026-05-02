@@ -13,14 +13,13 @@ services:
     network_mode: bridge
     ports:
       - target: 8787
-        published: "8787"
+        published: '8787'
         protocol: tcp
     restart: unless-stopped
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/config
         target: /config
-        
       - type: bind
         source: /DATA/Media/Books
         target: /books
@@ -31,28 +30,27 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: "Run Readarr as specified UID"
+            en_us: Run Readarr as specified UID
         - container: PGID
           description:
-            en_us: "Run Readarr as specified GID"
+            en_us: Run Readarr as specified GID
         - container: TZ
           description:
-            en_us: "Timezon"
+            en_us: Timezon
       ports:
-        - container: "8787"
+        - container: '8787'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: "Readarr config directory"
+            en_us: Readarr config directory
         - container: /books
           description:
-            en_us: "Readarr books directory"
+            en_us: Readarr books directory
         - container: /downloads
           description:
-            en_us: "Readarr downloads directory"
+            en_us: Readarr downloads directory
     container_name: readarr
 x-casaos:
   architectures:
@@ -100,4 +98,7 @@ x-casaos:
   tips: {}
   title:
     en_us: Readarr
-  port_map: "8787"
+  port_map: '8787'
+  scheme: http
+x-roqueos:
+  mountShared: true

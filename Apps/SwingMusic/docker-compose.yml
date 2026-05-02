@@ -11,7 +11,7 @@ services:
         source: /DATA/Media/Music
         target: /music
     ports:
-      - "1970:1970"
+      - '1970:1970'
     restart: unless-stopped
 x-casaos:
   architectures:
@@ -113,10 +113,10 @@ x-casaos:
   developer: SwingMX
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/icon.png
   screenshot_link:
-  - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/screenshot-1.png
-  - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/screenshot-2.png
-  - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/screenshot-3.png
-  - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/screenshot-4.png
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/SwingMusic/thumbnail.png
   tagline:
     en_US: Swing Music is a beautifully designed, self-hosted music streaming server. Like a cooler Spotify ... but bring your own music.
@@ -260,4 +260,5 @@ x-casaos:
     en_us: Swing Music
     zh_cn: Swing Music
   index: /
-  port_map: "1970"
+  port_map: '1970'
+  scheme: http

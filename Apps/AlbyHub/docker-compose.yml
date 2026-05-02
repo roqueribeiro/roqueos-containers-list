@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-      UMASK: "002"
+      UMASK: '002'
       WORK_DIR: /data/albyhub
       LOG_EVENTS: true
     command: []
@@ -19,7 +19,7 @@ services:
       icon: https://cdn.jsdelivr.net/gh/getAlby/umbrel-community-app-store@master/alby-albyhub/images/icon.svg
     ports:
       - target: 8080
-        published: "58000"
+        published: '58000'
         protocol: tcp
     restart: on-failure
     stop_grace_period: 1m
@@ -30,9 +30,9 @@ services:
     network_mode: bridge
     privileged: false
 x-casaos:
-  architectures:                  # a list of architectures that the app supports
-      - amd64
-      - arm64
+  architectures:
+    - amd64
+    - arm64
   author: calganaygun
   category: Finance
   description:
@@ -67,8 +67,9 @@ x-casaos:
     sv_se: En enkel Bitcoin Lightning-nod med en plånbok, underkonton och NWC-anslutningar.
     uk_ua: Простий Bitcoin Lightning-вузол з гаманцем, субрахунками та підключеннями NWC.
   index: /
-  port_map: "58000"
+  port_map: '58000'
   scheme: http
   store_app_id: albyhub
   title:
     en_us: Alby Hub ✨
+  main: albyhub

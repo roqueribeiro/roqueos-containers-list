@@ -10,11 +10,11 @@ services:
     restart: unless-stopped
     ports:
       - target: 80
-        published: "17638"
+        published: '17638'
         protocol: tcp
     x-casaos:
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -61,7 +61,7 @@ x-casaos:
       Core features include an infinite canvas whiteboard and end-to-end encrypted collaboration. Hand-drawn style with shape library support allows creating rich graphics, enhanced by image insertion capabilities. Dark mode improves user experience, catering to diverse users.
 
       It provides export options including PNG, SVG, and clipboard for easy content sharing. Drawing capabilities cover rectangle, circle, diamond, arrow, line, free-draw, and eraser, with arrow-binding and labeled arrow support. Undo, redo, zoom, and panning functionalities optimize operations. With creativity and security at the core, the platform delivers a modern whiteboard design solution.
-      
+
       **Key Features:**
       - Infinite canvas whiteboard supporting hand-drawn style
       - Shape library support for creating rich graphics
@@ -83,7 +83,7 @@ x-casaos:
       Core features include an infinite canvas whiteboard and end-to-end encrypted collaboration. Hand-drawn style with shape library support allows creating rich graphics, enhanced by image insertion capabilities. Dark mode improves user experience, catering to diverse users.
 
       It provides export options including PNG, SVG, and clipboard for easy content sharing. Drawing capabilities cover rectangle, circle, diamond, arrow, line, free-draw, and eraser, with arrow-binding and labelled arrow support. Undo, redo, zoom, and panning functionalities optimise operations. With creativity and security at the core, the platform delivers a modern whiteboard design solution.
-      
+
       **Key Features:**
       - Infinite canvas whiteboard supporting hand-drawn style
       - Shape library support for creating rich graphics
@@ -149,7 +149,7 @@ x-casaos:
       核心功能包括无限画布白板和端到端加密协作。手绘风格结合形状库支持，允许创建丰富图形，配合图像插入功能增强视觉表达。暗色模式提升用户体验，适合多样化用户群体。
 
       它提供导出为 PNG、SVG 和剪贴板，方便内容分享。绘图功能涵盖矩形、圆形、菱形、箭头、线条、自由绘制和橡皮擦，支持箭头绑定和标签箭头。撤销、重做以及缩放和平移功能优化操作。以创造性和安全性为核心，该平台为白板设计提供现代化解决方案。
-      
+
       **主要特性：**
       - 无限画布白板，支持手绘风格
       - 形状库支持，创建丰富图形
@@ -392,9 +392,9 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Excalidraw/screenshot-3.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Excalidraw/screenshot-4.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Excalidraw/screenshot-5.png
-  thumbnail: ""
+  thumbnail: ''
   scheme: http
-  port_map: "17638"
+  port_map: '17638'
   index: /
   title:
     en_US: Excalidraw

@@ -12,14 +12,14 @@ services:
     restart: always
     ports:
       - target: 6052
-        published: "6052"
+        published: '6052'
         protocol: tcp
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/config
         target: /config
     environment:
-      ESPHOME_DASHBOARD_USE_PING: "false"
+      ESPHOME_DASHBOARD_USE_PING: 'false'
       TZ: $TZ
     network_mode: host
     privileged: false
@@ -49,7 +49,7 @@ x-casaos:
     - arm64
     - arm
   author: kd9lsv
-  category: "Home Automation"
+  category: Home Automation
   description:
     en_us: ESPHome is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems.
     zh_cn: ESPHome 是一个通过简单而强大的配置文件控制微控制器并通过家庭自动化系统远程控制它们的系统。
@@ -59,7 +59,7 @@ x-casaos:
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ESPHome/icon.png
   index: /
   main: esphome
-  port_map: "6052"
+  port_map: '6052'
   scheme: http
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ESPHome/screenshot-1.png

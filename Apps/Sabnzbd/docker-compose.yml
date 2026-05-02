@@ -2,8 +2,8 @@ name: sabnzbd
 services:
   sabnzbd:
     environment:
-      PGID: "1000"
-      PUID: "1000"
+      PGID: '1000'
+      PUID: '1000'
       TZ: Europe/London
     image: linuxserver/sabnzbd:4.1.0
     deploy:
@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8080
-        published: "8282"
+        published: '8282'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -30,28 +30,27 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "8080"
+        - container: '8080'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /incomplete-downloads
           description:
-            en_us: ""
+            en_us: ''
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /downloads
           description:
-            en_us: ""
+            en_us: ''
     container_name: sabnzbd
 x-casaos:
   architectures:
@@ -102,4 +101,7 @@ x-casaos:
   tips: {}
   title:
     en_us: Sabnzbd
-  port_map: "8282"
+  port_map: '8282'
+  scheme: http
+x-roqueos:
+  mountShared: true

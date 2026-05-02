@@ -5,7 +5,7 @@ services:
     image: ccrisan/motioneye:master-amd64
     ports:
       - target: 8765
-        published: "8765"
+        published: '8765'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -17,11 +17,11 @@ services:
         target: /var/lib/motioneye
     x-casaos:
       ports:
-        - container: "8765"
+        - container: '8765'
           description:
             en_us: Motioneye Web Port
             zh_cn: Motioneye Web端口
-          host: "8765"
+          host: '8765'
       volumes:
         - container: /etc/motioneye
           description:
@@ -45,7 +45,7 @@ x-casaos:
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Motioneye/icon.png
   index: /
   main: motioneye
-  port_map: "8765"
+  port_map: '8765'
   scheme: http
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Motioneye/screenshot-1.png

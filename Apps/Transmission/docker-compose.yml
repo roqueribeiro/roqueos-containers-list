@@ -3,9 +3,9 @@ services:
   transmission:
     environment:
       PASS: casaos
-      PEERPORT: "51413"
-      PGID: "1000"
-      PUID: "1000"
+      PEERPORT: '51413'
+      PGID: '1000'
+      PUID: '1000'
       TZ: Europe/London
       USER: casaos
     image: linuxserver/transmission:4.0.4
@@ -16,14 +16,14 @@ services:
     network_mode: bridge
     ports:
       - target: 9091
-        published: "9091"
+        published: '9091'
         protocol: tcp
       - target: 51413
-        published: "51413"
+        published: '51413'
         protocol: tcp
       - target: 51413
-        published: "51413"
-        protocol: UDP
+        published: '51413'
+        protocol: udp
     restart: unless-stopped
     volumes:
       - type: bind
@@ -39,49 +39,46 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
         - container: TRANSMISSION_WEB_HOME
           description:
-            en_us: ""
+            en_us: ''
         - container: USER
           description:
-            en_us: ""
+            en_us: ''
         - container: PASS
           description:
-            en_us: ""
+            en_us: ''
         - container: PEERPORT
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "9091"
+        - container: '9091'
           description:
-            en_us: ""
-
-        - container: "51413"
+            en_us: ''
+        - container: '51413'
           description:
-            en_us: ""
-
-        - container: "51413"
+            en_us: ''
+        - container: '51413'
           description:
-            en_us: ""
+            en_us: ''
           protocol: udp
-
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /downloads
           description:
-            en_us: ""
+            en_us: ''
         - container: /watch
           description:
-            en_us: ""
+            en_us: ''
     container_name: transmission
 x-casaos:
   architectures:
@@ -239,4 +236,7 @@ x-casaos:
   title:
     en_us: Transmission
   index: /
-  port_map: "9091"
+  port_map: '9091'
+  scheme: http
+x-roqueos:
+  mountShared: true

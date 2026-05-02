@@ -2,8 +2,8 @@ name: smokeping
 services:
   smokeping:
     environment:
-      PGID: "1000"
-      PUID: "1000"
+      PGID: '1000'
+      PUID: '1000'
       TZ: Europe/London
     image: linuxserver/smokeping:2.8.2
     deploy:
@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 80
-        published: "10280"
+        published: '10280'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -27,25 +27,24 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "80"
+        - container: '80'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /data
           description:
-            en_us: ""
+            en_us: ''
     container_name: smokeping
 x-casaos:
   architectures:
@@ -94,4 +93,5 @@ x-casaos:
   tips: {}
   title:
     en_us: Smokeping
-  port_map: "10280"
+  port_map: '10280'
+  scheme: http

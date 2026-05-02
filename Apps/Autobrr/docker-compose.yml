@@ -9,7 +9,7 @@ services:
       TZ: $TZ
     ports:
       - target: 7474
-        published: "7474"
+        published: '7474'
         protocol: tcp
     volumes:
       - type: bind
@@ -22,7 +22,7 @@ services:
             en_us: TimeZone
             zh_cn: 时区
       ports:
-        - container: "7474"
+        - container: '7474'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
@@ -37,7 +37,7 @@ x-casaos:
     - amd64
     - arm
     - arm64
-  port_map: "7474"
+  port_map: '7474'
   title:
     en_us: Autobrr
   author: Autobrr Team
@@ -53,3 +53,6 @@ x-casaos:
   tagline:
     en_us: Modern, easy to use download automation for torrents and usenet.
     zh_cn: 现代、易于使用的Torrents和Usenet下载自动化工具。
+  scheme: http
+x-roqueos:
+  mountShared: true

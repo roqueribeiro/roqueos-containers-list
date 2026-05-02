@@ -43,17 +43,17 @@ services:
             en_us: When set to 1, JDownloader is running in headless mode, meaning that no GUI is available. In this mode, MyJDownloader should be used to remote control JDownloader.
             zh_cn: 当设置为1时，JDownloader以无界面模式运行，意味着没有GUI可用。在此模式下，应使用MyJDownloader来远程控制JDownloader。
       ports:
-        - container: "5800"
+        - container: '5800'
           description:
             en_us: Port to access the application's GUI via the web interface. Mapping to the host is optional if access through the web interface is not wanted. For a container not using the default bridge network, the port can be changed with the WEB_LISTENING_PORT environment variable.
             zh_cn: 通过Web界面访问应用程序GUI的端口。如果不想通过Web界面访问，则将其映射到主机是可选的。对于未使用默认桥接网络的容器，可以使用WEB_LISTENING_PORT环境变量更改端口。
-        - container: "5900"
+        - container: '5900'
           description:
             en_us: Port to access the application's GUI via the VNC protocol. Mapping to the host is optional if access through the VNC protocol is not wanted. For a container not using the default bridge network, the port can be changed with the VNC_LISTENING_PORT environment variable.
             zh_cn: 通过VNC协议访问应用程序GUI的端口。如果不想通过VNC协议访问，则将其映射到主机是可选的。对于未使用默认桥接网络的容器，可以使用VNC_LISTENING_PORT环境变量更改端口。
-        - container: "3129"
+        - container: '3129'
           description:
-            en_us: "Port used by MyJDownloader mobile applications and browser extensions to establish a direct connect to the JDownloader Docker container instance. Port needs to be exposed only if MyJDownloader is enabled and configured in Direct Connection mode. NOTE: Since this port is being reported to the MyJDownloader online service, the port mapped on the host side must be the same (i.e. 3129)."
+            en_us: 'Port used by MyJDownloader mobile applications and browser extensions to establish a direct connect to the JDownloader Docker container instance. Port needs to be exposed only if MyJDownloader is enabled and configured in Direct Connection mode. NOTE: Since this port is being reported to the MyJDownloader online service, the port mapped on the host side must be the same (i.e. 3129).'
             zh_cn: MyJDownloader移动应用程序和浏览器扩展使用的端口，用于与JDownloader Docker容器实例建立直接连接。仅在启用并配置了直接连接模式的情况下，才需要公开端口。注意：由于此端口正在报告给MyJDownloader在线服务，因此在主机端映射的端口必须相同（即3129）。
     environment:
       - USER_ID=$PUID
@@ -65,13 +65,13 @@ services:
       - JDOWNLOADER_HEADLESS=$JDOWNLOADER_HEADLESS
     ports:
       - target: 5800
-        published: "5800"
+        published: '5800'
         protocol: tcp
       - target: 5900
-        published: "5900"
+        published: '5900'
         protocol: tcp
       - target: 3129
-        published: "3129"
+        published: '3129'
         protocol: tcp
     volumes:
       - type: bind
@@ -99,8 +99,10 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/JDownloader2/screenshot-2.jpg
   author: Fabio Tea
   category: Utilities
-  port_map: "5800"
+  port_map: '5800'
   scheme: http
   store_app_id: jdownloader2
   title:
     en_us: JDownloader2
+x-roqueos:
+  mountShared: true

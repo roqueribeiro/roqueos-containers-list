@@ -2,7 +2,7 @@ version: '3.8'
 name: anythingllm
 services:
   anythingllm:
-    image: mintplexlabs/anythingllm
+    image: mintplexlabs/anythingllm:latest
     container_name: anythingllm
     ports:
       - target: 3001
@@ -16,7 +16,7 @@ services:
         target: /app/server/storage
     restart: always
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - host.docker.internal:host-gateway
 x-casaos:
   architectures:
     - amd64
@@ -61,5 +61,4 @@ x-casaos:
     zh_cn: AnythingLLM
     ja_jp: AnythingLLM
   index: /
-  port_map: "3051"
-
+  port_map: '3051'

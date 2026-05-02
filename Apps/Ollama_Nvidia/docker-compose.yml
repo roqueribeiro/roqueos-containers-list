@@ -12,11 +12,12 @@ services:
           devices:
             - driver: nvidia
               count: all
-              capabilities: [gpu]
+              capabilities:
+                - gpu
     restart: unless-stopped
     ports:
       - target: 11434
-        published: "11434"
+        published: '11434'
         protocol: tcp
     volumes:
       - type: bind
@@ -24,7 +25,7 @@ services:
         target: /root/.ollama
     x-casaos:
       ports:
-        - container: "11434"
+        - container: '11434'
           description:
             en_US: Ollama API Port
             en_GB: Ollama API Port
@@ -674,9 +675,9 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ollama/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ollama/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ollama/screenshot-3.png
-  thumbnail: ""
+  thumbnail: ''
   scheme: http
-  port_map: "11434"
+  port_map: '11434'
   index: /
   title:
     en_US: Ollama(Nvidia GPU)

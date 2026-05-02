@@ -80,7 +80,7 @@ x-casaos:
     ru_ru: Бесплатная и открытая кросс-платформенная программная система, ориентированная на документы. MongoDB классифицируется как программная система базы данных NoSQL и использует документы в формате JSON с схемами.
     pl_pl: Darmowy, otwartoźródłowy program bazodanowy zorientowany na dokumenty, działający na wielu platformach. MongoDB jest klasyfikowana jako program bazodanowy NoSQL i wykorzystuje dokumenty w formacie JSON z schematami.
     pt_br: Um programa de banco de dados orientado a documentos, gratuito e de código aberto, multiplataforma. O MongoDB é classificado como um programa de banco de dados NoSQL e utiliza documentos semelhantes a JSON com esquemas.
-  screenshot_link:
+  screenshot_link: null
   developer: MongoDB Inc.
   author: WisdomSky
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mongo/icon.png
@@ -103,3 +103,4 @@ x-casaos:
       uk_ua: Ця версія MongoDB вимагає процесора з підтримкою AVX. Ця версія MongoDB не працюватиме з ZimaBoard.
   title:
     en_us: MongoDB
+  scheme: http

@@ -35,7 +35,7 @@ services:
             en_us: WebUI Port
     ports:
       - target: 7777
-        published: "7777"
+        published: '7777'
         protocol: tcp
     volumes:
       - type: bind
@@ -138,3 +138,6 @@ x-casaos:
     en_us: Petio
   category: Media
   port_map: '7777'
+  scheme: http
+x-roqueos:
+  mountShared: true

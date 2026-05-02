@@ -2,8 +2,8 @@ name: logseq
 services:
   logseq:
     environment:
-      PGID: "0"
-      PUID: "0"
+      PGID: '0'
+      PUID: '0'
     image: correctroad/logseq:v0.10.10
     deploy:
       resources:
@@ -12,10 +12,10 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: "3325"
-        protocol: tcp   
+        published: '3325'
+        protocol: tcp
       - target: 12315
-        published: "12315"
+        published: '12315'
         protocol: tcp
     privileged: true
     restart: unless-stopped
@@ -28,16 +28,16 @@ services:
         target: /notes
     x-casaos:
       ports:
-        - container: "3325"
+        - container: '3325'
           description:
-            en_us: ""
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /notes
           description:
-            en_us: ""
+            en_us: ''
     container_name: logseq
 x-casaos:
   architectures:
@@ -63,4 +63,5 @@ x-casaos:
   tips: {}
   title:
     en_us: Logseq
-  port_map: "3325"
+  port_map: '3325'
+  scheme: http

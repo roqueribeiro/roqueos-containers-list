@@ -1,5 +1,4 @@
 name: peanut
-
 services:
   peanut:
     image: brandawg93/peanut:5.19.1
@@ -11,7 +10,7 @@ services:
         target: /config
     ports:
       - target: 8080
-        published: "8084"
+        published: '8084'
         protocol: tcp
     environment:
       WEB_PORT: 8080
@@ -39,7 +38,7 @@ services:
             tr_TR: Dahili web sunucusu portu
             zh_CN: 内部Web服务器端口
       ports:
-        - container: "8080"
+        - container: '8080'
           description:
             de_DE: PeaNUT Web-Interface-Port
             el_GR: Θύρα διασύνδεσης web PeaNUT
@@ -74,7 +73,6 @@ services:
             sv_SE: PeaNUT konfigurationskatalog
             tr_TR: PeaNUT yapılandırma dizini
             zh_CN: PeaNUT配置目录
-
 x-casaos:
   title:
     de_DE: PeaNUT
@@ -93,21 +91,21 @@ x-casaos:
     tr_TR: PeaNUT
     zh_CN: PeaNUT
   tagline:
-    de_DE: "UPS-Überwachungs- und Stromausfallbenachrichtigungssystem"
-    el_GR: "Σύστημα παρακολούθησης UPS και ειδοποιήσεων διακοπής ρεύματος"
-    en_GB: "UPS monitoring and power outage notification system"
-    en_US: "UPS monitoring and power outage notification system"
-    fr_FR: "Système de surveillance UPS et de notification de coupure de courant"
-    hr_HR: "UPS nadzorni sustav i sustav obavijesti o prekidu napajanja"
-    it_IT: "Sistema di monitoraggio UPS e notifica interruzione di corrente"
-    ja_JP: "UPS監視および停電通知システム"
-    ko_KR: "UPS 모니터링 및 정전 알림 시스템"
-    nb_NO: "UPS overvåking og strømbrudd varslingssystem"
-    pt_PT: "Sistema de monitorização UPS e notificação de interrupção de energia"
-    ru_RU: "Система мониторинга ИБП и уведомлений об отключении электроэнергии"
-    sv_SE: "UPS övervakning och strömavbrott notifikationssystem"
-    tr_TR: "UPS izleme ve güç kesintisi bildirim sistemi"
-    zh_CN: "UPS监控和停电通知系统"
+    de_DE: UPS-Überwachungs- und Stromausfallbenachrichtigungssystem
+    el_GR: Σύστημα παρακολούθησης UPS και ειδοποιήσεων διακοπής ρεύματος
+    en_GB: UPS monitoring and power outage notification system
+    en_US: UPS monitoring and power outage notification system
+    fr_FR: Système de surveillance UPS et de notification de coupure de courant
+    hr_HR: UPS nadzorni sustav i sustav obavijesti o prekidu napajanja
+    it_IT: Sistema di monitoraggio UPS e notifica interruzione di corrente
+    ja_JP: UPS監視および停電通知システム
+    ko_KR: UPS 모니터링 및 정전 알림 시스템
+    nb_NO: UPS overvåking og strømbrudd varslingssystem
+    pt_PT: Sistema de monitorização UPS e notificação de interrupção de energia
+    ru_RU: Система мониторинга ИБП и уведомлений об отключении электроэнергии
+    sv_SE: UPS övervakning och strömavbrott notifikationssystem
+    tr_TR: UPS izleme ve güç kesintisi bildirim sistemi
+    zh_CN: UPS监控和停电通知系统
   tips:
     before_install:
       zh_CN: |
@@ -115,91 +113,76 @@ x-casaos:
         | 服务器地址 | 端口号 | 用户名 | 密码 |
         |------------|--------|--------|------|
         | ZimaOS IP  | `3493` | `monuser` | `secret` |
-  
       en_US: |
         The UPS service parameters for ZimaOS are as follows:
         | Server Address | Port | Username | Password |
         |----------------|------|----------|----------|
         | ZimaOS IP      | `3493` | `monuser` | `secret` |
-  
       en_GB: |
         The UPS service parameters for ZimaOS are as follows:
         | Server Address | Port | Username | Password |
         |----------------|------|----------|----------|
         | ZimaOS IP      | `3493` | `monuser` | `secret` |
-  
       de_DE: |
         Die UPS-Dienstparameter von ZimaOS lauten wie folgt:
         | Serveradresse | Port | Benutzername | Passwort |
         |---------------|------|--------------|----------|
         | ZimaOS IP     | `3493` | `monuser` | `secret` |
-  
       fr_FR: |
         Les paramètres du service UPS de ZimaOS sont les suivants :
         | Adresse du serveur | Port | Nom d’utilisateur | Mot de passe |
         |--------------------|------|-------------------|--------------|
         | ZimaOS IP          | `3493` | `monuser` | `secret` |
-  
       it_IT: |
         I parametri del servizio UPS di ZimaOS sono i seguenti:
         | Indirizzo server | Porta | Nome utente | Password |
         |------------------|-------|-------------|----------|
         | ZimaOS IP        | `3493` | `monuser` | `secret` |
-  
       pt_PT: |
         Os parâmetros do serviço UPS do ZimaOS são os seguintes:
         | Endereço do servidor | Porta | Nome de utilizador | Palavra-passe |
         |----------------------|-------|-------------------|---------------|
         | ZimaOS IP            | `3493` | `monuser` | `secret` |
-  
       ru_RU: |
         Параметры службы UPS для ZimaOS приведены ниже:
         | Адрес сервера | Порт | Имя пользователя | Пароль |
         |---------------|------|------------------|--------|
         | ZimaOS IP     | `3493` | `monuser` | `secret` |
-  
       ja_JP: |
         ZimaOS の UPS サービスのパラメータは以下のとおりです：
         | サーバーアドレス | ポート | ユーザー名 | パスワード |
         |------------------|--------|------------|------------|
         | ZimaOS IP        | `3493` | `monuser` | `secret` |
-  
       ko_KR: |
         ZimaOS의 UPS 서비스 매개변수는 다음과 같습니다:
         | 서버 주소 | 포트 | 사용자 이름 | 비밀번호 |
         |-----------|------|-------------|----------|
         | ZimaOS IP | `3493` | `monuser` | `secret` |
-  
       nb_NO: |
         UPS-tjenesteparametrene for ZimaOS er som følger:
         | Serveradresse | Port | Brukernavn | Passord |
         |---------------|------|------------|---------|
         | ZimaOS IP     | `3493` | `monuser` | `secret` |
-  
       sv_SE: |
         UPS-tjänsteparametrarna för ZimaOS är följande:
         | Serveradress | Port | Användarnamn | Lösenord |
         |---------------|------|--------------|----------|
         | ZimaOS IP     | `3493` | `monuser` | `secret` |
-  
       tr_TR: |
         ZimaOS için UPS hizmeti parametreleri aşağıdaki gibidir:
         | Sunucu adresi | Port | Kullanıcı adı | Parola |
         |---------------|------|---------------|--------|
         | ZimaOS IP     | `3493` | `monuser` | `secret` |
-  
       el_GR: |
         Οι παράμετροι της υπηρεσίας UPS για το ZimaOS είναι οι εξής:
         | Διεύθυνση διακομιστή | Θύρα | Όνομα χρήστη | Κωδικός πρόσβασης |
         |----------------------|------|--------------|------------------|
         | ZimaOS IP            | `3493` | `monuser` | `secret` |
-  
       hr_HR: |
         Parametri UPS usluge za ZimaOS su sljedeći:
         | Adresa poslužitelja | Port | Korisničko ime | Lozinka |
         |---------------------|------|---------------|---------|
         | ZimaOS IP           | `3493` | `monuser` | `secret` |
-
   description:
     de_DE: |
       PeaNUT ist ein webbasiertes UPS-Überwachungssystem, das speziell für die Überwachung von Unterbrechungsfreien Stromversorgungen (USV) entwickelt wurde. Es bietet eine benutzerfreundliche Oberfläche zur Überwachung des UPS-Status, der Batterielebensdauer und zur Benachrichtigung bei Stromausfällen, um sicherzustellen, dass Ihre Systeme immer geschützt sind.
@@ -216,7 +199,6 @@ x-casaos:
 
       **Mehr Erfahren:**
       - [PeaNUT GitHub-Repository](https://github.com/brandawg93/peanut)
-
     el_GR: |
       Το PeaNUT είναι ένα σύστημα παρακολούθησης UPS βασισμένο στο web, σχεδιασμένο ειδικά για την παρακολούθηση των Αδιάλειπτων Πηγών Ενέργειας (UPS). Παρέχει ένα φιλικό προς τον χρήστη περιβάλλον για την παρακολούθηση της κατάστασης UPS, της διάρκειας ζωής της μπαταρίας και την αποστολή ειδοποιήσεων κατά τη διακοπή ρεύματος, διασφαλίζοντας ότι τα συστήματά σας είναι πάντα προστατευμένα.
 
@@ -232,7 +214,6 @@ x-casaos:
 
       **Μάθετε Περισσότερα:**
       - [PeaNUT GitHub Αποθετήριο](https://github.com/brandawg93/peanut)
-
     en_GB: |
       PeaNUT is a web-based UPS monitoring system specifically designed for monitoring Uninterruptible Power Supplies (UPS). It provides a user-friendly interface for monitoring UPS status, battery life, and power outage notifications to ensure your systems are always protected.
 
@@ -248,7 +229,6 @@ x-casaos:
 
       **Learn More:**
       - [PeaNUT GitHub Repository](https://github.com/brandawg93/peanut)
-
     en_US: |
       PeaNUT is a web-based UPS monitoring system specifically designed for monitoring Uninterruptible Power Supplies (UPS). It provides a user-friendly interface for monitoring UPS status, battery life, and power outage notifications to ensure your systems are always protected.
 
@@ -264,7 +244,6 @@ x-casaos:
 
       **Learn More:**
       - [PeaNUT GitHub Repository](https://github.com/brandawg93/peanut)
-
     fr_FR: |
       PeaNUT est un système de surveillance UPS basé sur le web, spécifiquement conçu pour surveiller les Alimentations Sans Interruption (ASI/UPS). Il fournit une interface conviviale pour surveiller le statut UPS, la durée de vie de la batterie et les notifications de coupure de courant pour garantir que vos systèmes sont toujours protégés.
 
@@ -280,7 +259,6 @@ x-casaos:
 
       **En Savoir Plus:**
       - [Dépôt GitHub PeaNUT](https://github.com/brandawg93/peanut)
-
     hr_HR: |
       PeaNUT je web-based UPS nadzorni sustav specifično dizajniran za praćenje Neprekidnih Izvora Napajanja (UPS). Pruža korisnički pristupno sučelje za praćenje UPS statusa, trajanja baterije i obavijesti o prekidu napajanja kako bi se osiguralo da su vaši sustavi uvijek zaštićeni.
 
@@ -296,7 +274,6 @@ x-casaos:
 
       **Saznajte Više:**
       - [PeaNUT GitHub Repozitorij](https://github.com/brandawg93/peanut)
-
     it_IT: |
       PeaNUT è un sistema di monitoraggio UPS basato sul web, specificamente progettato per monitorare i Gruppi di Continuità (UPS). Fornisce un'interfaccia user-friendly per monitorare lo stato UPS, la durata della batteria e le notifiche di interruzione di corrente per garantire che i sistemi siano sempre protetti.
 
@@ -312,7 +289,6 @@ x-casaos:
 
       **Scopri di Più:**
       - [Repository GitHub PeaNUT](https://github.com/brandawg93/peanut)
-
     ja_JP: |
       PeaNUTは、無停電電源装置（UPS）の監視専用に設計されたWebベースのUPS監視システムです。UPSステータス、バッテリー寿命、停電通知を監視するユーザーフレンドリーなインターフェースを提供し、システムが常に保護されていることを保証します。
 
@@ -328,7 +304,6 @@ x-casaos:
 
       **詳細情報：**
       - [PeaNUT GitHubリポジトリ](https://github.com/brandawg93/peanut)
-
     ko_KR: |
       PeaNUT은 무정전 전원 공급 장치(UPS) 모니터링용으로 특별히 설계된 웹 기반 UPS 모니터링 시스템입니다. UPS 상태, 배터리 수명 및 정전 알림을 모니터링하는 사용자 친화적 인터페이스를 제공하여 시스템이 항상 보호되도록 합니다.
 
@@ -344,7 +319,6 @@ x-casaos:
 
       **자세히 알아보기:**
       - [PeaNUT GitHub 저장소](https://github.com/brandawg93/peanut)
-
     nb_NO: |
       PeaNUT er et web-basert UPS overvåkingssystem spesifikt designet for overvåking av Unntatt Strømforsyning (UPS). Det gir et brukervennlig grensesnitt for overvåking av UPS-status, batterilevetid og strømbruddsvarsler for å sikre at systemene dine alltid er beskyttet.
 
@@ -360,7 +334,6 @@ x-casaos:
 
       **Lær Mer:**
       - [PeaNUT GitHub Repository](https://github.com/brandawg93/peanut)
-
     pt_PT: |
       PeaNUT é um sistema de monitorização UPS baseado na web, especificamente projetado para monitorizar Fontes de Alimentação Ininterrupta (UPS). Fornece uma interface amigável para monitorizar o estado UPS, a vida útil da bateria e notificações de interrupção de energia para garantir que os seus sistemas estejam sempre protegidos.
 
@@ -376,7 +349,6 @@ x-casaos:
 
       **Saiba Mais:**
       - [Repositório GitHub PeaNUT](https://github.com/brandawg93/peanut)
-
     ru_RU: |
       PeaNUT - это веб-система мониторинга ИБП, специально разработанная для мониторинга источников бесперебойного питания (ИБП). Она предоставляет удобный интерфейс для мониторинга статуса ИБП, срока службы батареи и уведомлений об отключении электроэнергии, чтобы обеспечить постоянную защиту ваших систем.
 
@@ -392,7 +364,6 @@ x-casaos:
 
       **Узнать Больше:**
       - [Репозиторий GitHub PeaNUT](https://github.com/brandawg93/peanut)
-
     sv_SE: |
       PeaNUT är ett webbaserat UPS övervakningssystem specifikt designat för övervakning av Oavbrutna Kraftkällor (UPS). Det ger ett användarvänligt gränssnitt för övervakning av UPS-status, batterilivslängd och strömavbrottsnotifieringar för att säkerställa att dina system alltid är skyddade.
 
@@ -408,7 +379,6 @@ x-casaos:
 
       **Läs Mer:**
       - [PeaNUT GitHub Repository](https://github.com/brandawg93/peanut)
-
     tr_TR: |
       PeaNUT, Kesintisiz Güç Kaynakları (UPS) izleme için özel olarak tasarlanmış web tabanlı bir UPS izleme sistemidir. Sistemlerinizin her zaman korunduğundan emin olmak için UPS durumunu, pil ömrünü ve güç kesintisi bildirimlerini izlemek için kullanıcı dostu bir arayüz sağlar.
 
@@ -424,7 +394,6 @@ x-casaos:
 
       **Daha Fazla Bilgi:**
       - [PeaNUT GitHub Deposu](https://github.com/brandawg93/peanut)
-
     zh_CN: |
       PeaNUT是一个基于Web的UPS监控系统，专门设计用于监控不间断电源（UPS）。它提供用户友好的界面来监控UPS状态、电池寿命和停电通知，确保您的系统始终受到保护。
 
@@ -440,7 +409,6 @@ x-casaos:
 
       **了解更多：**
       - [PeaNUT GitHub仓库](https://github.com/brandawg93/peanut)
-
   category: Utilities
   author: brandawg93
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Peanut/icon.png
@@ -449,7 +417,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Peanut/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Peanut/screenshot-3.png
   main: peanut
-  port_map: "8084"
+  port_map: '8084'
   architectures:
     - amd64
     - arm64
