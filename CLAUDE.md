@@ -4,6 +4,14 @@ CasaOS-compatible Docker app catalog. **155+ apps** packaged as one directory ea
 
 This repo has no build, no tests, no runtime. It's data. Ecosystem map: `../CLAUDE.md`.
 
+> **Regras granulares e agents/skills**: este repo não tem `.claude/` próprio por decisão de centralização. Tudo vive em `../roqueos-front/.claude/`:
+>
+> - Rules específicas do catálogo: [`../roqueos-front/.claude/rules/containers/INDEX.md`](../roqueos-front/.claude/rules/containers/INDEX.md) — schema CasaOS, validators (validate/fix/audit/rebrand), image policy, i18n (en_US obrigatório), mountShared, rebranding.
+> - Agents dedicados: `catalog-validator` (interpreta erros de `yarn validate`), `docker-security-reviewer` (privileged, bind mounts, network_mode).
+> - Skills: `add-container-app` (template + checklist + validate), `audit-catalog` (validate → fix:dry → audit → rebrand:dry com priorização).
+>
+> Trade-off: agents/rules só auto-carregam quando o cwd está em `roqueos-front/`. Para acionar, abra o Claude Code no contexto `roqueos-front/` mesmo quando for editar manifest aqui.
+
 ## Commands
 
 - None. Edit the JSON/YAML under `Apps/` and open a PR — GitHub Actions (`.github/workflows/`) builds the release zip on merge.
