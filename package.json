@@ -1,0 +1,17 @@
+{
+  "name": "roqueos-containers-list",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tooling for the RoqueOS Containers List catalog. The catalog itself is the Apps/ directory — these scripts validate and migrate manifests.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-manifests.mjs",
+    "fix": "node scripts/fix-manifests.mjs",
+    "fix:dry": "node scripts/fix-manifests.mjs --dry-run --verbose"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "js-yaml": "^4.1.0"
+  }
+}

@@ -1,0 +1,40 @@
+name: Validate Manifests
+
+# Runs on every push and PR. Fails when any Apps/*/docker-compose.yml drifts
+# from schema/casaos-app.schema.json — the contract that the RoqueOS Server
+# parser depends on. PRs that add/edit a manifest must keep it green.
+#
+# What triggers a fail:
+# - missing/invalid x-casaos.architectures, .main, .category, .scheme
+# - port_map declared but pointing at a port that isn't published
+# - main: declared but the named service doesn't exist
+# - image without an explicit tag (`foo`, `foo:latest` both rejected — pinned tags only)
+# - x-roqueos.mountShared with anything other than a boolean
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Apps/**/docker-compose.yml'
+      - 'schema/**'
+      - '.github/workflows/validate-schema.yml'
+      - 'scripts/validate-manifests.mjs'
+  pull_request:
+    paths:
+      - 'Apps/**/docker-compose.yml'
+      - 'schema/**'
+      - '.github/workflows/validate-schema.yml'
+      - 'scripts/validate-manifests.mjs'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install validator deps
+        run: npm install --no-save ajv@^8 ajv-formats@^3 js-yaml@^4
+      - name: Validate every manifest against the schema
+        run: node scripts/validate-manifests.mjs

@@ -2,6 +2,9 @@
 *.zip
 dist/
 
+# Node deps for the validation scripts (scripts/*.mjs)
+node_modules/
+
 # OS files
 .DS_Store
 Thumbs.db
