@@ -10,7 +10,9 @@
     "fix:dry": "node scripts/fix-manifests.mjs --dry-run --verbose",
     "audit": "node scripts/audit-enrichment.mjs",
     "audit:verbose": "node scripts/audit-enrichment.mjs --verbose",
-    "audit:csv": "node scripts/audit-enrichment.mjs --csv"
+    "audit:csv": "node scripts/audit-enrichment.mjs --csv",
+    "rebrand": "node scripts/rebrand-casaos.mjs",
+    "rebrand:dry": "node scripts/rebrand-casaos.mjs --dry-run --verbose"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
