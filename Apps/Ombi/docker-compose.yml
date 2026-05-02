@@ -49,7 +49,7 @@ x-casaos:
     - amd64
     - arm64
   main: ombi
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Media
   description:
     en_us: Ombi is a self-hosted web application that automatically gives your shared Plex or Emby users the ability to request content by themselves! Ombi can be linked to multiple TV Show and Movie DVR tools to create a seamless end-to-end experience for your users.
@@ -66,11 +66,11 @@ x-casaos:
     sv_se: Ombi är en självvärd webbapplikation som automatiskt ger dina delade Plex- eller Emby-användare självbetjäningsmöjligheter för att begära innehåll! Ombi kan kopplas samman med flera TV-program och film-DVR-verktyg för en sömlös helhetsupplevelse för användarna.
     uk_ua: Ombi є самохостованою веб-додатком, який автоматично надає можливості самообслуговування для запитування вмісту вашим спільними користувачами Plex або Emby! Ombi може бути пов'язаний з декількома інструментами для запису телевізійних шоу та фільмів, що забезпечує користувачам безшовний досвід від початку до кінця.
   developer: Sabnzbd Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ombi/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ombi/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ombi/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ombi/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ombi/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ombi/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ombi/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ombi/screenshot-3.png
   tagline:
     en_us: Friendly media request tool, automatically syncs with your media servers!
     zh_cn: 友好的媒体请求工具，自动与您的媒体服务器同步！
@@ -85,7 +85,7 @@ x-casaos:
     pt_br: Ferramenta de solicitação de mídia amigável, sincroniza automaticamente com seus servidores de mídia!
     sv_se: Vänlig mediaförfrågan, synkroniserar automatiskt med dina mediaservrar!
     uk_ua: Дружній інструмент запиту медіа, автоматично синхронізується з вашими медіа-серверами!
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ombi/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ombi/thumbnail.png
   tips: {}
   title:
     en_us: Ombi

@@ -398,11 +398,11 @@ x-casaos:
       - [Jellyseerr Belgeleri](https://docs.jellyseerr.dev/)
       - [Jellyseerr GitHub Deposu](https://github.com/Fallenbagel/jellyseerr)
   developer: Fallenbagel
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-3.jpg
   tagline:
     en_US: Jellyseerr is a free and open source software application for managing requests for your media library.
     en_GB: Jellyseerr is a free and open source software application for managing requests for your media library.
@@ -419,6 +419,6 @@ x-casaos:
     pt_PT: Jellyseerr é uma aplicação de software gratuita e de código aberto para gerir pedidos da sua biblioteca multimédia.
     ru_RU: Jellyseerr - это бесплатное приложение с открытым исходным кодом для управления запросами вашей медиабиблиотеки.
     tr_TR: Jellyseerr, medya kütüphaneniz için istekleri yönetmek üzere tasarlanmış ücretsiz ve açık kaynaklı bir yazılım uygulamasıdır.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/thumbnail.jpg
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/thumbnail.jpg
   tips: {}
   port_map: '5055'

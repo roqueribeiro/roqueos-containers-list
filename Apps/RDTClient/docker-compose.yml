@@ -15,7 +15,7 @@ services:
           memory: 64M
     image: rogerfar/rdtclient:2
     labels:
-      icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RDTClient/icon.png
+      icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RDTClient/icon.png
     ports:
       - target: 6500
         published: '6500'
@@ -37,9 +37,9 @@ x-casaos:
     - arm64
   author: calganaygun
   category: Downloader
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RDTClient/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RDTClient/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RDTClient/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RDTClient/screenshot-1.png
   index: /
   port_map: '6500'
   scheme: http

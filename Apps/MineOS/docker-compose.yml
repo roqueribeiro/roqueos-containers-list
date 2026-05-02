@@ -119,7 +119,7 @@ x-casaos:
     sv_se: MineOS är ett serverfront som underlättar hanteringen av administrativa uppgifter för Minecraft. Denna iteration med Node.js syftar till att förbättra tidigare MineOS-skript (baserade på Python), genom att utnyttja Node.JS och websockets händelseutlösningsmodell.
     uk_ua: MineOS - це серверний фронт-енд, який полегшує управління адміністративними завданнями Minecraft. Ця ітерація з використанням Node.js спрямована на поліпшення попередніх сценаріїв MineOS (на основі Python), використовуючи подійно-орієнтовану, асинхронну модель Node.JS та websockets.
   developer: hexparrot
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MineOS/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MineOS/icon.png
   tagline:
     en_us: Free and easy to use Minecraft server management tool.
     zh_cn: 免费且易于使用的Minecraft服务器管理工具。

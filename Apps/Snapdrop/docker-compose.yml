@@ -39,9 +39,9 @@ x-casaos:
     pt_br: Snapdrop é um aplicativo da Web progressivo (PWA) que permite transferir arquivos entre dispositivos na mesma rede sem precisar instalar nada.
     sv_se: Snapdrop är en progressiv webbapp (PWA) som låter dig överföra filer mellan enheter i samma nätverk utan att behöva installera något.
     uk_ua: Snapdrop - це прогресивний веб-додаток (PWA), який дозволяє передавати файли між пристроями в одній мережі без необхідності встановлювати що-небудь.
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Snapdrop/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Snapdrop/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Snapdrop/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Snapdrop/screenshot-1.png
   tagline:
     en_us: Cross-platform file sharing made easy.
     zh_cn: 轻松实现跨平台文件共享。

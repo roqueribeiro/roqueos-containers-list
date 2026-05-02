@@ -18,7 +18,7 @@ services:
           memory: 64M
     image: ghcr.io/flaresolverr/flaresolverr:v3.4.5
     labels:
-      icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FlareSolverr/icon.png
+      icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FlareSolverr/icon.png
     ports:
       - target: 8191
         published: '8191'
@@ -33,9 +33,9 @@ x-casaos:
     - arm64
   author: calganaygun
   category: Network
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FlareSolverr/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FlareSolverr/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FlareSolverr/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FlareSolverr/screenshot-1.png
   index: /
   port_map: '8191'
   scheme: http

@@ -51,7 +51,7 @@ x-casaos:
     - amd64
     - arm64
   main: plex
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Media
   description:
     en_us: |
@@ -63,15 +63,15 @@ x-casaos:
 
       在 Zima 设备上部署 Plex，解锁家庭娱乐便利的极致。享受几乎无限的存储容量，用于存放您的整个媒体库，闪电般快速的本地网络速度，并能够轻松地将内容流式传输到家中的任何设备。体验一个世界，在那里您喜爱的节目和电影始终触手可及，安全且私密地存储在您自己的设备上。
   developer: Plex
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Plex/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Plex/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Plex/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Plex/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Plex/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Plex/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Plex/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Plex/screenshot-3.png
   tagline:
     en_us: Stream Movies & TV Shows
     zh_cn: 流式播放电影和电视剧
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Plex/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Plex/thumbnail.png
   tips:
     before_install:
       en_us: |

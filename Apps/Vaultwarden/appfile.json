@@ -2,14 +2,14 @@
     "version": "2.0",
     "title": "Vaultwarden",
     "name": "vaultwarden",
-    "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/icon.png",
+    "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/icon.png",
     "tagline": "A self-hosted Bitwarden server",
     "overview": "Alternative implementation of the Bitwarden server API written in Rust and compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
-    "thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/thumbnail.png",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/thumbnail.png",
     "screenshots": [
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/screenshot-1.png",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/screenshot-2.png",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/screenshot-3.png"
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/screenshot-1.png",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/screenshot-2.png",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/screenshot-3.png"
     ],
     "category": [
         "Utilities"
@@ -21,8 +21,8 @@
         "donate_link": ""
     },
     "adaptor": {
-        "name": "CasaOS Team",
-        "website": "https://www.casaos.io",
+        "name": "RoqueOS Team",
+        "website": "https://roqueos.com.br",
         "donate_text": "",
         "donate_link": ""
     },
@@ -78,7 +78,7 @@
     "tips": {},
     "changelog": {
         "latest_updates": "",
-        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/changelog.txt"
+        "url": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/changelog.txt"
     },
     "latest_update_date": "1647253154"
 }

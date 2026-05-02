@@ -16,7 +16,7 @@ services:
       - DB_HOST=romm-db
       - DB_NAME=romm
       - DB_USER=romm-user
-      - DB_PASSWD=casaos
+      - DB_PASSWD=roqueos
       - ROMM_AUTH_SECRET_KEY=""
       - IGDB_CLIENT_ID=""
       - IGDB_CLIENT_SECRET=""
@@ -316,10 +316,10 @@ services:
     networks:
       - romm-network
     environment:
-      - MARIADB_ROOT_PASSWORD=casaos
+      - MARIADB_ROOT_PASSWORD=roqueos
       - MARIADB_DATABASE=romm
       - MARIADB_USER=romm-user
-      - MARIADB_PASSWORD=casaos
+      - MARIADB_PASSWORD=roqueos
     volumes:
       - /DATA/AppData/$AppID/mysql:/var/lib/mysql
     healthcheck:
@@ -780,13 +780,13 @@ x-casaos:
       **Daha fazla bilgi edinin:**
       - [RomM resmi web sitesi](https://romm.app)
       - [RomM GitHub deposu](https://github.com/rommapp/romm)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RomM/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RomM/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RomM/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RomM/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RomM/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RomM/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RomM/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RomM/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RomM/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RomM/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RomM/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RomM/screenshot-5.png
   thumbnail: ''
   scheme: http
   port_map: '8285'

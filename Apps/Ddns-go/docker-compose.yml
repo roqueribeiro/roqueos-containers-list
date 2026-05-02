@@ -45,9 +45,9 @@ x-casaos:
 
       在 Zima 上部署 DDNS-go， 你可以把你的 Zima 设备对应的公网IP绑定到你的域名上。 这样你在外面就可以通过域名访问你的 Zima 设备了。
   developer: jeessy2
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ddns-go/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ddns-go/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ddns-go/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ddns-go/screenshot-1.png
   main: ddns-go
   port_map: '9876'
   scheme: http

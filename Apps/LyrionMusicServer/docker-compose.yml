@@ -494,11 +494,11 @@ x-casaos:
       - Sunucu işlevselliği, etkileşim yöntemleri ve arayüz görünümü için kapsamlı özelleştirme seçenekleri
       - Telefonlar, bilgisayarlar ve diğer oynatıcılarda tutarlı deneyim sağlayan birleşik çoklu cihaz arayüzü
       - Kurulumları optimize etmek ve işlevselliği genişletmek için topluluk belge desteği
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/LyrionMusicServer/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LyrionMusicServer/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/LyrionMusicServer/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/LyrionMusicServer/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/LyrionMusicServer/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LyrionMusicServer/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LyrionMusicServer/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LyrionMusicServer/screenshot-3.png
   thumbnail: ''
   scheme: http
   port_map: '9000'

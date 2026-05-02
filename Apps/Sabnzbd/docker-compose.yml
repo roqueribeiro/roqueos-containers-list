@@ -57,7 +57,7 @@ x-casaos:
     - amd64
     - arm64
   main: sabnzbd
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Media
   description:
     en_us: SABnzbd is an Open Source Binary Newsreader written in Python. It's totally free, easy to use, and works practically everywhere. SABnzbd makes Usenet as simple and streamlined as possible by automating everything we can. All you have to do is add an .nzb. SABnzbd takes over from there, where it will be automatically downloaded, verified, repaired, extracted and filed away with zero human interaction. SABnzbd offers an easy setup wizard and has self-analysis tools to verify your setup.
@@ -74,15 +74,15 @@ x-casaos:
     sv_se: SABnzbd är en öppen källkod binär nyhetsläsare skriven i Python. Det är helt gratis, lätt att använda och fungerar praktiskt taget överallt. SABnzbd gör Usenet så enkelt och effektivt som möjligt genom att automatisera allt vi kan göra. Allt du behöver göra är att lägga till en .nzb. SABnzbd tar över kontrollen därifrån, där det automatiskt laddas ner, verifieras, repareras, packas upp och arkiveras utan mänsklig inblandning. SABnzbd erbjuder en enkel konfigurationsguide och har självständiga analysverktyg för att kontrollera din konfiguration.
     uk_ua: SABnzbd - це відкритий вихідний код бінарного читача новин, написаний на Python. Він повністю безкоштовний, легкий у використанні і працює майже в будь-якому місці. SABnzbd робить Usenet якомога простішим і ефективнішим, автоматизуючи все, що ми можемо зробити. Все, що вам потрібно зробити, - це додати .nzb. SABnzbd бере на себе контроль звідти, де він буде автоматично завантажений, перевірений, відновлений, розпакований і архівований без участі людини. SABnzbd пропонує простий майстер налаштування і має самостійні інструменти аналізу для перевірки вашої конфігурації.
   developer: Sabnzbd Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sabnzbd/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sabnzbd/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sabnzbd/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sabnzbd/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sabnzbd/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sabnzbd/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sabnzbd/screenshot-5.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sabnzbd/screenshot-6.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sabnzbd/screenshot-7.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sabnzbd/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sabnzbd/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sabnzbd/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sabnzbd/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sabnzbd/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sabnzbd/screenshot-6.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sabnzbd/screenshot-7.png
   tagline:
     en_us: Free and easy binary newsreader
     zh_cn: 免费易用的二进制新闻阅读器
@@ -97,7 +97,7 @@ x-casaos:
     pt_br: Leitor de notícias binárias gratuito e fácil de usar
     sv_se: Gratis och enkel binär nyhetsläsare
     uk_ua: Безкоштовний і простий бінарний новинний читач
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Readarr/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/thumbnail.png
   tips: {}
   title:
     en_us: Sabnzbd

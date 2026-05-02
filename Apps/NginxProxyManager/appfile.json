@@ -2,14 +2,14 @@
     "version": "2.0",
     "title": "Nginx Proxy Manager",
     "name": "nginxproxymanager",
-    "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/icon.png",
+    "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/icon.png",
     "tagline": "Just what the name says",
     "overview": "Managing Nginx proxy hosts with a simple, powerful interface.",
-    "thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/thumbnail.png",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/thumbnail.png",
     "screenshots": [
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/screenshot-1.jpg",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/screenshot-2.jpg",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/screenshot-3.jpg"
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/screenshot-1.jpg",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/screenshot-2.jpg",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/screenshot-3.jpg"
     ],
     "category": [
         "Network"
@@ -21,13 +21,13 @@
         "donate_link": ""
     },
     "adaptor": {
-        "name": "CasaOS Team",
-        "website": "https://www.casaos.io",
+        "name": "RoqueOS Team",
+        "website": "https://roqueos.com.br",
         "donate_text": "", 
         "donate_link": ""
     },
     "support": "https://discord.gg/knqAbbBbeX",
-    "website": "https://www.casaos.io",
+    "website": "https://roqueos.com.br",
     "container": {
         "image": "jc21/nginx-proxy-manager:latest",
         "shell": "sh",
@@ -112,7 +112,7 @@
                 "content":"Nginx Proxy Manager occupies ports 80 and 443 by default for built-in Nginx use. It occupies port 81 for the admin page."
             },
             {
-                "content":"Please change the CasaOS WebUI port to a port other than 80/81/443. And pay attention to whether the ports conflict with other apps. Otherwise, it may cause your CasaOS to run abnormally."
+                "content":"Please change the RoqueOS WebUI port to a port other than 80/81/443. And pay attention to whether the ports conflict with other apps. Otherwise, it may cause your RoqueOS to run abnormally."
             },
             {
                 "content": ""

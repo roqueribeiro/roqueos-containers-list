@@ -80,7 +80,7 @@ x-casaos:
     - amd64
     - arm64
   main: syncthing
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Backup
   description:
     en_US: |
@@ -264,7 +264,7 @@ x-casaos:
 
       Syncthing’i Zima özel bulut cihazlarında dağıtmak, eşsiz bir kolaylık sağlar: sınırsız depolama kapasitesinin keyfini çıkarın, verilerinizin gizliliğini sağlayın ve ışık hızındaki yerel ağ hızlarından faydalanın. Syncthing’in yetenekleri ile Zima’nın güçlü altyapısının mükemmel kombinasyonuyla veri yönetimi ve senkronizasyonunuzu dönüştürün.
   developer: Syncthing
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Syncthing/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Syncthing/icon.png
   tagline:
     en_US: Open decentralized file synchronization
     en_GB: Open decentralised file synchronisation
@@ -281,10 +281,10 @@ x-casaos:
     pt_PT: Sincronização de ficheiros aberta e descentralizada
     ru_RU: Открытая децентрализованная синхронизация файлов
     tr_TR: Açık dağıtık dosya senkronizasyonu
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Syncthing/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Syncthing/thumbnail.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Syncthing/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Syncthing/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Syncthing/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Syncthing/screenshot-2.png
   tips: {}
   title:
     en_us: Syncthing

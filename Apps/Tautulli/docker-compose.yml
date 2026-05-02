@@ -62,12 +62,12 @@ x-casaos:
     sv_se: Tautulli är en tredjepartsapplikation som du kan köra bredvid din Plex Media Server för att övervaka aktiviteten och spåra olika statistik.
     uk_ua: Tautulli - це стороння програма, яку ви можете запустити разом з вашим сервером мультимедіа Plex, щоб відстежувати активність та відстежувати різні статистичні дані.
   developer: Tautulli Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/screenshot-4.png
   tagline:
     en_us: Monitor your Plex Media Server and much more.
     zh_cn: 监视您的Plex Media Server以及更多内容。
@@ -82,7 +82,7 @@ x-casaos:
     pt_br: Monitore seu servidor de mídia Plex e muito mais.
     sv_se: Övervaka din Plex Media Server och mycket mer.
     uk_ua: Відстежуйте свій сервер мультимедіа Plex та багато іншого.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/thumbnail.png
   tips: {}
   title:
     en_us: Tautulli

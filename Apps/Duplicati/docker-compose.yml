@@ -57,7 +57,7 @@ x-casaos:
     - amd64
     - arm64
   main: duplicati
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Cloud
   description:
     en_us: Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.
@@ -74,11 +74,11 @@ x-casaos:
     sv_se: Duplicati är en gratis, öppen källkod, backup-klient som säkert lagrar krypterade, inkrementella, komprimerade säkerhetskopior på molntjänster och fjärrfiler.
     uk_ua: Duplicati - це безкоштовний клієнт резервного копіювання з відкритим вихідним кодом, який безпечно зберігає зашифровані, інкрементні, стиснені резервні копії на хмарних службах зберігання та віддалених файлових серверах.
   developer: duplicati
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/screenshot-3.png
   tagline:
     en_us: Store securely encrypted backups in the cloud!
     zh_cn: 在云端存储安全加密的备份文件！
@@ -93,7 +93,7 @@ x-casaos:
     pt_br: Armazene backups criptografados de forma segura na nuvem!
     sv_se: Lagra säkert krypterade säkerhetskopior i molnet!
     uk_ua: Зберігайте безпечні зашифровані резервні копії у хмарі!
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/thumbnail.png
   tips: {}
   title:
     en_us: Duplicati

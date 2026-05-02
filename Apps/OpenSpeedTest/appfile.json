@@ -2,14 +2,14 @@
 	"version": "1.0",
 	"title": "OpenSpeedTest",
 	"name": "openspeedtest",
-	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/icon.png",
+	"icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/icon.png",
 	"tagline": "HTML5 Network Speed Test Server.",
 	"overview": "An application for launching HTML5 Network Speed Test Server. You can test download & upload speed from any device within your network with a web browser that is IE10 or new.",
-	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/thumbnail.png",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/thumbnail.png",
 	"screenshots": [
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/screenshot-1.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/screenshot-2.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/screenshot-3.png"
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/screenshot-1.png",
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/screenshot-2.png",
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/screenshot-3.png"
 	],
 	"category": [
 		"Utilities",

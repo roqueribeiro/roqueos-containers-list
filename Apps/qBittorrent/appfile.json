@@ -2,13 +2,13 @@
     "version": "2.0",
     "title": "qBittorrent",
     "name": "qbittorrent",
-    "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/icon.png",
+    "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/icon.png",
     "tagline": "Free BitTorrent downloader",
     "overview": "The qBittorrent project aims to provide an open-source software alternative to µTorrent.",
-    "thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/thumbnail.jpg",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/thumbnail.jpg",
     "screenshots": [
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-1.jpg",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-2.jpg"
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/screenshot-1.jpg",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/screenshot-2.jpg"
     ],
     "category": [
         "Downloader"
@@ -20,13 +20,13 @@
         "donate_link": ""
     },
     "adaptor": {
-        "name": "CasaOS Team",
-        "website": "https://www.casaos.io",
+        "name": "RoqueOS Team",
+        "website": "https://roqueos.com.br",
         "donate_text": "", 
         "donate_link": ""
     },
     "support": "https://discord.gg/knqAbbBbeX",
-    "website": "https://www.casaos.io",
+    "website": "https://roqueos.com.br",
     "container": {
         "image": "hotio/qbittorrent:latest",
         "shell": "bash",
@@ -140,7 +140,7 @@
                 "value": "/DATA/Media"
             },
             {
-                "content": "The paths of other DATA subdirectories in CasaOS are also similar."
+                "content": "The paths of other DATA subdirectories in RoqueOS are also similar."
             },
             {
                 "content": "Please make sure you use the correct path when using qBittorrent."
@@ -149,7 +149,7 @@
     },
     "changelog": {
         "latest_updates": "",
-        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/changelog.txt"
+        "url": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/changelog.txt"
     },
     "latest_update_date": "1640592195"
 }

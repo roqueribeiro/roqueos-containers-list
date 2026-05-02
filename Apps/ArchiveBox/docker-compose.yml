@@ -21,8 +21,8 @@ services:
         source: /DATA/AppData/$AppID/data
         target: /data
     environment:
-      - ADMIN_USERNAME=casaos
-      - ADMIN_PASSWORD=casaos
+      - ADMIN_USERNAME=roqueos
+      - ADMIN_PASSWORD=roqueos
       - ALLOWED_HOSTS=*
       - CSRF_TRUSTED_ORIGINS=*
       - PUBLIC_INDEX=True
@@ -849,12 +849,12 @@ x-casaos:
       - [ArchiveBox Resmi Web Sitesi](https://archivebox.io)
       - [ArchiveBox GitHub Deposu](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Belgelendirme](https://github.com/ArchiveBox/ArchiveBox/wiki)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ArchiveBox/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/screenshot-3.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ArchiveBox/thumbnail.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ArchiveBox/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ArchiveBox/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ArchiveBox/screenshot-3.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ArchiveBox/thumbnail.png
   scheme: http
   port_map: '18010'
   tips:
@@ -864,91 +864,91 @@ x-casaos:
 
         | Username | Password |
         |----------|----------|
-        | `casaos`    | `casaos` |
+        | `roqueos`    | `roqueos` |
       en_GB: |
         **Default Account**
 
         | Username | Password |
         |----------|----------|
-        | `casaos`    | `casaos` |
+        | `roqueos`    | `roqueos` |
       it_IT: |
         **Account Predefinito**
 
         | Nome utente | Password |
         |-------------|----------|
-        | `casaos`    | `casaos` |
+        | `roqueos`    | `roqueos` |
       nb_NO: |
         **Standardkonto**
 
         | Brukernavn | Passord |
         |------------|---------|
-        | `casaos`   | `casaos` |
+        | `roqueos`   | `roqueos` |
       zh_CN: |
         **默认账户**
 
         | 用户名 | 密码 |
         |--------|------|
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       ja_JP: |
         **デフォルトアカウント**
 
         | ユーザー名 | パスワード |
         |------------|------------|
-        | `casaos`   | `casaos`   |
+        | `roqueos`   | `roqueos`   |
       ko_KR: |
         **기본 계정**
 
         | 사용자 이름 | 비밀번호 |
         |-------------|----------|
-        | `casaos`    | `casaos`  |
+        | `roqueos`    | `roqueos`  |
       fr_FR: |
         **Compte par Défaut**
 
         | Nom d'utilisateur | Mot de passe |
         |-------------------|--------------|
-        | `casaos`          | `casaos`      |
+        | `roqueos`          | `roqueos`      |
       de_DE: |
         **Standardkonto**
 
         | Benutzername | Passwort |
         |--------------|----------|
-        | `casaos`     | `casaos`  |
+        | `roqueos`     | `roqueos`  |
       sv_SE: |
         **Standardkonto**
 
         | Användarnamn | Lösenord |
         |--------------|----------|
-        | `casaos`     | `casaos`  |
+        | `roqueos`     | `roqueos`  |
       el_GR: |
         **Προεπιλεγμένος Λογαριασμός**
 
         | Όνομα Χρήστη | Κωδικός Πρόσβασης |
         |---------------|-------------------|
-        | `casaos`      | `casaos`          |
+        | `roqueos`      | `roqueos`          |
       hr_HR: |
         **Zadani Račun**
 
         | Korisničko ime | Lozinka |
         |----------------|---------|
-        | `casaos`       | `casaos` |
+        | `roqueos`       | `roqueos` |
       pt_PT: |
         **Conta Padrão**
 
         | Nome de Utilizador | Palavra-passe |
         |--------------------|----------------|
-        | `casaos`           | `casaos`       |
+        | `roqueos`           | `roqueos`       |
       ru_RU: |
         **Учетная запись по умолчанию**
 
         | Имя пользователя | Пароль |
         |------------------|--------|
-        | `casaos`         | `casaos` |
+        | `roqueos`         | `roqueos` |
       tr_TR: |
         **Varsayılan Hesap**
 
         | Kullanıcı Adı | Parola |
         |---------------|--------|
-        | `casaos`      | `casaos` |
+        | `roqueos`      | `roqueos` |
   index: /
   title:
     en_US: ArchiveBox

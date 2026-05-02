@@ -34,7 +34,7 @@ x-casaos:
     - arm
     - arm64
   main: vaultwarden
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Utilities
   description:
     en_us: Alternative implementation of the Bitwarden server API written in Rust and compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.
@@ -51,11 +51,11 @@ x-casaos:
     sv_se: Alternativ implementering av Bitwarden-serverns API skriven i Rust och kompatibel med översta Bitwarden-klienterna *, perfekt för självhärdad drift där körning av den officiella resurskrävande tjänsten kanske inte är idealisk.
     uk_ua: Альтернативна реалізація API-інтерфейсу сервера Bitwarden, написана на Rust і сумісна з клієнтами Bitwarden вищого рівня *, ідеально підходить для самостійного розгортання, де запуск офіційного ресурсоємкого сервісу може не бути ідеальним.
   developer: Daniel García
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/screenshot-3.png
   tagline:
     en_us: A self-hosted Bitwarden server
     zh_cn: 自托管的 Bitwarden 服务器
@@ -70,7 +70,7 @@ x-casaos:
     pt_br: Um servidor Bitwarden auto-hospedado
     sv_se: En självhärdad Bitwarden-server
     uk_ua: Самостійний сервер Bitwarden
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Vaultwarden/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vaultwarden/thumbnail.png
   tips: {}
   title:
     en_us: Vaultwarden

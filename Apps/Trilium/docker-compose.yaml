@@ -9,7 +9,7 @@ services:
           memory: 256M
     image: triliumnext/trilium:v0.99.3
     labels:
-      icon: https://icon.casaos.io/main/all/trilium.png
+      icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/icon.png
     ports:
       - target: 8080
         published: '8088'
@@ -601,12 +601,12 @@ x-casaos:
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) üçüncü taraf temalar, betikler, eklentiler ve daha fazlası için
       - [TriliumRocks!](https://trilium.rocks/) eğitimler, kılavuzlar ve çok daha fazlası için
   developer: zadam
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/screenshot-4.png
   index: /
   port_map: '8088'
   scheme: http

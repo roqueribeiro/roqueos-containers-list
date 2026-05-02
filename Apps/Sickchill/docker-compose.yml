@@ -57,7 +57,7 @@ x-casaos:
     - amd64
     - arm64
   main: sickchill
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Media
   description:
     en_us: |
@@ -87,14 +87,14 @@ x-casaos:
     uk_ua: |
       SickChill - це автоматичний менеджер відеобібліотек для телевізійних шоу. Він слідкує за новими епізодами ваших улюблених шоу, і коли вони випускаються, він робить свою магію: автоматичний пошук торрентів / nzbs, завантаження і обробка в якості, яку ви хочете.
   developer: Sickchill Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sickchill/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sickchill/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sickchill/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sickchill/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sickchill/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sickchill/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sickchill/screenshot-5.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sickchill/screenshot-6.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sickchill/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sickchill/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sickchill/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sickchill/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sickchill/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Sickchill/screenshot-6.png
   tagline:
     en_us: Automatic video library manager for TV Shows
     zh_cn: 自动视频库管理器
@@ -109,7 +109,7 @@ x-casaos:
     pt_br: Gerenciador automático de bibliotecas de vídeo para programas de TV
     sv_se: Automatisk videobibliotekshanterare för TV-program
     uk_ua: Автоматичний менеджер відеобібліотек для телевізійних шоу
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Readarr/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/thumbnail.png
   tips: {}
   title:
     en_us: Sickchill

@@ -61,7 +61,7 @@ x-casaos:
     - s390x
     - arm
   main: node-red
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Developer
   description:
     en_US: |
@@ -364,11 +364,11 @@ x-casaos:
       - [Node-RED Resmi Web Sitesi](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
   developer: Node-RED
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/screenshot-3.png
   tagline:
     en_US: Low-code programming for event-driven applications
     en_GB: Low-code programming for event-driven applications
@@ -385,7 +385,7 @@ x-casaos:
     pt_PT: Programação de baixo código para aplicações baseadas em eventos
     ru_RU: Программирование с низким кодом для событийно-ориентированных приложений
     tr_TR: Olay tabanlı uygulamalar için düşük kodlu programlama
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/thumbnail.png
   tips: {}
   title:
     en_US: Node-RED

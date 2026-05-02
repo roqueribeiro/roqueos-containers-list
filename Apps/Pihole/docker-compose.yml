@@ -3,7 +3,7 @@ services:
   pihole:
     environment:
       TZ: $TZ
-      FTLCONF_webserver_api_password: casaos
+      FTLCONF_webserver_api_password: roqueos
       FTLCONF_dns_listeningMode: all
     image: pihole/pihole:2025.11.1
     deploy:
@@ -181,7 +181,7 @@ x-casaos:
     - '386'
     - arm
   main: pihole
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Network
   description:
     en_US: |
@@ -470,11 +470,11 @@ x-casaos:
       - [Pi-hole Resmi Web Sitesi](https://pi-hole.net/)
       - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
   developer: Pi-hole
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pihole/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pihole/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pihole/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pihole/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pihole/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pihole/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pihole/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pihole/screenshot-3.jpg
   tagline:
     en_US: Network-wide Ad Blocking
     en_GB: Network-wide Advert Blocking
@@ -491,39 +491,39 @@ x-casaos:
     pt_PT: Bloqueio de Anúncios ao Nível da Rede
     ru_RU: Блокировка Рекламы на Уровне Сети
     tr_TR: Ağ Çapında Reklam Engelleme
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pihole/thumbnail.jpg
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pihole/thumbnail.jpg
   tips:
     before_install:
       en_US: |
-        Default password: `casaos`
+        Default password: `roqueos`
       en_GB: |
-        Default password: `casaos`
+        Default password: `roqueos`
       it_IT: |
-        Password predefinita: `casaos`
+        Password predefinita: `roqueos`
       nb_NO: |
-        Standard passord: `casaos`
+        Standard passord: `roqueos`
       zh_CN: |
-        默认密码：`casaos`
+        默认密码：`roqueos`
       ja_JP: |
-        デフォルトパスワード：`casaos`
+        デフォルトパスワード：`roqueos`
       ko_KR: |
-        기본 비밀번호: `casaos`
+        기본 비밀번호: `roqueos`
       fr_FR: |
-        Mot de passe par défaut : `casaos`
+        Mot de passe par défaut : `roqueos`
       de_DE: |
-        Standard-Passwort: `casaos`
+        Standard-Passwort: `roqueos`
       sv_SE: |
-        Standardlösenord: `casaos`
+        Standardlösenord: `roqueos`
       el_GR: |
-        Προεπιλεγμένος κωδικός: `casaos`
+        Προεπιλεγμένος κωδικός: `roqueos`
       hr_HR: |
-        Zadana lozinka: `casaos`
+        Zadana lozinka: `roqueos`
       pt_PT: |
-        Palavra-passe padrão: `casaos`
+        Palavra-passe padrão: `roqueos`
       ru_RU: |
-        Пароль по умолчанию: `casaos`
+        Пароль по умолчанию: `roqueos`
       tr_TR: |
-        Varsayılan şifre: `casaos`
+        Varsayılan şifre: `roqueos`
   title:
     en_US: Pi-hole
   index: /admin

@@ -40,9 +40,9 @@ x-casaos:
     pt_br: Handbrake é um aplicativo baseado em Docker para transcodificação e compressão de vídeo, oferecendo recursos poderosos e flexíveis de processamento de mídia em várias plataformas.
     sv_se: Handbrake är en Docker-baserad applikation för videoomkodning och komprimering, som erbjuder kraftfull och flexibel multimediebehandling över flera plattformar.
     uk_ua: Handbrake - це додаток на основі Docker для транскодування та стиснення відео, що надає потужну та гнучку обробку мультимедіа на різних платформах.
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Handbrake/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Handbrake/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Handbrake/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Handbrake/screenshot-1.png
   tagline:
     en_us: Liberate your videos and unleash infinite possibilities.
     zh_cn: 解放你的视频，创造无限可能。

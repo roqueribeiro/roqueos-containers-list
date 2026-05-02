@@ -55,7 +55,7 @@ x-casaos:
     - amd64
     - arm64
   main: jackett
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Network
   description:
     en_us: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar3, Lidarr, DuckieTV, qBittorrent, Nefarious etc.) into tracker-site-specific http queries, parses the html or json response, and then sends results back to the requesting software. This allows for getting recent uploads (like RSS) and performing searches. Jackett is a single repository of maintained indexer scraping & translation logic - removing the burden from other apps.
@@ -72,11 +72,11 @@ x-casaos:
     sv_se: Jackett översätter applikationsförfrågningar (Sonarr, Radarr, SickRage, CouchPotato, Mylar3, Lidarr, DuckieTV, qBittorrent, Nefarious, etc.) till specifika HTTP-förfrågningar för spårningssidan, analyserar HTML- eller JSON-svaret och skickar sedan tillbaka resultatet till den begärande mjukvaran. Detta gör det möjligt att hämta senaste uppladdningar (till exempel RSS) och utföra sökningar. Jackett är ett enda repository för skrapnings- och översättningslogiken för indexer - borttagning av belastning från andra appar.
     uk_ua: Jackett перекладає запити з додатків (Sonarr, Radarr, SickRage, CouchPotato, Mylar3, Lidarr, DuckieTV, qBittorrent, Nefarious тощо.) В запити HTTP, специфічні для сайту трекера, аналізує відповідь HTML або JSON і потім повертає результати до запитуючого програмного забезпечення. Це дозволяє отримувати останні завантаження (наприклад, RSS) і виконувати пошук. Jackett - це один репозиторій з підтримуваною логікою скрапінгу і перекладу індексаторів - видалення навантаження на інші додатки.
   developer: Jackett
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jackett/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jackett/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jackett/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jackett/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jackett/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jackett/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jackett/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jackett/screenshot-3.png
   tagline:
     en_us: Jackett works as a proxy server
     zh_cn: Jackett作为代理服务器工作
@@ -91,7 +91,7 @@ x-casaos:
     pt_br: O Jackett funciona como um servidor proxy
     sv_se: Jackett fungerar som en proxyserver
     uk_ua: Jackett працює як проксі-сервер
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jackett/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jackett/thumbnail.png
   tips: {}
   title:
     en_us: Jackett

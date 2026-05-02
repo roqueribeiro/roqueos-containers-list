@@ -8,7 +8,7 @@ services:
           memory: 512M
     image: ghcr.io/esphome/esphome:2025.11.0
     labels:
-      icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ESPHome/icon.png
+      icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ESPHome/icon.png
     restart: always
     ports:
       - target: 6052
@@ -56,14 +56,14 @@ x-casaos:
   tagline:
     en_us: Home Automation systems
     zh_cn: 家庭自动化系统
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ESPHome/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ESPHome/icon.png
   index: /
   main: esphome
   port_map: '6052'
   scheme: http
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ESPHome/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ESPHome/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ESPHome/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ESPHome/screenshot-2.png
   store_app_id: esphome
   title:
     en_us: ESPHome

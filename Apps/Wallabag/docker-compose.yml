@@ -109,7 +109,7 @@ x-casaos:
   main: wallabag
   category: Notes
   developer: wallabag
-  author: CasaOS Team
+  author: RoqueOS Team
   tagline:
     en_US: Save and classify articles. Read them later. Freely.
     en_GB: Save and classify articles. Read them later. Freely.
@@ -456,11 +456,11 @@ x-casaos:
       - [Wallabag GitHub Deposu](https://github.com/wallabag/wallabag)
       - [Wallabag Belgeleri](https://doc.wallabag.org)
       - [Wallabag Docker İmajı](https://hub.docker.com/r/wallabag/wallabag)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Wallabag/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Wallabag/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Wallabag/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Wallabag/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Wallabag/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Wallabag/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Wallabag/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Wallabag/screenshot-3.png
   thumbnail: ''
   tips:
     before_install:

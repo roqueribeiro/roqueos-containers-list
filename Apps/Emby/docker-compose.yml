@@ -69,7 +69,7 @@ x-casaos:
     - amd64
     - arm64
   main: emby
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Media
   description:
     en_US: |
@@ -373,11 +373,11 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Emby Resmi Web Sitesi](https://emby.media/)
   developer: linuxserver
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/screenshot-3.png
   tagline:
     en_US: Emby brings together your personal videos, music, photos, and live television.
     en_GB: Emby brings together your personal videos, music, photos, and live television.
@@ -394,7 +394,7 @@ x-casaos:
     pt_PT: O Emby reúne os seus vídeos pessoais, música, fotografias e televisão ao vivo.
     ru_RU: Emby объединяет ваши личные видео, музыку, фотографии и прямое телевидение.
     tr_TR: Emby kişisel videolarınızı, müziğinizi, fotoğraflarınızı ve canlı televizyonu bir araya getirir.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/thumbnail.png
   tips: {}
   title:
     en_US: Emby

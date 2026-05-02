@@ -1,7 +1,7 @@
 name: siyuan-note
 services:
   siyuan-note:
-    command: '--accessAuthCode=casaos --workspace=/siyuan/workspace/'
+    command: '--accessAuthCode=roqueos --workspace=/siyuan/workspace/'
     environment:
       PUID: '1000'
       PGID: '1000'
@@ -51,7 +51,7 @@ x-casaos:
     - arm64
     - arm
   main: siyuan-note
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Notes
   description:
     en_us: |
@@ -70,23 +70,23 @@ x-casaos:
     en_us: Private personal knowledge management
     zh_cn: 隐私优先的个人知识管理
   developer: siyuan-note
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Siyuan-Note/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Siyuan-Note/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Siyuan-Note/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Siyuan-Note/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Siyuan-Note/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Siyuan-Note/screenshot-4.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Siyuan-Note/thumbnail.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Siyuan-Note/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Siyuan-Note/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Siyuan-Note/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Siyuan-Note/screenshot-4.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Siyuan-Note/thumbnail.png
   tips:
     before_install:
       en_us: |
         | accessAuthCode |
         | -------- |
-        | `casaos`    |
+        | `roqueos`    |
       zh_cn: |
         | 访问码 |
         | -------- |
-        | `casaos`    |
+        | `roqueos`    |
   title:
     en_us: SiYuan Note
     zh_cn: 思源笔记

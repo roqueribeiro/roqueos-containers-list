@@ -57,7 +57,7 @@ x-casaos:
     - amd64
     - arm64
   main: lidarr
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Downloader
   description:
     en_us: Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new albums from your favorite artists and will interface with clients and indexers to grab, sort, and rename them. It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available.
@@ -74,11 +74,11 @@ x-casaos:
     sv_se: Lidarr är en musiksamling för användare av Usenet och BitTorrent. Den kan övervaka flera RSS-flöden för nya album från dina favoritartister och kommunicera med klienter och indexerare för att hämta, sortera och döpa om dem. Den kan också konfigureras för att automatiskt uppdatera kvaliteten på befintliga filer i biblioteket när en bättre kvalitet är tillgänglig.
     uk_ua: Lidarr - це менеджер музичних колекцій для користувачів Usenet і BitTorrent. Він може відстежувати декілька RSS-каналів для нових альбомів ваших улюблених виконавців і буде взаємодіяти з клієнтами і індексаторами для отримання, сортування і перейменування їх. Він також може бути налаштований для автоматичного оновлення якості існуючих файлів в бібліотеці, коли краща якість стає доступною.
   developer: lidarr Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Lidarr/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Lidarr/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Lidarr/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Lidarr/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Lidarr/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Lidarr/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Lidarr/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Lidarr/screenshot-3.png
   tagline:
     en_us: Music collection manager for Usenet and BitTorrent users
     zh_cn: 用于Usenet和BitTorrent用户的音乐收藏管理器
@@ -93,7 +93,7 @@ x-casaos:
     pt_br: Gerenciador de coleções de música para usuários de Usenet e BitTorrent
     sv_se: Musiksamling för användare av Usenet och BitTorrent
     uk_ua: Менеджер музичних колекцій для користувачів Usenet і BitTorrent
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Lidarr/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Lidarr/thumbnail.png
   tips: {}
   title:
     en_us: Lidarr

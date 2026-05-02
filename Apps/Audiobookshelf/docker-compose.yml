@@ -443,11 +443,11 @@ x-casaos:
       **Daha fazla bilgi:**
       - [Audiobookshelf resmi web sitesi](https://audiobookshelf.org)
       - [Audiobookshelf GitHub Repository](https://github.com/advplyr/audiobookshelf)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Audiobookshelf/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Audiobookshelf/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Audiobookshelf/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Audiobookshelf/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Audiobookshelf/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Audiobookshelf/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Audiobookshelf/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Audiobookshelf/screenshot-3.png
   thumbnail: ''
   scheme: http
   port_map: '13378'

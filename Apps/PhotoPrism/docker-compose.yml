@@ -2,7 +2,7 @@ name: photoprism
 services:
   photoprism:
     environment:
-      PHOTOPRISM_ADMIN_PASSWORD: casaos
+      PHOTOPRISM_ADMIN_PASSWORD: roqueos
       PHOTOPRISM_UPLOAD_NSFW: 'true'
       TZ: $TZ
     image: photoprism/photoprism:250228
@@ -57,7 +57,7 @@ x-casaos:
     - amd64
     - arm64
   main: photoprism
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Gallery
   description:
     en_us: |
@@ -88,11 +88,11 @@ x-casaos:
     sv_se: PhotoPrism® är en AI-drivet app för att bläddra, organisera och dela din fotokollektion. Den använder de senaste teknologierna för att märka och hitta bilder automatiskt utan att störa dig. Du kan köra det hemma, på en privat server eller i molnet.
     uk_ua: PhotoPrism® - це додаток, працюючий на AI, для перегляду, організації та обміну фотоколекцією. Він використовує останні технології для автоматичного позначення та пошуку фотографій без перешкод. Ви можете запустити його додому, на приватному сервері або у хмарі.
   developer: PhotoPrism
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PhotoPrism/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PhotoPrism/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PhotoPrism/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PhotoPrism/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PhotoPrism/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PhotoPrism/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PhotoPrism/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PhotoPrism/screenshot-3.png
   tagline:
     en_us: Browse Your Life in Images
     zh_cn: 用照片回忆您的生活
@@ -107,7 +107,7 @@ x-casaos:
     pt_br: Navegando, organizando e compartilhando sua coleção de fotos
     sv_se: Bläddra, organisera och dela din fotokollektion
     uk_ua: Перегляд, організація та обмін фотоколекцією
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PhotoPrism/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PhotoPrism/thumbnail.png
   tips:
     before_install:
       en_us: |
@@ -117,7 +117,7 @@ x-casaos:
 
         | Username | Password |
         | -------- | -------- |
-        | `admin`    | `casaos`   |
+        | `admin`    | `roqueos`   |
       zh_cn: |
         ## PhotoPrism
 
@@ -125,7 +125,7 @@ x-casaos:
 
         | 用户名 | 密码 |
         | -------- | -------- |
-        | `admin`    | `casaos`   |
+        | `admin`    | `roqueos`   |
   title:
     en_us: PhotoPrism
   index: /

@@ -54,11 +54,11 @@ x-casaos:
   description:
     en_us: It's a connector for Twingate".
   developer: Twingate
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Twingate/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Twingate/icon.png
   screenshot_link: null
   tagline:
-    en_us: Twingate Connector for CasaOS
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Twingate/thumbnail.png
+    en_us: Twingate Connector for RoqueOS
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Twingate/thumbnail.png
   tips: {}
   title:
     en_us: Twingate

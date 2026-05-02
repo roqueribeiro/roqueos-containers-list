@@ -2,14 +2,14 @@
 	"version": "2.0",
 	"title": "Calibre-web",
 	"name": "calibre-web",
-	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/icon.png",
+	"icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/icon.png",
 	"tagline": "Web app for browsing, reading and downloading eBooks stored in a Calibre database",
 	"overview": "Calibre-web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database. It is also possible to integrate google drive and edit metadata and your calibre library through the app itself.",
-	"thumbnail": " https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/thumbnail.png",
+	"thumbnail": " https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/thumbnail.png",
 	"screenshots": [
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/screenshot-1.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/screenshot-2.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/screenshot-3.png"
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/screenshot-1.png",
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/screenshot-2.png",
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/screenshot-3.png"
 	],
 	"category": [
 		"Media"
@@ -21,13 +21,13 @@
 		"donate_link": ""
 	},
 	"adaptor": {
-		"name": "CasaOS Team",
-		"website": "https://www.casaos.io",
+		"name": "RoqueOS Team",
+		"website": "https://roqueos.com.br",
 		"donate_text": "",
 		"donate_link": ""
 	},
 	"support": "https://discord.gg/knqAbbBbeX",
-	"website": "https://www.casaos.io",
+	"website": "https://roqueos.com.br",
 	"container": {
 		"image": "linuxserver/calibre-web:nightly-version-c0675497",
 		"shell": "sh",

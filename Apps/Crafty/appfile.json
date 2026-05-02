@@ -2,18 +2,18 @@
     "version": "1.0",
     "title": "Crafty",
     "name": "crafty",
-    "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/icon.png",
+    "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/icon.png",
     "tagline": "Take control of your Minecraft servers.",
     "overview": "Crafty is an open source Minecraft control panel built using Tornado and AdminLTE, featuring server scheduling, a interactive console and the ability to run almost any type of Minecraft server",
-    "thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/thumbnail.jpg",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/thumbnail.jpg",
     "screenshots": [
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-1.png",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-2.png",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-3.png",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-4.png",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-5.png",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-6.png",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-7.png"
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-1.png",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-2.png",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-3.png",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-4.png",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-5.png",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-6.png",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-7.png"
     ],
     "category": [
         "Games"
@@ -31,7 +31,7 @@
         "donate_link": ""
     },
     "support": "https://discord.gg/knqAbbBbeX",
-    "website": "https://www.casaos.io",
+    "website": "https://roqueos.com.br",
     "container": {
         "image": "arcadiatechnology/crafty-4",
         "shell": "bash",

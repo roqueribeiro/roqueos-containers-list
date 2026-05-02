@@ -10,13 +10,13 @@ services:
           memory: 15806M
     environment:
       - GID=1000
-      - PASSWORD=casaos
+      - PASSWORD=roqueos
       - TZ=Europe/Madrid
       - UDI=1000
-      - USERNAME=casaos
+      - USERNAME=roqueos
     image: ugeek/webdav:amd64
     labels:
-      icon: https://icon.casaos.io/main/all/webdav.png
+      icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WebDav/icon.png
     ports:
       - target: 80
         published: '5005'
@@ -35,7 +35,7 @@ x-casaos:
     - arm64
     - arm
   main: webdav
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Utilities
   description:
     en_us: WebDAV is a web-based protocol that allows you to share and manage files over the internet, providing a collaborative environment for file editing and versioning.
@@ -51,10 +51,10 @@ x-casaos:
     pt_br: WebDAV é um protocolo baseado na web que permite compartilhar e gerenciar arquivos pela Internet, fornecendo um ambiente colaborativo para edição e controle de versão de arquivos.
     sv_se: WebDAV är ett webbaserat protokoll som låter dig dela och hantera filer över internet, vilket ger en samarbetsmiljö för filredigering och versionskontroll.
     uk_ua: WebDAV - це веб-протокол, який дозволяє вам обмінюватися файлами та керувати ними через Інтернет, забезпечуючи спільне середовище для редагування файлів та контролю версій.
-  developer: CasaOS Team
-  icon: https://icon.casaos.io/main/all/webdav.png
+  developer: RoqueOS Team
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WebDav/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/WebDAV/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WebDAV/screenshot-1.png
   tagline:
     en_us: A web-based file sharing and management protocol
     zh_cn: 基于 Web 的文件共享和管理协议
@@ -76,13 +76,13 @@ x-casaos:
 
         | Username | Password |
         |----------|----------|
-        | `casaos`    | `casaos` |
+        | `roqueos`    | `roqueos` |
       zh_cn: |
         默认账号
 
         | Username | Password   |
         | -------- | ---------- |
-        | `casaos`    | `casaos` |
+        | `roqueos`    | `roqueos` |
   title:
     en_us: WebDAV
   index: /

@@ -60,7 +60,7 @@ x-casaos:
     - arm64
     - arm
   main: uptimekuma
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Network
   description:
     en_US: |
@@ -364,13 +364,13 @@ x-casaos:
       - [Uptime Kuma Resmi Web Sitesi](https://uptimekuma.org)
       - [Uptime Kuma GitHub Deposu](https://github.com/louislam/uptime-kuma)
   developer: Louis Lam
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/UptimeKuma/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/UptimeKuma/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/UptimeKuma/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/UptimeKuma/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/UptimeKuma/screenshot-3.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/UptimeKuma/screenshot-4.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/UptimeKuma/screenshot-5.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/UptimeKuma/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/UptimeKuma/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/UptimeKuma/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/UptimeKuma/screenshot-4.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/UptimeKuma/screenshot-5.jpg
   tagline:
     en_US: A fancy monitoring tool
     en_GB: A fancy monitoring tool
@@ -387,7 +387,7 @@ x-casaos:
     pt_PT: Uma ferramenta de monitorização elegante
     ru_RU: Красивый инструмент мониторинга
     tr_TR: Şık bir izleme aracı
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/UptimeKuma/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/UptimeKuma/thumbnail.png
   tips: {}
   title:
     en_US: Uptime Kuma

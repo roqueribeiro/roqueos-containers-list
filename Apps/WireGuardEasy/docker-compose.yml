@@ -5,8 +5,8 @@ services:
     restart: unless-stopped
     network_mode: bridge
     environment:
-      PASSWORD: casaos
-      WG_HOST: casaos.local
+      PASSWORD: roqueos
+      WG_HOST: roqueos.local
       WG_PORT: '51820'
       WG_DEFAULT_DNS: 1.1.1.1
     x-casaos:
@@ -72,20 +72,20 @@ x-casaos:
     sv_se: Du har hittat det enklaste sättet att installera och hantera WireGuard på en Linux-värd!
     uk_ua: Ви знайшли найпростіший спосіб встановити WireGuard та керувати ним на будь-якому комп'ютері з Linux!
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/WireGuardEasy/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/WireGuardEasy/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/WireGuardEasy/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WireGuardEasy/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WireGuardEasy/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WireGuardEasy/screenshot-3.png
   developer: WeejeWel
   author: Sawy
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/WireGuardEasy/icon.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/WireGuardEasy/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WireGuardEasy/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WireGuardEasy/icon.png
   category: Network
   tips:
     before_install:
       en_us: |
         🔧 Settings
 
-        Default password: `casaos`
+        Default password: `roqueos`
 
         ⚠️ Warning!
 
@@ -96,7 +96,7 @@ x-casaos:
       zh_cn: |
         🔧 设置
 
-        默认密码： `casaos`
+        默认密码： `roqueos`
 
         ⚠️ 警告！
 

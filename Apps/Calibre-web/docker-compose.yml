@@ -55,7 +55,7 @@ x-casaos:
     - amd64
     - arm64
   main: calibre-web
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Media
   description:
     en_us: Calibre-web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database. It is also possible to integrate google drive and edit metadata and your calibre library through the app itself.
@@ -72,11 +72,11 @@ x-casaos:
     sv_se: Calibre-web är en webbapplikation som ger en ren gränssnitt för att bläddra, läsa och ladda ner e-böcker med hjälp av en befintlig Calibre-databas. Det är också möjligt att integrera Google Drive och redigera metadata och din Calibre-bibliotek via appen själv.
     uk_ua: Calibre-web - це веб-застосунок, який надає чистий інтерфейс для перегляду, читання та завантаження електронних книг з використанням існуючої бази даних Calibre. Також можлива інтеграція з Google Drive та редагування метаданих та вашої бібліотеки Calibre через сам додаток.
   developer: linuxserver
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/screenshot-3.png
   tagline:
     en_us: Web app for browsing, reading and downloading eBooks stored in a Calibre database
     zh_cn: 用于浏览，阅读和下载存储在Calibre数据库中的电子书的Web应用程序
@@ -91,7 +91,7 @@ x-casaos:
     pt_br: Aplicativo da web para navegar, ler e baixar eBooks armazenados em um banco de dados Calibre
     sv_se: Webbapplikation för att bläddra, läsa och ladda ner e-böcker som lagras i en Calibre-databas
     uk_ua: Веб-застосунок для перегляду, читання та завантаження електронних книг, що зберігаються в базі даних Calibre
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Calibre-web/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Calibre-web/thumbnail.png
   tips:
     before_install:
       en_us: |

@@ -2,14 +2,14 @@
 	"version": "2.0",
 	"title": "AdGuard Home",
 	"name": "adguard Home",
-	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/icon.png",
+	"icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/icon.png",
 	"tagline": "Network-wide ads & trackers blocking DNS server ",
 	"overview": "AdGuard Home is a network-wide software for blocking ads and tracking. After you set it up, it'll cover all your home devices, and you won't need any client-side software for that. Learn more on our official Github repository.",
-	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/thumbnail.png",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/thumbnail.png",
 	"screenshots": [
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-1.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-2.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-3.png"
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/screenshot-1.png",
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/screenshot-2.png",
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/screenshot-3.png"
 	],
 	"category": [
 		"Network"
@@ -21,13 +21,13 @@
 		"donate_link": ""
 	},
 	"adaptor": {
-		"name": "CasaOS Team",
-		"website": "https://www.casaos.io",
+		"name": "RoqueOS Team",
+		"website": "https://roqueos.com.br",
 		"donate_text": "",
 		"donate_link": ""
 	},
 	"support": "https://discord.gg/knqAbbBbeX",
-	"website": "https://www.casaos.io",
+	"website": "https://roqueos.com.br",
 	"container": {
 		"image": "adguard/adguardhome:v0.107.5",
 		"shell": "sh",

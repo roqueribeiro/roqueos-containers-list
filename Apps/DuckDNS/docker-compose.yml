@@ -37,9 +37,9 @@ x-casaos:
     sv_se: duckdns är en DDNS (dynamisk DNS)-applikation som dynamiskt binder IP-adresser till domännamn och stöder både IPv4 och IPv6.
     uk_ua: duckdns - це програма DDNS (динамічний DNS), яка динамічно прив'язує IP-адреси до доменних імен, підтримуючи як IPv4, так і IPv6.
   developer: DuckDNS Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/DuckDNS/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DuckDNS/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/DuckDNS/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DuckDNS/screenshot-1.png
   tagline:
     en_us: Dynamic DNS for your domain, supporting both IPv4 and IPv6
     zh_cn: 为您的域名提供动态DNS服务，支持IPv4和IPv6

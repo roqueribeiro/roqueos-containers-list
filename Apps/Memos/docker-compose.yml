@@ -145,11 +145,11 @@ x-casaos:
 
       Uzun vadeli kişisel bilgi arşivleme veya ekip işbirliği için hafif bir araç olarak kullanılsın, Memos güvenli, esnek ve kullanıcı dostu bir çözüm sunar, kullanıcıların verileri üzerinde tam kontrol sahibi olmalarını sağlarken akıcı bir not alma deneyimi sunar。
   developer: usememos Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/screenshot-3.png
   tagline:
     en_US: Memos is a lightweight, self-hosted memo hub. Open Source and Free forever.
     en_GB: Memos is a lightweight, self-hosted memo hub. Open Source and Free forever.
@@ -166,7 +166,7 @@ x-casaos:
     pt_PT: Memos é um hub de memos leve e auto-hospedado. Código aberto e grátis para sempre。
     ru_RU: Memos — это легкий, саморазмещаемый центр заметок. Открытый исходный код и бесплатный навсегда。
     tr_TR: Memos, hafif ve kendi kendine barındırılan bir not merkezi. Açık Kaynak ve sonsuza kadar ücretsiz。
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/thumbnail.png
   tips: {}
   title:
     en_us: Memos

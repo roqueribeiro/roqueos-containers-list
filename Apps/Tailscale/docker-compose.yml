@@ -85,7 +85,7 @@ x-casaos:
   main: tailscale
   category: Network
   developer: Tailscale Inc.
-  author: CasaOS Team
+  author: RoqueOS Team
   tagline:
     en_US: Connect your devices and users together in your own secure virtual private network.
     en_GB: Connect your devices and users together in your own secure virtual private network.
@@ -418,9 +418,9 @@ x-casaos:
       **Daha fazla bilgi edinin:**
       - [Tailscale Resmi Web Sitesi](https://tailscale.com)
       - [Tailscale GitHub Deposu](https://github.com/tailscale/tailscale)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tailscale/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tailscale/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tailscale/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tailscale/screenshot-1.png
   thumbnail: ''
   scheme: http
   port_map: '5252'

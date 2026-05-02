@@ -55,7 +55,7 @@ x-casaos:
     - arm64
     - arm
   main: nginxproxymanager
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Network
   description:
     en_us: Nginx Proxy Manager is a simple, powerful tool to help you host multiple websites on a single server.
@@ -72,11 +72,11 @@ x-casaos:
     sv_se: Nginx Proxy Manager är ett enkelt och kraftfullt verktyg som hjälper dig att hosta flera webbplatser på en server.
     uk_ua: Nginx Proxy Manager - це простий і потужний інструмент, який допоможе вам розмістити кілька веб-сайтів на одному сервері.
   developer: Nginx Proxy Manager
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/screenshot-3.jpg
   tagline:
     en_us: Managing Nginx proxy hosts with a simple, powerful interface.
     zh_cn: 通过简单、强大的界面管理 Nginx 代理主机。
@@ -91,14 +91,14 @@ x-casaos:
     pt_br: Gerenciando hosts proxy do Nginx com uma interface simples e poderosa.
     sv_se: Hantering av Nginx-proxyvärdar med ett enkelt och kraftfullt gränssnitt.
     uk_ua: Управління хостами проксі Nginx за допомогою простого і потужного інтерфейсу.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/NginxProxyManager/thumbnail.png
   tips:
     before_install:
       en_us: |
         ⚠️ Warning!
         This is a technical app, please make sure you know what you are doing.
         Nginx Proxy Manager occupies ports 80 and 443 by default for built-in Nginx use. It occupies port 81 for the admin page.
-        Please change the CasaOS WebUI port to a port other than 80/81/443. And pay attention to whether the ports conflict with other apps. Otherwise, it may cause your CasaOS to run abnormally.
+        Please change the RoqueOS WebUI port to a port other than 80/81/443. And pay attention to whether the ports conflict with other apps. Otherwise, it may cause your RoqueOS to run abnormally.
 
         Default Administrator User
 
@@ -109,7 +109,7 @@ x-casaos:
         ⚠️ 警告！
         这是一个技术类应用，请确保你知道你在做什么。
         Nginx Proxy Manager 默认占用 80 和 443 端口给内置 Nginx 使用。占用 81 端口给管理页面。
-        请将 CasaOS WebUI 端口改为非 80/81/443 的端口。并注意是否与其他应用冲突。否则可能导致你的 CasaOS 运行异常。
+        请将 RoqueOS WebUI 端口改为非 80/81/443 的端口。并注意是否与其他应用冲突。否则可能导致你的 RoqueOS 运行异常。
 
         默认管理员用户
 

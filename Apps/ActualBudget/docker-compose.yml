@@ -60,7 +60,7 @@ x-casaos:
   main: actualbudget
   category: Finance
   developer: ActualBudget
-  author: CasaOS Team
+  author: RoqueOS Team
   tagline:
     en_US: Privacy-first finance app with envelope budgeting and multi-device sync.
     en_GB: Privacy-first finance app with envelope budgeting and multi-device sync.
@@ -423,13 +423,13 @@ x-casaos:
       - [Actual Budget Resmi Web Sitesi](https://actualbudget.org)
       - [Actual Budget GitHub Deposu](https://github.com/actualbudget/actual)
       - [Actual Budget Docker İmajı](https://hub.docker.com/r/actualbudget/actual-server)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ActualBudget/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ActualBudget/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ActualBudget/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ActualBudget/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ActualBudget/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ActualBudget/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ActualBudget/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ActualBudget/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ActualBudget/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ActualBudget/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ActualBudget/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ActualBudget/screenshot-5.png
   thumbnail: ''
   tips:
     before_install:

@@ -344,10 +344,10 @@ x-casaos:
       - [Portainer Resmi Web Sitesi](https://www.portainer.io/)
       - [Portainer GitHub Deposu](https://github.com/portainer/portainer)
   developer: Portainer
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Portainer/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Portainer/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Portainer/screenshot-2.png
   tagline:
     en_US: Lightweight Docker management UI
     en_GB: Lightweight Docker management UI
@@ -364,7 +364,7 @@ x-casaos:
     pt_PT: Interface leve de gestão Docker
     ru_RU: Легкий интерфейс управления Docker
     tr_TR: Hafif Docker yönetim arayüzü
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Portainer/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Portainer/thumbnail.png
   tips: null
   main: portainer
   title:

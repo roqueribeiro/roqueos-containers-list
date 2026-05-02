@@ -65,9 +65,9 @@ x-casaos:
     zh_cn: "Glances\_是一个开源的跨平台系统监控工具。它允许实时监控系统的各个方面，如 CPU、内存、磁盘、网络使用情况等。"
     pt_br: Glances é uma ferramenta de monitoramento de sistema de plataforma cruzada de código aberto. Ele permite o monitoramento em tempo real de vários aspectos do seu sistema, como CPU, memória, disco, uso da rede, etc.
   developer: Nicolas Hennion
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Glances/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Glances/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Glances/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Glances/screenshot-1.png
   tagline:
     en_us: Cross-platform monitoring tool.
     zh_cn: 跨平台监控工具

@@ -138,7 +138,7 @@ x-casaos:
   main: obsidian
   category: Notes
   developer: linuxserver
-  author: CasaOS Team
+  author: RoqueOS Team
   tagline:
     en_US: Obsidian is a knowledge management app for creating, linking, and visually organizing Markdown notes.
     en_GB: Obsidian is a knowledge management app for creating, linking, and visually organizing Markdown notes.
@@ -441,11 +441,11 @@ x-casaos:
       **Daha fazla bilgi edinin:**
       - [Obsidian Resmi Web Sitesi](https://obsidian.md)
       - [DockerHub](https://hub.docker.com/r/linuxserver/obsidian)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Obsidian/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Obsidian/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Obsidian/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Obsidian/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Obsidian/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Obsidian/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Obsidian/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Obsidian/screenshot-3.png
   thumbnail: ''
   scheme: https
   port_map: '15324'

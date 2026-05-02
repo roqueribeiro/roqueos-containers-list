@@ -51,7 +51,7 @@ x-casaos:
     - amd64
     - arm64
   main: smokeping
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Network
   description:
     en_us: keeps track of your network latency.
@@ -68,13 +68,13 @@ x-casaos:
     sv_se: håller reda på din nätverkslatens.
     uk_ua: відстежує затримку мережі.
   developer: Lazylibrarian Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-5.png
   tagline:
     en_us: Free open source network performance monitoring tool
     zh_cn: 免费开源的网络性能监控工具
@@ -89,7 +89,7 @@ x-casaos:
     pt_br: Ferramenta de monitoramento de desempenho de rede de código aberto gratuita
     sv_se: Gratis öppen källkodsnätverksprestandamonteringsverktyg
     uk_ua: Безкоштовний інструмент моніторингу продуктивності мережі з відкритим вихідним кодом
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/thumbnail.png
   tips: {}
   title:
     en_us: Smokeping

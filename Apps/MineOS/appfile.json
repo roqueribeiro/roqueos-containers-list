@@ -2,11 +2,11 @@
     "version": "1.0",
     "title": "MineOS",
     "name": "mineos-node",
-    "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MineOS/icon.png",
+    "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MineOS/icon.png",
     "tagline": "Free and easy to use Minecraft server management tool.",
     "overview": "MineOS is a server front-end to ease managing Minecraft administrative tasks. This iteration using Node.js aims to enhance previous MineOS scripts (Python-based), by leveraging the event-triggering, asyncronous model of Node.JS and websockets.",
     "screenshots": [
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MineOS/screenshot-1.png"
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MineOS/screenshot-1.png"
     ],
     "category": [
         "Games"
@@ -24,7 +24,7 @@
         "donate_link": ""
     },
     "support": "https://discord.gg/knqAbbBbeX",
-    "website": "https://www.casaos.io",
+    "website": "https://roqueos.com.br",
     "container": {
         "image": "hexparrot/mineos:latest",
         "shell": "bash",

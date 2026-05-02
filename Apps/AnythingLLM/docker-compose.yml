@@ -28,9 +28,9 @@ x-casaos:
     en_uk: AnythingLLM is the easiest to use, all-in-one AI application that can do RAG, AI Agents, and much more with no code or infrastructure headaches.
     zh_cn: AnythingLLM 是最易于使用的一体化 AI 应用程序，可以使用 RAG、AI 代理等功能，无需代码或基础设施麻烦。
     ja_jp: AnythingLLM は、コードやインフラストラクチャの問題を気にすることなく、RAG、AI エージェントなどを行う最も使いやすいオールインワン AI アプリケーションです。
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AnythingLLM/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AnythingLLM/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AnythingLLM/screenshot-1.gif
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AnythingLLM/screenshot-1.gif
   tagline:
     en_us: The all-in-one AI application.
     en_uk: The all-in-one AI application.

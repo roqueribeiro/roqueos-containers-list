@@ -124,10 +124,10 @@ x-casaos:
     sv_se: Ett GTK Broadway webbgränssnitt för libvirt och virt-manager, för att köra virtuella maskiner med QEMU/KVM.
     uk_ua: Веб-інтерфейс GTK Broadway для libvirt та virt-manager для запуску віртуальних машин за допомогою QEMU/KVM.
   developer: Red Hat
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VirtualMachineManager/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VirtualMachineManager/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VirtualMachineManager/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VirtualMachineManager/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VirtualMachineManager/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VirtualMachineManager/screenshot-2.png
   tagline:
     en_us: A GTK Broadway web UI for libvirt and virt-manager.
     zh_cn: Libvirt 和 virt-manager 的 GTK Broadway Web UI。

@@ -103,7 +103,7 @@ x-casaos:
     - arm64
     - arm
   main: homeassistant
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Home Automation
   description:
     en_US: |
@@ -452,12 +452,12 @@ x-casaos:
       - [Home Assistant Topluluğu](https://community.home-assistant.io)
       - [Home Assistant Eklentileri](https://www.home-assistant.io/addons)
   developer: Home Assistant
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/HomeAssistant/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-3.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-4.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/HomeAssistant/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/HomeAssistant/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/HomeAssistant/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/HomeAssistant/screenshot-4.jpg
   tagline:
     en_US: Open source home automation that puts local control and privacy first.
     en_GB: Open source home automation that puts local control and privacy first.
@@ -474,7 +474,7 @@ x-casaos:
     pt_PT: Automatização doméstica de código aberto que prioriza o controlo local e a privacidade.
     ru_RU: Домашняя автоматизация с открытым исходным кодом, которая ставит локальное управление и конфиденциальность на первое место.
     tr_TR: Yerel kontrol ve gizliliği ön planda tutan açık kaynak ev otomasyonu.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/HomeAssistant/thumbnail.png
   tips: {}
   title:
     en_US: Home Assistant

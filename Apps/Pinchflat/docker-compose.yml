@@ -401,10 +401,10 @@ x-casaos:
 
       Medya merkezi uygulamasıyla kullanmak için içerik indirmek isteyen kişiler veya medyayı arşivlemek isteyenler için mükemmel!
   developer: kieraneglin
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pinchflat/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pinchflat/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pinchflat/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/screenshot-2.png
   main: pinchflat
   port_map: '8945'
   scheme: http
@@ -424,7 +424,7 @@ x-casaos:
     pt_PT: O seu próximo gestor multimédia YouTube
     ru_RU: Ваш следующий менеджер медиа YouTube
     tr_TR: Bir sonraki YouTube medya yöneticiniz
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pinchflat/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/thumbnail.png
   tips:
     before_install:
       en_US: |

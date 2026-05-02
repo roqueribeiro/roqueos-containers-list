@@ -62,7 +62,7 @@ x-casaos:
     - amd64
     - arm64
   main: qbittorrent
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Downloader
   description:
     en_us: |
@@ -89,11 +89,11 @@ x-casaos:
     sv_se: qBittorrent-projektets mål är att erbjuda en öppen källkodsalternativ till µTorrent.
     uk_ua: Проект qBittorrent має на меті надати альтернативу з відкритим вихідним кодом для µTorrent.
   developer: qBittorrent
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/screenshot-3.png
   tagline:
     en_us: P2P bittorrent download
     zh_cn: P2P BT 下载
@@ -108,7 +108,7 @@ x-casaos:
     pt_br: Downloader BitTorrent gratuito
     sv_se: Gratis BitTorrent-downladdare
     uk_ua: Безкоштовний завантажувач BitTorrent
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/thumbnail.png
   tips:
     before_install:
       en_us: |
@@ -128,7 +128,7 @@ x-casaos:
         | Downloads Path | `/DATA/Downloads` |
         | Media Path | `/DATA/Media` |
 
-        The paths of other DATA subdirectories in CasaOS are also similar.
+        The paths of other DATA subdirectories in RoqueOS are also similar.
         Please make sure you use the correct path when using qBittorrent.
       zh_cn: |
         默认账号
@@ -148,7 +148,7 @@ x-casaos:
         | 下载路径 | `/DATA/Downloads` |
         | 媒体路径 | `/DATA/Media` |
 
-        CasaOS 其他 DATA 子目录的路径也类似。
+        RoqueOS 其他 DATA 子目录的路径也类似。
         请确保在使用 qBittorrent 时使用正确的路径。
 
         使用教程

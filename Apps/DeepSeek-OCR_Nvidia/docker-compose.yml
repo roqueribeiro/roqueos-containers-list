@@ -262,7 +262,7 @@ networks:
 x-casaos:
   architectures:
     - amd64
-  author: CasaOS Team
+  author: RoqueOS Team
   category: AI
   description:
     de_DE: |
@@ -521,12 +521,12 @@ x-casaos:
       **了解更多：**
       - [DeepSeek OCR 应用（GitHub）](https://github.com/rdumasia303/deepseek_ocr_app)
   developer: rdumasia303
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/DeepSeek-OCR_Nvidia/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DeepSeek-OCR_Nvidia/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/DeepSeek-OCR_Nvidia/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/DeepSeek-OCR_Nvidia/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/DeepSeek-OCR_Nvidia/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/DeepSeek-OCR_Nvidia/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DeepSeek-OCR_Nvidia/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DeepSeek-OCR_Nvidia/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DeepSeek-OCR_Nvidia/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DeepSeek-OCR_Nvidia/screenshot-4.png
   index: /
   main: deepseek-ocr-frontend
   port_map: '23000'

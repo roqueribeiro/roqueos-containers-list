@@ -55,7 +55,7 @@ x-casaos:
     en_us: M3U proxy server
     zh_cn: M3U代理服务器
   developer: jdownloader
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Threadfin/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Threadfin/icon.png
   author: Fabio Tea
   category: Utilities
   index: /web/

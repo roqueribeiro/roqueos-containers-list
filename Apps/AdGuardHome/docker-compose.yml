@@ -64,7 +64,7 @@ x-casaos:
     - arm64
     - ppc64le
   main: adguard-home
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Network
   description:
     en_us: |
@@ -91,11 +91,11 @@ x-casaos:
     sv_se: AdGuard Home är ett nätverksprogram för att blockera annonser och spårning. Efter att du har konfigurerat det kommer det att täcka alla dina hemmamaskiner och du behöver inte någon klientprogramvara för det. Läs mer på vår officiella Github-repository.
     uk_ua: AdGuard Home - це програмне забезпечення для блокування реклами і відстеження на рівні всієї мережі. Після налаштування воно буде покривати всі ваші домашні пристрої, і вам не буде потрібно жодного клієнтського програмного забезпечення для цього. Дізнайтеся більше на нашому офіційному репозиторії Github.
   developer: AdguardTeam
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/screenshot-3.png
   tagline:
     en_us: Blocking ads & tracking Network-widly
     zh_cn: 在网络侧阻止广告和跟踪
@@ -110,7 +110,7 @@ x-casaos:
     pt_br: Servidor DNS de bloqueio de anúncios e rastreadores em nível de rede
     sv_se: Nätverksnivå DNS-server för att blockera annonser och spårare
     uk_ua: DNS-сервер блокування реклами та трекерів на рівні мережі
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/AdGuardHome/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/AdGuardHome/thumbnail.png
   tips: {}
   title:
     en_us: AdGuard Home

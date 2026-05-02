@@ -60,5 +60,5 @@ x-casaos:
   title:
     en_us: Jenkins CI/CD
   port_map: '8080'
-  icon: https://icon.casaos.io/main/all/jenkins.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jenkin/icon.png
   scheme: http

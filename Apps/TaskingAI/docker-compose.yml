@@ -172,22 +172,22 @@ x-casaos:
     - amd64
     - arm64
   main: nginx
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Chat
   description:
     en_us: The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
     zh_cn: 开发人员友好的云平台，用于构建和运行AI原生应用程序的LLM代理。
   developer: TaskingAI Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/screenshot-4.png
   tagline:
     en_us: The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
     zh_cn: 开发人员友好的云平台，用于构建和运行AI原生应用程序的LLM代理。
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/thumbnail.png
   tips:
     before_install:
       en_us: |

@@ -1631,15 +1631,15 @@ x-casaos:
       - [RagFlow官方网站](https://ragflow.io)
       - [RagFlow GitHub仓库](https://github.com/infiniflow/ragflow)
   developer: RagFlow
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RagFlow/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RagFlow/icon.png
   index: /
   main: ragflow
   port_map: '30080'
   scheme: http
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RagFlow/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RagFlow/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RagFlow/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RagFlow/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RagFlow/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RagFlow/screenshot-3.png
   tagline:
     de_DE: RagFlow ist eine Open-Source-RAG-Engine, die auf tiefem Dokumentenverständnis basiert.
     el_GR: Το RagFlow είναι μια μηχανή RAG ανοιχτού κώδικα βασισμένη σε βαθιά κατανόηση εγγράφων.
@@ -1656,7 +1656,7 @@ x-casaos:
     sv_SE: RagFlow är en öppen källkods RAG-motor baserad på djup dokumentförståelse.
     tr_TR: RagFlow, derin belge anlayışına dayalı açık kaynaklı bir RAG motorudur.
     zh_CN: RagFlow是一个基于深度文档理解的开源RAG引擎。
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/RagFlow/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RagFlow/thumbnail.png
   title:
     de_DE: RagFlow
     el_GR: RagFlow

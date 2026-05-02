@@ -84,7 +84,7 @@ x-casaos:
   main: hugo
   category: Developer
   developer: gohugoio
-  author: CasaOS Team
+  author: RoqueOS Team
   tagline:
     en_US: The world's fastest framework for building websites
     en_GB: The world's fastest framework for building websites
@@ -687,11 +687,11 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Hugo Resmi Web Sitesi](https://gohugo.io/)
       - [Hugo GitHub](https://github.com/gohugoio/hugo)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Hugo/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hugo/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Hugo/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Hugo/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Hugo/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hugo/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hugo/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hugo/screenshot-3.png
   thumbnail: ''
   tips:
     before_install:
