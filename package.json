@@ -7,7 +7,10 @@
   "scripts": {
     "validate": "node scripts/validate-manifests.mjs",
     "fix": "node scripts/fix-manifests.mjs",
-    "fix:dry": "node scripts/fix-manifests.mjs --dry-run --verbose"
+    "fix:dry": "node scripts/fix-manifests.mjs --dry-run --verbose",
+    "audit": "node scripts/audit-enrichment.mjs",
+    "audit:verbose": "node scripts/audit-enrichment.mjs --verbose",
+    "audit:csv": "node scripts/audit-enrichment.mjs --csv"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

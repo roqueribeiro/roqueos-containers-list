@@ -17,10 +17,26 @@
 //   node scripts/fix-manifests.mjs           # apply fixes, write back
 //   node scripts/fix-manifests.mjs --dry-run # show what would change
 
-import { readFile, writeFile, readdir } from "node:fs/promises";
+import { readFile, writeFile, readdir, access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve, join } from "node:path";
 import yaml from "js-yaml";
+
+// CasaOS catalog uses both extensions interchangeably (Jellyseerr, Logseq,
+// Trilium use .yaml; everything else uses .yml). Try .yml first, fall back
+// to .yaml.
+async function findComposePath(appDir) {
+  for (const name of ["docker-compose.yml", "docker-compose.yaml"]) {
+    const p = join(appDir, name);
+    try {
+      await access(p);
+      return p;
+    } catch {
+      // not found, try next
+    }
+  }
+  return null;
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -96,6 +112,7 @@ const MOUNT_SHARED_APPS = new Set([
 const summary = {
   scheme: { added: [], skipped: [] },
   mountShared: { added: [], skipped: [] },
+  main: { added: [], skipped: [] },
   manualReview: {
     missingMain: [],
     missingPortMap: [],
@@ -128,7 +145,11 @@ const apps = (await readdir(APPS_DIR, { withFileTypes: true }))
   .sort();
 
 for (const app of apps) {
-  const composePath = join(APPS_DIR, app, "docker-compose.yml");
+  const composePath = await findComposePath(join(APPS_DIR, app));
+  if (!composePath) {
+    console.log(`! ${app}: no docker-compose.{yml,yaml} found — skipped`);
+    continue;
+  }
   const raw = await readFile(composePath, "utf8");
   let doc;
   try {
@@ -144,7 +165,17 @@ for (const app of apps) {
   doc["x-casaos"] = doc["x-casaos"] || {};
   const xc = doc["x-casaos"];
 
-  // 1. scheme — automatable
+  // 1. main — auto-injectable for single-service stacks. Multi-service
+  //    stacks remain a manual decision (which one is "the" UI?), but for
+  //    a stack with a single service the answer is unambiguous.
+  if (!xc.main && serviceKeys.length === 1) {
+    xc.main = serviceKeys[0];
+    summary.main.added.push({ app, main: xc.main });
+  } else if (xc.main) {
+    summary.main.skipped.push(app);
+  }
+
+  // 2. scheme — automatable
   if (!xc.scheme) {
     const main = xc.main || serviceKeys[0];
     xc.scheme = pickScheme(services, main);
@@ -204,6 +235,8 @@ for (const app of apps) {
 const r = (label, n) => console.log(`  ${label.padEnd(40)} ${n}`);
 console.log("\n=== migration summary ===\n");
 console.log(`Mode: ${DRY ? "DRY RUN (no files written)" : "APPLY"}\n`);
+r("main added (single-service)", summary.main.added.length);
+r("main already present", summary.main.skipped.length);
 r("scheme added", summary.scheme.added.length);
 r("scheme already present", summary.scheme.skipped.length);
 r("mountShared added", summary.mountShared.added.length);

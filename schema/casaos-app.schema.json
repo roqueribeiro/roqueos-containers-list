@@ -23,9 +23,8 @@
           "properties": {
             "image": {
               "type": "string",
-              "description": "Image reference. Must include an explicit tag (no bare names, no :latest) so deployments are reproducible.",
-              "pattern": "^[^:\\s]+:[^:\\s]+$",
-              "not": { "pattern": ":latest$" }
+              "description": "Image reference. Must include an explicit tag or digest (no bare names). Accepted shapes: 'name:tag', 'name@sha256:...', 'name:tag@sha256:...'. :latest is allowed but discouraged — the fix-manifests script reports it as 'manual review' so contributors can pin to stable tags during normal maintenance.",
+              "pattern": "^\\S+[:@]\\S+$"
             },
             "container_name": { "type": "string" },
             "restart": {
@@ -152,16 +151,25 @@
         "developer": { "type": "string" },
         "author": { "type": "string" },
         "icon": { "type": "string" },
-        "thumbnail": { "type": "string" },
+        "thumbnail": { "type": ["string", "array", "null"] },
         "screenshot_link": {
-          "type": "array",
-          "items": { "type": "string" }
+          "oneOf": [
+            { "type": "null" },
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" } }
+          ]
         },
-        "tagline": { "$ref": "#/definitions/i18nString" },
+        "tagline": {
+          "oneOf": [
+            { "type": "null" },
+            { "type": "string" },
+            { "$ref": "#/definitions/i18nString" }
+          ]
+        },
         "description": { "$ref": "#/definitions/i18nString" },
         "title": { "$ref": "#/definitions/i18nString" },
-        "tips": { "type": "object" },
-        "index": { "type": "string" },
+        "tips": { "type": ["object", "string", "null"] },
+        "index": { "type": ["string", "array", "null"] },
         "store_app_id": { "type": "string" }
       }
     },

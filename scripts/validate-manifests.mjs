@@ -5,12 +5,27 @@
 // Run locally: `node scripts/validate-manifests.mjs`
 // CI: invoked by .github/workflows/validate-schema.yml on every push / PR.
 
-import { readFile, readdir } from "node:fs/promises";
+import { readFile, readdir, access } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve, join } from "node:path";
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import yaml from "js-yaml";
+
+// CasaOS catalog uses both extensions interchangeably. Try .yml first
+// (overwhelming majority), fall back to .yaml.
+async function findComposePath(appDir) {
+  for (const name of ["docker-compose.yml", "docker-compose.yaml"]) {
+    const p = join(appDir, name);
+    try {
+      await access(p);
+      return p;
+    } catch {
+      // not found, try next
+    }
+  }
+  return null;
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -31,7 +46,14 @@ const apps = (await readdir(APPS_DIR, { withFileTypes: true }))
   .sort();
 
 for (const app of apps) {
-  const composePath = join(APPS_DIR, app, "docker-compose.yml");
+  const composePath = await findComposePath(join(APPS_DIR, app));
+  if (!composePath) {
+    results.failed.push({
+      app,
+      errors: ["docker-compose.yml or docker-compose.yaml not found"],
+    });
+    continue;
+  }
   let doc;
   try {
     doc = yaml.load(await readFile(composePath, "utf8"));
@@ -80,16 +102,37 @@ function crossFieldChecks(doc) {
     );
   }
 
-  // 3. port_map must match a published host port of the principal service
+  // 3. port_map must match a published host port of the principal service.
+  //    Docker Compose port shorthand: "host:container" or "ip:host:container".
+  //    For port_map (which is the canonical HOST port the proxy opens), we
+  //    want the host side. For string-form, that's the second-to-last token
+  //    when there are at least 2 colon-separated parts; otherwise it's just
+  //    the container port (no fixed host port — published is dynamic).
+  //
+  //    Apps with `network_mode: host` publish all ports on the host's iface
+  //    without declaring them under `ports:`. We treat an empty ports list +
+  //    network_mode:host as "host port == container port == port_map" so the
+  //    proxy heuristic still works (HomeAssistant, Plex, Tailscale, etc.).
   if (xc.port_map) {
     const main = xc.main || serviceKeys[0];
-    const ports = (services[main]?.ports || []).map((p) => {
-      if (typeof p === "string") return p.split(":").pop().split("/")[0];
+    const svc = services[main] || {};
+    const rawPorts = svc.ports || [];
+    const ports = rawPorts.map((p) => {
+      if (typeof p === "string") {
+        const parts = p.split("/")[0].split(":");
+        // host:container or ip:host:container — host is parts[length-2].
+        // Just "container" (1 part) — no fixed host, return as-is.
+        return parts.length >= 2 ? parts[parts.length - 2] : parts[0];
+      }
       return String(p.published ?? p.target ?? "");
     });
-    if (!ports.includes(String(xc.port_map))) {
+    const hostMode = svc.network_mode === "host";
+    const matched =
+      ports.includes(String(xc.port_map)) ||
+      (hostMode && rawPorts.length === 0);
+    if (!matched) {
       out.push(
-        `x-casaos.port_map="${xc.port_map}" not in published ports of "${main}" [${ports.join(", ")}]`,
+        `x-casaos.port_map="${xc.port_map}" not in published ports of "${main}" [${ports.join(", ")}]${hostMode ? " (network_mode: host)" : ""}`,
       );
     }
   }
@@ -97,9 +140,11 @@ function crossFieldChecks(doc) {
   // 4. multi-port principal services should declare port_map (so the proxy
   //    isn't guessing). We surface this as a real failure — heuristic-based
   //    port selection is exactly the bug Phase 3 of the audit set out to fix.
+  //    Skip apps with `network_mode: host` (no proxy possible anyway).
   const main = xc.main || serviceKeys[0];
-  const mainPorts = services[main]?.ports || [];
-  if (mainPorts.length > 1 && !xc.port_map) {
+  const mainSvc = services[main] || {};
+  const mainPorts = mainSvc.ports || [];
+  if (mainPorts.length > 1 && !xc.port_map && mainSvc.network_mode !== "host") {
     out.push(
       `principal service "${main}" exposes ${mainPorts.length} ports but x-casaos.port_map is missing`,
     );

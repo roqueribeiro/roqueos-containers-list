@@ -124,10 +124,25 @@ Each app must include:
 1. **Fork** this repository
 2. **Create** a new folder under `Apps/YourAppName/`
 3. **Add** the required files
-4. **Test** on your RoqueOS/CasaOS instance
-5. **Submit** a Pull Request
+4. **Validate** with `yarn install && yarn validate` (enforces the schema CI runs)
+5. **Test** on your RoqueOS/CasaOS instance
+6. **Submit** a Pull Request
 
 📖 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions and the `docker-compose.yml` format.
+
+### Tooling
+
+The repo ships three Node scripts (no global installs — `yarn install` once, then):
+
+```bash
+yarn validate       # ajv + cross-field checks. CI runs this on every PR.
+yarn fix:dry        # preview auto-fixes (scheme, mountShared, main on single-service)
+yarn fix            # apply them
+yarn audit          # report enrichment gaps (missing pt_BR, en_US, etc.)
+yarn audit:verbose  # list every app missing translations
+```
+
+The validator enforces the schema in [`schema/casaos-app.schema.json`](schema/casaos-app.schema.json) — `architectures`, `main` (when multi-service), `category`, `scheme`, `port_map` (when multi-port), and image tag presence. The auditor is advisory: it surfaces translation gaps so contributors can prioritize them. As of writing, ~89 apps still lack pt_BR description/tagline; PRs welcome.
 
 ---
 
