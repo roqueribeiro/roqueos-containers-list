@@ -1,0 +1,52 @@
+name: cyberchef
+services:
+  cyberchef:
+    image: mpepping/cyberchef:latest-2025
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    network_mode: bridge
+    ports:
+      - target: 8000
+        published: '8099'
+        protocol: tcp
+    restart: always
+    x-casaos:
+      ports:
+        - container: '8000'
+          description:
+            en_us: WebUI port (static SPA, no backend state)
+            pt_br: Porta da interface web (SPA estática, sem state no backend)
+    container_name: cyberchef
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: cyberchef
+  author: RoqueOS Team
+  category: Developer
+  description:
+    en_us: CyberChef is the Cyber Swiss Army Knife — a web app for encryption, encoding, compression, and data analysis. 300+ operations chainable into recipes (base64 → AES decrypt → JSON parse → regex extract). Open-source by GCHQ, used by infosec professionals daily. Runs entirely client-side — your data never leaves the browser.
+    pt_br: CyberChef é o Canivete Suíço Cyber — um app web para criptografia, encoding, compressão e análise de dados. 300+ operações encadeáveis em receitas (base64 → AES decrypt → JSON parse → regex extract). Open-source do GCHQ, usado diariamente por profissionais de infosec. Roda totalmente client-side — seus dados nunca saem do navegador.
+  developer: gchq
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/CyberChef/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/CyberChef/screenshot-1.png
+  tagline:
+    en_us: The Cyber Swiss Army Knife — encryption, encoding, data analysis
+    pt_br: Canivete suíço cyber — criptografia, encoding, análise de dados
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/CyberChef/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        100% client-side — no auth, no database, no state. Suitable for public exposure but consider IP allowlist if hosting at scale.
+        Recipes can be exported as URL fragments and shared with colleagues.
+      pt_br: |
+        100% client-side — sem auth, banco ou state. Pode ser exposto publicamente mas considere allowlist de IP se hospedar em escala.
+        Receitas podem ser exportadas como fragmentos de URL e compartilhadas com colegas.
+  title:
+    en_us: CyberChef
+  index: /
+  port_map: '8099'
+  scheme: http

@@ -1,0 +1,67 @@
+name: glance
+services:
+  glance:
+    image: glanceapp/glance:v0.7.4
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    network_mode: bridge
+    ports:
+      - target: 8080
+        published: '8106'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /app/config
+    environment:
+      TZ: America/Sao_Paulo
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: WebUI port (mapped to 8106 host)
+            pt_br: Porta da interface web (mapeada para 8106 no host)
+      volumes:
+        - container: /app/config
+          description:
+            en_us: glance.yml configuration + theme assets
+            pt_br: Configuração glance.yml + assets de tema
+    container_name: glance
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: glance
+  author: RoqueOS Team
+  category: Utilities
+  description:
+    en_us: Glance is a self-hosted dashboard that puts all your feeds in one place — RSS, Hacker News, Reddit, GitHub releases, weather, calendar, monitor uptime, custom widgets, server stats, Twitch streams, market tickers, and a search bar with engine shortcuts. Single binary, configured via one YAML file. Perfect minimal homepage replacement.
+    pt_br: Glance é um dashboard auto-hospedado que coloca todos os seus feeds num só lugar — RSS, Hacker News, Reddit, releases do GitHub, clima, calendário, uptime de servidores, widgets custom, stats de servidor, streams do Twitch, cotações de mercado e uma barra de busca com atalhos de engines. Binário único, configurado por um arquivo YAML. Substituto minimalista perfeito para homepage.
+  developer: glanceapp
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Glance/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Glance/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Glance/screenshot-2.png
+  tagline:
+    en_us: Self-hosted dashboard for all your feeds and widgets
+    pt_br: Dashboard auto-hospedado para todos os seus feeds e widgets
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Glance/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        First boot looks for /app/config/glance.yml — drop a config file there before starting.
+        Minimal example: https://github.com/glanceapp/glance/blob/main/docs/configuration.md
+        Pair with Heimdall or Homepage (both in catalog) — Glance is the most-feedy of the three.
+      pt_br: |
+        O primeiro boot procura /app/config/glance.yml — coloque um arquivo de config lá antes de iniciar.
+        Exemplo mínimo: https://github.com/glanceapp/glance/blob/main/docs/configuration.md
+        Combine com Heimdall ou Homepage (ambos no catálogo) — Glance é o mais focado em feeds dos três.
+  title:
+    en_us: Glance
+  index: /
+  port_map: '8106'
+  scheme: http

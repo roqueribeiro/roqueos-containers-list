@@ -1,0 +1,102 @@
+name: sftpgo
+services:
+  sftpgo:
+    image: drakkan/sftpgo:v2.6.4-plugins
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 8080
+        published: '8102'
+        protocol: tcp
+      - target: 2022
+        published: '2022'
+        protocol: tcp
+      - target: 2121
+        published: '2121'
+        protocol: tcp
+      - target: 8081
+        published: '8103'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /var/lib/sftpgo
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /etc/sftpgo
+      - type: bind
+        source: /DATA
+        target: /shared
+    environment:
+      SFTPGO_DATA_PROVIDER__CREATE_DEFAULT_ADMIN: 'true'
+      SFTPGO_DEFAULT_ADMIN_USERNAME: admin
+      SFTPGO_DEFAULT_ADMIN_PASSWORD: change-me-on-first-boot
+      SFTPGO_HTTPD__BINDINGS__0__ADDRESS: 0.0.0.0
+      SFTPGO_HTTPD__BINDINGS__0__PORT: '8080'
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: WebUI port (mapped to 8102 host)
+            pt_br: Porta da interface web (mapeada para 8102 no host)
+        - container: '2022'
+          description:
+            en_us: SFTP port
+            pt_br: Porta SFTP
+        - container: '2121'
+          description:
+            en_us: FTP port
+            pt_br: Porta FTP
+        - container: '8081'
+          description:
+            en_us: WebDAV port (mapped to 8103 host)
+            pt_br: Porta WebDAV (mapeada para 8103 no host)
+      volumes:
+        - container: /var/lib/sftpgo
+          description:
+            en_us: SFTPGo database, host keys
+            pt_br: Banco do SFTPGo, chaves do host
+        - container: /shared
+          description:
+            en_us: Shared filesystem for users (mount your data here)
+            pt_br: Sistema de arquivos compartilhado dos usuários (monte seus dados aqui)
+    container_name: sftpgo
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: sftpgo
+  author: RoqueOS Team
+  category: Storage
+  description:
+    en_us: SFTPGo is a fully-featured highly configurable SFTP/FTP/FTPS/WebDAV/HTTP/S3 server with optional HTTP/S, FTP/S and WebDAV support. Per-user virtual folders, quotas, bandwidth limits, ratelimiting, multi-factor auth, geo-blocking, audit logs. Use it as your home NAS access protocol or as the artifact server for CI pipelines.
+    pt_br: SFTPGo é um servidor SFTP/FTP/FTPS/WebDAV/HTTP/S3 completo e altamente configurável com suporte opcional a HTTP/S, FTP/S e WebDAV. Pastas virtuais por usuário, cotas, limites de banda, rate limiting, autenticação multi-fator, geo-blocking, audit logs. Use como protocolo de acesso ao seu NAS home ou como servidor de artefatos para pipelines CI.
+  developer: drakkan
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/SFTPGo/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/SFTPGo/screenshot-1.png
+  tagline:
+    en_us: Configurable SFTP/FTP/WebDAV/HTTP server with web admin
+    pt_br: Servidor SFTP/FTP/WebDAV/HTTP configurável com web admin
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/SFTPGo/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE SFTPGO_DEFAULT_ADMIN_PASSWORD before first boot.
+        After boot, login at http://YOUR_IP:8102 to create users, virtual folders, and configure quotas.
+        SFTP listens on port 2022 (use `sftp -P 2022 user@your-host`); FTP on 2121; WebDAV on 8103.
+        For PostgreSQL/MySQL backend (vs default SQLite), set SFTPGO_DATA_PROVIDER__DRIVER and related vars.
+      pt_br: |
+        SUBSTITUA SFTPGO_DEFAULT_ADMIN_PASSWORD antes do primeiro boot.
+        Após boot, login em http://SEU_IP:8102 para criar usuários, pastas virtuais e configurar cotas.
+        SFTP escuta na porta 2022 (use `sftp -P 2022 user@seu-host`); FTP em 2121; WebDAV em 8103.
+        Para backend PostgreSQL/MySQL (vs SQLite padrão), configure SFTPGO_DATA_PROVIDER__DRIVER e variáveis relacionadas.
+  title:
+    en_us: SFTPGo
+  index: /
+  port_map: '8102'
+  scheme: http

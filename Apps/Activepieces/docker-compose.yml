@@ -1,0 +1,101 @@
+name: activepieces
+services:
+  postgres:
+    image: postgres:14-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: activepieces
+      POSTGRES_USER: activepieces
+      POSTGRES_PASSWORD: change-me-to-a-long-random-string
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/postgres
+        target: /var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U activepieces -d activepieces']
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    container_name: activepieces-postgres
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/redis
+        target: /data
+    container_name: activepieces-redis
+  activepieces:
+    image: ghcr.io/activepieces/activepieces:0.41.0
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    ports:
+      - target: 80
+        published: '8105'
+        protocol: tcp
+    environment:
+      AP_API_KEY: replace-with-output-of-openssl-rand-hex-32
+      AP_ENCRYPTION_KEY: replace-with-output-of-openssl-rand-hex-16
+      AP_JWT_SECRET: replace-with-output-of-openssl-rand-hex-32
+      AP_FRONTEND_URL: http://localhost:8105
+      AP_POSTGRES_HOST: postgres
+      AP_POSTGRES_PORT: '5432'
+      AP_POSTGRES_DATABASE: activepieces
+      AP_POSTGRES_USERNAME: activepieces
+      AP_POSTGRES_PASSWORD: change-me-to-a-long-random-string
+      AP_REDIS_HOST: redis
+      AP_REDIS_PORT: '6379'
+      AP_TELEMETRY_ENABLED: 'false'
+      AP_QUEUE_MODE: REDIS
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: WebUI port (mapped to 8105 host)
+            pt_br: Porta da interface web (mapeada para 8105 no host)
+    container_name: activepieces
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: activepieces
+  author: RoqueOS Team
+  category: Developer
+  description:
+    en_us: Activepieces is the open-source no-code automation platform — Zapier alternative you self-host. 200+ pre-built pieces (Gmail, Slack, GitHub, Trello, Stripe, OpenAI, Discord, Notion). Visual flow builder, branching, loops, code blocks, scheduled triggers, webhook triggers. MIT-licensed core, runs on PostgreSQL + Redis.
+    pt_br: Activepieces é a plataforma de automação no-code open-source — alternativa ao Zapier que você auto-hospeda. 200+ pieces pré-construídas (Gmail, Slack, GitHub, Trello, Stripe, OpenAI, Discord, Notion). Construtor visual de flows, branching, loops, blocos de código, triggers agendados, triggers webhook. Core MIT-licensed, roda em PostgreSQL + Redis.
+  developer: activepieces
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Activepieces/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Activepieces/screenshot-1.png
+  tagline:
+    en_us: Self-hosted Zapier alternative with 200+ pre-built integrations
+    pt_br: Alternativa auto-hospedada ao Zapier com 200+ integrações prontas
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Activepieces/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. REPLACE POSTGRES_PASSWORD AND AP_POSTGRES_PASSWORD (must match) with a long random string.
+        2. Generate AP_API_KEY, AP_JWT_SECRET (`openssl rand -hex 32`) and AP_ENCRYPTION_KEY (`openssl rand -hex 16`).
+        3. Set AP_FRONTEND_URL to your public URL — required for OAuth callbacks.
+        4. First user signed up at http://YOUR_IP:8105 is the admin.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. SUBSTITUA POSTGRES_PASSWORD E AP_POSTGRES_PASSWORD (devem ser iguais) por string aleatória longa.
+        2. Gere AP_API_KEY, AP_JWT_SECRET (`openssl rand -hex 32`) e AP_ENCRYPTION_KEY (`openssl rand -hex 16`).
+        3. Configure AP_FRONTEND_URL com sua URL pública — necessário para callbacks OAuth.
+        4. O primeiro usuário registrado em http://SEU_IP:8105 é o admin.
+  title:
+    en_us: Activepieces
+  index: /
+  port_map: '8105'
+  scheme: http

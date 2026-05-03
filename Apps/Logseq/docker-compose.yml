@@ -1,0 +1,75 @@
+name: logseq
+services:
+  logseq:
+    image: logseq/logseq-publish-server:latest-2024
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    network_mode: bridge
+    ports:
+      - target: 80
+        published: '8108'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/graph
+        target: /graph
+        read_only: true
+    environment:
+      LOGSEQ_GRAPH_DIR: /graph
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: Read-only published graph viewer port (mapped to 8108 host)
+            pt_br: Porta do visualizador de grafo publicado em modo leitura (mapeada para 8108 no host)
+      volumes:
+        - container: /graph
+          description:
+            en_us: Logseq graph directory (mount your published graph here, read-only)
+            pt_br: Diretório do grafo Logseq (monte seu grafo publicado aqui, modo leitura)
+    container_name: logseq
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: logseq
+  author: RoqueOS Team
+  category: Notes
+  description:
+    en_us: 'Logseq Publish Server is the read-only web viewer for Logseq graphs you publish. Important: the Logseq desktop app is an Electron application — there is NO self-hosted Logseq server for editing. Use this container to share your knowledge graph with collaborators or publish a personal wiki online. For editing, use the desktop app (https://logseq.com/) and sync via Git, Logseq Sync (alpha), or any cloud storage backend.'
+    pt_br: 'Logseq Publish Server é o visualizador web em modo leitura para grafos Logseq que você publica. Importante: o app desktop do Logseq é uma aplicação Electron — NÃO existe servidor Logseq auto-hospedado para edição. Use este container para compartilhar seu grafo de conhecimento com colaboradores ou publicar um wiki pessoal online. Para edição, use o app desktop (https://logseq.com/) e sincronize via Git, Logseq Sync (alpha) ou qualquer cloud storage.'
+  developer: logseq
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Logseq/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Logseq/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Logseq/screenshot-2.png
+  tagline:
+    en_us: Read-only web viewer for published Logseq graphs (desktop app required for editing)
+    pt_br: Visualizador web read-only para grafos Logseq publicados (app desktop necessário para editar)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Logseq/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        IMPORTANT: This container is the PUBLISH SERVER (read-only viewer), not a Logseq editing server.
+        For editing, use the Logseq desktop app: https://logseq.com/
+        Workflow:
+        1. Author notes in Logseq desktop (graph saved as plain Markdown files locally).
+        2. Use File > Publish > Export Public Pages to generate a static graph.
+        3. Mount the exported folder into /graph here, then visit http://YOUR_IP:8108.
+        For multi-device sync, use Logseq Sync (alpha), Git, or Syncthing (already in catalog).
+      pt_br: |
+        IMPORTANTE: Este container é o SERVER DE PUBLISH (visualizador read-only), não um server de edição do Logseq.
+        Para editar, use o app desktop Logseq: https://logseq.com/
+        Workflow:
+        1. Crie notas no Logseq desktop (grafo salvo como arquivos Markdown locais).
+        2. Use Arquivo > Publicar > Exportar Páginas Públicas para gerar um grafo estático.
+        3. Monte a pasta exportada em /graph aqui, depois acesse http://SEU_IP:8108.
+        Para sync multi-dispositivo, use Logseq Sync (alpha), Git ou Syncthing (já no catálogo).
+  title:
+    en_us: Logseq Publish Server
+  index: /
+  port_map: '8108'
+  scheme: http

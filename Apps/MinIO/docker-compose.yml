@@ -1,0 +1,76 @@
+name: minio
+services:
+  minio:
+    image: minio/minio:RELEASE.2024-12-18T13-15-44Z
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    network_mode: bridge
+    ports:
+      - target: 9000
+        published: '9100'
+        protocol: tcp
+      - target: 9001
+        published: '9101'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+    environment:
+      MINIO_ROOT_USER: roqueos-admin
+      MINIO_ROOT_PASSWORD: change-me-to-a-long-random-string
+      MINIO_BROWSER_REDIRECT_URL: http://localhost:9101
+      MINIO_SERVER_URL: http://localhost:9100
+    command: server /data --console-address ":9001"
+    x-casaos:
+      ports:
+        - container: '9000'
+          description:
+            en_us: S3 API port (mapped to 9100 host)
+            pt_br: Porta da API S3 (mapeada para 9100 no host)
+        - container: '9001'
+          description:
+            en_us: Web console port (mapped to 9101 host)
+            pt_br: Porta do console web (mapeada para 9101 no host)
+      volumes:
+        - container: /data
+          description:
+            en_us: Object storage data
+            pt_br: Dados do object storage
+    container_name: minio
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: minio
+  author: RoqueOS Team
+  category: Storage
+  description:
+    en_us: MinIO is a high-performance, S3-compatible object storage server. The de-facto choice for self-hosted S3 — used by Kubernetes operators, AI/ML pipelines, backup tools (Restic, Duplicati), photo galleries (Immich, PhotoPrism), and any application that speaks S3. Single binary, scales horizontally to multi-petabyte clusters.
+    pt_br: MinIO é um servidor de object storage de alta performance, compatível com S3. A escolha de fato para S3 auto-hospedado — usado por operadores Kubernetes, pipelines IA/ML, ferramentas de backup (Restic, Duplicati), galerias de fotos (Immich, PhotoPrism) e qualquer aplicação que fale S3. Binário único, escala horizontalmente para clusters multi-petabyte.
+  developer: minio
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MinIO/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MinIO/screenshot-1.png
+  tagline:
+    en_us: High-performance S3-compatible object storage server
+    pt_br: Servidor de object storage de alta performance compatível com S3
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MinIO/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE MINIO_ROOT_PASSWORD before first boot.
+        S3 API at port 9100 (use with `aws-cli`, mc CLI, S3 SDKs). Web console at port 9101.
+        After boot, login to console, create access keys, then point your S3 clients at http://YOUR_IP:9100.
+      pt_br: |
+        SUBSTITUA MINIO_ROOT_PASSWORD antes do primeiro boot.
+        API S3 na porta 9100 (use com `aws-cli`, CLI mc, SDKs S3). Console web na porta 9101.
+        Após boot, login no console, crie access keys, depois aponte seus clientes S3 para http://SEU_IP:9100.
+  title:
+    en_us: MinIO
+  index: /
+  port_map: '9101'
+  scheme: http

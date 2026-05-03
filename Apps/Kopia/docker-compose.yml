@@ -1,0 +1,94 @@
+name: kopia
+services:
+  kopia:
+    image: kopia/kopia:0.18.2
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 51515
+        published: '51515'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /app/config
+      - type: bind
+        source: /DATA/AppData/$AppID/cache
+        target: /app/cache
+      - type: bind
+        source: /DATA/AppData/$AppID/logs
+        target: /app/logs
+      - type: bind
+        source: /DATA
+        target: /data
+        read_only: true
+    command:
+      - server
+      - start
+      - --insecure
+      - --address=0.0.0.0:51515
+      - --server-username=roqueos-admin
+      - --server-password=change-me-on-first-boot
+    environment:
+      KOPIA_PASSWORD: change-me-to-a-long-random-string
+    x-casaos:
+      ports:
+        - container: '51515'
+          description:
+            en_us: Kopia web UI port
+            pt_br: Porta da interface web do Kopia
+      volumes:
+        - container: /app/config
+          description:
+            en_us: Repository configuration
+            pt_br: Configuração do repositório
+        - container: /app/cache
+          description:
+            en_us: Local cache (speeds up backups + restores)
+            pt_br: Cache local (acelera backups + restores)
+        - container: /data
+          description:
+            en_us: Source data to back up (mounted read-only)
+            pt_br: Dados de origem para backup (montado em modo leitura)
+    container_name: kopia
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: kopia
+  author: RoqueOS Team
+  category: Backup
+  description:
+    en_us: Kopia is a fast and secure open-source backup tool with deduplication, compression, encryption (AES-256-GCM), and a beautiful web UI. Backs up to local disk, S3, B2, GCS, Azure, SFTP, WebDAV, rclone — anywhere. Snapshot-based with content-addressable storage. Cross-platform clients (Linux/macOS/Windows) can share repositories.
+    pt_br: Kopia é uma ferramenta de backup open-source rápida e segura com deduplicação, compressão, criptografia (AES-256-GCM) e uma UI web bonita. Faz backup para disco local, S3, B2, GCS, Azure, SFTP, WebDAV, rclone — para qualquer lugar. Baseada em snapshots com armazenamento content-addressable. Clientes multiplataforma (Linux/macOS/Windows) podem compartilhar repositórios.
+  developer: kopia
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Kopia/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Kopia/screenshot-1.png
+  tagline:
+    en_us: Fast, secure backup tool with dedup, encryption and 10+ backends
+    pt_br: Backup rápido e seguro com dedup, criptografia e 10+ backends
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Kopia/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. REPLACE the `--server-password` value AND KOPIA_PASSWORD with long random strings.
+        2. KOPIA_PASSWORD encrypts the repository — losing it means losing all backups.
+        3. After boot, set up a repository at http://YOUR_IP:51515 (filesystem path /data, S3 bucket, etc.).
+        4. /data is mounted read-only from /DATA on the host — Kopia reads source files from there.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. SUBSTITUA o valor de `--server-password` E KOPIA_PASSWORD por strings aleatórias longas.
+        2. KOPIA_PASSWORD criptografa o repositório — perdê-la significa perder todos os backups.
+        3. Após boot, configure um repositório em http://SEU_IP:51515 (path filesystem /data, bucket S3, etc.).
+        4. /data está montado em modo leitura a partir de /DATA no host — Kopia lê os arquivos de origem dali.
+  title:
+    en_us: Kopia
+  index: /
+  port_map: '51515'
+  scheme: http

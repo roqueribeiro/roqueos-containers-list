@@ -1,0 +1,77 @@
+name: localai
+services:
+  localai:
+    image: localai/localai:v2.24.1-ffmpeg-core
+    deploy:
+      resources:
+        reservations:
+          memory: 2048M
+    network_mode: bridge
+    ports:
+      - target: 8080
+        published: '8097'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/models
+        target: /build/models
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /build/config
+    environment:
+      DEBUG: 'false'
+      THREADS: '4'
+      CONTEXT_SIZE: '2048'
+      MODELS_PATH: /build/models
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: OpenAI-compatible API + WebUI port
+            pt_br: Porta da API compatível com OpenAI + interface web
+      volumes:
+        - container: /build/models
+          description:
+            en_us: GGUF/GGML/safetensors model files
+            pt_br: Arquivos de modelos GGUF/GGML/safetensors
+        - container: /build/config
+          description:
+            en_us: Model definitions (yaml configs per model)
+            pt_br: Definições de modelos (yaml por modelo)
+    container_name: localai
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: localai
+  author: RoqueOS Team
+  category: AI
+  description:
+    en_us: LocalAI is the free, open-source OpenAI-compatible API replacement — runs on consumer hardware (CPU only or GPU). Drop-in replacement for the OpenAI API endpoint, supports LLMs (llama.cpp, Mistral, Phi-3), embeddings, image generation (Stable Diffusion), audio (whisper.cpp, bark), function calling. Point your OpenAI SDK at it and run everything locally.
+    pt_br: LocalAI é o substituto gratuito e open-source da API OpenAI — roda em hardware comum (CPU only ou GPU). Drop-in replacement do endpoint da OpenAI, suporta LLMs (llama.cpp, Mistral, Phi-3), embeddings, geração de imagens (Stable Diffusion), áudio (whisper.cpp, bark), function calling. Aponte seu SDK OpenAI para ele e rode tudo local.
+  developer: mudler
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LocalAI/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LocalAI/screenshot-1.png
+  tagline:
+    en_us: Free OpenAI-compatible API on your hardware (CPU or GPU)
+    pt_br: API gratuita compatível com OpenAI no seu hardware (CPU ou GPU)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LocalAI/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        First boot exposes the OpenAI-compatible API at /v1/* (chat/completions, embeddings, etc.).
+        Models are NOT bundled — pull them via UI or with `curl http://YOUR_IP:8097/models/apply -d '{"id":"gallery@bert-embeddings"}'`.
+        For GPU acceleration, switch to `localai/localai:v2.24.1-cublas-cuda12-ffmpeg-core` (Nvidia) or `-hipblas-` (AMD).
+        Adjust THREADS to your CPU core count for best CPU-only inference.
+      pt_br: |
+        O primeiro boot expõe a API compatível OpenAI em /v1/* (chat/completions, embeddings, etc.).
+        Modelos NÃO vêm bundled — baixe via UI ou com `curl http://SEU_IP:8097/models/apply -d '{"id":"gallery@bert-embeddings"}'`.
+        Para aceleração GPU, mude para `localai/localai:v2.24.1-cublas-cuda12-ffmpeg-core` (Nvidia) ou `-hipblas-` (AMD).
+        Ajuste THREADS para o número de cores da sua CPU para melhor inferência só com CPU.
+  title:
+    en_us: LocalAI
+  index: /
+  port_map: '8097'
+  scheme: http

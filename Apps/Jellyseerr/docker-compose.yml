@@ -1,0 +1,73 @@
+name: jellyseerr
+services:
+  jellyseerr:
+    image: fallenbagel/jellyseerr:2.4.1
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 5055
+        published: '5055'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /app/config
+    environment:
+      LOG_LEVEL: debug
+      TZ: America/Sao_Paulo
+    x-casaos:
+      ports:
+        - container: '5055'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /app/config
+          description:
+            en_us: Database, sessions, plugins
+            pt_br: Banco, sessões, plugins
+    container_name: jellyseerr
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: jellyseerr
+  author: RoqueOS Team
+  category: Media
+  description:
+    en_us: Jellyseerr is a fork of Overseerr that adds support for Jellyfin and Emby alongside Plex. Lets your users (or guests) request movies, TV shows, and 4K content directly from a browser. Auto-approves with rules, integrates with Sonarr/Radarr to download requested content automatically, sends notifications via Discord/Telegram/Pushover/email.
+    pt_br: Jellyseerr é um fork do Overseerr que adiciona suporte a Jellyfin e Emby além do Plex. Permite que seus usuários (ou convidados) solicitem filmes, séries e conteúdo 4K direto pelo navegador. Auto-aprova com regras, integra com Sonarr/Radarr para baixar o conteúdo automaticamente, envia notificações via Discord/Telegram/Pushover/email.
+  developer: Fallenbagel
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-4.png
+  tagline:
+    en_us: Request manager for Jellyfin/Emby/Plex (Overseerr fork)
+    pt_br: Gerenciador de solicitações para Jellyfin/Emby/Plex (fork do Overseerr)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        First boot at http://YOUR_IP:5055 walks you through:
+        1. Choose Plex/Jellyfin/Emby and authenticate.
+        2. Connect to Sonarr (TV) and Radarr (movies) for automatic downloads.
+        3. Configure user permissions and request quotas.
+        Pair with Sonarr (already in the catalog) and Jellyfin/Plex (also in the catalog).
+      pt_br: |
+        O primeiro boot em http://SEU_IP:5055 te guia por:
+        1. Escolha Plex/Jellyfin/Emby e autentique.
+        2. Conecte ao Sonarr (séries) e Radarr (filmes) para downloads automáticos.
+        3. Configure permissões de usuário e cotas de solicitação.
+        Combine com Sonarr (já no catálogo) e Jellyfin/Plex (também no catálogo).
+  title:
+    en_us: Jellyseerr
+  index: /
+  port_map: '5055'
+  scheme: http
