@@ -1,0 +1,72 @@
+name: piwigo
+services:
+  piwigo:
+    image: linuxserver/piwigo:14.5.0
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 80
+        published: '8087'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/$AppID/gallery
+        target: /gallery
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: America/Sao_Paulo
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /config
+          description:
+            en_us: Piwigo configuration + database
+            pt_br: Configuração do Piwigo + banco de dados
+        - container: /gallery
+          description:
+            en_us: Original photos directory
+            pt_br: Diretório das fotos originais
+    container_name: piwigo
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: piwigo
+  author: RoqueOS Team
+  category: Gallery
+  description:
+    en_us: Piwigo is a CMS for photo galleries — open-source since 2002, used by photographers, families, schools, museums, and organizations. Album hierarchy, tags, search, EXIF, ratings, comments, customizable themes, mobile apps, plugin ecosystem with 350+ extensions.
+    pt_br: Piwigo é um CMS para galerias de fotos — open-source desde 2002, usado por fotógrafos, famílias, escolas, museus e organizações. Hierarquia de álbuns, tags, busca, EXIF, avaliações, comentários, temas customizáveis, apps mobile, ecossistema de plugins com 350+ extensões.
+  developer: Piwigo
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Piwigo/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Piwigo/screenshot-1.png
+  tagline:
+    en_us: Photo gallery CMS with 350+ plugins (since 2002)
+    pt_br: CMS de galeria de fotos com 350+ plugins (desde 2002)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Piwigo/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Default DB is SQLite via internal MariaDB. On first boot, the installer prompts you to create the admin account at http://YOUR_IP:8087.
+        For larger libraries (10000+ photos), set up an external MariaDB/MySQL via the installer's database step.
+      pt_br: |
+        Banco padrão é SQLite via MariaDB interno. No primeiro boot, o instalador pede para criar a conta admin em http://SEU_IP:8087.
+        Para bibliotecas maiores (10000+ fotos), configure MariaDB/MySQL externo no passo de banco do instalador.
+  title:
+    en_us: Piwigo
+  index: /
+  port_map: '8087'
+  scheme: http

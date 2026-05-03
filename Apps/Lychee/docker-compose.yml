@@ -1,0 +1,82 @@
+name: lychee
+services:
+  lychee:
+    image: lycheeorg/lychee:v6.6.4
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 80
+        published: '8086'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/conf
+        target: /conf
+      - type: bind
+        source: /DATA/AppData/$AppID/uploads
+        target: /uploads
+      - type: bind
+        source: /DATA/AppData/$AppID/sym
+        target: /sym
+      - type: bind
+        source: /DATA/AppData/$AppID/logs
+        target: /logs
+    environment:
+      DB_CONNECTION: sqlite
+      APP_KEY: replace-with-output-of-php-artisan-key-generate
+      APP_NAME: Lychee
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /conf
+          description:
+            en_us: Lychee configuration files
+            pt_br: Arquivos de configuração do Lychee
+        - container: /uploads
+          description:
+            en_us: Photo uploads
+            pt_br: Uploads de fotos
+        - container: /sym
+          description:
+            en_us: Symlinks for thumbnails
+            pt_br: Symlinks para miniaturas
+    container_name: lychee
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: lychee
+  author: RoqueOS Team
+  category: Gallery
+  description:
+    en_us: Lychee is a free, open-source photo management tool that runs on your server. Upload, manage and share photos like in any other app — but with the added benefit of being on your own server. Album organization, sharing via link, EXIF/GPS data display, geotagging map, slideshow, and a clean responsive UI.
+    pt_br: Lychee é uma ferramenta gratuita e open-source de gerenciamento de fotos que roda no seu servidor. Suba, organize e compartilhe fotos como em qualquer outro app — mas com a vantagem de estar no seu servidor. Organização por álbuns, compartilhamento por link, exibição de EXIF/GPS, mapa de geotagging, slideshow e UI responsiva e limpa.
+  developer: LycheeOrg
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Lychee/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Lychee/screenshot-1.png
+  tagline:
+    en_us: Self-hosted photo management with album sharing and EXIF maps
+    pt_br: Gerenciamento de fotos auto-hospedado com álbuns, compartilhamento e mapa EXIF
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Lychee/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE APP_KEY before first boot. Generate with `docker run --rm lycheeorg/lychee php artisan key:generate --show`.
+        Default uses SQLite — for 1000+ photos, switch to MySQL/PostgreSQL via DB_CONNECTION env.
+      pt_br: |
+        SUBSTITUA APP_KEY antes do primeiro boot. Gere com `docker run --rm lycheeorg/lychee php artisan key:generate --show`.
+        Default usa SQLite — para 1000+ fotos, mude para MySQL/PostgreSQL via variável DB_CONNECTION.
+  title:
+    en_us: Lychee
+  index: /
+  port_map: '8086'
+  scheme: http

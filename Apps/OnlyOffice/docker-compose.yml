@@ -1,0 +1,91 @@
+name: onlyoffice
+services:
+  onlyoffice:
+    image: onlyoffice/documentserver:8.2.2
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    network_mode: bridge
+    ports:
+      - target: 80
+        published: '8084'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /var/www/onlyoffice/Data
+      - type: bind
+        source: /DATA/AppData/$AppID/log
+        target: /var/log/onlyoffice
+      - type: bind
+        source: /DATA/AppData/$AppID/lib
+        target: /var/lib/onlyoffice
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /var/lib/postgresql
+    environment:
+      JWT_ENABLED: 'true'
+      JWT_SECRET: replace-with-output-of-openssl-rand-hex-32
+      JWT_HEADER: Authorization
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: WebUI / Document Server API
+            pt_br: WebUI / API do Document Server
+      volumes:
+        - container: /var/www/onlyoffice/Data
+          description:
+            en_us: Certificates and customizations
+            pt_br: Certificados e customizações
+        - container: /var/log/onlyoffice
+          description:
+            en_us: Logs
+            pt_br: Logs
+        - container: /var/lib/onlyoffice
+          description:
+            en_us: Cache + Document conversions
+            pt_br: Cache + conversões de documentos
+        - container: /var/lib/postgresql
+          description:
+            en_us: PostgreSQL database (internal)
+            pt_br: Banco PostgreSQL (interno)
+      envs:
+        - container: JWT_SECRET
+          description:
+            en_us: JWT secret for the document API. REPLACE before first boot.
+            pt_br: Segredo JWT da API de documentos. SUBSTITUA antes do primeiro boot.
+    container_name: onlyoffice
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: onlyoffice
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: OnlyOffice Document Server is a free open-source online office suite that provides server-side conversion and editing of text documents, spreadsheets, and presentations with full Microsoft Office compatibility (DOCX, XLSX, PPTX). Pairs natively with Nextcloud and ownCloud — drop into your stack and edit MS Office files in the browser.
+    pt_br: OnlyOffice Document Server é um suite de escritório online gratuita e open-source que oferece conversão e edição server-side de documentos, planilhas e apresentações com compatibilidade completa com Microsoft Office (DOCX, XLSX, PPTX). Combina nativamente com Nextcloud e ownCloud — coloca no seu stack e edita arquivos MS Office direto do navegador.
+  developer: ONLYOFFICE
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OnlyOffice/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OnlyOffice/screenshot-1.png
+  tagline:
+    en_us: Open-source MS Office-compatible online editor (DOCX/XLSX/PPTX)
+    pt_br: Editor online open-source compatível com MS Office (DOCX/XLSX/PPTX)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OnlyOffice/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE JWT_SECRET before first boot — required by Nextcloud/ownCloud connectors.
+        Configure WOPI_URL in your Nextcloud (or ownCloud) admin panel pointing to http://YOUR_IP:8084 with the same JWT_SECRET above. Then files open inline in OnlyOffice.
+      pt_br: |
+        SUBSTITUA JWT_SECRET antes do primeiro boot — exigido pelos conectores Nextcloud/ownCloud.
+        Configure WOPI_URL no painel admin do Nextcloud (ou ownCloud) apontando para http://SEU_IP:8084 com o mesmo JWT_SECRET acima. Depois disso, arquivos abrem inline no OnlyOffice.
+  title:
+    en_us: OnlyOffice Document Server
+  index: /
+  port_map: '8084'
+  scheme: http

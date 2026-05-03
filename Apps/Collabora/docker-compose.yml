@@ -1,0 +1,72 @@
+name: collabora
+services:
+  collabora:
+    image: collabora/code:24.04.10.1.1
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    network_mode: bridge
+    ports:
+      - target: 9980
+        published: '9980'
+        protocol: tcp
+    restart: always
+    cap_add:
+      - MKNOD
+    environment:
+      domain: cloud\\.example\\.com
+      username: admin
+      password: change-me-on-first-boot
+      extra_params: '--o:ssl.enable=false --o:ssl.termination=true'
+    x-casaos:
+      ports:
+        - container: '9980'
+          description:
+            en_us: WOPI / WebSocket port
+            pt_br: Porta WOPI / WebSocket
+      envs:
+        - container: domain
+          description:
+            en_us: Regex for allowed Nextcloud/ownCloud domain (escape dots with \\.)
+            pt_br: Regex do domínio Nextcloud/ownCloud permitido (escape pontos com \\.)
+        - container: password
+          description:
+            en_us: Admin console password — REPLACE before first boot
+            pt_br: Senha do console admin — SUBSTITUA antes do primeiro boot
+    container_name: collabora
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: collabora
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: Collabora Online (CODE) is the LibreOffice-based open-source online office suite. Edit documents, spreadsheets, and presentations directly in your browser via Nextcloud, ownCloud or any WOPI-compatible host. ODF-native with Microsoft Office round-trip support.
+    pt_br: Collabora Online (CODE) é o suite de escritório online open-source baseado no LibreOffice. Edite documentos, planilhas e apresentações direto no navegador via Nextcloud, ownCloud ou qualquer host compatível WOPI. Nativo em ODF com suporte round-trip a Microsoft Office.
+  developer: CollaboraOnline
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Collabora/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Collabora/screenshot-1.png
+  tagline:
+    en_us: LibreOffice-based online office suite (Nextcloud-compatible)
+    pt_br: Suite de escritório online baseada em LibreOffice (compatível Nextcloud)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Collabora/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. REPLACE `domain` regex with the escaped Nextcloud/ownCloud host (e.g., `nextcloud\\.example\\.com`).
+        2. REPLACE `password` for the admin console at /browser/dist/admin/admin.html.
+        3. In your Nextcloud admin: install "Nextcloud Office" app, set Collabora URL to http://YOUR_IP:9980.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. SUBSTITUA `domain` (regex) com o host Nextcloud/ownCloud escapado (ex: `nextcloud\\.example\\.com`).
+        2. SUBSTITUA `password` do console admin em /browser/dist/admin/admin.html.
+        3. No admin do Nextcloud: instale o app "Nextcloud Office", configure URL do Collabora para http://SEU_IP:9980.
+  title:
+    en_us: Collabora Online
+  index: /
+  port_map: '9980'
+  scheme: http

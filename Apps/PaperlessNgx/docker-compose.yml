@@ -1,0 +1,98 @@
+name: paperlessngx
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/redis
+        target: /data
+    container_name: paperlessngx-redis
+  paperlessngx:
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.13.5
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    ports:
+      - target: 8000
+        published: '8088'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /usr/src/paperless/data
+      - type: bind
+        source: /DATA/AppData/$AppID/media
+        target: /usr/src/paperless/media
+      - type: bind
+        source: /DATA/AppData/$AppID/export
+        target: /usr/src/paperless/export
+      - type: bind
+        source: /DATA/AppData/$AppID/consume
+        target: /usr/src/paperless/consume
+    environment:
+      PAPERLESS_REDIS: redis://redis:6379
+      PAPERLESS_TIME_ZONE: America/Sao_Paulo
+      PAPERLESS_OCR_LANGUAGES: por eng
+      PAPERLESS_OCR_LANGUAGE: por
+      PAPERLESS_ADMIN_USER: admin
+      PAPERLESS_ADMIN_PASSWORD: change-me-on-first-boot
+      PAPERLESS_SECRET_KEY: replace-with-output-of-openssl-rand-hex-32
+      PAPERLESS_URL: http://localhost:8088
+    depends_on:
+      - redis
+    x-casaos:
+      ports:
+        - container: '8000'
+          description:
+            en_us: WebUI port (mapped to 8088 host)
+            pt_br: Porta da interface web (mapeada para 8088 no host)
+      volumes:
+        - container: /usr/src/paperless/data
+          description:
+            en_us: Application data (database, indexes)
+            pt_br: Dados da aplicação (banco, índices)
+        - container: /usr/src/paperless/media
+          description:
+            en_us: Original PDF/image files
+            pt_br: Arquivos originais PDF/imagens
+        - container: /usr/src/paperless/consume
+          description:
+            en_us: Drop folder — files placed here are auto-imported
+            pt_br: Pasta de drop — arquivos aqui são importados automaticamente
+    container_name: paperlessngx
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: paperlessngx
+  author: RoqueOS Team
+  category: Documents
+  description:
+    en_us: Paperless-ngx is a community-maintained document management system that transforms physical documents into searchable archives. Drop scans into the consume folder; OCR and tagging happen automatically. Full-text search, mobile scanner apps integration, smart filing rules. Communities of accountants, lawyers, and home users keep their paperwork in Paperless.
+    pt_br: Paperless-ngx é um sistema de gerenciamento de documentos mantido pela comunidade que transforma documentos físicos em arquivos pesquisáveis. Coloque scans na pasta consume; OCR e tagging acontecem automaticamente. Busca full-text, integração com apps de scanner mobile, regras inteligentes de arquivamento. Contadores, advogados e usuários domésticos mantêm seus papéis no Paperless.
+  developer: paperless-ngx
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PaperlessNgx/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PaperlessNgx/screenshot-1.png
+  tagline:
+    en_us: Document management with OCR, full-text search and auto-tagging
+    pt_br: Gerenciamento de documentos com OCR, busca full-text e tagging automático
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PaperlessNgx/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE PAPERLESS_ADMIN_PASSWORD and PAPERLESS_SECRET_KEY before first boot.
+        Drop documents into /consume — Paperless will OCR + tag + file them automatically.
+        Default OCR languages: Portuguese + English (PAPERLESS_OCR_LANGUAGES). Add more from `apt-cache search 'tesseract-ocr-'`.
+      pt_br: |
+        SUBSTITUA PAPERLESS_ADMIN_PASSWORD e PAPERLESS_SECRET_KEY antes do primeiro boot.
+        Coloque documentos em /consume — Paperless faz OCR + tag + arquivamento automaticamente.
+        Idiomas padrão de OCR: Português + Inglês (PAPERLESS_OCR_LANGUAGES). Adicione mais de `apt-cache search 'tesseract-ocr-'`.
+  title:
+    en_us: Paperless-ngx
+  index: /
+  port_map: '8088'
+  scheme: http
