@@ -1,0 +1,76 @@
+name: stirlingpdf
+services:
+  stirlingpdf:
+    image: frooodle/s-pdf:0.40.1
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    network_mode: bridge
+    ports:
+      - target: 8080
+        published: '8085'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /usr/share/tessdata
+      - type: bind
+        source: /DATA/AppData/$AppID/configs
+        target: /configs
+      - type: bind
+        source: /DATA/AppData/$AppID/logs
+        target: /logs
+    environment:
+      DOCKER_ENABLE_SECURITY: 'false'
+      INSTALL_BOOK_AND_ADVANCED_HTML_OPS: 'false'
+      LANGS: en_US,pt_BR
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: WebUI port (mapped to 8085 host)
+            pt_br: Porta da interface web (mapeada para 8085 no host)
+      volumes:
+        - container: /usr/share/tessdata
+          description:
+            en_us: Tesseract OCR language data
+            pt_br: Dados de idioma do Tesseract OCR
+        - container: /configs
+          description:
+            en_us: Stirling-PDF configuration
+            pt_br: Configuração do Stirling-PDF
+    container_name: stirlingpdf
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: stirlingpdf
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: Stirling-PDF is a powerful, locally-hosted, web-based PDF manipulation tool with 50+ operations — split, merge, compress, watermark, OCR, sign, redact, convert to/from images and Office formats. All processing is local, your files never leave your server.
+    pt_br: Stirling-PDF é uma ferramenta web poderosa e auto-hospedada de manipulação de PDF com 50+ operações — dividir, juntar, comprimir, watermark, OCR, assinar, redigir, converter de/para imagens e formatos Office. Todo processamento é local, seus arquivos nunca saem do seu servidor.
+  developer: Stirling-Tools
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/StirlingPDF/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/StirlingPDF/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/StirlingPDF/screenshot-2.png
+  tagline:
+    en_us: Locally-hosted PDF toolset (50+ operations, OCR, sign, redact)
+    pt_br: Conjunto de ferramentas PDF auto-hospedado (50+ operações, OCR, assinatura, redação)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/StirlingPDF/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        First boot downloads OCR language packs to /usr/share/tessdata — may take a couple of minutes.
+        Set DOCKER_ENABLE_SECURITY=true and add an authentication backend (LDAP/OAuth) if exposing publicly.
+      pt_br: |
+        O primeiro boot baixa os language packs do OCR em /usr/share/tessdata — pode demorar alguns minutos.
+        Configure DOCKER_ENABLE_SECURITY=true e adicione backend de autenticação (LDAP/OAuth) se for expor publicamente.
+  title:
+    en_us: Stirling-PDF
+  index: /
+  port_map: '8085'
+  scheme: http

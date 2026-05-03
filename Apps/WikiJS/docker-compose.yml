@@ -1,0 +1,80 @@
+name: wikijs
+services:
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_USER: wikijs
+      POSTGRES_PASSWORD: change-me-to-a-long-random-string
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U wikijs -d wiki']
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    container_name: wikijs-db
+  wikijs:
+    image: requarks/wiki:2.5.307
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    ports:
+      - target: 3000
+        published: '8090'
+        protocol: tcp
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: '5432'
+      DB_USER: wikijs
+      DB_PASS: change-me-to-a-long-random-string
+      DB_NAME: wiki
+    depends_on:
+      db:
+        condition: service_healthy
+    x-casaos:
+      ports:
+        - container: '3000'
+          description:
+            en_us: WebUI port (mapped to 8090 host)
+            pt_br: Porta da interface web (mapeada para 8090 no host)
+    container_name: wikijs
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: wikijs
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: Wiki.js is the most powerful and extensible open-source wiki software. Built on Node.js, Git, and Markdown, with WYSIWYG and code editors, real-time collaboration, beautiful UI, full-text search (Elasticsearch/Algolia/PostgreSQL), 30+ authentication providers, content versioning. Modern alternative to MediaWiki/Confluence.
+    pt_br: Wiki.js é o software de wiki open-source mais poderoso e extensível. Construído em Node.js, Git e Markdown, com editores WYSIWYG e código, colaboração em tempo real, UI bonita, busca full-text (Elasticsearch/Algolia/PostgreSQL), 30+ provedores de autenticação, versionamento de conteúdo. Alternativa moderna a MediaWiki/Confluence.
+  developer: requarks
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WikiJS/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WikiJS/screenshot-1.png
+  tagline:
+    en_us: Modern Node.js + Git + Markdown wiki with 30+ auth providers
+    pt_br: Wiki moderna em Node.js + Git + Markdown com 30+ provedores de auth
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/WikiJS/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE POSTGRES_PASSWORD AND DB_PASS (must match) with a long random string before first boot.
+        Initial setup wizard at http://YOUR_IP:8090 creates the admin account.
+        For storage backends (Git/S3/Local FS), configure them in admin > Storage after first login.
+      pt_br: |
+        SUBSTITUA POSTGRES_PASSWORD E DB_PASS (devem ser iguais) por uma string aleatória longa antes do primeiro boot.
+        Wizard inicial em http://SEU_IP:8090 cria a conta admin.
+        Para storage backends (Git/S3/FS local), configure em admin > Storage após o primeiro login.
+  title:
+    en_us: Wiki.js
+  index: /
+  port_map: '8090'
+  scheme: http

@@ -1,0 +1,107 @@
+name: outline
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/redis
+        target: /data
+    container_name: outline-redis
+  postgres:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: outline
+      POSTGRES_PASSWORD: change-me-to-a-long-random-string
+      POSTGRES_DB: outline
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/postgres
+        target: /var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U outline -d outline']
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    container_name: outline-postgres
+  outline:
+    image: outlinewiki/outline:0.81.1
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    ports:
+      - target: 3000
+        published: '8091'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /var/lib/outline/data
+    environment:
+      SECRET_KEY: replace-with-output-of-openssl-rand-hex-32
+      UTILS_SECRET: replace-with-output-of-openssl-rand-hex-32
+      DATABASE_URL: postgres://outline:change-me-to-a-long-random-string@postgres:5432/outline
+      DATABASE_CONNECTION_POOL_MIN: '0'
+      DATABASE_CONNECTION_POOL_MAX: '5'
+      REDIS_URL: redis://redis:6379
+      URL: http://localhost:8091
+      PORT: '3000'
+      FILE_STORAGE: local
+      FILE_STORAGE_LOCAL_ROOT_DIR: /var/lib/outline/data
+      FILE_STORAGE_UPLOAD_MAX_SIZE: '262144000'
+      FORCE_HTTPS: 'false'
+      ENABLE_UPDATES: 'true'
+      WEB_CONCURRENCY: '1'
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    x-casaos:
+      ports:
+        - container: '3000'
+          description:
+            en_us: WebUI port (mapped to 8091 host)
+            pt_br: Porta da interface web (mapeada para 8091 no host)
+    container_name: outline
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: outline
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: Outline is a fast, collaborative, modern team wiki — like Notion but self-hosted and open-source. Beautiful real-time collaborative Markdown editor, slash commands, nested documents, integrations with Slack/GitHub/Loom/Figma, full-text search, comments, versioning. Used by thousands of teams as their internal knowledge base.
+    pt_br: Outline é uma wiki de time rápida, colaborativa e moderna — como Notion mas auto-hospedada e open-source. Editor Markdown colaborativo em tempo real bonito, slash commands, documentos aninhados, integrações com Slack/GitHub/Loom/Figma, busca full-text, comentários, versionamento. Usada por milhares de times como base de conhecimento interna.
+  developer: outline
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Outline/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Outline/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Outline/screenshot-2.png
+  tagline:
+    en_us: Self-hosted Notion-like collaborative team wiki
+    pt_br: Wiki colaborativa de time auto-hospedada estilo Notion
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Outline/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. REPLACE POSTGRES_PASSWORD AND the password in DATABASE_URL (must match) with a long random string.
+        2. REPLACE SECRET_KEY and UTILS_SECRET — both with output of `openssl rand -hex 32`.
+        3. Set URL to your public URL (must match exactly, including http/https — needed for OAuth).
+        4. Outline requires an OAuth provider (Google/Slack/GitHub/Microsoft/OIDC) — configure via env vars before first boot.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. SUBSTITUA POSTGRES_PASSWORD E a senha em DATABASE_URL (devem ser iguais) por uma string aleatória longa.
+        2. SUBSTITUA SECRET_KEY e UTILS_SECRET — ambos pela saída de `openssl rand -hex 32`.
+        3. Configure URL com a URL pública (deve bater exatamente, incluindo http/https — necessário para OAuth).
+        4. Outline exige um provedor OAuth (Google/Slack/GitHub/Microsoft/OIDC) — configure via variáveis antes do primeiro boot.
+  title:
+    en_us: Outline
+  index: /
+  port_map: '8091'
+  scheme: http

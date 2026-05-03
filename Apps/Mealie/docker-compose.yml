@@ -1,0 +1,73 @@
+name: mealie
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:v2.5.0
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    network_mode: bridge
+    ports:
+      - target: 9000
+        published: '9095'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /app/data
+    environment:
+      ALLOW_SIGNUP: 'false'
+      PUID: '1000'
+      PGID: '1000'
+      TZ: America/Sao_Paulo
+      MAX_WORKERS: '1'
+      WEB_CONCURRENCY: '1'
+      BASE_URL: http://localhost:9095
+      DEFAULT_GROUP: Home
+      DEFAULT_EMAIL: changeme@example.com
+    x-casaos:
+      ports:
+        - container: '9000'
+          description:
+            en_us: WebUI port (mapped to 9095 host)
+            pt_br: Porta da interface web (mapeada para 9095 no host)
+      volumes:
+        - container: /app/data
+          description:
+            en_us: Recipe database, images, backups
+            pt_br: Banco de receitas, imagens, backups
+    container_name: mealie
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: mealie
+  author: RoqueOS Team
+  category: Other
+  description:
+    en_us: Mealie is a self-hosted recipe manager and meal planner with a beautiful UI. Import recipes from any URL with one click (parses 100+ recipe sites), plan weekly meals, generate shopping lists, scale ingredients, store cooking timers. Mobile-friendly. Optional Open Food Facts integration for nutrition data.
+    pt_br: Mealie é um gerenciador de receitas e planejador de refeições auto-hospedado com UI bonita. Importa receitas de qualquer URL com um clique (suporta 100+ sites de receitas), planeja refeições semanais, gera listas de compras, escala ingredientes, armazena timers de cozinha. Mobile-friendly. Integração opcional Open Food Facts para dados nutricionais.
+  developer: mealie-recipes
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mealie/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mealie/screenshot-1.png
+  tagline:
+    en_us: Self-hosted recipe manager and weekly meal planner
+    pt_br: Gerenciador de receitas e planejador semanal de refeições, auto-hospedado
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mealie/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        First user created via signup is the admin (then turn ALLOW_SIGNUP=false to lock down).
+        Or: pre-create the user via the env vars DEFAULT_EMAIL + a fresh DEFAULT_GROUP.
+        For >5 active users, switch from default SQLite to PostgreSQL — see docs.
+      pt_br: |
+        O primeiro usuário criado via signup é o admin (depois mude ALLOW_SIGNUP=false para travar).
+        Ou: pré-crie o usuário via variáveis DEFAULT_EMAIL + DEFAULT_GROUP.
+        Para >5 usuários ativos, mude do SQLite padrão para PostgreSQL — ver docs.
+  title:
+    en_us: Mealie
+  index: /
+  port_map: '9095'
+  scheme: http

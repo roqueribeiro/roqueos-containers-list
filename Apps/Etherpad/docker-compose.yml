@@ -1,0 +1,72 @@
+name: etherpad
+services:
+  etherpad:
+    image: etherpad/etherpad:2.2.7
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 9001
+        published: '9001'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/var
+        target: /opt/etherpad-lite/var
+    environment:
+      ADMIN_PASSWORD: change-me-on-first-boot
+      DEFAULT_PAD_TEXT: 'Welcome to Etherpad on RoqueOS! This pad text is configurable via DEFAULT_PAD_TEXT.'
+      TRUST_PROXY: 'true'
+    x-casaos:
+      ports:
+        - container: '9001'
+          description:
+            en_us: WebUI / API port
+            pt_br: Porta da interface web / API
+      volumes:
+        - container: /opt/etherpad-lite/var
+          description:
+            en_us: SQLite database + sessions
+            pt_br: Banco SQLite + sessões
+      envs:
+        - container: ADMIN_PASSWORD
+          description:
+            en_us: Admin password for /admin — REPLACE before first boot
+            pt_br: Senha de admin para /admin — SUBSTITUA antes do primeiro boot
+    container_name: etherpad
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: etherpad
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: Etherpad is a real-time collaborative editor — like Google Docs but self-hosted, no account needed, no tracking. Multiple users edit the same document simultaneously with colored cursors and inline chat. Used by Wikimedia, Mozilla and OpenWrt for project notes.
+    pt_br: Etherpad é um editor colaborativo em tempo real — como Google Docs mas auto-hospedado, sem conta necessária, sem rastreamento. Múltiplos usuários editam o mesmo documento simultaneamente com cursores coloridos e chat inline. Usado por Wikimedia, Mozilla e OpenWrt para anotações de projeto.
+  developer: ether
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Etherpad/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Etherpad/screenshot-1.png
+  tagline:
+    en_us: Real-time collaborative document editor (Google Docs alternative)
+    pt_br: Editor colaborativo de documentos em tempo real (alternativa ao Google Docs)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Etherpad/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE ADMIN_PASSWORD before first boot.
+        Admin panel: http://YOUR_IP:9001/admin (user "admin" + the password set above).
+        For 50+ concurrent users, configure PostgreSQL/MySQL via DB_TYPE/DB_HOST/etc env vars.
+      pt_br: |
+        SUBSTITUA ADMIN_PASSWORD antes do primeiro boot.
+        Painel admin: http://SEU_IP:9001/admin (usuário "admin" + senha configurada acima).
+        Para 50+ usuários simultâneos, configure PostgreSQL/MySQL via variáveis DB_TYPE/DB_HOST/etc.
+  title:
+    en_us: Etherpad
+  index: /
+  port_map: '9001'
+  scheme: http

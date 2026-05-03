@@ -1,0 +1,120 @@
+name: librephotos
+services:
+  db:
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: librephotos
+      POSTGRES_PASSWORD: change-me-to-a-long-random-string
+      POSTGRES_DB: librephotos
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /var/lib/postgresql/data
+    container_name: librephotos-db
+  redis:
+    image: redis:6-alpine
+    restart: always
+    container_name: librephotos-redis
+  backend:
+    image: reallibrephotos/librephotos:2024w52
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          memory: 2048M
+    ports:
+      - target: 3000
+        published: '3000'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/Photos/librephotos
+        target: /data
+      - type: bind
+        source: /DATA/AppData/$AppID/protected_media
+        target: /protected_media
+      - type: bind
+        source: /DATA/AppData/$AppID/logs
+        target: /logs
+      - type: bind
+        source: /DATA/AppData/$AppID/cache
+        target: /root/.cache
+    environment:
+      DB_BACKEND: postgresql
+      DB_NAME: librephotos
+      DB_USER: librephotos
+      DB_PASS: change-me-to-a-long-random-string
+      DB_HOST: db
+      DB_PORT: '5432'
+      REDIS_HOST: redis
+      REDIS_PORT: '6379'
+      MAPBOX_API_KEY: ''
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: change-me-on-first-boot
+      DEBUG: '0'
+      SECRET_KEY: replace-with-output-of-openssl-rand-hex-32
+      BACKEND_HOST: backend
+      FRONTEND_HOST: localhost
+      WORKERS: '2'
+      WEB_CONCURRENCY: '2'
+    depends_on:
+      - db
+      - redis
+    x-casaos:
+      ports:
+        - container: '3000'
+          description:
+            en_us: WebUI port (frontend + backend on same port)
+            pt_br: Porta da interface web (frontend + backend mesma porta)
+      volumes:
+        - container: /data
+          description:
+            en_us: Original photos directory
+            pt_br: Diretório das fotos originais
+        - container: /protected_media
+          description:
+            en_us: Thumbnails, faces, encrypted media
+            pt_br: Miniaturas, faces, mídia criptografada
+        - container: /root/.cache
+          description:
+            en_us: ML model cache (face recognition, etc.)
+            pt_br: Cache dos modelos de ML (reconhecimento facial, etc.)
+    container_name: librephotos
+x-casaos:
+  architectures:
+    - amd64
+  main: backend
+  author: RoqueOS Team
+  category: Gallery
+  description:
+    en_us: LibrePhotos is a self-hosted, open-source Google Photos alternative. AI-powered face recognition, automatic event detection, location maps, smart album generation, things detection (pets, food, landscapes), and a clean React UI. Heavy on RAM/CPU due to ML inference — recommend 4 GB+ RAM and a recent CPU.
+    pt_br: LibrePhotos é uma alternativa auto-hospedada e open-source ao Google Fotos. Reconhecimento facial com IA, detecção automática de eventos, mapas de localização, geração inteligente de álbuns, detecção de objetos (pets, comida, paisagens) e UI moderna em React. Pesado em RAM/CPU pela inferência ML — recomendamos 4 GB+ de RAM e CPU recente.
+  developer: LibrePhotos
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LibrePhotos/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LibrePhotos/screenshot-1.png
+  tagline:
+    en_us: Self-hosted Google Photos clone with AI face recognition
+    pt_br: Clone auto-hospedado do Google Fotos com reconhecimento facial por IA
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LibrePhotos/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. REPLACE POSTGRES_PASSWORD AND DB_PASS (must match) with a long random string.
+        2. REPLACE ADMIN_PASSWORD and SECRET_KEY.
+        3. Mount your photo library at /data — LibrePhotos will scan it on first run (can take hours for large libraries).
+        4. (Optional) Set MAPBOX_API_KEY for prettier maps; falls back to OpenStreetMap if empty.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. SUBSTITUA POSTGRES_PASSWORD E DB_PASS (devem ser iguais) por uma string aleatória longa.
+        2. SUBSTITUA ADMIN_PASSWORD e SECRET_KEY.
+        3. Monte sua biblioteca de fotos em /data — LibrePhotos vai escanear no primeiro boot (pode levar horas para bibliotecas grandes).
+        4. (Opcional) Configure MAPBOX_API_KEY para mapas mais bonitos; usa OpenStreetMap como fallback se vazio.
+  title:
+    en_us: LibrePhotos
+  index: /
+  port_map: '3000'
+  scheme: http

@@ -1,0 +1,92 @@
+name: bookstack
+services:
+  bookstack-db:
+    image: linuxserver/mariadb:11.4.4-r0
+    restart: unless-stopped
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: America/Sao_Paulo
+      MYSQL_ROOT_PASSWORD: change-me-on-first-boot
+      MYSQL_DATABASE: bookstackapp
+      MYSQL_USER: bookstack
+      MYSQL_PASSWORD: change-me-to-a-long-random-string
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /config
+    container_name: bookstack-db
+  bookstack:
+    image: linuxserver/bookstack:24.10.4
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    ports:
+      - target: 80
+        published: '8089'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: America/Sao_Paulo
+      APP_URL: http://localhost:8089
+      DB_HOST: bookstack-db
+      DB_PORT: '3306'
+      DB_USERNAME: bookstack
+      DB_PASSWORD: change-me-to-a-long-random-string
+      DB_DATABASE: bookstackapp
+    depends_on:
+      - bookstack-db
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /config
+          description:
+            en_us: Configuration + uploads
+            pt_br: Configuração + uploads
+    container_name: bookstack
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: bookstack
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: 'BookStack is a simple, self-hosted, easy-to-use platform for organizing and storing information. Content is structured in a 3-level hierarchy: shelves, books, chapters, pages. Markdown editor + WYSIWYG, built-in search, RBAC, OAuth/SAML/LDAP support. Open-source MIT, used by hundreds of teams as a wiki/docs.'
+    pt_br: 'BookStack é uma plataforma simples, auto-hospedada e fácil de usar para organizar e armazenar informação. Conteúdo é estruturado em hierarquia de 3 níveis: prateleiras, livros, capítulos, páginas. Editor Markdown + WYSIWYG, busca embutida, RBAC, suporte a OAuth/SAML/LDAP. Open-source MIT, usado por centenas de times como wiki/docs.'
+  developer: BookStackApp
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/BookStack/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/BookStack/screenshot-1.png
+  tagline:
+    en_us: Self-hosted wiki with shelves > books > chapters > pages structure
+    pt_br: Wiki auto-hospedada com estrutura prateleiras > livros > capítulos > páginas
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/BookStack/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. REPLACE MYSQL_ROOT_PASSWORD, MYSQL_PASSWORD, and DB_PASSWORD (the last two must match) with long random strings.
+        2. Set APP_URL to the public URL where you'll access BookStack (must be HTTPS in production).
+        3. Default credentials: admin@admin.com / password — CHANGE on first login.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. SUBSTITUA MYSQL_ROOT_PASSWORD, MYSQL_PASSWORD e DB_PASSWORD (os 2 últimos devem ser iguais) por strings aleatórias longas.
+        2. Configure APP_URL com a URL pública onde vai acessar (deve ser HTTPS em produção).
+        3. Credenciais padrão: admin@admin.com / password — TROQUE no primeiro login.
+  title:
+    en_us: BookStack
+  index: /
+  port_map: '8089'
+  scheme: http
