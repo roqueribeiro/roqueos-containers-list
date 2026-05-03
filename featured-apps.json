@@ -5,6 +5,14 @@
     "nextcloud",
     "jellyfin",
     "homeassistant",
-    "code-server"
+    "code-server",
+    "immich",
+    "vaultwarden",
+    "authentik",
+    "frigate",
+    "linkwarden",
+    "onlyoffice",
+    "paperlessngx",
+    "uptimekuma"
   ]
 }
