@@ -12,11 +12,16 @@
     "audit:verbose": "node scripts/audit-enrichment.mjs --verbose",
     "audit:csv": "node scripts/audit-enrichment.mjs --csv",
     "rebrand": "node scripts/rebrand-casaos.mjs",
-    "rebrand:dry": "node scripts/rebrand-casaos.mjs --dry-run --verbose"
+    "rebrand:dry": "node scripts/rebrand-casaos.mjs --dry-run --verbose",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.5",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "vitest": "^4.1.5"
   }
 }

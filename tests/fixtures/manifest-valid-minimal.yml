@@ -1,0 +1,26 @@
+name: my-app
+services:
+  my-app:
+    image: vendor/my-app:1.0.0
+    ports:
+      - target: 8080
+        published: '8080'
+        protocol: tcp
+x-casaos:
+  architectures:
+    - amd64
+  main: my-app
+  category: Productivity
+  scheme: http
+  port_map: '8080'
+  developer: Vendor
+  author: RoqueOS Team
+  icon: https://example.com/icon.png
+  tagline:
+    en_US: A minimal valid app
+  description:
+    en_US: |
+      A minimal valid app used as fixture in unit tests.
+  title:
+    en_US: My App
+  index: /

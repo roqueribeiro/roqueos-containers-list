@@ -44,7 +44,7 @@
 // upstream CasaOS-AppStore.
 
 import { readFile, writeFile, readdir, access } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, resolve, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -52,7 +52,7 @@ const ROOT = resolve(__dirname, "..");
 const APPS_DIR = join(ROOT, "Apps");
 const DRY = process.argv.includes("--dry-run");
 
-async function findComposePath(appDir) {
+export async function findComposePath(appDir) {
   for (const name of ["docker-compose.yml", "docker-compose.yaml"]) {
     const p = join(appDir, name);
     try {
@@ -68,7 +68,7 @@ async function findComposePath(appDir) {
 // Some apps also ship `appfile.json` — a parallel CasaOS App Store metadata
 // file. Same rebrand rules apply (URLs, credentials, free-text mentions,
 // adaptor block). Returns absolute path or null.
-async function findAppfilePath(appDir) {
+export async function findAppfilePath(appDir) {
   const p = join(appDir, "appfile.json");
   try {
     await access(p);
@@ -81,7 +81,7 @@ async function findAppfilePath(appDir) {
 // Each rule is {from: RegExp, to: string, label: string}.
 // Order matters: longer/more-specific patterns first so they don't get
 // shadowed by broader ones.
-const RULES = [
+export const RULES = [
   // === credit / authorship ===
   {
     from: /^(\s*author:\s*)CasaOS Team(\s*)$/gm,
@@ -220,51 +220,77 @@ const RULES = [
   },
 ];
 
-const apps = (await readdir(APPS_DIR, { withFileTypes: true }))
-  .filter((d) => d.isDirectory())
-  .map((d) => d.name)
-  .sort();
-
-const summary = new Map(); // label → count
-const filesChanged = [];
-
-async function applyRulesToFile(filePath, app, kind) {
-  const before = await readFile(filePath, "utf8");
-  let after = before;
-  let changed = false;
-
-  for (const rule of RULES) {
+/**
+ * Pure helper: apply RULES to a content string. Returns the transformed
+ * content + per-label match counts. Idempotent when called twice (rebrand
+ * rules are no-op if the target string is already correct).
+ *
+ * Exported for unit tests.
+ */
+export function applyRulesToContent(content, rules = RULES) {
+  let after = content;
+  const matchCounts = new Map();
+  for (const rule of rules) {
     const matches = after.match(rule.from);
     if (matches && matches.length > 0) {
       after = after.replace(rule.from, rule.to);
-      summary.set(rule.label, (summary.get(rule.label) || 0) + matches.length);
-      changed = true;
+      matchCounts.set(
+        rule.label,
+        (matchCounts.get(rule.label) || 0) + matches.length,
+      );
+    }
+  }
+  return { content: after, matchCounts, changed: after !== content };
+}
+
+// CLI entrypoint — only runs when invoked directly, not when imported by tests.
+const isCli = import.meta.url === pathToFileURL(process.argv[1] || "").href;
+
+if (isCli) {
+  const apps = (await readdir(APPS_DIR, { withFileTypes: true }))
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name)
+    .sort();
+
+  const summary = new Map(); // label → count
+  const filesChanged = [];
+
+  async function applyRulesToFile(filePath, app, kind) {
+    const before = await readFile(filePath, "utf8");
+    const {
+      content: after,
+      matchCounts,
+      changed,
+    } = applyRulesToContent(before, RULES);
+
+    for (const [label, count] of matchCounts) {
+      summary.set(label, (summary.get(label) || 0) + count);
+    }
+
+    if (changed) {
+      filesChanged.push(`${app}/${kind}`);
+      if (!DRY) await writeFile(filePath, after, "utf8");
     }
   }
 
-  if (changed && after !== before) {
-    filesChanged.push(`${app}/${kind}`);
-    if (!DRY) await writeFile(filePath, after, "utf8");
+  for (const app of apps) {
+    const appDir = join(APPS_DIR, app);
+    const composePath = await findComposePath(appDir);
+    if (composePath) await applyRulesToFile(composePath, app, "compose");
+
+    const appfilePath = await findAppfilePath(appDir);
+    if (appfilePath) await applyRulesToFile(appfilePath, app, "appfile");
   }
-}
 
-for (const app of apps) {
-  const appDir = join(APPS_DIR, app);
-  const composePath = await findComposePath(appDir);
-  if (composePath) await applyRulesToFile(composePath, app, "compose");
-
-  const appfilePath = await findAppfilePath(appDir);
-  if (appfilePath) await applyRulesToFile(appfilePath, app, "appfile");
-}
-
-console.log(`\n=== rebrand summary (${DRY ? "DRY RUN" : "APPLY"}) ===\n`);
-const sorted = [...summary.entries()].sort((a, b) => b[1] - a[1]);
-for (const [label, count] of sorted) {
-  console.log(`  ${label.padEnd(28)} ${String(count).padStart(5)}`);
-}
-console.log(`\n  files changed: ${filesChanged.length} / ${apps.length}`);
-if (process.argv.includes("--verbose") && filesChanged.length > 0) {
-  console.log("\n--- changed apps ---");
-  for (const app of filesChanged) console.log(`  ${app}`);
-}
-console.log("");
+  console.log(`\n=== rebrand summary (${DRY ? "DRY RUN" : "APPLY"}) ===\n`);
+  const sorted = [...summary.entries()].sort((a, b) => b[1] - a[1]);
+  for (const [label, count] of sorted) {
+    console.log(`  ${label.padEnd(28)} ${String(count).padStart(5)}`);
+  }
+  console.log(`\n  files changed: ${filesChanged.length} / ${apps.length}`);
+  if (process.argv.includes("--verbose") && filesChanged.length > 0) {
+    console.log("\n--- changed apps ---");
+    for (const app of filesChanged) console.log(`  ${app}`);
+  }
+  console.log("");
+} // end of `if (isCli)` block
