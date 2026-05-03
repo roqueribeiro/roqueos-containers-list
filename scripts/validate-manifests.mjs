@@ -1,20 +1,29 @@
 #!/usr/bin/env node
-// Validate every Apps/*/docker-compose.yml against schema/casaos-app.schema.json.
+// Validate every Apps/*/docker-compose.{yml,yaml} against schema/casaos-app.schema.json.
 // Reports per-app failures, exits non-zero when any manifest drifts.
 //
 // Run locally: `node scripts/validate-manifests.mjs`
 // CI: invoked by .github/workflows/validate-schema.yml on every push / PR.
+//
+// Test usage: `findComposePath` and `crossFieldChecks` are exported for
+// unit tests. The CLI entrypoint at the bottom only runs when this file
+// is invoked directly (not when imported).
 
 import { readFile, readdir, access } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, resolve, join } from "node:path";
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import yaml from "js-yaml";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(__dirname, "..");
+const APPS_DIR = join(ROOT, "Apps");
+const SCHEMA_PATH = join(ROOT, "schema", "casaos-app.schema.json");
+
 // CasaOS catalog uses both extensions interchangeably. Try .yml first
 // (overwhelming majority), fall back to .yaml.
-async function findComposePath(appDir) {
+export async function findComposePath(appDir) {
   for (const name of ["docker-compose.yml", "docker-compose.yaml"]) {
     const p = join(appDir, name);
     try {
@@ -27,63 +36,21 @@ async function findComposePath(appDir) {
   return null;
 }
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, "..");
-const APPS_DIR = join(ROOT, "Apps");
-const SCHEMA_PATH = join(ROOT, "schema", "casaos-app.schema.json");
-
-const ajv = new Ajv({ allErrors: true, strict: false, allowUnionTypes: true });
-addFormats(ajv);
-
-const schema = JSON.parse(await readFile(SCHEMA_PATH, "utf8"));
-const validate = ajv.compile(schema);
-
-const results = { ok: 0, failed: [], skipped: 0 };
-
-const apps = (await readdir(APPS_DIR, { withFileTypes: true }))
-  .filter((d) => d.isDirectory())
-  .map((d) => d.name)
-  .sort();
-
-for (const app of apps) {
-  const composePath = await findComposePath(join(APPS_DIR, app));
-  if (!composePath) {
-    results.failed.push({
-      app,
-      errors: ["docker-compose.yml or docker-compose.yaml not found"],
-    });
-    continue;
-  }
-  let doc;
-  try {
-    doc = yaml.load(await readFile(composePath, "utf8"));
-  } catch (err) {
-    results.failed.push({ app, errors: [`yaml-parse: ${err.message}`] });
-    continue;
-  }
-
-  if (!doc || typeof doc !== "object") {
-    results.failed.push({ app, errors: ["empty or non-object yaml"] });
-    continue;
-  }
-
-  const valid = validate(doc);
-  if (valid) {
-    // Cross-field invariants the JSON Schema can't express. We do them here
-    // instead of inflating the schema with custom keywords.
-    const xtra = crossFieldChecks(doc);
-    if (xtra.length === 0) results.ok += 1;
-    else results.failed.push({ app, errors: xtra });
-  } else {
-    const errs = (validate.errors || []).map(
-      (e) =>
-        `${e.instancePath || "/"} ${e.message}${e.params ? " " + JSON.stringify(e.params) : ""}`,
-    );
-    results.failed.push({ app, errors: errs });
-  }
-}
-
-function crossFieldChecks(doc) {
+/**
+ * Cross-field invariants that JSON Schema can't express. Pure function:
+ * takes a parsed YAML doc, returns array of error message strings (empty
+ * when manifest passes).
+ *
+ * Checks:
+ *   1. x-casaos.main → must reference a real service
+ *   2. multi-service compose → must declare x-casaos.main
+ *   3. x-casaos.port_map → must match a published HOST port of the
+ *      principal service (or be a `network_mode: host` app with no ports)
+ *   4. multi-port principal service → must declare x-casaos.port_map
+ *      (skip when network_mode: host)
+ *   5. x-roqueos.mountShared → must be a boolean
+ */
+export function crossFieldChecks(doc) {
   const out = [];
   const services = doc.services || {};
   const xc = doc["x-casaos"] || {};
@@ -120,8 +87,6 @@ function crossFieldChecks(doc) {
     const ports = rawPorts.map((p) => {
       if (typeof p === "string") {
         const parts = p.split("/")[0].split(":");
-        // host:container or ip:host:container — host is parts[length-2].
-        // Just "container" (1 part) — no fixed host, return as-is.
         return parts.length >= 2 ? parts[parts.length - 2] : parts[0];
       }
       return String(p.published ?? p.target ?? "");
@@ -160,15 +125,80 @@ function crossFieldChecks(doc) {
   return out;
 }
 
-console.log(`\nValidated ${apps.length} manifests.`);
-console.log(`  ✓ ok:     ${results.ok}`);
-console.log(`  ✗ failed: ${results.failed.length}`);
-if (results.failed.length > 0) {
-  console.log("");
-  for (const { app, errors } of results.failed) {
-    console.log(`  - ${app}`);
-    for (const e of errors) console.log(`      ${e}`);
+/**
+ * Run validation across every app in APPS_DIR. Returns a results object
+ * but does NOT exit the process — callers decide what to do.
+ */
+export async function runValidation() {
+  const ajv = new Ajv({
+    allErrors: true,
+    strict: false,
+    allowUnionTypes: true,
+  });
+  addFormats(ajv);
+
+  const schema = JSON.parse(await readFile(SCHEMA_PATH, "utf8"));
+  const validate = ajv.compile(schema);
+
+  const results = { ok: 0, failed: [], skipped: 0 };
+  const apps = (await readdir(APPS_DIR, { withFileTypes: true }))
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name)
+    .sort();
+
+  for (const app of apps) {
+    const composePath = await findComposePath(join(APPS_DIR, app));
+    if (!composePath) {
+      results.failed.push({
+        app,
+        errors: ["docker-compose.yml or docker-compose.yaml not found"],
+      });
+      continue;
+    }
+    let doc;
+    try {
+      doc = yaml.load(await readFile(composePath, "utf8"));
+    } catch (err) {
+      results.failed.push({ app, errors: [`yaml-parse: ${err.message}`] });
+      continue;
+    }
+
+    if (!doc || typeof doc !== "object") {
+      results.failed.push({ app, errors: ["empty or non-object yaml"] });
+      continue;
+    }
+
+    const valid = validate(doc);
+    if (valid) {
+      const xtra = crossFieldChecks(doc);
+      if (xtra.length === 0) results.ok += 1;
+      else results.failed.push({ app, errors: xtra });
+    } else {
+      const errs = (validate.errors || []).map(
+        (e) =>
+          `${e.instancePath || "/"} ${e.message}${e.params ? " " + JSON.stringify(e.params) : ""}`,
+      );
+      results.failed.push({ app, errors: errs });
+    }
   }
-  console.log("");
-  process.exit(1);
+
+  return { results, totalApps: apps.length };
+}
+
+// CLI entrypoint — only runs when invoked directly, not when imported by tests.
+const isCli = import.meta.url === pathToFileURL(process.argv[1] || "").href;
+if (isCli) {
+  const { results, totalApps } = await runValidation();
+  console.log(`\nValidated ${totalApps} manifests.`);
+  console.log(`  ✓ ok:     ${results.ok}`);
+  console.log(`  ✗ failed: ${results.failed.length}`);
+  if (results.failed.length > 0) {
+    console.log("");
+    for (const { app, errors } of results.failed) {
+      console.log(`  - ${app}`);
+      for (const e of errors) console.log(`      ${e}`);
+    }
+    console.log("");
+    process.exit(1);
+  }
 }

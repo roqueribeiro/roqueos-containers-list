@@ -14,3 +14,7 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Test coverage (vitest)
+coverage/
+.vitest-cache/
