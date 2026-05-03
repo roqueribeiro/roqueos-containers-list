@@ -31,6 +31,31 @@
 
 ---
 
+## 🛠️ Tech Stack
+
+| Layer           | Technology                                                                                                           |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Manifest format | Docker Compose v3.x with `x-casaos` namespace (CasaOS-compatible)                                                    |
+| Schema          | JSON Schema Draft-07 (`schema/casaos-app.schema.json`)                                                               |
+| Validation      | `ajv` (JSON Schema validator) + cross-field invariants                                                               |
+| Tooling         | Node 20+ scripts in `scripts/` (`validate`, `fix`, `audit`, `rebrand`)                                               |
+| Tests           | Vitest (unit tests for the validator/fixer scripts)                                                                  |
+| Release         | GitHub Actions — `v*.*.*` tag → `appstore.zip` published as Release                                                  |
+| Consumers       | [`roqueos-server`](https://github.com/roqueribeiro/roqueos-server), CasaOS, Big Bear, LinuxServer, custom dashboards |
+
+---
+
+## ✅ Prerequisites
+
+Only needed for **contributors** validating manifests locally — **end users** don't need any of this:
+
+- **Node.js 20+** and **Yarn** (the four script commands below all run via `yarn`)
+- **Docker 20.10+** if you want to test deploy a manifest locally before submitting
+
+End users only need a CasaOS-compatible dashboard (RoqueOS, CasaOS, Big Bear) — see [Quick Start](#-quick-start).
+
+---
+
 ## 🚀 Quick Start
 
 ### Option 1: Use with RoqueOS
