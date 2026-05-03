@@ -15,11 +15,70 @@ import { dirname, resolve, join } from "node:path";
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
 import yaml from "js-yaml";
+import { isImagePinned } from "./fix-manifests.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const APPS_DIR = join(ROOT, "Apps");
 const SCHEMA_PATH = join(ROOT, "schema", "casaos-app.schema.json");
+
+/**
+ * Allowlist of apps that ship with `:latest` images TODAY. We accept these
+ * to avoid breaking the catalog right now, but ANY NEW app added to this
+ * list is a regression — pin to a real version tag (preferably a digest).
+ *
+ * Tracked for cleanup: as upstream maintainers cut stable releases or we
+ * switch a community image to its registry digest, remove the entry from
+ * this set. Goal: empty set.
+ *
+ * Date created: 2026-05-03 (Wave 2 of systematic audit). See CHANGELOG.
+ */
+export const UNPINNED_IMAGE_ALLOWLIST = new Set([
+  "AnythingLLM",
+  "ArchiveBox",
+  "Dify",
+  "DuckDNS",
+  "Excalidraw",
+  "Firefly",
+  "Homebridge",
+  "JDownloader2",
+  "LibreChat",
+  "Maybe",
+  "MineOS",
+  "Pinchflat",
+  "Pingvin-Share",
+  "RagFlow",
+  "RetroArch",
+  "StableDiffusionWebUI",
+  "Threadfin",
+  "Unifi-Network-Application",
+  "VirtualMachineManager",
+  "oPodSync",
+  "playit-agent",
+]);
+
+/**
+ * Walks every service in a parsed compose doc and returns errors for
+ * services using unpinned images. Bare names ("vendor/image") and
+ * ":latest" both fail. Empty array = all pinned.
+ */
+export function imagePinningCheck(doc) {
+  const out = [];
+  const services = doc.services || {};
+  for (const [name, svc] of Object.entries(services)) {
+    if (!svc || typeof svc !== "object") continue;
+    const img = svc.image;
+    // Services using `build:` instead of `image:` are local — not a supply
+    // chain risk in the same way (catalog ships only the compose file).
+    if (!img && svc.build) continue;
+    if (!isImagePinned(img)) {
+      out.push(
+        `service "${name}" uses unpinned image "${img ?? "<missing>"}" — pin to a real version tag (preferably digest)`,
+      );
+    }
+  }
+  return out;
+}
 
 // CasaOS catalog uses both extensions interchangeably. Try .yml first
 // (overwhelming majority), fall back to .yaml.
@@ -171,8 +230,13 @@ export async function runValidation() {
     const valid = validate(doc);
     if (valid) {
       const xtra = crossFieldChecks(doc);
-      if (xtra.length === 0) results.ok += 1;
-      else results.failed.push({ app, errors: xtra });
+      // Image pinning: skip allowlisted legacy apps, fail any new offender.
+      const pinErrors = UNPINNED_IMAGE_ALLOWLIST.has(app)
+        ? []
+        : imagePinningCheck(doc);
+      const allErrors = [...xtra, ...pinErrors];
+      if (allErrors.length === 0) results.ok += 1;
+      else results.failed.push({ app, errors: allErrors });
     } else {
       const errs = (validate.errors || []).map(
         (e) =>
