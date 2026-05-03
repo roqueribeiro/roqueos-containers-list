@@ -1,0 +1,74 @@
+name: homepage
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:v0.10.7
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    network_mode: bridge
+    ports:
+      - target: 3000
+        published: '3000'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /app/config
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+        read_only: true
+    environment:
+      HOMEPAGE_ALLOWED_HOSTS: 'localhost:3000,homepage.local,homepage'
+    x-casaos:
+      ports:
+        - container: '3000'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /app/config
+          description:
+            en_us: Homepage YAML configuration files
+            pt_br: Arquivos YAML de configuração do Homepage
+        - container: /var/run/docker.sock
+          description:
+            en_us: Docker socket (read-only) — auto-discover containers
+            pt_br: Socket do Docker (somente leitura) — descoberta automática de containers
+    container_name: homepage
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: homepage
+  author: RoqueOS Team
+  category: Utilities
+  description:
+    en_us: Homepage is a modern, fully static, fast, secure, fully proxied dashboard for your services. Highly customizable via YAML — supports 100+ service integrations (Plex, Sonarr, Radarr, Pi-hole, Home Assistant, etc.) and shows live data from each.
+    pt_br: Homepage é um dashboard moderno, totalmente estático, rápido, seguro e via proxy para seus serviços. Altamente customizável via YAML — suporta 100+ integrações (Plex, Sonarr, Radarr, Pi-hole, Home Assistant, etc.) e mostra dados ao vivo de cada serviço.
+  developer: gethomepage
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Homepage/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Homepage/screenshot-1.png
+  tagline:
+    en_us: Modern, customizable dashboard for your self-hosted services
+    pt_br: Dashboard moderno e customizável para seus serviços auto-hospedados
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Homepage/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Edit /app/config/services.yaml after first run to add your services.
+        Set HOMEPAGE_ALLOWED_HOSTS to the domains you'll access from (security feature added in v0.9+).
+        See https://gethomepage.dev/configs/services/ for service integration syntax.
+      pt_br: |
+        Edite /app/config/services.yaml após o primeiro boot para adicionar seus serviços.
+        Configure HOMEPAGE_ALLOWED_HOSTS com os domínios pelos quais vai acessar (recurso de segurança adicionado em v0.9+).
+        Ver https://gethomepage.dev/configs/services/ para a sintaxe de integração.
+  title:
+    en_us: Homepage
+  index: /
+  port_map: '3000'
+  scheme: http

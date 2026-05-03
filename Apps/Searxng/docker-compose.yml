@@ -1,0 +1,71 @@
+name: searxng
+services:
+  searxng:
+    image: searxng/searxng:2024.10.20-72c2496ad
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 8080
+        published: '8080'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /etc/searxng
+    environment:
+      SEARXNG_BASE_URL: http://localhost:8080/
+      INSTANCE_NAME: roqueos-searxng
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /etc/searxng
+          description:
+            en_us: SearXNG configuration directory
+            pt_br: Diretório de configuração do SearXNG
+    container_name: searxng
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: searxng
+  author: RoqueOS Team
+  category: Network
+  description:
+    en_us: SearXNG is a free internet metasearch engine which aggregates results from up to 229 search services. Users are neither tracked nor profiled.
+    pt_br: O SearXNG é um meta-mecanismo de busca grátis que agrega resultados de até 229 serviços de pesquisa. Os usuários não são rastreados nem perfilados.
+  developer: searxng
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Searxng/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Searxng/screenshot-1.png
+  tagline:
+    en_us: Privacy-respecting metasearch engine
+    pt_br: Mecanismo de meta-busca focado em privacidade
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Searxng/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        SearXNG aggregates results from many engines without tracking the user.
+        Default port 8080. Edit /etc/searxng/settings.yml after first run for fine-tuning (custom engines, branding, instance name).
+      pt_br: |
+        SearXNG agrega resultados de vários mecanismos sem rastrear o usuário.
+        Porta padrão 8080. Edite /etc/searxng/settings.yml após o primeiro boot para ajustes (mecanismos customizados, branding, nome da instância).
+  title:
+    en_us: SearXNG
+  index: /
+  port_map: '8080'
+  scheme: http

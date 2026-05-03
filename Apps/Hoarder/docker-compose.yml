@@ -1,0 +1,100 @@
+name: hoarder
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    restart: unless-stopped
+    environment:
+      MEILI_NO_ANALYTICS: 'true'
+      MEILI_MASTER_KEY: change-me-to-a-long-random-string
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/meilisearch
+        target: /meili_data
+    container_name: hoarder-meilisearch
+  chrome:
+    image: gcr.io/zenika-hub/alpine-chrome:124
+    restart: unless-stopped
+    command:
+      - --no-sandbox
+      - --disable-gpu
+      - --disable-dev-shm-usage
+      - --remote-debugging-address=0.0.0.0
+      - --remote-debugging-port=9222
+      - --hide-scrollbars
+    container_name: hoarder-chrome
+  hoarder:
+    image: ghcr.io/hoarder-app/hoarder:0.23.2
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    ports:
+      - target: 3000
+        published: '3000'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+    environment:
+      MEILI_ADDR: http://meilisearch:7700
+      MEILI_MASTER_KEY: change-me-to-a-long-random-string
+      BROWSER_WEB_URL: http://chrome:9222
+      DATA_DIR: /data
+      NEXTAUTH_SECRET: replace-with-output-of-openssl-rand-hex-32
+      NEXTAUTH_URL: http://localhost:3000
+      OPENAI_API_KEY: ''
+      INFERENCE_TEXT_MODEL: ''
+    depends_on:
+      - meilisearch
+      - chrome
+    x-casaos:
+      ports:
+        - container: '3000'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /data
+          description:
+            en_us: Bookmark archives, asset storage
+            pt_br: Arquivos e assets dos bookmarks
+    container_name: hoarder
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: hoarder
+  author: RoqueOS Team
+  category: Utilities
+  description:
+    en_us: Hoarder is a self-hostable bookmark-everything app with a touch of AI for automatic tagging and summarization. Saves links, notes, images, and PDFs; runs OCR, asks an LLM to tag and describe content, makes everything searchable. Pairs Chrome (for crawling) and Meilisearch (for index) under the hood.
+    pt_br: Hoarder é um app auto-hospedável de salvar tudo (links, notas, imagens, PDFs) com um toque de IA para tagging e sumarização automáticos. Salva links, notas, imagens e PDFs; roda OCR, pede a um LLM para criar tags e descrever conteúdo, deixa tudo pesquisável. Combina Chrome (crawl) e Meilisearch (índice) internamente.
+  developer: hoarder-app
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hoarder/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hoarder/screenshot-1.png
+  tagline:
+    en_us: Self-hosted bookmark-everything app with AI tagging
+    pt_br: App auto-hospedado de salvar tudo, com tagging por IA
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hoarder/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. Replace MEILI_MASTER_KEY in BOTH services with a long random string (must match).
+        2. Replace NEXTAUTH_SECRET with output of `openssl rand -hex 32`.
+        3. Set NEXTAUTH_URL to the public URL where you'll access Hoarder.
+        4. (Optional) Set OPENAI_API_KEY + INFERENCE_TEXT_MODEL to enable AI tagging. Hoarder also supports Ollama (already in the catalog) — see the docs.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. Substitua MEILI_MASTER_KEY nos DOIS serviços por uma string aleatória longa (devem ser iguais).
+        2. Substitua NEXTAUTH_SECRET pela saída de `openssl rand -hex 32`.
+        3. Configure NEXTAUTH_URL com a URL pública onde vai acessar o Hoarder.
+        4. (Opcional) Configure OPENAI_API_KEY + INFERENCE_TEXT_MODEL para habilitar tagging por IA. Hoarder também suporta Ollama (já no catálogo) — ver docs.
+  title:
+    en_us: Hoarder
+  index: /
+  port_map: '3000'
+  scheme: http

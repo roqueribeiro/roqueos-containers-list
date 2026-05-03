@@ -1,0 +1,70 @@
+name: meilisearch
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 7700
+        published: '7700'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /meili_data
+    environment:
+      MEILI_ENV: production
+      MEILI_MASTER_KEY: change-me-with-a-strong-key-of-at-least-16-bytes
+      MEILI_NO_ANALYTICS: 'true'
+    x-casaos:
+      ports:
+        - container: '7700'
+          description:
+            en_us: HTTP API port
+            pt_br: Porta da API HTTP
+      volumes:
+        - container: /meili_data
+          description:
+            en_us: Search index storage
+            pt_br: Armazenamento dos índices de busca
+      envs:
+        - container: MEILI_MASTER_KEY
+          description:
+            en_us: Master API key (16+ bytes). Replace before deploying to production.
+            pt_br: Chave mestra da API (16+ bytes). Substitua antes de deploy em produção.
+    container_name: meilisearch
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: meilisearch
+  author: RoqueOS Team
+  category: Development
+  description:
+    en_us: Meilisearch is a lightning-fast, hyper-relevant search engine you can run on your own infrastructure. Typo-tolerant, returns results in under 50ms, RESTful API, perfect drop-in replacement for Elasticsearch on small-to-medium datasets.
+    pt_br: Meilisearch é um mecanismo de busca extremamente rápido e altamente relevante que você roda na sua própria infraestrutura. Tolerante a erros de digitação, retorna resultados em menos de 50ms, API RESTful, substituto natural do Elasticsearch para datasets pequenos e médios.
+  developer: meilisearch
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Meilisearch/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Meilisearch/screenshot-1.png
+  tagline:
+    en_us: Lightning-fast, typo-tolerant search engine API
+    pt_br: API de busca extremamente rápida e tolerante a erros de digitação
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Meilisearch/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE MEILI_MASTER_KEY before deploying. The default value is unsafe.
+        After boot, hit GET /health on port 7700 to confirm. The web mini-dashboard is at GET /.
+      pt_br: |
+        SUBSTITUA MEILI_MASTER_KEY antes do deploy. O valor padrão é inseguro.
+        Após o boot, faça GET /health na porta 7700 para confirmar. O mini-dashboard web está em GET /.
+  title:
+    en_us: Meilisearch
+  index: /
+  port_map: '7700'
+  scheme: http
