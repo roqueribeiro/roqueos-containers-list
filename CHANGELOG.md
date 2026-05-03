@@ -12,7 +12,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
-## [1.0.0] — 2026-05-02
+### Security
+
+- **Image pinning is now enforced by the validator.** `scripts/validate-manifests.mjs` rejects any new app whose `services[*].image` is bare (`vendor/image`) or ends with `:latest`. The check uses the existing `isImagePinned()` helper from `fix-manifests.mjs` (previously exported but never wired into the validate pipeline).
+
+  Allowing `:latest` in a curated app catalog is a real supply-chain risk — the consumer (`roqueos-server`) pulls whatever an upstream maintainer publishes whenever they publish. A compromised upstream account silently propagates to every RoqueOS user.
+
+  The 21 apps that ship with `:latest` today are frozen in `UNPINNED_IMAGE_ALLOWLIST` (visible at the top of the validator). Adding to this set is a regression that must be defended in PR review. Removing entries — by switching the manifest to a real semver tag or a `@sha256:` digest — is the goal.
+
+  Allowlisted today: `AnythingLLM`, `ArchiveBox`, `Dify`, `DuckDNS`, `Excalidraw`, `Firefly`, `Homebridge`, `JDownloader2`, `LibreChat`, `Maybe`, `MineOS`, `Pinchflat`, `Pingvin-Share`, `RagFlow`, `RetroArch`, `StableDiffusionWebUI`, `Threadfin`, `Unifi-Network-Application`, `VirtualMachineManager`, `oPodSync`, `playit-agent`.
+
+  Closes a finding from the 2026-05-03 systematic audit.
+
+### Added
+
+- **`tests/unit/image-pinning.test.mjs`** — 11 tests covering `isImagePinned` edge cases (undefined, bare names, `:latest` suffix, semver, digest), the new `imagePinningCheck` function (multi-service docs, `build:`-only services, empty docs), and the allowlist contract (size assertion + spot checks). Adding to or removing from `UNPINNED_IMAGE_ALLOWLIST` requires updating the spec — explicit by design.
+
+### Changed
+
+- **`vite` added as explicit `devDependency`.** Was previously satisfied as a transitive peer of `vitest@4.x`, which started warning when `node_modules` was rebuilt. Pinning it here removes the warning and makes the build deterministic.
 
 First semver-tagged release. Marks the stable contract for catalog consumers (`roqueos-server` + any third-party CasaOS-compatible client).
 

@@ -55,7 +55,7 @@ The repo ships **4 Node scripts** (no global installs — `yarn install` once):
 
 Read [`schema/casaos-app.schema.json`](schema/casaos-app.schema.json) for the full contract. Highlights:
 
-- `services.*.image` must include `:tag` OR `@sha256:digest` (bare names rejected; `:latest` allowed but flagged in `audit`).
+- `services.*.image` must include `:tag` OR `@sha256:digest`. **Bare names AND `:latest` are rejected** by the validator. A small allowlist (`UNPINNED_IMAGE_ALLOWLIST` in `scripts/validate-manifests.mjs`) grandfathers 21 legacy apps; new contributions cannot use `:latest` and existing entries should migrate to pinned tags or digests over time.
 - `x-casaos.architectures[]` ≥ 1 from enum: `amd64, arm, arm64, 386, mips64le, ppc64le, s390x, riscv64`.
 - `x-casaos.main` references a real service (required when multi-service).
 - `x-casaos.category` from canonical enum (28 values; see schema).
