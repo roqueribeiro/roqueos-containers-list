@@ -1,0 +1,76 @@
+name: prometheus
+services:
+  prometheus:
+    image: prom/prometheus:v3.1.0
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 9090
+        published: '9090'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /etc/prometheus
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=30d'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    x-casaos:
+      ports:
+        - container: '9090'
+          description:
+            en_us: HTTP API + WebUI port
+            pt_br: Porta da API HTTP + interface web
+      volumes:
+        - container: /etc/prometheus
+          description:
+            en_us: prometheus.yml + alerting/recording rules
+            pt_br: prometheus.yml + regras de alerta e recording
+        - container: /prometheus
+          description:
+            en_us: Time-series database (TSDB)
+            pt_br: Banco de séries temporais (TSDB)
+    container_name: prometheus
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: prometheus
+  author: RoqueOS Team
+  category: Database
+  description:
+    en_us: Prometheus is the de-facto open-source monitoring system and time-series database for cloud-native environments. Pulls metrics from instrumented services, stores them efficiently, and powers dashboards (Grafana) + alerting (Alertmanager). Backbone of the LGTM observability stack.
+    pt_br: Prometheus é o sistema de monitoramento e banco de séries temporais open-source de fato para ambientes cloud-native. Coleta métricas de serviços instrumentados, armazena de forma eficiente e alimenta dashboards (Grafana) + alertas (Alertmanager). Espinha dorsal do stack de observabilidade LGTM.
+  developer: prometheus
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Prometheus/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Prometheus/screenshot-1.png
+  tagline:
+    en_us: Open-source metrics collector and time-series database
+    pt_br: Coletor de métricas e banco de séries temporais open-source
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Prometheus/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        You must mount a prometheus.yml in /etc/prometheus before first boot — Prometheus refuses to start without targets defined.
+        Default scrape config example: https://prometheus.io/docs/prometheus/latest/getting_started/
+        Pair with Grafana (already in the catalog) for visualization.
+      pt_br: |
+        É necessário montar um prometheus.yml em /etc/prometheus antes do primeiro boot — o Prometheus não inicia sem targets definidos.
+        Exemplo de config: https://prometheus.io/docs/prometheus/latest/getting_started/
+        Use junto com Grafana (já no catálogo) para visualização.
+  title:
+    en_us: Prometheus
+  index: /
+  port_map: '9090'
+  scheme: http

@@ -1,0 +1,72 @@
+name: linkding
+services:
+  linkding:
+    image: sissbruecker/linkding:1.40.0
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    network_mode: bridge
+    ports:
+      - target: 9090
+        published: '9092'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /etc/linkding/data
+    environment:
+      LD_SUPERUSER_NAME: admin
+      LD_SUPERUSER_PASSWORD: change-me-on-first-boot
+      LD_DISABLE_BACKGROUND_TASKS: 'False'
+      LD_DISABLE_URL_VALIDATION: 'False'
+      LD_ENABLE_AUTH_PROXY: 'False'
+    x-casaos:
+      ports:
+        - container: '9090'
+          description:
+            en_us: WebUI port (mapped to 9092 host to avoid Prometheus clash)
+            pt_br: Porta da interface web (mapeada para 9092 no host para evitar conflito com Prometheus)
+      volumes:
+        - container: /etc/linkding/data
+          description:
+            en_us: SQLite database + uploads
+            pt_br: Banco SQLite + uploads
+      envs:
+        - container: LD_SUPERUSER_PASSWORD
+          description:
+            en_us: Initial admin password — REPLACE before first boot
+            pt_br: Senha inicial do admin — SUBSTITUA antes do primeiro boot
+    container_name: linkding
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: linkding
+  author: RoqueOS Team
+  category: Utilities
+  description:
+    en_us: Linkding is a fast, minimal, self-hosted bookmark manager. Designed to be lightweight (Django + SQLite, ~100 MB RAM), with tags, archive snapshots via single-file Web Archive, full-text search, REST API, and a clean dark-mode UI. Browser extensions for Chrome/Firefox.
+    pt_br: Linkding é um gerenciador de bookmarks rápido, minimalista e auto-hospedado. Projetado para ser leve (Django + SQLite, ~100 MB RAM), com tags, snapshots arquivados via Web Archive single-file, busca full-text, API REST e UI dark-mode limpa. Extensões para Chrome/Firefox.
+  developer: sissbruecker
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Linkding/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Linkding/screenshot-1.png
+  tagline:
+    en_us: Fast, minimal self-hosted bookmark manager
+    pt_br: Gerenciador de bookmarks auto-hospedado, rápido e minimalista
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Linkding/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE LD_SUPERUSER_PASSWORD before first boot. The default value is unsafe.
+        After boot, install the Linkding browser extension and point it to http://YOUR_IP:9092.
+      pt_br: |
+        SUBSTITUA LD_SUPERUSER_PASSWORD antes do primeiro boot. O valor padrão é inseguro.
+        Após o boot, instale a extensão Linkding no navegador e aponte para http://SEU_IP:9092.
+  title:
+    en_us: Linkding
+  index: /
+  port_map: '9092'
+  scheme: http

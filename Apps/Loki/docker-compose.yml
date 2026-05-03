@@ -1,0 +1,74 @@
+name: loki
+services:
+  loki:
+    image: grafana/loki:3.3.2
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 3100
+        published: '3100'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /etc/loki
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /loki
+    command:
+      - '-config.file=/etc/loki/local-config.yaml'
+    x-casaos:
+      ports:
+        - container: '3100'
+          description:
+            en_us: HTTP API port (Loki has no built-in WebUI — use Grafana to query)
+            pt_br: Porta da API HTTP (Loki não tem WebUI próprio — use Grafana para consultar)
+      volumes:
+        - container: /etc/loki
+          description:
+            en_us: local-config.yaml + auxiliary configs
+            pt_br: local-config.yaml + configs auxiliares
+        - container: /loki
+          description:
+            en_us: Log chunks + index
+            pt_br: Chunks de log + índice
+    container_name: loki
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: loki
+  author: RoqueOS Team
+  category: Database
+  description:
+    en_us: Loki is the log aggregation system from Grafana Labs — like Prometheus, but for logs. Indexes only metadata (labels) instead of full text, making it lighter and faster than Elasticsearch for log streaming. Pairs with Promtail (collector) and Grafana (UI) to complete the LGTM observability stack.
+    pt_br: Loki é o sistema de agregação de logs do Grafana Labs — como Prometheus, mas para logs. Indexa apenas metadata (labels) em vez do texto completo, tornando-o mais leve e rápido que Elasticsearch para streaming de logs. Combina com Promtail (coletor) e Grafana (UI) para completar o stack de observabilidade LGTM.
+  developer: grafana
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Loki/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Loki/screenshot-1.png
+  tagline:
+    en_us: Horizontally-scalable log aggregation system from Grafana Labs
+    pt_br: Sistema de agregação de logs escalável horizontalmente, do Grafana Labs
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Loki/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Mount a local-config.yaml in /etc/loki — Loki refuses to start without one.
+        Minimal example: https://grafana.com/docs/loki/latest/installation/local/
+        Pair with Grafana (already in catalog) — add Loki as a data source.
+        Logs ingestion: install Promtail or Vector on each host that should ship logs.
+      pt_br: |
+        Monte um local-config.yaml em /etc/loki — Loki não inicia sem ele.
+        Exemplo mínimo: https://grafana.com/docs/loki/latest/installation/local/
+        Use com Grafana (já no catálogo) — adicione Loki como data source.
+        Ingestão de logs: instale Promtail ou Vector em cada host que deve enviar logs.
+  title:
+    en_us: Loki
+  index: /ready
+  port_map: '3100'
+  scheme: http

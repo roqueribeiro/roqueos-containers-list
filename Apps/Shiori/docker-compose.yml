@@ -1,0 +1,64 @@
+name: shiori
+services:
+  shiori:
+    image: ghcr.io/go-shiori/shiori:v1.7.4
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    network_mode: bridge
+    ports:
+      - target: 8080
+        published: '8083'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /shiori
+    environment:
+      SHIORI_DIR: /shiori
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: WebUI port (mapped to 8083 host)
+            pt_br: Porta da interface web (mapeada para 8083 no host)
+      volumes:
+        - container: /shiori
+          description:
+            en_us: SQLite database + cached page archives
+            pt_br: Banco SQLite + arquivos cacheados de páginas
+    container_name: shiori
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: shiori
+  author: RoqueOS Team
+  category: Utilities
+  description:
+    en_us: Shiori is a simple bookmark manager written in Go, intended as a self-hosted clone of Pocket. Features a clean web interface, full-text search, archived page snapshots, optional CLI for power users, and a tiny RAM footprint (~30 MB). Ideal for personal/family use.
+    pt_br: Shiori é um gerenciador de bookmarks simples escrito em Go, pensado como um clone auto-hospedado do Pocket. Interface web limpa, busca full-text, snapshots arquivados de páginas, CLI opcional para power users e baixíssimo consumo de RAM (~30 MB). Ideal para uso pessoal/familiar.
+  developer: go-shiori
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Shiori/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Shiori/screenshot-1.png
+  tagline:
+    en_us: Lightweight Go-based bookmark manager (self-hosted Pocket alternative)
+    pt_br: Gerenciador de bookmarks leve em Go (alternativa auto-hospedada ao Pocket)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Shiori/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        On first run, default credentials are username "shiori" and password "gopher". CHANGE BOTH after login at http://YOUR_IP:8083.
+        Browser extensions for Chrome and Firefox: see the official docs at https://github.com/go-shiori/shiori
+      pt_br: |
+        No primeiro boot, as credenciais padrão são usuário "shiori" e senha "gopher". TROQUE AMBAS após login em http://SEU_IP:8083.
+        Extensões para Chrome e Firefox: ver docs oficiais em https://github.com/go-shiori/shiori
+  title:
+    en_us: Shiori
+  index: /
+  port_map: '8083'
+  scheme: http

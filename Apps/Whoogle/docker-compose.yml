@@ -1,0 +1,70 @@
+name: whoogle
+services:
+  whoogle:
+    image: benbusby/whoogle-search:0.9.4
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    network_mode: bridge
+    ports:
+      - target: 5000
+        published: '5000'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+    environment:
+      WHOOGLE_CONFIG_THEME: system
+      WHOOGLE_CONFIG_LANGUAGE: lang_pt-BR
+    cap_drop:
+      - ALL
+    cap_add:
+      - SETUID
+      - SETGID
+    x-casaos:
+      ports:
+        - container: '5000'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /config
+          description:
+            en_us: Whoogle config directory
+            pt_br: Diretório de configuração do Whoogle
+    container_name: whoogle
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: whoogle
+  author: RoqueOS Team
+  category: Network
+  description:
+    en_us: Whoogle Search is a self-hosted, ad-free, privacy-focused metasearch engine that returns Google results without ads, JavaScript, AMP, cookies, IP tracking, or user agents.
+    pt_br: O Whoogle Search é um mecanismo de meta-busca auto-hospedado, sem anúncios e focado em privacidade que retorna resultados do Google sem propagandas, JavaScript, AMP, cookies, rastreamento de IP ou identificação por user agent.
+  developer: benbusby
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Whoogle/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Whoogle/screenshot-1.png
+  tagline:
+    en_us: Self-hosted, ad-free, privacy-focused Google search proxy
+    pt_br: Proxy de busca do Google auto-hospedado, sem anúncios e focado em privacidade
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Whoogle/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Whoogle proxies Google search and strips tracking. No account or API keys needed.
+        Set as default search engine in your browser at http://YOUR_IP:5000.
+      pt_br: |
+        Whoogle faz proxy da busca do Google e remove rastreamento. Sem conta ou API keys necessárias.
+        Configure como mecanismo de busca padrão do seu navegador em http://SEU_IP:5000.
+  title:
+    en_us: Whoogle Search
+  index: /
+  port_map: '5000'
+  scheme: http

@@ -1,0 +1,89 @@
+name: crowdsec
+services:
+  crowdsec:
+    image: crowdsecurity/crowdsec:v1.6.4
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    network_mode: bridge
+    ports:
+      - target: 8080
+        published: '8081'
+        protocol: tcp
+      - target: 6060
+        published: '6060'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /var/lib/crowdsec/data
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /etc/crowdsec
+      - type: bind
+        source: /var/log
+        target: /var/log/host
+        read_only: true
+    environment:
+      COLLECTIONS: 'crowdsecurity/linux crowdsecurity/sshd crowdsecurity/iptables'
+      GID: '1000'
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: Local API port
+            pt_br: Porta da API local
+        - container: '6060'
+          description:
+            en_us: Prometheus metrics port
+            pt_br: Porta de métricas Prometheus
+      volumes:
+        - container: /var/lib/crowdsec/data
+          description:
+            en_us: SQLite database with decisions/alerts
+            pt_br: Banco SQLite com decisões/alertas
+        - container: /etc/crowdsec
+          description:
+            en_us: Configuration files (acquis.yaml, parsers, scenarios)
+            pt_br: Arquivos de configuração (acquis.yaml, parsers, scenarios)
+        - container: /var/log/host
+          description:
+            en_us: Host /var/log mounted read-only for parsing
+            pt_br: /var/log do host montado em modo leitura para análise
+    container_name: crowdsec
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: crowdsec
+  author: RoqueOS Team
+  category: Security
+  description:
+    en_us: CrowdSec is a free, open-source and collaborative IPS (intrusion prevention system) — like fail2ban on steroids. Detects attacks on your services using community-curated parsers and scenarios, and shares signals with the global community. Bouncers (Nginx, Cloudflare, iptables, etc.) enforce decisions.
+    pt_br: CrowdSec é um IPS (sistema de prevenção a intrusão) gratuito, open-source e colaborativo — como um fail2ban turbinado. Detecta ataques em seus serviços usando parsers e cenários curados pela comunidade, e compartilha sinais globalmente. Bouncers (Nginx, Cloudflare, iptables, etc.) aplicam as decisões.
+  developer: crowdsecurity
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/CrowdSec/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/CrowdSec/screenshot-1.png
+  tagline:
+    en_us: Collaborative open-source intrusion prevention system
+    pt_br: Sistema colaborativo open-source de prevenção a intrusão
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/CrowdSec/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Default port mapped to 8081 to avoid clashing with other services on 8080.
+        Mount your /var/log read-only so CrowdSec can parse host logs (sshd, iptables, etc.).
+        After boot, register at https://app.crowdsec.net for the optional console (free) and configure bouncers in Nginx/Cloudflare.
+      pt_br: |
+        Porta padrão mapeada para 8081 para evitar conflito com outros serviços na 8080.
+        Monte /var/log do host em modo leitura para o CrowdSec analisar logs (sshd, iptables, etc.).
+        Após o boot, registre em https://app.crowdsec.net para o console opcional (gratuito) e configure bouncers no Nginx/Cloudflare.
+  title:
+    en_us: CrowdSec
+  index: /
+  port_map: '8081'
+  scheme: http

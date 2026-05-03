@@ -1,0 +1,89 @@
+name: linkwarden
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: linkwarden
+      POSTGRES_USER: linkwarden
+      POSTGRES_PASSWORD: change-me-to-a-long-random-string
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/postgres
+        target: /var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U linkwarden -d linkwarden']
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    container_name: linkwarden-postgres
+  linkwarden:
+    image: ghcr.io/linkwarden/linkwarden:v2.10.2
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    ports:
+      - target: 3000
+        published: '3000'
+        protocol: tcp
+    environment:
+      DATABASE_URL: postgresql://linkwarden:change-me-to-a-long-random-string@postgres:5432/linkwarden
+      NEXTAUTH_SECRET: replace-with-output-of-openssl-rand-hex-32
+      NEXTAUTH_URL: http://localhost:3000/api/v1/auth
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+    x-casaos:
+      ports:
+        - container: '3000'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /data/data
+          description:
+            en_us: Bookmark archives, screenshots, PDFs
+            pt_br: Arquivos, screenshots e PDFs dos bookmarks
+    container_name: linkwarden
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: linkwarden
+  author: RoqueOS Team
+  category: Utilities
+  description:
+    en_us: Linkwarden is a self-hostable, open-source collaborative bookmark manager that preserves the webpages you save by archiving them as screenshots, PDFs, and full-text content. AI-powered tagging, collections, and full-text search across your archive.
+    pt_br: Linkwarden é um gerenciador de bookmarks colaborativo, auto-hospedável e open-source que preserva as páginas que você salva arquivando como screenshots, PDFs e conteúdo full-text. Tagging com IA, coleções e busca full-text em todo o seu arquivo.
+  developer: linkwarden
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Linkwarden/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Linkwarden/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Linkwarden/screenshot-2.png
+  tagline:
+    en_us: Self-hosted collaborative bookmark manager with full-page archiving
+    pt_br: Gerenciador colaborativo de bookmarks auto-hospedado com arquivamento de página completa
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Linkwarden/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. Replace POSTGRES_PASSWORD AND the password in DATABASE_URL (must match) with a long random string.
+        2. Replace NEXTAUTH_SECRET with output of `openssl rand -hex 32`.
+        3. Set NEXTAUTH_URL to the public URL where you'll access Linkwarden (must match exactly, including http/https).
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. Substitua POSTGRES_PASSWORD E a senha em DATABASE_URL (devem ser iguais) por uma string aleatória longa.
+        2. Substitua NEXTAUTH_SECRET pela saída de `openssl rand -hex 32`.
+        3. Configure NEXTAUTH_URL com a URL pública onde vai acessar o Linkwarden (deve bater exatamente, incluindo http/https).
+  title:
+    en_us: Linkwarden
+  index: /
+  port_map: '3000'
+  scheme: http

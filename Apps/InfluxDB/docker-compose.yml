@@ -1,0 +1,81 @@
+name: influxdb
+services:
+  influxdb:
+    image: influxdb:2.7-alpine
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 8086
+        published: '8086'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /var/lib/influxdb2
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /etc/influxdb2
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: change-me-on-first-boot
+      DOCKER_INFLUXDB_INIT_ORG: roqueos
+      DOCKER_INFLUXDB_INIT_BUCKET: default
+    x-casaos:
+      ports:
+        - container: '8086'
+          description:
+            en_us: HTTP API + WebUI port
+            pt_br: Porta da API HTTP + interface web
+      volumes:
+        - container: /var/lib/influxdb2
+          description:
+            en_us: Time-series database files
+            pt_br: Arquivos do banco de séries temporais
+        - container: /etc/influxdb2
+          description:
+            en_us: Configuration directory
+            pt_br: Diretório de configuração
+      envs:
+        - container: DOCKER_INFLUXDB_INIT_PASSWORD
+          description:
+            en_us: Initial admin password — REPLACE before first boot
+            pt_br: Senha inicial do admin — SUBSTITUA antes do primeiro boot
+    container_name: influxdb
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: influxdb
+  author: RoqueOS Team
+  category: Database
+  description:
+    en_us: InfluxDB is the leading open-source time-series database, optimized for fast, high-availability storage and retrieval of time-stamped data. Used for metrics, IoT sensor data, application monitoring, and analytics. Pairs naturally with Telegraf (collection), Chronograf (UI), and Grafana (dashboards).
+    pt_br: InfluxDB é o principal banco de séries temporais open-source, otimizado para armazenamento e leitura rápida e altamente disponível de dados com timestamp. Usado para métricas, dados de sensores IoT, monitoramento de aplicações e analytics. Combina naturalmente com Telegraf (coleta), Chronograf (UI) e Grafana (dashboards).
+  developer: influxdata
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/InfluxDB/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/InfluxDB/screenshot-1.png
+  tagline:
+    en_us: Open-source time-series database for metrics, IoT, and analytics
+    pt_br: Banco de séries temporais open-source para métricas, IoT e analytics
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/InfluxDB/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE DOCKER_INFLUXDB_INIT_PASSWORD before first boot.
+        After init, generate API tokens via UI for clients (Telegraf, Grafana, etc.).
+        Default org "roqueos" + bucket "default" — change to match your environment.
+      pt_br: |
+        SUBSTITUA DOCKER_INFLUXDB_INIT_PASSWORD antes do primeiro boot.
+        Após init, gere API tokens via UI para clientes (Telegraf, Grafana, etc.).
+        Org padrão "roqueos" + bucket "default" — ajuste para o seu ambiente.
+  title:
+    en_us: InfluxDB
+  index: /
+  port_map: '8086'
+  scheme: http

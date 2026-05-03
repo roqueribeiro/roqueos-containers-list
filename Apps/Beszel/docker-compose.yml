@@ -1,0 +1,69 @@
+name: beszel
+services:
+  beszel:
+    image: henrygd/beszel:0.10.2
+    deploy:
+      resources:
+        reservations:
+          memory: 64M
+    network_mode: bridge
+    ports:
+      - target: 8090
+        published: '8090'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /beszel_data
+      - type: bind
+        source: /DATA/AppData/$AppID/socket
+        target: /beszel_socket
+    x-casaos:
+      ports:
+        - container: '8090'
+          description:
+            en_us: WebUI / API port
+            pt_br: Porta da interface web / API
+      volumes:
+        - container: /beszel_data
+          description:
+            en_us: SQLite database + agent registry
+            pt_br: Banco SQLite + registro de agents
+        - container: /beszel_socket
+          description:
+            en_us: Unix socket for local agent communication
+            pt_br: Socket Unix para comunicação com agent local
+    container_name: beszel
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: beszel
+  author: RoqueOS Team
+  category: Utilities
+  description:
+    en_us: Beszel is a lightweight server monitoring platform with Docker statistics, historical data, alerts, and a clean web dashboard. Designed as a fast, low-resource alternative to Netdata or Glances. Single binary, agents push to hub, no time-series database needed.
+    pt_br: Beszel é uma plataforma leve de monitoramento de servidores com estatísticas de Docker, dados históricos, alertas e um dashboard web limpo. Projetado como alternativa rápida e de baixo consumo ao Netdata ou Glances. Binário único, agents fazem push para o hub, sem necessidade de banco de séries temporais.
+  developer: henrygd
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Beszel/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Beszel/screenshot-1.png
+  tagline:
+    en_us: Lightweight server monitoring with Docker stats and alerts
+    pt_br: Monitoramento leve de servidores com stats de Docker e alertas
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Beszel/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Open http://YOUR_IP:8090 to set the admin user on first run.
+        Install the beszel-agent on each server you want to monitor (one-line install script available in the Settings UI).
+      pt_br: |
+        Abra http://SEU_IP:8090 para criar o admin no primeiro boot.
+        Instale o beszel-agent em cada servidor que quiser monitorar (script one-line disponível no menu de Settings).
+  title:
+    en_us: Beszel
+  index: /
+  port_map: '8090'
+  scheme: http

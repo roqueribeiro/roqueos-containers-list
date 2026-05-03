@@ -1,0 +1,138 @@
+name: authentik
+services:
+  postgresql:
+    image: docker.io/library/postgres:16-alpine
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/postgres
+        target: /var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: authentik
+      POSTGRES_USER: authentik
+      POSTGRES_PASSWORD: change-me-to-a-long-random-string
+    container_name: authentik-postgresql
+  redis:
+    image: docker.io/library/redis:7-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'redis-cli ping | grep PONG']
+      interval: 30s
+      timeout: 3s
+      retries: 5
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/redis
+        target: /data
+    container_name: authentik-redis
+  server:
+    image: ghcr.io/goauthentik/server:2024.12.0
+    restart: unless-stopped
+    command: server
+    environment:
+      AUTHENTIK_REDIS__HOST: redis
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: change-me-to-a-long-random-string
+      AUTHENTIK_SECRET_KEY: replace-with-output-of-openssl-rand-hex-32
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/media
+        target: /media
+      - type: bind
+        source: /DATA/AppData/$AppID/templates
+        target: /templates
+    ports:
+      - target: 9000
+        published: '9000'
+        protocol: tcp
+      - target: 9443
+        published: '9443'
+        protocol: tcp
+    depends_on:
+      postgresql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    x-casaos:
+      ports:
+        - container: '9000'
+          description:
+            en_us: HTTP WebUI port
+            pt_br: Porta da interface web HTTP
+        - container: '9443'
+          description:
+            en_us: HTTPS WebUI port
+            pt_br: Porta da interface web HTTPS
+    container_name: authentik-server
+  worker:
+    image: ghcr.io/goauthentik/server:2024.12.0
+    restart: unless-stopped
+    command: worker
+    environment:
+      AUTHENTIK_REDIS__HOST: redis
+      AUTHENTIK_POSTGRESQL__HOST: postgresql
+      AUTHENTIK_POSTGRESQL__USER: authentik
+      AUTHENTIK_POSTGRESQL__NAME: authentik
+      AUTHENTIK_POSTGRESQL__PASSWORD: change-me-to-a-long-random-string
+      AUTHENTIK_SECRET_KEY: replace-with-output-of-openssl-rand-hex-32
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/media
+        target: /media
+      - type: bind
+        source: /DATA/AppData/$AppID/templates
+        target: /templates
+      - type: bind
+        source: /DATA/AppData/$AppID/certs
+        target: /certs
+    depends_on:
+      postgresql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    container_name: authentik-worker
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: server
+  author: RoqueOS Team
+  category: Security
+  description:
+    en_us: Authentik is an open-source identity provider focused on flexibility and versatility. Implements OAuth2/OIDC, SAML, LDAP outpost, RADIUS, SCIM provisioning, and Proxy Outpost for legacy apps. Drop-in replacement for Okta, Auth0, Keycloak — fully self-hosted with a modern Vue UI.
+    pt_br: Authentik é um provedor de identidade open-source focado em flexibilidade e versatilidade. Implementa OAuth2/OIDC, SAML, LDAP outpost, RADIUS, provisioning SCIM e Proxy Outpost para apps legados. Substituto direto de Okta, Auth0, Keycloak — totalmente auto-hospedado com UI moderna em Vue.
+  developer: goauthentik
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Authentik/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Authentik/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Authentik/screenshot-2.png
+  tagline:
+    en_us: Self-hosted OAuth2/OIDC, SAML and LDAP identity provider
+    pt_br: Provedor de identidade auto-hospedado OAuth2/OIDC, SAML e LDAP
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Authentik/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. Replace POSTGRES_PASSWORD and AUTHENTIK_POSTGRESQL__PASSWORD (must match) with a long random string.
+        2. Replace AUTHENTIK_SECRET_KEY (used in two places — server + worker) with `openssl rand -hex 32` output.
+        Initial setup wizard at http://YOUR_IP:9000/if/flow/initial-setup/ creates the akadmin user.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. Substitua POSTGRES_PASSWORD e AUTHENTIK_POSTGRESQL__PASSWORD (devem ser iguais) por uma string aleatória longa.
+        2. Substitua AUTHENTIK_SECRET_KEY (em 2 lugares — server + worker) pela saída de `openssl rand -hex 32`.
+        Wizard inicial em http://SEU_IP:9000/if/flow/initial-setup/ cria o usuário akadmin.
+  title:
+    en_us: Authentik
+  index: /
+  port_map: '9000'
+  scheme: http

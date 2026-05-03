@@ -1,0 +1,66 @@
+name: authelia
+services:
+  authelia:
+    image: authelia/authelia:4.38.17
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    network_mode: bridge
+    ports:
+      - target: 9091
+        published: '9091'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /config
+    environment:
+      TZ: America/Sao_Paulo
+    x-casaos:
+      ports:
+        - container: '9091'
+          description:
+            en_us: WebUI / portal port
+            pt_br: Porta da interface web / portal
+      volumes:
+        - container: /config
+          description:
+            en_us: configuration.yml + users database + storage
+            pt_br: configuration.yml + base de usuários + armazenamento
+    container_name: authelia
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: authelia
+  author: RoqueOS Team
+  category: Security
+  description:
+    en_us: Authelia is an open-source authentication and authorization server providing 2FA and SSO for your applications via a web portal. Acts as a companion of reverse proxies (Nginx, Traefik, Caddy, HAProxy) — every request passes through Authelia for verification before reaching the protected app.
+    pt_br: Authelia é um servidor open-source de autenticação e autorização que fornece 2FA e SSO para suas aplicações via portal web. Funciona junto com reverse proxies (Nginx, Traefik, Caddy, HAProxy) — cada requisição passa pelo Authelia para verificação antes de chegar na aplicação protegida.
+  developer: authelia
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Authelia/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Authelia/screenshot-1.png
+  tagline:
+    en_us: Open-source 2FA and SSO authentication portal
+    pt_br: Portal open-source de autenticação 2FA e SSO
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Authelia/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Authelia requires a configuration.yml in /config with at least: jwt_secret, default_redirection_url, authentication_backend, access_control rules, session, regulation, storage and notifier.
+        Minimal example: https://www.authelia.com/configuration/
+        Integrate with Nginx Proxy Manager (already in catalog) using auth_request.
+      pt_br: |
+        Authelia exige um configuration.yml em /config com no mínimo: jwt_secret, default_redirection_url, authentication_backend, regras access_control, session, regulation, storage e notifier.
+        Exemplo mínimo: https://www.authelia.com/configuration/
+        Integre com Nginx Proxy Manager (já no catálogo) usando auth_request.
+  title:
+    en_us: Authelia
+  index: /
+  port_map: '9091'
+  scheme: http
