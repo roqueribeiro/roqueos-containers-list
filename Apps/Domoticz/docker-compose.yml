@@ -1,0 +1,73 @@
+name: domoticz
+services:
+  domoticz:
+    image: domoticz/domoticz:2024.7
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 8080
+        published: '8096'
+        protocol: tcp
+      - target: 6144
+        published: '6144'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /opt/domoticz/userdata
+    environment:
+      TZ: America/Sao_Paulo
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: WebUI port (mapped to 8096 host)
+            pt_br: Porta da interface web (mapeada para 8096 no host)
+        - container: '6144'
+          description:
+            en_us: Domoticz API port (extra services)
+            pt_br: Porta da API do Domoticz (serviços extras)
+      volumes:
+        - container: /opt/domoticz/userdata
+          description:
+            en_us: Database, scripts, plugins, custom icons
+            pt_br: Banco, scripts, plugins, ícones customizados
+    container_name: domoticz
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: domoticz
+  author: RoqueOS Team
+  category: Home Automation
+  description:
+    en_us: Domoticz is a lightweight home automation system that connects to a wide range of devices and protocols (Z-Wave, Zigbee, RFXCOM, P1 smart meters, KNX, MQTT, weather stations). Mature alternative to Home Assistant for users who prefer a single-process, low-resource backend with a classic web UI and Python/Lua scripting.
+    pt_br: Domoticz é um sistema de automação residencial leve que conecta a uma vasta gama de dispositivos e protocolos (Z-Wave, Zigbee, RFXCOM, smart meters P1, KNX, MQTT, estações meteorológicas). Alternativa madura ao Home Assistant para usuários que preferem um backend single-process e leve com UI web clássica e scripting em Python/Lua.
+  developer: domoticz
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Domoticz/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Domoticz/screenshot-1.png
+  tagline:
+    en_us: Lightweight home automation (Z-Wave, Zigbee, MQTT, weather)
+    pt_br: Automação residencial leve (Z-Wave, Zigbee, MQTT, clima)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Domoticz/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        First boot starts with no auth — visit http://YOUR_IP:8096 to set the admin user from Settings > Application Settings > Website Protection.
+        For Z-Wave/Zigbee USB sticks, mount /dev/ttyUSB0 or /dev/serial/by-id/... and add `devices:` to this compose file.
+        For 433 MHz devices: pair with an RFXCOM USB transceiver.
+      pt_br: |
+        O primeiro boot começa sem autenticação — acesse http://SEU_IP:8096 para criar o usuário admin em Settings > Application Settings > Website Protection.
+        Para USB sticks Z-Wave/Zigbee, monte /dev/ttyUSB0 ou /dev/serial/by-id/... e adicione `devices:` neste compose file.
+        Para dispositivos 433 MHz: combine com um transceiver USB RFXCOM.
+  title:
+    en_us: Domoticz
+  index: /
+  port_map: '8096'
+  scheme: http

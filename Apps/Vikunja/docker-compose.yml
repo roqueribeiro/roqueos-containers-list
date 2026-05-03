@@ -1,0 +1,82 @@
+name: vikunja
+services:
+  vikunja:
+    image: vikunja/vikunja:0.24.6
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 3456
+        published: '3456'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/files
+        target: /app/vikunja/files
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /etc/vikunja
+    environment:
+      VIKUNJA_SERVICE_PUBLICURL: http://localhost:3456
+      VIKUNJA_SERVICE_JWTSECRET: replace-with-output-of-openssl-rand-hex-32
+      VIKUNJA_DATABASE_TYPE: sqlite
+      VIKUNJA_DATABASE_PATH: /app/vikunja/files/vikunja.db
+      VIKUNJA_FILES_BASEPATH: /app/vikunja/files
+    x-casaos:
+      ports:
+        - container: '3456'
+          description:
+            en_us: WebUI + API port
+            pt_br: Porta da interface web + API
+      volumes:
+        - container: /app/vikunja/files
+          description:
+            en_us: SQLite database, attachments, exports
+            pt_br: Banco SQLite, anexos, exports
+        - container: /etc/vikunja
+          description:
+            en_us: config.yml + auxiliary configuration
+            pt_br: config.yml + configuração auxiliar
+      envs:
+        - container: VIKUNJA_SERVICE_JWTSECRET
+          description:
+            en_us: JWT secret. REPLACE before first boot.
+            pt_br: Segredo JWT. SUBSTITUA antes do primeiro boot.
+    container_name: vikunja
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: vikunja
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: Vikunja is the open-source, self-hostable to-do app — like Todoist but yours. Multiple views (list, gantt, kanban, table), recurring tasks, reminders with email/Telegram/Discord, sharing via teams or links, mobile/desktop apps, full REST API, CalDAV sync. Frontend in Vue, backend in Go.
+    pt_br: Vikunja é o app de to-do open-source e auto-hospedável — como Todoist mas seu. Múltiplas views (lista, gantt, kanban, tabela), tarefas recorrentes, lembretes via email/Telegram/Discord, compartilhamento por times ou links, apps mobile/desktop, API REST completa, sincronização CalDAV. Frontend Vue, backend Go.
+  developer: kolaente
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vikunja/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vikunja/screenshot-1.png
+  tagline:
+    en_us: Self-hosted to-do app with kanban, gantt and CalDAV
+    pt_br: App de to-do auto-hospedado com kanban, gantt e CalDAV
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Vikunja/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE VIKUNJA_SERVICE_JWTSECRET before first boot. Generate with `openssl rand -hex 32`.
+        Set VIKUNJA_SERVICE_PUBLICURL to your public URL — required for password reset emails and OAuth.
+        First user created via signup is admin (then disable signup in config.yml if private).
+      pt_br: |
+        SUBSTITUA VIKUNJA_SERVICE_JWTSECRET antes do primeiro boot. Gere com `openssl rand -hex 32`.
+        Configure VIKUNJA_SERVICE_PUBLICURL com sua URL pública — necessário para emails de reset de senha e OAuth.
+        O primeiro usuário criado via signup é o admin (depois desative signup em config.yml se for privado).
+  title:
+    en_us: Vikunja
+  index: /
+  port_map: '3456'
+  scheme: http

@@ -1,0 +1,64 @@
+name: snappymail
+services:
+  snappymail:
+    image: djmaze/snappymail:2.38.2
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    network_mode: bridge
+    ports:
+      - target: 8888
+        published: '8888'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /var/lib/snappymail
+    x-casaos:
+      ports:
+        - container: '8888'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+      volumes:
+        - container: /var/lib/snappymail
+          description:
+            en_us: Configuration, plugins, signed-in users
+            pt_br: Configuração, plugins, usuários logados
+    container_name: snappymail
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: snappymail
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: SnappyMail is a fast, simple, modern webmail with PGP/OpenPGP encryption support. Connects to any IMAP/SMTP/Sieve server (your own mailcow, Postfix, Mailcow, or external Gmail/Outlook). PWA-compatible, dark mode, plugins ecosystem, drag-drop attachments, two-factor auth.
+    pt_br: SnappyMail é um webmail rápido, simples e moderno com suporte a criptografia PGP/OpenPGP. Conecta a qualquer servidor IMAP/SMTP/Sieve (seu próprio mailcow, Postfix, Mailcow, ou Gmail/Outlook externo). Compatível com PWA, dark mode, ecossistema de plugins, drag-drop de anexos, autenticação de dois fatores.
+  developer: the-djmaze
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Snappymail/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Snappymail/screenshot-1.png
+  tagline:
+    en_us: Fast, modern webmail with PGP support (IMAP/SMTP client)
+    pt_br: Webmail rápido e moderno com suporte PGP (cliente IMAP/SMTP)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Snappymail/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        First boot, login with admin credentials displayed in the container logs (or visit /?admin and use them).
+        Configure your IMAP/SMTP servers in the admin panel before regular users sign in.
+        For multi-domain setups, add each domain in the Domains panel.
+      pt_br: |
+        No primeiro boot, faça login com as credenciais admin exibidas nos logs do container (ou acesse /?admin e use-as).
+        Configure seus servidores IMAP/SMTP no painel admin antes dos usuários comuns entrarem.
+        Para setups multi-domínio, adicione cada domínio no painel Domains.
+  title:
+    en_us: SnappyMail
+  index: /
+  port_map: '8888'
+  scheme: http

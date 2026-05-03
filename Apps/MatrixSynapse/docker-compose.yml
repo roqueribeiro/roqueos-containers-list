@@ -1,0 +1,95 @@
+name: matrixsynapse
+services:
+  postgres:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: synapse
+      POSTGRES_USER: synapse
+      POSTGRES_PASSWORD: change-me-to-a-long-random-string
+      POSTGRES_INITDB_ARGS: '--encoding=UTF-8 --lc-collate=C --lc-ctype=C'
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/postgres
+        target: /var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U synapse -d synapse']
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    container_name: matrix-postgres
+  synapse:
+    image: matrixdotorg/synapse:v1.121.1
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    ports:
+      - target: 8008
+        published: '8008'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+    environment:
+      SYNAPSE_SERVER_NAME: matrix.example.com
+      SYNAPSE_REPORT_STATS: 'no'
+      SYNAPSE_HTTP_PORT: '8008'
+      POSTGRES_HOST: postgres
+      POSTGRES_DB: synapse
+      POSTGRES_USER: synapse
+      POSTGRES_PASSWORD: change-me-to-a-long-random-string
+    depends_on:
+      postgres:
+        condition: service_healthy
+    x-casaos:
+      ports:
+        - container: '8008'
+          description:
+            en_us: Client-Server API + WebUI port
+            pt_br: Porta da API Client-Server + interface web
+      volumes:
+        - container: /data
+          description:
+            en_us: Synapse data, signing keys, media store
+            pt_br: Dados do Synapse, signing keys, media store
+    container_name: matrixsynapse
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: synapse
+  author: RoqueOS Team
+  category: Communication
+  description:
+    en_us: Synapse is the reference implementation of the Matrix protocol — a federated, decentralized, end-to-end encrypted real-time communication protocol. Run your own Matrix homeserver to chat with users on any other Matrix server. Supports voice/video, threads, spaces, file sharing, bridges to IRC/Slack/Discord/Telegram.
+    pt_br: Synapse é a implementação de referência do protocolo Matrix — um protocolo de comunicação em tempo real federado, descentralizado e com criptografia end-to-end. Rode seu próprio homeserver Matrix para conversar com usuários de qualquer outro servidor Matrix. Suporta voz/vídeo, threads, spaces, compartilhamento de arquivos, bridges para IRC/Slack/Discord/Telegram.
+  developer: matrix-org
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MatrixSynapse/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MatrixSynapse/screenshot-1.png
+  tagline:
+    en_us: Self-hosted federated chat homeserver (Matrix protocol)
+    pt_br: Homeserver de chat federado e auto-hospedado (protocolo Matrix)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MatrixSynapse/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. Set SYNAPSE_SERVER_NAME to your real domain (e.g., matrix.yourdomain.com). Cannot be changed later.
+        2. REPLACE POSTGRES_PASSWORD in BOTH places (postgres + synapse env). Must match.
+        3. First boot generates homeserver.yaml. Edit it for federation, encryption defaults, registration policies before exposing.
+        4. Pair with Element web client (separate container, see matrix-org docs) for the user-facing UI.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. Configure SYNAPSE_SERVER_NAME com seu domínio real (ex: matrix.seudominio.com). Não pode ser alterado depois.
+        2. SUBSTITUA POSTGRES_PASSWORD nos DOIS lugares (postgres + synapse env). Devem ser iguais.
+        3. O primeiro boot gera homeserver.yaml. Edite-o para federação, padrões de criptografia, políticas de registro antes de expor.
+        4. Combine com o cliente web Element (container separado, ver docs matrix-org) para a UI dos usuários.
+  title:
+    en_us: Matrix Synapse
+  index: /
+  port_map: '8008'
+  scheme: http

@@ -1,0 +1,86 @@
+name: codeserver
+services:
+  codeserver:
+    image: linuxserver/code-server:4.96.4
+    deploy:
+      resources:
+        reservations:
+          memory: 512M
+    network_mode: bridge
+    ports:
+      - target: 8443
+        published: '8443'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+      - type: bind
+        source: /DATA/Workspaces
+        target: /workspaces
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: America/Sao_Paulo
+      PASSWORD: change-me-on-first-boot
+      SUDO_PASSWORD: change-me-on-first-boot
+      DEFAULT_WORKSPACE: /workspaces
+    x-casaos:
+      ports:
+        - container: '8443'
+          description:
+            en_us: WebUI port (HTTP — use https reverse proxy for production)
+            pt_br: Porta da interface web (HTTP — use reverse proxy https em produção)
+      volumes:
+        - container: /config
+          description:
+            en_us: VS Code settings, extensions, custom user data
+            pt_br: Configs do VS Code, extensões, dados do usuário
+        - container: /workspaces
+          description:
+            en_us: Default workspaces directory
+            pt_br: Diretório padrão dos workspaces
+      envs:
+        - container: PASSWORD
+          description:
+            en_us: WebUI login password — REPLACE before first boot
+            pt_br: Senha de login da interface web — SUBSTITUA antes do primeiro boot
+        - container: SUDO_PASSWORD
+          description:
+            en_us: Password for sudo inside the integrated terminal
+            pt_br: Senha de sudo no terminal integrado
+    container_name: codeserver
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: codeserver
+  author: RoqueOS Team
+  category: Developer
+  description:
+    en_us: code-server is VS Code running in the browser, hosted on your server. Edit code, run terminals, debug, install any VS Code extension — but accessible from any device with a browser. Same Code-OSS engine as VS Code Desktop, no Microsoft telemetry. The recommended way to run a remote IDE on home labs and dev VMs.
+    pt_br: code-server é o VS Code rodando no navegador, hospedado no seu servidor. Edite código, abra terminais, debug, instale qualquer extensão do VS Code — mas acessível de qualquer dispositivo com navegador. Mesma engine Code-OSS do VS Code Desktop, sem telemetria Microsoft. Forma recomendada de rodar IDE remota em home labs e VMs de dev.
+  developer: linuxserver
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/CodeServer/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/CodeServer/screenshot-1.png
+  tagline:
+    en_us: VS Code in the browser, hosted on your own server
+    pt_br: VS Code no navegador, hospedado no seu próprio servidor
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/CodeServer/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REPLACE PASSWORD and SUDO_PASSWORD before first boot — both default to an unsafe placeholder.
+        For production, expose only behind a reverse proxy with HTTPS (Nginx Proxy Manager already in catalog).
+        Workspaces mount default to /DATA/Workspaces — adjust if you keep code elsewhere.
+      pt_br: |
+        SUBSTITUA PASSWORD e SUDO_PASSWORD antes do primeiro boot — ambos defaults são placeholders inseguros.
+        Para produção, exponha apenas atrás de reverse proxy com HTTPS (Nginx Proxy Manager já está no catálogo).
+        Mount padrão de workspaces é /DATA/Workspaces — ajuste se você guarda código em outro lugar.
+  title:
+    en_us: code-server
+  index: /
+  port_map: '8443'
+  scheme: http

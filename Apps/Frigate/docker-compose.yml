@@ -1,0 +1,99 @@
+name: frigate
+services:
+  frigate:
+    image: ghcr.io/blakeblackshear/frigate:0.14.1
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    network_mode: bridge
+    privileged: true
+    shm_size: 256mb
+    ports:
+      - target: 5000
+        published: '5000'
+        protocol: tcp
+      - target: 8554
+        published: '8554'
+        protocol: tcp
+      - target: 8555
+        published: '8555'
+        protocol: tcp
+      - target: 8555
+        published: '8555'
+        protocol: udp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+      - type: bind
+        source: /DATA/AppData/$AppID/storage
+        target: /media/frigate
+      - type: tmpfs
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    environment:
+      FRIGATE_RTSP_PASSWORD: change-me-on-first-boot
+    x-casaos:
+      ports:
+        - container: '5000'
+          description:
+            en_us: WebUI port
+            pt_br: Porta da interface web
+        - container: '8554'
+          description:
+            en_us: go2rtc RTSP server (re-streaming)
+            pt_br: Servidor RTSP go2rtc (re-streaming)
+        - container: '8555'
+          description:
+            en_us: go2rtc WebRTC port (TCP + UDP)
+            pt_br: Porta WebRTC go2rtc (TCP + UDP)
+      volumes:
+        - container: /config
+          description:
+            en_us: Frigate config.yml + database
+            pt_br: config.yml do Frigate + banco
+        - container: /media/frigate
+          description:
+            en_us: Recordings, snapshots, clips
+            pt_br: Gravações, snapshots, clips
+    container_name: frigate
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: frigate
+  author: RoqueOS Team
+  category: Home Automation
+  description:
+    en_us: Frigate is an open-source NVR built around real-time AI object detection. All processing performed locally on hardware — leverages OpenCV and Tensorflow on a Coral USB or onboard GPU/CPU. Detects people, cars, pets, packages; integrates with Home Assistant, MQTT, Telegram. Best-in-class for self-hosted security camera systems.
+    pt_br: Frigate é um NVR open-source construído em torno de detecção de objetos por IA em tempo real. Todo processamento é local no hardware — usa OpenCV e Tensorflow em Coral USB ou GPU/CPU embarcados. Detecta pessoas, carros, pets, pacotes; integra com Home Assistant, MQTT, Telegram. Best-in-class para sistemas de câmeras de segurança auto-hospedados.
+  developer: blakeblackshear
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Frigate/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Frigate/screenshot-1.png
+  tagline:
+    en_us: NVR with realtime AI object detection (local processing)
+    pt_br: NVR com detecção de objetos por IA em tempo real (processamento local)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Frigate/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. REPLACE FRIGATE_RTSP_PASSWORD with a long random string.
+        2. Mount a config.yml in /config — Frigate refuses to start without one. Minimal example: https://docs.frigate.video/configuration/
+        3. For AI acceleration, attach a Coral USB Accelerator (huge perf boost) or use Intel/Nvidia GPU passthrough.
+        4. Pair with Home Assistant (already in the catalog) for full home automation integration.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. SUBSTITUA FRIGATE_RTSP_PASSWORD por uma string aleatória longa.
+        2. Monte um config.yml em /config — Frigate não inicia sem ele. Exemplo mínimo: https://docs.frigate.video/configuration/
+        3. Para aceleração de IA, anexe um Coral USB Accelerator (ganho enorme) ou use passthrough de GPU Intel/Nvidia.
+        4. Use junto com Home Assistant (já no catálogo) para integração completa de automação residencial.
+  title:
+    en_us: Frigate
+  index: /
+  port_map: '5000'
+  scheme: http

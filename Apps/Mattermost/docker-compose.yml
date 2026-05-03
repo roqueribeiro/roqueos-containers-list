@@ -1,0 +1,107 @@
+name: mattermost
+services:
+  postgres:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: mmuser
+      POSTGRES_PASSWORD: change-me-to-a-long-random-string
+      POSTGRES_DB: mattermost
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/postgres
+        target: /var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U mmuser -d mattermost']
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    container_name: mattermost-postgres
+  mattermost:
+    image: mattermost/mattermost-team-edition:10.2
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    ports:
+      - target: 8065
+        published: '8065'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /mattermost/data
+      - type: bind
+        source: /DATA/AppData/$AppID/logs
+        target: /mattermost/logs
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /mattermost/config
+      - type: bind
+        source: /DATA/AppData/$AppID/plugins
+        target: /mattermost/plugins
+      - type: bind
+        source: /DATA/AppData/$AppID/client-plugins
+        target: /mattermost/client/plugins
+    environment:
+      MM_SQLSETTINGS_DRIVERNAME: postgres
+      MM_SQLSETTINGS_DATASOURCE: postgres://mmuser:change-me-to-a-long-random-string@postgres:5432/mattermost?sslmode=disable&connect_timeout=10
+      MM_SERVICESETTINGS_SITEURL: http://localhost:8065
+      TZ: America/Sao_Paulo
+    depends_on:
+      postgres:
+        condition: service_healthy
+    x-casaos:
+      ports:
+        - container: '8065'
+          description:
+            en_us: WebUI / API port
+            pt_br: Porta da interface web / API
+      volumes:
+        - container: /mattermost/data
+          description:
+            en_us: User uploads, file storage
+            pt_br: Uploads, armazenamento de arquivos
+        - container: /mattermost/config
+          description:
+            en_us: config.json (server configuration)
+            pt_br: config.json (configuração do servidor)
+    container_name: mattermost
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: mattermost
+  author: RoqueOS Team
+  category: Communication
+  description:
+    en_us: Mattermost is an open-source Slack alternative built for developer teams. Channels, threads, calls, screen sharing, GitHub/GitLab integration, code blocks with syntax highlighting, native mobile + desktop apps, plugins ecosystem. Self-hosted Team Edition is free forever; Enterprise Edition adds SSO/compliance for paid plans.
+    pt_br: Mattermost é uma alternativa open-source ao Slack feita para times de desenvolvedores. Canais, threads, chamadas, compartilhamento de tela, integração GitHub/GitLab, blocos de código com syntax highlighting, apps nativos mobile + desktop, ecossistema de plugins. Self-hosted Team Edition é gratuita para sempre; Enterprise Edition adiciona SSO/compliance em planos pagos.
+  developer: mattermost
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mattermost/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mattermost/screenshot-1.png
+  tagline:
+    en_us: Self-hosted Slack alternative built for developer teams
+    pt_br: Alternativa auto-hospedada ao Slack feita para times de devs
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mattermost/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. REPLACE POSTGRES_PASSWORD AND the password in MM_SQLSETTINGS_DATASOURCE (must match) with a long random string.
+        2. Set MM_SERVICESETTINGS_SITEURL to your public URL (must match exactly).
+        3. First user created via signup at http://YOUR_IP:8065 is the System Admin.
+        4. For desktop/mobile apps, point them at your SiteURL.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. SUBSTITUA POSTGRES_PASSWORD E a senha em MM_SQLSETTINGS_DATASOURCE (devem ser iguais) por uma string aleatória longa.
+        2. Configure MM_SERVICESETTINGS_SITEURL com sua URL pública (deve bater exatamente).
+        3. O primeiro usuário criado via signup em http://SEU_IP:8065 é o System Admin.
+        4. Para apps desktop/mobile, aponte-os para seu SiteURL.
+  title:
+    en_us: Mattermost
+  index: /
+  port_map: '8065'
+  scheme: http
