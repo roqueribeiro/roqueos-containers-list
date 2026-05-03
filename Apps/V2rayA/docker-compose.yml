@@ -105,7 +105,7 @@ x-casaos:
       Core features include global transparent proxy and multi-outbound load balancing with traffic splitting. It provides proxy services for nearly all applications without requiring application-specific proxy support. Support for creating and connecting multiple outbound nodes ensures load balancing and efficient traffic splitting for optimal network performance.
 
       It offers RoutingA, a custom routing language for V2Ray, providing powerful and convenient traffic splitting support. Multiple strategies address DNS pollution, with advanced settings enabling customized configurations. With simplicity and functionality at the core, the platform delivers a modern solution for proxy management.
-      
+
       **Key Features:**
       - Web-based GUI for easy configuration and management
       - Support for multiple protocols: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -123,7 +123,7 @@ x-casaos:
       Core features include global transparent proxy and multi-outbound load balancing with traffic splitting. It provides proxy services for nearly all applications without requiring application-specific proxy support. Support for creating and connecting multiple outbound nodes ensures load balancing and efficient traffic splitting for optimal network performance.
 
       It offers RoutingA, a custom routing language for V2Ray, providing powerful and convenient traffic splitting support. Multiple strategies address DNS pollution, with advanced settings enabling customised configurations. With simplicity and functionality at the core, the platform delivers a modern solution for proxy management.
-      
+
       **Key Features:**
       - Web-based GUI for easy configuration and management
       - Support for multiple protocols: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -141,7 +141,7 @@ x-casaos:
       Le caratteristiche principali includono proxy trasparente globale e bilanciamento del carico multi-uscita con divisione del traffico. Fornisce servizi proxy per quasi tutte le applicazioni senza richiedere supporto proxy specifico dell'applicazione. Il supporto per creare e connettere più nodi di uscita garantisce bilanciamento del carico e divisione efficiente del traffico per prestazioni di rete ottimali.
 
       Offre RoutingA, un linguaggio di routing personalizzato per V2Ray, fornendo supporto potente e conveniente per la divisione del traffico. Più strategie affrontano l'inquinamento DNS, con impostazioni avanzate che consentono configurazioni personalizzate. Con semplicità e funzionalità al centro, la piattaforma fornisce una soluzione moderna per la gestione proxy.
-      
+
       **Caratteristiche Principali:**
       - GUI basata su web per configurazione e gestione facili
       - Supporto per protocolli multipli: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -159,7 +159,7 @@ x-casaos:
       Kjernefunksjoner inkluderer global transparent proxy og multi-utgang lastbalansering med trafikksplitting. Den gir proxy-tjenester for nesten alle applikasjoner uten å kreve applikasjonsspesifikk proxy-støtte. Støtte for å opprette og koble til flere utgangsnoder sikrer lastbalansering og effektiv trafikksplitting for optimal nettverksytelse.
 
       Den tilbyr RoutingA, et tilpasset rutingspråk for V2Ray, som gir kraftig og praktisk trafikksplittingsstøtte. Flere strategier adresserer DNS-forurensning, med avanserte innstillinger som muliggjør tilpassede konfigurasjoner. Med enkelhet og funksjonalitet i kjernen leverer plattformen en moderne løsning for proxy-håndtering.
-      
+
       **Hovedfunksjoner:**
       - Nettbasert GUI for enkel konfigurasjon og håndtering
       - Støtte for flere protokoller: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -177,7 +177,7 @@ x-casaos:
       核心功能包括全局透明代理和多出站负载均衡与分流。它为几乎所有应用程序提供代理服务，无需考虑应用程序是否支持代理。支持创建和连接多个出站节点，实现负载均衡和流量分流，确保高效网络性能。
 
       它通过 RoutingA 自定义路由语言为 V2Ray 提供强大而便捷的分流支持。多种策略应对 DNS 污染，高级设置允许用户自定义配置。以简单性和功能性为核心，该平台为代理管理提供现代化解决方案。
-      
+
       **主要特性：**
       - 基于 Web 的 GUI，易于配置和管理
       - 支持多种协议：VMess、VLESS、SS、SSR、Trojan、Tuic、Juicity
@@ -195,7 +195,7 @@ x-casaos:
       コア機能には、グローバル透明プロキシとトラフィック分割を伴うマルチアウトバウンド負荷分散が含まれます。アプリケーション固有のプロキシサポートを必要とせずに、ほぼすべてのアプリケーションにプロキシサービスを提供します。複数のアウトバウンドノードの作成と接続のサポートにより、負荷分散と効率的なトラフィック分割が保証され、最適なネットワークパフォーマンスを実現します。
 
       V2Ray用のカスタムルーティング言語であるRoutingAを提供し、強力で便利なトラフィック分割サポートを提供します。複数の戦略がDNS汚染に対処し、高度な設定によりカスタマイズされた構成が可能になります。シンプルさと機能性を核として、プラットフォームはプロキシ管理のための現代的なソリューションを提供します。
-      
+
       **主な機能：**
       - 簡単な設定と管理のためのWebベースGUI
       - 複数プロトコルのサポート：VMess、VLESS、SS、SSR、Trojan、Tuic、Juicity
@@ -213,7 +213,7 @@ x-casaos:
       핵심 기능에는 글로벌 투명 프록시와 트래픽 분할을 통한 다중 아웃바운드 로드 밸런싱이 포함됩니다. 애플리케이션별 프록시 지원을 요구하지 않고 거의 모든 애플리케이션에 프록시 서비스를 제공합니다. 여러 아웃바운드 노드 생성 및 연결 지원으로 로드 밸런싱과 효율적인 트래픽 분할을 보장하여 최적의 네트워크 성능을 달성합니다.
 
       V2Ray용 맞춤형 라우팅 언어인 RoutingA를 제공하여 강력하고 편리한 트래픽 분할 지원을 제공합니다. 여러 전략이 DNS 오염을 해결하며, 고급 설정으로 맞춤형 구성이 가능합니다. 단순성과 기능성을 핵심으로 하여 플랫폼은 프록시 관리를 위한 현대적인 솔루션을 제공합니다.
-      
+
       **주요 기능:**
       - 쉬운 구성 및 관리를 위한 웹 기반 GUI
       - 다중 프로토콜 지원: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -231,7 +231,7 @@ x-casaos:
       Les fonctionnalités principales incluent proxy transparent global et équilibrage de charge multi-sortie avec répartition du trafic. Il fournit des services proxy pour presque toutes les applications sans nécessiter de support proxy spécifique à l'application. Le support pour créer et connecter plusieurs nœuds de sortie assure l'équilibrage de charge et la répartition efficace du trafic pour des performances réseau optimales.
 
       Il offre RoutingA, un langage de routage personnalisé pour V2Ray, fournissant un support puissant et pratique pour la répartition du trafic. Plusieurs stratégies abordent la pollution DNS, avec des paramètres avancés permettant des configurations personnalisées. Avec simplicité et fonctionnalité au cœur, la plateforme livre une solution moderne pour la gestion proxy.
-      
+
       **Fonctionnalités Principales :**
       - GUI basée web pour configuration et gestion faciles
       - Support pour protocoles multiples : VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -249,7 +249,7 @@ x-casaos:
       Kernfunktionen umfassen globalen transparenten Proxy und Multi-Outbound-Lastverteilung mit Traffic-Aufteilung. Es bietet Proxy-Dienste für fast alle Anwendungen, ohne anwendungsspezifische Proxy-Unterstützung zu erfordern. Unterstützung für das Erstellen und Verbinden mehrerer Outbound-Knoten gewährleistet Lastverteilung und effiziente Traffic-Aufteilung für optimale Netzwerkleistung.
 
       Es bietet RoutingA, eine benutzerdefinierte Routing-Sprache für V2Ray, die leistungsstarke und praktische Traffic-Aufteilungsunterstützung bietet. Mehrere Strategien adressieren DNS-Verschmutzung, mit erweiterten Einstellungen, die angepasste Konfigurationen ermöglichen. Mit Einfachheit und Funktionalität im Kern liefert die Plattform eine moderne Lösung für Proxy-Verwaltung.
-      
+
       **Hauptmerkmale:**
       - Web-basierte GUI für einfache Konfiguration und Verwaltung
       - Unterstützung für mehrere Protokolle: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -267,7 +267,7 @@ x-casaos:
       Kärnfunktioner inkluderar global transparent proxy och multi-utgång lastbalansering med trafikdelning. Den tillhandahåller proxy-tjänster för nästan alla applikationer utan att kräva applikationsspecifik proxy-stöd. Stöd för att skapa och ansluta flera utgångsnoder säkerställer lastbalansering och effektiv trafikdelning för optimal nätverksprestanda.
 
       Den erbjuder RoutingA, ett anpassat routingspråk för V2Ray, som ger kraftfullt och bekvämt trafikdelningsstöd. Flera strategier adresserar DNS-förorening, med avancerade inställningar som möjliggör anpassade konfigurationer. Med enkelhet och funktionalitet i kärnan levererar plattformen en modern lösning för proxy-hantering.
-      
+
       **Huvudfunktioner:**
       - Webbaserat GUI för enkel konfiguration och hantering
       - Stöd för flera protokoll: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -285,7 +285,7 @@ x-casaos:
       Οι βασικές λειτουργίες περιλαμβάνουν παγκόσμιο διαφανές proxy και εξισορρόπηση φορτίου πολλαπλών εξόδων με διαίρεση κίνησης. Παρέχει υπηρεσίες proxy για σχεδόν όλες τις εφαρμογές χωρίς να απαιτεί ειδική υποστήριξη proxy εφαρμογής. Η υποστήριξη για δημιουργία και σύνδεση πολλαπλών κόμβων εξόδου εξασφαλίζει εξισορρόπηση φορτίου και αποδοτική διαίρεση κίνησης για βέλτιστη απόδοση δικτύου.
 
       Προσφέρει RoutingA, μια προσαρμοσμένη γλώσσα δρομολόγησης για V2Ray, παρέχοντας ισχυρή και βολική υποστήριξη διαίρεσης κίνησης. Πολλαπλές στρατηγικές αντιμετωπίζουν τη μόλυνση DNS, με προηγμένες ρυθμίσεις που επιτρέπουν προσαρμοσμένες διαμορφώσεις. Με απλότητα και λειτουργικότητα στον πυρήνα, η πλατφόρμα παρέχει μια σύγχρονη λύση για διαχείριση proxy.
-      
+
       **Βασικά Χαρακτηριστικά:**
       - GUI βασισμένο σε ιστό για εύκολη διαμόρφωση και διαχείριση
       - Υποστήριξη για πολλαπλά πρωτόκολλα: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -303,7 +303,7 @@ x-casaos:
       Osnovne značajke uključuju globalni transparentni proxy i multi-izlazno uravnoteženje opterećenja s podjelom prometa. Pruža proxy usluge za gotovo sve aplikacije bez potrebe za aplikacijsko-specifičnom proxy podrškom. Podrška za stvaranje i povezivanje više izlaznih čvorova osigurava uravnoteženje opterećenja i učinkovitu podjelu prometa za optimalnu mrežnu performansu.
 
       Nudi RoutingA, prilagođeni jezik za usmjeravanje za V2Ray, pružajući snažnu i praktičnu podršku za podjelu prometa. Više strategija rješava DNS onečišćenje, s naprednim postavkama koje omogućavaju prilagođene konfiguracije. S jednostavnošću i funkcionalnošću u srcu, platforma isporučuje moderno rješenje za upravljanje proxy-jem.
-      
+
       **Ključne Značajke:**
       - Web-bazirani GUI za jednostavnu konfiguraciju i upravljanje
       - Podrška za više protokola: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -321,7 +321,7 @@ x-casaos:
       As funcionalidades principais incluem proxy transparente global e balanceamento de carga multi-saída com divisão de tráfego. Fornece serviços de proxy para quase todas as aplicações sem requerer suporte de proxy específico da aplicação. O suporte para criar e conectar múltiplos nós de saída garante balanceamento de carga e divisão eficiente de tráfego para desempenho de rede óptimo.
 
       Oferece RoutingA, uma linguagem de encaminhamento personalizada para V2Ray, fornecendo suporte poderoso e conveniente para divisão de tráfego. Múltiplas estratégias abordam a poluição DNS, com configurações avançadas que permitem configurações personalizadas. Com simplicidade e funcionalidade no núcleo, a plataforma entrega uma solução moderna para gestão de proxy.
-      
+
       **Funcionalidades Principais:**
       - GUI baseada na web para configuração e gestão fáceis
       - Suporte para múltiplos protocolos: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -339,7 +339,7 @@ x-casaos:
       Основные функции включают глобальный прозрачный прокси и балансировку нагрузки с несколькими исходящими узлами с разделением трафика. Предоставляет прокси-сервисы для почти всех приложений без требования специфической поддержки прокси приложений. Поддержка создания и подключения множественных исходящих узлов обеспечивает балансировку нагрузки и эффективное разделение трафика для оптимальной производительности сети.
 
       Предлагает RoutingA, пользовательский язык маршрутизации для V2Ray, обеспечивающий мощную и удобную поддержку разделения трафика. Множественные стратегии решают проблему загрязнения DNS, с расширенными настройками, позволяющими пользовательские конфигурации. С простотой и функциональностью в основе платформа обеспечивает современное решение для управления прокси.
-      
+
       **Ключевые Особенности:**
       - Веб-интерфейс для легкой настройки и управления
       - Поддержка множественных протоколов: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -357,7 +357,7 @@ x-casaos:
       Temel özellikler küresel şeffaf proxy ve trafik bölünmesi ile çoklu çıkış yük dengelemeyi içerir. Uygulamaya özel proxy desteği gerektirmeden neredeyse tüm uygulamalar için proxy hizmetleri sağlar. Birden fazla çıkış düğümü oluşturma ve bağlama desteği, optimal ağ performansı için yük dengeleme ve verimli trafik bölünmesi sağlar.
 
       V2Ray için özelleştirilmiş yönlendirme dili olan RoutingA sunarak güçlü ve kullanışlı trafik bölünme desteği sağlar. Birden fazla strateji DNS kirliliğini ele alır, gelişmiş ayarlar özelleştirilmiş konfigürasyonları mümkün kılar. Basitlik ve işlevsellik temelinde platform, proxy yönetimi için modern bir çözüm sunar.
-      
+
       **Ana Özellikler:**
       - Kolay yapılandırma ve yönetim için web tabanlı GUI
       - Çoklu protokol desteği: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
@@ -369,14 +369,14 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [V2rayA Resmi Web Sitesi](https://v2raya.org/)
       - [V2rayA GitHub](https://github.com/v2rayA/v2rayA)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/V2rayA/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/V2rayA/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/V2rayA/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/V2rayA/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/V2rayA/screenshot-3.png
-  thumbnail: ""
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/V2rayA/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/V2rayA/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/V2rayA/screenshot-3.png
+  thumbnail: ''
   scheme: http
-  port_map: "2017"
+  port_map: '2017'
   index: /
   title:
     en_US: V2rayA

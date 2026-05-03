@@ -2,16 +2,16 @@
   "version": "2.0",
   "title": "VoceChat",
   "name": "vocechat",
-  "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/icon.png",
+  "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/icon.png",
   "tagline": "Have a Private Social Space Hosted on Your Site",
   "overview": "As a top alternative to centralized chat services, Voce chat is a superlight Rust powered open-core chat app that prioritizes private hosting.",
-  "thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/thumbnail.jpg",
+  "thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/thumbnail.jpg",
   "screenshots": [
-    "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/screenshot-1.jpg",
-    "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/screenshot-2.jpg",
-    "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/screenshot-3.jpg",
-    "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/screenshot-4.jpg",
-    "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/screenshot-5.jpg"
+    "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/screenshot-1.jpg",
+    "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/screenshot-2.jpg",
+    "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/screenshot-3.jpg",
+    "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/screenshot-4.jpg",
+    "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/screenshot-5.jpg"
   ],
   "category": [
     "Chat"
@@ -23,8 +23,8 @@
     "donate_link": ""
   },
   "adaptor": {
-    "name": "CasaOS Team",
-    "website": "https://www.casaos.io",
+    "name": "RoqueOS Team",
+    "website": "https://roqueos.com.br",
     "donate_text": "",
     "donate_link": ""
   },

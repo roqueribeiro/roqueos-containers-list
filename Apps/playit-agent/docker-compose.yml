@@ -30,7 +30,7 @@ x-casaos:
     sv_se: playit.gg är en global proxy som gör det möjligt för vem som helst att vara värd för en server utan port vidarebefordran. Vi använder tunnlar. Endast servern behöver köra programmet, inte varje spelare!
     uk_ua: playit.gg - це глобальний проксі, який дозволяє будь-кому розмістити сервер без переадресації портів. Ми використовуємо тунелювання. Тільки сервер повинен запускати програму, а не кожен гравець!
   developer: Patrick Lorio
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/playit-agent/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/playit-agent/icon.png
   tagline:
     en_us: A free reverse proxy for tunneling services (not self-hosted).
     zh_cn: 用于隧道服务的免费反向代理（非自托管）。
@@ -48,3 +48,4 @@ x-casaos:
   store_app_id: playit-agent
   title:
     en_us: Playit Agent
+  scheme: http

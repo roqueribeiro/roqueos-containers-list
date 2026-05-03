@@ -43,7 +43,7 @@ services:
             tr_TR: Belirteç Kurulum Web Arayüzü
     ports:
       - target: 14333
-        published: "14333"
+        published: '14333'
         protocol: tcp
     volumes:
       - type: bind
@@ -68,7 +68,6 @@ x-casaos:
         This tutorial provides detailed steps for creating and managing a Cloudflare Tunnel.
       2. [**Phiptech Practical Guide**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         This guide offers a concise, step-by-step walkthrough for setting up Cloudflare Tunnel on local devices like ZimaOS, with practical examples to help users easily expose services to the public internet.
-
     en_GB: |
       Cloudflare Tunnel offers an easy way to expose web servers securely to the internet, without opening up firewall ports and configuring ACLs. Cloudflare Tunnel also ensures requests route through Cloudflare before reaching the web server, so you can be sure attack traffic is stopped with Cloudflare’s WAF and Unmetered DDoS mitigation, and authenticated with Access if you’ve enabled those features for your account.
 
@@ -80,7 +79,6 @@ x-casaos:
         This tutorial provides detailed steps for creating and managing a Cloudflare Tunnel.
       2. [**Phiptech Practical Guide**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         This guide offers a concise, step-by-step walkthrough for setting up Cloudflare Tunnel on local devices like ZimaOS, with practical examples to help users easily expose services to the public internet.
-
     it_IT: |
       Cloudflare Tunnel offre un modo semplice per esporre i server web in modo sicuro su internet, senza aprire porte firewall e configurare ACL. Cloudflare Tunnel assicura anche che le richieste passino attraverso Cloudflare prima di raggiungere il server web, così puoi essere sicuro che il traffico di attacco viene fermato con il WAF di Cloudflare e la mitigazione DDoS illimitata, e autenticato con Access se hai abilitato queste funzionalità per il tuo account.
 
@@ -92,7 +90,6 @@ x-casaos:
         Questo tutorial fornisce passaggi dettagliati per creare e gestire un Tunnel Cloudflare.
       2. [**Guida pratica di Phiptech**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         Questa guida offre una procedura passo-passo concisa per configurare Cloudflare Tunnel su dispositivi locali come ZimaOS, con esempi pratici per aiutare gli utenti a esporre facilmente i servizi su internet pubblico.
-
     nb_NO: |
       Cloudflare Tunnel tilbyr en enkel måte å eksponere webservere sikkert til internett, uten å åpne brannmurporter og konfigurere ACL-er. Cloudflare Tunnel sørger også for at forespørsler rutes gjennom Cloudflare før de når webserveren, slik at du kan være sikker på at angrepstrafikk stoppes med Cloudflares WAF og ubegrenset DDoS-mitigering, og autentiseres med Access hvis du har aktivert disse funksjonene for kontoen din.
 
@@ -104,7 +101,6 @@ x-casaos:
         Denne veiledningen gir detaljerte trinn for å opprette og administrere en Cloudflare Tunnel.
       2. [**Phiptech praktisk guide**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         Denne guiden tilbyr en kortfattet, trinn-for-trinn-gjennomgang for å sette opp Cloudflare Tunnel på lokale enheter som ZimaOS, med praktiske eksempler for å hjelpe brukere med å eksponere tjenester til det offentlige internett.
-
     zh_CN: |
       Cloudflare Tunnel 提供了一种简单的方法，可以安全地将 Web 服务器暴露到互联网上，而无需打开防火墙端口和配置 ACL。Cloudflare Tunnel 还确保请求在到达 Web 服务器之前通过 Cloudflare 路由，因此您可以确信攻击流量会被 Cloudflare 的 WAF 和无限制 DDoS 缓解措施阻止，如果您为帐户启用了这些功能，还会通过 Access 进行身份验证。
 
@@ -116,7 +112,6 @@ x-casaos:
         本教程提供了创建和管理 Cloudflare Tunnel 的详细步骤。
       2. [**Phiptech 实用指南**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/)：
         本指南提供了在 ZimaOS 等本地设备上设置 Cloudflare Tunnel 的简洁分步演练，并附有实用示例，帮助用户轻松将服务暴露到公共互联网。
-
     ja_JP: |
       Cloudflare Tunnel は、ファイアウォールポートを開放したり ACL を設定したりせずに、Web サーバーを安全にインターネットに公開する簡単な方法を提供します。Cloudflare Tunnel は、リクエストが Web サーバーに到達する前に Cloudflare を経由するようにすることで、攻撃トラフィックが Cloudflare の WAF および無制限の DDoS 緩和によって停止され、アカウントで有効にしている場合は Access で認証されることを保証します。
 
@@ -128,7 +123,6 @@ x-casaos:
         このチュートリアルでは、Cloudflare Tunnel を作成および管理するための詳細な手順が提供されています。
       2. [**Phiptech 実践ガイド**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         このガイドでは、ZimaOS などのローカルデバイスに Cloudflare Tunnel を設定するための簡潔なステップバイステップのウォークスルーが提供され、ユーザーがサービスをパブリックインターネットに簡単に公開できるよう実用的な例が示されています。
-
     ko_KR: |
       Cloudflare Tunnel은 방화벽 포트를 열거나 ACL을 구성하지 않고도 웹 서버를 안전하게 인터넷에 노출할 수 있는 쉬운 방법을 제공합니다. Cloudflare Tunnel은 또한 요청이 웹 서버에 도달하기 전에 Cloudflare를 통해 라우팅되도록 하여 Cloudflare의 WAF 및 무제한 DDoS 완화 기능으로 공격 트래픽이 차단되고, 계정에 대해 해당 기능을 활성화한 경우 Access를 통해 인증되도록 합니다.
 
@@ -140,7 +134,6 @@ x-casaos:
         이 튜토리얼은 Cloudflare Tunnel을 만들고 관리하는 자세한 단계를 제공합니다.
       2. [**Phiptech 실용 가이드**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         이 가이드는 ZimaOS와 같은 로컬 장치에 Cloudflare Tunnel을 설정하는 간결한 단계별 안내를 제공하며, 사용자가 서비스를 공용 인터넷에 쉽게 노출할 수 있도록 실용적인 예제를 제공합니다。
-
     fr_FR: |
       Cloudflare Tunnel offre un moyen facile d'exposer des serveurs web de manière sécurisée sur Internet, sans ouvrir de ports de pare-feu ni configurer d'ACL. Cloudflare Tunnel garantit également que les requêtes sont acheminées via Cloudflare avant d'atteindre le serveur web, vous pouvez donc être sûr que le trafic d'attaque est arrêté par le WAF de Cloudflare et la mitigation DDoS illimitée, et authentifié avec Access si vous avez activé ces fonctionnalités pour votre compte.
 
@@ -152,7 +145,6 @@ x-casaos:
         Ce tutoriel fournit des étapes détaillées pour créer et gérer un tunnel Cloudflare.
       2. [**Guide pratique de Phiptech** ](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         Ce guide propose une procédure pas à pas concise pour configurer Cloudflare Tunnel sur des appareils locaux comme ZimaOS, avec des exemples pratiques pour aider les utilisateurs à exposer facilement des services sur Internet public.
-
     de_DE: |
       Cloudflare Tunnel bietet eine einfache Möglichkeit, Webserver sicher im Internet bereitzustellen, ohne Firewall-Ports zu öffnen und ACLs zu konfigurieren. Cloudflare Tunnel stellt außerdem sicher, dass Anfragen über Cloudflare geleitet werden, bevor sie den Webserver erreichen, sodass Sie sicher sein können, dass Angriffsverkehr durch Cloudflares WAF und unbegrenzte DDoS-Abwehr gestoppt und mit Access authentifiziert wird, wenn Sie diese Funktionen für Ihr Konto aktiviert haben.
 
@@ -164,7 +156,6 @@ x-casaos:
         Dieses Tutorial bietet detaillierte Schritte zum Erstellen und Verwalten eines Cloudflare-Tunnels.
       2. [**Praktischer Leitfaden von Phiptech**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         Dieser Leitfaden bietet eine präzise, schrittweise Anleitung zum Einrichten von Cloudflare Tunnel auf lokalen Geräten wie ZimaOS, mit praktischen Beispielen, die Benutzern helfen, Dienste einfach im öffentlichen Internet bereitzustellen.
-
     sv_SE: |
       Cloudflare Tunnel erbjuder ett enkelt sätt att exponera webbservrar säkert till internet, utan att öppna brandväggsportar och konfigurera ACL:er. Cloudflare Tunnel ser också till att förfrågningar dirigeras genom Cloudflare innan de når webbservrarna, så du kan vara säker på att attacktrafik stoppas med Cloudflares WAF och obegränsad DDoS-mitigering, och autentiseras med Access om du har aktiverat dessa funktioner för ditt konto.
 
@@ -176,7 +167,6 @@ x-casaos:
         Denna handledning ger detaljerade steg för att skapa och hantera en Cloudflare Tunnel.
       2. [**Phiptechs praktiska guide**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         Denna guide erbjuder en kortfattad, steg-för-steg-genomgång för att konfigurera Cloudflare Tunnel på lokala enheter som ZimaOS, med praktiska exempel för att hjälpa användare att enkelt exponera tjänster till det offentliga internet.
-
     el_GR: |
       Το Cloudflare Tunnel προσφέρει έναν εύκολο τρόπο να εκθέσετε τους web servers σας με ασφάλεια στο διαδίκτυο, χωρίς να ανοίξετε θύρες τείχους προστασίας ή να ρυθμίσετε ACLs. Το Cloudflare Tunnel εξασφαλίζει επίσης ότι τα αιτήματα δρομολογούνται μέσω του Cloudflare πριν φτάσουν στον web server, ώστε να είστε σίγουροι ότι η κυκλοφορία επιθέσεων σταματάει με το WAF του Cloudflare και την απεριόριστη μείωση DDoS, και πιστοποιείται με το Access εάν έχετε ενεργοποιήσει αυτές τις λειτουργίες για τον λογαριασμό σας.
 
@@ -188,7 +178,6 @@ x-casaos:
         Αυτό το σεμινάριο παρέχει λεπτομερή βήματα για τη δημιουργία και τη διαχείριση ενός Cloudflare Tunnel.
       2. [**Πρακτικός οδηγός Phiptech**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         Αυτός ο οδηγός προσφέρει μια συνοπτική, βήμα-βήμα περιήγηση για τη ρύθμιση του Cloudflare Tunnel σε τοπικές συσκευές όπως το ZimaOS, με πρακτικά παραδείγματα για να βοηθήσει τους χρήστες να εκθέσουν εύκολα υπηρεσίες στο δημόσιο διαδίκτυο.
-
     hr_HR: |
       Cloudflare Tunnel nudi jednostavan način za sigurno izlaganje web poslužitelja internetu, bez otvaranja portova vatrozida i konfiguriranja ACL-ova. Cloudflare Tunnel također osigurava da se zahtjevi usmjeravaju kroz Cloudflare prije nego što stignu do web poslužitelja, tako da možete biti sigurni da se napadački promet zaustavlja pomoću Cloudflareovog WAF-a i neograničene DDoS mitigacije, te autentificira pomoću Accessa ako ste omogućili te značajke za svoj račun.
 
@@ -200,7 +189,6 @@ x-casaos:
         Ovaj vodič pruža detaljne korake za stvaranje i upravljanje Cloudflare Tunnelom.
       2. [**Phiptech praktični vodič**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         Ovaj vodič nudi sažet, korak-po-korak pregled za postavljanje Cloudflare Tunela na lokalnim uređajima poput ZimaOS-a, s praktičnim primjerima koji pomažu korisnicima da lako izlože usluge javnom internetu.
-
     pt_PT: |
       O Cloudflare Tunnel oferece uma forma fácil de expor servidores web de forma segura à internet, sem abrir portas de firewall e configurar ACLs. O Cloudflare Tunnel também garante que os pedidos são encaminhados através do Cloudflare antes de chegarem ao servidor web, para que possa ter a certeza de que o tráfego de ataque é interrompido com o WAF do Cloudflare e a mitigação DDoS ilimitada, e autenticado com o Access se tiver ativado essas funcionalidades para a sua conta.
 
@@ -212,7 +200,6 @@ x-casaos:
         Este tutorial fornece passos detalhados para criar e gerir um Cloudflare Tunnel.
       2. [**Guia prático da Phiptech**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         Este guia oferece um passo a passo conciso para configurar o Cloudflare Tunnel em dispositivos locais como o ZimaOS, com exemplos práticos para ajudar os utilizadores a expor facilmente serviços à internet pública.
-
     ru_RU: |
       Cloudflare Tunnel предлагает простой способ безопасного подключения веб-серверов к Интернету, не открывая порты брандмауэра и не настраивая ACL. Cloudflare Tunnel также обеспечивает маршрутизацию запросов через Cloudflare до того, как они достигнут веб-сервера, поэтому вы можете быть уверены, что трафик атак блокируется с помощью WAF Cloudflare и неограниченной защиты от DDoS, а также аутентифицируется с помощью Access, если вы включили эти функции для своей учетной записи.
 
@@ -224,7 +211,6 @@ x-casaos:
         Это руководство предоставляет подробные шаги по созданию и управлению Cloudflare Tunnel.
       2. [**Практическое руководство Phiptech**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
         Это руководство предлагает краткое пошаговое руководство по настройке Cloudflare Tunnel на локальных устройствах, таких как ZimaOS, с практическими примерами, помогающими пользователям легко подключать службы к общедоступному Интернету.
-
     tr_TR: |
       Cloudflare Tunnel, web sunucularını güvenli bir şekilde internete maruz bırakmanın kolay bir yolunu sunar, güvenlik duvarı portlarını açmadan ve ACL'leri yapılandırmadan. Cloudflare Tunnel ayrıca isteklerin web sunucusuna ulaşmadan önce Cloudflare üzerinden yönlendirilmesini sağlar, böylece saldırı trafiğinin Cloudflare'ın WAF ve sınırsız DDoS azaltma ile durdurulduğundan ve hesabınız için bu özellikleri etkinleştirdiyseniz Access ile kimlik doğrulandığından emin olabilirsiniz.
 
@@ -253,14 +239,15 @@ x-casaos:
     ru_RU: Демон туннелирования от Cloudflare, который безопасно открывает ваши веб-серверы в интернете.
     tr_TR: Cloudflare tarafından sunulan bir tünel servisi olup web sunucularınızı güvenli bir şekilde internete açar.
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Cloudflared/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Cloudflared/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Cloudflared/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Cloudflared/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Cloudflared/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Cloudflared/screenshot-3.png
   developer: Cloudflare Inc.
   author: WisdomSky
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Cloudflared/icon.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Cloudflared/thumbnail.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Cloudflared/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Cloudflared/thumbnail.png
   category: Developer
   title:
     en_us: Cloudflared
   port_map: '14333'
+  scheme: http

@@ -18,18 +18,18 @@ services:
         - container: TZ
           description:
             en_us: Specify a timezone to use, see this list.
-            zh_cn: "指定要使用的时区，请参阅此列表。"
-            ar_sa: "حدد المنطقة الزمنية التي ترغب في استخدامها، انظر هذه القائمة."
-            de_de: "Geben Sie eine Zeitzone an, die verwendet werden soll. Siehe diese Liste."
-            es_es: "Especifica una zona horaria para utilizar, consulta esta lista."
-            fr_fr: "Spécifiez un fuseau horaire à utiliser, consultez cette liste."
-            hu_hu: "Adja meg a használni kívánt időzónát, tekintse meg ezt a listát."
-            it_it: "Specifica un fuso orario da utilizzare, consulta questa lista."
-            ru_ru: "Укажите часовой пояс для использования, смотрите этот список."
-            pl_pl: "Określ strefę czasową do użycia, zobacz tę listę."
-            pt_br: "Especifique um fuso horário a ser usado, consulte esta lista."
-            sv_se: "Ange en tidszon att använda, se denna lista."
-            uk_ua: "Вкажіть часовий пояс, який буде використовуватися, подивіться цей список."
+            zh_cn: 指定要使用的时区，请参阅此列表。
+            ar_sa: حدد المنطقة الزمنية التي ترغب في استخدامها، انظر هذه القائمة.
+            de_de: Geben Sie eine Zeitzone an, die verwendet werden soll. Siehe diese Liste.
+            es_es: Especifica una zona horaria para utilizar, consulta esta lista.
+            fr_fr: Spécifiez un fuseau horaire à utiliser, consultez cette liste.
+            hu_hu: Adja meg a használni kívánt időzónát, tekintse meg ezt a listát.
+            it_it: Specifica un fuso orario da utilizzare, consulta questa lista.
+            ru_ru: Укажите часовой пояс для использования, смотрите этот список.
+            pl_pl: Określ strefę czasową do użycia, zobacz tę listę.
+            pt_br: Especifique um fuso horário a ser usado, consulte esta lista.
+            sv_se: Ange en tidszon att använda, se denna lista.
+            uk_ua: Вкажіть часовий пояс, який буде використовуватися, подивіться цей список.
       volumes:
         - container: /config
           description:
@@ -106,13 +106,16 @@ x-casaos:
     uk_ua: Overseerr - це інструмент керування запитами та виявлення медіа, створений для роботи з вашою існуючою екосистемою Plex.
   developer: LinuxServer.io
   author: WisdomSky
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Overseerr/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/screenshot-3.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Overseerr/icon.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Overseerr/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Overseerr/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Overseerr/screenshot-3.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Overseerr/icon.png
   title:
     en_us: Overseerr
   category: Media
   port_map: '5055'
+  scheme: http
+x-roqueos:
+  mountShared: true

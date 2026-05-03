@@ -5,14 +5,14 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "512M"
+          memory: 512M
     network_mode: bridge
     ports:
       - target: 80
-        published: "10081"
+        published: '10081'
         protocol: tcp
       - target: 443
-        published: "10443"
+        published: '10443'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -21,16 +21,14 @@ services:
         target: /var/www/html
     x-casaos:
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
-
-        - container: "443"
+        - container: '443'
           description:
             en_us: WebUI HTTPS Port
             zh_cn: WebUI HTTPS 端口
-
       volumes:
         - container: /var/www/html
           description:
@@ -42,19 +40,19 @@ x-casaos:
     - amd64
     - arm
     - arm64
-    - "386"
+    - '386'
     - mips64le
     - ppc64le
     - s390x
   main: nextcloud
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Cloud
   description:
     en_us: |
       Discover the ultimate solution for remote collaboration with Nextcloud. Unlike traditional office software, Nextcloud seamlessly integrates files, communication, and productivity tools into one platform, enhancing teamwork and streamlining your workflow. Say goodbye to the limitations of conventional tools and embrace a new era of collaboration.
-      
+
       Nextcloud stands out with its robust features tailored for every need. Enjoy secure file storage, real-time communication via Talk, comprehensive groupware, and powerful office integration, all in one place. Experience these top-notch features at an affordable price, making it accessible for everyone to elevate their collaboration game.
-      
+
       Deploying Nextcloud on a Zima private cloud device brings unparalleled convenience. Benefit from unlimited storage, secure data privacy, local network speeds, and multi-device access, ensuring you have everything you need at your fingertips.
     zh_cn: |
       发现远程协作的终极解决方案——Nextcloud。不同于传统的办公软件，Nextcloud 将文件、通信和生产力工具无缝整合到一个平台中，增强团队合作并简化您的工作流程。告别传统工具的局限，迎接协作新时代。
@@ -74,13 +72,13 @@ x-casaos:
     sv_se: Nextcloud ger dig kontroll över dina data. Lagra dina dokument, kalender, kontakter och foton på en server hemma, hos en av våra leverantörer eller i ett datacenter du litar på.
     uk_ua: Nextcloud розташовує ваші дані під вашим контролем. Зберігайте свої документи, календар, контакти та фотографії на сервері вдома, у одного з наших постачальників або у довіреному центрі даних.
   developer: Nextcloud
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nextcloud/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nextcloud/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nextcloud/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nextcloud/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nextcloud/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nextcloud/screenshot-5.png
   tagline:
     en_us: Content collaboration platform
     zh_cn: 内容协作平台
@@ -95,9 +93,12 @@ x-casaos:
     pt_br: A plataforma de produtividade que mantém você sob controle
     sv_se: Produktivitetsplattformen som håller dig i kontroll
     uk_ua: Платформа продуктивності, яка дозволяє вам залишатися під контролем
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nextcloud/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nextcloud/thumbnail.png
   tips: {}
   title:
     en_us: Nextcloud
   index: /
-  port_map: "10081"
+  port_map: '10081'
+  scheme: https
+x-roqueos:
+  mountShared: true

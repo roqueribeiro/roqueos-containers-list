@@ -1,7 +1,5 @@
 name: crafty
-# Base file from https://gitlab.com/crafty-controller/crafty-4/-/blob/dev/docker/docker-compose.yml
-version: "3"
-
+version: '3'
 services:
   crafty:
     container_name: crafty-container
@@ -10,92 +8,79 @@ services:
     environment:
       - TZ=Etc/UTC
     ports:
-      - "8111:8443" # HTTPS
-      - "8112:8123" # DYNMAP
-      - "19132:19132/udp" # BEDROCK
-      - "25500-25600:25500-25600" # MC SERVER PORT RANGE
+      - '8111:8443'
+      - '8112:8123'
+      - 19132:19132/udp
+      - 25500-25600:25500-25600
     volumes:
       - /DATA/AppData/crafty/backups:/crafty/backups
       - /DATA/AppData/crafty/logs:/crafty/logs
       - /DATA/AppData/crafty/servers:/crafty/servers
       - /DATA/AppData/crafty/config:/crafty/app/config
       - /DATA/AppData/crafty/import:/crafty/import
-
     x-casaos:
       ports:
-        - container: "19132"
+        - container: '19132'
           description:
             en_us: Minecraft Bedrock listening Port (UDP)
             zh_cn: Minecraft Bedrock监听端口 (UDP)
           protocol: udp
-
-        - container: "25565"
+        - container: '25565'
           description:
             en_us: Minecraft listening Port (TCP)
             zh_cn: Minecraft监听端口 (TCP)
           protocol: tcp
-
-        - container: "25566"
+        - container: '25566'
           description:
             en_us: Minecraft listening Port (TCP)
             zh_cn: Minecraft监听端口 (TCP)
           protocol: tcp
-
-        - container: "25567"
+        - container: '25567'
           description:
             en_us: Minecraft listening Port (TCP)
             zh_cn: Minecraft监听端口 (TCP)
           protocol: tcp
-
-        - container: "25568"
+        - container: '25568'
           description:
             en_us: Minecraft listening Port (TCP)
             zh_cn: Minecraft监听端口 (TCP)
           protocol: tcp
-
-        - container: "25569"
+        - container: '25569'
           description:
             en_us: Minecraft listening Port (TCP)
             zh_cn: Minecraft监听端口 (TCP)
           protocol: tcp
-
-        - container: "25570"
+        - container: '25570'
           description:
             en_us: Minecraft listening Port (TCP)
             zh_cn: Minecraft监听端口 (TCP)
           protocol: tcp
-
-        - container: "25565"
+        - container: '25565'
           description:
             en_us: Minecraft listening Port (UDP)
             zh_cn: Minecraft监听端口 (UDP)
           protocol: udp
-
-        - container: "25566"
+        - container: '25566'
           description:
             en_us: Minecraft listening Port (UDP)
             zh_cn: Minecraft监听端口 (UDP)
           protocol: udp
-
-        - container: "25567"
+        - container: '25567'
           description:
             en_us: Minecraft listening Port (UDP)
             zh_cn: Minecraft监听端口 (UDP)
           protocol: udp
-
-        - container: "25568"
+        - container: '25568'
           description:
             en_us: Minecraft listening Port (UDP)
             zh_cn: Minecraft监听端口 (UDP)
           protocol: udp
-
-        - container: "25569"
+        - container: '25569'
           description:
             en_us: Minecraft listening Port (UDP)
             zh_cn: Minecraft监听端口 (UDP)
           protocol: udp
-
-        - container: "25570"
+        - container: '25570'
           description:
             en_us: Minecraft listening Port (UDP)
             zh_cn: Minecraft监听端口 (UDP)
@@ -113,15 +98,15 @@ x-casaos:
     es_es: Crafty es un panel de control de Minecraft de código abierto creado con Tornado y AdminLTE, que incluye programación de servidores, una consola interactiva y la capacidad de ejecutar casi cualquier tipo de servidor de Minecraft.
     zh_cn: Crafty是一个使用Tornado和AdminLTE构建的开源Minecraft控制面板，具有服务器调度、交互式控制台和运行几乎任何类型的Minecraft服务器的功能。
   developer: Crafty Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-5.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-6.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Crafty/screenshot-7.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-6.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Crafty/screenshot-7.png
   tagline:
     en_us: Take control of your Minecraft servers.
     es_es: Toma el control de tus servidores de Minecraft.
@@ -198,4 +183,4 @@ x-casaos:
     en_us: Crafty
   index: /panel
   scheme: https
-  port_map: "8111"
+  port_map: '8111'

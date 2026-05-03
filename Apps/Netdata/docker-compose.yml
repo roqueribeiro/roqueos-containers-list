@@ -1,4 +1,3 @@
----
 name: netdata
 services:
   app:
@@ -13,11 +12,11 @@ services:
           memory: 1794M
     image: netdata/netdata:v2.8.1
     labels:
-      icon: https://icon.casaos.io/main/all/netdata.png
+      icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Netdata/icon.png
     pid: host
     ports:
       - target: 19999
-        published: "19999"
+        published: '19999'
         protocol: tcp
     restart: unless-stopped
     security_opt:
@@ -65,15 +64,16 @@ x-casaos:
   tagline:
     en_us: Real-time Performance Monitoring
     zh_cn: 实时性能监控
-  hostname: ""
+  hostname: ''
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Netdata/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Netdata/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Netdata/screenshot-3.png
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Netdata/icon.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Netdata/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Netdata/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Netdata/screenshot-3.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Netdata/icon.png
   index: /
-  port_map: "19999"
+  port_map: '19999'
   scheme: http
   store_app_id: netdata
   title:
     en_us: Netdata
+  main: app

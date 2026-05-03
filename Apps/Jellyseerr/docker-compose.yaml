@@ -15,7 +15,7 @@ services:
     ports:
       - mode: ingress
         target: 5055
-        published: "5055"
+        published: '5055'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -139,7 +139,7 @@ x-casaos:
       该工具的核心功能包括可定制的请求系统和广泛的媒体服务器整合。它允许用户通过友好的界面请求电影或剧集单季，管理员可通过简洁的管理界面快速审批请求。它支持与 Jellyfin、Emby、Plex 集成，允许用户导入和使用现有账户进行身份验证。多样化的通知渠道（如 Discord、Telegram、Email）提供实时请求状态更新，库扫描功能跟踪已有的媒体内容，确保请求不重复。
 
       它提供细粒度的权限系统，允许管理员精确控制用户访问和操作权限。移动端友好的设计便于随时随地审批请求，观影列表和黑名单功能帮助用户筛选内容。支持 PostgreSQL 和 SQLite 数据库，确保灵活的部署选项。社区支持通过 GitHub 和 Discord 提供文档和帮助，该工具以简单操作和高灵活性，提供现代化的媒体管理解决方案。
-      
+
       **主要功能:**
       - 完整的Jellyfin/Emby/Plex集成，包括用户导入和管理的身份验证。
       - 支持PostgreSQL和SQLite数据库。
@@ -398,11 +398,11 @@ x-casaos:
       - [Jellyseerr Belgeleri](https://docs.jellyseerr.dev/)
       - [Jellyseerr GitHub Deposu](https://github.com/Fallenbagel/jellyseerr)
   developer: Fallenbagel
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/screenshot-3.jpg
   tagline:
     en_US: Jellyseerr is a free and open source software application for managing requests for your media library.
     en_GB: Jellyseerr is a free and open source software application for managing requests for your media library.
@@ -419,6 +419,6 @@ x-casaos:
     pt_PT: Jellyseerr é uma aplicação de software gratuita e de código aberto para gerir pedidos da sua biblioteca multimédia.
     ru_RU: Jellyseerr - это бесплатное приложение с открытым исходным кодом для управления запросами вашей медиабиблиотеки.
     tr_TR: Jellyseerr, medya kütüphaneniz için istekleri yönetmek üzere tasarlanmış ücretsiz ve açık kaynaklı bir yazılım uygulamasıdır.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyseerr/thumbnail.jpg
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyseerr/thumbnail.jpg
   tips: {}
-  port_map: "5055"
+  port_map: '5055'

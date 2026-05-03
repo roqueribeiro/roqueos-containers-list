@@ -2,14 +2,14 @@
     "version": "2.0",
     "title": "FileBrowser",
     "name": "filebrowser",
-    "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/icon.png",
+    "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/icon.png",
     "tagline": "Upload, delete, preview, rename, edit and share your files.",
     "overview": "File Browser - Webbased File Browser including sharing functions etc.",
-    "thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/thumbnail.jpg",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/thumbnail.jpg",
     "screenshots": [
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/screenshot-1.jpg",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/screenshot-2.jpg",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/screenshot-3.jpg"
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/screenshot-1.jpg",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/screenshot-2.jpg",
+        "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/screenshot-3.jpg"
     ],
     "category": [
         "Cloud",
@@ -23,13 +23,13 @@
         "donate_link": ""
     },
     "adaptor": {
-        "name": "CasaOS Team",
-        "website": "https://www.casaos.io",
+        "name": "RoqueOS Team",
+        "website": "https://roqueos.com.br",
         "donate_text": "", 
         "donate_link": ""
     },
     "support": "https://discord.gg/knqAbbBbeX",
-    "website": "https://www.casaos.io",
+    "website": "https://roqueos.com.br",
     "container": {
         "image": "filebrowser/filebrowser:latest",
         "shell": "sh",
@@ -122,7 +122,7 @@
     },
     "changelog": {
         "latest_updates": "",
-        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/changelog.txt"
+        "url": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/changelog.txt"
     },
     "latest_update_date": "1640591843"
 }

@@ -35,7 +35,7 @@ services:
             en_us: WebUI Port
     ports:
       - target: 7777
-        published: "7777"
+        published: '7777'
         protocol: tcp
     volumes:
       - type: bind
@@ -127,14 +127,17 @@ x-casaos:
     pl_pl: Aplikacja towarzysząca od osoby trzeciej, dostępna dla właścicieli serwerów Plex, umożliwiająca użytkownikom żądanie, przeglądanie i odkrywanie treści.
     pt_br: Um aplicativo complementar de terceiros disponível para proprietários de servidores Plex, permitindo que seus usuários solicitem, revisem e descubram conteúdo.
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Petio/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Petio/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Petio/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Petio/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Petio/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Petio/screenshot-3.png
   developer: Petio Team
   author: WisdomSky
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Petio/icon.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Petio/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Petio/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Petio/icon.png
   title:
     en_us: Petio
   category: Media
   port_map: '7777'
+  scheme: http
+x-roqueos:
+  mountShared: true

@@ -35,12 +35,13 @@ x-casaos:
     en_us: Messenger for the Decentralized Web
     zh_cn: 分布式网络的通讯应用
   developer: balzack
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Databag/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Databag/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Databag/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Databag/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Databag/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Databag/screenshot-2.png
   author: Pierre Balzack
   category: Chat
   title:
     en_us: Databag
-  port_map: "7000"
+  port_map: '7000'
+  scheme: http

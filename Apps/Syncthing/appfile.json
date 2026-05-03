@@ -2,10 +2,10 @@
     "version": "2.0",
     "title": "Syncthing",
     "name": "syncthing",
-    "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Syncthing/icon.png",
+    "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Syncthing/icon.png",
     "tagline": "Free, secure, and distributed file synchronisation tool.",
     "overview": "Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes. Your data is your data alone and you deserve to choose where it is stored, whether it is shared with some third party, and how it's transmitted over the internet.",
-    "thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyfin/thumbnail.jpg",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyfin/thumbnail.jpg",
     "screenshots": [],
     "category": [
         "Backup",
@@ -18,13 +18,13 @@
         "donate_link": ""
     },
     "adaptor": {
-        "name": "CasaOS Team",
-        "website": "https://www.casaos.io",
+        "name": "RoqueOS Team",
+        "website": "https://roqueos.com.br",
         "donate_text": "", 
         "donate_link": ""
     },
     "support": "https://discord.gg/knqAbbBbeX",
-    "website": "https://www.casaos.io",
+    "website": "https://roqueos.com.br",
     "container": {
         "image": "linuxserver/syncthing:latest",
         "shell": "bash",
@@ -126,7 +126,7 @@
     "tips": {},
     "changelog":{
         "latest_updates": "",
-        "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Syncthing/changelog.txt"
+        "url": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Syncthing/changelog.txt"
     },
     "latest_update_date": "1640592395"
 }

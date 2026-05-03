@@ -44,7 +44,6 @@ services:
           description:
             en_us: Run OpenHAB as specified gid.
             zh_cn: 以指定的gid运行OpenHAB。
-
       volumes:
         - container: /etc/localtime
           description:
@@ -75,7 +74,7 @@ x-casaos:
     - arm64
     - arm
   main: openhab
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Home Automation
   description:
     en_us: The open Home Automation Bus (openHAB, pronounced ˈəʊpənˈhæb) is an open source, technology agnostic home automation platform which runs as the center of your smart home! Its ability to integrate a multitude of other devices and systems. openHAB includes other home automation systems, (smart) devices and other technologies into a single solution. To provide a uniform user interface and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved. Giving you the most flexible tool available to make almost any home automation wish come true; if you can think it, odds are that you can implement it with openHAB.
@@ -92,12 +91,12 @@ x-casaos:
     sv_se: Open Home Automation Bus (openHAB, uttalas ˈəʊpənˈhæb) är en öppen plattform för hemautomation och teknologiagnostisk som fungerar som centrum för ditt smarta hem. Sitt förmåga att integrera en mängd andra enheter och system. openHAB inkluderar andra hemautomationsystem, enheter (smart) och andra teknologier i en enda lösning. För att ge en enhetlig användargränssnitt och en gemensam tillvägagångssätt till automationsregler över hela systemet, oavsett antal tillverkare och underliggande system. Du ger dig själv den mest flexibla verktygen tillgängliga för att genomföra nästan alla dina önskemål om hemautomation; om du kan tänka dig det, är det troligt att du kan genomföra det med openHAB.
     uk_ua: Відкритий автоматизаційний домашній автобус (openHAB, проноситься ˈəʊpənˈhæb) - це відкрита платформа для автоматизації домашньої техніки і технології, яка працює як центр вашого розумного дому. Його здатність інтегрувати безліч інших пристроїв і систем. openHAB включає в себе інші системи автоматизації домашньої техніки, (розумні) пристрої і інші технології в єдину систему. Для забезпечення єдиного користувацького інтерфейсу і єдиного підходу до правил автоматизації по всій системі, незалежно від кількості виробників і підсистем. Даваючи вам найбільш гнучкий інструмент, щоб зробити майже будь-яке бажання по автоматизації дому; якщо ви можете собі це уявити, ймовірно, ви можете зробити це з openHAB.
   developer: openHAB
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenHAB/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHAB/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenHAB/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenHAB/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenHAB/screenshot-3.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenHAB/screenshot-4.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHAB/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHAB/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHAB/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHAB/screenshot-4.jpg
   tagline:
     en_us: Empowering the smart home
     zh_cn: 助力智能家居
@@ -112,9 +111,10 @@ x-casaos:
     pt_br: Empoderando o lar inteligente
     sv_se: Stärkning av smart hem
     uk_ua: Підтримка розумного дому
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenHAB/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHAB/thumbnail.png
   tips: {}
   title:
     en_us: OpenHAB
   index: /
-  port_map: "8080"
+  port_map: '8080'
+  scheme: http

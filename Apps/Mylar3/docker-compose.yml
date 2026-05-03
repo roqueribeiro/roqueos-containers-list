@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8090
-        published: "8090"
+        published: '8090'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -30,35 +30,34 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: "Run Mylar3 as specified uid."
+            en_us: Run Mylar3 as specified uid.
         - container: PGID
           description:
-            en_us: "Run Mylar3 as specified gid."
+            en_us: Run Mylar3 as specified gid.
         - container: TZ
           description:
             en_us: TimeZone
       ports:
-        - container: "8090"
+        - container: '8090'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: "Mylar3 config directory"
+            en_us: Mylar3 config directory
         - container: /comics
           description:
-            en_us: "Mylar3 Comics directory"
+            en_us: Mylar3 Comics directory
         - container: /downloads
           description:
-            en_us: "Mylar3 downloads directory"
+            en_us: Mylar3 downloads directory
     container_name: mylar3
 x-casaos:
   architectures:
     - amd64
     - arm64
   main: mylar3
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Downloader
   description:
     en_us: Mylar is an automated Comic Book (cbr/cbz) downloader program for use with NZB and torrents. Mylar allows you to create a watchlist of series that it monitors for various things (new issues, updated information, etc). It will grab, sort, and rename downloaded issues. It will also allow you to monitor weekly pull-lists for items belonging to said watchlisted series to download, as well as being able to monitor and maintain story-arcs.
@@ -75,12 +74,12 @@ x-casaos:
     sv_se: Mylar är ett automatiskt program för att ladda ner serier (cbr / cbz) för användning med NZB och torrenter. Mylar låter dig skapa en lista över serier som övervakar olika saker (nya utgåvor, uppdaterade uppgifter, etc.). Det kommer att samla in, sortera och döpa om de nedladdade utgåvorna. Det kommer också att låta dig övervaka veckovisa extraktionslistor för att ladda ner objekt som tillhör serier i övervakningslistan, samt övervaka och underhålla arkiv med historier.
     uk_ua: Mylar - це автоматична програма завантаження коміксів (cbr / cbz) для використання з NZB і торрентами. Mylar дозволяє вам створити список спостереження за серіями, який спостерігає за різними речами (нові випуски, оновлені дані тощо). Він зіб'є, відсортує і перейменує завантажені випуски. Він також дозволить вам спостерігати за тижневими списками витягування, щоб завантажити елементи, які належать до серій списку спостереження, а також спостерігати і підтримувати арки історії.
   developer: Mylar3 Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/screenshot-4.png
   tagline:
     en_us: Automatic comic book (cbr/cbz) downloader
     zh_cn: 自动漫画（cbr/cbz）下载程序
@@ -95,8 +94,11 @@ x-casaos:
     pt_br: Download automático de quadrinhos (cbr/cbz)
     sv_se: Automatisk serie (cbr/cbz) nedladdare
     uk_ua: Автоматична програма завантаження коміксів (cbr/cbz)
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/thumbnail.png
   tips: {}
   title:
     en_us: Mylar3
-  port_map: "8090"
+  port_map: '8090'
+  scheme: http
+x-roqueos:
+  mountShared: true

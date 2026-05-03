@@ -1,16 +1,33 @@
 name: Build AppStore
 
+# Builds appstore.zip on every push to main and on PR (CI artifact only).
+# Releases are now triggered EXPLICITLY by pushing semver tags (vX.Y.Z) —
+# no more automatic timestamp tags on every commit, which made it
+# impossible to pin a stable catalog version in roqueos-server consumers.
+#
+# How to release:
+#   git tag -a v1.2.3 -m "Release v1.2.3"
+#   git push origin v1.2.3
+
 on:
   push:
     branches: [main]
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'              # only semver tags trigger release
+      - 'v[0-9]+.[0-9]+.[0-9]+-*'            # pre-releases (v1.0.0-beta.1)
   pull_request:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   build:
+    name: Build appstore.zip
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 5
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -18,21 +35,25 @@ jobs:
       - name: Create appstore.zip
         run: |
           zip -r appstore.zip Apps category-list.json recommend-list.json featured-apps.json -x "*.git*"
+          ls -lh appstore.zip
 
-      - name: Upload artifact
+      - name: Upload artifact (CI builds)
         uses: actions/upload-artifact@v4
         with:
           name: appstore
           path: appstore.zip
+          retention-days: 30
 
   release:
+    name: Publish release (only on vX.Y.Z tag)
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    
+    if: startsWith(github.ref, 'refs/tags/v')
+    timeout-minutes: 10
+
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -41,26 +62,42 @@ jobs:
         run: |
           zip -r appstore.zip Apps category-list.json recommend-list.json featured-apps.json -x "*.git*"
 
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
+      - name: Extract version from tag
+        id: version
+        run: echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
-      - name: Create Release
+      - name: Determine if pre-release
+        id: prerelease
+        run: |
+          if [[ "${{ steps.version.outputs.version }}" == *-* ]]; then
+            echo "is_prerelease=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_prerelease=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ steps.date.outputs.date }}
-          name: AppStore ${{ steps.date.outputs.date }}
+          tag_name: ${{ steps.version.outputs.version }}
+          name: ${{ steps.version.outputs.version }}
           files: appstore.zip
           generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: ${{ steps.prerelease.outputs.is_prerelease }}
+          body: |
+            ## RoqueOS Containers List ${{ steps.version.outputs.version }}
 
-      - name: Update latest release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: latest
-          name: Latest AppStore
-          files: appstore.zip
-          prerelease: false
+            Download `appstore.zip` and add the URL below to your RoqueOS / CasaOS dashboard:
+
+            ```
+            https://github.com/${{ github.repository }}/releases/download/${{ steps.version.outputs.version }}/appstore.zip
+            ```
+
+            For the always-latest release (rolling), use:
+
+            ```
+            https://github.com/${{ github.repository }}/releases/latest/download/appstore.zip
+            ```
+
+            See [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for human-readable notes.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

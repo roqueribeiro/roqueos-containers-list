@@ -15,14 +15,13 @@ services:
       - SECRETKEY_PATH=/root/.flowise
       - LOG_PATH=/root/.flowise/logs
       - BLOB_STORAGE_PATH=/root/.flowise/storage
-      - FLOWISE_USERNAME=casaos
-      - FLOWISE_PASSWORD=casaos
+      - FLOWISE_USERNAME=roqueos
+      - FLOWISE_PASSWORD=roqueos
     ports:
-      - 3025:3025
+      - '3025:3025'
     volumes:
       - /DATA/AppData/$AppID:/root/.flowise
     entrypoint: /bin/sh -c "sleep 3; flowise start"
-
 x-casaos:
   architectures:
     - amd64
@@ -31,12 +30,12 @@ x-casaos:
   category: Developer
   author: Flowise
   developer: Flowise
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FlowiseAi/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FlowiseAi/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FlowiseAi/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FlowiseAi/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FlowiseAi/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FlowiseAi/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FlowiseAi/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FlowiseAi/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FlowiseAi/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FlowiseAi/screenshot-4.png
   description:
     en_US: |
       Flowise is a generative AI development platform for building AI agents and LLM workflows. An intuitive interface with a visual editor simplifies complex workflow design, ideal for developers creating diverse AI applications, from chatbots to data processing pipelines.
@@ -363,6 +362,6 @@ x-casaos:
     tr_TR: AI Ajanları ve LLM iş akışları oluşturmak için açık kaynak generatif AI geliştirme platformu
   title:
     en_US: Flowise
-  port_map: "3025"
+  port_map: '3025'
   scheme: http
   index: /

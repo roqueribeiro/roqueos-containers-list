@@ -3,18 +3,18 @@ services:
   freshrss:
     restart: unless-stopped
     environment:
-      TZ: ""
-      CRON_MIN: "1,31"
+      TZ: ''
+      CRON_MIN: 1,31
     image: freshrss/freshrss:1.27.1
     network_mode: bridge
     ports:
       - target: 80
-        published: "8749"
+        published: '8749'
         protocol: tcp
     volumes:
       - type: bind
         source: /DATA/AppData/freshrss/data
-        target: /var/www/FreshRSS/data 
+        target: /var/www/FreshRSS/data
       - type: bind
         source: /DATA/AppData/freshrss/extensions
         target: /var/www/FreshRSS/extensions
@@ -27,11 +27,11 @@ services:
           description:
             en_us: Set cron job interval to refresh feeds.
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_us: GUI HTTP port
       volumes:
-        - container: /var/www/FreshRSS/data 
+        - container: /var/www/FreshRSS/data
           description:
             en_us: FreshRSS data directory
         - container: /var/www/FreshRSS/extensions
@@ -61,9 +61,9 @@ x-casaos:
     sv_se: FreshRSS är en självhanterad RSS- och Atom-flödesaggregator. Det är lättviktigt, enkelt att arbeta med, kraftfullt och anpassningsbart.
     uk_ua: FreshRSS - це саморозміщений агрегатор RSS та Atom-стрічок. Він легкий, простий у роботі, потужний і налаштовується.
   developer: FreshRSS
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FreshRSS/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FreshRSS/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FreshRSS/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FreshRSS/screenshot-1.png
   tagline:
     en_us: A free, self-hostable news aggregator…
     zh_cn: 一个免费的、可自行托管的新闻聚合器...
@@ -77,7 +77,7 @@ x-casaos:
     pt_br: Um agregador de notícias gratuito e auto-hospedável...
     sv_se: En gratis, självhanterlig nyhetsaggregator ...
     uk_ua: Безкоштовний агрегатор новин, що саморозміщується...
-  port_map: "8749"
+  port_map: '8749'
   scheme: http
   store_app_id: freshrss
   title:

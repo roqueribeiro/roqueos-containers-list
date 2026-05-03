@@ -12,30 +12,31 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-      CPU_FALLBACK: "true"
+      CPU_FALLBACK: 'true'
       NVIDIA_VISIBLE_DEVICES: all
     image: linuxserver/jellyfin:10.10.6
     deploy:
       resources:
         reservations:
-          memory: "256M"
+          memory: 256M
           devices:
             - driver: nvidia
               count: all
-              capabilities: [gpu]
+              capabilities:
+                - gpu
     network_mode: bridge
     ports:
       - target: 8096
-        published: "8097"
+        published: '8097'
         protocol: tcp
       - target: 8920
-        published: "8921"
+        published: '8921'
         protocol: tcp
       - target: 7359
-        published: "7359"
+        published: '7359'
         protocol: tcp
       - target: 1900
-        published: "1901"
+        published: '1901'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -67,26 +68,22 @@ services:
             en_us: The autodiscovery response domain or IP address.
             zh_cn: 自动发现响应域名或IP地址
       ports:
-        - container: "8096"
+        - container: '8096'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
-
-        - container: "8920"
+        - container: '8920'
           description:
             en_us: WebUI HTTPS Port
             zh_cn: WebUI HTTPS端口
-
-        - container: "7359"
+        - container: '7359'
           description:
             en_us: Jellyfin auto-discovery Port
             zh_cn: Jellyfin自动发现端口
-
-        - container: "1900"
+        - container: '1900'
           description:
             en_us: Jellyfin DLNA Port
             zh_cn: Jellyfin DLNA端口
-
       volumes:
         - container: /config
           description:
@@ -106,7 +103,7 @@ x-casaos:
     - amd64
     - arm64
   main: jellyfin
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Media
   description:
     en_us: |
@@ -133,11 +130,11 @@ x-casaos:
     sv_se: Jellyfin gör det möjligt att samla in, hantera och strömma dina medier. Kör Jellyfin-servern på ditt system och få tillgång till ledande underhållningssystem med fri mjukvara, med klockor och dekorationer inkluderade.
     uk_ua: Jellyfin дозволяє збирати, керувати та транслювати вашу медіаінформацію. Запустіть сервер Jellyfin на своєму системі та отримайте доступ до лідерської системи розваг з відкритим програмним забезпеченням, включаючи дзвінки та оздоблення.
   developer: Jellyfin
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyfin/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyfin/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyfin/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyfin/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyfin/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyfin/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyfin/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyfin/screenshot-3.png
   tagline:
     en_us: The personal Media System
     zh_cn: 个人媒体系统
@@ -152,9 +149,12 @@ x-casaos:
     pt_br: Coloca você no controle de seus meios de comunicação.
     sv_se: Lägger dig i centrum av dina medier.
     uk_ua: Помагає вам контролювати вашу медіаінформацію.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyfin/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyfin/thumbnail.png
   tips: {}
   title:
     en_us: Jellyfin(Nvidia GPU)
   index: /
-  port_map: "8097"
+  port_map: '8097'
+  scheme: http
+x-roqueos:
+  mountShared: true

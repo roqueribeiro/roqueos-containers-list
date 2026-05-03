@@ -11,7 +11,7 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: "3009"
+        published: '3009'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -25,7 +25,7 @@ services:
             en_us: TimeZone
             zh_cn: 时区
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
@@ -133,12 +133,12 @@ x-casaos:
 
       Güçlü yönetim özellikleriyle VoceChat, üyeler ve kanallar üzerinde kolay yönetim imkanı sunar, ekibinizin veya grubunuzun iletişim ortamı üzerinde tam kontrol sağlar. Bireysel kullanıcılar veya kurumsal ekipler için VoceChat, güvenli, çok yönlü ve verimli bir sohbet çözümü sunar.
   developer: Privoce
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/screenshot-4.png
   tagline:
     en_US: Have a Private Social Space Hosted on Your Site
     en_GB: Have a Private Social Space Hosted on Your Site
@@ -155,9 +155,10 @@ x-casaos:
     pt_PT: Tenha um Espaço Social Privado Hospedado no Seu Site
     ru_RU: Создайте Приватное Социальное Пространство на Вашем Сайте
     tr_TR: Sitenizde Barındırılan Özel Bir Sosyal Alan Sahip Olun
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/VoceChat/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/thumbnail.png
   tips: {}
   title:
     en_us: VoceChat
   index: /
-  port_map: "3009"
+  port_map: '3009'
+  scheme: http

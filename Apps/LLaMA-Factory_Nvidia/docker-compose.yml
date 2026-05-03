@@ -5,26 +5,26 @@ services:
     container_name: llama-factory-nvidia
     ports:
       - target: 7860
-        published: "18877"
+        published: '18877'
         protocol: tcp
     tty: true
     stdin_open: true
-    command: [
-      "llamafactory-cli",
-      "webui"
-    ]
+    command:
+      - llamafactory-cli
+      - webui
     deploy:
       resources:
         reservations:
           memory: 6G
           devices:
             - driver: nvidia
-              count: "all"
-              capabilities: [gpu]
+              count: all
+              capabilities:
+                - gpu
     restart: unless-stopped
     x-casaos:
       ports:
-        - container: "7860"
+        - container: '7860'
           description:
             de_DE: LLaMA Factory Web UI Port
             el_GR: Θύρα Διεπαφής Ιστού LLaMA Factory
@@ -41,7 +41,6 @@ services:
             sv_SE: LLaMA Factory webbgränssnitt port
             tr_TR: LLaMA Factory Web Arayüzü Portu
             zh_CN: LLaMA Factory Web UI 端口
-
 x-casaos:
   architectures:
     - amd64
@@ -299,16 +298,16 @@ x-casaos:
 
       **硬件要求:**
       - GPU: 需要支持CUDA的NVIDIA GPU
-      
+
       **了解更多:**
       - [GitHub Repository](https://github.com/hiyouga/LLaMA-Factory)
       - [官方文档](https://llamafactory.readthedocs.io/)
   developer: hiyouga
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/LLaMA-Factory_Nvidia/icon.png
-  screenshot_link: 
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/LLaMA-Factory_Nvidia/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/LLaMA-Factory_Nvidia/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/LLaMA-Factory_Nvidia/screenshot-3.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LLaMA-Factory_Nvidia/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LLaMA-Factory_Nvidia/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LLaMA-Factory_Nvidia/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LLaMA-Factory_Nvidia/screenshot-3.png
   tagline:
     de_DE: Einheitliche LLM-Feinabstimmung mit 100+ Modellen
     el_GR: Ενοποιημένη ρύθμιση LLM με 100+ μοντέλα
@@ -344,4 +343,4 @@ x-casaos:
   index: /
   scheme: http
   main: llama-factory-nvidia
-  port_map: "18877"
+  port_map: '18877'

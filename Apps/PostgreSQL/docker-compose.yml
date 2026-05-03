@@ -5,14 +5,14 @@ services:
       PUID: $PUID
       PGID: $PGID
       TZ: $TZ
-      POSTGRES_USER: casaos
-      POSTGRES_PASSWORD: casaos
-      POSTGRES_DB: casaos
+      POSTGRES_USER: roqueos
+      POSTGRES_PASSWORD: roqueos
+      POSTGRES_DB: roqueos
     image: postgres:17.4
     deploy:
       resources:
         reservations:
-          memory: "2048M"
+          memory: 2048M
     restart: unless-stopped
     x-casaos:
       envs:
@@ -37,10 +37,10 @@ services:
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_us: "Directory where Postgres database data is stored"
+            en_us: Directory where Postgres database data is stored
     ports:
       - target: 5432
-        published: "5432"
+        published: '5432'
         protocol: tcp
     volumes:
       - type: bind
@@ -143,29 +143,30 @@ x-casaos:
 
       PostgreSQL은 많은 웹 애플리케이션 및 모바일 및 분석 애플리케이션에서 기본 데이터베이스로 사용됩니다.
   tagline:
-    en_us: "PostgreSQL is an advanced, enterprise-class, and open-source relational database system. PostgreSQL supports both SQL (relational) and JSON (non-relational) querying."
-    zh_cn: "PostgreSQL 是一种先进的、企业级的、开源的关系型数据库系统。PostgreSQL 支持 SQL（关系型）和 JSON（非关系型）查询。"
-    ar_sa: "PostgreSQL هو نظام قاعدة بيانات علاقية متقدمة ومتطورة ومفتوح المصدر. يدعم PostgreSQL استعلامات SQL (العلاقية) و JSON (غير العلاقية)."
-    de_de: "PostgreSQL ist ein fortschrittliches, unternehmensfähiges und Open-Source-Relationales-Datenbank-System. PostgreSQL unterstützt sowohl SQL (relationale) als auch JSON (nicht-relationale) Abfragen."
-    es_es: "PostgreSQL es un sistema de base de datos relacional avanzado, de clase empresarial y de código abierto. PostgreSQL admite consultas tanto SQL (relacional) como JSON (no relacional)."
-    fr_fr: "PostgreSQL est un système de gestion de base de données relationnelle avancé, de classe entreprise et open source. PostgreSQL prend en charge à la fois les requêtes SQL (relationnelles) et JSON (non relationnelles)."
-    hu_hu: "A PostgreSQL egy fejlett, vállalati szintű, nyílt forráskódú relációs adatbázis rendszer. A PostgreSQL támogatja mind a SQL (relációs), mind a JSON (nem relációs) lekérdezéseket."
-    it_it: "PostgreSQL è un sistema di database relazionale avanzato, di classe enterprise e open source. PostgreSQL supporta sia le query SQL (relazionali) che le query JSON (non relazionali)."
-    ru_ru: "PostgreSQL - это продвинутая, корпоративного класса, открытая реляционная система управления базами данных. PostgreSQL поддерживает как SQL (реляционный), так и JSON (нереляционный) запросы."
-    pl_pl: "PostgreSQL to zaawansowany, przeznaczony do zastosowań przedsiębiorczych i dostępny jako oprogramowanie open source system baz danych relacyjnych. PostgreSQL obsługuje zarówno zapytania SQL (relacyjne), jak i zapytania JSON (nierelacyjne)."
-    pt_br: "O PostgreSQL é um sistema avançado de banco de dados relacional, de classe empresarial e de código aberto. O PostgreSQL suporta tanto consultas SQL (relacionais) quanto consultas JSON (não relacionais)."
-    sv_se: "PostgreSQL är ett avancerat, företagsklassat och öppen källkod-relationellt databassystem. PostgreSQL stöder både SQL (relationell) och JSON (icke-relationell) frågning."
-    uk_ua: "PostgreSQL - це передова, корпоративного класу та відкрита система управління реляційними базами даних. PostgreSQL підтримує як SQL (реляційний), так і JSON (нереляційний) запити."
+    en_us: PostgreSQL is an advanced, enterprise-class, and open-source relational database system. PostgreSQL supports both SQL (relational) and JSON (non-relational) querying.
+    zh_cn: PostgreSQL 是一种先进的、企业级的、开源的关系型数据库系统。PostgreSQL 支持 SQL（关系型）和 JSON（非关系型）查询。
+    ar_sa: PostgreSQL هو نظام قاعدة بيانات علاقية متقدمة ومتطورة ومفتوح المصدر. يدعم PostgreSQL استعلامات SQL (العلاقية) و JSON (غير العلاقية).
+    de_de: PostgreSQL ist ein fortschrittliches, unternehmensfähiges und Open-Source-Relationales-Datenbank-System. PostgreSQL unterstützt sowohl SQL (relationale) als auch JSON (nicht-relationale) Abfragen.
+    es_es: PostgreSQL es un sistema de base de datos relacional avanzado, de clase empresarial y de código abierto. PostgreSQL admite consultas tanto SQL (relacional) como JSON (no relacional).
+    fr_fr: PostgreSQL est un système de gestion de base de données relationnelle avancé, de classe entreprise et open source. PostgreSQL prend en charge à la fois les requêtes SQL (relationnelles) et JSON (non relationnelles).
+    hu_hu: A PostgreSQL egy fejlett, vállalati szintű, nyílt forráskódú relációs adatbázis rendszer. A PostgreSQL támogatja mind a SQL (relációs), mind a JSON (nem relációs) lekérdezéseket.
+    it_it: PostgreSQL è un sistema di database relazionale avanzato, di classe enterprise e open source. PostgreSQL supporta sia le query SQL (relazionali) che le query JSON (non relazionali).
+    ru_ru: PostgreSQL - это продвинутая, корпоративного класса, открытая реляционная система управления базами данных. PostgreSQL поддерживает как SQL (реляционный), так и JSON (нереляционный) запросы.
+    pl_pl: PostgreSQL to zaawansowany, przeznaczony do zastosowań przedsiębiorczych i dostępny jako oprogramowanie open source system baz danych relacyjnych. PostgreSQL obsługuje zarówno zapytania SQL (relacyjne), jak i zapytania JSON (nierelacyjne).
+    pt_br: O PostgreSQL é um sistema avançado de banco de dados relacional, de classe empresarial e de código aberto. O PostgreSQL suporta tanto consultas SQL (relacionais) quanto consultas JSON (não relacionais).
+    sv_se: PostgreSQL är ett avancerat, företagsklassat och öppen källkod-relationellt databassystem. PostgreSQL stöder både SQL (relationell) och JSON (icke-relationell) frågning.
+    uk_ua: PostgreSQL - це передова, корпоративного класу та відкрита система управління реляційними базами даних. PostgreSQL підтримує як SQL (реляційний), так і JSON (нереляційний) запити.
   developer: PostgreSQL Global Dev't Group
   author: WisdomSky
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PostgreSQL/icon.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PostgreSQL/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PostgreSQL/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PostgreSQL/icon.png
   tips:
     before_install:
       en_us: |
-        Default user: `casaos`
-        Default password: `casaos`
-        Default database: `casaos`
+        Default user: `roqueos`
+        Default password: `roqueos`
+        Default database: `roqueos`
   title:
     en_us: PostgreSQL
   category: Developer
+  scheme: http

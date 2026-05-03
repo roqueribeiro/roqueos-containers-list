@@ -5,11 +5,11 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "128M"
+          memory: 128M
     network_mode: bridge
     ports:
       - target: 8000
-        published: "8000"
+        published: '8000'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -27,7 +27,7 @@ services:
       - DEBUG=FALSE
     x-casaos:
       ports:
-        - container: "8000"
+        - container: '8000'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -178,13 +178,13 @@ x-casaos:
 
       PdfDing'i Zima gibi özel bulut cihazlarında dağıtmak, çok cihazlı erişimle benzersiz kolaylık getirir ve PDF koleksiyonunuzun nerede olursanız olun her zaman elinizin altında ve güvenli olmasını sağlar.
   developer: mrmn2
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PdfDing/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PdfDing/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PdfDing/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PdfDing/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PdfDing/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PdfDing/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PdfDing/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PdfDing/screenshot-3.png
   main: pdfding
-  port_map: "8000"
+  port_map: '8000'
   scheme: http
   tagline:
     en_US: Selfhosted PDF manager, viewer and editor
@@ -202,7 +202,7 @@ x-casaos:
     pt_PT: Gestor, visualizador e editor PDF auto-hospedado
     ru_RU: Самостоятельно размещаемый менеджер, просмотрщик и редактор PDF
     tr_TR: Kendi kendine barındırılan PDF yöneticisi, görüntüleyicisi ve düzenleyicisi
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PdfDing/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PdfDing/thumbnail.png
   tips:
     before_install:
       en_US: |
@@ -265,6 +265,5 @@ x-casaos:
         Kurulumdan sonra PdfDing'e http://your-server-ip:8000 adresinden erişebilirsiniz. İlk kurulum sırasında ilk yönetici hesabınızı oluşturun.
 
         Not: Erişim sorunlarıyla karşılaşırsanız, docker-compose.yml dosyasını manuel olarak düzenlemeniz ve HOST_NAME ortam değişkenini gerçek sunucu IP adresinizle değiştirmeniz gerekebilir.
-
   title:
     en_US: PdfDing

@@ -2,13 +2,13 @@
 	"version": "0.14.0",
 	"title": "Memos",
 	"name": "Memos",
-	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/icon.png",
+	"icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/icon.png",
 	"tagline": "A lightweight, self-hosted memo hub. Open Source and Free forever.",
 	"overview": "A lightweight, self-hosted memo hub. Open Source and Free forever.",
-	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/thumbnail.png",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/thumbnail.png",
 	"screenshots": [
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-1.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-2.png"
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/screenshot-1.png",
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/screenshot-2.png"
 	],
 	"category": ["Notes"],
 	"developer": {

@@ -31,7 +31,7 @@ services:
     hostname: ddns-updater
     ports:
       - target: 8000
-        published: "8000"
+        published: '8000'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -40,7 +40,7 @@ services:
         target: /updater/data
     x-casaos:
       ports:
-        - container: "8000"
+        - container: '8000'
           description:
             en_us: WebUI HTTP Port
       volumes:
@@ -58,10 +58,10 @@ x-casaos:
     en_us: Program to keep DNS A and/or AAAA records updated for multiple DNS providers
   developer: qmcgaw
   screenshot:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/DDNS-Updater/screenshot-1.png
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/DDNS-Updater/icon.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DDNS-Updater/screenshot-1.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DDNS-Updater/icon.png
   main: ddns-updater
-  port_map: "8000"
+  port_map: '8000'
   scheme: http
   tagline:
     en_us: Simple and easy to use DDNS

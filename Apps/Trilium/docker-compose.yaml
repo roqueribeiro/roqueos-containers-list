@@ -6,13 +6,13 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "256M"
+          memory: 256M
     image: triliumnext/trilium:v0.99.3
     labels:
-      icon: https://icon.casaos.io/main/all/trilium.png
+      icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/icon.png
     ports:
       - target: 8080
-        published: "8088"
+        published: '8088'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -51,7 +51,7 @@ x-casaos:
       The tool's core features include hierarchical note organization and rich editing. Users can arrange notes in an arbitrarily deep tree structure, with single notes clonable to multiple locations. It supports a WYSIWYG editor with tables, images, math, and Markdown autoformatting for efficiency. Code notes feature syntax highlighting, while fast navigation includes full-text search and note hoisting. Seamless versioning and note attributes enable organization, querying, and advanced scripting.
 
       It offers secure login (OpenID, TOTP), supports self-hosted synchronization servers or third-party services, and provides per-note encryption for privacy. Users can sketch diagrams with Excalidraw, create relation/link maps, mind maps with Mind Elixir, and geo maps with location pins and GPX tracks. A REST API enables automation, with scalability for over 100,000 notes. Touch-optimized mobile frontend, dark theme, user themes, Evernote/Markdown import/export, and Web Clipper enhance usability.
-    
+
       **Key Features:**
       - Notes can be arranged into arbitrarily deep tree. Single note can be placed into multiple places in the tree (see [cloning](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Rich WYSIWYG note editor including e.g. tables, images and [math](https://triliumnext.github.io/Docs/Wiki/text-notes) with markdown [autoformat](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
@@ -77,7 +77,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) for easy saving of web content
       - Customizable UI (sidebar buttons, user-defined widgets,...)
       - [Metrics](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), along with a [Grafana Dashboard](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Learn More:**
       - [TriliumNext GitHub Repository](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) for 3rd party themes, scripts, plugins and more
@@ -88,7 +88,7 @@ x-casaos:
       The tool's core features include hierarchical note organisation and rich editing. Users can arrange notes in an arbitrarily deep tree structure, with single notes clonable to multiple locations. It supports a WYSIWYG editor with tables, images, maths, and Markdown autoformatting for efficiency. Code notes feature syntax highlighting, whilst fast navigation includes full-text search and note hoisting. Seamless versioning and note attributes enable organisation, querying, and advanced scripting.
 
       It offers secure login (OpenID, TOTP), supports self-hosted synchronisation servers or third-party services, and provides per-note encryption for privacy. Users can sketch diagrams with Excalidraw, create relation/link maps, mind maps with Mind Elixir, and geo maps with location pins and GPX tracks. A REST API enables automation, with scalability for over 100,000 notes. Touch-optimised mobile frontend, dark theme, user themes, Evernote/Markdown import/export, and Web Clipper enhance usability.
-    
+
       **Key Features:**
       - Notes can be arranged into arbitrarily deep tree. Single note can be placed into multiple places in the tree (see [cloning](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Rich WYSIWYG note editor including e.g. tables, images and [maths](https://triliumnext.github.io/Docs/Wiki/text-notes) with markdown [autoformat](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
@@ -114,7 +114,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) for easy saving of web content
       - Customisable UI (sidebar buttons, user-defined widgets,...)
       - [Metrics](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), along with a [Grafana Dashboard](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Learn More:**
       - [TriliumNext GitHub Repository](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) for 3rd party themes, scripts, plugins and more
@@ -125,7 +125,7 @@ x-casaos:
       Le caratteristiche principali dello strumento includono l'organizzazione gerarchica delle note e la modifica ricca. Gli utenti possono organizzare le note in una struttura ad albero di profondità arbitraria, con singole note clonabili in più posizioni. Supporta un editor WYSIWYG con tabelle, immagini, matematica e formattazione automatica Markdown per l'efficienza. Le note di codice presentano evidenziazione della sintassi, mentre la navigazione veloce include ricerca full-text e sollevamento delle note. Controllo delle versioni senza soluzione di continuità e attributi delle note consentono organizzazione, interrogazione e scripting avanzato.
 
       Offre login sicuro (OpenID, TOTP), supporta server di sincronizzazione auto-ospitati o servizi di terze parti, e fornisce crittografia per nota per la privacy. Gli utenti possono schizzare diagrammi con Excalidraw, creare mappe di relazioni/collegamenti, mappe mentali con Mind Elixir, e geo-mappe con pin di posizione e tracce GPX. Un'API REST abilita l'automazione, con scalabilità per oltre 100.000 note. Frontend mobile ottimizzato per il tocco, tema scuro, temi utente, importazione/esportazione Evernote/Markdown, e Web Clipper migliorano l'usabilità.
-    
+
       **Caratteristiche Principali:**
       - Le note possono essere organizzate in albero di profondità arbitraria. Una singola nota può essere posizionata in più posti nell'albero (vedi [clonazione](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Editor di note WYSIWYG ricco includendo ad es. tabelle, immagini e [matematica](https://triliumnext.github.io/Docs/Wiki/text-notes) con [formattazione automatica](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat) markdown
@@ -151,7 +151,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) per il salvataggio facile di contenuti web
       - UI personalizzabile (pulsanti della barra laterale, widget definiti dall'utente,...)
       - [Metriche](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), insieme a un [Dashboard Grafana](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Ulteriori Informazioni:**
       - [Repository GitHub TriliumNext](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) per temi, script, plugin di terze parti e altro
@@ -162,7 +162,7 @@ x-casaos:
       Verktøyets kjernefunksjoner inkluderer hierarkisk notatorganisering og rik redigering. Brukere kan arrangere notater i en vilkårlig dyp trestruktur, med enkeltnotater som kan klones til flere steder. Det støtter en WYSIWYG-editor med tabeller, bilder, matematikk og Markdown autoformatering for effektivitet. Kodenotater har syntaksutheving, mens rask navigasjon inkluderer fulltekstsøk og notathøyning. Sømløs versjonshåndtering og notatattributter muliggjør organisering, spørring og avansert skripting.
 
       Det tilbyr sikker pålogging (OpenID, TOTP), støtter selvhostede synkroniseringsservere eller tredjepartstjenester, og gir per-notat-kryptering for personvern. Brukere kan skissere diagrammer med Excalidraw, lage relasjons-/kobling-kart, tankekart med Mind Elixir, og geo-kart med posisjonsmerker og GPX-spor. En REST API muliggjør automatisering, med skalerbarhet for over 100 000 notater. Berøringsoptimalisert mobil frontend, mørkt tema, brukertemaer, Evernote/Markdown import/eksport, og Web Clipper forbedrer brukervennlighet.
-    
+
       **Hovedfunksjoner:**
       - Notater kan arrangeres i vilkårlig dypt tre. Enkeltnotat kan plasseres i flere steder i treet (se [kloning](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Rik WYSIWYG-notatredigerer inkludert f.eks. tabeller, bilder og [matematikk](https://triliumnext.github.io/Docs/Wiki/text-notes) med markdown [autoformat](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
@@ -188,7 +188,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) for enkel lagring av webinnhold
       - Tilpassbart brukergrensesnitt (sidelinjeknapper, brukerdefinerte widgets,...)
       - [Målinger](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), sammen med et [Grafana Dashboard](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Lær mer:**
       - [TriliumNext GitHub Repository](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) for tredjepartstemaer, skript, plugins og mer
@@ -199,7 +199,7 @@ x-casaos:
       该工具的核心功能包括层级笔记组织和丰富的编辑体验。用户可将笔记组织成任意深度的树状结构，单条笔记可通过克隆功能放置于多处。支持包含表格、图片和数学公式的 所见即所得笔记编辑功能，Markdown 自动格式化提升效率。代码笔记支持语法高亮，导航快速便捷，包含全文搜索和笔记提升功能。无缝版本控制和笔记属性支持组织、查询及高级脚本编写。
 
       它提供安全的登录方式（OpenID 和 TOTP），支持自托管同步服务器及第三方同步服务，笔记可加密并按笔记粒度设置，保障隐私。用户可通过 Excalidraw 绘制图表，创建关系图、思维导图及地理地图，REST API 实现自动化。工具支持超过 10 万条笔记的高效扩展，触控优化的移动端界面、暗色主题及自定义界面增强体验。支持 Evernote 和 Markdown 导入导出，以及网页剪辑功能。
-    
+
       **主要功能：**
       - 笔记可组织成任意深度的树状结构。单条笔记可放置于树中的多个位置（见[克隆](https://triliumnext.github.io/Docs/Wiki/cloning-notes)）
       - 丰富的所见即所得笔记编辑功能，包括表格、图片和[数学公式](https://triliumnext.github.io/Docs/Wiki/text-notes)，支持 markdown [自动格式化](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
@@ -225,7 +225,7 @@ x-casaos:
       - 用于轻松保存网页内容的[网页剪辑器](https://triliumnext.github.io/Docs/Wiki/web-clipper)
       - 可定制的界面（侧边栏按钮、用户定义的小部件等）
       - [指标](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md)，以及 [Grafana 仪表板](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **了解更多：**
       - [TriliumNext GitHub 仓库](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) 获取第三方主题、脚本、插件等
@@ -236,7 +236,7 @@ x-casaos:
       このツールの中核機能には、階層ノート整理と豊富な編集が含まれます。ユーザーは任意の深さのツリー構造でノートを整理でき、単一のノートを複数の場所にクローンできます。効率性のためのテーブル、画像、数学、Markdownオートフォーマットを備えたWYSIWYGエディターをサポートします。コードノートは構文ハイライト機能があり、高速ナビゲーションには全文検索とノートホイスティングが含まれます。シームレスなバージョン管理とノート属性により、整理、クエリ、高度なスクリプトが可能になります。
 
       安全なログイン（OpenID、TOTP）を提供し、セルフホストされた同期サーバーまたはサードパーティサービスをサポートし、プライバシーのためのノート単位の暗号化を提供します。ユーザーはExcalidrawで図を描き、関係/リンクマップ、Mind Elixirでマインドマップ、位置ピンとGPXトラックを備えたジオマップを作成できます。REST APIが自動化を可能にし、100,000以上のノートにスケーラビリティがあります。タッチ最適化されたモバイルフロントエンド、ダークテーマ、ユーザーテーマ、Evernote/Markdownインポート/エクスポート、Web Clipperが使いやすさを向上させます。
-    
+
       **主な機能：**
       - ノートは任意の深さのツリーに配置できます。単一のノートをツリーの複数の場所に配置できます（[クローニング](https://triliumnext.github.io/Docs/Wiki/cloning-notes)を参照）
       - テーブル、画像、[数学](https://triliumnext.github.io/Docs/Wiki/text-notes)とmarkdown[オートフォーマット](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)を含む豊富なWYSIWYGノートエディター
@@ -262,7 +262,7 @@ x-casaos:
       - Webコンテンツの簡単な保存のための[Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper)
       - カスタマイズ可能なUI（サイドバーボタン、ユーザー定義ウィジェット等）
       - [メトリクス](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md)、[Grafanaダッシュボード](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)と一緒に
-    
+
       **詳細情報:**
       - [TriliumNext GitHubリポジトリ](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) サードパーティのテーマ、スクリプト、プラグインなど
@@ -273,7 +273,7 @@ x-casaos:
       이 도구의 핵심 기능은 계층 노트 정리와 풍부한 편집을 포함합니다. 사용자는 임의의 깊이 트리 구조로 노트를 정렬할 수 있으며, 단일 노트를 여러 위치에 복제할 수 있습니다. 효율성을 위한 테이블, 이미지, 수학, Markdown 자동 서식과 함께 WYSIWYG 편집기를 지원합니다. 코드 노트는 구문 강조 기능이 있으며, 빠른 탐색에는 전체 텍스트 검색과 노트 호이스팅이 포함됩니다. 원활한 버전 관리와 노트 속성으로 정리, 쿼리, 고급 스크립팅이 가능합니다.
 
       안전한 로그인(OpenID, TOTP)을 제공하고, 자체 호스팅 동기화 서버 또는 타사 서비스를 지원하며, 개인 정보 보호를 위한 노트별 암호화를 제공합니다. 사용자는 Excalidraw로 다이어그램을 스케치하고, 관계/링크 맵, Mind Elixir로 마인드 맵, 위치 핀과 GPX 트랙이 있는 지리 맵을 만들 수 있습니다. REST API가 자동화를 가능하게 하며, 100,000개 이상의 노트에 대한 확장성이 있습니다. 터치 최적화된 모바일 프론트엔드, 다크 테마, 사용자 테마, Evernote/Markdown 가져오기/내보내기, Web Clipper가 사용성을 향상시킵니다.
-    
+
       **주요 기능:**
       - 노트는 임의의 깊이 트리로 배열할 수 있습니다. 단일 노트를 트리의 여러 장소에 배치할 수 있습니다([복제](https://triliumnext.github.io/Docs/Wiki/cloning-notes) 참조)
       - 테이블, 이미지, [수학](https://triliumnext.github.io/Docs/Wiki/text-notes)과 markdown [자동 서식](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)을 포함한 풍부한 WYSIWYG 노트 편집기
@@ -299,7 +299,7 @@ x-casaos:
       - 웹 콘텐츠의 쉬운 저장을 위한 [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper)
       - 사용자 정의 가능한 UI(사이드바 버튼, 사용자 정의 위젯,...)
       - [메트릭](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), [Grafana 대시보드](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)와 함께
-    
+
       **자세히 알아보기:**
       - [TriliumNext GitHub 리포지토리](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) 타사 테마, 스크립트, 플러그인 등
@@ -310,7 +310,7 @@ x-casaos:
       Les fonctionnalités principales de l'outil incluent l'organisation hiérarchique des notes et l'édition riche. Les utilisateurs peuvent organiser les notes dans une structure arborescente de profondeur arbitraire, avec des notes individuelles clonables à plusieurs emplacements. Il prend en charge un éditeur WYSIWYG avec tableaux, images, mathématiques et formatage automatique Markdown pour l'efficacité. Les notes de code disposent de la mise en évidence de la syntaxe, tandis que la navigation rapide inclut la recherche en texte intégral et l'élévation de notes. Le contrôle de version transparent et les attributs de notes permettent l'organisation, les requêtes et les scripts avancés.
 
       Il offre une connexion sécurisée (OpenID, TOTP), prend en charge les serveurs de synchronisation auto-hébergés ou les services tiers, et fournit un chiffrement par note pour la confidentialité. Les utilisateurs peuvent esquisser des diagrammes avec Excalidraw, créer des cartes de relations/liens, des cartes mentales avec Mind Elixir, et des géocartes avec des épingles de localisation et des pistes GPX. Une API REST permet l'automatisation, avec une évolutivité pour plus de 100 000 notes. Interface mobile optimisée pour le tactile, thème sombre, thèmes utilisateur, import/export Evernote/Markdown, et Web Clipper améliorent la convivialité.
-    
+
       **Fonctionnalités Principales :**
       - Les notes peuvent être organisées en arbre de profondeur arbitraire. Une note unique peut être placée à plusieurs endroits dans l'arbre (voir [clonage](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Éditeur de notes WYSIWYG riche incluant par ex. tableaux, images et [mathématiques](https://triliumnext.github.io/Docs/Wiki/text-notes) avec [formatage automatique](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat) markdown
@@ -336,7 +336,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) pour la sauvegarde facile de contenu web
       - Interface utilisateur personnalisable (boutons de barre latérale, widgets définis par l'utilisateur,...)
       - [Métriques](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), avec un [tableau de bord Grafana](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **En savoir plus :**
       - [Dépôt GitHub TriliumNext](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) pour les thèmes, scripts, plugins tiers et plus
@@ -347,7 +347,7 @@ x-casaos:
       Die Kernfunktionen des Tools umfassen hierarchische Notizorganisation und umfangreiche Bearbeitung. Benutzer können Notizen in einer beliebig tiefen Baumstruktur anordnen, wobei einzelne Notizen an mehrere Standorte geklont werden können. Es unterstützt einen WYSIWYG-Editor mit Tabellen, Bildern, Mathematik und Markdown-Autoformatierung für Effizienz. Code-Notizen verfügen über Syntaxhervorhebung, während schnelle Navigation Volltext-Suche und Notiz-Anhebung umfasst. Nahtlose Versionierung und Notizattribute ermöglichen Organisation, Abfragen und erweiterte Skripterstellung.
 
       Es bietet sichere Anmeldung (OpenID, TOTP), unterstützt selbst gehostete Synchronisationsserver oder Drittanbieterdienste und bietet Pro-Notiz-Verschlüsselung für Datenschutz. Benutzer können Diagramme mit Excalidraw skizzieren, Beziehungs-/Verknüpfungskarten, Mindmaps mit Mind Elixir und Geo-Karten mit Standort-Pins und GPX-Tracks erstellen. Eine REST-API ermöglicht Automatisierung mit Skalierbarkeit für über 100.000 Notizen. Touch-optimiertes mobiles Frontend, dunkles Theme, Benutzerthemes, Evernote/Markdown-Import/Export und Web Clipper verbessern die Benutzerfreundlichkeit.
-    
+
       **Hauptmerkmale:**
       - Notizen können in beliebig tiefem Baum angeordnet werden. Einzelne Notiz kann an mehreren Stellen im Baum platziert werden (siehe [Klonen](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Reicher WYSIWYG-Notiz-Editor einschließlich z.B. Tabellen, Bilder und [Mathematik](https://triliumnext.github.io/Docs/Wiki/text-notes) mit Markdown [Autoformat](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
@@ -373,7 +373,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) für einfaches Speichern von Webinhalten
       - Anpassbare Benutzeroberfläche (Seitenleisten-Schaltflächen, benutzerdefinierte Widgets,...)
       - [Metriken](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), zusammen mit einem [Grafana Dashboard](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Mehr erfahren:**
       - [TriliumNext GitHub Repository](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) für Drittanbieter-Themes, Skripte, Plugins und mehr
@@ -384,7 +384,7 @@ x-casaos:
       Verktygets kärnfunktioner inkluderar hierarkisk anteckningsorganisation och rik redigering. Användare kan arrangera anteckningar i en godtyckligt djup trädstruktur, med enskilda anteckningar klonbara till flera platser. Det stöder en WYSIWYG-editor med tabeller, bilder, matematik och Markdown-autoformatering för effektivitet. Kodanteckningar har syntaxmarkering, medan snabb navigering inkluderar fulltextsökning och anteckningshissning. Sömlös versionshantering och anteckningsattribut möjliggör organisation, frågor och avancerad scripting.
 
       Det erbjuder säker inloggning (OpenID, TOTP), stöder självvärderade synkroniseringsservrar eller tredjepartstjänster, och ger per-anteckning-kryptering för integritet. Användare kan skissa diagram med Excalidraw, stvara relations-/länkkartor, tankekartortor med Mind Elixir, och geo-kartor med positionsmarkeringar och GPX-spår. Ett REST API möjliggör automatisation, med skalbarhet för över 100 000 anteckningar. Pekoptimerad mobil frontend, mörkt tema, användarteman, Evernote/Markdown import/export, och Web Clipper förbättrar användarvänlighet.
-    
+
       **Huvudfunktioner:**
       - Anteckningar kan arrangeras i godtyckligt djupt träd. Enskild anteckning kan placeras på flera platser i trädet (se [kloning](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Rik WYSIWYG-anteckningseditor inklusive t.ex. tabeller, bilder och [matematik](https://triliumnext.github.io/Docs/Wiki/text-notes) med markdown [autoformat](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
@@ -410,7 +410,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) för enkel sparning av webbinnehåll
       - Anpassningsbar UI (sidokolumns-knappar, användardefinierade widgets,...)
       - [Metrics](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), tillsammans med en [Grafana Dashboard](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Läs mer:**
       - [TriliumNext GitHub Repository](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) för tredjepartsteman, skript, plugins och mer
@@ -421,7 +421,7 @@ x-casaos:
       Οι βασικές λειτουργίες του εργαλείου περιλαμβάνουν ιεραρχική οργάνωση σημειώσεων και πλούσια επεξεργασία. Οι χρήστες μπορούν να οργανώσουν σημειώσεις σε μια δενδρική δομή αυθαίρετου βάθους, με μεμονωμένες σημειώσεις κλωνοποιήσιμες σε πολλαπλές τοποθεσίες. Υποστηρίζει έναν επεξεργαστή WYSIWYG με πίνακες, εικόνες, μαθηματικά και αυτόματη μορφοποίηση Markdown για αποδοτικότητα. Οι σημειώσεις κώδικα διαθέτουν επισήμανση σύνταξης, ενώ η γρήγορη πλοήγηση περιλαμβάνει αναζήτηση πλήρους κειμένου και ανύψωση σημειώσεων. Η απρόσκοπτη έκδοση και τα χαρακτηριστικά σημειώσεων επιτρέπουν οργάνωση, ερωτήματα και προηγμένη δημιουργία σκριπτ.
 
       Προσφέρει ασφαλή σύνδεση (OpenID, TOTP), υποστηρίζει αυτο-φιλοξενούμενους διακομιστές συγχρονισμού ή υπηρεσίες τρίτων και παρέχει κρυπτογράφηση ανά σημείωση για απόρρητο. Οι χρήστες μπορούν να σκιτσάρουν διαγράμματα με Excalidraw, να δημιουργήσουν χάρτες σχέσεων/συνδέσμων, νοητικούς χάρτες με Mind Elixir και γεω-χάρτες με καρφίτσες τοποθεσίας και διαδρομές GPX. Ένα REST API επιτρέπει την αυτοματοποίηση, με επεκτασιμότητα για πάνω από 100.000 σημειώσεις. Βελτιστοποιημένη για αφή κινητή διεπαφή, σκοτεινό θέμα, θέματα χρήστη, εισαγωγή/εξαγωγή Evernote/Markdown και Web Clipper ενισχύουν τη χρηστικότητα.
-    
+
       **Βασικά Χαρακτηριστικά:**
       - Οι σημειώσεις μπορούν να οργανωθούν σε δέντρο αυθαίρετου βάθους. Μία σημείωση μπορεί να τοποθετηθεί σε πολλά μέρη του δέντρου (δείτε [κλωνοποίηση](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Πλούσιος επεξεργαστής σημειώσεων WYSIWYG συμπεριλαμβανομένων π.χ. πινάκων, εικόνων και [μαθηματικών](https://triliumnext.github.io/Docs/Wiki/text-notes) με markdown [αυτόματη μορφοποίηση](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
@@ -447,7 +447,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) για εύκολη αποθήκευση περιεχομένου ιστού
       - Προσαρμόσιμη διεπαφή χρήστη (κουμπιά πλαϊνής μπάρας, widgets καθορισμένα από χρήστη,...)
       - [Μετρήσεις](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), μαζί με ένα [Grafana Dashboard](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Μάθετε περισσότερα:**
       - [TriliumNext GitHub Repository](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) για θέματα τρίτων, σκριπτ, plugins και περισσότερα
@@ -458,7 +458,7 @@ x-casaos:
       Osnovne funkcije alata uključuju hijerarhijsku organizaciju bilješki i bogato uređivanje. Korisnici mogu organizirati bilješke u stablo proizvoljne dubine, s pojedinačnim bilješkama klonabilnim na više mjesta. Podržava WYSIWYG editor s tablicama, slikama, matematikom i Markdown autoformatiranjem za efikasnost. Bilješke koda imaju isticanje sintakse, dok brza navigacija uključuje pretraživanje punog teksta i podizanje bilješki. Besprijekorno verzioniranje i atributi bilješki omogućavaju organizaciju, upite i napredno skriptiranje.
 
       Nudi sigurnu prijavu (OpenID, TOTP), podržava samo-hostovane sinkronizacijske servere ili tredjepartstjene, te pruža šifriranje po bilješci za privatnost. Korisnici mogu skicirati dijagrame s Excalidraw, stvarati mape odnosa/linkova, mind mape s Mind Elixir, i geo mape s oznakama lokacije i GPX stazama. REST API omogućava automatizaciju, s skalabilnošću za preko 100.000 bilješki. Dodir-optimizirani mobilni frontend, tamna tema, korisničke teme, Evernote/Markdown uvoz/izvoz, i Web Clipper poboljšavaju upotrebljivost.
-    
+
       **Ključne Značajke:**
       - Bilješke mogu biti organizirane u stablo proizvoljne dubine. Jedna bilješka može biti postavljena na više mjesta u stablu (vidi [kloniranje](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Bogat WYSIWYG editor bilješki uključujući npr. tablice, slike i [matematiku](https://triliumnext.github.io/Docs/Wiki/text-notes) s markdown [autoformatom](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
@@ -484,7 +484,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) za lako spremanje web sadržaja
       - Prilagodljivi UI (gumbovi bočne trake, korisnički definirani widgeti,...)
       - [Metrije](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), zajedno s [Grafana Dashboardom](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Saznajte više:**
       - [TriliumNext GitHub Repository](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) za teme, skriptove, dodatke treće strane i više
@@ -495,7 +495,7 @@ x-casaos:
       As funcionalidades principais da ferramenta incluem organização hierárquica de notas e edição rica. Os utilizadores podem organizar notas numa estrutura em árvore de profundidade arbitrária, com notas individuais cloáveis para múltiplas localizações. Suporta um editor WYSIWYG com tabelas, imagens, matemática e formatação automática Markdown para eficiência. Notas de código têm destaque de sintaxe, enquanto navegação rápida inclui pesquisa de texto completo e elevação de notas. Controlo de versões sem costuras e atributos de notas permitem organização, consultas e scripting avançado.
 
       Oferece login seguro (OpenID, TOTP), suporta servidores de sincronização auto-hospedados ou serviços de terceiros, e fornece encriptação por nota para privacidade. Os utilizadores podem esboçar diagramas com Excalidraw, criar mapas de relações/ligações, mapas mentais com Mind Elixir, e geo-mapas com pins de localização e pistas GPX. Uma API REST permite automatização, com escalabilidade para mais de 100.000 notas. Frontend móvel optimizado para toque, tema escuro, temas de utilizador, importação/exportação Evernote/Markdown, e Web Clipper melhoram a usabilidade.
-    
+
       **Funcionalidades Principais:**
       - Notas podem ser organizadas em árvore de profundidade arbitrária. Uma nota única pode ser colocada em múltiplos lugares na árvore (ver [clonagem](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Editor de notas WYSIWYG rico incluindo p.ex. tabelas, imagens e [matemática](https://triliumnext.github.io/Docs/Wiki/text-notes) com [formatação automática](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat) markdown
@@ -521,7 +521,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) para salvamento fácil de conteúdo web
       - UI customizável (botões de barra lateral, widgets definidos pelo utilizador,...)
       - [Métricas](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), juntamente com um [Dashboard Grafana](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Saiba mais:**
       - [Repositório GitHub TriliumNext](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) para temas, scripts, plugins de terceiros e mais
@@ -532,7 +532,7 @@ x-casaos:
       Основные функции инструмента включают иерархическую организацию заметок и богатое редактирование. Пользователи могут организовать заметки в древовидную структуру произвольной глубины, с отдельными заметками, клонируемыми в несколько местоположений. Он поддерживает редактор WYSIWYG с таблицами, изображениями, математикой и автоформатированием Markdown для эффективности. Заметки с кодом имеют подсветку синтаксиса, а быстрая навигация включает полнотекстовый поиск и подъем заметок. Бесшовное управление версиями и атрибуты заметок обеспечивают организацию, запросы и продвинутое создание скриптов.
 
       Он предлагает безопасный вход (OpenID, TOTP), поддерживает самостоятельно размещенные серверы синхронизации или сторонние сервисы, и обеспечивает шифрование по заметкам для конфиденциальности. Пользователи могут создавать эскизы диаграмм с Excalidraw, создавать карты отношений/ссылок, ментальные карты с Mind Elixir и гео-карты с булавками местоположения и треками GPX. REST API обеспечивает автоматизацию с масштабируемостью для более чем 100 000 заметок. Оптимизированный для касания мобильный интерфейс, темная тема, пользовательские темы, импорт/экспорт Evernote/Markdown и Web Clipper улучшают удобство использования.
-    
+
       **Ключевые Особенности:**
       - Заметки могут быть организованы в дерево произвольной глубины. Одна заметка может быть размещена в нескольких местах дерева (см. [клонирование](https://triliumnext.github.io/Docs/Wiki/cloning-notes))
       - Богатый редактор заметок WYSIWYG, включающий например таблицы, изображения и [математику](https://triliumnext.github.io/Docs/Wiki/text-notes) с markdown [автоформатом](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat)
@@ -558,7 +558,7 @@ x-casaos:
       - [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper) для легкого сохранения веб-контента
       - Настраиваемый UI (кнопки боковой панели, пользовательские виджеты,...)
       - [Метрики](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), вместе с [панелью мониторинга Grafana](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json)
-    
+
       **Узнайте больше:**
       - [Репозиторий GitHub TriliumNext](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) для сторонних тем, сценариев, плагинов и многого другого
@@ -569,7 +569,7 @@ x-casaos:
       Aracın temel özellikleri hiyerarşik not organizasyonu ve zengin düzenlemeyi içerir. Kullanıcılar notları keyfi derinlikte ağaç yapısında düzenleyebilir, tekil notlar birden fazla konuma klonlanabilir. Verimlilik için tablolar, resimler, matematik ve Markdown otomatik biçimlendirme ile WYSIWYG editörü destekler. Kod notları sözdizimi vurgulamasına sahipken, hızlı navigasyon tam metin arama ve not yükseltmeyi içerir. Sorunsuz sürümleme ve not özellikleri organizasyon, sorgulama ve gelişmiş komut dosyası oluşturmayı sağlar.
 
       Güvenli giriş (OpenID, TOTP) sunar, kendi barındırılan senkronizasyon sunucularını veya üçüncü taraf hizmetlerini destekler ve gizlilik için not başına şifreleme sağlar. Kullanıcılar Excalidraw ile diyagramlar çizebilir, ilişki/bağlantı haritaları, Mind Elixir ile zihin haritaları ve konum pinleri ve GPX izleri ile coğrafi haritalar oluşturabilir. REST API otomasyonu sağlar, 100.000'den fazla nota ölçeklenebilirlik ile. Dokunma optimizasyonlu mobil arayüz, karanlık tema, kullanıcı temaları, Evernote/Markdown içe/dışa aktarma ve Web Clipper kullanılabilirliği artırır.
-    
+
       **Ana Özellikler:**
       - Notlar keyfi derinlikte ağaç halinde düzenlenebilir. Tek not ağaçta birden fazla yere yerleştirilebilir ([klonlama](https://triliumnext.github.io/Docs/Wiki/cloning-notes) bakınız)
       - Tablolar, resimler ve [matematik](https://triliumnext.github.io/Docs/Wiki/text-notes) dahil olmak üzere zengin WYSIWYG not editörü, markdown [otomatik biçimlendirme](https://triliumnext.github.io/Docs/Wiki/text-notes#autoformat) ile
@@ -595,22 +595,23 @@ x-casaos:
       - Web içeriğinin kolay kaydedilmesi için [Web Clipper](https://triliumnext.github.io/Docs/Wiki/web-clipper)
       - Özelleştirilebilir UI (kenar çubuğu düğmeleri, kullanıcı tanımlı widget'lar,...)
       - [Metrikler](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics.md), bir [Grafana Panosu](https://github.com/TriliumNext/Trilium/blob/main/docs/User%20Guide/User%20Guide/Advanced%20Usage/Metrics/grafana-dashboard.json) ile birlikte
-    
+
       **Daha fazla bilgi:**
       - [TriliumNext GitHub Deposu](https://github.com/TriliumNext/Trilium)
       - [awesome-trilium](https://github.com/Nriver/awesome-trilium) üçüncü taraf temalar, betikler, eklentiler ve daha fazlası için
       - [TriliumRocks!](https://trilium.rocks/) eğitimler, kılavuzlar ve çok daha fazlası için
   developer: zadam
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Trilium/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Trilium/screenshot-4.png
   index: /
-  port_map: "8088"
+  port_map: '8088'
   scheme: http
   store_app_id: trilium
   title:
     en_US: Trilium
     zh_CN: Trilium
+  main: trilium

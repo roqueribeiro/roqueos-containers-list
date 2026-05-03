@@ -2,15 +2,15 @@
 	"version": "2.0",
 	"title": "Nzbget",
 	"name": "Nzbget",
-	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/icon.png",
+	"icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/icon.png",
 	"tagline": "Efficient Usenet downloader",
 	"overview": "NZBGet can run on almost any device - classic PC, NAS, media player, SAT-receiver, WLAN-router, etc. The download area provides precompiled binaries for Windows, macOS, Linux (compatible with many CPUs and platform variants), FreeBSD and Android. For other platforms the program can be compiled from sources.",
-	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/thumbnail.png",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/thumbnail.png",
 	"screenshots": [
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/screenshot-1.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/screenshot-2.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/screenshot-3.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/screenshot-4.png"
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/screenshot-1.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/screenshot-2.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/screenshot-3.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/screenshot-4.png"
 	],
 	"category": ["Downloader"],
 	"developer": {
@@ -20,8 +20,8 @@
 		"donate_link": ""
 	},
 	"adaptor": {
-		"name": "CasaOS Team",
-		"website": "https://www.casaos.io",
+		"name": "RoqueOS Team",
+		"website": "https://roqueos.com.br",
 		"donate_text": "",
 		"donate_link": ""
 	},

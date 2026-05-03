@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
     ports:
       - target: 80
-        published: "18930"
+        published: '18930'
         protocol: tcp
     volumes:
       - type: bind
@@ -29,7 +29,7 @@ services:
       - monica-db
     x-casaos:
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -284,7 +284,7 @@ x-casaos:
       - Upload photos and documents, favorite contacts
       - Organize contacts with labels
       - Local data storage for privacy assurance
-      
+
       **Learn More:**
       - [Monica Official Website](https://www.monicahq.com)
       - [Monica GitHub Repository](https://github.com/monicahq/monica)
@@ -304,7 +304,7 @@ x-casaos:
       - Upload photos and documents, favourite contacts
       - Organise contacts with labels
       - Local data storage for privacy assurance
-      
+
       **Learn More:**
       - [Monica Official Website](https://www.monicahq.com)
       - [Monica GitHub Repository](https://github.com/monicahq/monica)
@@ -324,7 +324,7 @@ x-casaos:
       - Caricamento di foto e documenti, contatti preferiti
       - Organizzazione contatti con etichette
       - Archiviazione dati locale per garanzia privacy
-      
+
       **Ulteriori Informazioni:**
       - [Sito Ufficiale Monica](https://www.monicahq.com)
       - [Repository GitHub Monica](https://github.com/monicahq/monica)
@@ -344,7 +344,7 @@ x-casaos:
       - Last opp bilder og dokumenter, favoritt kontakter
       - Organiser kontakter med etiketter
       - Lokal datalagring for personvernforsikring
-      
+
       **Lær mer:**
       - [Monica Offisiell Nettside](https://www.monicahq.com)
       - [Monica GitHub Repository](https://github.com/monicahq/monica)
@@ -364,7 +364,7 @@ x-casaos:
       - 上传照片和文档，标记收藏联系人
       - 通过标签组织联系人
       - 本地数据存储，保障隐私
-      
+
       **了解更多：**
       - [Monica官方网站](https://www.monicahq.com)
       - [Monica GitHub仓库](https://github.com/monicahq/monica)
@@ -384,7 +384,7 @@ x-casaos:
       - 写真と文書のアップロード、お気に入り連絡先
       - ラベルによる連絡先整理
       - プライバシー保証のためのローカルデータストレージ
-      
+
       **詳細情報：**
       - [Monica公式ウェブサイト](https://www.monicahq.com)
       - [Monica GitHubリポジトリ](https://github.com/monicahq/monica)
@@ -404,7 +404,7 @@ x-casaos:
       - 사진과 문서 업로드, 즐겨찾기 연락처
       - 라벨로 연락처 정리
       - 개인정보 보장을 위한 로컬 데이터 저장
-      
+
       **자세히 알아보기:**
       - [Monica 공식 웹사이트](https://www.monicahq.com)
       - [Monica GitHub 저장소](https://github.com/monicahq/monica)
@@ -424,7 +424,7 @@ x-casaos:
       - Téléchargement de photos et documents, contacts favoris
       - Organisation des contacts avec étiquettes
       - Stockage de données local pour assurance de confidentialité
-      
+
       **En Savoir Plus :**
       - [Site Officiel Monica](https://www.monicahq.com)
       - [Dépôt GitHub Monica](https://github.com/monicahq/monica)
@@ -444,7 +444,7 @@ x-casaos:
       - Upload von Fotos und Dokumenten, Lieblingskontakte
       - Organisation von Kontakten mit Etiketten
       - Lokale Datenspeicherung für Datenschutzgewährleistung
-      
+
       **Mehr Erfahren:**
       - [Monica Offizielle Website](https://www.monicahq.com)
       - [Monica GitHub Repository](https://github.com/monicahq/monica)
@@ -464,7 +464,7 @@ x-casaos:
       - Ladda upp foton och dokument, favoritkontakter
       - Organisera kontakter med etiketter
       - Lokal datalagring för integritetsförsäkring
-      
+
       **Lär Dig Mer:**
       - [Monica Officiell Webbplats](https://www.monicahq.com)
       - [Monica GitHub Repository](https://github.com/monicahq/monica)
@@ -484,7 +484,7 @@ x-casaos:
       - Ανέβασμα φωτογραφιών και εγγράφων, αγαπημένες επαφές
       - Οργάνωση επαφών με ετικέτες
       - Τοπική αποθήκευση δεδομένων για διασφάλιση ιδιωτικότητας
-      
+
       **Μάθετε Περισσότερα:**
       - [Επίσημη Ιστοσελίδα Monica](https://www.monicahq.com)
       - [Monica GitHub Repository](https://github.com/monicahq/monica)
@@ -504,7 +504,7 @@ x-casaos:
       - Učitavanje fotografija i dokumenata, omiljeni kontakti
       - Organiziranje kontakata s naljepnicama
       - Lokalno pohranjavanje podataka za osiguravanje privatnosti
-      
+
       **Saznajte Više:**
       - [Monica Službena Web Stranica](https://www.monicahq.com)
       - [Monica GitHub Repozitorij](https://github.com/monicahq/monica)
@@ -524,7 +524,7 @@ x-casaos:
       - Carregar fotografias e documentos, contactos favoritos
       - Organizar contactos com etiquetas
       - Armazenamento de dados local para garantia de privacidade
-      
+
       **Saiba Mais:**
       - [Website Oficial Monica](https://www.monicahq.com)
       - [Repositório GitHub Monica](https://github.com/monicahq/monica)
@@ -544,7 +544,7 @@ x-casaos:
       - Загрузка фотографий и документов, избранные контакты
       - Организация контактов с помощью меток
       - Локальное хранение данных для обеспечения конфиденциальности
-      
+
       **Узнать Больше:**
       - [Официальный Сайт Monica](https://www.monicahq.com)
       - [GitHub Репозиторий Monica](https://github.com/monicahq/monica)
@@ -564,18 +564,18 @@ x-casaos:
       - Fotoğraf ve belge yükleme, favori iletişimler
       - Etiketlerle iletişimleri organize etme
       - Gizlilik güvencesi için yerel veri depolama
-      
+
       **Daha Fazla Bilgi:**
       - [Monica Resmi Web Sitesi](https://www.monicahq.com)
       - [Monica GitHub Deposu](https://github.com/monicahq/monica)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Monica/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Monica/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Monica/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Monica/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Monica/screenshot-3.png
-  thumbnail: ""
-  scheme: ""
-  port_map: "18930"
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Monica/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Monica/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Monica/screenshot-3.png
+  thumbnail: ''
+  scheme: http
+  port_map: '18930'
   index: /
   title:
     en_US: Monica

@@ -2,8 +2,8 @@ name: duplicati
 services:
   duplicati:
     environment:
-      PGID: "1000"
-      PUID: "1000"
+      PGID: '1000'
+      PUID: '1000'
       TZ: Europe/London
     image: linuxserver/duplicati:2.1.0
     deploy:
@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8200
-        published: "8200"
+        published: '8200'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -30,35 +30,34 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "8200"
+        - container: '8200'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /backups
           description:
-            en_us: ""
+            en_us: ''
         - container: /source
           description:
-            en_us: ""
+            en_us: ''
     container_name: duplicati
 x-casaos:
   architectures:
     - amd64
     - arm64
   main: duplicati
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Cloud
   description:
     en_us: Duplicati is a free, open source, backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers.
@@ -75,11 +74,11 @@ x-casaos:
     sv_se: Duplicati är en gratis, öppen källkod, backup-klient som säkert lagrar krypterade, inkrementella, komprimerade säkerhetskopior på molntjänster och fjärrfiler.
     uk_ua: Duplicati - це безкоштовний клієнт резервного копіювання з відкритим вихідним кодом, який безпечно зберігає зашифровані, інкрементні, стиснені резервні копії на хмарних службах зберігання та віддалених файлових серверах.
   developer: duplicati
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/screenshot-3.png
   tagline:
     en_us: Store securely encrypted backups in the cloud!
     zh_cn: 在云端存储安全加密的备份文件！
@@ -94,9 +93,12 @@ x-casaos:
     pt_br: Armazene backups criptografados de forma segura na nuvem!
     sv_se: Lagra säkert krypterade säkerhetskopior i molnet!
     uk_ua: Зберігайте безпечні зашифровані резервні копії у хмарі!
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Duplicati/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Duplicati/thumbnail.png
   tips: {}
   title:
     en_us: Duplicati
   index: /
-  port_map: "8200"
+  port_map: '8200'
+  scheme: http
+x-roqueos:
+  mountShared: true

@@ -11,7 +11,7 @@ services:
     image: liwei2633/gopeed:v1.8.3
     ports:
       - target: 9999
-        published: "9999"
+        published: '9999'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -25,7 +25,7 @@ services:
     privileged: false
     x-casaos:
       ports:
-        - container: "9999"
+        - container: '9999'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -78,7 +78,6 @@ services:
             pt_PT: Pasta de downloads Gopeed
             ru_RU: Папка загрузок Gopeed
             tr_TR: Gopeed indirme klasörü
-
 x-casaos:
   architectures:
     - amd64
@@ -344,11 +343,11 @@ x-casaos:
       - [Gopeed Resmi Web Sitesi](https://gopeed.com)
       - [Gopeed GitHub Deposu](https://github.com/gopeedlab/gopeed)
   developer: GopeedLab
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Gopeed/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Gopeed/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Gopeed/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Gopeed/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Gopeed/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Gopeed/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Gopeed/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Gopeed/screenshot-3.png
   tagline:
     en_US: Open source, lightweight, native, supports (HTTP, BitTorrent, Magnet, etc.) for downloading.
     en_GB: Open source, lightweight, native, supports (HTTP, BitTorrent, Magnet, etc.) for downloading.
@@ -369,4 +368,7 @@ x-casaos:
     en_us: Gopeed
     pt_br: Gopeed
   index: /
-  port_map: "9999"
+  port_map: '9999'
+  scheme: http
+x-roqueos:
+  mountShared: true

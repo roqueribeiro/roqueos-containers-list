@@ -9,7 +9,7 @@ services:
         reservations:
           memory: 500M
     ports:
-      - "3333:3000"
+      - '3333:3000'
     environment:
       - JWT_SECRET=aLongAndSecretStringUsedToSignTheJSONWebToken1234
       - HTTP_ALLOWED=true
@@ -20,7 +20,7 @@ services:
     network_mode: bridge
     x-casaos:
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -90,8 +90,6 @@ services:
             pt_PT: Permitir Ligações HTTP
             ru_RU: Разрешить HTTP-подключения
             tr_TR: HTTP Bağlantılarına İzin Ver
-
-    
 x-casaos:
   architectures:
     - amd64
@@ -131,7 +129,7 @@ x-casaos:
       - Self-hosted for privacy and security
       - Containerized for easy deployment
       - No file size limitations
-      
+
       **Learn More:**
       - [ConvertX GitHub Repository](https://github.com/c4illin/convertx)
     en_GB: |
@@ -148,7 +146,7 @@ x-casaos:
       - Self-hosted for privacy and security
       - Containerised for easy deployment
       - No file size limitations
-      
+
       **Learn More:**
       - [ConvertX GitHub Repository](https://github.com/c4illin/convertx)
     it_IT: |
@@ -165,7 +163,7 @@ x-casaos:
       - Self-hosted per privacy e sicurezza
       - Containerizzato per facile distribuzione
       - Nessuna limitazione sulle dimensioni dei file
-      
+
       **Ulteriori Informazioni:**
       - [Repository GitHub ConvertX](https://github.com/c4illin/convertx)
     nb_NO: |
@@ -182,7 +180,7 @@ x-casaos:
       - Selvhostet for personvern og sikkerhet
       - Containerisert for enkel distribusjon
       - Ingen begrensninger på filstørrelse
-      
+
       **Lær mer:**
       - [ConvertX GitHub Repository](https://github.com/c4illin/convertx)
     zh_CN: |
@@ -199,7 +197,7 @@ x-casaos:
       - 自托管，保护隐私和安全
       - 容器化，便于部署
       - 无文件大小限制
-      
+
       **了解更多：**
       - [ConvertX GitHub 仓库](https://github.com/c4illin/convertx)
     ja_JP: |
@@ -216,7 +214,7 @@ x-casaos:
       - プライバシーとセキュリティのための自己ホスト型
       - 簡単なデプロイのためのコンテナ化
       - ファイルサイズ制限なし
-      
+
       **詳細情報：**
       - [ConvertX GitHubリポジトリ](https://github.com/c4illin/convertx)
     ko_KR: |
@@ -233,7 +231,7 @@ x-casaos:
       - 프라이버시와 보안을 위한 셀프 호스팅
       - 쉬운 배포를 위한 컨테이너화
       - 파일 크기 제한 없음
-      
+
       **자세히 알아보기:**
       - [ConvertX GitHub 저장소](https://github.com/c4illin/convertx)
     fr_FR: |
@@ -250,7 +248,7 @@ x-casaos:
       - Auto-hébergé pour la confidentialité et la sécurité
       - Conteneurisé pour un déploiement facile
       - Aucune limitation de taille de fichier
-      
+
       **En Savoir Plus :**
       - [Dépôt GitHub ConvertX](https://github.com/c4illin/convertx)
     de_DE: |
@@ -267,7 +265,7 @@ x-casaos:
       - Selbstgehostet für Privatsphäre und Sicherheit
       - Containerisiert für einfache Bereitstellung
       - Keine Dateigrößenbeschränkungen
-      
+
       **Mehr Erfahren:**
       - [ConvertX GitHub Repository](https://github.com/c4illin/convertx)
     sv_SE: |
@@ -284,7 +282,7 @@ x-casaos:
       - Självhostat för integritet och säkerhet
       - Containeriserat för enkel distribution
       - Inga filstorleksbegränsningar
-      
+
       **Lär Dig Mer:**
       - [ConvertX GitHub Repository](https://github.com/c4illin/convertx)
     el_GR: |
@@ -301,7 +299,7 @@ x-casaos:
       - Αυτο-φιλοξενούμενο για ιδιωτικότητα και ασφάλεια
       - Εμπορευματοποιημένο για εύκολη ανάπτυξη
       - Καμία περιορισμός μεγέθους αρχείου
-      
+
       **Μάθετε Περισσότερα:**
       - [ConvertX GitHub Repository](https://github.com/c4illin/convertx)
     hr_HR: |
@@ -318,7 +316,7 @@ x-casaos:
       - Samohostovano za privatnost i sigurnost
       - Kontejnerizirano za lako implementiranje
       - Nema ograničenja veličine datoteke
-      
+
       **Saznajte Više:**
       - [ConvertX GitHub Repository](https://github.com/c4illin/convertx)
     pt_PT: |
@@ -335,7 +333,7 @@ x-casaos:
       - Auto-hospedado para privacidade e segurança
       - Contentorizado para fácil implementação
       - Sem limitações de tamanho de ficheiro
-      
+
       **Saiba Mais:**
       - [ConvertX GitHub Repository](https://github.com/c4illin/convertx)
     ru_RU: |
@@ -352,7 +350,7 @@ x-casaos:
       - Самостоятельный хостинг для конфиденциальности и безопасности
       - Контейнеризирован для легкого развертывания
       - Нет ограничений на размер файла
-      
+
       **Узнать больше:**
       - [Репозиторий ConvertX на GitHub](https://github.com/c4illin/convertx)
     tr_TR: |
@@ -369,15 +367,15 @@ x-casaos:
       - Gizlilik ve güvenlik için kendi kendine barındırılan
       - Kolay dağıtım için konteynerleştirilmiş
       - Dosya boyutu sınırlaması yok
-      
+
       **Daha Fazla Bilgi Edinin:**
       - [ConvertX GitHub Deposu](https://github.com/c4illin/convertx)
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ConvertX/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ConvertX/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ConvertX/screenshot-3.png
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ConvertX/icon.png
-  port_map: "3333"
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ConvertX/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ConvertX/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ConvertX/screenshot-3.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ConvertX/icon.png
+  port_map: '3333'
   index: /
   scheme: http
   title:

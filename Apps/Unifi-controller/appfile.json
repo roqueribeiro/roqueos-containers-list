@@ -2,14 +2,14 @@
 	"version": "2.0",
 	"title": "Unifi-controller",
 	"name": "unifi-controller",
-	"icon":"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Unifi-controller/icon.png",
+	"icon":"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Unifi-controller/icon.png",
 	"tagline": "The Unifi-controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
 	"overview": "For Unifi to adopt other devices, e.g. an Access Point, it is required to change the inform IP address. Because Unifi runs inside Docker by default it uses an IP address not accessible by other devices. To change this go to Settings > System Settings > Controller Configuration and set the Controller Hostname/IP to a hostname or IP address accessible by your devices. Additionally the checkbox \"Override inform host with controller hostname/IP\" has to be checked, so that devices can connect to the controller during adoption (devices use the inform-endpoint during adoption).",
-	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Unifi-controller/thumbnail.png",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Unifi-controller/thumbnail.png",
 	"screenshots": [
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Unifi-controller/screenshot-1.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Unifi-controller/screenshot-2.png",
-		"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Unifi-controller/screenshot-3.png"
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Unifi-controller/screenshot-1.png",
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Unifi-controller/screenshot-2.png",
+		"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Unifi-controller/screenshot-3.png"
 	],
 	"category": [
 		"Network"
@@ -21,13 +21,13 @@
 		"donate_link": ""
 	},
 	"adaptor": {
-		"name": "CasaOS Team",
-		"website": "https://www.casaos.io",
+		"name": "RoqueOS Team",
+		"website": "https://roqueos.com.br",
 		"donate_text": "",
 		"donate_link": ""
 	},
 	"support": "https://discord.gg/knqAbbBbeX",
-	"website": "https://www.casaos.io",
+	"website": "https://roqueos.com.br",
 	"container": {
 		"image": "linuxserver/unifi-controller:latest",
 		"shell": "sh",

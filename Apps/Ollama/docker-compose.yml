@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
     ports:
       - target: 11434
-        published: "11434"
+        published: '11434'
         protocol: tcp
     volumes:
       - type: bind
@@ -20,7 +20,7 @@ services:
         target: /root/.ollama
     x-casaos:
       ports:
-        - container: "11434"
+        - container: '11434'
           description:
             en_US: Ollama API Port
             en_GB: Ollama API Port
@@ -665,14 +665,14 @@ x-casaos:
       - [Ollama Resmi Web Sitesi](https://ollama.com/)
       - [Ollama GitHub Deposu](https://github.com/ollama/ollama)
       - [Model Kütüphanesi](https://ollama.com/library)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ollama/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ollama/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ollama/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ollama/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ollama/screenshot-3.png
-  thumbnail: ""
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ollama/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ollama/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ollama/screenshot-3.png
+  thumbnail: ''
   scheme: http
-  port_map: "11434"
+  port_map: '11434'
   index: /
   title:
     en_US: Ollama

@@ -9,10 +9,10 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "2048M"
+          memory: 2048M
     ports:
       - target: 8000
-        published: "8582"
+        published: '8582'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -58,4 +58,7 @@ x-casaos:
   title:
     en_us: Downtify
   index: /
-  port_map: "8582"
+  port_map: '8582'
+  scheme: http
+x-roqueos:
+  mountShared: true

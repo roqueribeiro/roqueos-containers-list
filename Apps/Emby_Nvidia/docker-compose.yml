@@ -8,10 +8,10 @@ services:
       - /dev/video11:/dev/video11
       - /dev/video12:/dev/video12
     environment:
-      PGID: "1000"
-      PUID: "1000"
+      PGID: '1000'
+      PUID: '1000'
       TZ: $TZ
-      CPU_FALLBACK: "true"
+      CPU_FALLBACK: 'true'
       NVIDIA_VISIBLE_DEVICES: all
     image: linuxserver/emby:4.9.1
     deploy:
@@ -21,14 +21,15 @@ services:
           devices:
             - driver: nvidia
               count: all
-              capabilities: [gpu]
+              capabilities:
+                - gpu
     network_mode: bridge
     ports:
       - target: 8096
-        published: "8096"
+        published: '8096'
         protocol: tcp
       - target: 8920
-        published: "8920"
+        published: '8920'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -45,39 +46,37 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "8096"
+        - container: '8096'
           description:
-            en_us: ""
-
-        - container: "8920"
+            en_us: ''
+        - container: '8920'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /data/tvshows
           description:
-            en_us: ""
+            en_us: ''
         - container: /data/movies
           description:
-            en_us: ""
+            en_us: ''
     container_name: emby
 x-casaos:
   architectures:
     - amd64
     - arm64
   main: emby
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Media
   description:
     en_us: Bringing all of your home videos, music, and photos together into one place has never been easier. Your personal Emby Server automatically converts and streams your media on-the-fly to play on any device.
@@ -94,11 +93,11 @@ x-casaos:
     sv_se: Att samla alla dina hemvideor, musik och foton på ett ställe har aldrig varit enklare. Din personliga Emby-server konverterar och strömmar dina mediefiler i realtid för att spela upp dem på vilket som helst enhet.
     uk_ua: Збирання всіх ваших домашніх відео, музики та фотографій в одному місці ніколи не було таким простим. Ваш особистий сервер Emby автоматично конвертує та потоково передає ваші медіа-файли для відтворення на будь-якому пристрої.
   developer: linuxserver
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/screenshot-3.png
   tagline:
     en_us: TAKE YOUR MEDIA ANYWHERE WITH EMBY
     zh_cn: 用EMBY随时随地带着媒体
@@ -113,9 +112,12 @@ x-casaos:
     pt_br: LEVE SEUS MÍDIAS PARA QUALQUER LUGAR COM EMBY
     sv_se: TA DINA MEDIA VAR SOM HELST MED EMBY
     uk_ua: ВЗЯТИ СЕБЕ МЕДІА ВСЮДИ З EMBY
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Emby/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/thumbnail.png
   tips: {}
   title:
     en_us: Emby(Nvidia GPU)
   index: /
-  port_map: "8096"
+  port_map: '8096'
+  scheme: http
+x-roqueos:
+  mountShared: true

@@ -11,7 +11,7 @@ services:
     working_dir: /app
     ports:
       - target: 3000
-        published: "3050"
+        published: '3050'
         protocol: tcp
     volumes:
       - type: bind
@@ -33,7 +33,7 @@ services:
       - ztnet-postgres
     x-casaos:
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -345,7 +345,7 @@ x-casaos:
       The tool centers on an intuitive Web interface and organization with multi-user support. Developed in TypeScript, it acts as an intermediary between users and the ZeroTier Controller API, enabling collaborative network management within organizations to streamline team tasks. Integration with ZeroTier Central API allows direct management of networks, nodes, and members through a user-friendly interface, enhancing configuration efficiency.
 
       It supports custom private root servers to create isolated network environments, improving privacy and control. Personalized user spaces enable users to independently create and manage networks. Support for 6plane and rfc4193 IPv6 addressing enriches enterprise or personal networking capabilities. Compatibility with ARM64 and AMD64 architectures ensures broad device support. The tool focuses on user-friendly and flexible design to deliver a modern network management experience.
-      
+
       **Key Features:**
       - Intuitive Web interface for simplified ZeroTier network management
       - Organization and multi-user support for team collaboration
@@ -354,7 +354,7 @@ x-casaos:
       - Personalized user spaces for independent network creation and management
       - Support for 6plane and rfc4193 IPv6 addressing
       - Compatibility with ARM64 and AMD64 architectures for diverse devices
-      
+
       **Learn More:**
       - [ZTnet Official Website](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -364,7 +364,7 @@ x-casaos:
       The tool centres on an intuitive Web interface and organisation with multi-user support. Developed in TypeScript, it acts as an intermediary between users and the ZeroTier Controller API, enabling collaborative network management within organisations to streamline team tasks. Integration with ZeroTier Central API allows direct management of networks, nodes, and members through a user-friendly interface, enhancing configuration efficiency.
 
       It supports custom private root servers to create isolated network environments, improving privacy and control. Personalised user spaces enable users to independently create and manage networks. Support for 6plane and rfc4193 IPv6 addressing enriches enterprise or personal networking capabilities. Compatibility with ARM64 and AMD64 architectures ensures broad device support. The tool focuses on user-friendly and flexible design to deliver a modern network management experience.
-      
+
       **Key Features:**
       - Intuitive Web interface for simplified ZeroTier network management
       - Organisation and multi-user support for team collaboration
@@ -373,7 +373,7 @@ x-casaos:
       - Personalised user spaces for independent network creation and management
       - Support for 6plane and rfc4193 IPv6 addressing
       - Compatibility with ARM64 and AMD64 architectures for diverse devices
-      
+
       **Learn More:**
       - [ZTnet Official Website](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -383,7 +383,7 @@ x-casaos:
       Lo strumento si concentra su un'interfaccia Web intuitiva e organizzazione con supporto multi-utente. Sviluppato in TypeScript, agisce come intermediario tra utenti e l'API del Controller ZeroTier, consentendo la gestione collaborative delle reti all'interno delle organizzazioni per semplificare le attività del team. L'integrazione con l'API ZeroTier Central consente la gestione diretta di reti, nodi e membri attraverso un'interfaccia user-friendly, migliorando l'efficienza di configurazione.
 
       Supporta server root privati personalizzati per creare ambienti di rete isolati, migliorando privacy e controllo. Gli spazi utente personalizzati consentono agli utenti di creare e gestire reti indipendentemente. Il supporto per l'indirizzamento IPv6 6plane e rfc4193 arricchisce le capacità di networking aziendale o personale. La compatibilità con architetture ARM64 e AMD64 garantisce un ampio supporto dei dispositivi. Lo strumento si concentra su design user-friendly e flessibile per offrire un'esperienza di gestione rete moderna.
-      
+
       **Caratteristiche Principali:**
       - Interfaccia Web intuitiva per gestione semplificata delle reti ZeroTier
       - Supporto organizzazione e multi-utente per collaborazione del team
@@ -392,7 +392,7 @@ x-casaos:
       - Spazi utente personalizzati per creazione e gestione indipendente delle reti
       - Supporto per indirizzamento IPv6 6plane e rfc4193
       - Compatibilità con architetture ARM64 e AMD64 per dispositivi diversi
-      
+
       **Scopri di più:**
       - [Sito Web Ufficiale ZTnet](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -402,7 +402,7 @@ x-casaos:
       Verktøyet sentrerer rundt et intuitivt webgrensesnitt og organisering med flerbrukerstøtte. Utviklet i TypeScript, fungerer det som en mellommann mellom brukere og ZeroTier Controller API, som muliggjør samarbeidende nettverksadministrasjon innenfor organisasjoner for å effektivisere teamoppgaver. Integrasjon med ZeroTier Central API tillater direkto administrasjon av nettverk, noder og medlemmer gjennom et brukervennlig grensesnitt, som forbedrer konfigurasjonseffektivitet.
 
       Det støtter tilpassede private rotservere for å skape isolerte nettverksmiljøer, forbedre personvern og kontroll. Personaliserte brukerrom gjør at brukere kan uavhengig opprette og administrere nettverk. Støtte for 6plane og rfc4193 IPv6-adressering beriker bedrifts- eller personlige nettverksmuligheter. Kompatibilitet med ARM64 og AMD64 arkitekturer sikrer brett enhetsstøtte. Verktøyet fokuserer på brukervennlig og fleksibelt design for å levere en moderne nettverksadministrasjonsopplevelse.
-      
+
       **Hovedfunksjoner:**
       - Intuitivt webgrensesnitt for forenklet ZeroTier nettverksadministrasjon
       - Organisering og flerbrukerstøtte for teamsamarbeid
@@ -411,7 +411,7 @@ x-casaos:
       - Personaliserte brukerrom for uavhengig opprettelse og administrasjon av nettverk
       - Støtte for 6plane og rfc4193 IPv6-adressering
       - Kompatibilitet med ARM64 og AMD64 arkitekturer for diverse enheter
-      
+
       **Lær mer:**
       - [ZTnet Offisiell Nettside](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -421,7 +421,7 @@ x-casaos:
       该工具以直观的 Web 界面和组织化多用户支持为核心。它通过 TypeScript 开发，作为用户与 ZeroTier 控制器 API 的中介，支持组织内多用户协作管理网络，简化团队任务。集成 ZeroTier Central API，允许通过直观界面直接管理网络、节点和成员，提升配置效率。
 
       它支持自定义私有根服务器，打造隔离的网络环境，增强隐私和控制力。提供个性化用户空间，用户可独立创建和管理网络。支持 6plane 和 rfc4193 IPv6 寻址，丰富企业或个人网络功能。适配 ARM64 和 AMD64 架构，确保多设备兼容性。该工具以用户友好性和灵活性为中心，提供现代化的网络管理体验。
-      
+
       **主要功能：**
       - 直观的 Web 界面，简化 ZeroTier 网络管理
       - 组织和多用户支持，方便团队协作
@@ -440,7 +440,7 @@ x-casaos:
       このツールは直感的なWebインターフェースとマルチユーザーサポートによる組織化を中心としています。TypeScriptで開発され、ユーザーとZeroTier Controller APIの仲介として機能し、組織内でのコラボレーティブネットワーク管理を可能にしてチームタスクを効率化します。ZeroTier Central APIとの統合により、ユーザーフレンドリーなインターフェースを通じてネットワーク、ノード、メンバーの直接管理が可能になり、設定効率を向上させます。
 
       独立したネットワーク環境を作成するためのカスタムプライベートルートサーバーをサポートし、プライバシーと制御を向上させます。パーソナライズされたユーザースペースにより、ユーザーは独立してネットワークを作成・管理できます。6planeとrfc4193 IPv6アドレッシングのサポートにより、企業や個人のネットワーク機能が充実します。ARM64とAMD64アーキテクチャとの互換性により、幅広いデバイスサポートを保証します。このツールはユーザーフレンドリーで柔軟な設計に焦点を当て、モダンなネットワーク管理体験を提供します。
-      
+
       **主な機能:**
       - ZeroTierネットワーク管理を簡素化する直感的なWebインターフェース
       - チームコラボレーションのための組織とマルチユーザーサポート
@@ -449,7 +449,7 @@ x-casaos:
       - 独立したネットワーク作成と管理のためのパーソナライズされたユーザースペース
       - 6planeとrfc4193 IPv6アドレッシングのサポート
       - 多様なデバイス用のARM64とAMD64アーキテクチャとの互換性
-      
+
       **詳細情報:**
       - [ZTnet公式ウェブサイト](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -459,7 +459,7 @@ x-casaos:
       이 도구는 직관적인 웹 인터페이스와 다중 사용자 지원을 통한 조직화를 중심으로 합니다. TypeScript로 개발되어 사용자와 ZeroTier Controller API 간의 중개자 역할을 하며, 조직 내에서 협업 네트워크 관리를 가능하게 하여 팀 작업을 간소화합니다. ZeroTier Central API와의 통합을 통해 사용자 친화적인 인터페이스를 통해 네트워크, 노드 및 멤버를 직접 관리할 수 있어 구성 효율성을 향상시킵니다.
 
       격리된 네트워크 환경을 만들기 위한 사용자 정의 프라이빗 루트 서버를 지원하여 개인정보 보호와 제어를 향상시킵니다. 개인화된 사용자 공간을 통해 사용자가 독립적으로 네트워크를 생성하고 관리할 수 있습니다. 6plane과 rfc4193 IPv6 주소 지정 지원으로 기업 또는 개인 네트워킹 기능을 향상시킵니다. ARM64 및 AMD64 아키텍처와의 호환성으로 광범위한 장치 지원을 보장합니다. 이 도구는 사용자 친화적이고 유연한 설계에 중점을 두어 현대적인 네트워크 관리 경험을 제공합니다.
-      
+
       **주요 기능:**
       - ZeroTier 네트워크 관리를 단순화하는 직관적인 웹 인터페이스
       - 팀 협업을 위한 조직 및 다중 사용자 지원
@@ -468,7 +468,7 @@ x-casaos:
       - 독립적인 네트워크 생성 및 관리를 위한 개인화된 사용자 공간
       - 6plane 및 rfc4193 IPv6 주소 지정 지원
       - 다양한 장치를 위한 ARM64 및 AMD64 아키텍처 호환성
-      
+
       **자세히 알아보기:**
       - [ZTnet 공식 웹사이트](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -478,7 +478,7 @@ x-casaos:
       L'outil se centre sur une interface Web intuitive et une organisation avec support multi-utilisateur. Développé en TypeScript, il agit comme un intermédiaire entre les utilisateurs et l'API du Contrôleur ZeroTier, permettant la gestion collaborative de réseau au sein des organisations pour rationaliser les tâches d'équipe. L'intégration avec l'API ZeroTier Central permet la gestion directe des réseaux, nœuds et membres via une interface conviviale, améliorant l'efficacité de configuration.
 
       Il supporte des serveurs racine privés personnalisés pour créer des environnements réseau isolés, améliorant la confidentialité et le contrôle. Les espaces utilisateur personnalisés permettent aux utilisateurs de créer et gérer des réseaux indépendamment. Le support pour l'adressage IPv6 6plane et rfc4193 enrichit les capacités de réseau d'entreprise ou personnel. La compatibilité avec les architectures ARM64 et AMD64 assure un large support d'appareils. L'outil se concentre sur un design convivial et flexible pour offrir une expérience de gestion réseau moderne.
-      
+
       **Fonctionnalités Principales :**
       - Interface Web intuitive pour la gestion simplifiée des réseaux ZeroTier
       - Support d'organisation et multi-utilisateur pour la collaboration d'équipe
@@ -487,7 +487,7 @@ x-casaos:
       - Espaces utilisateur personnalisés pour la création et gestion indépendante de réseaux
       - Support pour l'adressage IPv6 6plane et rfc4193
       - Compatibilité avec les architectures ARM64 et AMD64 pour des appareils divers
-      
+
       **En savoir plus :**
       - [Site Web Officiel ZTnet](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -497,7 +497,7 @@ x-casaos:
       Das Tool konzentriert sich auf eine intuitive Web-Schnittstelle und Organisation mit Multi-User-Unterstützung. In TypeScript entwickelt, fungiert es als Vermittler zwischen Benutzern und der ZeroTier Controller API, ermöglicht kollaborative Netzwerkverwaltung innerhalb von Organisationen zur Rationalisierung von Teamaufgaben. Die Integration mit der ZeroTier Central API ermöglicht direkte Verwaltung von Netzwerken, Knoten und Mitgliedern durch eine benutzerfreundliche Schnittstelle, was die Konfigurationseffizienz verbessert.
 
       Es unterstützt benutzerdefinierte private Root-Server zur Erstellung isolierter Netzwerkumgebungen, verbessert Datenschutz und Kontrolle. Personalisierte Benutzerbereiche ermöglichen es Nutzern, Netzwerke unabhängig zu erstellen und zu verwalten. Unterstützung für 6plane und rfc4193 IPv6-Adressierung bereichert Unternehmens- oder persönliche Netzwerkfähigkeiten. Kompatibilitaet mit ARM64- und AMD64-Architekturen gewährleistet breite Gerätunterstützung. Das Tool fokussiert auf benutzerfreundliches und flexibles Design, um eine moderne Netzwerkverwaltungserfahrung zu liefern.
-      
+
       **Hauptmerkmale:**
       - Intuitive Web-Schnittstelle für vereinfachte ZeroTier-Netzwerkverwaltung
       - Organisation und Multi-User-Unterstützung für Teamzusammenarbeit
@@ -506,7 +506,7 @@ x-casaos:
       - Personalisierte Benutzerbereiche für unabhängige Netzwerkerstellung und -verwaltung
       - Unterstützung für 6plane und rfc4193 IPv6-Adressierung
       - Kompatibilitaet mit ARM64- und AMD64-Architekturen für verschiedene Geräte
-      
+
       **Mehr erfahren:**
       - [ZTnet Offizielle Website](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -516,7 +516,7 @@ x-casaos:
       Verktyget centrerar kring ett intuitivt webbgränssnitt och organisation med stöd för flera användare. Utvecklat i TypeScript fungerar det som en mellanhand mellan användare och ZeroTier Controller API, möjliggör samarbetande nätverkshantering inom organisationer för att effektivisera teamuppgifter. Integration med ZeroTier Central API tillåter direkto hantering av nätverk, noder och medlemmar genom ett användarvänligt gränssnitt, förbättrar konfigurationseffektivitet.
 
       Det stöder anpassade privata rotservrar för att skapa isolerade nätverksmiljöer, förbättrar integritet och kontroll. Personaliserade användarutrymmen gör det möjligt för användare att självständigt skapa och hantera nätverk. Stöd för 6plane och rfc4193 IPv6-adressering berikar företags- eller personliga nätverksmöjligheter. Kompatibilitet med ARM64- och AMD64-arkitekturer säkerställer brett enhetsstöd. Verktyget fokuserar på användarvänlig och flexibel design för att leverera en modern nätverkshanteringsupplevelse.
-      
+
       **Huvudfunktioner:**
       - Intuitivt webbgränssnitt för förenklad ZeroTier-nätverkshantering
       - Organisation och stöd för flera användare för teamsamarbete
@@ -525,7 +525,7 @@ x-casaos:
       - Personaliserade användarutrymmen för oberoende nätverksskapande och -hantering
       - Stöd för 6plane och rfc4193 IPv6-adressering
       - Kompatibilitet med ARM64- och AMD64-arkitekturer för olika enheter
-      
+
       **Läs mer:**
       - [ZTnet Officiella Webbplats](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -535,7 +535,7 @@ x-casaos:
       Το εργαλείο επικεντρώνεται σε ένα διαισθητικό Web interface και οργάνωση με υποστήριξη πολλαπλών χρηστών. Αναπτυγμένο σε TypeScript, λειτουργεί ως μεσολαβητής μεταξύ χρηστών και του ZeroTier Controller API, επιτρέποντας συνεργατική διαχείριση δικτύου εντός οργανισμών για τον εξορθολογισμό των εργασιών της ομάδας. Η ενσωμάτωση με το ZeroTier Central API επιτρέπει την άμεση διαχείριση δικτύων, κόμβων και μελών μέσω ενός φιλικού προς το χρήστη interface, βελτιώνοντας την αποδοτικότητα διαμόρφωσης.
 
       Υποστηρίζει προσαρμοσμένους ιδιωτικούς root servers για τη δημιουργία απομονωμένων περιβαλλόντων δικτύου, βελτιώνοντας την ιδιωτικότητα και τον έλεγχο. Οι εξατομικευμένοι χώροι χρήστη επιτρέπουν στους χρήστες να δημιουργούν και να διαχειρίζονται δίκτυα ανεξάρτητα. Η υποστήριξη για 6plane και rfc4193 IPv6 addressing εμπλουτίζει τις δυνατότητες εταιρικής ή προσωπικής δικτύωσης. Η συμβατότητα με αρχιτεκτονικές ARM64 και AMD64 εξασφαλίζει ευρεία υποστήριξη συσκευών. Το εργαλείο εστιάζει στον φιλικό προς το χρήστη και ευέλικτο σχεδιασμό για την παροχή μιας σύγχρονης εμπειρίας διαχείρισης δικτύου.
-      
+
       **Κύρια Χαρακτηριστικά:**
       - Διαισθητικό Web interface για απλοποιημένη διαχείριση δικτύου ZeroTier
       - Οργάνωση και υποστήριξη πολλαπλών χρηστών για συνεργασία ομάδας
@@ -544,7 +544,7 @@ x-casaos:
       - Εξατομικευμένοι χώροι χρήστη για ανεξάρτητη δημιουργία και διαχείριση δικτύου
       - Υποστήριξη για 6plane και rfc4193 IPv6 addressing
       - Συμβατότητα με αρχιτεκτονικές ARM64 και AMD64 για διάφορες συσκευές
-      
+
       **Μάθετε περισσότερα:**
       - [Επίσημη Ιστοσελίδα ZTnet](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -554,7 +554,7 @@ x-casaos:
       Alat se usredotočuje na intuitivno Web sučelje i organizaciju s podrškom za više korisnika. Razvijen u TypeScript-u, djeluje kao posrednik između korisnika i ZeroTier Controller API-ja, omogućavajući suradničko upravljanje mrežama unutar organizacija za racionalizaciju timskih zadataka. Integracija s ZeroTier Central API-jem omogućava direkto upravljanje mrežama, čvorovima i članovima kroz korisno sučelje, poboljšavajući efikasnost konfiguracije.
 
       Podržava prilagođene privatne root servere za stvaranje izoliranih mrežnih okruženja, poboljšavajući privatnost i kontrolu. Personalizirani korisnički prostori omogućavaju korisnicima da neovisno stvaraju i upravljaju mrežama. Podrška za 6plane i rfc4193 IPv6 adresiranje obogaćuje poslovne ili osobne mrežne mogućnosti. Kompatibilnost s ARM64 i AMD64 arhitekturama osigurava široku podršku uređaja. Alat se usredotočuje na korisnički prihvatljiv i fleksibilan dizajn za pružanje modernog iskustva upravljanja mrežama.
-      
+
       **Ključne Značajke:**
       - Intuitivno Web sučelje za pojednostavljeno upravljanje ZeroTier mrežama
       - Organizacija i podrška za više korisnika za timsku suradnju
@@ -563,7 +563,7 @@ x-casaos:
       - Personalizirani korisnički prostori za neovisno stvaranje i upravljanje mrežama
       - Podrška za 6plane i rfc4193 IPv6 adresiranje
       - Kompatibilnost s ARM64 i AMD64 arhitekturama za raznolike uređaje
-      
+
       **Saznajte više:**
       - [ZTnet Službena Web Stranica](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -573,7 +573,7 @@ x-casaos:
       A ferramenta centra-se numa interface Web intuitiva e organização com suporte multi-utilizador. Desenvolvida em TypeScript, actua como intermediário entre utilizadores e a API do ZeroTier Controller, permitindo gestão colaborativa de rede dentro de organizações para simplificar tarefas de equipa. A integração com a API ZeroTier Central permite gestão directa de redes, nós e membros através de uma interface amigável ao utilizador, melhorando a eficiência de configuração.
 
       Suporta servidores root privados personalizados para criar ambientes de rede isolados, melhorando privacidade e controlo. Espaços de utilizador personalizados permitem aos utilizadores criar e gerir redes independentemente. O suporte para endereçamento IPv6 6plane e rfc4193 enriquece as capacidades de rede empresarial ou pessoal. A compatibilidade com arquitecturas ARM64 e AMD64 garante amplo suporte de dispositivos. A ferramenta foca-se em design amigável ao utilizador e flexível para entregar uma experiência moderna de gestão de rede.
-      
+
       **Funcionalidades Principais:**
       - Interface Web intuitiva para gestão simplificada de rede ZeroTier
       - Organização e suporte multi-utilizador para colaboração de equipa
@@ -582,7 +582,7 @@ x-casaos:
       - Espaços de utilizador personalizados para criação e gestão independente de rede
       - Suporte para endereçamento IPv6 6plane e rfc4193
       - Compatibilidade com arquitecturas ARM64 e AMD64 para dispositivos diversos
-      
+
       **Saiba mais:**
       - [Website Oficial ZTnet](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -592,7 +592,7 @@ x-casaos:
       Инструмент сосредоточен на интуитивном веб-интерфейсе и организации с поддержкой нескольких пользователей. Разработанный на TypeScript, он действует как посредник между пользователями и API контроллера ZeroTier, обеспечивая совместное управление сетью в организациях для упрощения командных задач. Интеграция с API ZeroTier Central позволяет прямое управление сетями, узлами и участниками через дружественный интерфейс, повышая эффективность конфигурации.
 
       Он поддерживает пользовательские частные корневые серверы для создания изолированных сетевых сред, улучшая конфиденциальность и контроль. Персонализированные пользовательские пространства позволяют пользователям независимо создавать и управлять сетями. Поддержка адресации IPv6 6plane и rfc4193 обогащает возможности корпоративных или личных сетей. Совместимость с архитектурами ARM64 и AMD64 обеспечивает широкую поддержку устройств. Инструмент фокусируется на удобном для пользователя и гибком дизайне для обеспечения современного опыта управления сетью.
-      
+
       **Ключевые Особенности:**
       - Интуитивный веб-интерфейс для упрощенного управления сетью ZeroTier
       - Организация и поддержка нескольких пользователей для командного сотрудничества
@@ -601,7 +601,7 @@ x-casaos:
       - Персонализированные пользовательские пространства для независимого создания и управления сетью
       - Поддержка адресации IPv6 6plane и rfc4193
       - Совместимость с архитектурами ARM64 и AMD64 для различных устройств
-      
+
       **Узнать больше:**
       - [Официальный сайт ZTnet](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
@@ -611,7 +611,7 @@ x-casaos:
       Araç, sezgisel bir Web arayüzü ve çok kullanıcılı destekle organizasyona odaklanır. TypeScript ile geliştirilmiş olan araç, kullanıcılar ile ZeroTier Controller API arasında aracı görevi görür, organizasyonlar içinde işbirlikçi ağ yönetimini mümkün kılarak takım görevlerini kolaylaştırır. ZeroTier Central API ile entegrasyon, kullanıcı dostu bir arayüz aracılığıyla ağlar, düğümler ve üyelerin doğrudan yönetimini sağlayarak yapılandırma verimliliğini artırır.
 
       İzole ağ ortamları oluşturmak için özel özel kök sunucuları destekler, gizlilik ve kontrolü artırır. Kişiselleştirilmiş kullanıcı alanları, kullanıcıların bağımsız olarak ağlar oluşturmasını ve yönetmesini sağlar. 6plane ve rfc4193 IPv6 adresleme desteği, kurumsal veya kişisel ağ yeteneklerini zenginleştirir. ARM64 ve AMD64 mimarileri ile uyumluluk, geniş cihaz desteği sağlar. Araç, modern bir ağ yönetimi deneyimi sunmak için kullanıcı dostu ve esnek tasarıma odaklanır.
-      
+
       **Ana Özellikler:**
       - ZeroTier ağ yönetimini basitleştiren sezgisel Web arayüzü
       - Takım işbirliği için organizasyon ve çok kullanıcılı destek
@@ -620,19 +620,19 @@ x-casaos:
       - Bağımsız ağ oluşturma ve yönetimi için kişiselleştirilmiş kullanıcı alanları
       - 6plane ve rfc4193 IPv6 adresleme desteği
       - Çeşitli cihazlar için ARM64 ve AMD64 mimarileri ile uyumluluk
-      
+
       **Daha fazla bilgi:**
       - [ZTnet Resmi Web Sitesi](https://ztnet.network/)
       - [ZTnet GitHub](https://github.com/sinamics/ztnet)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ztnet/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ztnet/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ztnet/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ztnet/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ztnet/screenshot-3.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ztnet/screenshot-4.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ztnet/screenshot-5.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Ztnet/screenshot-6.jpg
-  thumbnail: ""
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ztnet/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ztnet/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ztnet/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ztnet/screenshot-4.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ztnet/screenshot-5.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ztnet/screenshot-6.jpg
+  thumbnail: ''
   tips:
     before_install:
       en_US: |
@@ -696,7 +696,7 @@ x-casaos:
         1. ZTNET'in yerel ZeroTier örneğinizi yönetmesine izin verin, [Dokümantasyonun Adım 2: ZeroTier Yapılandırması](https://ztnet.network/usage/migrate) bölümüne bakın
         2. (ZimaOS kullanıcılarının bu adımı gerçekleştirmesi gerekmez) `ZT_ADDR` ortam değişkenini ZeroTier kontrolör adresinize değiştirin
   scheme: http
-  port_map: "3050"
+  port_map: '3050'
   index: /
   title:
     en_US: ZTnet

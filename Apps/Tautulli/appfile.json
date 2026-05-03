@@ -2,15 +2,15 @@
   "version": "1.0",
   "title": "Tautulli",
   "name": "tautulli",
-  "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/icon.png",
+  "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/icon.png",
   "tagline": "Monitor your Plex Media Server and much more.",
   "overview": "Tautulli is a 3rd party application that you can run alongside your Plex Media Server to monitor activity and track various statistics.",
-  "thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/thumbnail.png",
+  "thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/thumbnail.png",
   "screenshots": [
-    "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/screenshot-1.png",
-    "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/screenshot-2.png",
-    "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/screenshot-3.png",
-    "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/screenshot-4.png"
+    "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/screenshot-1.png",
+    "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/screenshot-2.png",
+    "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/screenshot-3.png",
+    "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/screenshot-4.png"
   ],
   "category": [
     "Media"
@@ -102,7 +102,7 @@
   },
   "changelog": {
     "latest_updates": "",
-    "url": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tautulli/changelog.txt"
+    "url": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tautulli/changelog.txt"
   },
   "latest_update_date": ""
 }

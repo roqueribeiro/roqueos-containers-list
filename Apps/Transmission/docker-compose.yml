@@ -2,12 +2,12 @@ name: transmission
 services:
   transmission:
     environment:
-      PASS: casaos
-      PEERPORT: "51413"
-      PGID: "1000"
-      PUID: "1000"
+      PASS: roqueos
+      PEERPORT: '51413'
+      PGID: '1000'
+      PUID: '1000'
       TZ: Europe/London
-      USER: casaos
+      USER: roqueos
     image: linuxserver/transmission:4.0.4
     deploy:
       resources:
@@ -16,14 +16,14 @@ services:
     network_mode: bridge
     ports:
       - target: 9091
-        published: "9091"
+        published: '9091'
         protocol: tcp
       - target: 51413
-        published: "51413"
+        published: '51413'
         protocol: tcp
       - target: 51413
-        published: "51413"
-        protocol: UDP
+        published: '51413'
+        protocol: udp
     restart: unless-stopped
     volumes:
       - type: bind
@@ -39,56 +39,53 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
         - container: TRANSMISSION_WEB_HOME
           description:
-            en_us: ""
+            en_us: ''
         - container: USER
           description:
-            en_us: ""
+            en_us: ''
         - container: PASS
           description:
-            en_us: ""
+            en_us: ''
         - container: PEERPORT
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "9091"
+        - container: '9091'
           description:
-            en_us: ""
-
-        - container: "51413"
+            en_us: ''
+        - container: '51413'
           description:
-            en_us: ""
-
-        - container: "51413"
+            en_us: ''
+        - container: '51413'
           description:
-            en_us: ""
+            en_us: ''
           protocol: udp
-
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /downloads
           description:
-            en_us: ""
+            en_us: ''
         - container: /watch
           description:
-            en_us: ""
+            en_us: ''
     container_name: transmission
 x-casaos:
   architectures:
     - amd64
     - arm64
   main: transmission
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Downloader
   description:
     en_US: |
@@ -152,11 +149,11 @@ x-casaos:
 
       Sezgisel arayüzü ile Transmission, hem yeni başlayanlara hem de ileri düzey kullanıcılara hitap eder. Tek bir indirmeyi yönetiyor olun ya da karmaşık torrent kuyruklarıyla uğraşıyor olun, Transmission optimize edilmiş kaynak kullanımı ve güvenilir performans ile sorunsuz bir deneyim sağlar. Gündelik kullanıcılar ve teknoloji meraklıları için Transmission, ideal BitTorrent çözümüdür。
   developer: Transmission
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Transmission/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Transmission/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Transmission/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Transmission/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Transmission/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Transmission/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Transmission/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Transmission/screenshot-3.png
   tagline:
     en_US: Transmission is a cross-platform BitTorrent client
     en_GB: Transmission is a cross-platform BitTorrent client
@@ -173,70 +170,73 @@ x-casaos:
     pt_PT: Transmission é um cliente BitTorrent multiplataforma
     ru_RU: Transmission — это кроссплатформенный BitTorrent-клиент
     tr_TR: Transmission, platformlar arası bir BitTorrent istemcisidir
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Transmission/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Transmission/thumbnail.png
   tips:
     before_install:
       en_US: |
         | username | password |
         | -------- | -------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       en_GB: |
         | username | password |
         | -------- | -------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       it_IT: |
         | nome utente | password |
         | ---------- | -------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       nb_NO: |
         | brukernavn | passord |
         | ---------- | ------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       zh_CN: |
         | 用户名 | 密码 |
         | ------ | ---- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       ja_JP: |
         | ユーザー名 | パスワード |
         | --------- | --------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       ko_KR: |
         | 사용자 이름 | 비밀번호 |
         | --------- | -------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       fr_FR: |
         | nom d'utilisateur | mot de passe |
         | ----------------- | ------------ |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       de_DE: |
         | Benutzername | Passwort |
         | ----------- | -------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       sv_SE: |
         | användarnamn | lösenord |
         | ----------- | -------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       el_GR: |
         | όνομα χρήστη | κωδικός πρόσβασης |
         | ------------ | ----------------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       hr_HR: |
         | korisničko ime | lozinka |
         | -------------- | ------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       pt_PT: |
         | nome de utilizador | palavra-passe |
         | ----------------- | ------------- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       ru_RU: |
         | имя пользователя | пароль |
         | ---------------- | ------ |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
       tr_TR: |
         | kullanıcı adı | şifre |
         | ------------- | ----- |
-        | `casaos` | `casaos` |
+        | `roqueos` | `roqueos` |
   title:
     en_us: Transmission
   index: /
-  port_map: "9091"
+  port_map: '9091'
+  scheme: http
+x-roqueos:
+  mountShared: true

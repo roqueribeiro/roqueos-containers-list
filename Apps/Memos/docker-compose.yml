@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 5230
-        published: "5230"
+        published: '5230'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -24,16 +24,16 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: "timezone"
-            zh_cn: "时区"
+            en_us: timezone
+            zh_cn: 时区
       ports:
-        - container: "5230"
+        - container: '5230'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
@@ -42,7 +42,6 @@ services:
           description:
             en_us: memos data directory.
             zh_cn: memos 数据目录
-
     container_name: memos
 x-casaos:
   architectures:
@@ -145,13 +144,12 @@ x-casaos:
       Basitlik ve verimlilik için tasarlanan Memos, çeşitli kullanım senaryolarına hitap eder. Günlük düşünceleri not etmek, çalışma notlarını düzenlemek veya küçük ekiplerde görev notlarını paylaşmak olsun, Memos sezgisel etiket sistemi ve Markdown formatlaması ile sorunsuz bir deneyim sunar. Herhangi bir web tarayıcısı aracılığıyla erişilebilir, özel istemciler veya karmaşık kurulum gerektirmez, kullanıcıların notlarını her zaman ve her yerde yönetmelerini sağlar.
 
       Uzun vadeli kişisel bilgi arşivleme veya ekip işbirliği için hafif bir araç olarak kullanılsın, Memos güvenli, esnek ve kullanıcı dostu bir çözüm sunar, kullanıcıların verileri üzerinde tam kontrol sahibi olmalarını sağlarken akıcı bir not alma deneyimi sunar。
-
   developer: usememos Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/screenshot-3.png
   tagline:
     en_US: Memos is a lightweight, self-hosted memo hub. Open Source and Free forever.
     en_GB: Memos is a lightweight, self-hosted memo hub. Open Source and Free forever.
@@ -168,9 +166,9 @@ x-casaos:
     pt_PT: Memos é um hub de memos leve e auto-hospedado. Código aberto e grátis para sempre。
     ru_RU: Memos — это легкий, саморазмещаемый центр заметок. Открытый исходный код и бесплатный навсегда。
     tr_TR: Memos, hafif ve kendi kendine barındırılan bir not merkezi. Açık Kaynak ve sonsuza kadar ücretsiz。
-
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Memos/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/thumbnail.png
   tips: {}
   title:
     en_us: Memos
-  port_map: "5230"
+  port_map: '5230'
+  scheme: http

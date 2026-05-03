@@ -1,5 +1,4 @@
 name: index-tts-nvidia
-
 services:
   index-tts-nvidia:
     image: icewhaletech/index-tts:2.0
@@ -7,7 +6,7 @@ services:
     restart: unless-stopped
     ports:
       - target: 7860
-        published: "7867"
+        published: '7867'
         protocol: tcp
     environment:
       NVIDIA_VISIBLE_DEVICES: all
@@ -18,7 +17,8 @@ services:
           devices:
             - driver: nvidia
               count: all
-              capabilities: [gpu]
+              capabilities:
+                - gpu
     x-casaos:
       envs:
         - container: NVIDIA_VISIBLE_DEVICES
@@ -39,7 +39,7 @@ services:
             tr_TR: GPU hızlandırması için görünür NVIDIA cihazları
             zh_CN: 用于GPU加速的可见NVIDIA设备
       ports:
-        - container: "7860"
+        - container: '7860'
           description:
             de_DE: Gradio WebUI-Port
             el_GR: Θύρα Gradio WebUI
@@ -56,7 +56,6 @@ services:
             sv_SE: Gradio WebUI-port
             tr_TR: Gradio WebUI portu
             zh_CN: Gradio WebUI端口
-
 x-casaos:
   title:
     de_DE: Index-TTS(Nvidia GPU)
@@ -111,7 +110,6 @@ x-casaos:
 
       **Mehr Erfahren:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     el_GR: |
       Το IndexTTS2 είναι ένα προηγμένο μοντέλο μετατροπής κειμένου σε ομιλία χωρίς εκπαίδευση (zero-shot), που υλοποιεί καινοτόμα την πλήρη αποσύζευξη της συναισθηματικής έκφρασης και της ταυτότητας του ομιλητή. Το μοντέλο υποστηρίζει ακριβή έλεγχο διάρκειας φωνής και πολυτροπικό έλεγχο συναισθημάτων, μπορώντας να διατηρήσει την φωνή-στόχο ενώ αναπαράγει με ακρίβεια τον καθορισμένο συναισθηματικό τόνο.
 
@@ -132,7 +130,6 @@ x-casaos:
 
       **Μάθετε Περισσότερα:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     en_GB: |
       IndexTTS2 is an advanced zero-shot text-to-speech model that innovatively achieves complete decoupling of emotional expression and speaker identity. The model supports precise speech duration control and multimodal emotion control, capable of maintaining the target timbre whilst accurately reproducing the specified emotional intonation.
 
@@ -153,7 +150,6 @@ x-casaos:
 
       **Learn More:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     en_US: |
       IndexTTS2 is an advanced zero-shot text-to-speech model that innovatively achieves complete decoupling of emotional expression and speaker identity. The model supports precise speech duration control and multimodal emotion control, capable of maintaining the target timbre while accurately reproducing the specified emotional intonation.
 
@@ -174,7 +170,6 @@ x-casaos:
 
       **Learn More:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     fr_FR: |
       IndexTTS2 est un modèle avancé de synthèse vocale zéro-shot qui réalise de manière innovante un découplage complet entre l'expression émotionnelle et l'identité du locuteur. Le modèle prend en charge un contrôle précis de la durée de la parole et un contrôle émotionnel multimodal, capable de maintenir le timbre cible tout en reproduisant avec précision l'intonation émotionnelle spécifiée.
 
@@ -195,7 +190,6 @@ x-casaos:
 
       **En Savoir Plus:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     hr_HR: |
       IndexTTS2 je napredni zero-shot model pretvaranja teksta u govor koji inovativno postiže potpuno razdvajanje emocionalnog izraza i identiteta govornika. Model podržava preciznu kontrolu trajanja govora i multimodalnu kontrolu emocija, sposoban zadržati ciljni timbar dok točno reproducira specificirani emocionalni ton.
 
@@ -216,7 +210,6 @@ x-casaos:
 
       **Saznajte Više:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     it_IT: |
       IndexTTS2 è un modello avanzato di sintesi vocale zero-shot che realizza in modo innovativo un completo disaccoppiamento tra espressione emotiva e identità del parlante. Il modello supporta il controllo preciso della durata del parlato e il controllo emotivo multimodale, capace di mantenere il timbro target mentre riproduce accuratamente l'intonazione emotiva specificata.
 
@@ -237,7 +230,6 @@ x-casaos:
 
       **Scopri di Più:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     ja_JP: |
       IndexTTS2は、感情表現と話者アイデンティティの完全な分離を革新的に実現した高度なゼロショットテキスト読み上げモデルです。このモデルは、精密な音声時間制御とマルチモーダル感情制御をサポートし、ターゲット音色を維持しながら指定された感情的イントネーションを正確に再現できます。
 
@@ -258,7 +250,6 @@ x-casaos:
 
       **詳細情報：**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     ko_KR: |
       IndexTTS2는 감정 표현과 화자 신원의 완전한 분리를 혁신적으로 구현한 고급 제로샷 텍스트 음성 변환 모델입니다. 이 모델은 정밀한 음성 지속 시간 제어와 다중 모달 감정 제어를 지원하며, 대상 음색을 유지하면서 지정된 감정적 억양을 정확하게 재현할 수 있습니다.
 
@@ -279,7 +270,6 @@ x-casaos:
 
       **자세히 알아보기:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     nb_NO: |
       IndexTTS2 er en avansert zero-shot tekst-til-tale-modell som innovativt oppnår fullstendig frakobling av emosjonelt uttrykk og taler-identitet. Modellen støtter presis kontroll av talelengde og multimodal emosjonskontroll, i stand til å opprettholde målklangfargen samtidig som den nøyaktig gjengir den spesifiserte emosjonelle intonasjonen.
 
@@ -300,7 +290,6 @@ x-casaos:
 
       **Lær Mer:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     pt_PT: |
       IndexTTS2 é um modelo avançado de texto para fala zero-shot que alcança inovadoramente o desacoplamento completo entre expressão emocional e identidade do falante. O modelo suporta controle preciso da duração da fala e controle emocional multimodal, capaz de manter o timbre alvo enquanto reproduz com precisão a entonação emocional especificada.
 
@@ -321,7 +310,6 @@ x-casaos:
 
       **Saiba Mais:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     ru_RU: |
       IndexTTS2 - это продвинутая модель синтеза речи с нулевым обучением (zero-shot), которая инновационно реализует полное разделение эмоционального выражения и личности говорящего. Модель поддерживает точный контроль длительности речи и мультимодальный контроль эмоций, способна сохранять целевой тембр при точном воспроизведении указанной эмоциональной интонации.
 
@@ -342,7 +330,6 @@ x-casaos:
 
       **Узнать Больше:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     sv_SE: |
       IndexTTS2 - это продвинутая модель синтеза речи с нулевым обучением (zero-shot), которая инновационно реализует полное разделение эмоционального выражения и личности говорящего. Модель поддерживает точный контроль длительности речи и мультимодальный контроль эмоций, способна сохранять целевой тембр при точном воспроизведении указанной эмоциональной интонации.
 
@@ -363,7 +350,6 @@ x-casaos:
 
       **Läs Mer:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     tr_TR: |
       IndexTTS2, duygusal ifade ile konuşmacı kimliğinin tam ayrıştırılmasını yenilikçi bir şekilde gerçekleştiren gelişmiş bir sıfır örnekli (zero-shot) metinden sese modelidir. Model, hassas konuşma süresi kontrolünü ve çok modlu duygu kontrolünü destekler, hedef tınıyı korurken belirtilen duygusal tonlamayı doğru bir şekilde yeniden üretebilir.
 
@@ -384,7 +370,6 @@ x-casaos:
 
       **Daha Fazla Bilgi:**
       - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
-
     zh_CN: |
       IndexTTS2 是一个先进的零样本文本转语音模型，创新性地实现了情感表达与说话人身份的完全解耦。模型支持精确的语音时长控制和多模态情感控制，能够在保持目标音色的同时准确还原指定的情感语调。
 
@@ -409,14 +394,14 @@ x-casaos:
   author: index-tts
   developer: icewhaletech
   main: index-tts-nvidia
-  port_map: "7867"
+  port_map: '7867'
   architectures:
     - amd64
   index: /
   scheme: http
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Index-TTS_Nvidia/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Index-TTS_Nvidia/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Index-TTS_Nvidia/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Index-TTS_Nvidia/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Index-TTS_Nvidia/screenshot-3.png
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Index-TTS_Nvidia/thumbnail.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Index-TTS_Nvidia/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Index-TTS_Nvidia/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Index-TTS_Nvidia/screenshot-3.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Index-TTS_Nvidia/thumbnail.png

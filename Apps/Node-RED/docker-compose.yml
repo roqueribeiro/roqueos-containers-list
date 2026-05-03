@@ -9,7 +9,7 @@ services:
     network_mode: host
     ports:
       - target: 1880
-        published: "1880"
+        published: '1880'
         protocol: tcp
     restart: always
     volumes:
@@ -18,7 +18,7 @@ services:
         target: /data
     x-casaos:
       ports:
-        - container: "1880"
+        - container: '1880'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -35,7 +35,6 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP-порт WebUI
             tr_TR: WebUI HTTP Portu
-
       volumes:
         - container: /data
           description:
@@ -62,7 +61,7 @@ x-casaos:
     - s390x
     - arm
   main: node-red
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Developer
   description:
     en_US: |
@@ -71,7 +70,7 @@ x-casaos:
       Core features include a low-code flow editor and robust data handling. Built on Node.js with an event-driven, non-blocking model, the platform supports real-time data collection, transformation, and visualization. A palette with over 5000 nodes allows users to construct flows via drag-and-drop. A rich text editor enables creating JavaScript functions for enhanced customization.
 
       It stores flows in JSON format, facilitating easy import and export for sharing. A built-in library allows saving useful functions, templates, or flows for reuse, and an online flow library supports sharing top flows globally. With ease of use and efficiency at the core, the platform delivers a modern solution for diverse automation needs.
-  
+
       **Key Features:**
       - Browser-based low-code flow editor with drag-and-drop node connections
       - Real-time data collection, transformation, and visualization
@@ -81,7 +80,7 @@ x-casaos:
       - JSON-based flow storage for easy sharing
       - Built-in library for saving functions, templates, and flows
       - Online flow library for sharing top flows
-  
+
       **Learn More:**
       - [Node-RED Official Website](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -91,7 +90,7 @@ x-casaos:
       Core features include a low-code flow editor and robust data handling. Built on Node.js with an event-driven, non-blocking model, the platform supports real-time data collection, transformation, and visualisation. A palette with over 5000 nodes allows users to construct flows via drag-and-drop. A rich text editor enables creating JavaScript functions for enhanced customisation.
 
       It stores flows in JSON format, facilitating easy import and export for sharing. A built-in library allows saving useful functions, templates, or flows for reuse, and an online flow library supports sharing top flows globally. With ease of use and efficiency at the core, the platform delivers a modern solution for diverse automation needs.
-  
+
       **Key Features:**
       - Browser-based low-code flow editor with drag-and-drop node connections
       - Real-time data collection, transformation, and visualisation
@@ -101,7 +100,7 @@ x-casaos:
       - JSON-based flow storage for easy sharing
       - Built-in library for saving functions, templates, and flows
       - Online flow library for sharing top flows
-  
+
       **Learn More:**
       - [Node-RED Official Website](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -111,7 +110,7 @@ x-casaos:
       Le caratteristiche principali includono un editor di flussi low-code e gestione robusta dei dati. Costruito su Node.js con un modello event-driven e non-bloccante, la piattaforma supporta raccolta, trasformazione e visualizzazione dati in tempo reale. Una tavolozza con oltre 5000 nodi permette agli utenti di costruire flussi tramite drag-and-drop. Un editor di testo ricco consente di creare funzioni JavaScript per personalizzazione avanzata.
 
       Memorizza i flussi in formato JSON, facilitando l'importazione ed esportazione facile per la condivisione. Una libreria integrata permette di salvare funzioni utili, template o flussi per il riutilizzo, e una libreria di flussi online supporta la condivisione dei migliori flussi globalmente. Con facilità d'uso ed efficienza al centro, la piattaforma fornisce una soluzione moderna per diverse esigenze di automazione.
-  
+
       **Caratteristiche Principali:**
       - Editor di flussi low-code basato su browser con connessioni nodi drag-and-drop
       - Raccolta, trasformazione e visualizzazione dati in tempo reale
@@ -121,7 +120,7 @@ x-casaos:
       - Archiviazione flussi basata su JSON per facile condivisione
       - Libreria integrata per salvare funzioni, template e flussi
       - Libreria di flussi online per condividere i migliori flussi
-  
+
       **Scopri di Più:**
       - [Sito Ufficiale Node-RED](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -131,7 +130,7 @@ x-casaos:
       Kjernefunksjoner inkluderer en lavkode-flyteditor og robust datahåndtering. Bygget på Node.js med en hendelsesdrevet, ikke-blokkerende modell, støtter plattformen sanntids datainnsamling, transformasjon og visualisering. En palett med over 5000 noder lar brukere konstruere flyter via dra-og-slipp. En rik teksteditor muliggjør opprettelse av JavaScript-funksjoner for forbedret tilpasning.
 
       Den lagrer flyter i JSON-format, noe som letter enkel import og eksport for deling. Et innebygd bibliotek lar deg lagre nyttige funksjoner, maler eller flyter for gjenbruk, og et online flytbibliotek støtter deling av topflyter globalt. Med brukervennlighet og effektivitet i kjernen, leverer plattformen en moderne løsning for diverse automatiseringsbehov.
-  
+
       **Hovedfunksjoner:**
       - Nettleserbasert lavkode-flyteditor med dra-og-slipp nodetilkoblinger
       - Sanntids datainnsamling, transformasjon og visualisering
@@ -141,7 +140,7 @@ x-casaos:
       - JSON-basert flytlagring for enkel deling
       - Innebygd bibliotek for lagring av funksjoner, maler og flyter
       - Online flytbibliotek for deling av topflyter
-  
+
       **Lær Mer:**
       - [Node-RED Offisielle Nettside](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -170,7 +169,7 @@ x-casaos:
       主要機能には、低コードフローエディターと堅牢なデータ処理が含まれます。イベント駆動型のノンブロッキングモデルを持つNode.js上に構築されたこのプラットフォームは、リアルタイムデータ収集、変換、視覚化をサポートします。5000以上のノードを含むパレットにより、ユーザーはドラッグアンドドロップでフローを構築できます。リッチテキストエディターでJavaScript関数を作成し、カスタマイズを強化できます。
 
       フローをJSON形式で保存し、共有のための簡単なインポートとエクスポートを促進します。内蔵ライブラリでは有用な関数、テンプレート、フローを再利用のために保存でき、オンラインフローライブラリは世界的にトップフローの共有をサポートします。使いやすさと効率性を中核とし、このプラットフォームは多様な自動化ニーズに対する現代的なソリューションを提供します。
-  
+
       **主な機能：**
       - ドラッグアンドドロップノード接続機能付きブラウザベース低コードフローエディター
       - リアルタイムデータ収集、変換、視覚化
@@ -180,7 +179,7 @@ x-casaos:
       - 簡単共有のためのJSONベースフロー保存
       - 関数、テンプレート、フロー保存用内蔵ライブラリ
       - トップフロー共有用オンラインフローライブラリ
-  
+
       **詳細はこちら：**
       - [Node-RED公式ウェブサイト](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -190,7 +189,7 @@ x-casaos:
       핵심 기능에는 로우코드 플로우 편집기와 강력한 데이터 처리가 포함됩니다. 이벤트 기반의 논블로킹 모델을 가진 Node.js를 기반으로 구축된 이 플랫폼은 실시간 데이터 수집, 변환 및 시각화를 지원합니다. 5000개 이상의 노드가 있는 팔레트를 통해 사용자는 드래그 앤 드롭으로 플로우를 구성할 수 있습니다. 리치 텍스트 편집기로 JavaScript 함수를 만들어 향상된 커스터마이징이 가능합니다.
 
       플로우를 JSON 형식으로 저장하여 공유를 위한 쉬운 가져오기 및 내보내기를 용이하게 합니다. 내장 라이브러리를 통해 유용한 함수, 템플릿 또는 플로우를 재사용을 위해 저장할 수 있으며, 온라인 플로우 라이브러리는 전 세계적으로 최고의 플로우 공유를 지원합니다. 사용 편의성과 효율성을 핵심으로 하여, 이 플랫폼은 다양한 자동화 요구에 대한 현대적인 솔루션을 제공합니다.
-  
+
       **주요 기능:**
       - 드래그 앤 드롭 노드 연결 기능이 있는 브라우저 기반 로우코드 플로우 편집기
       - 실시간 데이터 수집, 변환 및 시각화
@@ -200,7 +199,7 @@ x-casaos:
       - 쉬운 공유를 위한 JSON 기반 플로우 저장
       - 함수, 템플릿 및 플로우 저장을 위한 내장 라이브러리
       - 최고의 플로우 공유를 위한 온라인 플로우 라이브러리
-  
+
       **자세히 알아보기:**
       - [Node-RED 공식 웹사이트](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -210,7 +209,7 @@ x-casaos:
       Les fonctionnalités principales incluent un éditeur de flux low-code et une gestion robuste des données. Construit sur Node.js avec un modèle événementiel non-bloquant, la plateforme supporte la collecte, transformation et visualisation de données en temps réel. Une palette avec plus de 5000 nœuds permet aux utilisateurs de construire des flux via glisser-déposer. Un éditeur de texte riche permet de créer des fonctions JavaScript pour une personnalisation améliorée.
 
       Il stocke les flux au format JSON, facilitant l'importation et l'exportation faciles pour le partage. Une bibliothèque intégrée permet de sauvegarder des fonctions utiles, modèles ou flux pour réutilisation, et une bibliothèque de flux en ligne supporte le partage des meilleurs flux globalement. Avec la facilité d'utilisation et l'efficacité au cœur, la plateforme fournit une solution moderne pour divers besoins d'automatisation.
-  
+
       **Fonctionnalités Principales :**
       - Éditeur de flux low-code basé navigateur avec connexions nœuds glisser-déposer
       - Collecte, transformation et visualisation de données en temps réel
@@ -220,7 +219,7 @@ x-casaos:
       - Stockage de flux basé JSON pour partage facile
       - Bibliothèque intégrée pour sauvegarder fonctions, modèles et flux
       - Bibliothèque de flux en ligne pour partager les meilleurs flux
-  
+
       **En Savoir Plus :**
       - [Site Officiel Node-RED](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -230,7 +229,7 @@ x-casaos:
       Kernfunktionen umfassen einen Low-Code-Fluss-Editor und robuste Datenverarbeitung. Aufgebaut auf Node.js mit einem ereignisgetriebenen, nicht-blockierenden Modell, unterstützt die Plattform Echtzeit-Datensammlung, -transformation und -visualisierung. Eine Palette mit über 5000 Knoten ermöglicht es Benutzern, Flüsse per Drag-and-Drop zu konstruieren. Ein Rich-Text-Editor ermöglicht das Erstellen von JavaScript-Funktionen für erweiterte Anpassung.
 
       Es speichert Flüsse im JSON-Format und erleichtert so einfachen Import und Export zum Teilen. Eine integrierte Bibliothek ermöglicht das Speichern nützlicher Funktionen, Vorlagen oder Flüsse zur Wiederverwendung, und eine Online-Flussbibliothek unterstützt das globale Teilen von Top-Flüssen. Mit Benutzerfreundlichkeit und Effizienz im Kern liefert die Plattform eine moderne Lösung für vielfältige Automatisierungsbedürfnisse.
-  
+
       **Hauptmerkmale:**
       - Browserbasierter Low-Code-Fluss-Editor mit Drag-and-Drop-Knotenverbindungen
       - Echtzeit-Datensammlung, -transformation und -visualisierung
@@ -240,7 +239,7 @@ x-casaos:
       - JSON-basierte Flussspeicherung für einfaches Teilen
       - Integrierte Bibliothek zum Speichern von Funktionen, Vorlagen und Flüssen
       - Online-Flussbibliothek zum Teilen von Top-Flüssen
-  
+
       **Mehr Erfahren:**
       - [Node-RED Offizielle Website](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -250,7 +249,7 @@ x-casaos:
       Kärnfunktioner inkluderar en lågkodsflödeseditor och robust datahantering. Byggd på Node.js med en händelsedriven, icke-blockerande modell, stöder plattformen realtidsdatainsamling, transformation och visualisering. En palett med över 5000 noder låter användare konstruera flöden via dra-och-släpp. En rik textredigerare möjliggör skapande av JavaScript-funktioner för förbättrad anpassning.
 
       Den lagrar flöden i JSON-format, vilket underlättar enkel import och export för delning. Ett inbyggt bibliotek låter dig spara användbara funktioner, mallar eller flöden för återanvändning, och ett onlineflödesbibliotek stöder delning av toppflöden globalt. Med användarvänlighet och effektivitet i kärnan levererar plattformen en modern lösning för mångfaldiga automatiseringsbehov.
-  
+
       **Huvudfunktioner:**
       - Webbläsarbaserad lågkodsflödeseditor med dra-och-släpp nodanslutningar
       - Realtidsdatainsamling, transformation och visualisering
@@ -260,7 +259,7 @@ x-casaos:
       - JSON-baserad flödeslagring för enkel delning
       - Inbyggt bibliotek för sparande av funktioner, mallar och flöden
       - Onlineflödesbibliotek för delning av toppflöden
-  
+
       **Lär Dig Mer:**
       - [Node-RED Officiell Webbplats](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -270,7 +269,7 @@ x-casaos:
       Τα βασικά χαρακτηριστικά περιλαμβάνουν έναν επεξεργαστή ροών χαμηλού κώδικα και ισχυρό χειρισμό δεδομένων. Χτισμένο σε Node.js με ένα μοντέλο βασισμένο σε γεγονότα και μη-αποκλειστικό, η πλατφόρμα υποστηρίζει συλλογή, μετασχηματισμό και οπτικοποίηση δεδομένων σε πραγματικό χρόνο. Μια παλέτα με πάνω από 5000 κόμβους επιτρέπει στους χρήστες να κατασκευάζουν ροές μέσω σύρσιμο-και-απόθεση. Ένας πλούσιος επεξεργαστής κειμένου επιτρέπει τη δημιουργία JavaScript συναρτήσεων για βελτιωμένη προσαρμογή.
 
       Αποθηκεύει ροές σε μορφή JSON, διευκολύνοντας εύκολη εισαγωγή και εξαγωγή για κοινή χρήση. Μια ενσωματωμένη βιβλιοθήκη επιτρέπει την αποθήκευση χρήσιμων συναρτήσεων, προτύπων ή ροών για επαναχρησιμοποίηση, και μια διαδικτυακή βιβλιοθήκη ροών υποστηρίζει την κοινή χρήση κορυφαίων ροών παγκοσμίως. Με ευκολία χρήσης και αποδοτικότητα στο κέντρο, η πλατφόρμα παρέχει μια σύγχρονη λύση για ποικίλες ανάγκες αυτοματισμού.
-  
+
       **Βασικά Χαρακτηριστικά:**
       - Επεξεργαστής ροών χαμηλού κώδικα βασισμένος σε περιηγητή με συνδέσεις κόμβων σύρσιμο-και-απόθεση
       - Συλλογή, μετασχηματισμός και οπτικοποίηση δεδομένων σε πραγματικό χρόνο
@@ -280,7 +279,7 @@ x-casaos:
       - Αποθήκευση ροών βασισμένη σε JSON για εύκολη κοινή χρήση
       - Ενσωματωμένη βιβλιοθήκη για αποθήκευση συναρτήσεων, προτύπων και ροών
       - Διαδικτυακή βιβλιοθήκη ροών για κοινή χρήση κορυφαίων ροών
-  
+
       **Μάθετε Περισσότερα:**
       - [Επίσημος Ιστότοπος Node-RED](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -290,7 +289,7 @@ x-casaos:
       Osnovne značajke uključuju uređivač tokova s niskim kodom i robusno rukovanje podacima. Izgrađen na Node.js-u s modelom usmjerenim na događaje i neblokiran, platforma podržava prikupljanje, transformaciju i vizualizaciju podataka u stvarnom vremenu. Paleta s više od 5000 čvorova omogućava korisnicima konstrukciju tokova putem povuci-i-ispusti. Bogati uređivač teksta omogućava stvaranje JavaScript funkcija za poboljšanu prilagodbu.
 
       Pohranjuje tokove u JSON formatu, olakšavajući lako uvozenje i izvoziranje za dijeljenje. Ugrađena biblioteka omogućava spremanje korisnih funkcija, predložaka ili tokova za ponovnu upotrebu, a online biblioteka tokova podržava dijeljenje vrhunskih tokova globalno. S lakoćom korištenja i učinkovitošću u središtu, platforma pruža moderno rješenje za raznolike potrebe automatizacije.
-  
+
       **Ključne Značajke:**
       - Uređivač tokova s niskim kodom temeljen na pregledniku s povuci-i-ispusti vezama čvorova
       - Prikupljanje, transformacija i vizualizacija podataka u stvarnom vremenu
@@ -300,7 +299,7 @@ x-casaos:
       - Pohranjivanje tokova temeljeno na JSON-u za lako dijeljenje
       - Ugrađena biblioteka za spremanje funkcija, predložaka i tokova
       - Online biblioteka tokova za dijeljenje vrhunskih tokova
-  
+
       **Saznajte Više:**
       - [Node-RED Službena Web Stranica](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -310,7 +309,7 @@ x-casaos:
       As funcionalidades principais incluem um editor de fluxos de baixo código e tratamento robusto de dados. Construído em Node.js com um modelo orientado a eventos e não-bloqueante, a plataforma suporta recolha, transformação e visualização de dados em tempo real. Uma paleta com mais de 5000 nós permite aos utilizadores construir fluxos via arrastar-e-largar. Um editor de texto rico permite criar funções JavaScript para personalização melhorada.
 
       Armazena fluxos em formato JSON, facilitando importação e exportação fáceis para partilha. Uma biblioteca incorporada permite guardar funções úteis, modelos ou fluxos para reutilização, e uma biblioteca de fluxos online suporta partilha dos melhores fluxos globalmente. Com facilidade de uso e eficiência no centro, a plataforma oferece uma solução moderna para diversas necessidades de automação.
-  
+
       **Funcionalidades Principais:**
       - Editor de fluxos de baixo código baseado no browser com ligações de nós arrastar-e-largar
       - Recolha, transformação e visualização de dados em tempo real
@@ -320,7 +319,7 @@ x-casaos:
       - Armazenamento de fluxos baseado em JSON para partilha fácil
       - Biblioteca incorporada para guardar funções, modelos e fluxos
       - Biblioteca de fluxos online para partilhar os melhores fluxos
-  
+
       **Saber Mais:**
       - [Website Oficial Node-RED](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -330,7 +329,7 @@ x-casaos:
       Основные функции включают редактор потоков с низким кодом и надежную обработку данных. Построенная на Node.js с событийно-ориентированной, неблокирующей моделью, платформа поддерживает сбор, преобразование и визуализацию данных в реальном времени. Палитра с более чем 5000 узлов позволяет пользователям создавать потоки методом перетаскивания. Редактор форматированного текста позволяет создавать JavaScript функции для расширенной настройки.
 
       Он хранит потоки в формате JSON, облегчая простой импорт и экспорт для совместного использования. Встроенная библиотека позволяет сохранять полезные функции, шаблоны или потоки для повторного использования, а онлайн-библиотека потоков поддерживает глобальное совместное использование лучших потоков. С простотой использования и эффективностью в основе, платформа предоставляет современное решение для разнообразных потребностей автоматизации.
-  
+
       **Ключевые Особенности:**
       - Браузерный редактор потоков с низким кодом с соединениями узлов методом перетаскивания
       - Сбор, преобразование и визуализация данных в реальном времени
@@ -340,7 +339,7 @@ x-casaos:
       - Хранение потоков на основе JSON для простого совместного использования
       - Встроенная библиотека для сохранения функций, шаблонов и потоков
       - Онлайн-библиотека потоков для совместного использования лучших потоков
-  
+
       **Узнать Больше:**
       - [Официальный Сайт Node-RED](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
@@ -350,7 +349,7 @@ x-casaos:
       Temel özellikler düşük kodlu akış editörü ve güçlü veri işlemeyi içerir. Olay tabanlı, engellemesiz model ile Node.js üzerine inşa edilen platform, gerçek zamanlı veri toplama, dönüştürme ve görselleştirmeyi destekler. 5000'den fazla düğüm içeren palet, kullanıcıların sürükle-bırak yoluyla akışlar oluşturmasına olanak tanır. Zengin metin editörü, gelişmiş özelleştirme için JavaScript fonksiyonları oluşturmayı mümkün kılar.
 
       Akışları JSON formatında saklar ve paylaşım için kolay içe/dışa aktarmayı kolaylaştırır. Yerleşik kütüphane, yeniden kullanım için faydalı fonksiyonlar, şablonlar veya akışlar kaydetmeye olanak tanır ve çevrimiçi akış kütüphanesi en iyi akışların küresel olarak paylaşımını destekler. Kullanım kolaylığı ve verimliliği merkeze alarak, platform çeşitli otomasyon ihtiyaçları için modern bir çözüm sunar.
-  
+
       **Ana Özellikler:**
       - Sürükle-bırak düğüm bağlantıları ile tarayıcı tabanlı düşük kodlu akış editörü
       - Gerçek zamanlı veri toplama, dönüştürme ve görselleştirme
@@ -360,16 +359,16 @@ x-casaos:
       - Kolay paylaşım için JSON tabanlı akış depolama
       - Fonksiyonlar, şablonlar ve akışları kaydetmek için yerleşik kütüphane
       - En iyi akışları paylaşmak için çevrimiçi akış kütüphanesi
-  
+
       **Daha Fazla Bilgi:**
       - [Node-RED Resmi Web Sitesi](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
   developer: Node-RED
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/screenshot-3.png
   tagline:
     en_US: Low-code programming for event-driven applications
     en_GB: Low-code programming for event-driven applications
@@ -386,9 +385,10 @@ x-casaos:
     pt_PT: Programação de baixo código para aplicações baseadas em eventos
     ru_RU: Программирование с низким кодом для событийно-ориентированных приложений
     tr_TR: Olay tabanlı uygulamalar için düşük kodlu programlama
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/thumbnail.png
   tips: {}
   title:
     en_US: Node-RED
   index: /
-  port_map: "1880"
+  port_map: '1880'
+  scheme: http

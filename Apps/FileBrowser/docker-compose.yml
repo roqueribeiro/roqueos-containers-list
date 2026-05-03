@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 80
-        published: "10180"
+        published: '10180'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -38,11 +38,10 @@ services:
             en_us: Run FileBrowser as specified gid.
             zh_cn: 以指定的组ID运行FileBrowser
       ports:
-        - container: "80"
+        - container: '80'
           description:
             en_us: WebUI Port
             zh_cn: WebUI端口
-
       volumes:
         - container: /db
           description:
@@ -59,7 +58,7 @@ x-casaos:
     - arm64
     - arm
   main: filebrowser
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Cloud
   description:
     en_us: File Browser - Webbased File Browser including sharing functions etc.
@@ -76,11 +75,11 @@ x-casaos:
     sv_se: File Browser - Webbaserad filbläddrare inklusive delningsfunktioner etc.
     uk_ua: File Browser - Webbased File Browser, включаючи функції обміну, тощо
   developer: File Browser
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/screenshot-3.jpg
   tagline:
     en_us: Upload, delete, preview, rename, edit and share your files.
     zh_cn: 上传，删除，预览，重命名，编辑和共享您的文件。
@@ -95,7 +94,7 @@ x-casaos:
     pt_br: Faça upload, exclua, visualize, renomeie, edite e compartilhe seus arquivos.
     sv_se: Ladda upp, ta bort, förhandsgranska, byt namn, redigera och dela dina filer.
     uk_ua: Завантажте, видаліть, перегляньте, перейменуйте, відредагуйте і поділіться своїми файлами.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/FileBrowser/thumbnail.jpg
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/FileBrowser/thumbnail.jpg
   tips:
     before_install:
       en_us: |
@@ -113,4 +112,7 @@ x-casaos:
   title:
     en_us: FileBrowser
   index: /
-  port_map: "10180"
+  port_map: '10180'
+  scheme: http
+x-roqueos:
+  mountShared: true

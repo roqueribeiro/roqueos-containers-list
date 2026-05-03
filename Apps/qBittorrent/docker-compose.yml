@@ -5,16 +5,16 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-      UMASK: "002"
+      UMASK: '002'
     image: ghcr.io/hotio/qbittorrent:release-5.0.4
     deploy:
       resources:
         reservations:
-          memory: "256M"
+          memory: 256M
     network_mode: bridge
     ports:
       - target: 8080
-        published: "8181"
+        published: '8181'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -43,11 +43,10 @@ services:
             en_us: Run qBittorrent as specified UMASK.
             zh_cn: 以指定的 UMASK 运行 qBittorrent。
       ports:
-        - container: "8080"
+        - container: '8080'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
-
       volumes:
         - container: /config
           description:
@@ -63,14 +62,14 @@ x-casaos:
     - amd64
     - arm64
   main: qbittorrent
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Downloader
   description:
     en_us: |
       **Elevate Your Home Media Experience**. qBittorrent transforms your home media setup with a polished interface reminiscent of µTorrent, minus the ads. Unlike traditional download tools, it offers a streamlined, efficient, and ad-free experience. This makes it a perfect fit for those seeking a hassle-free way to manage and enjoy their media collections at home.
-      
+
       **Feature-Rich and User-Friendly**. With qBittorrent, you gain access to a well-integrated and extensible search engine, allowing simultaneous searches across multiple torrent sites, and category-specific searches for books, music, and software. Its support for RSS feeds with advanced filters, magnet links, encrypted connections, and more, ensures you have complete control over your downloads. Available on all major platforms and in around 70 languages, qBittorrent is both versatile and accessible.
-      
+
       **Seamless Integration with Private Clouds like Zima**. Deploying qBittorrent on private cloud devices such as Zima offers unparalleled convenience. Enjoy virtually unlimited storage, enhanced privacy for your data, and local network speeds that make downloading and streaming effortless. This setup ensures that your media library is always at your fingertips, securely and swiftly.
     zh_cn: |
       **提升家庭媒体体验**。qBittorrent 通过一个类似于 µTorrent 的精美界面来改造您的家庭媒体设置，但没有广告。与传统下载工具不同，它提供了简洁、高效且无广告的体验，非常适合那些希望在家中轻松管理和享受媒体收藏的人。
@@ -90,11 +89,11 @@ x-casaos:
     sv_se: qBittorrent-projektets mål är att erbjuda en öppen källkodsalternativ till µTorrent.
     uk_ua: Проект qBittorrent має на меті надати альтернативу з відкритим вихідним кодом для µTorrent.
   developer: qBittorrent
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/screenshot-3.png
   tagline:
     en_us: P2P bittorrent download
     zh_cn: P2P BT 下载
@@ -109,12 +108,12 @@ x-casaos:
     pt_br: Downloader BitTorrent gratuito
     sv_se: Gratis BitTorrent-downladdare
     uk_ua: Безкоштовний завантажувач BitTorrent
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/qBittorrent/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/qBittorrent/thumbnail.png
   tips:
     before_install:
       en_us: |
         Default Account
-        
+
         | Username | Password |
         |----------|----------|
         | `admin`    | Get from log |
@@ -122,25 +121,25 @@ x-casaos:
         Passwords need to be viewed in the log
 
         Default Accessible Path in qBittorrent
-        
+
         | Name | Value |
         | ---- | ----- |
         | DATA Path | `/DATA` |
         | Downloads Path | `/DATA/Downloads` |
         | Media Path | `/DATA/Media` |
 
-        The paths of other DATA subdirectories in CasaOS are also similar.
+        The paths of other DATA subdirectories in RoqueOS are also similar.
         Please make sure you use the correct path when using qBittorrent.
       zh_cn: |
         默认账号
-        
+
         | Username | Password   |
         | -------- | ---------- |
         | admin    | 从日志中获取 |
 
         需要在日志中查看密码
 
-        
+
         qBittorrent 默认可访问路径
 
         | 名称 | 值 |
@@ -149,7 +148,7 @@ x-casaos:
         | 下载路径 | `/DATA/Downloads` |
         | 媒体路径 | `/DATA/Media` |
 
-        CasaOS 其他 DATA 子目录的路径也类似。
+        RoqueOS 其他 DATA 子目录的路径也类似。
         请确保在使用 qBittorrent 时使用正确的路径。
 
         使用教程
@@ -164,4 +163,7 @@ x-casaos:
   title:
     en_us: qBittorrent
   index: /
-  port_map: "8181"
+  port_map: '8181'
+  scheme: http
+x-roqueos:
+  mountShared: true

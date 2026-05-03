@@ -2,16 +2,16 @@
 	"version": "2.0",
 	"title": "Smokeping",
 	"name": "Smokeping",
-	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/icon.png",
+	"icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/icon.png",
 	"tagline": "Free open source network performance monitoring tool",
 	"overview": " keeps track of your network latency.",
-	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/thumbnail.png",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/thumbnail.png",
 	"screenshots": [
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-1.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-2.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-3.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-4.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Smokeping/screenshot-5.png"
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-1.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-2.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-3.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-4.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Smokeping/screenshot-5.png"
 	],
 	"category": [
 		"Network"
@@ -24,7 +24,7 @@
 	},
 	"adaptor": {
 		"name": "asaOS Team",
-		"website": "https://www.casaos.io",
+		"website": "https://roqueos.com.br",
 		"donate_text": "",
 		"donate_link": ""
 	},

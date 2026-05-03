@@ -2,15 +2,15 @@
 	"version": "2.0",
 	"title": "Mylar3",
 	"name": "Mylar3",
-	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/icon.png",
+	"icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/icon.png",
 	"tagline": "Automatic comic book (cbr/cbz) downloader",
 	"overview": "Mylar is an automated Comic Book (cbr/cbz) downloader program for use with NZB and torrents. Mylar allows you to create a watchlist of series that it monitors for various things (new issues, updated information, etc). It will grab, sort, and rename downloaded issues. It will also allow you to monitor weekly pull-lists for items belonging to said watchlisted series to download, as well as being able to monitor and maintain story-arcs.",
-	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/thumbnail.png",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/thumbnail.png",
 	"screenshots": [
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/screenshot-1.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/screenshot-2.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/screenshot-3.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Mylar3/screenshot-4.png"
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/screenshot-1.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/screenshot-2.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/screenshot-3.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mylar3/screenshot-4.png"
 	],
 	"category": [
 		"Downloader"
@@ -22,8 +22,8 @@
 		"donate_link": ""
 	},
 	"adaptor": {
-		"name": "CasaOS Team",
-		"website": "https://www.casaos.io",
+		"name": "RoqueOS Team",
+		"website": "https://roqueos.com.br",
 		"donate_text": "",
 		"donate_link": ""
 	},

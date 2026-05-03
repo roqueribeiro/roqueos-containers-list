@@ -9,7 +9,7 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: "3003"
+        published: '3003'
         protocol: tcp
     restart: always
     volumes:
@@ -18,22 +18,21 @@ services:
         target: /var/lib/grafana
     x-casaos:
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
-            en_us: ""
+            en_us: ''
       volumes:
         - container: /var/lib/grafana
           description:
             en_us: Grafana database and plugins directory.
             zh_cn: Grafana 数据库和插件目录
-
     container_name: grafana
 x-casaos:
   architectures:
     - amd64
     - arm64
   main: grafana
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Network
   description:
     en_us: |
@@ -63,11 +62,11 @@ x-casaos:
     uk_ua: |
       Grafana Open Source - це програмне забезпечення відкритого коду для візуалізації та аналізу. Візуалізація: Швидкі та гнучкі графіки клієнта з широкими можливостями. Плагіни панелі пропонують багато способів відображення метрик та журналів. Динамічні панелі: Створюйте динамічні та повторно використовувані панелі з змінними шаблонів, які відображаються як випадаючі меню згори панелі. Відкриття метрик: Відкривайте свої дані за допомогою ad hoc-запитів та динамічного буріння. Розділіть перегляд та порівняйте різні періоди, запити та джерела даних поруч. Відкриття журналів: Відкрийте магію переходу від метрик до журналів з збереженими фільтрами міток. Швидко шукайте всі журнали або відтворюйте їх у режимі реального часу. Повідомлення: Визначте видимі правила сповіщень для найважливіших метрик. Grafana продовжуватиме оцінювати та відправляти спов
   developer: grafana
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Grafana/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Grafana/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Grafana/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Grafana/screenshot-3.png
   tagline:
     en_us: |
       Grafana is a complete observability stack that allows you to monitor and analyze metrics, logs and traces. It allows you to query, visualize, alert on and understand your data no matter where it is stored.
@@ -95,7 +94,7 @@ x-casaos:
       Grafana är en komplett observabilitetsstapel som gör det möjligt att övervaka och analysera metriker, loggar och spår. Det gör det möjligt att fråga, visualisera, varna och förstå dina data, oavsett var de är lagrade.
     uk_ua: |
       Grafana - це повний стек наглядності, який дозволяє вам моніторити та аналізувати метрики, журнали та траси. Він дозволяє вам запитувати, візуалізувати, сповіщати та розуміти ваших даних, незалежно від того, де вони зберігаються.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Grafana/thumbnail.png
   tips:
     before_install:
       en_us: |
@@ -109,4 +108,5 @@ x-casaos:
   title:
     en_us: Grafana
   index: /
-  port_map: "3003"
+  port_map: '3003'
+  scheme: http

@@ -81,11 +81,11 @@ x-casaos:
     - amd64
     - arm
     - arm64
-    - "386"
+    - '386'
   main: tailscale
   category: Network
   developer: Tailscale Inc.
-  author: CasaOS Team
+  author: RoqueOS Team
   tagline:
     en_US: Connect your devices and users together in your own secure virtual private network.
     en_GB: Connect your devices and users together in your own secure virtual private network.
@@ -141,7 +141,7 @@ x-casaos:
       - Subnet routing for secure network-wide access
       - Exit nodes for safe internet browsing
       - MagicDNS for simplified device discovery
-      
+
       **Learn More:**
       - [Tailscale Official Website](https://tailscale.com)
       - [Tailscale GitHub Repository](https://github.com/tailscale/tailscale)
@@ -267,7 +267,7 @@ x-casaos:
       - Routage de sous-réseau pour un accès sécurisé à l'ensemble du réseau
       - Nœuds de sortie pour une navigation internet sécurisée
       - MagicDNS pour simplifier la découverte d'appareils
-      
+
       **En savoir plus :**
       - [Site officiel Tailscale](https://tailscale.com)
       - [Dépôt GitHub Tailscale](https://github.com/tailscale/tailscale)
@@ -288,7 +288,7 @@ x-casaos:
       - Subnetz-Routing für sicheren netzwerkweiten Zugriff
       - Exit-Knoten für sicheres Internet-Browsing
       - MagicDNS zur vereinfachten Geräteerkennung
-      
+
       **Mehr erfahren:**
       - [Tailscale Offizielle Website](https://tailscale.com)
       - [Tailscale GitHub Repository](https://github.com/tailscale/tailscale)
@@ -418,12 +418,12 @@ x-casaos:
       **Daha fazla bilgi edinin:**
       - [Tailscale Resmi Web Sitesi](https://tailscale.com)
       - [Tailscale GitHub Deposu](https://github.com/tailscale/tailscale)
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tailscale/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tailscale/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Tailscale/screenshot-1.png
-  thumbnail: ""
-  scheme: ""
-  port_map: "5252"
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tailscale/screenshot-1.png
+  thumbnail: ''
+  scheme: http
+  port_map: '5252'
   index: /
   title:
     en_US: Tailscale

@@ -6,14 +6,13 @@ services:
     command:
       - /connectord
     environment:
-      TWINGATE_NETWORK: ""
-      TWINGATE_ACCESS_TOKEN: ""
-      TWINGATE_REFRESH_TOKEN: ""
+      TWINGATE_NETWORK: ''
+      TWINGATE_ACCESS_TOKEN: ''
+      TWINGATE_REFRESH_TOKEN: ''
       TWINGATE_LABEL_HOSTNAME: ${HOSTNAME}
-
     restart: unless-stopped
     sysctls:
-      net.ipv4.ping_group_range: "0 2147483647"
+      net.ipv4.ping_group_range: 0 2147483647
     network_mode: default
     privileged: false
     cpu_shares: 90
@@ -21,30 +20,29 @@ services:
       envs:
         - container: TWINGATE_NETWORK
           description:
-            en_us: ""
+            en_us: ''
         - container: TWINGATE_ACCESS_TOKEN
           description:
-            en_us: ""
+            en_us: ''
         - container: TWINGATE_REFRESH_TOKEN
           description:
-            en_us: ""
+            en_us: ''
         - container: TWINGATE_LABEL_HOSTNAME
           description:
-            en_us: ""
+            en_us: ''
         - container: PATH
           description:
-            en_us: ""
+            en_us: ''
         - container: SSL_CERT_FILE
           description:
-            en_us: ""
+            en_us: ''
         - container: TWINGATE_API_ENDPOINT
           description:
-            en_us: ""  
+            en_us: ''
     deploy:
       resources:
         reservations:
-          memory: 500M  # Modify as needed since the original command didn't specify memory reservation
-
+          memory: 500M
 x-casaos:
   architectures:
     - amd64
@@ -53,17 +51,18 @@ x-casaos:
   main: twingate-connector
   author: Shubhankar Trivedi
   category: Network
-  description: 
+  description:
     en_us: It's a connector for Twingate".
   developer: Twingate
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Twingate/icon.png
-  screenshot_link:
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Twingate/icon.png
+  screenshot_link: null
   tagline:
-    en_us: Twingate Connector for CasaOS
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Twingate/thumbnail.png
+    en_us: Twingate Connector for RoqueOS
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Twingate/thumbnail.png
   tips: {}
   title:
     en_us: Twingate
-  hostname: ""
+  hostname: ''
   index: /
-  port_map: ""
+  port_map: ''
+  scheme: http

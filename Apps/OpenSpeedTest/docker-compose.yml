@@ -9,15 +9,14 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: "3004"
+        published: '3004'
         protocol: tcp
     restart: always
     x-casaos:
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
-            en_us: ""
-
+            en_us: ''
     container_name: openspeedtest
 x-casaos:
   architectures:
@@ -25,7 +24,7 @@ x-casaos:
     - arm64
     - ppc64le
     - s390x
-    - "386"
+    - '386'
     - arm
   main: openspeedtest
   author: OpenSpeedTest
@@ -45,11 +44,11 @@ x-casaos:
     sv_se: En applikation för att starta en HTML5-nätverkshastighetstestserver. Du kan testa nedladdnings- och uppladdningshastighet från vilket enhet som helst i ditt nätverk med en webbläsare som är IE10 eller nyare.
     uk_ua: Додаток для запуску HTML5-сервера тестування швидкості мережі. Ви можете перевірити швидкість завантаження та вивантаження з будь-якого пристрою у мережі за допомогою веб-браузера, який підтримує IE10 або новіші.
   developer: OpenSpeedTest
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/screenshot-3.png
   tagline:
     en_us: HTML5 Network Speed Test Server.
     zh_cn: HTML5网络速度测试服务器。
@@ -64,9 +63,10 @@ x-casaos:
     pt_br: Servidor de teste de velocidade de rede HTML5.
     sv_se: HTML5-nätverkshastighetstestserver.
     uk_ua: HTML5-сервер тестування швидкості мережі.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/OpenSpeedTest/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenSpeedTest/thumbnail.png
   tips: {}
   title:
     en_us: OpenSpeedTest
   index: /
-  port_map: "3004"
+  port_map: '3004'
+  scheme: http

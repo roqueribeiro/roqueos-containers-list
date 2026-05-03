@@ -5,11 +5,11 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "64M"
+          memory: 64M
     network_mode: bridge
     ports:
       - target: 5244
-        published: "5244"
+        published: '5244'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -18,7 +18,7 @@ services:
         target: /opt/alist/data
     x-casaos:
       ports:
-        - container: "5244"
+        - container: '5244'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
@@ -127,15 +127,15 @@ x-casaos:
 
       Alist'i Zima gibi özel bulut cihazlarına dağıtmak, çoklu cihaz erişimi ile eşsiz bir kolaylık sunar ve nerede olursanız olun dosyalarınıza her zaman erişilebilir ve güvenli olmasını sağlar.
   developer: Xhofe
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-4.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-5.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/screenshot-5.png
   main: alist
-  port_map: "5244"
+  port_map: '5244'
   scheme: http
   tagline:
     en_US: Mount your cloud drive on your home NAS
@@ -153,7 +153,7 @@ x-casaos:
     pt_PT: Monte o seu disco na nuvem no seu NAS doméstico
     ru_RU: Подключите ваш облачный диск к домашнему NAS
     tr_TR: Bulut sürücünüzü ev NAS'ınıza bağlayın
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/thumbnail.png
   tips:
     before_install:
       en_US: After installation, please check the initial password in the container log (Settings - TopRight - Terminal and Logs - Logs).

@@ -9,7 +9,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8000
-        published: "8000"
+        published: '8000'
         protocol: tcp
     restart: always
     volumes:
@@ -18,22 +18,22 @@ services:
         target: /2fauth
     x-casaos:
       ports:
-        - container: "8000"
+        - container: '8000'
           description:
-            en_us: ""
+            en_us: ''
       volumes:
         - container: /2fauth
           description:
-            en_us: ""
+            en_us: ''
     container_name: 2fauth
 x-casaos:
   architectures:
     - amd64
-    - "386"
+    - '386'
     - arm64
     - arm
   main: 2fauth
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Utilities
   description:
     en_us: 2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.
@@ -50,11 +50,11 @@ x-casaos:
     sv_se: 2FAuth är en självhärdad webbaserad alternativ till One Time Passcode (OTP) -genererare som Google Authenticator, utformad för både mobila och skrivbordsenheter.
     uk_ua: 2FAuth - це веб-базова самохостингова альтернатива генераторам одноразових кодів (OTP) на кшталт Google Authenticator, розроблена для мобільних та стільниць пристроїв.
   developer: Bubka
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/2FAuth/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/2FAuth/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/2FAuth/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/2FAuth/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/2FAuth/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/2FAuth/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/2FAuth/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/2FAuth/screenshot-3.png
   tagline:
     en_us: A web app to manage your Two-Factor Authentication (2FA) accounts and generate their security codes
     zh_cn: 一个用于管理您的两步验证（2FA）帐户并生成其安全代码的Web应用程序
@@ -69,9 +69,10 @@ x-casaos:
     pt_br: Um aplicativo da web para gerenciar suas contas de autenticação de dois fatores (2FA) e gerar seus códigos de segurança
     sv_se: En webbapp för att hantera dina tvåfaktorsautentiserings (2FA) -konton och generera deras säkerhetskoder
     uk_ua: Веб-застосунок для керування обліковими записами двофакторної аутентифікації (2FA) та генерації їх кодів безпеки
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/2FAuth/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/2FAuth/thumbnail.png
   tips: {}
   title:
     en_us: 2FAuth
   index: /
-  port_map: "8000"
+  port_map: '8000'
+  scheme: http

@@ -9,10 +9,10 @@ services:
     network_mode: bridge
     ports:
       - target: 55555
-        published: "55555"
+        published: '55555'
         protocol: tcp
       - target: 8888
-        published: "8888"
+        published: '8888'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -45,9 +45,9 @@ x-casaos:
     pt_br: resilio-sync é um aplicativo baseado em Docker que permite a sincronização e compartilhamento de arquivos de forma rápida e segura.
     sv_se: resilio-sync är en Docker-baserad applikation som möjliggör snabb och säker filsynkronisering och delning.
     uk_ua: resilio-sync - це додаток на основі Docker, який забезпечує швидку і безпечну синхронізацію та обмін файлами.
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Resilio-sync/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Resilio-sync/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Resilio-sync/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Resilio-sync/screenshot-1.jpg
   tagline:
     en_us: Unleash the power of seamless file synchronization.
     zh_cn: 发挥无缝文件同步的力量。
@@ -64,10 +64,13 @@ x-casaos:
     uk_ua: Розкрийте потужність безперервної синхронізації файлів.
   author: self
   category: File Sync
-  hostname: ""
+  hostname: ''
   index: /
-  port_map: "8888"
+  port_map: '8888'
   scheme: http
   store_app_id: resilio-sync
   title:
     en_us: resilio-sync
+  main: resilio-sync
+x-roqueos:
+  mountShared: true

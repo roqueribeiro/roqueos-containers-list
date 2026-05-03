@@ -14,13 +14,13 @@ services:
     network_mode: bridge
     ports:
       - target: 8112
-        published: "8112"
+        published: '8112'
         protocol: tcp
       - target: 6881
-        published: "6881"
+        published: '6881'
         protocol: tcp
       - target: 6881
-        published: "6881"
+        published: '6881'
         protocol: udp
     restart: unless-stopped
     volumes:
@@ -49,22 +49,19 @@ services:
             en_us: Deluge Log Level
             zh_cn: Deluge 日志级别
       ports:
-        - container: "8112"
+        - container: '8112'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
-
-        - container: "6881"
+        - container: '6881'
           description:
             en_us: Inbound torrent traffic (TCP)
             zh_cn: 入站 torrent 流量（TCP）
-
-        - container: "6881"
+        - container: '6881'
           description:
             en_us: Inbound torrent traffic (UDP)
             zh_cn: 入站 torrent 流量（UDP）
           protocol: udp
-
       volumes:
         - container: /config
           description:
@@ -80,7 +77,7 @@ x-casaos:
     - amd64
     - arm64
   main: deluge
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Downloader
   description:
     en_us: Deluge contains the common features to BitTorrent clients such as Protocol Encryption, DHT, Local Peer Discovery (LSD), Peer Exchange (PEX), UPnP, NAT-PMP, Proxy support, Web seeds, global and per-torrent speed limits. As Deluge heavily utilises the ​libtorrent library it has a comprehensive list of the ​features provided.
@@ -97,12 +94,12 @@ x-casaos:
     sv_se: Deluge innehåller de vanliga funktionerna hos BitTorrent-klienter, såsom protokollkryptering, DHT, lokalt parupptäckt (LSD), parbyte (PEX), UPnP, NAT-PMP, proxystöd, webblöss, globala och torrentbaserade hastighetsbegränsningar. Eftersom Deluge använder libtorrent-biblioteket intensivt har den en fullständig lista över tillhandahållna funktioner.
     uk_ua: Deluge містить загальні функції клієнтів BitTorrent, такі як шифрування протоколу, DHT, локальне виявлення пірів (LSD), обмін пірами (PEX), UPnP, NAT-PMP, підтримка проксі, веб-сіди, глобальні та обмеження швидкості для кожного торрента. Оскільки Deluge сильно використовує бібліотеку libtorrent, він має повний список наданих функцій.
   developer: Deluge Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Deluge/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Deluge/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Deluge/screenshot-1.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Deluge/screenshot-2.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Deluge/screenshot-3.jpg
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Deluge/screenshot-4.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Deluge/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Deluge/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Deluge/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Deluge/screenshot-4.jpg
   tagline:
     en_us: A lightweight and free BitTorrent client.
     zh_cn: 轻量级且免费的 BitTorrent 客户端。
@@ -117,7 +114,7 @@ x-casaos:
     pt_br: Um cliente BitTorrent leve e gratuito.
     sv_se: En lättviktig och gratis BitTorrent-klient.
     uk_ua: Легкий і безкоштовний клієнт BitTorrent.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Deluge/thumbnail.jpg
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Deluge/thumbnail.jpg
   tips:
     before_install:
       en_us: |
@@ -131,7 +128,7 @@ x-casaos:
         | Downloads Path | `/DATA/Downloads` |
         | Media Path | `/DATA/Media` |
 
-        The paths of other DATA subdirectories in CasaOS are also similar.
+        The paths of other DATA subdirectories in RoqueOS are also similar.
 
         Please make sure you use the correct path when using Deluge.
       zh_cn: |
@@ -145,10 +142,13 @@ x-casaos:
         | 下载路径 | `/DATA/Downloads` |
         | 媒体路径 | `/DATA/Media` |
 
-        CasaOS 中其他 DATA 子目录的路径也类似。
+        RoqueOS 中其他 DATA 子目录的路径也类似。
 
         请确保在使用 Deluge 时使用正确的路径。
   title:
     en_us: Deluge
   index: /
-  port_map: "8112"
+  port_map: '8112'
+  scheme: http
+x-roqueos:
+  mountShared: true

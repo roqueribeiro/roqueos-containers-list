@@ -6,7 +6,7 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "256M"
+          memory: 256M
     environment:
       PGID: $PGID
       PUID: $PUID
@@ -23,12 +23,11 @@ services:
         target: /downloads
     ports:
       - target: 8000
-        published: "8000"
+        published: '8000'
         protocol: tcp
       - target: 9666
-        published: "9666"
+        published: '9666'
         protocol: tcp
-
     x-casaos:
       envs:
         - container: TZ
@@ -44,29 +43,25 @@ services:
             en_us: Run PyLoad as specified gid.
             zh_cn: 以指定的组ID运行PyLoad。
       ports:
-        - container: "8000"
+        - container: '8000'
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
           protocol: tcp
-
-        - container: "9666"
+        - container: '9666'
           description:
             en_us: PyLoad listening Port (TCP)
             zh_cn: PyLoad监听端口（TCP）
           protocol: tcp
-
       volumes:
         - container: /config
           description:
             en_us: PyLoad config directory.
             zh_cn: PyLoad配置目录
-
         - container: /downloads
           description:
             en_us: PyLoad Download Directory.
             zh_cn: PyLoad下载目录
-
 x-casaos:
   architectures:
     - amd64
@@ -79,16 +74,16 @@ x-casaos:
     zh_cn: pyLoad是一款用Python编写的免费开源下载管理器，设计极轻量，易于扩展，并通过Web完全可管理。
     pt_br: pyLoad é um gerenciador de download gratuito e de código aberto escrito em Python e projetado para ser extremamente leve, facilmente extensível e totalmente gerenciável via web.
   developer: linuxserver
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PyLoad/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PyLoad/icon.png
   screenshot_link:
-  - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PyLoad/screenshot-1.png
-  - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PyLoad/screenshot-2.png
-  - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PyLoad/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PyLoad/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PyLoad/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PyLoad/screenshot-3.png
   tagline:
     en_us: Free Downloader Manager.
     zh_cn: 免费下载管理器。
     pt_br: Gerenciador de download gratuito.
-  thumbnail:
+  thumbnail: null
   tips:
     before_install:
       en_us: |
@@ -132,4 +127,7 @@ x-casaos:
     zh_cn: PyLoad
     pt_br: PyLoad
   index: /
-  port_map: "8000"
+  port_map: '8000'
+  scheme: http
+x-roqueos:
+  mountShared: true

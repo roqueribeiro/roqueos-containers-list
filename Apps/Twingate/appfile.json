@@ -2,10 +2,10 @@
     "version": "1.0",
     "title": "Twingate",
     "name": "twingate-connector",
-    "icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Twingate/icon.png",
-    "tagline": "Twingate Connector for CasaOS",
+    "icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Twingate/icon.png",
+    "tagline": "Twingate Connector for RoqueOS",
     "overview": "It's a connector for Twingate",
-    "thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Twingate/thumbnail.png",
+    "thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Twingate/thumbnail.png",
     "screenshots": [
     ],
     "category": [

@@ -2,15 +2,15 @@
 	"version": "2.0",
 	"title": "Readarr",
 	"name": "Readarr",
-	"icon": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Readarr/icon.png",
+	"icon": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/icon.png",
 	"tagline": "Ebook and audiobook collection manager for Usenet and BitTorrent users. ",
 	"overview": "Readarr is a ebook collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new books from your favorite authors and will interface with clients and indexers to grab, sort, and rename them.",
-	"thumbnail": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Readarr/thumbnail.png",
+	"thumbnail": "https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/thumbnail.png",
 	"screenshots": [
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Readarr/screenshot-1.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Readarr/screenshot-2.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Readarr/screenshot-3.png",
-	"https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Readarr/screenshot-4.png"
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/screenshot-1.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/screenshot-2.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/screenshot-3.png",
+	"https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/screenshot-4.png"
 	],
 	"category": [
 		"Media"
@@ -22,8 +22,8 @@
 		"donate_link": ""
 	},
 	"adaptor": {
-		"name": "CasaOS Team",
-		"website": "https://www.casaos.io",
+		"name": "RoqueOS Team",
+		"website": "https://roqueos.com.br",
 		"donate_text": "",
 		"donate_link": ""
 	},

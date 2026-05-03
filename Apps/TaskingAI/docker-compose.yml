@@ -7,8 +7,6 @@ services:
       - backend-api
     networks:
       - taskingai_network
-
-
   backend-inference:
     image: taskingai/taskingai-inference:v0.2.14
     environment:
@@ -16,13 +14,16 @@ services:
       ICON_URL_PREFIX: http://nginx:3080
       PROJECT_ID: taskingai
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health_check"]
+      test:
+        - CMD
+        - curl
+        - '-f'
+        - http://localhost:8000/v1/health_check
       interval: 15s
       timeout: 10s
       retries: 5
     networks:
       - taskingai_network
-
   backend-plugin:
     image: taskingai/taskingai-plugin:v0.2.10
     environment:
@@ -35,13 +36,16 @@ services:
     volumes:
       - /DATA/AppData/$AppID/data/object_storage:/var/lib/data
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health_check"]
+      test:
+        - CMD
+        - curl
+        - '-f'
+        - http://localhost:8000/v1/health_check
       interval: 15s
       timeout: 10s
       retries: 5
     networks:
       - taskingai_network
-
   backend-api:
     image: taskingai/taskingai-server:v0.3.0
     environment:
@@ -62,13 +66,16 @@ services:
       - backend-inference
       - backend-plugin
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health_check"]
+      test:
+        - CMD
+        - curl
+        - '-f'
+        - http://localhost:8000/v1/health_check
       interval: 15s
       timeout: 10s
       retries: 5
     networks:
       - taskingai_network
-
   backend-web:
     image: taskingai/taskingai-server:v0.3.0
     environment:
@@ -82,7 +89,6 @@ services:
       DEFAULT_ADMIN_USERNAME: admin
       DEFAULT_ADMIN_PASSWORD: TaskingAI321
       OBJECT_STORAGE_TYPE: local
-      # Note: the host url might is a wrong value. But not cause any issue.
       HOST_URL: http://nginx:3080
       PATH_TO_VOLUME: /var/lib/data
       PROJECT_ID: taskingai
@@ -94,13 +100,16 @@ services:
       - backend-inference
       - backend-plugin
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health_check"]
+      test:
+        - CMD
+        - curl
+        - '-f'
+        - http://localhost:8000/v1/health_check
       interval: 15s
       timeout: 10s
       retries: 5
     networks:
       - taskingai_network
-
   db:
     image: ankane/pgvector:v0.5.1
     environment:
@@ -110,33 +119,40 @@ services:
     volumes:
       - /DATA/AppData/$AppID/data/postgres:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
-    restart: always
-    networks:
-        - taskingai_network
-
-  cache:
-    image: redis:7-alpine
-    command: ["redis-server", "--requirepass", "TaskingAI321"]
-    volumes:
-      - /DATA/AppData/$AppID/data/redis:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "auth", "TaskingAI321", "ping"]
+      test:
+        - CMD-SHELL
+        - pg_isready -U postgres
       interval: 5s
       timeout: 5s
       retries: 10
     restart: always
     networks:
       - taskingai_network
-
+  cache:
+    image: redis:7-alpine
+    command:
+      - redis-server
+      - '--requirepass'
+      - TaskingAI321
+    volumes:
+      - /DATA/AppData/$AppID/data/redis:/data
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - auth
+        - TaskingAI321
+        - ping
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: always
+    networks:
+      - taskingai_network
   nginx:
     image: nginx:1.24
     ports:
-      - "3080:80"
-      # edit this to change the port, for example to "8080:80" to use port 8080
+      - '3080:80'
     volumes:
       - /DATA/AppData/$AppID/data/nginx_cache:/var/cache/nginx
     depends_on:
@@ -148,43 +164,40 @@ services:
     configs:
       - source: nginx_config
         target: /etc/nginx/conf.d/default.conf
-
 networks:
   taskingai_network:
     driver: bridge
-
 x-casaos:
   architectures:
     - amd64
     - arm64
-  main: frontend
-  author: CasaOS Team
+  main: nginx
+  author: RoqueOS Team
   category: Chat
   description:
     en_us: The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
     zh_cn: 开发人员友好的云平台，用于构建和运行AI原生应用程序的LLM代理。
   developer: TaskingAI Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/screenshot-4.png
   tagline:
     en_us: The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
     zh_cn: 开发人员友好的云平台，用于构建和运行AI原生应用程序的LLM代理。
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/TaskingAI/thumbnail.png
-  tips: 
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/thumbnail.png
+  tips:
     before_install:
       en_us: |
         | Username | Password   |
         | -------- | ---------- |
         | admin    | TaskingAI321 |
-
   title:
     en_us: TaskingAI
-  port_map: "3080"
-
+  port_map: '3080'
+  scheme: http
 configs:
   nginx_config:
     content: |

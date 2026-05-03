@@ -1,0 +1,197 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/roqueribeiro/roqueos-containers-list/schema/casaos-app.schema.json",
+  "title": "RoqueOS / CasaOS App Manifest",
+  "description": "docker-compose.yml superset used by the RoqueOS Server catalog. Compatible with CasaOS App Store; adds the optional x-roqueos namespace for RoqueOS-specific metadata. See CONTRIBUTING.md for the full contributor guide.",
+  "type": "object",
+  "required": ["name", "services"],
+  "additionalProperties": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Stack name (top-level Docker Compose key). Lowercase, no spaces.",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "services": {
+      "type": "object",
+      "minProperties": 1,
+      "description": "Map of service name → service definition. The principal service is identified by x-casaos.main (required when more than one service is declared).",
+      "patternProperties": {
+        "^[a-zA-Z0-9_-]+$": {
+          "type": "object",
+          "required": ["image"],
+          "properties": {
+            "image": {
+              "type": "string",
+              "description": "Image reference. Must include an explicit tag or digest (no bare names). Accepted shapes: 'name:tag', 'name@sha256:...', 'name:tag@sha256:...'. :latest is allowed but discouraged — the fix-manifests script reports it as 'manual review' so contributors can pin to stable tags during normal maintenance.",
+              "pattern": "^\\S+[:@]\\S+$"
+            },
+            "container_name": { "type": "string" },
+            "restart": {
+              "type": "string",
+              "enum": ["no", "always", "on-failure", "unless-stopped"]
+            },
+            "ports": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  { "type": "string" },
+                  {
+                    "type": "object",
+                    "required": ["target"],
+                    "properties": {
+                      "target": { "type": ["integer", "string"] },
+                      "published": { "type": ["integer", "string"] },
+                      "protocol": { "type": "string", "enum": ["tcp", "udp"] }
+                    }
+                  }
+                ]
+              }
+            },
+            "volumes": { "type": "array" },
+            "environment": { "type": ["array", "object"] },
+            "devices": { "type": "array" },
+            "privileged": { "type": "boolean" },
+            "network_mode": { "type": "string" },
+            "depends_on": { "type": ["array", "object"] },
+            "x-casaos": {
+              "type": "object",
+              "description": "Per-service metadata (port descriptions, env hints, volume hints).",
+              "properties": {
+                "ports": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["container"],
+                    "properties": {
+                      "container": { "type": ["string", "integer"] },
+                      "description": { "$ref": "#/definitions/i18nString" }
+                    }
+                  }
+                },
+                "envs": { "type": "array" },
+                "volumes": { "type": "array" }
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    },
+    "x-casaos": {
+      "type": "object",
+      "description": "App-level metadata consumed by RoqueOS Server (catalog parser) and CasaOS-compatible clients.",
+      "required": ["architectures", "main", "category", "scheme"],
+      "properties": {
+        "architectures": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "amd64",
+              "arm",
+              "arm64",
+              "386",
+              "mips64le",
+              "ppc64le",
+              "s390x",
+              "riscv64"
+            ]
+          },
+          "description": "Architectures the image supports. The server checks this against process.arch before pulling and rejects with INCOMPATIBLE_ARCH if unsupported."
+        },
+        "main": {
+          "type": "string",
+          "description": "Name of the principal service in `services`. The catalog parser uses this to pick the right image when a stack has helpers (databases, workers). Required because services are an unordered map — falling back to the first key is unstable."
+        },
+        "category": {
+          "type": "string",
+          "description": "Display category. The RoqueOS Server normalizes some variants (Utility→Utilities, Games→Gaming) but for new apps prefer the canonical form. Categories not in catalog-list.json fall back to 'other' in the UI.",
+          "enum": [
+            "Utilities",
+            "Utility",
+            "Media",
+            "Gallery",
+            "Network",
+            "VPN",
+            "WEB",
+            "Developer",
+            "Development",
+            "Database",
+            "Home Automation",
+            "HomeAutomation",
+            "Productivity",
+            "Notes",
+            "Documents",
+            "Storage",
+            "Cloud",
+            "Backup",
+            "File Sync",
+            "Downloader",
+            "Security",
+            "AI",
+            "Gaming",
+            "Games",
+            "Communication",
+            "Chat",
+            "Finance",
+            "Other"
+          ]
+        },
+        "scheme": {
+          "type": "string",
+          "enum": ["http", "https"],
+          "description": "Protocol the WebUI speaks. Used by the proxy to construct the open URL."
+        },
+        "port_map": {
+          "type": "string",
+          "description": "Canonical published host port the proxy should open by default. Required when the principal service exposes 2+ ports (otherwise the proxy heuristic guesses)."
+        },
+        "developer": { "type": "string" },
+        "author": { "type": "string" },
+        "icon": { "type": "string" },
+        "thumbnail": { "type": ["string", "array", "null"] },
+        "screenshot_link": {
+          "oneOf": [
+            { "type": "null" },
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" } }
+          ]
+        },
+        "tagline": {
+          "oneOf": [
+            { "type": "null" },
+            { "type": "string" },
+            { "$ref": "#/definitions/i18nString" }
+          ]
+        },
+        "description": { "$ref": "#/definitions/i18nString" },
+        "title": { "$ref": "#/definitions/i18nString" },
+        "tips": { "type": ["object", "string", "null"] },
+        "index": { "type": ["string", "array", "null"] },
+        "store_app_id": { "type": "string" }
+      }
+    },
+    "x-roqueos": {
+      "type": "object",
+      "description": "RoqueOS-specific extensions. All optional, all opt-in. Does not affect CasaOS-compatible clients.",
+      "additionalProperties": false,
+      "properties": {
+        "mountShared": {
+          "type": "boolean",
+          "description": "When true, the RoqueOS Server bind-mounts /data/roqueos/shared at /shared inside the container (rw). Use for media servers, downloaders, and file managers that benefit from cross-app access to a shared filesystem."
+        }
+      }
+    }
+  },
+  "definitions": {
+    "i18nString": {
+      "type": "object",
+      "description": "Multi-locale string keyed by language code (e.g. en_US, pt_BR, es_ES). At minimum en_US should be present.",
+      "patternProperties": {
+        "^[a-z]{2}(_[A-Z]{2})?$": { "type": "string" }
+      }
+    }
+  }
+}

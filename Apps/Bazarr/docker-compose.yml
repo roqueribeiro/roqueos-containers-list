@@ -2,8 +2,8 @@ name: bazarr
 services:
   bazarr:
     environment:
-      PGID: "1000"
-      PUID: "1000"
+      PGID: '1000'
+      PUID: '1000'
       TZ: Europe/London
     image: linuxserver/bazarr:1.5.3
     deploy:
@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 6767
-        published: "6767"
+        published: '6767'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -30,28 +30,27 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "6767"
+        - container: '6767'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /movies
           description:
-            en_us: ""
+            en_us: ''
         - container: /tv
           description:
-            en_us: ""
+            en_us: ''
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
     container_name: bazarr
 x-casaos:
   architectures:
@@ -59,7 +58,7 @@ x-casaos:
     - arm
     - arm64
   main: bazarr
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Media
   description:
     en_us: Bazarr is a companion application to Sonarr and Radarr. It can manage and download subtitles based on your requirements. You define your preferences by TV show or movie and Bazarr takes care of everything for you.
@@ -76,12 +75,12 @@ x-casaos:
     sv_se: Bazarr är ett komplement till Sonarr och Radarr. Det kan hantera och ladda ner undertexter baserat på dina krav. Du definierar dina preferenser för TV-serie eller film och Bazarr tar hand om allt åt dig.
     uk_ua: Bazarr - це додаткова програма до Sonarr і Radarr. Він може керувати і завантажувати субтитри відповідно до ваших вимог. Ви визначаєте свої вподобання за серіалом або фільмом, а Bazarr займається усім за вас.
   developer: Sabnzbd Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Bazarr/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Bazarr/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Bazarr/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Bazarr/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Bazarr/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Bazarr/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Bazarr/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Bazarr/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Bazarr/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Bazarr/screenshot-4.png
   tagline:
     en_us: Letter generators for Sonarr and Radarr
     zh_cn: Sonarr和Radarr的信件生成器
@@ -96,8 +95,11 @@ x-casaos:
     pt_br: Geradores de cartas para Sonarr e Radarr
     sv_se: Brevgenererare för Sonarr och Radarr
     uk_ua: Генератори листів для Sonarr і Radarr
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Bazarr/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Bazarr/thumbnail.png
   tips: {}
   title:
     en_us: Bazarr
-  port_map: "6767"
+  port_map: '6767'
+  scheme: http
+x-roqueos:
+  mountShared: true

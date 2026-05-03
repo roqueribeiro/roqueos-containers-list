@@ -9,12 +9,12 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: "3080"
+        published: '3080'
         protocol: tcp
     restart: unless-stopped
     x-casaos:
       ports:
-        - container: "3000"
+        - container: '3000'
           description:
             en_us: WebUI HTTP Port
     container_name: chatbot-ui
@@ -23,7 +23,7 @@ x-casaos:
     - amd64
     - arm64
   main: chatbot-ui
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Chat
   description:
     en_us: Chatbot UI is an open source chat UI for AI models.
@@ -40,9 +40,9 @@ x-casaos:
     sv_se: Chatbot UI är ett öppen källkod chattgränssnitt för AI-modeller.
     uk_ua: Chatbot UI - це відкритий чат-інтерфейс для моделей ШІ.
   developer: Mckay Wrigley
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ChatbotUI/icon.jpg
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ChatbotUI/icon.jpg
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/ChatbotUI/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ChatbotUI/screenshot-1.jpg
   tagline:
     en_us: Open source chat UI for AI models
     zh_cn: 用于AI模型的开源聊天界面
@@ -60,4 +60,5 @@ x-casaos:
   title:
     en_us: Chatbot UI
   index: /
-  port_map: "3080"
+  port_map: '3080'
+  scheme: http

@@ -5,11 +5,11 @@ services:
     deploy:
       resources:
         reservations:
-          memory: "256M"
+          memory: 256M
     network_mode: bridge
     ports:
       - target: 8945
-        published: "8945"
+        published: '8945'
         protocol: tcp
     restart: unless-stopped
     environment:
@@ -25,7 +25,7 @@ services:
         target: /downloads
     x-casaos:
       ports:
-        - container: "8945"
+        - container: '8945'
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -401,12 +401,12 @@ x-casaos:
 
       Medya merkezi uygulamasıyla kullanmak için içerik indirmek isteyen kişiler veya medyayı arşivlemek isteyenler için mükemmel!
   developer: kieraneglin
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pinchflat/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pinchflat/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pinchflat/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/screenshot-2.png
   main: pinchflat
-  port_map: "8945"
+  port_map: '8945'
   scheme: http
   tagline:
     en_US: Your next YouTube media manager
@@ -424,7 +424,7 @@ x-casaos:
     pt_PT: O seu próximo gestor multimédia YouTube
     ru_RU: Ваш следующий менеджер медиа YouTube
     tr_TR: Bir sonraki YouTube medya yöneticiniz
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Pinchflat/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/thumbnail.png
   tips:
     before_install:
       en_US: |
@@ -519,3 +519,5 @@ x-casaos:
         Kurulumdan sonra, otomatik indirme için YouTube kanallarınızı ve çalma listelerinizi yapılandırmak için web arayüzüne erişin.
   title:
     en_US: Pinchflat
+x-roqueos:
+  mountShared: true

@@ -4,8 +4,8 @@ services:
     environment:
       NZBGET_PASS: tegbzn6789
       NZBGET_USER: nzbget
-      PGID: "1000"
-      PUID: "1000"
+      PGID: '1000'
+      PUID: '1000'
       TZ: Europe/London
     image: linuxserver/nzbget:25.4.20251205
     deploy:
@@ -15,7 +15,7 @@ services:
     network_mode: bridge
     ports:
       - target: 6789
-        published: "6789"
+        published: '6789'
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -29,31 +29,30 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ""
+            en_us: ''
         - container: PGID
           description:
-            en_us: ""
+            en_us: ''
         - container: TZ
           description:
-            en_us: ""
+            en_us: ''
         - container: NZBGET_USER
           description:
-            en_us: ""
+            en_us: ''
         - container: NZBGET_PASS
           description:
-            en_us: ""
+            en_us: ''
       ports:
-        - container: "6789"
+        - container: '6789'
           description:
-            en_us: ""
-
+            en_us: ''
       volumes:
         - container: /config
           description:
-            en_us: ""
+            en_us: ''
         - container: /downloads
           description:
-            en_us: ""
+            en_us: ''
     container_name: nzbget
 x-casaos:
   architectures:
@@ -61,7 +60,7 @@ x-casaos:
     - arm
     - arm64
   main: nzbget
-  author: CasaOS Team
+  author: RoqueOS Team
   category: Downloader
   description:
     en_us: NZBGet can run on almost any device - classic PC, NAS, media player, SAT-receiver, WLAN-router, etc. The download area provides precompiled binaries for Windows, macOS, Linux (compatible with many CPUs and platform variants), FreeBSD and Android. For other platforms the program can be compiled from sources.
@@ -78,12 +77,12 @@ x-casaos:
     sv_se: NZBGet kan köras på nästan vilket enhet - klassisk PC, NAS, mediaspelare, SAT-mottagare, WLAN-router, etc. Nedladdningsområdet tillhandahåller förinstallerade binära filer för Windows, macOS, Linux (kompatibel med många CPU och plattformsversioner), FreeBSD och Android. För andra plattformar kan programmet kompileras från källkod.
     uk_ua: NZBGet може працювати на майже будь-якому пристрої - класичному ПК, NAS, медіаплеєрі, SAT-приймачі, WLAN-роутері та ін. Зона завантаження надає попередньо скомпільовані бінарні файли для Windows, macOS, Linux (сумісний з багатьма процесорами та платформою), FreeBSD та Android. Для інших платформ програму можна скомпілювати з джерел.
   developer: Nzbget Team
-  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/icon.png
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/screenshot-3.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/screenshot-4.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/screenshot-3.png
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/screenshot-4.png
   tagline:
     en_us: Efficient Usenet downloader
     zh_cn: 高效的Usenet下载器
@@ -98,7 +97,7 @@ x-casaos:
     pt_br: Downloader Usenet eficiente
     sv_se: Effektiv Usenet-downladdare
     uk_ua: Ефективний завантажувач Usenet
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Nzbget/thumbnail.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Nzbget/thumbnail.png
   tips:
     before_install:
       en_us: |
@@ -115,4 +114,7 @@ x-casaos:
         | nzbget   | tegbzn6789 |
   title:
     en_us: Nzbget
-  port_map: "6789"
+  port_map: '6789'
+  scheme: http
+x-roqueos:
+  mountShared: true
