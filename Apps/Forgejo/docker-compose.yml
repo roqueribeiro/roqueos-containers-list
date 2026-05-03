@@ -1,0 +1,88 @@
+name: forgejo
+services:
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:9.0.3
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 3000
+        published: '8094'
+        protocol: tcp
+      - target: 22
+        published: '2222'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /var/lib/gitea
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /etc/gitea
+      - type: bind
+        source: /etc/timezone
+        target: /etc/timezone
+        read_only: true
+      - type: bind
+        source: /etc/localtime
+        target: /etc/localtime
+        read_only: true
+    environment:
+      USER_UID: '1000'
+      USER_GID: '1000'
+    x-casaos:
+      ports:
+        - container: '3000'
+          description:
+            en_us: HTTP WebUI / Git port (mapped to 8094 host)
+            pt_br: Porta HTTP WebUI / Git (mapeada para 8094 no host)
+        - container: '22'
+          description:
+            en_us: SSH port for git push/pull (mapped to 2222 host)
+            pt_br: Porta SSH para git push/pull (mapeada para 2222 no host)
+      volumes:
+        - container: /var/lib/gitea
+          description:
+            en_us: Repositories, attachments, avatars
+            pt_br: Repositórios, anexos, avatares
+        - container: /etc/gitea
+          description:
+            en_us: app.ini configuration file
+            pt_br: Arquivo de configuração app.ini
+    container_name: forgejo
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: forgejo
+  author: RoqueOS Team
+  category: Developer
+  description:
+    en_us: Forgejo is a self-hosted lightweight software forge — a community-driven hard fork of Gitea kept independent of corporate ownership. Code hosting, issue tracking, pull requests, CI/CD via Forgejo Actions (GitHub Actions-compatible runner), federated user accounts (ActivityPub). Lower resource footprint than GitLab.
+    pt_br: Forgejo é uma forja de software auto-hospedada e leve — fork hard comunitário do Gitea mantido independente de propriedade corporativa. Hospedagem de código, issue tracking, pull requests, CI/CD via Forgejo Actions (runner compatível GitHub Actions), contas federadas (ActivityPub). Pegada de recurso menor que GitLab.
+  developer: forgejo
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Forgejo/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Forgejo/screenshot-1.png
+  tagline:
+    en_us: Self-hosted lightweight software forge (Gitea community fork)
+    pt_br: Forja de software leve e auto-hospedada (fork comunitário do Gitea)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Forgejo/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Default DB on first boot is SQLite — for >5 active users, switch to PostgreSQL/MySQL during the install wizard.
+        SSH for git push is mapped to host port 2222: `git@your-host:2222:user/repo.git`.
+        Forgejo Actions (CI runner) requires a separate forgejo-runner container — see official docs.
+      pt_br: |
+        DB padrão no primeiro boot é SQLite — para >5 usuários ativos, mude para PostgreSQL/MySQL durante o install wizard.
+        SSH para git push está mapeado na porta 2222: `git@seu-host:2222:user/repo.git`.
+        Forgejo Actions (runner CI) exige container separado forgejo-runner — ver docs oficiais.
+  title:
+    en_us: Forgejo
+  index: /
+  port_map: '8094'
+  scheme: http

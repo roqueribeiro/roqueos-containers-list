@@ -1,0 +1,89 @@
+name: mosquitto
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    deploy:
+      resources:
+        reservations:
+          memory: 32M
+    network_mode: bridge
+    ports:
+      - target: 1883
+        published: '1883'
+        protocol: tcp
+      - target: 9001
+        published: '9094'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /mosquitto/config
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /mosquitto/data
+      - type: bind
+        source: /DATA/AppData/$AppID/log
+        target: /mosquitto/log
+    x-casaos:
+      ports:
+        - container: '1883'
+          description:
+            en_us: MQTT TCP port
+            pt_br: Porta MQTT TCP
+        - container: '9001'
+          description:
+            en_us: MQTT WebSocket port (mapped to 9094 host)
+            pt_br: Porta MQTT WebSocket (mapeada para 9094 no host)
+      volumes:
+        - container: /mosquitto/config
+          description:
+            en_us: mosquitto.conf, ACL, password file
+            pt_br: mosquitto.conf, ACL, arquivo de senhas
+        - container: /mosquitto/data
+          description:
+            en_us: Persistence database (retained messages, subscriptions)
+            pt_br: Banco de persistência (mensagens retidas, subscriptions)
+        - container: /mosquitto/log
+          description:
+            en_us: Logs
+            pt_br: Logs
+    container_name: mosquitto
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: mosquitto
+  author: RoqueOS Team
+  category: Network
+  description:
+    en_us: Eclipse Mosquitto is the most-deployed MQTT broker — lightweight, open-source, ISO 26262 / SafetyCritical-Software friendly. Implements MQTT 3.1, 3.1.1, and 5.0 protocols. The standard message bus for IoT, Zigbee2MQTT, Home Assistant, ESPHome, and any device using MQTT for pub/sub messaging.
+    pt_br: Eclipse Mosquitto é o broker MQTT mais usado — leve, open-source, compatível com ISO 26262 / Safety-Critical Software. Implementa protocolos MQTT 3.1, 3.1.1 e 5.0. Barramento de mensagens padrão para IoT, Zigbee2MQTT, Home Assistant, ESPHome e qualquer dispositivo que use MQTT para pub/sub.
+  developer: eclipse
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mosquitto/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mosquitto/screenshot-1.png
+  tagline:
+    en_us: Lightweight MQTT broker for IoT and home automation
+    pt_br: Broker MQTT leve para IoT e automação residencial
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mosquitto/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Default config allows anonymous local connections. For production:
+        1. Mount a mosquitto.conf with `allow_anonymous false` and `password_file /mosquitto/config/passwd`.
+        2. Generate the passwd file with `mosquitto_passwd -c /mosquitto/config/passwd <user>`.
+        3. Optionally mount certs and enable listener on port 8883 (TLS).
+        Mosquitto has no WebUI — manage via mosquitto_pub/sub CLI or a client app like MQTT Explorer.
+      pt_br: |
+        Configuração padrão permite conexões anônimas locais. Para produção:
+        1. Monte um mosquitto.conf com `allow_anonymous false` e `password_file /mosquitto/config/passwd`.
+        2. Gere o arquivo passwd com `mosquitto_passwd -c /mosquitto/config/passwd <user>`.
+        3. Opcionalmente monte certs e habilite listener na porta 8883 (TLS).
+        Mosquitto não tem WebUI — gerencie via CLI mosquitto_pub/sub ou um app cliente como MQTT Explorer.
+  title:
+    en_us: Eclipse Mosquitto
+  index: /
+  port_map: '1883'
+  scheme: http

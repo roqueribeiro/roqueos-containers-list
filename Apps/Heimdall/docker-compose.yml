@@ -1,0 +1,75 @@
+name: heimdall
+services:
+  heimdall:
+    image: linuxserver/heimdall:2.6.3
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    network_mode: bridge
+    ports:
+      - target: 80
+        published: '8093'
+        protocol: tcp
+      - target: 443
+        published: '8493'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /config
+    environment:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: America/Sao_Paulo
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: HTTP WebUI port (mapped to 8093 host)
+            pt_br: Porta WebUI HTTP (mapeada para 8093 no host)
+        - container: '443'
+          description:
+            en_us: HTTPS WebUI port (mapped to 8493 host)
+            pt_br: Porta WebUI HTTPS (mapeada para 8493 no host)
+      volumes:
+        - container: /config
+          description:
+            en_us: Configuration, application list, custom backgrounds
+            pt_br: Configuração, lista de apps, backgrounds customizados
+    container_name: heimdall
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: heimdall
+  author: RoqueOS Team
+  category: Utilities
+  description:
+    en_us: Heimdall is a beautifully crafted application dashboard. A way to organize all your most-used web sites and apps. Built-in app categories, drag-and-drop reordering, custom backgrounds, search, optional API integrations (Sonarr, Radarr, Plex) for live status. The classic open-source dashboard for self-hosters.
+    pt_br: Heimdall é um dashboard de aplicações lindamente projetado. Uma forma de organizar todos os seus sites e apps mais usados. Categorias de apps embutidas, reordenamento drag-and-drop, backgrounds customizados, busca, integrações API opcionais (Sonarr, Radarr, Plex) para status ao vivo. O dashboard open-source clássico para self-hosters.
+  developer: linuxserver
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Heimdall/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Heimdall/screenshot-1.png
+  tagline:
+    en_us: Application dashboard for self-hosters (classic open-source)
+    pt_br: Dashboard de aplicações para self-hosters (clássico open-source)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Heimdall/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        On first boot, no auth — anyone with the URL can access. Enable user authentication via Settings > Users.
+        Add app tiles via the "+" button — Heimdall has 200+ built-in icons.
+        Pair with Homepage (also in the catalog) if you want a dashboard with live data widgets — they coexist.
+      pt_br: |
+        No primeiro boot, sem autenticação — qualquer um com a URL acessa. Habilite autenticação em Settings > Users.
+        Adicione tiles de apps pelo botão "+" — Heimdall tem 200+ ícones embutidos.
+        Use junto com Homepage (também no catálogo) se quiser dashboard com widgets ao vivo — coexistem bem.
+  title:
+    en_us: Heimdall
+  index: /
+  port_map: '8093'
+  scheme: http

@@ -1,0 +1,79 @@
+name: zigbee2mqtt
+services:
+  zigbee2mqtt:
+    image: koenkk/zigbee2mqtt:1.41.0
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+    network_mode: bridge
+    privileged: true
+    ports:
+      - target: 8080
+        published: '8095'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /app/data
+      - type: bind
+        source: /run/udev
+        target: /run/udev
+        read_only: true
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    environment:
+      TZ: America/Sao_Paulo
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: WebUI port (mapped to 8095 host)
+            pt_br: Porta da interface web (mapeada para 8095 no host)
+      volumes:
+        - container: /app/data
+          description:
+            en_us: configuration.yaml + device database + logs
+            pt_br: configuration.yaml + base de dispositivos + logs
+        - container: /run/udev
+          description:
+            en_us: udev (read-only) — required to detect Zigbee USB stick
+            pt_br: udev (somente leitura) — necessário para detectar Zigbee USB stick
+    container_name: zigbee2mqtt
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+    - arm
+  main: zigbee2mqtt
+  author: RoqueOS Team
+  category: Home Automation
+  description:
+    en_us: Zigbee2MQTT bridges your Zigbee devices to MQTT, freeing them from proprietary hubs. Supports 3500+ Zigbee devices from 400+ vendors (Aqara, IKEA, Philips Hue, Sonoff, SmartThings). Pair sensors, switches, bulbs once and use them with Home Assistant, OpenHAB, Domoticz, Node-RED — anything that speaks MQTT.
+    pt_br: Zigbee2MQTT faz a ponte dos seus dispositivos Zigbee para MQTT, liberando-os de hubs proprietários. Suporta 3500+ dispositivos Zigbee de 400+ fabricantes (Aqara, IKEA, Philips Hue, Sonoff, SmartThings). Pareie sensores, interruptores, lâmpadas uma vez e use com Home Assistant, OpenHAB, Domoticz, Node-RED — qualquer coisa que fale MQTT.
+  developer: Koenkk
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Zigbee2MQTT/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Zigbee2MQTT/screenshot-1.png
+  tagline:
+    en_us: Bridge Zigbee devices to MQTT (3500+ supported devices)
+    pt_br: Ponte de dispositivos Zigbee para MQTT (3500+ dispositivos suportados)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Zigbee2MQTT/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. Plug your Zigbee USB stick (CC2531, CC2652, ConBee, etc.) and confirm it shows up at /dev/ttyUSB0 (or adjust the devices: line).
+        2. Mount a configuration.yaml in /app/data with at least the MQTT broker URL and serial.adapter setting. Minimal example: https://www.zigbee2mqtt.io/guide/getting-started/
+        3. Pair with Mosquitto (also in this catalog) for the MQTT broker, and Home Assistant for the UI/automation layer.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. Plugue seu USB stick Zigbee (CC2531, CC2652, ConBee, etc.) e confirme que aparece em /dev/ttyUSB0 (ou ajuste a linha devices:).
+        2. Monte um configuration.yaml em /app/data com no mínimo a URL do broker MQTT e configuração serial.adapter. Exemplo mínimo: https://www.zigbee2mqtt.io/guide/getting-started/
+        3. Use com Mosquitto (também neste catálogo) como broker MQTT e Home Assistant como UI/camada de automação.
+  title:
+    en_us: Zigbee2MQTT
+  index: /
+  port_map: '8095'
+  scheme: http

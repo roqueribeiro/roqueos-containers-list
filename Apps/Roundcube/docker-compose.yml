@@ -1,0 +1,80 @@
+name: roundcube
+services:
+  roundcube:
+    image: roundcube/roundcubemail:1.6.9-fpm-alpine
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 80
+        published: '8092'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/www
+        target: /var/www/html
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /var/roundcube/db
+    environment:
+      ROUNDCUBEMAIL_DEFAULT_HOST: ssl://imap.example.com
+      ROUNDCUBEMAIL_DEFAULT_PORT: '993'
+      ROUNDCUBEMAIL_SMTP_SERVER: tls://smtp.example.com
+      ROUNDCUBEMAIL_SMTP_PORT: '587'
+      ROUNDCUBEMAIL_DB_TYPE: sqlite
+      ROUNDCUBEMAIL_PLUGINS: archive,zipdownload,managesieve,markasjunk
+      ROUNDCUBEMAIL_SKIN: elastic
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: WebUI port (mapped to 8092 host)
+            pt_br: Porta da interface web (mapeada para 8092 no host)
+      volumes:
+        - container: /var/www/html
+          description:
+            en_us: Roundcube web files (themes, custom plugins)
+            pt_br: Arquivos web do Roundcube (temas, plugins customizados)
+        - container: /var/roundcube/db
+          description:
+            en_us: SQLite database
+            pt_br: Banco SQLite
+    container_name: roundcube
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: roundcube
+  author: RoqueOS Team
+  category: Productivity
+  description:
+    en_us: Roundcube is a browser-based multilingual IMAP client with an AJAX UI mimicking a desktop email client. Features include drag-and-drop attachments, address book with vCard import, message threading, full HTML composition, spell checking, and a plugin API. The most widely deployed self-hosted webmail today.
+    pt_br: Roundcube é um cliente IMAP multilíngue baseado em navegador, com UI AJAX que simula um cliente desktop. Recursos incluem drag-and-drop de anexos, agenda com import de vCard, threading de mensagens, composição HTML completa, corretor ortográfico e API de plugins. O webmail auto-hospedado mais usado atualmente.
+  developer: roundcube
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Roundcube/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Roundcube/screenshot-1.png
+  tagline:
+    en_us: Most-deployed self-hosted webmail client (IMAP)
+    pt_br: Cliente webmail auto-hospedado mais usado (IMAP)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Roundcube/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. Set ROUNDCUBEMAIL_DEFAULT_HOST to your real IMAP server (ssl://imap.yourdomain.com or just imap.yourdomain.com).
+        2. Set ROUNDCUBEMAIL_SMTP_SERVER similarly.
+        3. Default DB is SQLite (single user). For >5 users, switch to PostgreSQL/MySQL via ROUNDCUBEMAIL_DB_TYPE/HOST/etc.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. Configure ROUNDCUBEMAIL_DEFAULT_HOST com seu servidor IMAP real (ssl://imap.seudominio.com ou apenas imap.seudominio.com).
+        2. Configure ROUNDCUBEMAIL_SMTP_SERVER similarmente.
+        3. DB padrão é SQLite (single user). Para >5 usuários, mude para PostgreSQL/MySQL via ROUNDCUBEMAIL_DB_TYPE/HOST/etc.
+  title:
+    en_us: Roundcube
+  index: /
+  port_map: '8092'
+  scheme: http
