@@ -1,0 +1,65 @@
+name: filestash
+services:
+  filestash:
+    image: machines/filestash:v0.7
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: bridge
+    ports:
+      - target: 8334
+        published: '8104'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /app/data/state
+    environment:
+      APPLICATION_URL: http://localhost:8104
+    x-casaos:
+      ports:
+        - container: '8334'
+          description:
+            en_us: WebUI port (mapped to 8104 host)
+            pt_br: Porta da interface web (mapeada para 8104 no host)
+      volumes:
+        - container: /app/data/state
+          description:
+            en_us: Filestash configuration + admin secrets
+            pt_br: Configuração do Filestash + secrets de admin
+    container_name: filestash
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: filestash
+  author: RoqueOS Team
+  category: Cloud
+  description:
+    en_us: Filestash is a self-hosted file manager that connects to S3, FTP, SFTP, WebDAV, Google Drive, Dropbox, OneDrive, Backblaze B2, Storj, Nextcloud, MySQL, MongoDB and a dozen other backends. One unified UI for all storages — drag-drop, video preview, document viewer, image gallery, ZIP archive support, terminal-like browse via SSH/SFTP.
+    pt_br: Filestash é um gerenciador de arquivos auto-hospedado que conecta a S3, FTP, SFTP, WebDAV, Google Drive, Dropbox, OneDrive, Backblaze B2, Storj, Nextcloud, MySQL, MongoDB e dezenas de outros backends. UI unificada para todos os storages — drag-drop, preview de vídeo, viewer de documentos, galeria de imagens, suporte a ZIP, browsing tipo terminal via SSH/SFTP.
+  developer: mickael-kerjean
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Filestash/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Filestash/screenshot-1.png
+  tagline:
+    en_us: Universal file manager for S3, SFTP, WebDAV, Drive, Dropbox, etc.
+    pt_br: Gerenciador universal de arquivos para S3, SFTP, WebDAV, Drive, Dropbox, etc.
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Filestash/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        First boot at http://YOUR_IP:8104 prompts you to create the admin password (no env-var bootstrap — interactive).
+        After admin setup, configure backends via Settings → Connect to your S3/SFTP/Drive/etc.
+        Useful as a "single pane of glass" frontend over an existing MinIO + SFTPGo + Nextcloud combo (also in catalog).
+      pt_br: |
+        O primeiro boot em http://SEU_IP:8104 pede para criar a senha admin (sem bootstrap por env var — interativo).
+        Após setup do admin, configure backends em Settings → Connect para seu S3/SFTP/Drive/etc.
+        Útil como "painel único" sobre uma combinação MinIO + SFTPGo + Nextcloud existente (também no catálogo).
+  title:
+    en_us: Filestash
+  index: /
+  port_map: '8104'
+  scheme: http

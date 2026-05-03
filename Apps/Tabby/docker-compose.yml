@@ -1,0 +1,65 @@
+name: tabby
+services:
+  tabby:
+    image: tabbyml/tabby:0.21.0
+    deploy:
+      resources:
+        reservations:
+          memory: 4096M
+    network_mode: bridge
+    ports:
+      - target: 8080
+        published: '8098'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+    command: serve --model StarCoder-1B --device cpu
+    environment:
+      TABBY_LOG_LEVEL: info
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: API + WebUI port (mapped to 8098 host)
+            pt_br: Porta da API + interface web (mapeada para 8098 no host)
+      volumes:
+        - container: /data
+          description:
+            en_us: Cached models, embeddings index, repositories metadata
+            pt_br: Modelos cacheados, índice de embeddings, metadata de repositórios
+    container_name: tabby
+x-casaos:
+  architectures:
+    - amd64
+  main: tabby
+  author: RoqueOS Team
+  category: AI
+  description:
+    en_us: Tabby is a self-hosted AI coding assistant — open-source GitHub Copilot alternative. Provides realtime code completion in your IDE (VS Code, JetBrains, Vim/Neovim) without sending code to external services. Indexes your codebase for context-aware completions, supports multiple LLM backends (StarCoder, CodeLlama, DeepSeek-Coder).
+    pt_br: Tabby é um assistente de IA para programação auto-hospedado — alternativa open-source ao GitHub Copilot. Oferece completion de código em tempo real na sua IDE (VS Code, JetBrains, Vim/Neovim) sem enviar código para serviços externos. Indexa sua codebase para completions context-aware, suporta múltiplos backends LLM (StarCoder, CodeLlama, DeepSeek-Coder).
+  developer: TabbyML
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tabby/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tabby/screenshot-1.png
+  tagline:
+    en_us: Self-hosted GitHub Copilot alternative (code completion API)
+    pt_br: Alternativa auto-hospedada ao GitHub Copilot (API de code completion)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tabby/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        Default config runs StarCoder-1B on CPU (slow but functional). For acceptable performance, use a 7B+ model on Nvidia GPU — change `--device cpu` to `--device cuda` and ensure nvidia-container-toolkit is installed.
+        After boot, install the Tabby IDE extension and point it at http://YOUR_IP:8098.
+        Connect a Git repository in admin > Code Repositories for context-aware completions.
+      pt_br: |
+        Configuração padrão roda StarCoder-1B em CPU (lento mas funcional). Para performance aceitável, use modelo 7B+ em GPU Nvidia — mude `--device cpu` para `--device cuda` e garanta que nvidia-container-toolkit está instalado.
+        Após o boot, instale a extensão Tabby na sua IDE e aponte para http://SEU_IP:8098.
+        Conecte um repositório Git em admin > Code Repositories para completions context-aware.
+  title:
+    en_us: Tabby
+  index: /
+  port_map: '8098'
+  scheme: http

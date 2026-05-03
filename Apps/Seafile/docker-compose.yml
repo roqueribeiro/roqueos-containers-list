@@ -1,0 +1,94 @@
+name: seafile
+services:
+  db:
+    image: mariadb:10.11
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: change-me-to-a-long-random-string
+      MYSQL_LOG_CONSOLE: 'true'
+      MARIADB_AUTO_UPGRADE: '1'
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/db
+        target: /var/lib/mysql
+    container_name: seafile-db
+  memcached:
+    image: memcached:1.6.18
+    restart: unless-stopped
+    entrypoint: memcached -m 256
+    container_name: seafile-memcached
+  seafile:
+    image: seafileltd/seafile-mc:11.0.13
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          memory: 1024M
+    ports:
+      - target: 80
+        published: '8100'
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /shared
+    environment:
+      DB_HOST: db
+      DB_ROOT_PASSWD: change-me-to-a-long-random-string
+      TIME_ZONE: America/Sao_Paulo
+      SEAFILE_ADMIN_EMAIL: admin@example.com
+      SEAFILE_ADMIN_PASSWORD: change-me-on-first-boot
+      SEAFILE_SERVER_HOSTNAME: localhost
+      SEAFILE_SERVER_LETSENCRYPT: 'false'
+      JWT_PRIVATE_KEY: replace-with-output-of-openssl-rand-hex-32
+    depends_on:
+      - db
+      - memcached
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: WebUI port (mapped to 8100 host)
+            pt_br: Porta da interface web (mapeada para 8100 no host)
+      volumes:
+        - container: /shared
+          description:
+            en_us: User libraries, file uploads, logs
+            pt_br: Bibliotecas dos usuários, uploads, logs
+    container_name: seafile
+x-casaos:
+  architectures:
+    - amd64
+  main: seafile
+  author: RoqueOS Team
+  category: Cloud
+  description:
+    en_us: Seafile is a high-performance, self-hosted file sync and share solution focused on reliability and performance. Stores files in libraries (versioned), client-side AES-256 encryption, mobile + desktop sync apps for all major platforms, server-side OnlyOffice/Collabora integration, granular permissions per-library and per-folder.
+    pt_br: Seafile é uma solução de sync e compartilhamento de arquivos auto-hospedada de alta performance, focada em confiabilidade e desempenho. Armazena arquivos em bibliotecas (versionadas), criptografia AES-256 client-side, apps de sync mobile + desktop para todas as plataformas principais, integração server-side OnlyOffice/Collabora, permissões granulares por biblioteca e pasta.
+  developer: haiwen
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Seafile/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Seafile/screenshot-1.png
+  tagline:
+    en_us: High-performance self-hosted file sync with client-side encryption
+    pt_br: Sync de arquivos auto-hospedado de alta performance com criptografia client-side
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Seafile/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        BEFORE FIRST BOOT:
+        1. REPLACE MYSQL_ROOT_PASSWORD AND DB_ROOT_PASSWD (must match) with a long random string.
+        2. REPLACE SEAFILE_ADMIN_PASSWORD and JWT_PRIVATE_KEY.
+        3. Set SEAFILE_SERVER_HOSTNAME to your real domain. With SEAFILE_SERVER_LETSENCRYPT=true, Seafile auto-issues certs (only works if domain points at this server).
+        4. Pair with OnlyOffice or Collabora (already in catalog) for in-browser document editing.
+      pt_br: |
+        ANTES DO PRIMEIRO BOOT:
+        1. SUBSTITUA MYSQL_ROOT_PASSWORD E DB_ROOT_PASSWD (devem ser iguais) por string aleatória longa.
+        2. SUBSTITUA SEAFILE_ADMIN_PASSWORD e JWT_PRIVATE_KEY.
+        3. Configure SEAFILE_SERVER_HOSTNAME com seu domínio real. Com SEAFILE_SERVER_LETSENCRYPT=true, Seafile emite certs automaticamente (só funciona se o domínio aponta para este servidor).
+        4. Combine com OnlyOffice ou Collabora (já no catálogo) para edição de documentos no navegador.
+  title:
+    en_us: Seafile
+  index: /
+  port_map: '8100'
+  scheme: http

@@ -1,0 +1,64 @@
+name: comfyui
+services:
+  comfyui:
+    image: yanwk/comfyui-boot:cu124-megapack
+    deploy:
+      resources:
+        reservations:
+          memory: 4096M
+    network_mode: bridge
+    ports:
+      - target: 8188
+        published: '8188'
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/storage
+        target: /root
+    environment:
+      CLI_ARGS: '--listen 0.0.0.0 --port 8188'
+    x-casaos:
+      ports:
+        - container: '8188'
+          description:
+            en_us: WebUI port (node-graph editor)
+            pt_br: Porta da interface web (editor de grafos)
+      volumes:
+        - container: /root
+          description:
+            en_us: Models, custom nodes, workflows, output images
+            pt_br: Modelos, nodes customizados, workflows, imagens de saída
+    container_name: comfyui
+x-casaos:
+  architectures:
+    - amd64
+  main: comfyui
+  author: RoqueOS Team
+  category: AI
+  description:
+    en_us: 'ComfyUI is the most powerful and modular Stable Diffusion GUI — a node-based interface that exposes the entire diffusion pipeline graph. Visual programming for image generation, perfect for advanced users who want full control of SDXL, SD3, Flux, ControlNet, LoRA, IP-Adapter, AnimateDiff, video generation. The default engine for many AI artists.'
+    pt_br: 'ComfyUI é a GUI mais poderosa e modular para Stable Diffusion — uma interface baseada em nodes que expõe o pipeline inteiro de difusão como grafo. Programação visual para geração de imagens, perfeito para usuários avançados que querem controle completo de SDXL, SD3, Flux, ControlNet, LoRA, IP-Adapter, AnimateDiff, geração de vídeo. Engine default de muitos artistas IA.'
+  developer: comfyanonymous
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ComfyUI/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ComfyUI/screenshot-1.png
+  tagline:
+    en_us: Node-based Stable Diffusion GUI for power users
+    pt_br: GUI baseada em nodes para Stable Diffusion (usuários avançados)
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ComfyUI/thumbnail.png
+  tips:
+    before_install:
+      en_us: |
+        REQUIRES Nvidia GPU passthrough — install `nvidia-container-toolkit` on the host first, then add `runtime: nvidia` and `deploy.resources.reservations.devices` to this compose.
+        First boot downloads ~6 GB of base SD models — be patient. Custom workflows can be loaded from the web UI's "Load" button.
+        ComfyUI Manager (community node manager) is included in this image — install custom node packs from the UI.
+      pt_br: |
+        EXIGE GPU Nvidia com passthrough — instale `nvidia-container-toolkit` no host primeiro, depois adicione `runtime: nvidia` e `deploy.resources.reservations.devices` neste compose.
+        O primeiro boot baixa ~6 GB de modelos base SD — seja paciente. Workflows custom podem ser carregados pelo botão "Load" da UI.
+        ComfyUI Manager (gerenciador comunitário de nodes) já vem incluso nesta imagem — instale packs customizados pela UI.
+  title:
+    en_us: ComfyUI
+  index: /
+  port_map: '8188'
+  scheme: http
