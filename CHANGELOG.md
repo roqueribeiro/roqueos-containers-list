@@ -12,6 +12,51 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- **53 new apps across 4 themed waves** (catalog 152 → 205+ valid manifests). Closes critical category gaps identified in the 2026-05-03 audit and surpasses the CasaOS Official catalog (~180 apps), narrowing the gap to Big Bear (~250). All 53 manifests follow the RoqueOS branding policy: pinned image tags (no `:latest`), `tagline` + `description` in **en_us + pt_br**, `category` from the schema enum, `tips.before_install` populated with deployment hints (replace default secrets, configure OAuth, etc.), `author: RoqueOS Team`, `developer:` pointing to the upstream maintainer.
+
+  **Wave A — Search, Monitoring, Auth, Bookmarks** (15 apps, PR #6):
+  - Search: Searxng, Whoogle, Meilisearch
+  - Monitoring/Dashboard: Homepage, Beszel, Prometheus, InfluxDB, Loki
+  - Auth & Security: Authelia, Authentik, CrowdSec
+  - Bookmarks: Linkwarden, Linkding, Hoarder, Shiori
+
+  **Wave B — Productivity, Photo, Wiki/Knowledge** (12 apps, PR #7):
+  - Office: OnlyOffice, Collabora, Stirling-PDF, Etherpad
+  - Photo Gallery: Lychee, Piwigo, LibrePhotos
+  - Documents/Recipes: Paperless-ngx, Mealie
+  - Wiki: BookStack, Wiki.js, Outline
+
+  **Wave C — Communication, Development, Smart Home** (12 apps, PR #8):
+  - Communication: Matrix Synapse, Snappymail, Roundcube, Mattermost
+  - Development: code-server, Heimdall, Forgejo, Vikunja
+  - Smart Home: Frigate, Zigbee2MQTT, Mosquitto, Domoticz
+
+  **Wave D — AI, Storage, Workflow, completed 3 incompletos** (14 apps, PR #9):
+  - AI/ML: LocalAI, ComfyUI, Tabby, CyberChef
+  - Storage: Seafile, MinIO, Kopia, SFTPGo, Filestash
+  - Workflow: Activepieces, Glance
+  - **Completed 3 incompletos** (folders existed with assets but lacked `docker-compose.yml`):
+    - Jellyseerr (`fallenbagel/jellyseerr:2.4.1`) — Plex/Jellyfin/Emby request manager
+    - Trilium (`triliumnext/notes:0.91.6`) — switched to TriliumNext active community fork (original `zadam/trilium` was archived)
+    - Logseq (`logseq/logseq-publish-server`) — read-only graph viewer with prominent `tips` section explaining there is no Logseq editing server (Logseq is an Electron desktop app)
+
+  **`code-server` and `heimdall`** were in `recommend-list.json` but didn't exist in the catalog — both now resolve.
+
+- **`featured-apps.json` expanded from 5 → 13 apps** to showcase the catalog breadth: portainer, nextcloud, jellyfin, homeassistant, code-server, immich, vaultwarden, authentik, frigate, linkwarden, onlyoffice, paperlessngx, uptimekuma. Drives the "featured" section of the RoqueOS App Store.
+
+### Substitutions vs original Wave plan
+
+A few apps were substituted during execution because the originally-planned image had stability/licensing issues, or because the planned app was already in the catalog (caught at planning step):
+
+- `UptimeKuma` → already exists, replaced with **Homepage** (Wave A).
+- `Audiobookshelf`, `Readarr` → already exist, replaced with **Paperless-ngx** and **Mealie** (Wave B).
+- `Mailcow` (50+ container stack) → **Snappymail** (single-container webmail, Wave C).
+- `Gitness` (unclear OSS status) → **Vikunja** (Wave C).
+- `Open Interpreter` (floating tag) → **CyberChef** (Wave D).
+- `Huginn` (only `:latest`) → **Glance** (Wave D).
+
 ### Security
 
 - **Image pinning is now enforced by the validator.** `scripts/validate-manifests.mjs` rejects any new app whose `services[*].image` is bare (`vendor/image`) or ends with `:latest`. The check uses the existing `isImagePinned()` helper from `fix-manifests.mjs` (previously exported but never wired into the validate pipeline).
