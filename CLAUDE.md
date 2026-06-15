@@ -58,11 +58,17 @@ featured-apps.json              # featured apps for the App Store homepage
 
 ## Detailed rules (cross-repo)
 
-The granular dev rules for the RoqueOS ecosystem are **centralized in `roqueos-front/.claude/rules/`** (single source of truth — `server/*` for the backend, `wrappers/*` for the wrappers). The cross-repo doc-sync mapping (changed X → update Y) already lives in [`../roqueos-front/.claude/rules/97-docs-sync.md`](../roqueos-front/.claude/rules/97-docs-sync.md) (section "roqueos-containers-list").
+The granular dev rules for the RoqueOS ecosystem are **centralized in `roqueos-front/.claude/rules/`** (single source of truth). The catalog-specific rules live under `containers/`:
 
-> ⚠️ The dedicated `containers/*` rule files (`10-schema-contract`, `20-validators`, `50-mount-shared`, `60-rebranding`, `00-catalog-core`) are **not created yet** — unlike `server/*` and `wrappers/*`. Until they exist, the source of truth for catalog rules is **this `CLAUDE.md` (Schema contract + Conventions above) + the repo's own [`CONTRIBUTING.md`](./CONTRIBUTING.md) + [`schema/casaos-app.schema.json`](./schema/casaos-app.schema.json) + the `scripts/*.mjs` headers**.
+| Rule                                                                                                  | Covers                                                                                  |
+| ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`containers/00-catalog-core.md`](../roqueos-front/.claude/rules/containers/00-catalog-core.md)       | Yarn-only, repo shape (data + tooling), conventional commits, semver release model, DoD |
+| [`containers/10-schema-contract.md`](../roqueos-front/.claude/rules/containers/10-schema-contract.md) | Schema (Draft-07): required fields, regex, enums, image-pin rule, categories            |
+| [`containers/20-validators.md`](../roqueos-front/.claude/rules/containers/20-validators.md)           | `scripts/*.mjs` (validate / fix / audit / rebrand) + invariants                         |
+| [`containers/50-mount-shared.md`](../roqueos-front/.claude/rules/containers/50-mount-shared.md)       | `x-roqueos.mountShared` + the `MOUNT_SHARED_APPS` curated set                           |
+| [`containers/60-rebranding.md`](../roqueos-front/.claude/rules/containers/60-rebranding.md)           | `rebrand-casaos.mjs` sweep for importing upstream CasaOS apps                           |
 
-Every PR that touches a manifest/schema/script keeps the matching doc + `CHANGELOG.md` in sync in the same effort.
+Cross-repo doc-sync mapping (changed X → update Y) lives in [`../roqueos-front/.claude/rules/97-docs-sync.md`](../roqueos-front/.claude/rules/97-docs-sync.md) (section "roqueos-containers-list"). The detailed source of truth for the schema/scripts remains the repo's own [`CONTRIBUTING.md`](./CONTRIBUTING.md) + [`schema/casaos-app.schema.json`](./schema/casaos-app.schema.json). Every PR that touches a manifest/schema/script keeps the matching rule + `CHANGELOG.md` in sync in the same effort.
 
 ## Cross-repo
 
