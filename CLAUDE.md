@@ -2,7 +2,7 @@
 
 Self-hosted **Docker app catalog** for RoqueOS — 205+ ready-to-deploy apps in CasaOS-compatible Docker Compose manifests (`x-casaos` namespace). The catalog itself is the `Apps/` directory; this repo also ships the Node tooling that validates, auto-fixes, audits and rebrands those manifests. A semver tag publishes `appstore.zip`, consumed by the RoqueOS App Store (via `roqueos-server`) and by any CasaOS-compatible client.
 
-This is **one of six repos** that form RoqueOS. The parent `../CLAUDE.md` has the ecosystem map (sibling repos, how they connect, cross-repo change ordering) and is pulled automatically. When a task crosses repos, check the map there first.
+This is one of the **nine repos** that form RoqueOS. The ecosystem map (sibling repos, how they connect, cross-repo change ordering) is [`../roqueos-ecosystem/README.md`](../roqueos-ecosystem/README.md), and the cross-repo rules are in `../roqueos-ecosystem/rules/`. Neither is auto-loaded: read them on demand when a task crosses repos.
 
 ## Commands
 
@@ -58,18 +58,18 @@ featured-apps.json              # featured apps for the App Store homepage
 
 ## Detailed rules (cross-repo)
 
-The granular dev rules for the RoqueOS ecosystem are **centralized in `roqueos-front/.claude/rules/`** (single source of truth). The catalog-specific rules live under `containers/`:
+The cross-repo dev rules for the RoqueOS ecosystem are **centralized in the `roqueos-ecosystem` repo** (a sibling of this one). They are documentation read on demand by relative path, not auto-loaded. The catalog-specific rules live under `../roqueos-ecosystem/rules/containers/`:
 
-| Rule                                                                                                  | Covers                                                                                  |
-| ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [`containers/00-catalog-core.md`](../roqueos-front/.claude/rules/containers/00-catalog-core.md)       | Yarn-only, repo shape (data + tooling), conventional commits, semver release model, DoD |
-| [`containers/10-schema-contract.md`](../roqueos-front/.claude/rules/containers/10-schema-contract.md) | Schema (Draft-07): required fields, regex, enums, image-pin rule, categories            |
-| [`containers/20-validators.md`](../roqueos-front/.claude/rules/containers/20-validators.md)           | `scripts/*.mjs` (validate / fix / audit / rebrand) + invariants                         |
-| [`containers/50-mount-shared.md`](../roqueos-front/.claude/rules/containers/50-mount-shared.md)       | `x-roqueos.mountShared` + the `MOUNT_SHARED_APPS` curated set                           |
-| [`containers/60-rebranding.md`](../roqueos-front/.claude/rules/containers/60-rebranding.md)           | `rebrand-casaos.mjs` sweep for importing upstream CasaOS apps                           |
+| Rule                                                                                              | Covers                                                                                  |
+| ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [`containers/00-catalog-core.md`](../roqueos-ecosystem/rules/containers/00-catalog-core.md)       | Yarn-only, repo shape (data + tooling), conventional commits, semver release model, DoD |
+| [`containers/10-schema-contract.md`](../roqueos-ecosystem/rules/containers/10-schema-contract.md) | Schema (Draft-07): required fields, regex, enums, image-pin rule, categories            |
+| [`containers/20-validators.md`](../roqueos-ecosystem/rules/containers/20-validators.md)           | `scripts/*.mjs` (validate / fix / audit / rebrand) + invariants                         |
+| [`containers/50-mount-shared.md`](../roqueos-ecosystem/rules/containers/50-mount-shared.md)       | `x-roqueos.mountShared` + the `MOUNT_SHARED_APPS` curated set                           |
+| [`containers/60-rebranding.md`](../roqueos-ecosystem/rules/containers/60-rebranding.md)           | `rebrand-casaos.mjs` sweep for importing upstream CasaOS apps                           |
 
 Cross-repo doc-sync mapping (changed X → update Y) lives in [`../roqueos-front/.claude/rules/97-docs-sync.md`](../roqueos-front/.claude/rules/97-docs-sync.md) (section "roqueos-containers-list"). The detailed source of truth for the schema/scripts remains the repo's own [`CONTRIBUTING.md`](./CONTRIBUTING.md) + [`schema/casaos-app.schema.json`](./schema/casaos-app.schema.json). Every PR that touches a manifest/schema/script keeps the matching rule + `CHANGELOG.md` in sync in the same effort.
 
 ## Cross-repo
 
-This catalog is the **producer** in the `front ← containers-list` contract: `roqueos-server` fetches the published `appstore.zip` on boot (24h cache), parses each `x-casaos` manifest, and exposes the apps via `/catalog`; the RoqueOS App Store renders them. When changing the schema (renamed/removed fields, new enum values), change **this repo first**, then the server parser + the front, keeping rules and CHANGELOGs in sync — see ordering in `../CLAUDE.md`.
+This catalog is the **producer** in the `front ← containers-list` contract: `roqueos-server` fetches the published `appstore.zip` on boot (24h cache), parses each `x-casaos` manifest, and exposes the apps via `/catalog`; the RoqueOS App Store renders them. When changing the schema (renamed/removed fields, new enum values), change **this repo first**, then the server parser + the front, keeping rules and CHANGELOGs in sync, see ordering in [`../roqueos-ecosystem/README.md`](../roqueos-ecosystem/README.md).
