@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "extraKnownMarketplaces": [
+    {
+      "source": "github",
+      "repo": "roqueribeiro/roqueos-ecosystem"
+    }
+  ],
+  "enabledPlugins": [
+    {
+      "marketplace": "roqueos",
+      "plugin": "roqueos-kit"
+    }
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(roqueos-gate*)",
+      "Bash(roqueos-doctor*)",
+      "Bash(roqueos-graph*)",
+      "Bash(roqueos-harness*)",
+      "Bash(roqueos-secrets status*)",
+      "Bash(roqueos-secrets exec*)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git show*)",
+      "Bash(git branch*)"
+    ],
+    "deny": [
+      "Bash(cat ~/.ssh/id_*)",
+      "Bash(security find-generic-password:* -w*)",
+      "Bash(printenv)",
+      "Bash(env)",
+      "Bash(rm -rf /*)"
+    ]
+  }
+}
