@@ -1,0 +1,10 @@
+# O gate da familia RoqueOS. Nao substitui o CI existente deste repo: roda ao lado.
+name: roqueos
+
+on: [push, pull_request]
+
+jobs:
+  gate:
+    uses: roqueribeiro/roqueos-ecosystem/.github/workflows/roqueos-gate.yml@master
+    with:
+      node-version: '22'
