@@ -22,11 +22,35 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  # A validacao de schema existia desde sempre, em validate-schema.yml, e NAO estava no
+  # caminho da entrega: o `release` dependia do `build`, e o `build` so zipava arquivos.
+  # Uma tag vX.Y.Z publicava o appstore.zip sem que nada verificasse os manifestos, e o
+  # parser do roqueos-server depende exatamente desse contrato. Ter o check e nao coloca-lo
+  # entre o commit e o cliente e quase o mesmo que nao te-lo. (2026-08-17)
+  validate:
+    name: Manifestos batem com o schema
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install validator deps
+        run: npm install --no-save ajv@^8 ajv-formats@^3 js-yaml@^4
+      - name: Validate every manifest against the schema
+        run: node scripts/validate-manifests.mjs
+
   build:
     name: Build appstore.zip
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    needs: validate
 
     steps:
       - name: Checkout repository
@@ -76,7 +100,7 @@ jobs:
           fi
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
         with:
           tag_name: ${{ steps.version.outputs.version }}
           name: ${{ steps.version.outputs.version }}
