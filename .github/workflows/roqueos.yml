@@ -1,20 +1,17 @@
 # O gate da familia RoqueOS. Nao substitui o CI proprio deste repo: roda ao lado dele.
 #
-# O workflow reutilizavel detecta a tecnologia pelo conteudo do diretorio, roda o gate
-# declarado em quality/<tech>.json, marca como PULADO o que este runner nao consegue rodar,
-# e comenta o raio de impacto cross-repo nos PRs. Nove copias divergem em tres meses; uma
-# chamada nao.
+# Este arquivo e o UNICO da familia que nao chama o workflow reutilizavel do harness, e o
+# motivo nao e escolha: e restricao de plataforma. Este repo e PUBLICO e o roqueos-ecosystem
+# e PRIVADO, e o GitHub recusa `uses:` de workflow reutilizavel nessa direcao mesmo com
+# `access_level: user` liberado. Medido em 2026-08-17, com os dois lados na mesma conta:
 #
-# Tres coisas aqui foram aprendidas em 2026-08-17, quando se descobriu que este arquivo
-# NUNCA tinha criado um job:
+#   privado -> privado:  resolve e cria job
+#   publico -> privado:  "workflow was not found" (HTTP 422), nem chega a criar job
 #
-#   - `@v2`, nao `@master`. Com `@master`, um push no harness reescrevia a esteira dos seis
-#     repos no mesmo instante, sem ensaio e sem ninguem perceber. Mover a tag e o degrau de
-#     intencao que faltava.
-#   - `harness-token`. O harness e PRIVADO, e o GITHUB_TOKEN pertence a ESTE repo: ele nao
-#     le repo privado alheio, e o checkout do harness volta 403. Precisa de um PAT no segredo.
-#   - `branches:` no push. Sem o filtro, uma branch com PR aberto dispara push E
-#     pull_request, e cada commit paga a esteira duas vezes.
+# Entao aqui os passos do gate sao chamados direto. Checkout de repo privado com PAT funciona
+# de qualquer visibilidade; e so o `uses:` que nao. A duplicacao e real e e o preco. O que ela
+# nao pode virar e DIVERGENCIA: o que roda continua sendo o binario do harness, e nao uma
+# copia dos gates reescrita aqui.
 name: roqueos
 
 on:
@@ -32,9 +29,53 @@ concurrency:
 
 jobs:
   gate:
-    uses: roqueribeiro/roqueos-ecosystem/.github/workflows/roqueos-gate.yml@v2
-    # A versao do node sai do .nvmrc deste repo. O `node-version:` que ficava aqui dizia
-    # '22' enquanto os sete .nvmrc diziam 24: a esteira validava numa runtime que a familia
-    # nao usa, que e o comeco exato de "passou no CI e quebrou na maquina".
-    secrets:
-      harness-token: ${{ secrets.HARNESS_TOKEN }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      # `continue-on-error` nao afrouxa nada: existe para o passo seguinte rodar e dizer em
+      # portugues o que falta, em vez de deixar um 403 cru sem dono na tela.
+      - name: Trazer o harness
+        id: harness
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: roqueribeiro/roqueos-ecosystem
+          path: .roqueos-harness
+          token: ${{ secrets.HARNESS_TOKEN }}
+
+      - name: O harness chegou?
+        run: |
+          if [ ! -f .roqueos-harness/plugins/roqueos-kit/bin/roqueos-gate ]; then
+            echo "::error title=Falta o segredo HARNESS_TOKEN::O checkout do harness nao trouxe o kit. O roqueos-ecosystem e privado e o GITHUB_TOKEN nao le repo privado alheio. Crie um PAT fine-grained com Contents: Read-only no roqueos-ecosystem e grave-o aqui:  gh secret set HARNESS_TOKEN -R ${{ github.repository }}"
+            exit 1
+          fi
+          echo "harness em $(git -C .roqueos-harness rev-parse --short HEAD)"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Gate da tecnologia
+        run: |
+          node .roqueos-harness/plugins/roqueos-kit/bin/roqueos-gate . --json > gate.json || true
+          node -e "
+            const r = JSON.parse(require('fs').readFileSync('gate.json','utf8'));
+            for (const g of r.results) {
+              const tag = g.status === 'pass' ? 'ok' : g.status === 'skipped' ? 'PULADO' : g.status === 'agent' ? 'agente' : 'FALHOU';
+              console.log(\`  \${tag.padEnd(7)} \${g.label}\${g.reason ? '  ('+g.reason+')' : ''}\`);
+            }
+            const falhou = r.results.filter(g => g.status === 'fail' && g.blocking);
+            const pulado = r.results.filter(g => g.status === 'skipped');
+            if (pulado.length) console.log('::notice::' + pulado.length + ' gate(s) pulados por plataforma: pendentes de maquina, nao aprovados');
+            if (falhou.length) { console.log('::error::' + falhou.length + ' gate(s) bloqueantes falharam'); process.exit(1); }
+          "
+
+      - name: Esteira deste repo contra o padrao (aviso)
+        if: always()
+        run: node .roqueos-harness/scripts/check-actions.mjs . --aviso
+
+      - name: Nota do repo contra o padrao
+        if: always()
+        run: node .roqueos-harness/plugins/roqueos-kit/bin/roqueos-doctor .
