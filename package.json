@@ -1,6 +1,7 @@
 {
   "name": "roqueos-containers-list",
   "version": "1.0.0",
+  "license": "MIT",
   "private": true,
   "description": "Tooling for the RoqueOS Containers List catalog. The catalog itself is the Apps/ directory — these scripts validate and migrate manifests.",
   "type": "module",
