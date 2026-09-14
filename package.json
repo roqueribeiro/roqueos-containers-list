@@ -16,7 +16,11 @@
     "rebrand:dry": "node scripts/rebrand-casaos.mjs --dry-run --verbose",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "revisao": "node scripts/revisao-container.mjs --todos",
+    "revisao:app": "node scripts/revisao-container.mjs --app",
+    "revisao:pendentes": "node scripts/revisao-container.mjs --pendentes",
+    "enrichment": "node scripts/audit-enrichment.mjs"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^4.1.5",
