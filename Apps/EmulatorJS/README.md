@@ -1,0 +1,61 @@
+# emulatorjs
+
+
+## O que é
+
+EmulatorJS é um aplicativo de emulação baseado em Docker que pode simular vários sistemas operacionais e ambientes de dispositivos dentro de contêineres para fins de desenvolvimento, teste e aprendizado.
+
+Categoria na App Store do RoqueOS: **Utilities**.
+Arquiteturas suportadas: amd64, arm64.
+
+## Portas
+
+| Host | Container | Protocolo | Para que serve | Serviço    |
+| ---- | --------- | --------- | -------------- | ---------- |
+| 3001 | 3000      | tcp       | Manage ROMS    | emulatorjs |
+| 4001 | 4001      | tcp       | —              | emulatorjs |
+| 88   | 80        | tcp       | Play Game      | emulatorjs |
+
+
+## Volumes
+
+Onde os dados deste app ficam no seu servidor.
+
+| No host                     | No container   | Serviço    |
+| --------------------------- | -------------- | ---------- |
+| /DATA/AppData/$AppID/config | /config        | emulatorjs |
+| /DATA/AppData/$AppID/data   | /data          | emulatorjs |
+| /ROMS/nes                   | /data/nes/roms | emulatorjs |
+
+## Variáveis de ambiente
+
+| Variável  | Valor padrão | Serviço    |
+| --------- | ------------ | ---------- |
+| PGID      | $PGID        | emulatorjs |
+| PUID      | $PUID        | emulatorjs |
+| SUBFOLDER | /            | emulatorjs |
+| TZ        | $TZ          | emulatorjs |
+
+## Primeiro acesso
+
+Depois de instalar, abra `http://<endereço-do-servidor>:88/`.
+
+### Por que este app pede privilégio
+
+- `privileged`: acesso direto a dispositivos de entrada (gamepad) via /dev/input
+
+## Imagens
+
+| Serviço    | Imagem                       |
+| ---------- | ---------------------------- |
+| emulatorjs | linuxserver/emulatorjs:1.9.2 |
+
+## Fonte oficial
+
+_Não declarada no manifesto._
+
+---
+
+_Ficha gerada de `docker-compose.yml` por `scripts/gera-readme.mjs`. Mudou o
+manifesto, rode de novo: o que está aqui é o que o app de fato faz, não o que
+alguém lembrou de escrever._
