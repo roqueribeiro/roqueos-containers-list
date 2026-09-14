@@ -99,8 +99,15 @@ descrição.
 | P9 | Coerência | sem `appfile.json`: formato morto que ninguém consome |
 | P10 | Permissão do dado | imagem que larga privilégio para um uid fixo **não** pode escrever em bind sem `user:` ou `PUID` — o instalador cria esse diretório `root:root 0755` e o container reinicia para sempre |
 
-`yarn boot` é a décima premissa executada de verdade: sobe o container e olha o
-estado. **Só vale em Linux** (veja a quarta armadilha).
+`yarn boot` é a décima premissa executada de verdade: sobe o container, espera,
+olha o estado e **bate na porta que a ficha promete** — qualquer status HTTP
+conta como resposta, inclusive 401 e 302, porque o que se mede é "tem servidor
+atendendo ali". **Só vale em Linux** (veja a quarta armadilha).
+
+O que o `yarn boot` NÃO mede, e que continua sem cobertura automática: a tela
+abrir, o login funcionar, o dado sobreviver a um restart, e o caminho real de
+instalação do RoqueOS — o laboratório roda `docker compose up` direto, não o
+instalador do `roqueos-server`.
 
 ### Quatro armadilhas que já custaram caro aqui
 

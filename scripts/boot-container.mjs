@@ -139,6 +139,74 @@ function espera(ms) {
 
 const SANDBOX = process.env.BOOT_SANDBOX || '/tmp/boot-roqueos'
 
+// "Ficou de pe" nao e "funciona". Um container pode ficar running com o processo
+// morto por dentro, ou escutando em lugar nenhum. Esta parte pergunta ao app, na
+// porta que o manifesto promete ao usuario, se ele responde alguma coisa.
+//
+// Qualquer status HTTP conta como resposta, inclusive 401 e 302: o que se mede
+// aqui e "tem servidor atendendo naquela porta", nao "a tela abriu". Login,
+// primeira configuracao e conteudo continuam sem cobertura automatica.
+export function alvoHttp(compose) {
+  const x = compose['x-casaos'] || {}
+  const nome = x.main
+  const svc = nome ? compose.services?.[nome] : null
+  if (!svc) return null
+  const portas = Array.isArray(svc.ports) ? svc.ports : []
+  const mapeada = x.port_map ? String(x.port_map) : null
+  let alvo = null
+  for (const p of portas) {
+    const dentro = String(p?.target ?? String(p).split(':').pop() ?? '')
+      .split('/')[0]
+      .trim()
+    const fora = String(p?.published ?? String(p).split(':')[0] ?? '').trim()
+    if (!dentro) continue
+    if (mapeada && fora === mapeada) return { servico: nome, porta: dentro, scheme: x.scheme || 'http' }
+    if (!alvo) alvo = { servico: nome, porta: dentro, scheme: x.scheme || 'http' }
+  }
+  return alvo
+}
+
+function ipDoContainer(projeto, servico) {
+  try {
+    const id = sh('docker', ['compose', '-p', projeto, 'ps', '-q', servico]).trim().split('\n')[0]
+    if (!id) return null
+    const fora = sh('docker', [
+      'inspect',
+      '-f',
+      '{{range $k, $v := .NetworkSettings.Networks}}{{$k}}={{$v.IPAddress}};{{end}}',
+      id,
+    ])
+    for (const par of fora.split(';')) {
+      const [rede, ip] = par.split('=')
+      if (!rede) continue
+      // network_mode: host nao tem IP proprio: o container divide a pilha de
+      // rede da maquina, entao quem responde e o 127.0.0.1 de quem pergunta.
+      // O Docker escreve "invalid IP" nesse caso, e nao vazio.
+      if (rede.trim() === 'host') return { rede: 'host', ip: '127.0.0.1' }
+      if (ip && ip.trim() && ip.trim() !== 'invalid IP') return { rede: rede.trim(), ip: ip.trim() }
+    }
+  } catch {}
+  return null
+}
+
+export function respondeNaPorta(projeto, alvo) {
+  if (!alvo) return { medido: false, motivo: 'manifesto nao declara porta principal' }
+  const end = ipDoContainer(projeto, alvo.servico)
+  if (!end) return { medido: false, motivo: 'nao achei o IP do container' }
+  const url = `${alvo.scheme}://${end.ip}:${alvo.porta}/`
+  try {
+    const codigo = sh('docker', [
+      'run', '--rm', '--network', end.rede, 'curlimages/curl:8.11.1',
+      '-s', '-k', '-o', '/dev/null', '-w', '%{http_code}',
+      '--max-time', '12', '--retry', '3', '--retry-delay', '3', '--retry-all-errors',
+      url,
+    ]).trim()
+    return { medido: true, ok: codigo !== '000', codigo, url }
+  } catch (e) {
+    return { medido: true, ok: false, codigo: '000', url, erro: String(e.message || e).slice(0, 120) }
+  }
+}
+
 export function testa(app) {
   const projeto = `bt-${app.toLowerCase().replace(/[^a-z0-9]/g, '')}`
   const dir = join(SANDBOX, projeto)
@@ -158,6 +226,7 @@ export function testa(app) {
     projeto,
     ok: false,
     inconclusivo: null,
+    http: null,
     etapa: null,
     erro: null,
     servicos: [],
@@ -189,6 +258,16 @@ export function testa(app) {
       espera(INTERVALO_MS)
     }
     res.ok = v.ok
+    if (v.ok) {
+      // De pe nao basta: a porta que a ficha promete tem que atender.
+      const alvo = alvoHttp(yaml.load(texto))
+      res.http = respondeNaPorta(projeto, alvo)
+      if (res.http.medido && !res.http.ok) {
+        res.ok = false
+        res.etapa = 'porta'
+        res.erro = `container de pe, mas ${res.http.url} nao respondeu (codigo ${res.http.codigo})\n${logs(projeto, alvo.servico)}`
+      }
+    }
     if (!v.ok) {
       res.etapa = 'estado'
       res.erro = v.ruins
