@@ -108,7 +108,10 @@ function logs(projeto, servico) {
 // seria mentir na direção contrária à do Grafana — e gate que mente em qualquer
 // direção ensina a ignorar gate.
 export const LIMITE_DO_LABORATORIO = [
-  { re: /Address family not supported by protocol/i, motivo: 'kernel do laboratório sem IPv6' },
+  {
+    re: /Address family not supported by protocol|EAFNOSUPPORT|address family not supported/i,
+    motivo: 'kernel do laboratório sem IPv6',
+  },
   { re: /error setting rlimit/i, motivo: 'laboratório não permite levantar rlimit' },
   { re: /operation not permitted.*rlimit/i, motivo: 'laboratório não permite levantar rlimit' },
   { re: /no space left on device/i, motivo: 'disco do laboratório acabou durante o pull' },
