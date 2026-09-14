@@ -1,10 +1,10 @@
 # Databag
 
-> Messenger for the Decentralized Web
+> Mensageiro para a web descentralizada
 
 ## O que é
 
-Databag is a federated chat app for self-hosting that focuses on user privacy and security; the service includes clients for iOS, Android, and browser.
+Databag é um aplicativo de conversa federado, feito para rodar no seu servidor, com foco em privacidade e segurança. Tem cliente para iOS, Android e navegador.
 
 Categoria na App Store do RoqueOS: **Communication**.
 Arquiteturas suportadas: amd64, arm64.

@@ -1,10 +1,10 @@
 # Navidrome
 
-> Music Collection and Streaming Server
+> Seu próprio servidor de música, para ouvir de onde estiver
 
 ## O que é
 
-Navidrome is an open source web-based music collection server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device. It's like your personal Spotify!
+Navidrome é um servidor de coleção de música de código aberto. Dá liberdade de ouvir a sua coleção de qualquer navegador ou celular. É como um Spotify só seu.
 
 Categoria na App Store do RoqueOS: **Media**.
 Arquiteturas suportadas: amd64, arm64, arm.

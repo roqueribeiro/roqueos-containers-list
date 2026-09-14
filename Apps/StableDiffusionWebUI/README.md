@@ -1,10 +1,10 @@
 # Stable Diffusion
 
-> An AI model used to generate images conditioned on text descriptions.
+> Modelo de IA que gera imagem a partir de texto
 
 ## O que é
 
-Stable Diffusion is a deep learning, text-to-image model released in 2022 based on diffusion techniques. It is primarily used to generate detailed images conditioned on text descriptions, though it can also be applied to other tasks such as inpainting, outpainting, and generating image-to-image translations guided by a text prompt.
+Stable Diffusion é um modelo de aprendizado profundo, lançado em 2022, que usa difusão para gerar imagens detalhadas a partir de uma descrição em texto. Também serve para preencher e estender imagens e para transformar uma imagem em outra.
 
 Categoria na App Store do RoqueOS: **Developer**.
 Arquiteturas suportadas: amd64.

@@ -19,7 +19,7 @@ services:
       test:
         - CMD
         - curl
-        - '-f'
+        - "-f"
         - http://localhost:8000/v1/health_check
       interval: 15s
       timeout: 10s
@@ -42,7 +42,7 @@ services:
       test:
         - CMD
         - curl
-        - '-f'
+        - "-f"
         - http://localhost:8000/v1/health_check
       interval: 15s
       timeout: 10s
@@ -73,7 +73,7 @@ services:
       test:
         - CMD
         - curl
-        - '-f'
+        - "-f"
         - http://localhost:8000/v1/health_check
       interval: 15s
       timeout: 10s
@@ -108,7 +108,7 @@ services:
       test:
         - CMD
         - curl
-        - '-f'
+        - "-f"
         - http://localhost:8000/v1/health_check
       interval: 15s
       timeout: 10s
@@ -137,7 +137,7 @@ services:
     image: redis:7-alpine
     command:
       - redis-server
-      - '--requirepass'
+      - "--requirepass"
       - TaskingAI321
     volumes:
       - /DATA/AppData/$AppID/data/redis:/data
@@ -157,13 +157,13 @@ services:
   nginx:
     x-casaos:
       ports:
-        - container: '80'
+        - container: "80"
           description:
-            en_us: "Web interface for TaskingAI"
+            en_us: Web interface for TaskingAI
     image: nginx:1.24
     restart: unless-stopped
     ports:
-      - '3080:80'
+      - "3080:80"
     volumes:
       - /DATA/AppData/$AppID/data/nginx_cache:/var/cache/nginx
     depends_on:
@@ -188,6 +188,7 @@ x-casaos:
   description:
     en_us: The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
     zh_cn: 开发人员友好的云平台，用于构建和运行AI原生应用程序的LLM代理。
+    pt_br: Plataforma amigável a quem desenvolve, para construir e rodar agentes de LLM em aplicações nativas de IA.
   developer: TaskingAI Team
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/icon.png
   screenshot_link:
@@ -198,6 +199,7 @@ x-casaos:
   tagline:
     en_us: The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
     zh_cn: 开发人员友好的云平台，用于构建和运行AI原生应用程序的LLM代理。
+    pt_br: Plataforma para construir e rodar agentes de LLM
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/TaskingAI/thumbnail.png
   tips:
     before_install:
@@ -207,7 +209,7 @@ x-casaos:
         | admin    | TaskingAI321 |
   title:
     en_us: TaskingAI
-  port_map: '3080'
+  port_map: "3080"
   scheme: http
 configs:
   nginx_config:
@@ -251,6 +253,5 @@ configs:
             proxy_pass http://frontend:80;
         }
       }
-
 x-roqueos:
   portaCompartilhada: true

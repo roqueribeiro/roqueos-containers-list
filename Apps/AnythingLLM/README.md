@@ -1,10 +1,10 @@
 # AnythingLLM
 
-> The all-in-one AI application.
+> O aplicativo de IA que faz tudo num lugar só
 
 ## O que é
 
-AnythingLLM is the easiest to use, all-in-one AI application that can do RAG, AI Agents, and much more with no code or infrastructure headaches.
+AnythingLLM é o aplicativo de IA mais simples de usar que junta tudo num lugar: RAG, agentes e muito mais, sem escrever código e sem dor de cabeça de infraestrutura.
 
 Categoria na App Store do RoqueOS: **AI**.
 Arquiteturas suportadas: amd64.

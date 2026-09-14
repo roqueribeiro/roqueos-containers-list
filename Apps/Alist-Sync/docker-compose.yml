@@ -3,14 +3,14 @@ services:
   alist-sync:
     x-casaos:
       ports:
-        - container: '52441'
+        - container: "52441"
           description:
-            en_us: "Web interface for Alist-Sync"
+            en_us: Web interface for Alist-Sync
     image: xjxjin/alist-sync:1.1.5
     container_name: alist-sync
     restart: unless-stopped
     ports:
-      - '52441:52441'
+      - "52441:52441"
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/data
@@ -23,7 +23,7 @@ x-casaos:
       description:
         en_us: Set the timezone for the alist-sync application.
   ports:
-    - container: '52441'
+    - container: "52441"
       description:
         en_us: The port used by alist-sync for its service.
   volumes:
@@ -43,6 +43,7 @@ x-casaos:
       Alist-Sync is a storage synchronization tool based on the Web interface. It can achieve data synchronization and mutual backup among multiple network disks, and also has practical functions such as multi-task management, scheduled synchronization and difference handling.
     zh_cn: |
       Alist-Sync 是一款基于 Web 界面的存储同步工具，它能够在多个网盘之间实现数据同步以及相互备份，并且具备多任务管理、定时同步、差异处理等实用功能。
+    pt_br: Alist-Sync sincroniza armazenamentos pela interface web. Faz cópia entre vários discos de rede, gerencia várias tarefas ao mesmo tempo, agenda sincronizações e trata as diferenças entre as pontas.
   developer: xjxjin
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist-Sync/icon.png
   screenshot_link:
@@ -54,6 +55,7 @@ x-casaos:
   tagline:
     en_us: An Alist storage synchronization tool based on the Web interface.
     zh_cn: 一个基于 Web 界面的 Alist 存储同步工具。
+    pt_br: Sincronização de armazenamento do Alist, pelo navegador
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist-Sync/thumbnail.png
   title:
     en_us: Alist-Sync
@@ -61,7 +63,7 @@ x-casaos:
     before_install:
       en_us: The default login password is admin/admin.
       zh_cn: 默认登录密码 admin/admin。
-  port_map: '52441'
+  port_map: "52441"
   scheme: http
 x-roqueos:
   mountShared: true

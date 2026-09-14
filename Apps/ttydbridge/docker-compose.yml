@@ -3,9 +3,9 @@ services:
   ttydbridge:
     x-casaos:
       ports:
-        - container: '2222'
+        - container: "2222"
           description:
-            en_us: "Web interface for ttydBridge"
+            en_us: Web interface for ttydBridge
     container_name: ttydbridge
     deploy:
       resources:
@@ -23,7 +23,7 @@ services:
     restart: unless-stopped
     ports:
       - target: 2222
-        published: '2222'
+        published: "2222"
         protocol: tcp
     volumes:
       - type: bind
@@ -44,12 +44,13 @@ x-casaos:
       ttydBridge acts as a "bridge" to the host environment, allowing you to easily access and use the host terminal in a web. It is built on ttyd and runs in a containerized manner, providing a secure and convenient remote endpoint experience.
     zh_cn: |
       ttydBridge 如一座“桥”，连通了宿主机环境，让你在浏览器中轻松访问和使用宿主机终端。它基于 ttyd 构建，并以容器化的方式运行，提供了安全、便捷的远程终端体验。
+    pt_br: "ttydbridge expõe um shell do servidor dentro do navegador, pelo ttyd. É um acesso poderoso e deliberado: quem abre esta janela tem o mesmo alcance de quem está sentado na máquina, então mantenha fora da internet e atrás de autenticação."
   developer: Cp0204
-  hostname: ''
+  hostname: ""
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ttydbridge/icon.png
   index: /
   main: ttydbridge
-  port_map: '2222'
+  port_map: "2222"
   scheme: http
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ttydbridge/screenshot-1.png
@@ -58,6 +59,7 @@ x-casaos:
   tagline:
     en_us: Easy access to the host terminal in web
     zh_cn: 在浏览器中轻松访问宿主机终端
+    pt_br: Terminal do servidor, aberto no navegador
   tips:
     before_install:
       en_us: |
@@ -72,9 +74,8 @@ x-casaos:
         [官方文档](https://hub.docker.com/r/cp0204/ttydbridge)
   title:
     en_us: ttydBridge
-
 x-roqueos:
   portaCompartilhada: true
   motivo:
-    privileged: "expõe um shell do host, que é a função declarada do container"
-    volumeHost: "monta /opt do host porque o shell exposto precisa enxergar o que está instalado lá"
+    privileged: expõe um shell do host, que é a função declarada do container
+    volumeHost: monta /opt do host porque o shell exposto precisa enxergar o que está instalado lá

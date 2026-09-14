@@ -1,20 +1,10 @@
 # Alby Hub ✨
 
-> Um nó Bitcoin Lightning simples com uma carteira, subcontas e conexões NWC.
+> Carteira Bitcoin Lightning sob sua guarda, com nó próprio e conexão a aplicativos
 
 ## O que é
 
-Alby Hub is an open-source, self-custodial Bitcoin Lightning wallet, with the easiest-to-use Lightning Network node for everyone.
-Whether you're an individual, creator, or developer, Alby Hub is your centre for seamless Bitcoin payments.
-Effortlessly connect to a variety of apps like the Alby Browser Extension or Alby Go mobile app, create sub-wallets for family and friends, and take full control of your funds—all within an intuitive interface and developer-ready APIs.
-
-**USEFUL LINKS**
-- [Source Repository](https://github.com/getAlby/hub)
-- [Support](https://support.getalby.com/)
-- [Marketing Site](https://albyhub.com/)
-- [Community of users and developers](https://discord.getalby.com)
-- [Feedback Board, feature requests, bug reports[(https://feedback.getalby.com)
-
+Alby Hub é uma carteira Bitcoin Lightning de código aberto e sob sua própria guarda, com o nó da Lightning Network mais simples de operar. Serve tanto para quem só quer pagar e receber quanto para quem desenvolve, e conecta a vários aplicativos do ecossistema.
 
 Categoria na App Store do RoqueOS: **Finance**.
 Arquiteturas suportadas: amd64, arm64.

@@ -1,10 +1,10 @@
 # ESPHome
 
-> Home Automation systems
+> Automação residencial por arquivo de configuração
 
 ## O que é
 
-ESPHome is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems.
+ESPHome controla seus microcontroladores por arquivos de configuração simples e poderosos, e os integra ao seu sistema de automação residencial.
 
 Categoria na App Store do RoqueOS: **Home Automation**.
 Arquiteturas suportadas: amd64, arm64, arm.

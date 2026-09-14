@@ -8,7 +8,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       VERSION: docker
-      CPU_FALLBACK: 'true'
+      CPU_FALLBACK: "true"
       NVIDIA_VISIBLE_DEVICES: all
     image: lscr.io/linuxserver/plex:1.41.3
     deploy:
@@ -69,6 +69,7 @@ x-casaos:
       将您的家变成一个电影的绿洲，拥有您自己的媒体服务器。与压缩和限制内容质量的流媒体平台不同，家中的 Plex 服务器可以让您保持 Blu-ray 及更高格式的原始高比特率荣耀。想象一下，将这种高保真、无中断的媒体访问与前沿的家庭影院技术相结合，如 VR 头戴显示器、75 英寸 UHD 电视或 100 英寸激光投影仪。结果是什么？在您家中沙发上就能享受的令人惊叹的视觉和听觉体验，流畅地在电视和移动设备上播放。
 
       在 Zima 设备上部署 Plex，解锁家庭娱乐便利的极致。享受几乎无限的存储容量，用于存放您的整个媒体库，闪电般快速的本地网络速度，并能够轻松地将内容流式传输到家中的任何设备。体验一个世界，在那里您喜爱的节目和电影始终触手可及，安全且私密地存储在您自己的设备上。
+    pt_br: A mesma coisa do Plex, com aceleração por GPU Nvidia para transcodificar vários fluxos ao mesmo tempo sem derrubar o servidor. Mantém o material na qualidade original de Blu-ray e além.
   developer: Plex
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Plex/icon.png
   screenshot_link:
@@ -78,6 +79,7 @@ x-casaos:
   tagline:
     en_us: Stream Movies & TV Shows
     zh_cn: 流式播放电影和电视剧
+    pt_br: Seus filmes e séries, servidos da sua casa, com transcodificação por GPU
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Plex/thumbnail.png
   tips:
     before_install:
@@ -112,9 +114,9 @@ x-casaos:
   title:
     en_us: Plex(Nvidia GPU)
   index: /web/index.html
-  port_map: '32400'
+  port_map: "32400"
   scheme: http
 x-roqueos:
   motivo:
-    networkHost: "descoberta por GDM e DLNA exige a mesma rede física dos clientes"
+    networkHost: descoberta por GDM e DLNA exige a mesma rede física dos clientes
   mountShared: true

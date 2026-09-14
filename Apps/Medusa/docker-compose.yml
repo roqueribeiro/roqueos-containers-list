@@ -3,9 +3,9 @@ services:
   medusa:
     x-casaos:
       ports:
-        - container: '8081'
+        - container: "8081"
           description:
-            en_us: "Web interface for Medusa"
+            en_us: Web interface for Medusa
     container_name: medusa
     deploy:
       resources:
@@ -16,7 +16,7 @@ services:
     image: pymedusa/medusa:master
     ports:
       - target: 8081
-        published: '8081'
+        published: "8081"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -42,6 +42,7 @@ x-casaos:
   category: Media
   description:
     en_us: Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
+    pt_br: "Medusa cuida sozinho da sua biblioteca de séries: fica de olho nos episódios novos dos programas que você acompanha e, quando saem, faz a mágica."
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Medusa/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Medusa/screenshot-1.png
@@ -51,11 +52,13 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Medusa/screenshot-5.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Medusa/screenshot-6.png
   index: /
-  port_map: '8081'
+  port_map: "8081"
   scheme: http
   store_app_id: medusa
   title:
     en_us: Medusa
-
+  tagline:
+    pt_br: Gerenciador automático da sua biblioteca de séries
+    en_us: Automatic video library manager for TV shows
 x-roqueos:
   portaCompartilhada: true

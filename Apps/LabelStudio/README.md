@@ -1,10 +1,10 @@
 # Label Studio
 
-> Label Studio is an open source data labeling tool. It lets you label data types like audio, text, images, videos, and time series with a simple and straightforward UI and export to various model formats. It can be used to prepare raw data or improve existing training data to get more accurate ML models.
+> Rotulagem de dados para treinar modelos
 
 ## O que é
 
-Label Studio is an open source data labeling tool. It lets you label data types like audio, text, images, videos, and time series with a simple and straightforward UI and export to various model formats. It can be used to prepare raw data or improve existing training data to get more accurate ML models.
+Label Studio é uma ferramenta de código aberto para rotular dados. Trabalha com áudio, texto, imagem, vídeo e séries temporais numa interface direta, e exporta para vários formatos de modelo. Serve para preparar dado cru ou melhorar um conjunto de treino que já existe.
 
 Categoria na App Store do RoqueOS: **AI**.
 Arquiteturas suportadas: amd64, arm64.

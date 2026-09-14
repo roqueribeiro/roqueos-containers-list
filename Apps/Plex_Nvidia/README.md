@@ -1,13 +1,10 @@
 # Plex(Nvidia GPU)
 
-> Stream Movies & TV Shows
+> Seus filmes e séries, servidos da sua casa, com transcodificação por GPU
 
 ## O que é
 
-Transform your home into a cinematic oasis with your very own media server. Unlike streaming platforms that compress and limit the quality of your content, a Plex server in your home allows you to maintain the pristine, high-bitrate glory of Blu-ray and beyond. Imagine pairing this high-fidelity, uninterrupted media access with cutting-edge home theater tech like VR headsets, 75-inch UHD TVs, or 100-inch laser projectors. The result? A breathtaking visual and auditory experience that streams seamlessly across TVs and mobile devices alike, right from the comfort of your couch. 
-
-Deploy Plex on a Zima devices and unlock the ultimate in home entertainment convenience. Enjoy ALMOST limitless storage capacity for your entire media library, lightning-fast local network speeds, and the ability to stream content effortlessly to any device in your home. Experience a world where your favorite shows and movies are always just a click away, stored securely and privately on your own terms.
-
+A mesma coisa do Plex, com aceleração por GPU Nvidia para transcodificar vários fluxos ao mesmo tempo sem derrubar o servidor. Mantém o material na qualidade original de Blu-ray e além.
 
 Categoria na App Store do RoqueOS: **Media**.
 Arquiteturas suportadas: amd64, arm64.

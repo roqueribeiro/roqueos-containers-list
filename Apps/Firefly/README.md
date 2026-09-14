@@ -1,10 +1,10 @@
 # Firefly
 
-> Firefly, the easiest using of WireGuard VPN server, plus version of wg-easy.
+> Servidor WireGuard fácil de instalar, a versão turbinada do wg-easy
 
 ## O que é
 
-Firefly is a simple and easy to install WireGuard server software, which can be widely used in scenarios such as remote networking, remote work, and expose a local server behind a NAT or firewall to the internet.  🎯 Features 🟢 Provide a simple and easy-to-use web management UI  🟣 Supports access to all WireGuard clients  🟡 No need for system installation of WireGuard components  🟠 Single file, no additional library dependencies  🔴 Automatically apply for free SSL certificate
+Firefly é um servidor WireGuard simples de instalar, útil para ligar redes remotas, trabalhar de fora e expor um servidor local que está atrás de NAT ou firewall. Tem interface web de administração.
 
 Categoria na App Store do RoqueOS: **Network**.
 Arquiteturas suportadas: amd64, arm64, arm.

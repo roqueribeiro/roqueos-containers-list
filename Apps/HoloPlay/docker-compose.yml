@@ -3,13 +3,13 @@ services:
   holoplay:
     x-casaos:
       ports:
-        - container: '3000'
+        - container: "3000"
           description:
-            en_us: "Web interface for HoloPlay"
+            en_us: Web interface for HoloPlay
     image: spout8301/holoplay:1.12.3
     ports:
       - target: 3000
-        published: '3000'
+        published: "3000"
         protocol: tcp
     privileged: true
     restart: unless-stopped
@@ -17,7 +17,7 @@ services:
 x-casaos:
   architectures:
     - amd64
-    - '386'
+    - "386"
     - arm64
     - arm
   main: holoplay
@@ -26,6 +26,7 @@ x-casaos:
     en_us: HoloPlay is a web based self-hosted using Invidious API for listening Youtube audio source.
     fr_fr: HoloPlay est une alternative qui utilise l'API Invidious pour écouter des sources audio de Youtube.
     zh_cn: HoloPlay是一个基于Web的自托管应用，使用Invidious API来播放Youtube音频源。
+    pt_br: HoloPlay é um tocador web que usa a API do Invidious para ouvir o áudio de vídeos do YouTube, rodando no seu próprio servidor.
   developer: Stéphane Richin
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/HoloPlay/icon.png
   screenshot_link:
@@ -40,14 +41,14 @@ x-casaos:
     en_us: A web app to listen Youtube audio source.
     fr_fr: Une application Web pour écouter les sources audio de Youtube.
     zh_cn: 一个用于收听Youtube音频源的Web应用。
+    pt_br: Ouça o áudio do YouTube sem abrir o YouTube
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/HoloPlay/thumbnail.png
   title:
     en_us: HoloPlay
   index: /
-  port_map: '3000'
+  port_map: "3000"
   scheme: http
-
 x-roqueos:
   portaCompartilhada: true
   motivo:
-    privileged: "acesso a /dev/dri e ao display para renderização"
+    privileged: acesso a /dev/dri e ao display para renderização

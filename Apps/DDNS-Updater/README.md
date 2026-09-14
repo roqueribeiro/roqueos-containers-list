@@ -1,10 +1,10 @@
 # ddns-updater
 
-> Simple and easy to use DDNS
+> DNS dinâmico simples e direto
 
 ## O que é
 
-Program to keep DNS A and/or AAAA records updated for multiple DNS providers
+Mantém os registros A e AAAA do seu domínio sempre apontando para o IP atual, em vários provedores de DNS.
 
 Categoria na App Store do RoqueOS: **Network**.
 Arquiteturas suportadas: amd64, arm, arm64.

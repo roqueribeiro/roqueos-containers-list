@@ -1,10 +1,10 @@
 # HoloPlay
 
-> A web app to listen Youtube audio source.
+> Ouça o áudio do YouTube sem abrir o YouTube
 
 ## O que é
 
-HoloPlay is a web based self-hosted using Invidious API for listening Youtube audio source.
+HoloPlay é um tocador web que usa a API do Invidious para ouvir o áudio de vídeos do YouTube, rodando no seu próprio servidor.
 
 Categoria na App Store do RoqueOS: **Media**.
 Arquiteturas suportadas: amd64, 386, arm64, arm.

@@ -1,10 +1,10 @@
 # Twingate
 
-> Twingate Connector for RoqueOS
+> Conector Twingate para o RoqueOS
 
 ## O que é
 
-It's a connector for Twingate".
+Conector que liga o seu servidor RoqueOS a uma rede Twingate, para acesso remoto sem abrir porta no roteador.
 
 Categoria na App Store do RoqueOS: **Network**.
 Arquiteturas suportadas: amd64, arm64, arm.

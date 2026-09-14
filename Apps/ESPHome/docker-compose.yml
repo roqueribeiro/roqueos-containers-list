@@ -12,14 +12,14 @@ services:
     restart: always
     ports:
       - target: 6052
-        published: '6052'
+        published: "6052"
         protocol: tcp
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/config
         target: /config
     environment:
-      ESPHOME_DASHBOARD_USE_PING: 'false'
+      ESPHOME_DASHBOARD_USE_PING: "false"
       TZ: $TZ
     network_mode: host
     privileged: false
@@ -39,7 +39,7 @@ services:
             en_us: AppData Path Config File
             zh_cn: AppData路径配置文件
       ports:
-        - container: '6052'
+        - container: "6052"
           description:
             en_us: WebUI Port for ESPHome
             zh_cn: ESPHome 的 WebUI 端口
@@ -53,13 +53,15 @@ x-casaos:
   description:
     en_us: ESPHome is a system to control your microcontrollers by simple yet powerful configuration files and control them remotely through Home Automation systems.
     zh_cn: ESPHome 是一个通过简单而强大的配置文件控制微控制器并通过家庭自动化系统远程控制它们的系统。
+    pt_br: ESPHome controla seus microcontroladores por arquivos de configuração simples e poderosos, e os integra ao seu sistema de automação residencial.
   tagline:
     en_us: Home Automation systems
     zh_cn: 家庭自动化系统
+    pt_br: Automação residencial por arquivo de configuração
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ESPHome/icon.png
   index: /
   main: esphome
-  port_map: '6052'
+  port_map: "6052"
   scheme: http
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ESPHome/screenshot-1.png
@@ -67,7 +69,6 @@ x-casaos:
   store_app_id: esphome
   title:
     en_us: ESPHome
-
 x-roqueos:
   motivo:
-    networkHost: "descoberta mDNS e flash OTA de dispositivos na rede local"
+    networkHost: descoberta mDNS e flash OTA de dispositivos na rede local

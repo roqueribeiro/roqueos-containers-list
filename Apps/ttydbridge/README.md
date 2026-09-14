@@ -1,11 +1,10 @@
 # ttydBridge
 
-> Easy access to the host terminal in web
+> Terminal do servidor, aberto no navegador
 
 ## O que é
 
-ttydBridge acts as a "bridge" to the host environment, allowing you to easily access and use the host terminal in a web. It is built on ttyd and runs in a containerized manner, providing a secure and convenient remote endpoint experience.
-
+ttydbridge expõe um shell do servidor dentro do navegador, pelo ttyd. É um acesso poderoso e deliberado: quem abre esta janela tem o mesmo alcance de quem está sentado na máquina, então mantenha fora da internet e atrás de autenticação.
 
 Categoria na App Store do RoqueOS: **Developer**.
 Arquiteturas suportadas: amd64, arm, arm64.

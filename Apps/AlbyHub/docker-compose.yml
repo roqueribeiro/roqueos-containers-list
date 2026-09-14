@@ -3,14 +3,14 @@ services:
   albyhub:
     x-casaos:
       ports:
-        - container: '8080'
+        - container: "8080"
           description:
-            en_us: "Web interface for Alby Hub ✨"
+            en_us: Web interface for Alby Hub ✨
     environment:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-      UMASK: '002'
+      UMASK: "002"
       WORK_DIR: /data/albyhub
       LOG_EVENTS: true
     command: []
@@ -24,7 +24,7 @@ services:
       icon: https://cdn.jsdelivr.net/gh/getAlby/umbrel-community-app-store@master/alby-albyhub/images/icon.svg
     ports:
       - target: 8080
-        published: '58000'
+        published: "58000"
         protocol: tcp
     restart: on-failure
     stop_grace_period: 1m
@@ -52,6 +52,7 @@ x-casaos:
       - [Marketing Site](https://albyhub.com/)
       - [Community of users and developers](https://discord.getalby.com)
       - [Feedback Board, feature requests, bug reports[(https://feedback.getalby.com)
+    pt_br: Alby Hub é uma carteira Bitcoin Lightning de código aberto e sob sua própria guarda, com o nó da Lightning Network mais simples de operar. Serve tanto para quem só quer pagar e receber quanto para quem desenvolve, e conecta a vários aplicativos do ecossistema.
   icon: https://cdn.jsdelivr.net/gh/getAlby/hub@master/frontend/public/icon-512.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/getAlby/umbrel-community-app-store@master/alby-albyhub/images/node.png
@@ -68,11 +69,11 @@ x-casaos:
     it_it: Un semplice nodo Bitcoin Lightning con un portafoglio, sottoconti e connessioni NWC.
     ru_ru: Простой узел Bitcoin Lightning с кошельком, субсчетами и подключениями NWC.
     pl_pl: Samodzielny węzeł Bitcoin Lightning z portfelem, subkontami i połączeniami NWC.
-    pt_br: Um nó Bitcoin Lightning simples com uma carteira, subcontas e conexões NWC.
+    pt_br: Carteira Bitcoin Lightning sob sua guarda, com nó próprio e conexão a aplicativos
     sv_se: En enkel Bitcoin Lightning-nod med en plånbok, underkonton och NWC-anslutningar.
     uk_ua: Простий Bitcoin Lightning-вузол з гаманцем, субрахунками та підключеннями NWC.
   index: /
-  port_map: '58000'
+  port_map: "58000"
   scheme: http
   store_app_id: albyhub
   title:

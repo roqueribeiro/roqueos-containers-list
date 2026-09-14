@@ -24,26 +24,26 @@ services:
       MODE: api
       LOG_LEVEL: INFO
       SECRET_KEY: your-secret-key-here
-      CONSOLE_WEB_URL: ''
-      INIT_PASSWORD: ''
-      CONSOLE_API_URL: ''
-      SERVICE_API_URL: ''
-      APP_WEB_URL: ''
-      FILES_URL: ''
-      FILES_ACCESS_TIMEOUT: '300'
-      MIGRATION_ENABLED: 'true'
+      CONSOLE_WEB_URL: ""
+      INIT_PASSWORD: ""
+      CONSOLE_API_URL: ""
+      SERVICE_API_URL: ""
+      APP_WEB_URL: ""
+      FILES_URL: ""
+      FILES_ACCESS_TIMEOUT: "300"
+      MIGRATION_ENABLED: "true"
       DB_USERNAME: postgres
       DB_PASSWORD: difyai123456
       DB_HOST: db
-      DB_PORT: '5432'
+      DB_PORT: "5432"
       DB_DATABASE: dify
       REDIS_HOST: redis
-      REDIS_PORT: '6379'
+      REDIS_PORT: "6379"
       REDIS_PASSWORD: difyai123456
-      REDIS_DB: '0'
+      REDIS_DB: "0"
       CELERY_BROKER_URL: redis://:difyai123456@redis:6379/1
-      WEB_API_CORS_ALLOW_ORIGINS: '*'
-      CONSOLE_CORS_ALLOW_ORIGINS: '*'
+      WEB_API_CORS_ALLOW_ORIGINS: "*"
+      CONSOLE_CORS_ALLOW_ORIGINS: "*"
       STORAGE_TYPE: local
       STORAGE_LOCAL_PATH: storage
       VECTOR_STORE: weaviate
@@ -51,16 +51,16 @@ services:
       WEAVIATE_API_KEY: WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih
       CODE_EXECUTION_ENDPOINT: http://sandbox:8194
       CODE_EXECUTION_API_KEY: dify-sandbox
-      CODE_MAX_NUMBER: '9223372036854775807'
-      CODE_MIN_NUMBER: '-9223372036854775808'
-      CODE_MAX_STRING_LENGTH: '80000'
-      TEMPLATE_TRANSFORM_MAX_LENGTH: '80000'
-      CODE_MAX_STRING_ARRAY_LENGTH: '30'
-      CODE_MAX_OBJECT_ARRAY_LENGTH: '30'
-      CODE_MAX_NUMBER_ARRAY_LENGTH: '1000'
+      CODE_MAX_NUMBER: "9223372036854775807"
+      CODE_MIN_NUMBER: "-9223372036854775808"
+      CODE_MAX_STRING_LENGTH: "80000"
+      TEMPLATE_TRANSFORM_MAX_LENGTH: "80000"
+      CODE_MAX_STRING_ARRAY_LENGTH: "30"
+      CODE_MAX_OBJECT_ARRAY_LENGTH: "30"
+      CODE_MAX_NUMBER_ARRAY_LENGTH: "1000"
       SSRF_PROXY_HTTP_URL: http://ssrf_proxy:3128
       SSRF_PROXY_HTTPS_URL: http://ssrf_proxy:3128
-      INDEXING_MAX_SEGMENTATION_TOKENS_LENGTH: '1000'
+      INDEXING_MAX_SEGMENTATION_TOKENS_LENGTH: "1000"
     depends_on:
       - db
       - redis
@@ -80,13 +80,13 @@ services:
       DB_USERNAME: postgres
       DB_PASSWORD: difyai123456
       DB_HOST: db
-      DB_PORT: '5432'
+      DB_PORT: "5432"
       DB_DATABASE: dify
       REDIS_HOST: redis
-      REDIS_PORT: '6379'
+      REDIS_PORT: "6379"
       REDIS_PASSWORD: difyai123456
-      REDIS_DB: '0'
-      REDIS_USE_SSL: 'false'
+      REDIS_DB: "0"
+      REDIS_USE_SSL: "false"
       CELERY_BROKER_URL: redis://:difyai123456@redis:6379/1
       STORAGE_TYPE: local
       STORAGE_LOCAL_PATH: storage
@@ -106,8 +106,8 @@ services:
     container_name: dify-web
     restart: unless-stopped
     environment:
-      CONSOLE_API_URL: ''
-      APP_API_URL: ''
+      CONSOLE_API_URL: ""
+      APP_API_URL: ""
     deploy:
       resources:
         reservations:
@@ -163,15 +163,15 @@ services:
     volumes:
       - /DATA/AppData/$AppID/data/weaviate:/var/lib/weaviate
     environment:
-      QUERY_DEFAULTS_LIMIT: '25'
-      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'false'
+      QUERY_DEFAULTS_LIMIT: "25"
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "false"
       PERSISTENCE_DATA_PATH: /var/lib/weaviate
       DEFAULT_VECTORIZER_MODULE: none
       CLUSTER_HOSTNAME: node1
-      AUTHENTICATION_APIKEY_ENABLED: 'true'
+      AUTHENTICATION_APIKEY_ENABLED: "true"
       AUTHENTICATION_APIKEY_ALLOWED_KEYS: WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih
       AUTHENTICATION_APIKEY_USERS: hello@dify.ai
-      AUTHORIZATION_ADMINLIST_ENABLED: 'true'
+      AUTHORIZATION_ADMINLIST_ENABLED: "true"
       AUTHORIZATION_ADMINLIST_USERS: hello@dify.ai
     networks:
       - dify
@@ -182,11 +182,11 @@ services:
     environment:
       API_KEY: dify-sandbox
       GIN_MODE: release
-      WORKER_TIMEOUT: '15'
-      ENABLE_NETWORK: 'true'
+      WORKER_TIMEOUT: "15"
+      ENABLE_NETWORK: "true"
       HTTP_PROXY: http://ssrf_proxy:3128
       HTTPS_PROXY: http://ssrf_proxy:3128
-      SANDBOX_PORT: '8194'
+      SANDBOX_PORT: "8194"
     volumes:
       - /DATA/AppData/$AppID/data/sandbox/dependencies:/dependencies
     networks:
@@ -213,9 +213,9 @@ services:
   nginx:
     x-casaos:
       ports:
-        - container: '80'
+        - container: "80"
           description:
-            en_us: "Web interface for Dify"
+            en_us: Web interface for Dify
     image: nginx:1.31.5
     container_name: dify-nginx
     restart: unless-stopped
@@ -226,7 +226,7 @@ services:
       - web
       - config
     ports:
-      - '3701:80'
+      - "3701:80"
     networks:
       - dify
 networks:
@@ -248,6 +248,7 @@ x-casaos:
     en_uk: Dify is an open-source large language model (LLM) application development platform. It combines the concepts of Backend-as-a-Service and LLMOps to enable developers to quickly build production-grade generative AI applications. Even non-technical personnel can participate in the definition and data operations of AI applications.
     zh_cn: Dify 是一款开源的大语言模型(LLM) 应用开发平台。它融合了后端即服务（Backend as Service）和 LLMOps 的理念，使开发者可以快速搭建生产级的生成式 AI 应用。即使你是非技术人员，也能参与到 AI 应用的定义和数据运营过程中。
     ja_jp: Difyはオープンソースの大規模言語モデル（LLM）開発プラットフォームです。Backend as ServiceとLLMOpsの理念を融合し、開発者が迅速に生成AIアプリケーションを構築できるようにします。技術者でなくても、AIアプリケーションの定義やデータ運用に参加することができます。
+    pt_br: Dify é uma plataforma de código aberto para desenvolver aplicações com modelos de linguagem. Junta a ideia de backend como serviço com LLMOps para que se construa uma aplicação de IA generativa pronta para produção rapidamente, e permite que gente sem formação técnica participe da definição e dos dados.
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Dify/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Dify/screenshot-1.png
@@ -257,8 +258,9 @@ x-casaos:
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Dify/thumbnail.png
   tagline:
     en_us: LLM App Development Platform
+    pt_br: Plataforma para desenvolver aplicações com LLM
   title:
     en_us: Dify
   index: /
-  port_map: '3701'
+  port_map: "3701"
   scheme: http

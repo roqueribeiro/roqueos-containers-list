@@ -1,11 +1,10 @@
 # Alist-Sync
 
-> An Alist storage synchronization tool based on the Web interface.
+> Sincronização de armazenamento do Alist, pelo navegador
 
 ## O que é
 
-Alist-Sync is a storage synchronization tool based on the Web interface. It can achieve data synchronization and mutual backup among multiple network disks, and also has practical functions such as multi-task management, scheduled synchronization and difference handling.
-
+Alist-Sync sincroniza armazenamentos pela interface web. Faz cópia entre vários discos de rede, gerencia várias tarefas ao mesmo tempo, agenda sincronizações e trata as diferenças entre as pontas.
 
 Categoria na App Store do RoqueOS: **Storage**.
 Arquiteturas suportadas: amd64, arm, arm64.

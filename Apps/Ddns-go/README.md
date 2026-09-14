@@ -1,13 +1,10 @@
 # ddns-go
 
-> Simple and easy to use DDNS
+> DNS dinâmico simples e direto
 
 ## O que é
 
-A simple and easy-to-use DDNS tool. Automatically updates domain name resolution to your public IP (supports Alibaba Cloud, Tencent Cloud, Dnspod, Cloudflare, Callback, Huawei Cloud, Baidu Cloud, Porkbun, GoDaddy, and Google Domain).
-
-Deploy DDNS-go on Zima, and you can bind the public IP of your Zima device to your domain name. This way, you can access your Zima device via the domain name while you are away.
-
+Ferramenta de DNS dinâmico simples de usar. Atualiza sozinha o apontamento do domínio para o seu IP público, com suporte a Alibaba Cloud, Tencent Cloud, Dnspod, Cloudflare, Callback, Huawei Cloud, Baidu Cloud, Porkbun, GoDaddy e Google Domain.
 
 Categoria na App Store do RoqueOS: **Network**.
 Arquiteturas suportadas: amd64, arm, arm64.

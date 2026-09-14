@@ -1,10 +1,10 @@
 # Threadfin
 
-> M3U proxy server
+> Servidor de proxy M3U para TV ao vivo
 
 ## O que é
 
-Threadfin is a M3U proxy server for Plex, Emby, Jellyfin and any client and provider which supports the .TS and .M3U8 (HLS) streaming formats.
+Threadfin é um proxy M3U para Plex, Emby, Jellyfin e qualquer cliente ou provedor que fale os formatos .TS e .M3U8 (HLS).
 
 Categoria na App Store do RoqueOS: **Utilities**.
 Arquiteturas suportadas: amd64, arm64, arm.

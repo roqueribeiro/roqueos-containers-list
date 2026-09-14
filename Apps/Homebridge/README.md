@@ -1,10 +1,10 @@
 # Homebridge
 
-> HomeKit support for the impatient.
+> HomeKit para quem não quer esperar o fabricante
 
 ## O que é
 
-Homebridge is a lightweight NodeJS server you can run on your home network that emulates the iOS HomeKit API. It supports Plugins, which are community-contributed modules that provide a basic bridge from HomeKit to various 3rd-party APIs provided by manufacturers of "smart home" devices.
+Homebridge é um servidor leve em NodeJS que roda na sua rede e finge ser a API HomeKit do iOS. Com plugins da comunidade, liga o HomeKit a dispositivos de casa inteligente que não têm suporte oficial.
 
 Categoria na App Store do RoqueOS: **Home Automation**.
 Arquiteturas suportadas: amd64, arm, arm64.

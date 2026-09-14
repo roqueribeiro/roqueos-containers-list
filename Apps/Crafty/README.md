@@ -1,10 +1,10 @@
 # Crafty
 
-> Take control of your Minecraft servers.
+> Assuma o controle dos seus servidores de Minecraft
 
 ## O que é
 
-Crafty is an open source Minecraft control panel built using Tornado and AdminLTE, featuring server scheduling, a interactive console and the ability to run almost any type of Minecraft server
+Crafty é um painel de controle de Minecraft de código aberto, feito com Tornado e AdminLTE. Agenda tarefas no servidor, tem console interativo e roda praticamente qualquer tipo de servidor de Minecraft.
 
 Categoria na App Store do RoqueOS: **Gaming**.
 Arquiteturas suportadas: amd64, arm, arm64.

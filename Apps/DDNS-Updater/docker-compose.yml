@@ -31,7 +31,7 @@ services:
     hostname: ddns-updater
     ports:
       - target: 8000
-        published: '8000'
+        published: "8000"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -40,7 +40,7 @@ services:
         target: /updater/data
     x-casaos:
       ports:
-        - container: '8000'
+        - container: "8000"
           description:
             en_us: WebUI HTTP Port
       volumes:
@@ -56,18 +56,19 @@ x-casaos:
   category: Network
   description:
     en_us: Program to keep DNS A and/or AAAA records updated for multiple DNS providers
+    pt_br: Mantém os registros A e AAAA do seu domínio sempre apontando para o IP atual, em vários provedores de DNS.
   developer: qmcgaw
   screenshot:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DDNS-Updater/screenshot-1.png
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/DDNS-Updater/icon.png
   main: ddns-updater
-  port_map: '8000'
+  port_map: "8000"
   scheme: http
   tagline:
     en_us: Simple and easy to use DDNS
     zh_cn: 简单好用的DDNS
+    pt_br: DNS dinâmico simples e direto
   title:
     en_us: ddns-updater
-
 x-roqueos:
   portaCompartilhada: true

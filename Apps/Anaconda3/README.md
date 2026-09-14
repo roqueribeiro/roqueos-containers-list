@@ -1,10 +1,10 @@
 # Anaconda3
 
-> Your machine learning Env work with Jupyter Lab
+> Seu ambiente de machine learning com Jupyter Lab
 
 ## O que é
 
-Your machine learning Env work with Jupyter Lab
+Ambiente de machine learning pronto, com Jupyter Lab, para quem não quer perder tempo montando a pilha de Python, pacotes científicos e notebooks na mão.
 
 Categoria na App Store do RoqueOS: **AI**.
 Arquiteturas suportadas: amd64.

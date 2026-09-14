@@ -18,16 +18,16 @@ services:
     image: lscr.io/linuxserver/unifi-network-application:10.6.101
     ports:
       - target: 8443
-        published: '8443'
+        published: "8443"
         protocol: tcp
       - target: 3478
-        published: '3478'
+        published: "3478"
         protocol: udp
       - target: 10001
-        published: '10001'
+        published: "10001"
         protocol: udp
       - target: 8080
-        published: '8080'
+        published: "8080"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -41,28 +41,28 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ''
+            en_us: ""
         - container: PGID
           description:
-            en_us: ''
+            en_us: ""
         - container: TZ
           description:
             en_us: timezone
             zh_cn: 时区
       ports:
-        - container: '27017'
+        - container: "27017"
           description:
-            en_us: "banco MongoDB (port 27017)"
-        - container: '3478'
+            en_us: banco MongoDB (port 27017)
+        - container: "3478"
           description:
-            en_us: "Service port 3478 of unifi-network-application"
-        - container: '10001'
+            en_us: Service port 3478 of unifi-network-application
+        - container: "10001"
           description:
-            en_us: "Service port 10001 of unifi-network-application"
-        - container: '8080'
+            en_us: Service port 10001 of unifi-network-application
+        - container: "8080"
           description:
-            en_us: "Service port 8080 of unifi-network-application"
-        - container: '8443'
+            en_us: Service port 8080 of unifi-network-application
+        - container: "8443"
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
@@ -78,13 +78,13 @@ services:
       - TZ=$TZ
     ports:
       - target: 27017
-        published: '27017'
+        published: "27017"
         protocol: tcp
     x-casaos:
       ports:
-        - container: '27017'
+        - container: "27017"
           description:
-            en_us: "MongoDB used only by the Unifi controller; keep it off the internet"
+            en_us: MongoDB used only by the Unifi controller; keep it off the internet
     restart: unless-stopped
     volumes:
       - type: bind
@@ -129,12 +129,14 @@ x-casaos:
       通常，还需要 ssh 到您想要采用的设备并手动设置通知 IP 地址，所需的命令是“set-inform http://HOST-ADDRESS:8080/inform”。
 
       了解更多[信息](https://docs.linuxserver.io/images/docker-unifi-network-application/)
+    pt_br: O software de rede da Unifi é um controlador corporativo de wireless, feito para ambientes com muitos clientes que precisam de baixa latência e alta disponibilidade. Por padrão só as portas obrigatórias ficam abertas; para liberar mais funções, exponha também 1900/udp, 8843, 8880, 6789 e 5514/udp.
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Unifi-Network-Application/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Unifi-Network-Application/screenshot-2.png
   tagline:
     en_us: The Unifi network application software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.
     zh_cn: Unifi控制器软件是一种功能强大的企业级无线软件引擎，适用于需要低延迟和高可用性性能的高密度客户端部署。
+    pt_br: O controlador de rede da Ubiquiti, no seu servidor
   tips:
     before_install:
       en_us: |
@@ -157,11 +159,10 @@ x-casaos:
         了解更多[信息](https://docs.linuxserver.io/images/docker-unifi-network-application/)
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Unifi-network-application/thumbnail.png
   index: /
-  port_map: '8443'
+  port_map: "8443"
   scheme: https
   store_app_id: unifi-network-application
   title:
     en_us: Unifi Network Application
-
 x-roqueos:
   portaCompartilhada: true

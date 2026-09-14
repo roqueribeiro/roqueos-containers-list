@@ -1,9 +1,10 @@
 # Medusa
 
+> Gerenciador automático da sua biblioteca de séries
 
 ## O que é
 
-Automatic Video Library Manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
+Medusa cuida sozinho da sua biblioteca de séries: fica de olho nos episódios novos dos programas que você acompanha e, quando saem, faz a mágica.
 
 Categoria na App Store do RoqueOS: **Media**.
 Arquiteturas suportadas: amd64, arm64, arm.

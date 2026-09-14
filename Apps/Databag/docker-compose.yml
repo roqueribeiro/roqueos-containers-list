@@ -10,7 +10,7 @@ services:
             en_us: database and asset store
             zh_cn: 数据库和资源存储
       ports:
-        - container: '7000'
+        - container: "7000"
           description:
             en_us: rest api port
             zh_cn: REST API端口
@@ -31,9 +31,11 @@ x-casaos:
   description:
     en_us: Databag is a federated chat app for self-hosting that focuses on user privacy and security; the service includes clients for iOS, Android, and browser.
     zh_cn: Databag是一个自托管的联邦聊天应用，专注于用户隐私和安全；该服务包括iOS、Android和浏览器的客户端。
+    pt_br: Databag é um aplicativo de conversa federado, feito para rodar no seu servidor, com foco em privacidade e segurança. Tem cliente para iOS, Android e navegador.
   tagline:
     en_us: Messenger for the Decentralized Web
     zh_cn: 分布式网络的通讯应用
+    pt_br: Mensageiro para a web descentralizada
   developer: balzack
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Databag/icon.png
   screenshot_link:
@@ -43,5 +45,5 @@ x-casaos:
   category: Communication
   title:
     en_us: Databag
-  port_map: '7000'
+  port_map: "7000"
   scheme: http

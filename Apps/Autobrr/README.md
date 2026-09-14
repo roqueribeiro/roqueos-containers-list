@@ -1,10 +1,10 @@
 # Autobrr
 
-> Modern, easy to use download automation for torrents and usenet.
+> Automação moderna de download para torrent e usenet
 
 ## O que é
 
-Autobrr is the modern download automation tool for torrents and usenet. With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some.
+Autobrr é a ferramenta moderna de automação de download para torrent e usenet. Nasceu das ideias do trackarr, do autodl-irssi e do flexget, e faz o que os três faziam, num programa só.
 
 Categoria na App Store do RoqueOS: **Media**.
 Arquiteturas suportadas: amd64, arm, arm64.

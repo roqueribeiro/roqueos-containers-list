@@ -1,10 +1,10 @@
 # ChatGPT Next Web
 
-> A well-designed cross-platform ChatGPT UI.
+> Uma interface de ChatGPT bem desenhada, em qualquer plataforma
 
 ## O que é
 
-An intelligent chat application based on ChatGPT, supports fast deployment, Markdown, beautiful UI, fluid response, privacy and security, and allows customization of preset roles for quick creation, sharing, and debugging of personalized conversations.
+Aplicativo de conversa baseado em ChatGPT, com instalação rápida, suporte a Markdown, interface bonita e resposta fluida. Dá para criar personagens prontos e compartilhar conversas personalizadas.
 
 Categoria na App Store do RoqueOS: **Utilities**.
 Arquiteturas suportadas: amd64, arm64.

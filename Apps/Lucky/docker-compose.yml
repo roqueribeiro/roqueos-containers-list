@@ -26,6 +26,7 @@ x-casaos:
   description:
     en_us: A powerful tool for port forwarding, reverse proxy, dynamic DNS, wake-on-LAN, IPv4 NAT traversal, webdav services, task scheduling, and automatic certificate management.
     zh_cn: 一款功能强大的端口转发、反向代理、动态域名、网络唤醒、IPv4内网穿透、webdav服务、计划任务和自动证书管理工具。
+    pt_br: Ferramenta que faz encaminhamento de porta, proxy reverso, DNS dinâmico, wake-on-LAN, travessia de NAT em IPv4, serviço WebDAV, agendamento de tarefas e gestão automática de certificados.
   developer: gdy666
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Lucky/icon.png
   index: /
@@ -36,16 +37,16 @@ x-casaos:
   tagline:
     en_us: Powerful networking tool
     zh_cn: 家用软硬路由公网利器
+    pt_br: Canivete suíço de rede
   tips:
     before_install:
       en_us: Default login account `666`, Default login password `666`,tips:`Before each update, remember to back up the configuration`.
       zh_cn: 默认登录账号 `666`，默认登录密码 `666`,提示：`每次更新前，请记得备份好配置`
   title:
     en_us: Lucky
-  port_map: '16601'
+  port_map: "16601"
   scheme: http
   store_app_id: lucky
-
 x-roqueos:
   motivo:
-    networkHost: "faz port forwarding e DDNS a partir do IP do host"
+    networkHost: faz port forwarding e DDNS a partir do IP do host

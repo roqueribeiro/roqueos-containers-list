@@ -1,9 +1,10 @@
 # emulatorjs
 
+> Emuladores de console direto no navegador
 
 ## O que é
 
-EmulatorJS é um aplicativo de emulação baseado em Docker que pode simular vários sistemas operacionais e ambientes de dispositivos dentro de contêineres para fins de desenvolvimento, teste e aprendizado.
+EmulatorJS roda emuladores de vários consoles dentro de um container, acessíveis pelo navegador. Serve para jogar sua coleção de ROMs sem instalar nada na máquina de quem joga.
 
 Categoria na App Store do RoqueOS: **Utilities**.
 Arquiteturas suportadas: amd64, arm64.

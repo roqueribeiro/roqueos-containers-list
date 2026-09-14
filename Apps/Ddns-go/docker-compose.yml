@@ -14,11 +14,11 @@ services:
         target: /root
     ports:
       - target: 9876
-        published: '9876'
+        published: "9876"
         protocol: tcp
     x-casaos:
       ports:
-        - container: '9876'
+        - container: "9876"
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
@@ -44,15 +44,17 @@ x-casaos:
       简单好用的 DDNS 工具。自动更新域名解析到公网IP(支持阿里云、腾讯云、Dnspod、Cloudflare、Callback、华为云、百度云、Porkbun、GoDaddy、Google Domain)。
 
       在 Zima 上部署 DDNS-go， 你可以把你的 Zima 设备对应的公网IP绑定到你的域名上。 这样你在外面就可以通过域名访问你的 Zima 设备了。
+    pt_br: Ferramenta de DNS dinâmico simples de usar. Atualiza sozinha o apontamento do domínio para o seu IP público, com suporte a Alibaba Cloud, Tencent Cloud, Dnspod, Cloudflare, Callback, Huawei Cloud, Baidu Cloud, Porkbun, GoDaddy e Google Domain.
   developer: jeessy2
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ddns-go/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Ddns-go/screenshot-1.png
   main: ddns-go
-  port_map: '9876'
+  port_map: "9876"
   scheme: http
   tagline:
     en_us: Simple and easy to use DDNS
     zh_cn: 简单好用的DDNS
+    pt_br: DNS dinâmico simples e direto
   title:
     en_us: ddns-go

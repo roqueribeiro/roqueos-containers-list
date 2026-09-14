@@ -49,3 +49,6 @@ x-casaos:
   title:
     en_us: Playit Agent
   scheme: http
+  description:
+    en_us: The playit.gg agent creates a tunnel from your server to the internet without opening a port on your router. The tunnel itself runs on playit.gg infrastructure, not on your machine — you host the agent, not the service.
+    pt_br: "O agente do playit.gg abre um túnel do seu servidor para a internet sem precisar liberar porta no roteador. O túnel roda na infraestrutura do playit.gg, não na sua máquina: o que fica com você é o agente, não o serviço."

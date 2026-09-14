@@ -1,5 +1,5 @@
 name: homebridge
-version: '2'
+version: "2"
 services:
   homebridge:
     image: homebridge/homebridge@sha256:77c685a40911b3b95448f3550be0c8b94cd7b4e66daecc1cc39a8285be75b245
@@ -11,7 +11,7 @@ services:
       driver: json-file
       options:
         max-size: 10mb
-        max-file: '1'
+        max-file: "1"
 x-casaos:
   architectures:
     - amd64
@@ -23,6 +23,7 @@ x-casaos:
   description:
     en_us: Homebridge is a lightweight NodeJS server you can run on your home network that emulates the iOS HomeKit API. It supports Plugins, which are community-contributed modules that provide a basic bridge from HomeKit to various 3rd-party APIs provided by manufacturers of "smart home" devices.
     zh_cn: Homebridge是一个轻量级的NodeJS服务器，您可以在家庭网络中运行它，模拟iOS HomeKit API。它支持插件，这是由社区贡献的模块，提供了从HomeKit到各种由“智能家居”设备制造商提供的第三方API的基本桥梁。
+    pt_br: Homebridge é um servidor leve em NodeJS que roda na sua rede e finge ser a API HomeKit do iOS. Com plugins da comunidade, liga o HomeKit a dispositivos de casa inteligente que não têm suporte oficial.
   developer: Homebridge
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Homebridge/icon.png
   screenshot_link:
@@ -31,12 +32,12 @@ x-casaos:
   tagline:
     en_us: HomeKit support for the impatient.
     zh_cn: HomeKit 为急性子提供支持
+    pt_br: HomeKit para quem não quer esperar o fabricante
   title:
     en_us: Homebridge
   index: /
-  port_map: '8581'
+  port_map: "8581"
   scheme: http
-
 x-roqueos:
   motivo:
-    networkHost: "o HomeKit exige mDNS na mesma rede física dos acessórios"
+    networkHost: o HomeKit exige mDNS na mesma rede física dos acessórios

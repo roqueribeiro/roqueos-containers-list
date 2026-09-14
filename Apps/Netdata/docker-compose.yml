@@ -3,9 +3,9 @@ services:
   app:
     x-casaos:
       ports:
-        - container: '19999'
+        - container: "19999"
           description:
-            en_us: "Web interface for Netdata"
+            en_us: Web interface for Netdata
     cap_add:
       - SYS_PTRACE
       - SYS_ADMIN
@@ -21,7 +21,7 @@ services:
     pid: host
     ports:
       - target: 19999
-        published: '19999'
+        published: "19999"
         protocol: tcp
     restart: unless-stopped
     security_opt:
@@ -66,23 +66,24 @@ x-casaos:
   description:
     en_us: Netdata is a real-time performance and health monitoring solution that helps you visualize and understand the behavior of your systems.
     zh_cn: Netdata是一个实时性能和健康监控解决方案，帮助您可视化并理解系统的行为。
+    pt_br: Netdata monitora desempenho e saúde em tempo real, e ajuda a ver e entender o que os seus sistemas estão fazendo agora.
   tagline:
     en_us: Real-time Performance Monitoring
     zh_cn: 实时性能监控
-  hostname: ''
+    pt_br: Monitoramento de desempenho em tempo real
+  hostname: ""
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Netdata/screenshot-1.jpg
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Netdata/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Netdata/screenshot-3.png
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Netdata/icon.png
   index: /
-  port_map: '19999'
+  port_map: "19999"
   scheme: http
   store_app_id: netdata
   title:
     en_us: Netdata
   main: app
-
 x-roqueos:
   motivo:
-    capAdd: "capacidade exigida pelo upstream para a função declarada do container"
+    capAdd: capacidade exigida pelo upstream para a função declarada do container

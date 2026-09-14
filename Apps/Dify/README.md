@@ -1,10 +1,10 @@
 # Dify
 
-> LLM App Development Platform
+> Plataforma para desenvolver aplicações com LLM
 
 ## O que é
 
-Dify is an open-source large language model (LLM) application development platform. It combines the concepts of Backend-as-a-Service and LLMOps to enable developers to quickly build production-grade generative AI applications. Even non-technical personnel can participate in the definition and data operations of AI applications.
+Dify é uma plataforma de código aberto para desenvolver aplicações com modelos de linguagem. Junta a ideia de backend como serviço com LLMOps para que se construa uma aplicação de IA generativa pronta para produção rapidamente, e permite que gente sem formação técnica participe da definição e dos dados.
 
 Categoria na App Store do RoqueOS: **AI**.
 Arquiteturas suportadas: arm64, amd64.

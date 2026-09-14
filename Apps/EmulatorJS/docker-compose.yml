@@ -10,13 +10,13 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: '3001'
+        published: "3001"
         protocol: tcp
       - target: 4001
-        published: '4001'
+        published: "4001"
         protocol: tcp
       - target: 80
-        published: '88'
+        published: "88"
         protocol: tcp
     privileged: true
     restart: unless-stopped
@@ -32,14 +32,14 @@ services:
         target: /data/nes/roms
     x-casaos:
       ports:
-        - container: '4001'
+        - container: "4001"
           description:
-            en_us: "Service port 4001 of emulatorjs"
-        - container: '80'
+            en_us: Service port 4001 of emulatorjs
+        - container: "80"
           description:
             en_us: Play Game
             zh_cn: 玩游戏
-        - container: '3000'
+        - container: "3000"
           description:
             en_us: Manage ROMS
             zh_cn: ROM 管理
@@ -59,13 +59,15 @@ x-casaos:
     it_it: EmulatorJS è un'applicazione di emulazione basata su Docker che può simulare vari sistemi operativi e ambienti dispositivi all'interno di container per scopi di sviluppo, test e apprendimento.
     ru_ru: EmulatorJS - это приложение эмулятора, основанное на Docker, которое может моделировать различные операционные системы и среды устройств в контейнерах для разработки, тестирования и обучения.
     pl_pl: EmulatorJS to aplikacja emulacyjna oparta na Dockerze, która może symulować różne systemy operacyjne i środowiska urządzeń w kontenerach w celu rozwoju, testowania i nauki.
-    pt_br: EmulatorJS é um aplicativo de emulação baseado em Docker que pode simular vários sistemas operacionais e ambientes de dispositivos dentro de contêineres para fins de desenvolvimento, teste e aprendizado.
+    pt_br: EmulatorJS roda emuladores de vários consoles dentro de um container, acessíveis pelo navegador. Serve para jogar sua coleção de ROMs sem instalar nada na máquina de quem joga.
     sv_se: EmulatorJS är en Docker-baserad emulatorapplikation som kan simulera olika operativsystem och enhetsmiljöer i containrar för utveckling, testning och lärande.
     uk_ua: EmulatorJS - це застосунок емулятора, заснований на Docker, який може моделювати різні операційні систем
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/EmulatorJS/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/EmulatorJS/screenshot-1.jpg
-  tagline: null
+  tagline:
+    pt_br: Emuladores de console direto no navegador
+    en_us: Retro game emulators straight in your browser
   en_us: Unlock the power of emulation with EmulatorJS – Explore, experiment, and innovate across diverse operating systems and device environments.
   zh_cn: 发掘模拟的力量，与EmulatorJS一同探索、实验和创新于多样化的操作系统和设备环境。
   ar_sa: اكتشف قوة المحاكاة مع EmulatorJS - استكشف وتجرب وابتكر عبر أنظمة التشغيل وبيئات الأجهزة المتنوعة.
@@ -81,9 +83,9 @@ x-casaos:
   uk_ua: Розкрийте потужність емуляції з EmulatorJS - Досліджуйте, експериментуйте та інновуйте у різних операційних системах і середовищах пристроїв.
   author: self
   category: Utilities
-  hostname: ''
+  hostname: ""
   index: /
-  port_map: '88'
+  port_map: "88"
   scheme: http
   store_app_id: emulatorjs
   title:
@@ -93,4 +95,4 @@ x-roqueos:
   portaCompartilhada: true
   mountShared: true
   motivo:
-    privileged: "acesso direto a dispositivos de entrada (gamepad) via /dev/input"
+    privileged: acesso direto a dispositivos de entrada (gamepad) via /dev/input

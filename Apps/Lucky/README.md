@@ -1,10 +1,10 @@
 # Lucky
 
-> Powerful networking tool
+> Canivete suíço de rede
 
 ## O que é
 
-A powerful tool for port forwarding, reverse proxy, dynamic DNS, wake-on-LAN, IPv4 NAT traversal, webdav services, task scheduling, and automatic certificate management.
+Ferramenta que faz encaminhamento de porta, proxy reverso, DNS dinâmico, wake-on-LAN, travessia de NAT em IPv4, serviço WebDAV, agendamento de tarefas e gestão automática de certificados.
 
 Categoria na App Store do RoqueOS: **Network**.
 Arquiteturas suportadas: amd64, arm, arm64.

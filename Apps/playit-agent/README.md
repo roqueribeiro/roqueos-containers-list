@@ -4,7 +4,7 @@
 
 ## O que é
 
-_Descrição ainda não escrita para este app._
+O agente do playit.gg abre um túnel do seu servidor para a internet sem precisar liberar porta no roteador. O túnel roda na infraestrutura do playit.gg, não na sua máquina: o que fica com você é o agente, não o serviço.
 
 Categoria na App Store do RoqueOS: **Utilities**.
 Arquiteturas suportadas: amd64, arm64.

@@ -6,9 +6,9 @@ services:
     command:
       - /connectord
     environment:
-      TWINGATE_NETWORK: ''
-      TWINGATE_ACCESS_TOKEN: ''
-      TWINGATE_REFRESH_TOKEN: ''
+      TWINGATE_NETWORK: ""
+      TWINGATE_ACCESS_TOKEN: ""
+      TWINGATE_REFRESH_TOKEN: ""
       TWINGATE_LABEL_HOSTNAME: ${HOSTNAME}
     restart: unless-stopped
     sysctls:
@@ -20,25 +20,25 @@ services:
       envs:
         - container: TWINGATE_NETWORK
           description:
-            en_us: ''
+            en_us: ""
         - container: TWINGATE_ACCESS_TOKEN
           description:
-            en_us: ''
+            en_us: ""
         - container: TWINGATE_REFRESH_TOKEN
           description:
-            en_us: ''
+            en_us: ""
         - container: TWINGATE_LABEL_HOSTNAME
           description:
-            en_us: ''
+            en_us: ""
         - container: PATH
           description:
-            en_us: ''
+            en_us: ""
         - container: SSL_CERT_FILE
           description:
-            en_us: ''
+            en_us: ""
         - container: TWINGATE_API_ENDPOINT
           description:
-            en_us: ''
+            en_us: ""
     deploy:
       resources:
         reservations:
@@ -52,17 +52,19 @@ x-casaos:
   author: Shubhankar Trivedi
   category: Network
   description:
-    en_us: It's a connector for Twingate".
+    en_us: Connector that links your RoqueOS server to a Twingate network, for remote access without opening a port on the router.
+    pt_br: Conector que liga o seu servidor RoqueOS a uma rede Twingate, para acesso remoto sem abrir porta no roteador.
   developer: Twingate
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Twingate/icon.png
   screenshot_link: null
   tagline:
     en_us: Twingate Connector for RoqueOS
+    pt_br: Conector Twingate para o RoqueOS
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Twingate/thumbnail.png
   tips: {}
   title:
     en_us: Twingate
-  hostname: ''
+  hostname: ""
   index: /
-  port_map: ''
+  port_map: ""
   scheme: http

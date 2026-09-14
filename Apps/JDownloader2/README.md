@@ -1,10 +1,10 @@
 # JDownloader2
 
-> Free & open-source download management tool
+> Gerenciador de downloads livre e de código aberto
 
 ## O que é
 
-JDownloader is a free, open-source download management tool with a huge community that makes downloading as easy and fast as it should be. Users can start, stop or pause downloads, set bandwith limitations, auto-extract archives and much more. It's an easy-to-extend framework that can save hours of your valuable time every day!
+JDownloader é um gerenciador de downloads gratuito e de código aberto, com uma comunidade enorme. Inicia, pausa e retoma downloads, limita banda, extrai arquivos compactados sozinho e economiza horas de trabalho manual.
 
 Categoria na App Store do RoqueOS: **Utilities**.
 Arquiteturas suportadas: amd64, arm64.

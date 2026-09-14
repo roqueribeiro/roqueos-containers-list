@@ -1,13 +1,10 @@
 # gateway-go
 
-> A third-party client for RoqueOS, remote access management interface, remote access to installed applications.
+> Acesso remoto aos aplicativos do seu RoqueOS
 
 ## O que é
 
-A fast reverse proxy to help you expose a local server behind a NAT or firewall to your client, remote access all your RoqueOS apps.
-
-Use OpenIoTHub to scan the following QR code add a gateway,then add host,add RoqueOS host's web page port,finally, enjoy remote control
-
+Proxy reverso rápido que expõe um servidor local atrás de NAT ou firewall, para alcançar de fora todos os aplicativos do seu RoqueOS.
 
 Categoria na App Store do RoqueOS: **Network**.
 Arquiteturas suportadas: amd64, arm, arm64.

@@ -1,10 +1,10 @@
 # Netdata
 
-> Real-time Performance Monitoring
+> Monitoramento de desempenho em tempo real
 
 ## O que é
 
-Netdata is a real-time performance and health monitoring solution that helps you visualize and understand the behavior of your systems.
+Netdata monitora desempenho e saúde em tempo real, e ajuda a ver e entender o que os seus sistemas estão fazendo agora.
 
 Categoria na App Store do RoqueOS: **Utilities**.
 Arquiteturas suportadas: amd64, arm64, arm.

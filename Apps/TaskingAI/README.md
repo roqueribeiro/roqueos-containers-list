@@ -1,10 +1,10 @@
 # TaskingAI
 
-> The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
+> Plataforma para construir e rodar agentes de LLM
 
 ## O que é
 
-The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
+Plataforma amigável a quem desenvolve, para construir e rodar agentes de LLM em aplicações nativas de IA.
 
 Categoria na App Store do RoqueOS: **AI**.
 Arquiteturas suportadas: amd64, arm64.

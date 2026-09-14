@@ -1,10 +1,10 @@
 # Adminer
 
-> Database management in a single PHP file
+> Administração de banco de dados num único arquivo PHP
 
 ## O que é
 
-Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP. Conversely to phpMyAdmin, it consist of a single file ready to deploy to the target server. Adminer is available for MySQL, PostgreSQL, SQLite, MS SQL, Oracle, Firebird, SimpleDB, Elasticsearch and MongoDB.
+Adminer é uma ferramenta completa de administração de banco escrita em PHP. Diferente do phpMyAdmin, é um arquivo só, pronto para colocar no servidor. Fala com MySQL, PostgreSQL, SQLite, MS SQL, Oracle, Firebird, SimpleDB, Elasticsearch e MongoDB.
 
 Categoria na App Store do RoqueOS: **Developer**.
 Arquiteturas suportadas: amd64, arm, arm64.

@@ -1,10 +1,10 @@
 # Motioneye
 
-> A web frontend for the motion daemon.
+> Interface web para o motion, o vigia de câmeras
 
 ## O que é
 
-motionEye is a web-based frontend for motion. Check out the wiki for more details. Changelog is available on the releases page. https://github.com/motioneye-project/motioneye
+motionEye é a interface web do motion. Junta suas câmeras numa tela só, grava por detecção de movimento e não depende de nuvem de ninguém.
 
 Categoria na App Store do RoqueOS: **Utilities**.
 Arquiteturas suportadas: amd64.
