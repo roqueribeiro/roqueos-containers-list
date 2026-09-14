@@ -780,10 +780,20 @@ services:
             ja_jp: PostgreSQLパスワード
   librechat-rag-api:
     container_name: librechat-rag-api
-    image: ghcr.io/danny-avila/librechat-rag-api-dev-lite:v0.6.0
+    # A variante "lite" so fala com OpenAI: ela nao traz langchain_huggingface
+    # ("ModuleNotFoundError"), entao com ela nao existe caminho sem chave de
+    # terceiro. A completa traz. Medido nas duas em 14/09/2026.
+    image: ghcr.io/danny-avila/librechat-rag-api-dev:v0.6.0
     environment:
       - DB_HOST=librechat-vectordb
       - RAG_PORT=8000
+      # Sem isto o serviço nasce apontando para a OpenAI e morre na primeira
+      # linha: "The api_key client option must be set". Instalar um app da loja
+      # não pode depender de o usuário ter chave de terceiro. Aqui o modelo de
+      # embedding roda local — ele é baixado na primeira subida (~90 MB).
+      # Medido em Linux em 14/09/2026.
+      - EMBEDDINGS_PROVIDER=huggingface
+      - EMBEDDINGS_MODEL=sentence-transformers/all-MiniLM-L6-v2
     restart: unless-stopped
     depends_on:
       - librechat-vectordb
