@@ -16,6 +16,13 @@ services:
         protocol: tcp
     cap_add:
       - SYS_ADMIN
+    environment:
+      # Sem isto o container morre na primeira linha do collector:
+      # "STORAGE_DIR environment variable is not set" seguido de
+      # TypeError: The "paths[0]" argument must be of type string.
+      # Tem que apontar para o mesmo lugar do bind. Medido em Linux em
+      # 14/09/2026.
+      STORAGE_DIR: /app/server/storage
     volumes:
       - type: bind
         source: /DATA/AppData/anythingllm/storage
