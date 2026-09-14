@@ -111,6 +111,8 @@ export const LIMITE_DO_LABORATORIO = [
   { re: /Address family not supported by protocol/i, motivo: 'kernel do laboratório sem IPv6' },
   { re: /error setting rlimit/i, motivo: 'laboratório não permite levantar rlimit' },
   { re: /operation not permitted.*rlimit/i, motivo: 'laboratório não permite levantar rlimit' },
+  { re: /no space left on device/i, motivo: 'disco do laboratório acabou durante o pull' },
+  { re: /toomanyrequests|rate limit/i, motivo: 'registry recusou por limite de pull' },
 ]
 
 export function inconclusivo(erro) {
@@ -188,6 +190,13 @@ export function testa(app) {
       sh('docker', ['compose', '-p', projeto, 'down', '-v', '-t', '5'], { cwd: dir })
     } catch {}
     rmSync(dir, { recursive: true, force: true })
+    // Sem isto uma varredura do catálogo inteiro enche o disco do runner por
+    // volta do vigésimo app, e a partir daí toda falha é falha de disco.
+    if (process.env.BOOT_SEM_PODA !== '1') {
+      try {
+        sh('docker', ['image', 'prune', '-af'])
+      } catch {}
+    }
   }
 }
 
