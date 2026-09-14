@@ -9,7 +9,7 @@ services:
     network_mode: bridge
     ports:
       - target: 3001
-        published: '3001'
+        published: "3001"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -18,7 +18,7 @@ services:
         target: /app/data
     x-casaos:
       ports:
-        - container: '3001'
+        - container: "3001"
           description:
             en_US: WebUI Port
             en_GB: WebUI Port
@@ -35,6 +35,14 @@ services:
             pt_PT: Porta WebUI
             ru_RU: Порт WebUI
             tr_TR: WebUI Portu
+            en_us: WebUI Port
+            pt_br: Porta WebUI
+            zh_cn: WebUI 端口
+            fr_fr: Port WebUI
+            de_de: WebUI Port
+            it_it: Porta WebUI
+            ru_ru: Порт WebUI
+            ja_jp: WebUI ポート
       volumes:
         - container: /app/data
           description:
@@ -53,6 +61,14 @@ services:
             pt_PT: Diretório de dados Uptime Kuma.
             ru_RU: Каталог данных Uptime Kuma.
             tr_TR: Uptime Kuma veri dizini.
+            en_us: Uptime Kuma data directory.
+            pt_br: Diretório de dados Uptime Kuma.
+            zh_cn: Uptime Kuma 数据目录。
+            fr_fr: Répertoire des données Uptime Kuma.
+            de_de: Uptime Kuma Datenverzeichnis.
+            it_it: Directory dati Uptime Kuma.
+            ru_ru: Каталог данных Uptime Kuma.
+            ja_jp: Uptime Kuma データディレクトリ。
     container_name: uptimekuma
 x-casaos:
   architectures:
@@ -363,6 +379,166 @@ x-casaos:
       **Daha Fazla Bilgi：**
       - [Uptime Kuma Resmi Web Sitesi](https://uptimekuma.org)
       - [Uptime Kuma GitHub Deposu](https://github.com/louislam/uptime-kuma)
+    en_us: |
+      Uptime Kuma is a free, easy-to-use self-hosted monitoring tool designed for real-time tracking of network services and infrastructure, offering a modern interface and robust functionality. It provides an intuitive Web dashboard for managing services, ideal for individual developers, home lab users, and small teams.
+
+      The tool's core features include comprehensive monitoring and diverse notification channels. It monitors HTTP/HTTPS, TCP ports, DNS records, databases, Ping, and Steam game servers, with interactive Ping charts visually displaying response times and status. Users can receive real-time alerts via Telegram, Discord, Slack, Email (SMTP), and over 95 other notification services. SSL certificate monitoring checks certificate validity and expiration, aiding timely renewals.
+
+      It supports 20-second monitoring intervals for rapid downtime detection and offers multiple status pages to share real-time service status with customers. Proxy support enables remote access via Cloudflare, Nginx, or similar services, enhancing flexibility. Two-factor authentication (2FA) and API keys bolster security, ensuring full user control over local data. The tool delivers an efficient monitoring solution with intuitive operation and community support.
+
+      **Key Features:**
+      - Monitor HTTP/HTTPS, TCP, DNS, databases, and other services
+      - Notifications via Telegram, Discord, Slack, and over 95 other channels
+      - Interactive Ping charts displaying response times and status
+      - SSL certificate monitoring for validity and expiration
+      - 20-second monitoring intervals for rapid downtime detection
+      - Multiple status pages for sharing service status
+      - Proxy support compatible with Cloudflare, Nginx, and more
+      - Two-factor authentication (2FA) and API keys for enhanced security
+
+      **Learn More:**
+      - [Uptime Kuma Official Website](https://uptimekuma.org)
+      - [Uptime Kuma GitHub Repository](https://github.com/louislam/uptime-kuma)
+    pt_br: |
+      Uptime Kuma é uma ferramenta de monitorização auto-hospedada gratuita e fácil de usar, projetada para o rastreamento em tempo real de serviços de rede e infraestrutura, oferecendo uma interface moderna e funcionalidade robusta。Fornece um painel Web intuitivo para gerir serviços, ideal para programadores individuais, utilizadores de laboratórios domésticos e equipas pequenas。
+
+      As funcionalidades principais da ferramenta incluem monitorização abrangente e canais de notificação diversificados。Monitoriza HTTP/HTTPS, portas TCP, registos DNS, bases de dados, Ping e servidores de jogos Steam, com gráficos Ping interativos que exibem visualmente tempos de resposta e estado。Os utilizadores podem receber alertas em tempo real via Telegram, Discord, Slack, Email (SMTP) e mais de 95 outros serviços de notificação。A monitorização de certificados SSL verifica a validade e expiração dos certificados, auxiliando renovações atempadas。
+
+      Suporta intervalos de monitorização de 20 segundos para deteção rápida de tempo de inatividade e oferece múltiplas páginas de estado para partilhar o estado dos serviços em tempo real com clientes。O suporte proxy permite acesso remoto via Cloudflare, Nginx ou serviços similares, melhorando a flexibilidade。A autenticação de dois fatores (2FA) e chaves API reforçam a segurança, garantindo controlo total do utilizador sobre dados locais。A ferramenta fornece uma solução de monitorização eficiente com operação intuitiva e apoio da comunidade。
+
+      **Funcionalidades Principais：**
+      - Monitorizar HTTP/HTTPS, TCP, DNS, bases de dados e outros serviços
+      - Notificações via Telegram, Discord, Slack e mais de 95 outros canais
+      - Gráficos Ping interativos exibindo tempos de resposta e estado
+      - Monitorização de certificados SSL para validade e expiração
+      - Intervalos de monitorização de 20 segundos para deteção rápida de tempo de inatividade
+      - Múltiplas páginas de estado para partilha do estado dos serviços
+      - Suporte proxy compatível com Cloudflare, Nginx e mais
+      - Autenticação de dois fatores (2FA) e chaves API para segurança melhorada
+
+      **Saiba Mais：**
+      - [Site Oficial Uptime Kuma](https://uptimekuma.org)
+      - [Repositório GitHub Uptime Kuma](https://github.com/louislam/uptime-kuma)
+    zh_cn: |
+      Uptime Kuma 是一个免费、易于使用的自托管监控工具，专为网络服务和基础设施的实时跟踪而设计，提供现代化界面和强大功能。它提供直观的 Web 仪表板来管理服务，适合个人开发者、家庭实验室用户和小团队。
+
+      该工具的核心功能包括全面监控和多样化通知渠道。它监控 HTTP/HTTPS、TCP 端口、DNS 记录、数据库、Ping 和 Steam 游戏服务器，通过交互式 Ping 图表直观显示响应时间和状态。用户可通过 Telegram、Discord、Slack、邮箱 (SMTP) 以及其他 95+ 种通知服务接收实时警报。SSL 证书监控检查证书有效性和到期时间，有助于及时续期。
+
+      它支持 20 秒监控间隔以实现快速宕机检测，并提供多个状态页面与客户分享实时服务状态。代理支持可通过 Cloudflare、Nginx 或类似服务实现远程访问，增强灵活性。双因素认证 (2FA) 和 API 密钥加强安全性，确保用户完全掌控本地数据。该工具提供高效监控解决方案，操作直观并有社区支持。
+
+      **主要功能：**
+      - 监控 HTTP/HTTPS、TCP、DNS、数据库等服务
+      - 通过 Telegram、Discord、Slack 等 95+ 渠道发送通知
+      - 交互式 Ping 图表显示响应时间和状态
+      - SSL 证书监控检查有效性和到期时间
+      - 20 秒监控间隔实现快速宕机检测
+      - 多个状态页面分享服务状态
+      - 代理支持兼容 Cloudflare、Nginx 等
+      - 双因素认证 (2FA) 和 API 密钥增强安全性
+
+      **了解更多：**
+      - [Uptime Kuma 官方网站](https://uptimekuma.org)
+      - [Uptime Kuma GitHub 仓库](https://github.com/louislam/uptime-kuma)
+    fr_fr: |
+      Uptime Kuma est un outil de surveillance auto-hébergé gratuit et facile à utiliser, conçu pour le suivi en temps réel des services réseau et de l'infrastructure, offrant une interface moderne et des fonctionnalités robustes。Il fournit un tableau de bord Web intuitif pour gérer les services, idéal pour les développeurs individuels, les utilisateurs de laboratoires domestiques et les petites équipes。
+
+      Les fonctionnalités principales de l'outil incluent une surveillance complète et des canaux de notification diversifiés。Il surveille HTTP/HTTPS, les ports TCP, les enregistrements DNS, les bases de données, Ping et les serveurs de jeux Steam, avec des graphiques Ping interactifs affichant visuellement les temps de réponse et le statut。Les utilisateurs peuvent recevoir des alertes en temps réel via Telegram, Discord, Slack, Email (SMTP) et plus de 95 autres services de notification。La surveillance des certificats SSL vérifie la validité et l'expiration des certificats, aidant aux renouvellements en temps opportun。
+
+      Il prend en charge des intervalles de surveillance de 20 secondes pour une détection rapide des pannes et offre plusieurs pages de statut pour partager l'état des services en temps réel avec les clients。Le support proxy permet l'accès distant via Cloudflare, Nginx ou des services similaires, améliorant la flexibilité。L'authentification à deux facteurs (2FA) et les clés API renforcent la sécurité, garantissant un contrôle utilisateur complet sur les données locales。L'outil fournit une solution de surveillance efficace avec un fonctionnement intuitif et un support communautaire。
+
+      **Fonctionnalités Clés ：**
+      - Surveiller HTTP/HTTPS, TCP, DNS, bases de données et autres services
+      - Notifications via Telegram, Discord, Slack et plus de 95 autres canaux
+      - Graphiques Ping interactifs affichant les temps de réponse et le statut
+      - Surveillance des certificats SSL pour la validité et l'expiration
+      - Intervalles de surveillance de 20 secondes pour une détection rapide des pannes
+      - Plusieurs pages de statut pour partager l'état des services
+      - Support proxy compatible avec Cloudflare, Nginx et plus
+      - Authentification à deux facteurs (2FA) et clés API pour une sécurité renforcée
+
+      **En Savoir Plus ：**
+      - [Site Officiel Uptime Kuma](https://uptimekuma.org)
+      - [Dépôt GitHub Uptime Kuma](https://github.com/louislam/uptime-kuma)
+    de_de: |
+      Uptime Kuma ist ein kostenloses, benutzerfreundliches selbstgehostetes Überwachungstool, das für die Echtzeit-Verfolgung von Netzwerkdiensten und Infrastruktur entwickelt wurde und eine moderne Benutzeroberfläche sowie robuste Funktionalität bietet。Es stellt ein intuitives Web-Dashboard für die Verwaltung von Diensten bereit, ideal für einzelne Entwickler, Heimlabor-Benutzer und kleine Teams。
+
+      Die Kernfunktionen des Tools umfassen umfassende Überwachung und vielfältige Benachrichtigungskanäle。Es überwacht HTTP/HTTPS, TCP-Ports, DNS-Einträge, Datenbanken, Ping und Steam-Spielserver mit interaktiven Ping-Diagrammen, die Antwortzeiten und Status visuell darstellen。Benutzer können Echtzeit-Benachrichtigungen über Telegram, Discord, Slack, E-Mail (SMTP) und über 95 andere Benachrichtigungsdienste erhalten。SSL-Zertifikatüberwachung überprüft Zertifikatgültigkeit und -ablauf und unterstützt rechtzeitige Erneuerungen。
+
+      Es unterstützt 20-Sekunden-Überwachungsintervalle für schnelle Ausfallzeit-Erkennung und bietet mehrere Statusseiten, um den Echtzeit-Servicestatus mit Kunden zu teilen。Proxy-Unterstützung ermöglicht Fernzugriff über Cloudflare, Nginx oder ähnliche Dienste und verbessert die Flexibilität。Zwei-Faktor-Authentifizierung (2FA) und API-Schlüssel stärken die Sicherheit und gewährleisten vollständige Benutzerkontrolle über lokale Daten。Das Tool bietet eine effiziente Überwachungslösung mit intuitiver Bedienung und Community-Support。
+
+      **Hauptfunktionen：**
+      - Überwachung von HTTP/HTTPS, TCP, DNS, Datenbanken und anderen Diensten
+      - Benachrichtigungen über Telegram, Discord, Slack und über 95 andere Kanäle
+      - Interaktive Ping-Diagramme, die Antwortzeiten und Status anzeigen
+      - SSL-Zertifikatüberwachung für Gültigkeit und Ablauf
+      - 20-Sekunden-Überwachungsintervalle für schnelle Ausfallzeit-Erkennung
+      - Mehrere Statusseiten zum Teilen des Servicestatus
+      - Proxy-Unterstützung kompatibel mit Cloudflare, Nginx und mehr
+      - Zwei-Faktor-Authentifizierung (2FA) und API-Schlüssel für verbesserte Sicherheit
+
+      **Mehr Erfahren：**
+      - [Uptime Kuma Offizielle Website](https://uptimekuma.org)
+      - [Uptime Kuma GitHub Repository](https://github.com/louislam/uptime-kuma)
+    it_it: |
+      Uptime Kuma è uno strumento di monitoraggio self-hosted gratuito e facile da usare, progettato per il tracciamento in tempo reale di servizi di rete e infrastrutture, offrendo un'interfaccia moderna e funzionalità robuste. Fornisce una dashboard Web intuitiva per gestire i servizi, ideale per sviluppatori individuali, utenti di home lab e piccoli team.
+
+      Le funzionalità principali dello strumento includono monitoraggio completo e canali di notifica diversificati. Monitora HTTP/HTTPS, porte TCP, record DNS, database, Ping e server di giochi Steam, con grafici Ping interattivi che visualizzano tempi di risposta e stato. Gli utenti possono ricevere avvisi in tempo reale tramite Telegram, Discord, Slack, Email (SMTP) e oltre 95 altri servizi di notifica. Il monitoraggio dei certificati SSL verifica validità e scadenza, aiutando nei rinnovi tempestivi.
+
+      Supporta intervalli di monitoraggio di 20 secondi per il rilevamento rapido dei guasti e offre pagine di stato multiple per condividere lo stato dei servizi in tempo reale con i clienti. Il supporto proxy consente l'accesso remoto tramite Cloudflare, Nginx o servizi simili, migliorando la flessibilità. L'autenticazione a due fattori (2FA) e le chiavi API rafforzano la sicurezza, garantendo il pieno controllo utente sui dati locali. Lo strumento fornisce una soluzione di monitoraggio efficiente con operazione intuitiva e supporto della comunità.
+
+      **Caratteristiche Principali:**
+      - Monitora HTTP/HTTPS, TCP, DNS, database e altri servizi
+      - Notifiche tramite Telegram, Discord, Slack e oltre 95 altri canali
+      - Grafici Ping interattivi che mostrano tempi di risposta e stato
+      - Monitoraggio certificati SSL per validità e scadenza
+      - Intervalli di monitoraggio di 20 secondi per rilevamento rapido guasti
+      - Pagine di stato multiple per condivisione stato servizi
+      - Supporto proxy compatibile con Cloudflare, Nginx e altro
+      - Autenticazione a due fattori (2FA) e chiavi API per sicurezza avanzata
+
+      **Scopri di Più:**
+      - [Sito Ufficiale Uptime Kuma](https://uptimekuma.org)
+      - [Repository GitHub Uptime Kuma](https://github.com/louislam/uptime-kuma)
+    ru_ru: |
+      Uptime Kuma - это бесплатный, простой в использовании самохостинговый инструмент мониторинга, предназначенный для отслеживания сетевых сервисов и инфраструктуры в реальном времени, предлагающий современный интерфейс и надежную функциональность。Он предоставляет интуитивную веб-панель для управления сервисами, идеальную для индивидуальных разработчиков, пользователей домашних лабораторий и небольших команд。
+
+      Основные функции инструмента включают комплексный мониторинг и разнообразные каналы уведомлений。Он отслеживает HTTP/HTTPS, TCP-порты, DNS-записи, базы данных, Ping и игровые серверы Steam с интерактивными Ping-диаграммами, визуально отображающими время отклика и статус。Пользователи могут получать уведомления в реальном времени через Telegram, Discord, Slack, Email (SMTP) и более 95 других сервисов уведомлений。Мониторинг SSL-сертификатов проверяет действительность и истечение сертификатов, помогая своевременным обновлениям。
+
+      Поддерживает 20-секундные интервалы мониторинга для быстрого обнаружения простоев и предлагает несколько страниц статуса для обмена статусом сервисов в реальном времени с клиентами。Поддержка прокси обеспечивает удаленный доступ через Cloudflare, Nginx или аналогичные сервисы, повышая гибкость。Двухфакторная аутентификация (2FA) и API-ключи укрепляют безопасность, обеспечивая полный пользовательский контроль над локальными данными。Инструмент предоставляет эффективное решение мониторинга с интуитивной работой и поддержкой сообщества。
+
+      **Основные Функции：**
+      - Мониторинг HTTP/HTTPS, TCP, DNS, баз данных и других сервисов
+      - Уведомления через Telegram, Discord, Slack и более 95 других каналов
+      - Интерактивные Ping-диаграммы, отображающие время отклика и статус
+      - Мониторинг SSL-сертификатов на действительность и истечение
+      - 20-секундные интервалы мониторинга для быстрого обнаружения простоев
+      - Несколько страниц статуса для обмена статусом сервисов
+      - Поддержка прокси, совместимая с Cloudflare, Nginx и другими
+      - Двухфакторная аутентификация (2FA) и API-ключи для усиленной безопасности
+
+      **Узнать Больше：**
+      - [Официальный Сайт Uptime Kuma](https://uptimekuma.org)
+      - [GitHub Репозиторий Uptime Kuma](https://github.com/louislam/uptime-kuma)
+    ja_jp: |
+      Uptime Kuma は、ネットワークサービスとインフラストラクチャのリアルタイム追跡のために設計された、無料で使いやすいセルフホスト監視ツールで、モダンなインターフェースと堅牢な機能を提供します。サービス管理のための直感的なWebダッシュボードを提供し、個人開発者、ホームラボユーザー、小規模チームに最適です。
+
+      このツールの主要機能には、包括的な監視と多様な通知チャンネルが含まれます。HTTP/HTTPS、TCPポート、DNSレコード、データベース、Ping、Steamゲームサーバーを監視し、応答時間とステータスを視覚的に表示するインタラクティブなPingチャートを提供します。ユーザーは、Telegram、Discord、Slack、Email（SMTP）、および95以上の他の通知サービスを介してリアルタイムアラートを受信できます。SSL証明書監視は証明書の有効性と期限切れをチェックし、適時の更新を支援します。
+
+      20秒の監視間隔をサポートして迅速なダウンタイム検出を可能にし、お客様とリアルタイムサービス状況を共有するための複数のステータスページを提供します。プロキシサポートにより、Cloudflare、Nginx、または類似のサービスを介したリモートアクセスが可能になり、柔軟性が向上します。二要素認証（2FA）とAPIキーがセキュリティを強化し、ローカルデータの完全なユーザー制御を保証します。このツールは、直感的な操作とコミュニティサポートを備えた効率的な監視ソリューションを提供します。
+
+      **主な機能：**
+      - HTTP/HTTPS、TCP、DNS、データベース、その他のサービスの監視
+      - Telegram、Discord、Slack、および95以上の他のチャンネルを介した通知
+      - 応答時間とステータスを表示するインタラクティブなPingチャート
+      - SSL証明書の有効性と期限切れの監視
+      - 迅速なダウンタイム検出のための20秒監視間隔
+      - サービス状況共有のための複数のステータスページ
+      - Cloudflare、Nginx、その他と互換性のあるプロキシサポート
+      - セキュリティ強化のための二要素認証（2FA）とAPIキー
+
+      **詳細情報：**
+      - [Uptime Kuma 公式ウェブサイト](https://uptimekuma.org)
+      - [Uptime Kuma GitHubリポジトリ](https://github.com/louislam/uptime-kuma)
   developer: Louis Lam
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/UptimeKuma/icon.png
   screenshot_link:
@@ -387,10 +563,22 @@ x-casaos:
     pt_PT: Uma ferramenta de monitorização elegante
     ru_RU: Красивый инструмент мониторинга
     tr_TR: Şık bir izleme aracı
+    en_us: A fancy monitoring tool
+    pt_br: Uma ferramenta de monitorização elegante
+    zh_cn: 一个漂亮的监控工具
+    fr_fr: Un outil de surveillance élégant
+    de_de: Ein schönes Überwachungstool
+    it_it: Un elegante strumento di monitoraggio
+    ru_ru: Красивый инструмент мониторинга
+    ja_jp: おしゃれな監視ツール
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/UptimeKuma/thumbnail.png
   tips: {}
   title:
     en_US: Uptime Kuma
+    en_us: Uptime Kuma
   index: /
-  port_map: '3001'
+  port_map: "3001"
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

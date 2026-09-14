@@ -2,6 +2,11 @@ version: '3.8'
 name: anythingllm
 services:
   anythingllm:
+    x-casaos:
+      ports:
+        - container: '3001'
+          description:
+            en_us: "Web interface for AnythingLLM"
     image: mintplexlabs/anythingllm:latest
     container_name: anythingllm
     ports:

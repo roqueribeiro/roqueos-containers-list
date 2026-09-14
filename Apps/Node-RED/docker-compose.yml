@@ -9,7 +9,7 @@ services:
     network_mode: host
     ports:
       - target: 1880
-        published: '1880'
+        published: "1880"
         protocol: tcp
     restart: always
     volumes:
@@ -18,7 +18,7 @@ services:
         target: /data
     x-casaos:
       ports:
-        - container: '1880'
+        - container: "1880"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -35,6 +35,14 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP-порт WebUI
             tr_TR: WebUI HTTP Portu
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP-Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP-порт WebUI
+            ja_jp: WebUI HTTPポート
       volumes:
         - container: /data
           description:
@@ -53,6 +61,14 @@ services:
             pt_PT: Diretório de dados Node-RED
             ru_RU: Каталог данных Node-RED
             tr_TR: Node-RED veri dizini
+            en_us: Node-RED Data Directory
+            pt_br: Diretório de dados Node-RED
+            zh_cn: Node-RED数据目录
+            fr_fr: Répertoire de données Node-RED
+            de_de: Node-RED-Datenverzeichnis
+            it_it: Directory dati Node-RED
+            ru_ru: Каталог данных Node-RED
+            ja_jp: Node-REDデータディレクトリ
     container_name: node-red
 x-casaos:
   architectures:
@@ -363,6 +379,165 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Node-RED Resmi Web Sitesi](https://nodered.org/)
       - [Node-RED GitHub](https://github.com/node-red/node-red)
+    en_us: |
+      Node-RED is a flow-based low-code development platform that enables creating automation tasks and applications by connecting various nodes. A browser-based editor, simple to use, makes it ideal for users in home automation, industrial control, or other fields to quickly build data processing flows.
+
+      Core features include a low-code flow editor and robust data handling. Built on Node.js with an event-driven, non-blocking model, the platform supports real-time data collection, transformation, and visualization. A palette with over 5000 nodes allows users to construct flows via drag-and-drop. A rich text editor enables creating JavaScript functions for enhanced customization.
+
+      It stores flows in JSON format, facilitating easy import and export for sharing. A built-in library allows saving useful functions, templates, or flows for reuse, and an online flow library supports sharing top flows globally. With ease of use and efficiency at the core, the platform delivers a modern solution for diverse automation needs.
+
+      **Key Features:**
+      - Browser-based low-code flow editor with drag-and-drop node connections
+      - Real-time data collection, transformation, and visualization
+      - Event-driven, non-blocking model with Node.js
+      - Palette with over 5000 nodes for extended functionality
+      - Rich text editor for creating JavaScript functions
+      - JSON-based flow storage for easy sharing
+      - Built-in library for saving functions, templates, and flows
+      - Online flow library for sharing top flows
+
+      **Learn More:**
+      - [Node-RED Official Website](https://nodered.org/)
+      - [Node-RED GitHub](https://github.com/node-red/node-red)
+    pt_br: |
+      O Node-RED é uma plataforma de desenvolvimento de baixo código baseada em fluxos que permite criar tarefas de automação e aplicações conectando vários nós. Um editor baseado no browser, simples de usar, torna-o ideal para utilizadores em automação doméstica, controlo industrial ou outros campos para construir rapidamente fluxos de processamento de dados.
+
+      As funcionalidades principais incluem um editor de fluxos de baixo código e tratamento robusto de dados. Construído em Node.js com um modelo orientado a eventos e não-bloqueante, a plataforma suporta recolha, transformação e visualização de dados em tempo real. Uma paleta com mais de 5000 nós permite aos utilizadores construir fluxos via arrastar-e-largar. Um editor de texto rico permite criar funções JavaScript para personalização melhorada.
+
+      Armazena fluxos em formato JSON, facilitando importação e exportação fáceis para partilha. Uma biblioteca incorporada permite guardar funções úteis, modelos ou fluxos para reutilização, e uma biblioteca de fluxos online suporta partilha dos melhores fluxos globalmente. Com facilidade de uso e eficiência no centro, a plataforma oferece uma solução moderna para diversas necessidades de automação.
+
+      **Funcionalidades Principais:**
+      - Editor de fluxos de baixo código baseado no browser com ligações de nós arrastar-e-largar
+      - Recolha, transformação e visualização de dados em tempo real
+      - Modelo orientado a eventos, não-bloqueante com Node.js
+      - Paleta com mais de 5000 nós para funcionalidade estendida
+      - Editor de texto rico para criar funções JavaScript
+      - Armazenamento de fluxos baseado em JSON para partilha fácil
+      - Biblioteca incorporada para guardar funções, modelos e fluxos
+      - Biblioteca de fluxos online para partilhar os melhores fluxos
+
+      **Saber Mais:**
+      - [Website Oficial Node-RED](https://nodered.org/)
+      - [Node-RED GitHub](https://github.com/node-red/node-red)
+    zh_cn: |
+      Node-RED 是一款基于流的低代码开发平台，通过连接不同节点实现自动化任务和应用程序创建。浏览器编辑器简单易用，适合家庭自动化、工业控制或其他领域的用户快速构建数据处理流程。
+
+      核心功能包括低代码流编辑器和数据处理能力。基于 Node.js 的事件驱动和非阻塞模型，该平台支持实时收集、转换和可视化数据。提供超过 5000 个节点的丰富调色板，用户可通过拖放操作快速构建流程。内置富文本编辑器支持创建 JavaScript 函数，增强定制化能力。
+
+      它支持 JSON 格式存储流程，便于导入和导出以便分享。内置库允许保存常用函数、模板或流程以供复用，在线流程库支持用户共享优秀流程。以易用性和高效性为核心，该平台为多样化自动化需求提供现代化解决方案。
+
+      **主要功能：**
+      - 浏览器低代码流编辑器，支持拖放连接节点
+      - 实时收集、转换和可视化数据
+      - 超过 5000 个节点的调色板，扩展功能
+      - 富文本编辑器创建 JavaScript 函数
+      - JSON 格式存储流程，便于分享
+      - 内置库保存函数、模板和流程
+      - 在线流程库共享优秀流程
+
+      **了解更多：**
+      - [Node-RED 官方网站](https://nodered.org/)
+      - [Node-RED GitHub](https://github.com/node-red/node-red)
+    fr_fr: |
+      Node-RED est une plateforme de développement low-code basée sur les flux qui permet de créer des tâches d'automatisation et des applications en connectant divers nœuds. Un éditeur basé sur navigateur, simple à utiliser, le rend idéal pour les utilisateurs dans l'automatisation domestique, le contrôle industriel ou d'autres domaines pour construire rapidement des flux de traitement de données.
+
+      Les fonctionnalités principales incluent un éditeur de flux low-code et une gestion robuste des données. Construit sur Node.js avec un modèle événementiel non-bloquant, la plateforme supporte la collecte, transformation et visualisation de données en temps réel. Une palette avec plus de 5000 nœuds permet aux utilisateurs de construire des flux via glisser-déposer. Un éditeur de texte riche permet de créer des fonctions JavaScript pour une personnalisation améliorée.
+
+      Il stocke les flux au format JSON, facilitant l'importation et l'exportation faciles pour le partage. Une bibliothèque intégrée permet de sauvegarder des fonctions utiles, modèles ou flux pour réutilisation, et une bibliothèque de flux en ligne supporte le partage des meilleurs flux globalement. Avec la facilité d'utilisation et l'efficacité au cœur, la plateforme fournit une solution moderne pour divers besoins d'automatisation.
+
+      **Fonctionnalités Principales :**
+      - Éditeur de flux low-code basé navigateur avec connexions nœuds glisser-déposer
+      - Collecte, transformation et visualisation de données en temps réel
+      - Modèle événementiel non-bloquant avec Node.js
+      - Palette avec plus de 5000 nœuds pour fonctionnalité étendue
+      - Éditeur de texte riche pour créer des fonctions JavaScript
+      - Stockage de flux basé JSON pour partage facile
+      - Bibliothèque intégrée pour sauvegarder fonctions, modèles et flux
+      - Bibliothèque de flux en ligne pour partager les meilleurs flux
+
+      **En Savoir Plus :**
+      - [Site Officiel Node-RED](https://nodered.org/)
+      - [Node-RED GitHub](https://github.com/node-red/node-red)
+    de_de: |
+      Node-RED ist eine flussbasierte Low-Code-Entwicklungsplattform, die es ermöglicht, Automatisierungsaufgaben und Anwendungen durch Verbinden verschiedener Knoten zu erstellen. Ein browserbasierter Editor, einfach zu verwenden, macht es ideal für Benutzer in der Hausautomation, Industriesteuerung oder anderen Bereichen, um schnell Datenverarbeitungsflüsse aufzubauen.
+
+      Kernfunktionen umfassen einen Low-Code-Fluss-Editor und robuste Datenverarbeitung. Aufgebaut auf Node.js mit einem ereignisgetriebenen, nicht-blockierenden Modell, unterstützt die Plattform Echtzeit-Datensammlung, -transformation und -visualisierung. Eine Palette mit über 5000 Knoten ermöglicht es Benutzern, Flüsse per Drag-and-Drop zu konstruieren. Ein Rich-Text-Editor ermöglicht das Erstellen von JavaScript-Funktionen für erweiterte Anpassung.
+
+      Es speichert Flüsse im JSON-Format und erleichtert so einfachen Import und Export zum Teilen. Eine integrierte Bibliothek ermöglicht das Speichern nützlicher Funktionen, Vorlagen oder Flüsse zur Wiederverwendung, und eine Online-Flussbibliothek unterstützt das globale Teilen von Top-Flüssen. Mit Benutzerfreundlichkeit und Effizienz im Kern liefert die Plattform eine moderne Lösung für vielfältige Automatisierungsbedürfnisse.
+
+      **Hauptmerkmale:**
+      - Browserbasierter Low-Code-Fluss-Editor mit Drag-and-Drop-Knotenverbindungen
+      - Echtzeit-Datensammlung, -transformation und -visualisierung
+      - Ereignisgetriebenes, nicht-blockierendes Modell mit Node.js
+      - Palette mit über 5000 Knoten für erweiterte Funktionalität
+      - Rich-Text-Editor zum Erstellen von JavaScript-Funktionen
+      - JSON-basierte Flussspeicherung für einfaches Teilen
+      - Integrierte Bibliothek zum Speichern von Funktionen, Vorlagen und Flüssen
+      - Online-Flussbibliothek zum Teilen von Top-Flüssen
+
+      **Mehr Erfahren:**
+      - [Node-RED Offizielle Website](https://nodered.org/)
+      - [Node-RED GitHub](https://github.com/node-red/node-red)
+    it_it: |
+      Node-RED è una piattaforma di sviluppo low-code basata su flussi che consente di creare attività di automazione e applicazioni collegando vari nodi. Un editor basato su browser, semplice da usare, lo rende ideale per gli utenti nell'automazione domestica, controllo industriale o altri campi per costruire rapidamente flussi di elaborazione dati.
+
+      Le caratteristiche principali includono un editor di flussi low-code e gestione robusta dei dati. Costruito su Node.js con un modello event-driven e non-bloccante, la piattaforma supporta raccolta, trasformazione e visualizzazione dati in tempo reale. Una tavolozza con oltre 5000 nodi permette agli utenti di costruire flussi tramite drag-and-drop. Un editor di testo ricco consente di creare funzioni JavaScript per personalizzazione avanzata.
+
+      Memorizza i flussi in formato JSON, facilitando l'importazione ed esportazione facile per la condivisione. Una libreria integrata permette di salvare funzioni utili, template o flussi per il riutilizzo, e una libreria di flussi online supporta la condivisione dei migliori flussi globalmente. Con facilità d'uso ed efficienza al centro, la piattaforma fornisce una soluzione moderna per diverse esigenze di automazione.
+
+      **Caratteristiche Principali:**
+      - Editor di flussi low-code basato su browser con connessioni nodi drag-and-drop
+      - Raccolta, trasformazione e visualizzazione dati in tempo reale
+      - Modello event-driven, non-bloccante con Node.js
+      - Tavolozza con oltre 5000 nodi per funzionalità estese
+      - Editor di testo ricco per creare funzioni JavaScript
+      - Archiviazione flussi basata su JSON per facile condivisione
+      - Libreria integrata per salvare funzioni, template e flussi
+      - Libreria di flussi online per condividere i migliori flussi
+
+      **Scopri di Più:**
+      - [Sito Ufficiale Node-RED](https://nodered.org/)
+      - [Node-RED GitHub](https://github.com/node-red/node-red)
+    ru_ru: |
+      Node-RED — это основанная на потоках платформа разработки с низким кодом, которая позволяет создавать задачи автоматизации и приложения, соединяя различные узлы. Браузерный редактор, простой в использовании, делает его идеальным для пользователей в домашней автоматизации, промышленном управлении или других областях для быстрого построения потоков обработки данных.
+
+      Основные функции включают редактор потоков с низким кодом и надежную обработку данных. Построенная на Node.js с событийно-ориентированной, неблокирующей моделью, платформа поддерживает сбор, преобразование и визуализацию данных в реальном времени. Палитра с более чем 5000 узлов позволяет пользователям создавать потоки методом перетаскивания. Редактор форматированного текста позволяет создавать JavaScript функции для расширенной настройки.
+
+      Он хранит потоки в формате JSON, облегчая простой импорт и экспорт для совместного использования. Встроенная библиотека позволяет сохранять полезные функции, шаблоны или потоки для повторного использования, а онлайн-библиотека потоков поддерживает глобальное совместное использование лучших потоков. С простотой использования и эффективностью в основе, платформа предоставляет современное решение для разнообразных потребностей автоматизации.
+
+      **Ключевые Особенности:**
+      - Браузерный редактор потоков с низким кодом с соединениями узлов методом перетаскивания
+      - Сбор, преобразование и визуализация данных в реальном времени
+      - Событийно-ориентированная, неблокирующая модель с Node.js
+      - Палитра с более чем 5000 узлов для расширенной функциональности
+      - Редактор форматированного текста для создания JavaScript функций
+      - Хранение потоков на основе JSON для простого совместного использования
+      - Встроенная библиотека для сохранения функций, шаблонов и потоков
+      - Онлайн-библиотека потоков для совместного использования лучших потоков
+
+      **Узнать Больше:**
+      - [Официальный Сайт Node-RED](https://nodered.org/)
+      - [Node-RED GitHub](https://github.com/node-red/node-red)
+    ja_jp: |
+      Node-REDは、さまざまなノードを接続して自動化タスクやアプリケーションを作成できるフローベースの低コード開発プラットフォームです。ブラウザベースのエディターは使いやすく、ホームオートメーション、産業制御、その他の分野でデータ処理フローを迅速に構築したいユーザーに最適です。
+
+      主要機能には、低コードフローエディターと堅牢なデータ処理が含まれます。イベント駆動型のノンブロッキングモデルを持つNode.js上に構築されたこのプラットフォームは、リアルタイムデータ収集、変換、視覚化をサポートします。5000以上のノードを含むパレットにより、ユーザーはドラッグアンドドロップでフローを構築できます。リッチテキストエディターでJavaScript関数を作成し、カスタマイズを強化できます。
+
+      フローをJSON形式で保存し、共有のための簡単なインポートとエクスポートを促進します。内蔵ライブラリでは有用な関数、テンプレート、フローを再利用のために保存でき、オンラインフローライブラリは世界的にトップフローの共有をサポートします。使いやすさと効率性を中核とし、このプラットフォームは多様な自動化ニーズに対する現代的なソリューションを提供します。
+
+      **主な機能：**
+      - ドラッグアンドドロップノード接続機能付きブラウザベース低コードフローエディター
+      - リアルタイムデータ収集、変換、視覚化
+      - Node.jsによるイベント駆動型ノンブロッキングモデル
+      - 拡張機能用5000以上のノードパレット
+      - JavaScript関数作成用リッチテキストエディター
+      - 簡単共有のためのJSONベースフロー保存
+      - 関数、テンプレート、フロー保存用内蔵ライブラリ
+      - トップフロー共有用オンラインフローライブラリ
+
+      **詳細はこちら：**
+      - [Node-RED公式ウェブサイト](https://nodered.org/)
+      - [Node-RED GitHub](https://github.com/node-red/node-red)
   developer: Node-RED
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/icon.png
   screenshot_link:
@@ -385,14 +560,22 @@ x-casaos:
     pt_PT: Programação de baixo código para aplicações baseadas em eventos
     ru_RU: Программирование с низким кодом для событийно-ориентированных приложений
     tr_TR: Olay tabanlı uygulamalar için düşük kodlu programlama
+    en_us: Low-code programming for event-driven applications
+    pt_br: Programação de baixo código para aplicações baseadas em eventos
+    zh_cn: 用于事件驱动应用程序的低代码编程
+    fr_fr: Programmation low-code pour applications événementielles
+    de_de: Low-Code-Programmierung für ereignisgetriebene Anwendungen
+    it_it: Programmazione a basso codice per applicazioni basate su eventi
+    ru_ru: Программирование с низким кодом для событийно-ориентированных приложений
+    ja_jp: イベント駆動アプリケーション向けローコードプログラミング
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Node-RED/thumbnail.png
   tips: {}
   title:
     en_US: Node-RED
+    en_us: Node-RED
   index: /
-  port_map: '1880'
+  port_map: "1880"
   scheme: http
-
 x-roqueos:
   motivo:
-    networkHost: "descoberta e controle de dispositivos IoT na rede local"
+    networkHost: descoberta e controle de dispositivos IoT na rede local

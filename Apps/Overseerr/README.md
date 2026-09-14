@@ -15,6 +15,7 @@ Arquiteturas suportadas: amd64, arm64.
 | ---- | --------- | --------- | ---------------------------------------- | --------- |
 | 5055 | 5055      | tcp       | Porta para a interface web do Overseerr. | overseerr |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 6767 | 6767      | tcp       | —              | bazarr  |
+| Host | Container | Protocolo | Para que serve           | Serviço |
+| ---- | --------- | --------- | ------------------------ | ------- |
+| 6767 | 6767      | tcp       | Web interface for Bazarr | bazarr  |
 
 
 ## Volumes

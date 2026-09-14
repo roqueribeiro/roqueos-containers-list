@@ -8,10 +8,10 @@ services:
         reservations:
           memory: 256M
     restart: unless-stopped
-    user: '0:0'
+    user: "0:0"
     ports:
       - target: 1313
-        published: '1313'
+        published: "1313"
         protocol: tcp
     volumes:
       - type: bind
@@ -22,10 +22,10 @@ services:
         target: /cache
     command:
       - server
-      - '--bind=0.0.0.0'
+      - "--bind=0.0.0.0"
     x-casaos:
       ports:
-        - container: '1313'
+        - container: "1313"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -42,6 +42,14 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP-порт WebUI
             tr_TR: WebUI HTTP Portu
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP-Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP-порт WebUI
+            ja_jp: WebUI HTTPポート
       volumes:
         - container: /project
           description:
@@ -60,6 +68,14 @@ services:
             pt_PT: Diretório de projeto Hugo
             ru_RU: Каталог проекта Hugo
             tr_TR: Hugo proje dizini
+            en_us: Hugo Project Directory
+            pt_br: Diretório de projeto Hugo
+            zh_cn: Hugo项目目录
+            fr_fr: Répertoire de projet Hugo
+            de_de: Hugo-Projektverzeichnis
+            it_it: Directory progetto Hugo
+            ru_ru: Каталог проекта Hugo
+            ja_jp: Hugoプロジェクトディレクトリ
         - container: /cache
           description:
             en_US: Hugo Cache Directory
@@ -77,6 +93,14 @@ services:
             pt_PT: Diretório de cache Hugo
             ru_RU: Каталог кэша Hugo
             tr_TR: Hugo önbellek dizini
+            en_us: Hugo Cache Directory
+            pt_br: Diretório de cache Hugo
+            zh_cn: Hugo缓存目录
+            fr_fr: Répertoire de cache Hugo
+            de_de: Hugo-Cache-Verzeichnis
+            it_it: Directory cache Hugo
+            ru_ru: Каталог кэша Hugo
+            ja_jp: Hugoキャッシュディレクトリ
 x-casaos:
   architectures:
     - amd64
@@ -101,6 +125,14 @@ x-casaos:
     pt_PT: O framework mais rápido do mundo para construir websites
     ru_RU: Самый быстрый в мире фреймворк для создания веб-сайтов
     tr_TR: Web siteleri oluşturmak için dünyanın en hızlı çerçevesi
+    en_us: The world's fastest framework for building websites
+    pt_br: O framework mais rápido do mundo para construir websites
+    zh_cn: 世界上最快的网站构建框架
+    fr_fr: Le framework le plus rapide au monde pour créer des sites web
+    de_de: Das schnellste Framework der Welt für den Aufbau von Websites
+    it_it: Il framework più veloce al mondo per costruire siti web
+    ru_ru: Самый быстрый в мире фреймворк для создания веб-сайтов
+    ja_jp: 世界最速のウェブサイト構築フレームワーク
   description:
     en_US: |
       Hugo is a high-speed static site generation platform written in Go, optimized for speed and designed for flexibility. Advanced templating system and fast asset pipelines render a complete website in seconds, ideal for creating documentation sites, landing pages, and various project websites.
@@ -687,12 +719,324 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Hugo Resmi Web Sitesi](https://gohugo.io/)
       - [Hugo GitHub](https://github.com/gohugoio/hugo)
+    en_us: |
+      Hugo is a high-speed static site generation platform written in Go, optimized for speed and designed for flexibility. Advanced templating system and fast asset pipelines render a complete website in seconds, ideal for creating documentation sites, landing pages, and various project websites.
+
+      Core features include optimized speed and a flexible framework. Concurrency in Go enables rapid rendering, supporting image processing (convert, resize, crop, rotate, adjust colors, apply filters, overlay text/images, extract EXIF data), JavaScript bundling (tree shaking, code splitting), Sass processing, and TailwindCSS support. Multilingual support and taxonomy system make it suitable for diverse sites like documentation, news, or events.
+
+      It includes an embedded web server for real-time previews of content, structure, and style changes during development. Frequent releases ensure ongoing feature enhancements, keeping it cutting-edge. With efficiency and flexibility at the core, the platform delivers a modern static site generation solution.
+
+      **Key Features:**
+      - High-speed rendering, generating sites in seconds
+      - Fast asset pipelines: image processing, JavaScript bundling, Sass, and TailwindCSS support
+      - Flexible framework with multilingual and taxonomy systems
+      - Embedded web server for real-time development previews
+      - Rich ecosystem of themes and plugins
+
+
+      **Prerequisites for Using Hugo:**
+
+      1. Open command line, navigate to `/DATA/AppData/hugo/project` directory
+
+      ```cd /DATA/AppData/hugo/project```
+
+      2. Initialize the `project` directory as an empty Git repository
+
+      ```git init```
+
+      3. Download the Ananke theme
+
+      ```git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke```
+
+      4. Specify the current theme
+
+      ```echo "theme = 'ananke'" >> hugo.toml```
+
+      5. Restart Hugo
+
+
+      **Learn More:**
+      - [Hugo Official Website](https://gohugo.io/)
+      - [Hugo GitHub](https://github.com/gohugoio/hugo)
+    pt_br: |
+      O Hugo é uma plataforma de geração de sites estáticos de alta velocidade escrita em Go, optimizada para velocidade e concebida para flexibilidade. O sistema de templates avançado e pipelines de recursos rápidos renderizam um website completo em segundos, ideal para criar sites de documentação, páginas de destino e vários websites de projetos.
+
+      As funcionalidades principais incluem velocidade optimizada e uma estrutura flexível. A concorrência em Go permite renderização rápida, suportando processamento de imagens (conversão, redimensionamento, recorte, rotação, ajuste de cores, aplicação de filtros, sobreposição de texto/imagens, extracção de dados EXIF), empacotamento JavaScript (tree shaking, divisão de código), processamento Sass e forte suporte TailwindCSS. O suporte multilingue e sistema de taxonomia tornam-no adequado para sites diversos como documentação, notícias ou eventos.
+
+      Inclui um servidor web incorporado para pré-visualizações em tempo real de conteúdo, estrutura e alterações de estilo durante o desenvolvimento. Lançamentos frequentes garantem melhorias contínuas de funcionalidades, mantendo-o na vanguarda. Com eficiência e flexibilidade no centro, a plataforma proporciona uma solução moderna de geração de sites estáticos.
+
+      **Funcionalidades Principais:**
+      - Renderização de alta velocidade, gerando sites em segundos
+      - Pipelines de recursos rápidos: processamento de imagens, empacotamento JavaScript, Sass e suporte TailwindCSS
+      - Estrutura flexível com sistemas multilingues e de taxonomia
+      - Servidor web incorporado para pré-visualizações de desenvolvimento em tempo real
+      - Rico ecossistema de temas e plugins
+
+
+      **Pré-requisitos para Usar Hugo:**
+
+      1. Abrir linha de comandos, navegar para o directório `/DATA/AppData/hugo/project`
+
+      ```cd /DATA/AppData/hugo/project```
+
+      2. Inicializar o directório `project` como um repositório Git vazio
+
+      ```git init```
+
+      3. Descarregar o tema Ananke
+
+      ```git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke```
+
+      4. Especificar o tema actual
+
+      ```echo "theme = 'ananke'" >> hugo.toml```
+
+      5. Reiniciar Hugo
+
+
+      **Saber Mais:**
+      - [Website Oficial Hugo](https://gohugo.io/)
+      - [Hugo GitHub](https://github.com/gohugoio/hugo)
+    zh_cn: |
+      Hugo 是一款高速静态网站生成平台，采用 Go 语言编写，注重速度和灵活性。先进的模板系统和快速资产管道可在数秒内渲染完整网站，适合创建文档站点、登陆页面及各类项目网站。
+
+      核心功能包括优化的速度和灵活的框架。并发能力在 Go 语言支持下实现快速渲染，包含图像处理（转换、调整大小、裁剪、旋转、调整颜色、应用滤镜、叠加文本和图片、提取 EXIF 数据）、JavaScript 打包（树摇、代码分割）、Sass 处理以及 TailwindCSS 支持。多语言支持和分类系统使其适用于文档、新闻、活动等多样化站点。
+
+      它提供嵌入式 Web 服务器，便于开发过程中实时预览内容、结构和样式变化。频繁版本更新确保功能持续优化，保持技术领先。以高效性和灵活性为核心，该平台为用户提供现代化静态网站生成解决方案。
+
+      **主要功能：**
+      - 高速渲染，数秒内生成完整网站
+      - 快速资产管道：图像处理、JavaScript 打包、Sass 和 TailwindCSS 支持
+      - 灵活框架，支持多语言和分类系统
+      - 嵌入式 Web 服务器，实时预览开发变化
+      - 丰富的主题和插件生态系统
+
+
+      **使用 Hugo 的前提条件：**
+
+      1. 打开命令行, 进入 `/DATA/AppData/hugo/project` 目录
+
+      ```cd /DATA/AppData/hugo/project```
+
+      2. 将 `porject` 目录初始化为空的 Git 存储库
+
+      ```git init```
+
+      3. 下载 Ananke 主题
+
+      ```git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke```
+
+      4. 指定当前主题
+
+      ```echo "theme = 'ananke'" >> hugo.toml```
+
+      5. 重启 Hugo
+
+
+      **了解更多：**
+      - [Hugo 官方网站](https://gohugo.io/)
+      - [Hugo GitHub](https://github.com/gohugoio/hugo)
+    fr_fr: |
+      Hugo est une plateforme de génération de sites statiques haute vitesse écrite en Go, optimisée pour la vitesse et conçue pour la flexibilité. Le système de templates avancé et les pipelines d'assets rapides rendent un site web complet en quelques secondes, idéal pour créer des sites de documentation, des pages d'atterrissage et divers sites web de projets.
+
+      Les fonctionnalités principales incluent une vitesse optimisée et un framework flexible. La concurrence en Go permet un rendu rapide, supportant le traitement d'images (conversion, redimensionnement, recadrage, rotation, ajustement des couleurs, application de filtres, superposition de texte/images, extraction de données EXIF), le bundling JavaScript (tree shaking, code splitting), le traitement Sass et le support TailwindCSS. Le support multilingue et le système de taxonomie le rendent adapté à des sites divers comme la documentation, les actualités ou les événements.
+
+      Il inclut un serveur web intégré pour des aperçus en temps réel du contenu, de la structure et des changements de style pendant le développement. Des versions fréquentes assurent des améliorations continues des fonctionnalités, le maintenant à la pointe. Avec l'efficacité et la flexibilité au cœur, la plateforme fournit une solution moderne de génération de sites statiques.
+
+      **Fonctionnalités Principales :**
+      - Rendu haute vitesse, génération de sites en quelques secondes
+      - Pipelines d'assets rapides : traitement d'images, bundling JavaScript, Sass et support TailwindCSS
+      - Framework flexible avec systèmes multilingues et de taxonomie
+      - Serveur web intégré pour aperçus de développement en temps réel
+      - Riche écosystème de thèmes et plugins
+
+
+      **Prérequis pour Utiliser Hugo :**
+
+      1. Ouvrir la ligne de commande, naviguer vers le répertoire `/DATA/AppData/hugo/project`
+
+      ```cd /DATA/AppData/hugo/project```
+
+      2. Initialiser le répertoire `project` comme un dépôt Git vide
+
+      ```git init```
+
+      3. Télécharger le thème Ananke
+
+      ```git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke```
+
+      4. Spécifier le thème actuel
+
+      ```echo "theme = 'ananke'" >> hugo.toml```
+
+      5. Redémarrer Hugo
+
+
+      **En Savoir Plus :**
+      - [Site Officiel Hugo](https://gohugo.io/)
+      - [Hugo GitHub](https://github.com/gohugoio/hugo)
+    de_de: |
+      Hugo ist eine Hochgeschwindigkeits-Plattform zur Generierung statischer Websites, geschrieben in Go, optimiert für Geschwindigkeit und auf Flexibilität ausgelegt. Das fortschrittliche Template-System und schnelle Asset-Pipelines rendern eine vollständige Website in Sekunden, ideal für die Erstellung von Dokumentationsseiten, Landing Pages und verschiedenen Projekt-Websites.
+
+      Kernfunktionen umfassen optimierte Geschwindigkeit und ein flexibles Framework. Nebenläufigkeit in Go ermöglicht schnelles Rendering und unterstützt Bildverarbeitung (Konvertierung, Größenänderung, Zuschnitt, Drehung, Farbanpassung, Filter anwenden, Text/Bilder überlagern, EXIF-Daten extrahieren), JavaScript-Bundling (Tree Shaking, Code Splitting), Sass-Verarbeitung und TailwindCSS-Unterstützung. Mehrsprachige Unterstützung und Taxonomie-System machen es geeignet für vielfältige Sites wie Dokumentation, Nachrichten oder Events.
+
+      Es enthält einen eingebetteten Webserver für Echtzeit-Vorschauen von Inhalten, Struktur und Stiländerungen während der Entwicklung. Häufige Releases gewährleisten kontinuierliche Funktionsverbesserungen und halten es auf dem neuesten Stand. Mit Effizienz und Flexibilität im Kern liefert die Plattform eine moderne Lösung für die Generierung statischer Sites.
+
+      **Hauptmerkmale:**
+      - Hochgeschwindigkeits-Rendering, generiert Sites in Sekunden
+      - Schnelle Asset-Pipelines: Bildverarbeitung, JavaScript-Bundling, Sass und TailwindCSS-Support
+      - Flexibles Framework mit mehrsprachigen und Taxonomie-Systemen
+      - Eingebetteter Webserver für Echtzeit-Entwicklungsvorschauen
+      - Reiches Ökosystem von Themes und Plugins
+
+
+      **Voraussetzungen für die Verwendung von Hugo:**
+
+      1. Kommandozeile öffnen, zum Verzeichnis `/DATA/AppData/hugo/project` navigieren
+
+      ```cd /DATA/AppData/hugo/project```
+
+      2. Das `project` Verzeichnis als leeres Git-Repository initialisieren
+
+      ```git init```
+
+      3. Das Ananke-Theme herunterladen
+
+      ```git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke```
+
+      4. Das aktuelle Theme spezifizieren
+
+      ```echo "theme = 'ananke'" >> hugo.toml```
+
+      5. Hugo neu starten
+
+
+      **Mehr Erfahren:**
+      - [Hugo Offizielle Website](https://gohugo.io/)
+      - [Hugo GitHub](https://github.com/gohugoio/hugo)
+    it_it: |
+      Hugo è una piattaforma di generazione di siti statici ad alta velocità scritta in Go, ottimizzata per la velocità e progettata per la flessibilità. Il sistema di template avanzato e le pipeline veloci degli asset rendono un sito web completo in secondi, ideale per creare siti di documentazione, landing page e vari siti web di progetto.
+
+      Le caratteristiche principali includono velocità ottimizzata e un framework flessibile. La concorrenza in Go abilita il rendering rapido, supportando l'elaborazione delle immagini (conversione, ridimensionamento, ritaglio, rotazione, regolazione colori, applicazione filtri, sovrapposizione testo/immagini, estrazione dati EXIF), bundling JavaScript (tree shaking, code splitting), elaborazione Sass e supporto TailwindCSS. Il supporto multilingue e il sistema di tassonomia lo rendono adatto per siti diversi come documentazione, notizie o eventi.
+
+      Include un server web integrato per anteprime in tempo reale di contenuti, struttura e modifiche di stile durante lo sviluppo. Rilasci frequenti garantiscono miglioramenti continui delle funzionalità, mantenendolo all'avanguardia. Con efficienza e flessibilità al centro, la piattaforma fornisce una soluzione moderna di generazione di siti statici.
+
+      **Caratteristiche Principali:**
+      - Rendering ad alta velocità, generazione siti in secondi
+      - Pipeline veloci degli asset: elaborazione immagini, bundling JavaScript, Sass e supporto TailwindCSS
+      - Framework flessibile con sistemi multilingue e di tassonomia
+      - Server web integrato per anteprime di sviluppo in tempo reale
+      - Ricco ecosistema di temi e plugin
+
+
+      **Prerequisiti per Utilizzare Hugo:**
+
+      1. Aprire la riga di comando, navigare nella directory `/DATA/AppData/hugo/project`
+
+      ```cd /DATA/AppData/hugo/project```
+
+      2. Inizializzare la directory `project` come repository Git vuoto
+
+      ```git init```
+
+      3. Scaricare il tema Ananke
+
+      ```git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke```
+
+      4. Specificare il tema corrente
+
+      ```echo "theme = 'ananke'" >> hugo.toml```
+
+      5. Riavviare Hugo
+
+
+      **Scopri di Più:**
+      - [Sito Ufficiale Hugo](https://gohugo.io/)
+      - [Hugo GitHub](https://github.com/gohugoio/hugo)
+    ru_ru: |
+      Hugo — это высокоскоростная платформа генерации статических сайтов, написанная на Go, оптимизированная для скорости и разработанная для гибкости. Продвинутая система шаблонов и быстрые конвейеры ресурсов отрисовывают полный веб-сайт за секунды, идеально подходя для создания сайтов документации, целевых страниц и различных проектных веб-сайтов.
+
+      Основные функции включают оптимизированную скорость и гибкую платформу. Параллелизм в Go обеспечивает быструю отрисовку, поддерживая обработку изображений (конвертация, изменение размера, обрезка, поворот, настройка цветов, применение фильтров, наложение текста/изображений, извлечение EXIF-данных), упаковку JavaScript (tree shaking, разделение кода), обработку Sass и поддержку TailwindCSS. Многоязычная поддержка и система таксономии делают его подходящим для разнообразных сайтов, таких как документация, новости или события.
+
+      Включает встроенный веб-сервер для предварительного просмотра содержимого, структуры и изменений стиля в реальном времени во время разработки. Частые релизы обеспечивают постоянные улучшения функций, поддерживая его на переднем крае. С эффективностью и гибкостью в основе, платформа обеспечивает современное решение для генерации статических сайтов.
+
+      **Ключевые Особенности:**
+      - Высокоскоростная отрисовка, генерация сайтов за секунды
+      - Быстрые конвейеры ресурсов: обработка изображений, упаковка JavaScript, Sass и поддержка TailwindCSS
+      - Гибкая платформа с многоязычными и таксономическими системами
+      - Встроенный веб-сервер для предварительного просмотра разработки в реальном времени
+      - Богатая экосистема тем и плагинов
+
+
+      **Предварительные Требования для Использования Hugo:**
+
+      1. Открыть командную строку, перейти в каталог `/DATA/AppData/hugo/project`
+
+      ```cd /DATA/AppData/hugo/project```
+
+      2. Инициализировать каталог `project` как пустой Git-репозиторий
+
+      ```git init```
+
+      3. Скачать тему Ananke
+
+      ```git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke```
+
+      4. Указать текущую тему
+
+      ```echo "theme = 'ananke'" >> hugo.toml```
+
+      5. Перезапустить Hugo
+
+
+      **Узнать Больше:**
+      - [Официальный Сайт Hugo](https://gohugo.io/)
+      - [Hugo GitHub](https://github.com/gohugoio/hugo)
+    ja_jp: |
+      Hugoは、Go言語で書かれた高速静的サイト生成プラットフォームで、速度を最適化し柔軟性を重視して設計されています。高度なテンプレートシステムと高速アセットパイプラインにより、完全なウェブサイトを数秒でレンダリングし、ドキュメントサイト、ランディングページ、様々なプロジェクトウェブサイトの作成に最適です。
+
+      主要機能には、最適化された速度と柔軟なフレームワークが含まれます。Goの並行性が高速レンダリングを可能にし、画像処理（変換、リサイズ、クロップ、回転、色調整、フィルター適用、テキスト/画像オーバーレイ、EXIFデータ抽出）、JavaScriptバンドリング（ツリーシェイキング、コード分割）、Sass処理、TailwindCSSサポートに対応しています。多言語サポートとタクソノミーシステムにより、ドキュメント、ニュース、イベントなど多様なサイトに適しています。
+
+      開発中にコンテンツ、構造、スタイルの変更をリアルタイムでプレビューできる組み込みWebサーバーを含んでいます。頻繁なリリースにより継続的な機能強化が保証され、最先端技術を維持しています。効率性と柔軟性を中核とし、このプラットフォームはモダンな静的サイト生成ソリューションを提供します。
+
+      **主な機能：**
+      - 高速レンダリング、数秒でサイトを生成
+      - 高速アセットパイプライン：画像処理、JavaScriptバンドリング、Sass、TailwindCSSサポート
+      - 多言語・タクソノミーシステムを備えた柔軟なフレームワーク
+      - リアルタイム開発プレビュー用組み込みWebサーバー
+      - 豊富なテーマとプラグインのエコシステム
+
+
+      **Hugoを使用するための前提条件：**
+
+      1. コマンドラインを開き、`/DATA/AppData/hugo/project` ディレクトリに移動
+
+      ```cd /DATA/AppData/hugo/project```
+
+      2. `project` ディレクトリを空のGitリポジトリとして初期化
+
+      ```git init```
+
+      3. Anankeテーマをダウンロード
+
+      ```git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke```
+
+      4. 現在のテーマを指定
+
+      ```echo "theme = 'ananke'" >> hugo.toml```
+
+      5. Hugoを再起動
+
+
+      **詳細はこちら：**
+      - [Hugo公式ウェブサイト](https://gohugo.io/)
+      - [Hugo GitHub](https://github.com/gohugoio/hugo)
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hugo/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hugo/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hugo/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Hugo/screenshot-3.png
-  thumbnail: ''
+  thumbnail: ""
   tips:
     before_install:
       en_US: We recommend reviewing the [Quick Start](https://gohugo.io/getting-started/quick-start/) documentation to learn how to use Hugo.
@@ -710,8 +1054,17 @@ x-casaos:
       pt_PT: Recomendamos rever a documentação [Início Rápido](https://gohugo.io/getting-started/quick-start/) para aprender como usar o Hugo.
       ru_RU: Мы рекомендуем ознакомиться с документацией [Быстрый старт](https://gohugo.io/getting-started/quick-start/), чтобы узнать, как использовать Hugo.
       tr_TR: Hugo'yu nasıl kullanacağınızı öğrenmek için [Hızlı Başlangıç](https://gohugo.io/getting-started/quick-start/) belgelerini incelemenizi öneririz.
+      en_us: We recommend reviewing the [Quick Start](https://gohugo.io/getting-started/quick-start/) documentation to learn how to use Hugo.
+      pt_br: Recomendamos rever a documentação [Início Rápido](https://gohugo.io/getting-started/quick-start/) para aprender como usar o Hugo.
+      zh_cn: 建议先查看 [快速启动](https://gohugo.io/getting-started/quick-start/) 文档来了解如何使用 Hugo。
+      fr_fr: Nous recommandons de consulter la documentation [Démarrage Rapide](https://gohugo.io/getting-started/quick-start/) pour apprendre à utiliser Hugo.
+      de_de: Wir empfehlen, die [Schnellstart](https://gohugo.io/getting-started/quick-start/) Dokumentation durchzugehen, um zu lernen, wie man Hugo verwendet.
+      it_it: Si consiglia di consultare la documentazione [Quick Start](https://gohugo.io/getting-started/quick-start/) per imparare ad utilizzare Hugo.
+      ru_ru: Мы рекомендуем ознакомиться с документацией [Быстрый старт](https://gohugo.io/getting-started/quick-start/), чтобы узнать, как использовать Hugo.
+      ja_jp: Hugoの使用方法を学ぶため、[クイックスタート](https://gohugo.io/getting-started/quick-start/)ドキュメントを確認することをお勧めします。
   scheme: http
-  port_map: '1313'
+  port_map: "1313"
   index: /
   title:
     en_US: Hugo
+    en_us: Hugo

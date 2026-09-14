@@ -62,34 +62,34 @@ services:
       ports:
         - container: '3478'
           description:
-            en_us: ''
+            en_us: "Service port 3478 of unifi-controller"
           protocol: udp
         - container: '10001'
           description:
-            en_us: ''
+            en_us: "Service port 10001 of unifi-controller"
           protocol: udp
         - container: '8080'
           description:
-            en_us: ''
+            en_us: "Web interface for Unifi-controller [legacy]"
         - container: '8443'
           description:
-            en_us: ''
+            en_us: "Service port 8443 of unifi-controller"
         - container: '1900'
           description:
-            en_us: ''
+            en_us: "Service port 1900 of unifi-controller"
           protocol: udp
         - container: '8843'
           description:
-            en_us: ''
+            en_us: "Service port 8843 of unifi-controller"
         - container: '8880'
           description:
-            en_us: ''
+            en_us: "Service port 8880 of unifi-controller"
         - container: '6789'
           description:
-            en_us: ''
+            en_us: "Service port 6789 of unifi-controller"
         - container: '5514'
           description:
-            en_us: ''
+            en_us: "Service port 5514 of unifi-controller"
           protocol: udp
       volumes:
         - container: /config
@@ -145,3 +145,6 @@ x-casaos:
   index: /
   port_map: '8383'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

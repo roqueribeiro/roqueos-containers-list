@@ -1,25 +1,25 @@
 # LLaMA Factory(Nvidia GPU)
 
-> Unified LLM Fine-Tuning with 100+ Models
+> Ajuste fino unificado de LLM com 100+ modelos
 
 ## O que é
 
-LLaMA Factory is a comprehensive framework for fine-tuning Large Language Models (LLMs) with support for over 100 models. It provides a user-friendly web interface and powerful training methods including LoRA, QLoRA, and full-parameter training.
+LLaMA Factory é uma estrutura abrangente para ajuste fino de Modelos de Linguagem Grandes (LLMs) com suporte para mais de 100 modelos. Fornece uma interface web amigável e métodos de treino poderosos, incluindo LoRA, QLoRA e treino de parâmetros completos.
 
-**Key Features:**
-- Support for 100+ LLMs including LLaMA, Mistral, Qwen, and more
-- Multiple fine-tuning methods (LoRA, QLoRA, Full, Freeze)
-- Intuitive Web UI for easy model management
-- Built-in API server for model inference
-- Multi-GPU training support
-- Quantization and model export capabilities
+**Características Principais:**
+- Suporte para 100+ LLMs incluindo LLaMA, Mistral, Qwen e mais
+- Múltiplos métodos de ajuste fino (LoRA, QLoRA, Full, Freeze)
+- Interface Web intuitiva para fácil gestão de modelos
+- Servidor API integrado para inferência de modelos
+- Suporte para treino multi-GPU
+- Capacidades de quantização e exportação de modelos
 
-**Hardware Requirements:**
-- GPU: NVIDIA GPU with CUDA support required
+**Requisitos de Hardware:**
+- GPU: GPU NVIDIA com suporte CUDA necessária
 
-**Learn More:**
-- [GitHub Repository](https://github.com/hiyouga/LLaMA-Factory)
-- [Documentation](https://llamafactory.readthedocs.io/)
+**Saiba Mais:**
+- [Repositório GitHub](https://github.com/hiyouga/LLaMA-Factory)
+- [Documentação](https://llamafactory.readthedocs.io/)
 
 
 Categoria na App Store do RoqueOS: **AI**.
@@ -27,9 +27,9 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve            | Serviço              |
-| ----- | --------- | --------- | ------------------------- | -------------------- |
-| 18877 | 7860      | tcp       | LLaMA Factory Web UI Port | llama-factory-nvidia |
+| Host  | Container | Protocolo | Para que serve                       | Serviço              |
+| ----- | --------- | --------- | ------------------------------------ | -------------------- |
+| 18877 | 7860      | tcp       | Porta da Interface Web LLaMA Factory | llama-factory-nvidia |
 
 
 ## Volumes

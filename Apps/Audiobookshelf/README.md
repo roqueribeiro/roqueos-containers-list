@@ -1,29 +1,29 @@
 # Audiobookshelf
 
-> Audiobookshelf is a self-hosted audiobook and podcast server.
+> O Audiobookshelf é um servidor auto-hospedado de audiolivros e podcasts.
 
 ## O que é
 
-Audiobookshelf is a self-hosted media server designed for managing and streaming audiobooks, podcasts, and e-books, offering a secure and flexible solution for personal media libraries. Its lightweight architecture and intuitive Web interface (available as a Progressive Web App, PWA) enable seamless access from any browser, while beta Android and iOS apps support offline listening, catering to privacy-focused media enthusiasts.
+O Audiobookshelf é um servidor multimédia auto-hospedado concebido para gerir e transmitir audiolivros, podcasts e e-books, oferecendo uma solução segura e flexível para bibliotecas multimédia pessoais. A sua arquitetura leve e interface web intuitiva (disponível como Progressive Web App, PWA) permitem um acesso fácil a partir de qualquer navegador, enquanto as aplicações beta para Android e iOS suportam audição offline, ideal para utilizadores preocupados com a privacidade.
 
-The app supports on-the-fly streaming of all audio formats and provides robust management tools, including automatic metadata and cover art fetching from multiple sources, bulk drag-and-drop uploads for books and podcasts, and chapter editing with lookup via the Audnexus API. Users can search and subscribe to podcasts with auto-downloading episodes or manage content via open RSS feeds. It supports multi-user access with custom permissions, ensuring individual playback progress syncs across devices. Additionally, it offers audio tools (like merging files into m4b or embedding metadata) and experimental e-book support (epub, pdf, cbr, cbz), with the ability to send e-books to devices like Kindle.
+A aplicação suporta streaming instantâneo de todos os formatos de áudio e oferece ferramentas de gestão robustas, incluindo obtenção automática de metadados e capas de várias fontes, carregamentos em massa por arrastar e largar para livros e podcasts, e edição de capítulos com pesquisa via API Audnexus. Os utilizadores podem pesquisar e subscrever podcasts com episódios de download automático ou gerir conteúdos através de feeds RSS abertos. Suporta acesso multiutilizador com permissões personalizadas, garantindo que o progresso de reprodução individual é sincronizado entre dispositivos. Além disso, oferece ferramentas de áudio (como juntar ficheiros em m4b ou incorporar metadados) e suporte experimental para e-books (epub, pdf, cbr, cbz), com a possibilidade de enviar e-books para dispositivos como o Kindle.
 
-It automatically detects library updates, eliminating manual rescans, and includes daily automated backups to safeguard metadata. Chromecast support (on Web and Android apps) enhances streaming capabilities, while an active community provides support documentation for continuous improvements. Whether for personal collections or family sharing, the app's intuitive interface and versatile features deliver a modern media management platform, meeting diverse needs.
+Deteta automaticamente atualizações da biblioteca, eliminando a necessidade de novas digitalizações manuais, e inclui cópias de segurança automáticas diárias para proteger os metadados. O suporte Chromecast (na Web e em aplicações Android) melhora as capacidades de streaming, enquanto uma comunidade ativa fornece documentação de suporte para melhorias contínuas. Seja para coleções pessoais ou partilha familiar, a interface intuitiva e as funcionalidades versáteis da aplicação oferecem uma plataforma moderna de gestão multimédia, respondendo a diversas necessidades.
 
-**Key Features:**
-- Multi-user support w/ custom permissions
-- Keeps progress per user and syncs across devices
-- Lookup and apply metadata and cover art from several providers
-- Audiobook chapter editor w/ chapter lookup
-- Audiobook tools: Embed metadata in audio files & merge multiple audio files to a single m4b
-- Search and add podcasts to download episodes w/ auto-download
-- Open RSS feeds for audiobooks and podcast episodes
-- Backups with automated backup scheduling
-- Basic ebook support and ereader (epub, pdf, cbr, cbz) + send to device (i.e. Kindle)
+**Funcionalidades Principais:**
+- Suporte multi-utilizador com permissões personalizadas
+- Mantém o progresso por utilizador e sincroniza entre dispositivos
+- Pesquisa e aplica metadados e capas de vários fornecedores
+- Editor de capítulos de audiolivros com pesquisa de capítulos
+- Ferramentas de audiolivros: Incorpora metadados em ficheiros de áudio e une múltiplos ficheiros de áudio num único m4b
+- Pesquisa e adiciona podcasts para descarregar episódios com descarga automática
+- Feeds RSS abertos para audiolivros e episódios de podcast
+- Cópias de segurança com agendamento automatizado de cópias de segurança
+- Suporte básico de ebook e leitor eletrónico (epub, pdf, cbr, cbz) + envio para dispositivo (ex. Kindle)
 
-**Learn More:**
-- [Audiobookshelf Official Website](https://audiobookshelf.org)
-- [Audiobookshelf GitHub Repository](https://github.com/advplyr/audiobookshelf)
+**Saiba mais:**
+- [Site oficial do Audiobookshelf](https://audiobookshelf.org)
+- [Repositório GitHub do Audiobookshelf](https://github.com/advplyr/audiobookshelf)
 
 
 Categoria na App Store do RoqueOS: **Media**.
@@ -31,9 +31,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve  | Serviço        |
-| ----- | --------- | --------- | --------------- | -------------- |
-| 13378 | 80        | tcp       | WebUI HTTP Port | audiobookshelf |
+| Host  | Container | Protocolo | Para que serve   | Serviço        |
+| ----- | --------- | --------- | ---------------- | -------------- |
+| 13378 | 80        | tcp       | Porta HTTP WebUI | audiobookshelf |
 
 
 ## Volumes

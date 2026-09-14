@@ -40,7 +40,7 @@ services:
       ports:
         - container: '8200'
           description:
-            en_us: ''
+            en_us: "Web interface for Duplicati"
       volumes:
         - container: /config
           description:

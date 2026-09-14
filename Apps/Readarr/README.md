@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 8787 | 8787      | tcp       | —              | readarr |
+| Host | Container | Protocolo | Para que serve            | Serviço |
+| ---- | --------- | --------- | ------------------------- | ------- |
+| 8787 | 8787      | tcp       | Web interface for Readarr | readarr |
 
 
 ## Volumes

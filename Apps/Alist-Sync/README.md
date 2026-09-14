@@ -12,9 +12,9 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve | Serviço    |
-| ----- | --------- | --------- | -------------- | ---------- |
-| 52441 | 52441     | tcp       | —              | alist-sync |
+| Host  | Container | Protocolo | Para que serve               | Serviço    |
+| ----- | --------- | --------- | ---------------------------- | ---------- |
+| 52441 | 52441     | tcp       | Web interface for Alist-Sync | alist-sync |
 
 
 ## Volumes

@@ -11,7 +11,7 @@ services:
     image: liwei2633/gopeed:v1.8.3
     ports:
       - target: 9999
-        published: '9999'
+        published: "9999"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -25,7 +25,7 @@ services:
     privileged: false
     x-casaos:
       ports:
-        - container: '9999'
+        - container: "9999"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -42,6 +42,14 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP-порт WebUI
             tr_TR: WebUI HTTP Portu
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP-Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP-порт WebUI
+            ja_jp: WebUI HTTPポート
           protocol: tcp
       volumes:
         - container: /app/storage
@@ -61,6 +69,14 @@ services:
             pt_PT: Pasta de dados Gopeed
             ru_RU: Папка данных Gopeed
             tr_TR: Gopeed veri klasörü
+            en_us: Gopeed data folder
+            pt_br: Pasta de dados Gopeed
+            zh_cn: Gopeed数据文件夹
+            fr_fr: Dossier de données Gopeed
+            de_de: Gopeed-Datenordner
+            it_it: Cartella dati Gopeed
+            ru_ru: Папка данных Gopeed
+            ja_jp: Gopeedデータフォルダー
         - container: /app/Downloads
           description:
             en_US: Gopeed download folder
@@ -78,6 +94,14 @@ services:
             pt_PT: Pasta de downloads Gopeed
             ru_RU: Папка загрузок Gopeed
             tr_TR: Gopeed indirme klasörü
+            en_us: Gopeed download folder
+            pt_br: Pasta de downloads Gopeed
+            zh_cn: Gopeed下载文件夹
+            fr_fr: Dossier de téléchargement Gopeed
+            de_de: Gopeed-Download-Ordner
+            it_it: Cartella download Gopeed
+            ru_ru: Папка загрузок Gopeed
+            ja_jp: Gopeedダウンロードフォルダー
 x-casaos:
   architectures:
     - amd64
@@ -342,6 +366,142 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Gopeed Resmi Web Sitesi](https://gopeed.com)
       - [Gopeed GitHub Deposu](https://github.com/gopeedlab/gopeed)
+    en_us: |
+      Gopeed is a modern high-speed download tool supporting HTTP, BitTorrent, and Magnet protocols, offering a beautiful interface and powerful functionality. Its lightweight design and multi-platform support make it ideal for efficient file downloading across various devices.
+
+      The tool's core features include high-speed downloading and an elegant interface. It leverages Golang coroutines for concurrent downloading, supporting HTTP, HTTPS, BitTorrent, and Magnet protocols for fast, stable performance. The interface follows Material Design standards, including a dark mode, balancing aesthetics and usability. Advanced features include seeding, DHT, PEX, uTP, Webtorrent, and UPnP support, with daily automatic tracker list updates to enhance download efficiency.
+
+      It provides a RESTful API for open integration, allowing users to remotely control download tasks, pause, or delete them. Decentralized extensions enable JavaScript plugins to enhance functionality, such as downloading videos or music from websites. The tool's speed, flexibility, and user-friendly design deliver a modern download solution.
+
+      **Key Features:**
+      - High-speed downloading with HTTP, BitTorrent, Magnet protocols
+      - Seeding, DHT, PEX, uTP, Webtorrent, UPnP
+      - Daily automatic tracker list updates
+      - RESTful API for remote download task control
+      - Decentralized extensions with JavaScript plugins
+
+      **Learn More:**
+      - [Gopeed Official Website](https://gopeed.com)
+      - [Gopeed GitHub Repository](https://github.com/gopeedlab/gopeed)
+    pt_br: |
+      O Gopeed é uma ferramenta moderna de descarregamento de alta velocidade que suporta protocolos HTTP, BitTorrent e Magnet, oferecendo uma interface bonita e funcionalidade poderosa. O seu design leve e suporte multiplataforma tornam-no ideal para descarregamento eficiente de ficheiros em vários dispositivos.
+
+      As funcionalidades principais da ferramenta incluem descarregamento de alta velocidade e uma interface elegante. Aproveita as corrotinas Golang para descarregamento simultâneo, suportando protocolos HTTP, HTTPS, BitTorrent e Magnet para desempenho rápido e estável. A interface segue os padrões Material Design, incluindo um modo escuro, equilibrando estética e usabilidade. As funcionalidades avançadas incluem seeding, DHT, PEX, uTP, Webtorrent e suporte UPnP, com actualizações diárias automáticas da lista de trackers para melhorar a eficiência dos descarregamentos.
+
+      Fornece uma API RESTful para integração aberta, permitindo aos utilizadores controlar remotamente tarefas de descarregamento, pausá-las ou eliminá-las. As extensões descentralizadas permitem plugins JavaScript para melhorar a funcionalidade, como descarregar vídeos ou música de websites. A velocidade, flexibilidade e design amigável da ferramenta oferecem uma solução moderna de descarregamento.
+
+      **Funcionalidades Principais:**
+      - Descarregamento de alta velocidade com protocolos HTTP, BitTorrent, Magnet
+      - Seeding, DHT, PEX, uTP, Webtorrent, UPnP
+      - Actualizações diárias automáticas da lista de trackers
+      - API RESTful para controlo remoto de tarefas de descarregamento
+      - Extensões descentralizadas com plugins JavaScript
+
+      **Saber Mais:**
+      - [Website Oficial Gopeed](https://gopeed.com)
+      - [Repositório GitHub Gopeed](https://github.com/gopeedlab/gopeed)
+    zh_cn: |
+      Gopeed（直译过来中文名叫做够快下载器） 是一款现代化的高速下载工具，支持 HTTP、BitTorrent 和 Magnet 协议，提供美观的界面和强大的功能。其轻量设计和多平台支持，适合用户在各种设备上高效下载文件。
+
+      该工具的核心功能包括高速下载和优雅的界面。它利用 Golang 协程实现并发下载，支持 HTTP、HTTPS、BitTorrent 和 Magnet 协议，确保快速稳定的下载体验。界面遵循 Material Design 规范，提供暗色模式，兼具美观与实用。高级功能包括种子分享、DHT、PEX、uTP、Webtorrent 和 UPnP 支持，以及每日自动更新 tracker 列表，提升下载效率。
+
+      它通过 RESTful API 提供开放接口，允许用户远程控制下载、暂停或删除任务。去中心化扩展支持通过 JavaScript 编写插件，增强功能，如从网站下载视频或音乐。该工具以高速、灵活性和用户友好性为核心，提供现代化的下载解决方案。
+
+      **主要功能：**
+      - 支持 HTTP、BitTorrent、Magnet 协议的高速下载
+      - 种子分享、DHT、PEX、uTP、Webtorrent、UPnP
+      - 每日自动更新 tracker 列表
+      - 支持通过 RESTful API 远程控制下载任务
+      - 去中心化扩展，支持 JavaScript 插件
+
+      **了解更多：**
+      - [Gopeed 官方网站](https://gopeed.com)
+      - [Gopeed GitHub 仓库](https://github.com/gopeedlab/gopeed)
+    fr_fr: |
+      Gopeed est un outil de téléchargement moderne haute vitesse prenant en charge les protocoles HTTP, BitTorrent et Magnet, offrant une interface élégante et des fonctionnalités puissantes. Sa conception légère et son support multiplateforme le rendent idéal pour le téléchargement efficace de fichiers sur divers appareils.
+
+      Les fonctionnalités principales de l'outil incluent le téléchargement haute vitesse et une interface élégante. Il exploite les coroutines Golang pour le téléchargement concurrent, prenant en charge les protocoles HTTP, HTTPS, BitTorrent et Magnet pour des performances rapides et stables. L'interface suit les normes Material Design, incluant un mode sombre, équilibrant esthétique et utilisabilité. Les fonctionnalités avancées incluent le seeding, DHT, PEX, uTP, Webtorrent et le support UPnP, avec des mises à jour quotidiennes automatiques de la liste des trackers pour améliorer l'efficacité des téléchargements.
+
+      Il fournit une API RESTful pour l'intégration ouverte, permettant aux utilisateurs de contrôler à distance les tâches de téléchargement, les mettre en pause ou les supprimer. Les extensions décentralisées permettent les plugins JavaScript pour améliorer les fonctionnalités, comme télécharger des vidéos ou de la musique depuis des sites web. La vitesse, la flexibilité et la conception conviviale de l'outil offrent une solution de téléchargement moderne.
+
+      **Fonctionnalités Principales :**
+      - Téléchargement haute vitesse avec protocoles HTTP, BitTorrent, Magnet
+      - Seeding, DHT, PEX, uTP, Webtorrent, UPnP
+      - Mises à jour quotidiennes automatiques de la liste des trackers
+      - API RESTful pour le contrôle à distance des tâches de téléchargement
+      - Extensions décentralisées avec plugins JavaScript
+
+      **En Savoir Plus :**
+      - [Site Officiel Gopeed](https://gopeed.com)
+      - [Dépôt GitHub Gopeed](https://github.com/gopeedlab/gopeed)
+    de_de: |
+      Gopeed ist ein modernes Hochgeschwindigkeits-Download-Tool, das HTTP, BitTorrent und Magnet-Protokolle unterstützt und eine schöne Benutzeroberfläche mit leistungsstarken Funktionen bietet. Sein leichtgewichtiges Design und die Unterstützung mehrerer Plattformen machen es ideal für effizientes Herunterladen von Dateien auf verschiedenen Geräten.
+
+      Die Kernfunktionen des Tools umfassen Hochgeschwindigkeits-Downloads und eine elegante Benutzeroberfläche. Es nutzt Golang-Coroutinen für gleichzeitiges Herunterladen und unterstützt HTTP, HTTPS, BitTorrent und Magnet-Protokolle für schnelle, stabile Leistung. Die Benutzeroberfläche folgt Material Design-Standards, einschließlich eines dunklen Modus, und balanciert Ästhetik und Benutzerfreundlichkeit. Erweiterte Funktionen umfassen Seeding, DHT, PEX, uTP, Webtorrent und UPnP-Unterstützung sowie tägliche automatische Tracker-Listen-Updates zur Verbesserung der Download-Effizienz.
+
+      Es bietet eine RESTful API für offene Integration, die es Benutzern ermöglicht, Download-Aufgaben fernzusteuern, zu pausieren oder zu löschen. Dezentralisierte Erweiterungen ermöglichen JavaScript-Plugins zur Funktionserweiterung, wie das Herunterladen von Videos oder Musik von Websites. Die Geschwindigkeit, Flexibilität und benutzerfreundliche Gestaltung des Tools bieten eine moderne Download-Lösung.
+
+      **Hauptmerkmale:**
+      - Hochgeschwindigkeits-Downloads mit HTTP, BitTorrent, Magnet-Protokollen
+      - Seeding, DHT, PEX, uTP, Webtorrent, UPnP
+      - Tägliche automatische Tracker-Listen-Updates
+      - RESTful API für Fernsteuerung von Download-Aufgaben
+      - Dezentralisierte Erweiterungen mit JavaScript-Plugins
+
+      **Mehr Erfahren:**
+      - [Gopeed Offizielle Website](https://gopeed.com)
+      - [Gopeed GitHub Repository](https://github.com/gopeedlab/gopeed)
+    it_it: |
+      Gopeed è un moderno strumento di download ad alta velocità che supporta protocolli HTTP, BitTorrent e Magnet, offrendo un'interfaccia elegante e funzionalità potenti. Il suo design leggero e il supporto multipiattaforma lo rendono ideale per il download efficiente di file su vari dispositivi.
+
+      Le funzionalità principali dello strumento includono download ad alta velocità e un'interfaccia elegante. Sfrutta le coroutine di Golang per il download concorrente, supportando protocolli HTTP, HTTPS, BitTorrent e Magnet per prestazioni veloci e stabili. L'interfaccia segue gli standard Material Design, inclusa la modalità scura, bilanciando estetica e usabilità. Le funzionalità avanzate includono seeding, DHT, PEX, uTP, Webtorrent e supporto UPnP, con aggiornamenti giornalieri automatici della lista tracker per migliorare l'efficienza dei download.
+
+      Fornisce un'API RESTful per l'integrazione aperta, consentendo agli utenti di controllare remotamente le attività di download, metterle in pausa o eliminarle. Le estensioni decentralizzate abilitano plugin JavaScript per migliorare la funzionalità, come il download di video o musica da siti web. La velocità, flessibilità e design user-friendly dello strumento offrono una soluzione di download moderna.
+
+      **Caratteristiche Principali:**
+      - Download ad alta velocità con protocolli HTTP, BitTorrent, Magnet
+      - Seeding, DHT, PEX, uTP, Webtorrent, UPnP
+      - Aggiornamenti giornalieri automatici della lista tracker
+      - API RESTful per il controllo remoto delle attività di download
+      - Estensioni decentralizzate con plugin JavaScript
+
+      **Scopri di Più:**
+      - [Sito Ufficiale Gopeed](https://gopeed.com)
+      - [Repository GitHub Gopeed](https://github.com/gopeedlab/gopeed)
+    ru_ru: |
+      Gopeed - это современный инструмент высокоскоростной загрузки, поддерживающий протоколы HTTP, BitTorrent и Magnet, предлагающий красивый интерфейс и мощную функциональность. Его легкий дизайн и поддержка множественных платформ делают его идеальным для эффективной загрузки файлов на различных устройствах.
+
+      Основные функции инструмента включают высокоскоростную загрузку и элегантный интерфейс. Он использует корутины Golang для одновременной загрузки, поддерживая протоколы HTTP, HTTPS, BitTorrent и Magnet для быстрой, стабильной производительности. Интерфейс следует стандартам Material Design, включая темный режим, балансируя эстетику и удобство использования. Продвинутые функции включают сидирование, DHT, PEX, uTP, Webtorrent и поддержку UPnP, с ежедневными автоматическими обновлениями списка трекеров для повышения эффективности загрузки.
+
+      Он предоставляет RESTful API для открытой интеграции, позволяя пользователям удаленно управлять задачами загрузки, приостанавливать или удалять их. Децентрализованные расширения позволяют JavaScript плагины для улучшения функциональности, такие как загрузка видео или музыки с веб-сайтов. Скорость инструмента, гибкость и удобный дизайн обеспечивают современное решение для загрузки.
+
+      **Ключевые Особенности:**
+      - Высокоскоростная загрузка с протоколами HTTP, BitTorrent, Magnet
+      - Сидирование, DHT, PEX, uTP, Webtorrent, UPnP
+      - Ежедневные автоматические обновления списка трекеров
+      - RESTful API для удаленного управления задачами загрузки
+      - Децентрализованные расширения с JavaScript плагинами
+
+      **Узнать Больше:**
+      - [Официальный Сайт Gopeed](https://gopeed.com)
+      - [GitHub Репозиторий Gopeed](https://github.com/gopeedlab/gopeed)
+    ja_jp: |
+      Gopeedは、HTTP、BitTorrent、Magnetプロトコルをサポートする現代的な高速ダウンロードツールで、美しいインターフェースと強力な機能を提供します。軽量設計とマルチプラットフォームサポートにより、さまざまなデバイスでの効率的なファイルダウンロードに最適です。
+
+      このツールの中核機能には、高速ダウンロードとエレガントなインターフェースが含まれます。Golangコルーチンを活用して同時ダウンロードを実現し、HTTP、HTTPS、BitTorrent、Magnetプロトコルをサポートして高速で安定したパフォーマンスを提供します。インターフェースはMaterial Design標準に従い、ダークモードを含む美観と使いやすさのバランスを取っています。高度な機能には、シーディング、DHT、PEX、uTP、Webtorrent、UPnPサポート、および毎日の自動トラッカーリスト更新によるダウンロード効率の向上が含まれます。
+
+      オープンインテグレーション用のRESTful APIを提供し、ユーザーがダウンロードタスクをリモート制御、一時停止、削除できます。分散型拡張機能により、Webサイトからビデオや音楽をダウンロードするなどの機能を強化するJavaScriptプラグインが可能になります。このツールの速度、柔軟性、ユーザーフレンドリーなデザインは、現代的なダウンロードソリューションを提供します。
+
+      **主な機能：**
+      - HTTP、BitTorrent、Magnetプロトコルによる高速ダウンロード
+      - シーディング、DHT、PEX、uTP、Webtorrent、UPnP
+      - 毎日の自動トラッカーリスト更新
+      - ダウンロードタスクのリモート制御用RESTful API
+      - JavaScriptプラグインによる分散型拡張機能
+
+      **詳細はこちら：**
+      - [Gopeed公式ウェブサイト](https://gopeed.com)
+      - [Gopeed GitHubリポジトリ](https://github.com/gopeedlab/gopeed)
   developer: GopeedLab
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Gopeed/icon.png
   screenshot_link:
@@ -364,11 +524,19 @@ x-casaos:
     pt_PT: Código aberto, leve, nativo, suporta (HTTP, BitTorrent, Magnet, etc.) para descarregamento.
     ru_RU: Открытый исходный код, легкий, нативный, поддерживает (HTTP, BitTorrent, Magnet и т.д.) для загрузки.
     tr_TR: Açık kaynak, hafif, yerel, indirme için (HTTP, BitTorrent, Magnet, vb.) destekler.
+    en_us: Open source, lightweight, native, supports (HTTP, BitTorrent, Magnet, etc.) for downloading.
+    pt_br: Código aberto, leve, nativo, suporta (HTTP, BitTorrent, Magnet, etc.) para descarregamento.
+    zh_cn: 开源、轻量级、原生、支持（HTTP、BitTorrent、Magnet等）下载。
+    fr_fr: Open source, léger, natif, prend en charge (HTTP, BitTorrent, Magnet, etc.) pour le téléchargement.
+    de_de: Open Source, leichtgewichtig, nativ, unterstützt (HTTP, BitTorrent, Magnet, etc.) zum Herunterladen.
+    it_it: Open source, leggero, nativo, supporta (HTTP, BitTorrent, Magnet, ecc.) per il download.
+    ru_ru: Открытый исходный код, легкий, нативный, поддерживает (HTTP, BitTorrent, Magnet и т.д.) для загрузки.
+    ja_jp: オープンソース、軽量、ネイティブ、ダウンロード用（HTTP、BitTorrent、Magnetなど）をサポート。
   title:
     en_us: Gopeed
     pt_br: Gopeed
   index: /
-  port_map: '9999'
+  port_map: "9999"
   scheme: http
 x-roqueos:
   mountShared: true

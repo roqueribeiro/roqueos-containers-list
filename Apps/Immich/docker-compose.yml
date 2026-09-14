@@ -1,6 +1,11 @@
 name: immich
 services:
   immich-server:
+    x-casaos:
+      ports:
+        - container: '2283'
+          description:
+            en_us: "Web interface for Immich"
     deploy:
       resources:
         reservations:
@@ -16,7 +21,7 @@ services:
       DB_PASSWORD: postgres
       DB_USERNAME: postgres
     ports:
-      - '2283:2283'
+      - "2283:2283"
     depends_on:
       - redis
       - database
@@ -59,7 +64,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
       POSTGRES_DB: immich
-      POSTGRES_INITDB_ARGS: '--data-checksums'
+      POSTGRES_INITDB_ARGS: "--data-checksums"
     volumes:
       - /DATA/AppData/immich/pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -69,17 +74,17 @@ services:
       start_period: 5m
     command:
       - postgres
-      - '-c'
+      - "-c"
       - shared_preload_libraries=vectors.so
-      - '-c'
+      - "-c"
       - search_path="$$user", public, vectors
-      - '-c'
+      - "-c"
       - logging_collector=on
-      - '-c'
+      - "-c"
       - max_wal_size=2GB
-      - '-c'
+      - "-c"
       - shared_buffers=512MB
-      - '-c'
+      - "-c"
       - wal_compression=on
     restart: unless-stopped
     networks:
@@ -223,6 +228,70 @@ x-casaos:
       Immich, mobil cihazlardan otomatik yedekleme, medya tarama için şık bir web tabanlı arayüz ve yüz tanıma ile nesne algılama gibi gelişmiş özellikleriyle öne çıkar. Medyalarınızı konuma göre düzenleyebilir, 4K video oynatımının keyfini çıkarabilir ve hatta RAW fotoğrafları yönetebilirsiniz. Ayrıca, çok kullanıcılı destek sayesinde arkadaşlarınız ve ailenizle anıları paylaşmak çok kolay. En iyi yanı? Immich, bu güçlü özellikleri düşük maliyetle sunarak bütçenizi zorlamadan birinci sınıf bir deneyim sağlar.
 
       Immich'i Zima gibi özel bir bulut cihazına kurmak, eşsiz bir kolaylık sunar. Sınırsız depolama kapasitesinin, yıldırım hızında yerel ağ hızlarının ve birden fazla cihazdan kolay erişimin keyfini çıkarın. Zima özel bulutunuzdaki immich ile medyalarınız her zaman parmaklarınızın ucunda, evinizde güvenli ve emniyettedir.
+    en_us: |
+      Immich: Revolutionizing Your Home Media Experience
+
+      Immich is here to transform the way you manage and enjoy your media files across your home TV, smartphones, and other devices. Unlike traditional photo albums or mainstream cloud services, immich offers a seamless and modern platform for organizing, sharing, and accessing your photos and videos. Imagine effortlessly backing up your precious moments from your mobile devices and viewing them instantly on your TV or sharing them with family members—immich makes it all possible.
+
+      Immich stands out with its automatic backup from mobile devices, a sleek web-based interface for easy media browsing, and advanced features like face recognition and object detection. You can organize your media by location, enjoy 4K video playback, and even manage RAW photos. Plus, with multi-user support, sharing memories with friends and family is a breeze. The best part? Immich offers these powerful features for low cost, ensuring you get a premium experience without breaking the bank.
+
+      Deploying immich on a private cloud device like Zima brings unparalleled convenience. Enjoy unlimited storage capacity, blazing-fast local network speeds, and easy multi-device access. With immich on your Zima private cloud, your media is always at your fingertips, safe and secure in your home.
+    pt_br: |
+      Immich: Revolucionando a Sua Experiência Multimédia em Casa
+
+      O Immich está aqui para transformar a forma como gere e desfruta dos seus ficheiros multimédia na televisão de casa, smartphones e outros dispositivos. Ao contrário dos álbuns de fotos tradicionais ou dos serviços de nuvem convencionais, o immich oferece uma plataforma moderna e fluida para organizar, partilhar e aceder às suas fotos e vídeos. Imagine fazer o backup dos seus momentos preciosos a partir dos seus dispositivos móveis sem esforço e visualizá-los instantaneamente na sua televisão ou partilhá-los com membros da família—o immich torna tudo isso possível.
+
+      O Immich destaca-se pelo backup automático a partir de dispositivos móveis, uma interface web elegante para uma navegação fácil pelos conteúdos e funcionalidades avançadas como reconhecimento facial e deteção de objetos. Pode organizar os seus conteúdos por localização, desfrutar da reprodução de vídeos em 4K e até gerir fotos RAW. Além disso, com suporte multiutilizador, partilhar memórias com amigos e família é extremamente simples. A melhor parte? O Immich oferece estas funcionalidades poderosas a baixo custo, garantindo uma experiência premium sem gastar muito.
+
+      Implementar o immich num dispositivo de nuvem privada como o Zima proporciona uma conveniência incomparável. Desfrute de capacidade de armazenamento ilimitada, velocidades de rede local extremamente rápidas e acesso fácil a partir de múltiplos dispositivos. Com o immich na sua nuvem privada Zima, os seus conteúdos estão sempre ao seu alcance, seguros e protegidos em sua casa.
+    zh_cn: |
+      Immich：革新您的家庭媒体体验
+
+      Immich 致力于改变您在家庭电视、智能手机和其他设备上管理和享受媒体文件的方式。与传统相册或主流云服务不同，Immich 提供了一个无缝且现代的平台，用于组织、分享和访问您的照片和视频。想象一下，从移动设备轻松备份您珍贵的时刻，立即在电视上观看，或与家人分享——Immich 让这一切成为可能。
+
+      Immich 以其从移动设备自动备份、优雅的基于网页的界面便于浏览媒体，以及人脸识别和物体检测等高级功能而脱颖而出。您可以按位置组织媒体，享受 4K 视频播放，甚至管理 RAW 格式照片。此外，通过多用户支持，与朋友和家人分享回忆变得轻而易举。最棒的是？Immich 以低成本提供这些强大功能，确保您无需花费过多即可获得优质体验。
+
+      在 Zima 等私有云设备上部署 Immich 带来无与伦比的便利。享受无限存储容量、极快的本地网络速度和轻松的多设备访问。使用 Zima 私有云上的 Immich，您的媒体始终触手可及，在家中安全无忧。
+    fr_fr: |
+      Immich : Révolutionnez votre expérience multimédia à domicile
+
+      Immich est là pour transformer la façon dont vous gérez et profitez de vos fichiers multimédias sur votre télévision, smartphones et autres appareils. Contrairement aux albums photo traditionnels ou aux services cloud grand public, immich offre une plateforme moderne et fluide pour organiser, partager et accéder à vos photos et vidéos. Imaginez sauvegarder sans effort vos précieux moments depuis vos appareils mobiles et les visualiser instantanément sur votre télévision ou les partager avec vos proches—immich rend tout cela possible.
+
+      Immich se distingue par sa sauvegarde automatique depuis les appareils mobiles, une interface web élégante pour naviguer facilement dans vos contenus, et des fonctionnalités avancées comme la reconnaissance faciale et la détection d'objets. Vous pouvez organiser vos médias par localisation, profiter de la lecture de vidéos en 4K, et même gérer des photos RAW. De plus, avec le support multi-utilisateur, partager des souvenirs avec vos amis et votre famille est un jeu d'enfant. Le meilleur ? Immich propose ces puissantes fonctionnalités à faible coût, vous offrant une expérience premium sans vous ruiner.
+
+      Déployer immich sur un appareil cloud privé comme Zima offre une commodité inégalée. Profitez d'une capacité de stockage illimitée, de vitesses de réseau local ultra-rapides, et d'un accès multi-appareils simplifié. Avec immich sur votre cloud privé Zima, vos médias sont toujours à portée de main, en sécurité chez vous.
+    de_de: |
+      Immich: Revolutionieren Sie Ihr Medien-Erlebnis zu Hause
+
+      Immich ist da, um die Art und Weise, wie Sie Ihre Mediendateien auf Ihrem Heim-TV, Smartphones und anderen Geräten verwalten und genießen, zu verändern. Im Gegensatz zu traditionellen Fotoalben oder gängigen Cloud-Diensten bietet immich eine nahtlose und moderne Plattform zum Organisieren, Teilen und Abrufen Ihrer Fotos und Videos. Stellen Sie sich vor, Sie sichern mühelos Ihre wertvollen Momente von Ihren mobilen Geräten und können sie sofort auf Ihrem Fernseher ansehen oder mit Familienmitgliedern teilen – immich macht all das möglich.
+
+      Immich hebt sich durch automatische Backups von Mobilgeräten, eine elegante webbasierte Benutzeroberfläche für einfaches Medienbrowsing und fortschrittliche Funktionen wie Gesichtserkennung und Objekterkennung ab. Sie können Ihre Medien nach Standort organisieren, 4K-Videowiedergabe genießen und sogar RAW-Fotos verwalten. Mit der Unterstützung für mehrere Benutzer ist das Teilen von Erinnerungen mit Freunden und Familie kinderleicht. Das Beste daran? Immich bietet diese leistungsstarken Funktionen zu geringen Kosten, sodass Sie ein Premium-Erlebnis erhalten, ohne Ihr Budget zu sprengen.
+
+      Das Bereitstellen von immich auf einem privaten Cloud-Gerät wie Zima bietet unvergleichlichen Komfort. Genießen Sie unbegrenzte Speicherkapazität, blitzschnelle lokale Netzwerkgeschwindigkeiten und einfachen Zugriff von mehreren Geräten. Mit immich auf Ihrer privaten Zima-Cloud sind Ihre Medien immer griffbereit, sicher und geschützt in Ihrem Zuhause.
+    it_it: |
+      Immich: Rivoluziona la tua esperienza multimediale domestica
+
+      Immich è qui per trasformare il modo in cui gestisci e godi dei tuoi file multimediali su TV, smartphone e altri dispositivi. A differenza degli album fotografici tradizionali o dei servizi cloud mainstream, immich offre una piattaforma moderna e fluida per organizzare, condividere e accedere alle tue foto e video. Immagina di eseguire il backup dei tuoi momenti preziosi dai dispositivi mobili in modo semplice e di visualizzarli istantaneamente sulla tua TV o condividerli con i membri della famiglia: immich rende tutto questo possibile.
+
+      Immich si distingue per il backup automatico dai dispositivi mobili, un'interfaccia web elegante per una facile navigazione dei contenuti e funzionalità avanzate come il riconoscimento facciale e il rilevamento di oggetti. Puoi organizzare i tuoi contenuti per posizione, goderti la riproduzione di video in 4K e persino gestire foto RAW. Inoltre, con il supporto multiutente, condividere ricordi con amici e familiari è semplicissimo. La parte migliore? Immich offre queste potenti funzionalità a basso costo, garantendo un'esperienza premium senza spendere una fortuna.
+
+      Installare immich su un dispositivo cloud privato come Zima offre una comodità senza pari. Goditi una capacità di archiviazione illimitata, velocità di rete locale incredibilmente rapide e un facile accesso multi-dispositivo. Con immich sul tuo cloud privato Zima, i tuoi contenuti sono sempre a portata di mano, sicuri e protetti a casa tua.
+    ru_ru: |
+      Immich: Революция в управлении домашними медиа
+
+      Immich меняет подход к управлению и наслаждению медиафайлами на вашем домашнем телевизоре, смартфонах и других устройствах. В отличие от традиционных фотоальбомов или популярных облачных сервисов, Immich предлагает бесшовную и современную платформу для организации, обмена и доступа к вашим фотографиям и видео. Представьте, как легко создавать резервные копии ваших драгоценных моментов с мобильных устройств и мгновенно просматривать их на телевизоре или делиться ими с членами семьи — Immich делает это возможным.
+
+      Immich выделяется автоматическим резервным копированием с мобильных устройств, стильным веб-интерфейсом для удобного просмотра медиа и продвинутыми функциями, такими как распознавание лиц и обнаружение объектов. Вы можете организовывать медиа по местоположению, наслаждаться воспроизведением видео в 4K и даже управлять фотографиями в формате RAW. Благодаря поддержке нескольких пользователей делиться воспоминаниями с друзьями и семьей проще простого. И самое лучшее? Immich предлагает эти мощные функции по низкой цене, обеспечивая премиальный опыт без лишних затрат.
+
+      Развертывание Immich на частном облачном устройстве, таком как Zima, обеспечивает непревзойденное удобство. Наслаждайтесь неограниченной емкостью хранилища, молниеносной скоростью локальной сети и легким доступом с нескольких устройств. С Immich на вашем частном облаке Zima ваши медиа всегда под рукой, надежно и безопасно в вашем доме.
+    ja_jp: |
+      Immich：家庭メディア体験の革新
+
+      Immichは、家庭のテレビ、スマートフォン、その他のデバイスでメディアファイルを管理し、楽しむ方法を一変させます。従来のフォトアルバムや主流のクラウドサービスとは異なり、Immichは写真やビデオの整理、共有、アクセスを簡単に行える、シームレスでモダンなプラットフォームを提供します。モバイルデバイスから大切な瞬間を簡単にバックアップし、テレビで即座に視聴したり、家族と共有したりすることを想像してみてください—Immichがそれを実現します。
+
+      Immichは、モバイルデバイスからの自動バックアップ、メディアを簡単に閲覧できる洗練されたウェブベースのインターフェース、顔認識や物体検出などの高度な機能で際立っています。位置情報に基づいてメディアを整理したり、4Kビデオの再生を楽しんだり、RAW写真を管理したりできます。さらに、複数ユーザー対応により、友人や家族との思い出の共有が簡単です。最大の魅力は？Immichはこれらの強力な機能を低コストで提供し、予算を抑えながらプレミアムな体験を保証します。
+
+      ZimaのようなプライベートクラウドデバイスにImmichを導入することで、比類ない利便性が得られます。無制限のストレージ容量、超高速なローカルネットワーク速度、複数のデバイスからの簡単なアクセスが可能です。Zimaプライベートクラウド上のImmichを使えば、メディアは常に手の届くところにあり、家庭内で安全に保護されます。
   tagline:
     en_US: Self-hosted media management solution
     en_GB: Self-hosted media management solution
@@ -239,6 +308,14 @@ x-casaos:
     pt_PT: Solução de gestão de multimédia auto-hospedada
     ru_RU: Самоуправляемое решение для управления медиа
     tr_TR: Kendi kendine barındırılan medya yönetimi çözümü
+    en_us: Self-hosted media management solution
+    pt_br: Solução de gestão de multimédia auto-hospedada
+    zh_cn: 自托管媒体管理解决方案
+    fr_fr: Solution de gestion multimédia auto-hébergée
+    de_de: Selbstgehostete Medienverwaltungslösung
+    it_it: Soluzione di gestione multimediale self-hosted
+    ru_ru: Самоуправляемое решение для управления медиа
+    ja_jp: セルフホスト型メディア管理ソリューション
   title:
     en_us: Immich
   tips:
@@ -408,6 +485,94 @@ x-casaos:
         2. immich-server sekmesinde, Volumes bölümünde albüm depolama konumunuzu eşleştirin (varsayılan `/DATA/Gallery/immich`).
 
         Tam proje dokümantasyonu ve kurulum talimatları için lütfen [buraya](https://immich.app) bakın.
-  port_map: '2283'
+      en_us: |
+        ⚠️ The project is under very active development.
+        ⚠️ Expect bugs and breaking changes.
+        ⚠️ Do not use the app as the only way to store your photos and videos.
+        ⚠️ Always follow 3-2-1 backup plan for your precious photos and videos!
+
+        ## Authorized Media Files and Data
+        1. Click on the settings icon in the upper right corner of the App.
+        2. In the immich-server tab, map your album storage location in the Volumes section (default is `/DATA/Gallery/immich`).
+
+        For complete project documentation and installation instructions, please [refer to](https://immich.app).
+      pt_br: |
+        ⚠️ O projeto está em desenvolvimento muito ativo.
+        ⚠️ Espere bugs e alterações que podem causar problemas.
+        ⚠️ Não utilize a aplicação como a única forma de armazenar as suas fotos e vídeos.
+        ⚠️ Siga sempre o plano de backup 3-2-1 para as suas fotos e vídeos valiosos!
+
+        ## Ficheiros multimédia e dados autorizados
+        1. Clique no ícone de configurações no canto superior direito da aplicação.
+        2. Na aba immich-server, mapeie a localização de armazenamento do seu álbum na secção Volumes (o padrão é `/DATA/Gallery/immich`).
+
+        Para a documentação completa do projeto e instruções de instalação, por favor [consulte](https://immich.app).
+      zh_cn: |
+        ⚠️ 该项目正处于非常活跃的开发阶段。
+        ⚠️ 可能会出现错误和重大变更。
+        ⚠️ 请勿将该应用作为存储照片和视频的唯一方式。
+        ⚠️ 请始终遵循 3-2-1 备份计划以保护您珍贵的照片和视频！
+
+        ## 授权的媒体文件和数据
+        1. 点击应用右上角的设置图标。
+        2. 在 immich-server 选项卡中，在 Volumes 部分映射您的相册存储位置（默认为 `/DATA/Gallery/immich`）。
+
+        有关完整的项目文档和安装说明，请[参考](https://immich.app)。
+      fr_fr: |
+        ⚠️ Le projet est en développement très actif.
+        ⚠️ Attendez-vous à des bugs et des changements majeurs.
+        ⚠️ N'utilisez pas l'application comme seul moyen de stocker vos photos et vidéos.
+        ⚠️ Suivez toujours le plan de sauvegarde 3-2-1 pour vos photos et vidéos précieuses !
+
+        ## Fichiers multimédias et données autorisés
+        1. Cliquez sur l'icône des paramètres dans le coin supérieur droit de l'application.
+        2. Dans l'onglet immich-server, mappez l'emplacement de stockage de votre album dans la section Volumes (par défaut : `/DATA/Gallery/immich`).
+
+        Pour la documentation complète du projet et les instructions d'installation, veuillez [consulter](https://immich.app).
+      de_de: |
+        ⚠️ Das Projekt befindet sich in sehr aktiver Entwicklung.
+        ⚠️ Erwarten Sie Fehler und einschneidende Änderungen.
+        ⚠️ Verwenden Sie die App nicht als einzige Möglichkeit, Ihre Fotos und Videos zu speichern.
+        ⚠️ Befolgen Sie immer den 3-2-1-Backup-Plan für Ihre wertvollen Fotos und Videos!
+
+        ## Autorisierte Mediendateien und Daten
+        1. Klicken Sie auf das Einstellungssymbol in der oberen rechten Ecke der App.
+        2. Legen Sie im immich-server-Tab den Speicherort Ihres Albums im Abschnitt Volumes fest (Standard ist `/DATA/Gallery/immich`).
+
+        Für die vollständige Projektdokumentation und Installationsanweisungen, bitte [hier klicken](https://immich.app).
+      it_it: |
+        ⚠️ Il progetto è in fase di sviluppo molto attivo.
+        ⚠️ Aspettatevi bug e modifiche che potrebbero causare problemi.
+        ⚠️ Non utilizzate l'app come unico mezzo per archiviare foto e video.
+        ⚠️ Seguite sempre il piano di backup 3-2-1 per le vostre foto e video preziosi!
+
+        ## File multimediali e dati autorizzati
+        1. Cliccate sull'icona delle impostazioni nell'angolo superiore destro dell'app.
+        2. Nella scheda immich-server, mappate la posizione di archiviazione dell'album nella sezione Volumi (il valore predefinito è `/DATA/Gallery/immich`).
+
+        Per la documentazione completa del progetto e le istruzioni di installazione, consultate [qui](https://immich.app).
+      ru_ru: |
+        ⚠️ Проект находится в стадии активной разработки.
+        ⚠️ Ожидайте ошибок и изменений, которые могут вызвать проблемы.
+        ⚠️ Не используйте приложение как единственный способ хранения ваших фотографий и видео.
+        ⚠️ Всегда следуйте плану резервного копирования 3-2-1 для ваших ценных фотографий и видео!
+
+        ## Авторизованные медиафайлы и данные
+        1. Нажмите на значок настроек в правом верхнем углу приложения.
+        2. На вкладке immich-server укажите расположение хранилища альбома в разделе Volumes (по умолчанию `/DATA/Gallery/immich`).
+
+        Полную документацию по проекту и инструкции по установке можно найти [здесь](https://immich.app).
+      ja_jp: |
+        ⚠️ このプロジェクトは非常に活発な開発中です。
+        ⚠️ バグや破壊的変更が予想されます。
+        ⚠️ 写真やビデオを保存する唯一の手段としてアプリを使用しないでください。
+        ⚠️ 大切な写真やビデオには常に3-2-1バックアップ計画に従ってください！
+
+        ## 許可されたメディアファイルとデータ
+        1. アプリの右上にある設定アイコンをクリックします。
+        2. immich-serverタブで、ボリュームセクションにアルバムの保存場所をマッピングします（デフォルトは`/DATA/Gallery/immich`）。
+
+        プロジェクトの完全なドキュメントとインストール手順については、[こちら](https://immich.app)を参照してください。
+  port_map: "2283"
   scheme: http
   index: /

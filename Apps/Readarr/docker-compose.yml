@@ -40,7 +40,7 @@ services:
       ports:
         - container: '8787'
           description:
-            en_us: ''
+            en_us: "Web interface for Readarr"
       volumes:
         - container: /config
           description:

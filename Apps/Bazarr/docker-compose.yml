@@ -40,7 +40,7 @@ services:
       ports:
         - container: '6767'
           description:
-            en_us: ''
+            en_us: "Web interface for Bazarr"
       volumes:
         - container: /movies
           description:

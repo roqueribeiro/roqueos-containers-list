@@ -17,6 +17,7 @@ Arquiteturas suportadas: amd64, arm64, arm.
 | 443  | 443       | tcp       | Nginx HTTPS Port | nginxproxymanager |
 | 81   | 81        | tcp       | WebUI Port       | nginxproxymanager |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

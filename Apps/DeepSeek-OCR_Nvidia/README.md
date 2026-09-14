@@ -1,25 +1,25 @@
 # DeepSeek OCR(Nvidia GPU)
 
-> Powerful OCR powered by DeepSeek AI
+> OCR poderoso alimentado por DeepSeek AI
 
 ## O que é
 
-DeepSeek OCR is a powerful open-source OCR (Optical Character Recognition) tool based on the advanced DeepSeek-AI model. It enables accurate text extraction from images and document scans via a user-friendly web interface and API. Supports various image formats and offers configurations for image size, cropping, and upload limits. Additionally, DeepSeek OCR features four core recognition modes: Plain OCR for raw text extraction, Describe for intelligent image content descriptions, Find for keyword localization with visual bounding box returns, and Freeform for flexible image understanding tasks based on custom prompts.
+DeepSeek OCR é uma ferramenta OCR (Reconhecimento Ótico de Caracteres) open source poderosa baseada no modelo avançado DeepSeek-AI. Permite a extração precisa de texto de imagens e digitalizações de documentos via interface web amigável ao usuário e API. Suporta vários formatos de imagem e oferece configurações para tamanho de imagem, corte e limites de upload. Além disso, o DeepSeek OCR apresenta quatro modos de reconhecimento principais: Plain OCR para extração de texto bruto, Describe para descrições inteligentes de conteúdo de imagem, Find para localização de palavras-chave com retorno de caixas delimitadoras visuais e Freeform para tarefas flexíveis de compreensão de imagem baseadas em prompts personalizados.
 
-**Key Features:**
-- High-accuracy text recognition with DeepSeek-OCR, supporting images and multi-page PDF documents
-- Preserves document layout including tables, formulas, and structural formatting
-- Web frontend (React) and REST API (FastAPI) for easy usage and system integration
-- Export results to Markdown, HTML, DOCX, or JSON formats
-- Automatic extraction and embedding of images from PDF files
-- GPU acceleration and Docker deployment for fast and scalable processing
+**Funcionalidades Principais:**
+- Reconhecimento de texto de alta precisão com DeepSeek-OCR, suportando imagens e documentos PDF de múltiplas páginas
+- Preserva o layout do documento incluindo tabelas, fórmulas e formatação estrutural
+- Frontend web (React) e API REST (FastAPI) para uso fácil e integração do sistema
+- Exporte resultados para formatos Markdown, HTML, DOCX ou JSON
+- Extração e incorporação automáticas de imagens de arquivos PDF
+- Aceleração GPU e implantação Docker para processamento rápido e escalável
 
-**Prerequisites:**
-- ZimaOS version 1.5.2 or higher, or NVIDIA Open Driver version 580 or higher
-- NVIDIA GPU with >= 8 GB VRAM for optimal performance
+**Pré-requisitos:**
+- ZimaOS versão 1.5.2 ou superior, ou NVIDIA Open Driver versão 580 ou superior
+- GPU NVIDIA com >= 8 GB de VRAM para desempenho ótimo
 
-**Learn More:**
-- [DeepSeek OCR App (GitHub)](https://github.com/rdumasia303/deepseek_ocr_app)
+**Saiba Mais:**
+- [Aplicação DeepSeek OCR (GitHub)](https://github.com/rdumasia303/deepseek_ocr_app)
 
 
 Categoria na App Store do RoqueOS: **AI**.
@@ -27,11 +27,12 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve    | Serviço               |
-| ----- | --------- | --------- | ----------------- | --------------------- |
-| 22523 | 8000      | tcp       | Backend API Port  | deepseek-ocr-backend  |
-| 23000 | 80        | tcp       | Frontend Web Port | deepseek-ocr-frontend |
+| Host  | Container | Protocolo | Para que serve     | Serviço               |
+| ----- | --------- | --------- | ------------------ | --------------------- |
+| 22523 | 8000      | tcp       | Porta API Backend  | deepseek-ocr-backend  |
+| 23000 | 80        | tcp       | Porta Web Frontend | deepseek-ocr-frontend |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 
@@ -59,7 +60,7 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:23000/`.
 
-- The first run will download the model (~5-10GB), which may take some time.
+- Na primeira execução será transferido o modelo (~5-10GB), o que pode demorar algum tempo.
 
 ## Imagens
 

@@ -1,6 +1,11 @@
 name: rdtclient
 services:
   rdtclient:
+    x-casaos:
+      ports:
+        - container: '6500'
+          description:
+            en_us: "Web interface for Real-Debrid Torrent Client"
     environment:
       PGID: $PGID
       PUID: $PUID

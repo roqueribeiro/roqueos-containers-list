@@ -50,6 +50,18 @@ services:
             en_us: timezone
             zh_cn: 时区
       ports:
+        - container: '27017'
+          description:
+            en_us: "banco MongoDB (port 27017)"
+        - container: '3478'
+          description:
+            en_us: "Service port 3478 of unifi-network-application"
+        - container: '10001'
+          description:
+            en_us: "Service port 10001 of unifi-network-application"
+        - container: '8080'
+          description:
+            en_us: "Service port 8080 of unifi-network-application"
         - container: '8443'
           description:
             en_us: WebUI HTTP Port
@@ -145,3 +157,6 @@ x-casaos:
   store_app_id: unifi-network-application
   title:
     en_us: Unifi Network Application
+
+x-roqueos:
+  portaCompartilhada: true

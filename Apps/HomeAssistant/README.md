@@ -1,31 +1,31 @@
 # Home Assistant
 
-> Open source home automation that puts local control and privacy first.
+> Automatização doméstica de código aberto que prioriza o controlo local e a privacidade.
 
 ## O que é
 
-Home Assistant is a smart home management app prioritizing local control and data privacy, managing devices through an intuitive interface with data stored locally, eliminating cloud dependency. Its robust features and community support make it ideal for DIY enthusiasts and home users creating personalized home experiences.
+Home Assistant é uma aplicação de gestão de casa inteligente que prioriza o controlo local e a privacidade de dados, gerindo dispositivos através de uma interface intuitiva com dados armazenados localmente, eliminando a dependência da nuvem. As suas funcionalidades robustas e o apoio da comunidade tornam-na ideal para entusiastas DIY e utilizadores domésticos que criam experiências domésticas personalizadas.
 
-The app's core features include customizable dashboards, powerful automations, and a voice assistant. Dashboards support drag-and-drop customization, with various card types to display data and control devices like lights or sensors. It offers an advanced automation engine, such as turning on lights at sunset or alerting users to an open garage door. The Assist voice assistant enables natural language control, compatible with phones, tablets, smartwatches, and even traditional telephones, allowing users to customize interactions and experiment with AI conversations to meet diverse needs.
+As funcionalidades principais da aplicação incluem painéis personalizáveis, automatizações poderosas e um assistente de voz. Os painéis suportam personalização arrastar e largar, com vários tipos de cartões para exibir dados e controlar dispositivos como luzes ou sensores. Oferece um motor de automatização avançado, como acender luzes ao pôr do sol ou alertar utilizadores sobre uma porta de garagem aberta. O assistente de voz Assist permite controlo em linguagem natural, compatível com telefones, tablets, smartwatches e até telefones tradicionais, permitindo aos utilizadores personalizar interações e experimentar com conversas AI para atender diversas necessidades.
 
-It extends functionality through add-ons, supporting tools like AdGuard for ad blocking, NodeRed for third-party automations, or turning devices into Spotify Connect targets. Home energy management optimizes solar production and usage planning to save costs. Home Assistant Cast transforms TVs into dashboard displays, and NFC tags trigger music playback or routine automations. Community documentation aids configuration, with local data processing ensuring privacy, suitable for home or small team smart home management.
+Estende a funcionalidade através de complementos, suportando ferramentas como AdGuard para bloqueio de anúncios, NodeRed para automatizações de terceiros, ou transformar dispositivos em alvos Spotify Connect. A gestão de energia doméstica otimiza a produção solar e o planeamento de uso para poupar custos. Home Assistant Cast transforma TVs em ecrãs de painel, e etiquetas NFC acionam reprodução musical ou automatizações de rotina. A documentação da comunidade ajuda na configuração, com processamento local de dados garantindo privacidade, adequada para gestão de casa inteligente doméstica ou pequena equipa.
 
-**Key Features:**
-- Local data storage, prioritizing privacy
-- Drag-and-drop customizable dashboards for device control and data display
-- Advanced automations for triggering smart home events
-- Assist voice assistant for natural language control
-- Add-ons for integrating AdGuard, NodeRed, and more
-- Home energy management for optimized usage and cost savings
-- Home Assistant Cast for TV dashboard displays
-- NFC tags for triggering music or automation tasks
+**Características Principais:**
+- Armazenamento local de dados, priorizando privacidade
+- Painéis personalizáveis arrastar e largar para controlo de dispositivos e exibição de dados
+- Automatizações avançadas para acionar eventos de casa inteligente
+- Assistente de voz Assist para controlo em linguagem natural
+- Complementos para integrar AdGuard, NodeRed e mais
+- Gestão de energia doméstica para uso otimizado e poupança de custos
+- Home Assistant Cast para ecrãs de painel de TV
+- Etiquetas NFC para acionar música ou tarefas de automatização
 
-**Learn More:**
-- [Home Assistant Official Website](https://www.home-assistant.io)
-- [Home Assistant GitHub Repository](https://github.com/home-assistant/core)
-- [Home Assistant Documentation](https://www.home-assistant.io/docs)
-- [Home Assistant Community](https://community.home-assistant.io)
-- [Home Assistant Add-ons](https://www.home-assistant.io/addons)
+**Saiba mais:**
+- [Site Oficial Home Assistant](https://www.home-assistant.io)
+- [Repositório GitHub Home Assistant](https://github.com/home-assistant/core)
+- [Documentação Home Assistant](https://www.home-assistant.io/docs)
+- [Comunidade Home Assistant](https://community.home-assistant.io)
+- [Complementos Home Assistant](https://www.home-assistant.io/addons)
 
 
 Categoria na App Store do RoqueOS: **Home Automation**.

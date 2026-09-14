@@ -1,14 +1,14 @@
 # Swing Music
 
-> Swing Music is a beautifully designed, self-hosted music streaming server. Like a cooler Spotify ... but bring your own music.
+> O Swing Music é um servidor de streaming de música lindamente projetado e auto-hospedado. Como um Spotify mais cool... mas traga a sua própria música.
 
 ## O que é
 
-Swing Music is a fast, beautiful, self-hosted music player designed for your local audio files, offering a sleek experience akin to Spotify but powered by your own music library. Simply run the app and access your music collection effortlessly through a web browser.
+O Swing Music é um leitor de música rápido, bonito e auto-hospedado, projetado para os seus ficheiros de áudio locais, oferecendo uma experiência elegante semelhante ao Spotify, mas alimentada pela sua própria biblioteca musical. Basta executar a aplicação e aceder à sua coleção de música sem esforço através de um navegador web.
 
-Swing Music curates Daily Mixes based on your listening habits, ensures a clean and consistent library with metadata normalization, and supports album versioning (e.g., Deluxe, Remaster) alongside related artist and album recommendations. Browse your music library via folder view, manage playlists, and enjoy a seamless listening experience with silence detection and cross-fade. Additional features include listening statistics, lyrics view, Last.fm scrobbling, multi-user support, and personalized collections for grouping albums and artists.
+O Swing Music cria misturas diárias com base nos seus hábitos de audição, garante uma biblioteca limpa e consistente com normalização de metadados e suporta versionamento de álbuns (por exemplo, Deluxe, Remaster) juntamente com recomendações de artistas e álbuns relacionados. Navegue pela sua biblioteca musical através da vista de pastas, gira listas de reprodução e desfrute de uma experiência de audição fluida com deteção de silêncio e cross-fade. Funcionalidades adicionais incluem estatísticas de audição, visualização de letras, scrobbling no Last.fm, suporte multiutilizador e coleções personalizadas para agrupar álbuns e artistas.
 
-With its stunning browser-based interface and robust functionality, Swing Music is the perfect choice for music enthusiasts seeking a beautiful and practical way to manage and enjoy their local music collection.
+Com a sua impressionante interface baseada em navegador e funcionalidade robusta, o Swing Music é a escolha perfeita para entusiastas da música que procuram uma forma bonita e prática de gerir e desfrutar da sua coleção de música local.
 
 
 Categoria na App Store do RoqueOS: **Media**.
@@ -16,9 +16,9 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço    |
-| ---- | --------- | --------- | -------------- | ---------- |
-| 1970 | 1970      | tcp       | —              | swingmusic |
+| Host | Container | Protocolo | Para que serve                | Serviço    |
+| ---- | --------- | --------- | ----------------------------- | ---------- |
+| 1970 | 1970      | tcp       | Web interface for Swing Music | swingmusic |
 
 
 ## Volumes
@@ -39,10 +39,10 @@ _Nenhum._
 
 Depois de instalar, abra `http://<endereço-do-servidor>:1970/`.
 
-- When you first start Swing Music, it will ask you to pick music directory: Where do you want to look for music?
-- select "Specific directories" Option, and select "/music" and rescan.
-- Default Account
-- | Name | Password |
+- Quando iniciar o Swing Music pela primeira vez, será solicitado que escolha um diretório de música: Onde deseja procurar música?
+- Selecione a opção "Diretórios específicos", escolha "/music" e volte a fazer a varredura.
+- Conta padrão
+- | Nome | Senha |
 - | -------- | -------- |
 - | `admin` | `admin` |
 

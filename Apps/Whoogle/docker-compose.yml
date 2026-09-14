@@ -70,5 +70,6 @@ x-casaos:
   scheme: http
 
 x-roqueos:
+  portaCompartilhada: true
   motivo:
     capAdd: "capacidade exigida pelo upstream para a função declarada do container"

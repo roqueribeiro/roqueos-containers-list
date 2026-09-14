@@ -1,14 +1,14 @@
 # Memos
 
-> Memos is a lightweight, self-hosted memo hub. Open Source and Free forever.
+> Memos é um hub de memos leve e auto-hospedado. Código aberto e grátis para sempre。
 
 ## O que é
 
-Memos is a lightweight, open-source, self-hosted note-taking application that offers a secure and streamlined solution for users prioritizing privacy and data control. All notes are stored on the user’s own server, eliminating risks associated with third-party cloud services. Its minimalist Web interface supports Markdown syntax and tag-based organization, enabling effortless capture of ideas, personal knowledge management, or small-scale team collaboration. The open-source design ensures transparency, long-term maintainability, and no subscription costs, making it ideal for users seeking data ownership and cost efficiency.
+Memos é uma aplicação de notas leve, de código aberto e auto-hospedada que oferece uma solução segura e simplificada para utilizadores que priorizam a privacidade e o controlo de dados. Todas as notas são armazenadas no servidor do próprio utilizador, eliminando os riscos associados a serviços de nuvem de terceiros. A sua interface Web minimalista suporta sintaxe Markdown e organização baseada em etiquetas, permitindo a captura sem esforço de ideias, gestão de conhecimento pessoal ou colaboração em pequenas equipas. O design de código aberto garante transparência, capacidade de manutenção a longo prazo e sem custos de subscrição, tornando-o ideal para utilizadores que procuram propriedade de dados e eficiência de custos.
 
-Designed for simplicity and efficiency, Memos caters to a variety of use cases. Whether jotting down daily thoughts, organizing study notes, or sharing task memos in small teams, Memos delivers a seamless experience through its intuitive tag system and Markdown formatting. Accessible via any web browser, it requires no proprietary clients or complex setup, allowing users to manage notes anytime, anywhere.
+Projetado para simplicidade e eficiência, o Memos atende a uma variedade de casos de uso. Seja para anotar pensamentos diários, organizar notas de estudo ou partilhar memorandos de tarefas em pequenas equipas, o Memos proporciona uma experiência perfeita através do seu sistema de etiquetas intuitivo e formatação Markdown. Acessível através de qualquer navegador Web, não requer clientes proprietários ou configuração complexa, permitindo aos utilizadores gerir notas a qualquer hora e em qualquer lugar.
 
-Whether used for long-term personal knowledge archiving or as a lightweight tool for team collaboration, Memos offers a secure, flexible, and user-friendly solution, empowering users to maintain full control over their data while enjoying a streamlined note-taking experience.
+Seja usado para arquivo de conhecimento pessoal a longo prazo ou como uma ferramenta leve para colaboração em equipa, o Memos oferece uma solução segura, flexível e fácil de usar, capacitando os utilizadores a manter total controlo sobre os seus dados enquanto desfrutam de uma experiência de tomada de notas simplificada。
 
 
 Categoria na App Store do RoqueOS: **Productivity**.

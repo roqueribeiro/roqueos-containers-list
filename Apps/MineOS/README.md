@@ -11,11 +11,11 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host        | Container   | Protocolo | Para que serve  | Serviço |
-| ----------- | ----------- | --------- | --------------- | ------- |
-| 8444        | 8443        | tcp       | WebUI HTTP Port | mineos  |
-| 25565-25570 | 25565-25570 | tcp       | —               | mineos  |
-| 25565-25570 | 25565-25570 | tcp       | —               | mineos  |
+| Host        | Container   | Protocolo | Para que serve                     | Serviço |
+| ----------- | ----------- | --------- | ---------------------------------- | ------- |
+| 8444        | 8443        | tcp       | WebUI HTTP Port                    | mineos  |
+| 25565-25570 | 25565-25570 | tcp       | Service port 25565-25570 of mineos | mineos  |
+| 25565-25570 | 25565-25570 | tcp       | Service port 25565-25570 of mineos | mineos  |
 
 
 ## Volumes

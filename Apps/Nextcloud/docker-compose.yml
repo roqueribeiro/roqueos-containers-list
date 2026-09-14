@@ -101,4 +101,5 @@ x-casaos:
   port_map: '10081'
   scheme: https
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

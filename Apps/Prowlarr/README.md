@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço  |
-| ---- | --------- | --------- | -------------- | -------- |
-| 9696 | 9696      | tcp       | —              | prowlarr |
+| Host | Container | Protocolo | Para que serve             | Serviço  |
+| ---- | --------- | --------- | -------------------------- | -------- |
+| 9696 | 9696      | tcp       | Web interface for Prowlarr | prowlarr |
 
 
 ## Volumes

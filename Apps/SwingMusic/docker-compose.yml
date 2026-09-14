@@ -1,6 +1,11 @@
 name: swingmusic
 services:
   swingmusic:
+    x-casaos:
+      ports:
+        - container: '1970'
+          description:
+            en_us: "Web interface for Swing Music"
     image: ghcr.io/swingmx/swingmusic:v1.4.8
     container_name: swingmusic
     volumes:
@@ -11,7 +16,7 @@ services:
         source: /DATA/Media/Music
         target: /music
     ports:
-      - '1970:1970'
+      - "1970:1970"
     restart: unless-stopped
 x-casaos:
   architectures:
@@ -110,6 +115,54 @@ x-casaos:
       Swing Music, dinleme alışkanlıklarınıza göre günlük karışımlar oluşturur, meta veri normalizasyonu ile temiz ve tutarlı bir kütüphane sağlar ve albüm versiyonlamasını (örneğin, Deluxe, Remaster) desteklerken ilgili sanatçı ve albüm önerileri sunar. Müzik kütüphanenizi klasör görünümüyle tarayın, çalma listelerini yönetin ve sessiz algılama ile çapraz geçiş sayesinde kesintisiz bir dinleme deneyimi yaşayın. Ek özellikler arasında dinleme istatistikleri, şarkı sözü görünümü, Last.fm scrobbling, çok kullanıcılı destek ve albüm ile sanatçıları gruplandırmak için kişiselleştirilmiş koleksiyonlar bulunur.
 
       Göz alıcı tarayıcı tabanlı arayüzü ve güçlü işlevselliği ile Swing Music, yerel müzik koleksiyonlarını yönetmek ve keyfini çıkarmak için güzel ve pratik bir yol arayan müzik tutkunları için mükemmel bir seçimdir.
+    en_us: |
+      Swing Music is a fast, beautiful, self-hosted music player designed for your local audio files, offering a sleek experience akin to Spotify but powered by your own music library. Simply run the app and access your music collection effortlessly through a web browser.
+
+      Swing Music curates Daily Mixes based on your listening habits, ensures a clean and consistent library with metadata normalization, and supports album versioning (e.g., Deluxe, Remaster) alongside related artist and album recommendations. Browse your music library via folder view, manage playlists, and enjoy a seamless listening experience with silence detection and cross-fade. Additional features include listening statistics, lyrics view, Last.fm scrobbling, multi-user support, and personalized collections for grouping albums and artists.
+
+      With its stunning browser-based interface and robust functionality, Swing Music is the perfect choice for music enthusiasts seeking a beautiful and practical way to manage and enjoy their local music collection.
+    pt_br: |
+      O Swing Music é um leitor de música rápido, bonito e auto-hospedado, projetado para os seus ficheiros de áudio locais, oferecendo uma experiência elegante semelhante ao Spotify, mas alimentada pela sua própria biblioteca musical. Basta executar a aplicação e aceder à sua coleção de música sem esforço através de um navegador web.
+
+      O Swing Music cria misturas diárias com base nos seus hábitos de audição, garante uma biblioteca limpa e consistente com normalização de metadados e suporta versionamento de álbuns (por exemplo, Deluxe, Remaster) juntamente com recomendações de artistas e álbuns relacionados. Navegue pela sua biblioteca musical através da vista de pastas, gira listas de reprodução e desfrute de uma experiência de audição fluida com deteção de silêncio e cross-fade. Funcionalidades adicionais incluem estatísticas de audição, visualização de letras, scrobbling no Last.fm, suporte multiutilizador e coleções personalizadas para agrupar álbuns e artistas.
+
+      Com a sua impressionante interface baseada em navegador e funcionalidade robusta, o Swing Music é a escolha perfeita para entusiastas da música que procuram uma forma bonita e prática de gerir e desfrutar da sua coleção de música local.
+    zh_cn: |
+      Swing Music 是一款快速、美观、自我托管的音乐播放器，专为您的本地音频文件设计，提供类似 Spotify 的流畅体验，但由您自己的音乐库驱动。只需运行应用程序，即可通过网页浏览器轻松访问您的音乐收藏。
+
+      Swing Music 根据您的收听习惯生成每日精选播放列表，通过元数据规范化确保音乐库整洁一致，并支持专辑版本管理（例如，豪华版、重新制作版）以及相关艺术家和专辑推荐。您可以通过文件夹视图浏览音乐库，管理播放列表，并享受带有静音检测和交叉淡入淡出的无缝收听体验。附加功能包括收听统计、歌词显示、Last.fm 记录、多用户支持以及用于分组专辑和艺术家的个性化收藏。
+
+      凭借其惊艳的基于浏览器的界面和强大的功能，Swing Music 是音乐爱好者的理想选择，适合那些寻求美观且实用方式来管理和享受本地音乐收藏的用户。
+    fr_fr: |
+      Swing Music est un lecteur musical rapide, magnifique et auto-hébergé conçu pour vos fichiers audio locaux, offrant une expérience fluide similaire à Spotify mais alimentée par votre propre bibliothèque musicale. Lancez simplement l'application et accédez à votre collection musicale sans effort via un navigateur web.
+
+      Swing Music crée des mixes quotidiens basés sur vos habitudes d'écoute, garantit une bibliothèque propre et cohérente grâce à la normalisation des métadonnées, et prend en charge la gestion des versions d'albums (par exemple, Deluxe, Remaster) ainsi que des recommandations d'artistes et d'albums associés. Parcourez votre bibliothèque musicale via l'affichage par dossiers, gérez vos listes de lecture et profitez d'une expérience d'écoute fluide avec détection de silence et fondu enchaîné. Les fonctionnalités supplémentaires incluent des statistiques d'écoute, l'affichage des paroles, le scrobbling Last.fm, le support multi-utilisateur et des collections personnalisées pour regrouper albums et artistes.
+
+      Avec son interface époustouflante basée sur navigateur et ses fonctionnalités robustes, Swing Music est le choix idéal pour les amateurs de musique à la recherche d'une manière belle et pratique de gérer et de profiter de leur collection musicale locale.
+    de_de: |
+      Swing Music ist ein schneller, wunderschöner, selbstgehosteter Musikplayer, der für Ihre lokalen Audiodateien entwickelt wurde und ein elegantes Erlebnis ähnlich wie Spotify bietet, jedoch mit Ihrer eigenen Musikbibliothek betrieben wird. Starten Sie einfach die App und greifen Sie mühelos über einen Webbrowser auf Ihre Musiksammlung zu.
+
+      Swing Music erstellt tägliche Mixes basierend auf Ihren Hörgewohnheiten, sorgt für eine saubere und konsistente Bibliothek durch Metadaten-Normalisierung und unterstützt Albumversionierung (z. B. Deluxe, Remaster) sowie Empfehlungen für verwandte Künstler und Alben. Durchsuchen Sie Ihre Musikbibliothek über die Ordneransicht, verwalten Sie Playlists und genießen Sie ein nahtloses Hörerlebnis mit Stilleerkennung und Crossfade. Zusätzliche Funktionen umfassen Hörstatistiken, Textanzeige, Last.fm-Scrobbling, Unterstützung für mehrere Benutzer und personalisierte Sammlungen zum Gruppieren von Alben und Künstlern.
+
+      Mit seiner atemberaubenden browserbasierten Oberfläche und robusten Funktionalität ist Swing Music die perfekte Wahl für Musikliebhaber, die eine schöne und praktische Möglichkeit suchen, ihre lokale Musiksammlung zu verwalten und zu genießen.
+    it_it: |
+      Swing Music è un lettore musicale veloce, bello e self-hosted progettato per i tuoi file audio locali, che offre un'esperienza elegante simile a Spotify ma basata sulla tua libreria musicale. Basta eseguire l'app e accedere alla tua collezione musicale senza sforzo tramite un browser web.
+
+      Swing Music crea Mix giornalieri basati sulle tue abitudini di ascolto, garantisce una libreria pulita e coerente con la normalizzazione dei metadati e supporta la versione degli album (ad esempio, Deluxe, Remaster) insieme a raccomandazioni di artisti e album correlati. Sfoglia la tua libreria musicale tramite la vista cartelle, gestisci playlist e goditi un'esperienza di ascolto fluida con rilevamento del silenzio e cross-fade. Funzionalità aggiuntive includono statistiche di ascolto, visualizzazione dei testi, scrobbling su Last.fm, supporto multiutente e collezioni personalizzate per raggruppare album e artisti.
+
+      Con la sua splendida interfaccia basata su browser e funzionalità robuste, Swing Music è la scelta perfetta per gli appassionati di musica che cercano un modo bello e pratico per gestire e godere della loro collezione musicale locale.
+    ru_ru: |
+      Swing Music — это быстрый, красивый, самохостируемый музыкальный плеер, разработанный для ваших локальных аудиофайлов, предлагающий изящный опыт, схожий с Spotify, но работающий на основе вашей собственной музыкальной библиотеки. Просто запустите приложение и получите доступ к своей музыкальной коллекции без усилий через веб-браузер.
+
+      Swing Music создает ежедневные миксы на основе ваших привычек прослушивания, обеспечивает чистую и последовательную библиотеку с нормализацией метаданных и поддерживает версионирование альбомов (например, Deluxe, Remaster) вместе с рекомендациями связанных исполнителей и альбомов. Просматривайте свою музыкальную библиотеку через просмотр папок, управляйте плейлистами и наслаждайтесь плавным прослушиванием с функцией обнаружения тишины и кроссфейдом. Дополнительные функции включают статистику прослушивания, просмотр текстов песен, интеграцию с Last.fm, поддержку нескольких пользователей и персонализированные коллекции для группировки альбомов и исполнителей.
+
+      Благодаря потрясающему интерфейсу на основе браузера и надежной функциональности Swing Music — идеальный выбор для любителей музыки, ищущих красивый и практичный способ управления и наслаждения своей локальной музыкальной коллекцией.
+    ja_jp: |
+      Swing Musicは、ローカルのオーディオファイル向けに設計された高速で美しいセルフホスト型音楽プレーヤーで、Spotifyのような洗練された体験を提供しますが、自身の音楽ライブラリで動作します。アプリを起動するだけで、ウェブブラウザを通じて簡単に音楽コレクションにアクセスできます。
+
+      Swing Musicは、ユーザーのリスニング習慣に基づいてデイリーミックスを作成し、メタデータの正規化でクリーンで一貫性のあるライブラリを保証し、デラックス版やリマスター版などのアルバムバージョニングや、関連アーティストおよびアルバムの推薦をサポートします。フォルダビューで音楽ライブラリを閲覧したり、プレイリストを管理したり、サイレンス検出やクロスフェードによるシームレスなリスニング体験を楽しめます。追加機能には、リスニング統計、歌詞表示、Last.fmのスクロブリング、マルチユーザーサポート、アルバムやアーティストをグループ化するパーソナライズされたコレクションが含まれます。
+
+      見事なブラウザベースのインターフェースと堅牢な機能を備えたSwing Musicは、ローカルの音楽コレクションを美しく実践的に管理し楽しみたい音楽愛好家にとって完璧な選択です。
   developer: SwingMX
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/SwingMusic/icon.png
   screenshot_link:
@@ -134,6 +187,14 @@ x-casaos:
     pt_PT: O Swing Music é um servidor de streaming de música lindamente projetado e auto-hospedado. Como um Spotify mais cool... mas traga a sua própria música.
     ru_RU: Swing Music — это красиво оформленный, самохостируемый сервер потоковой передачи музыки. Как более крутой Spotify... но приносите свою музыку.
     tr_TR: Swing Music, güzel tasarlanmış, kendi kendine barındırılan bir müzik akış sunucusudur. Daha havalı bir Spotify gibi... ama kendi müziğinizi getirin.
+    en_us: Swing Music is a beautifully designed, self-hosted music streaming server. Like a cooler Spotify ... but bring your own music.
+    pt_br: O Swing Music é um servidor de streaming de música lindamente projetado e auto-hospedado. Como um Spotify mais cool... mas traga a sua própria música.
+    zh_cn: Swing Music 是一个设计精美的自我托管音乐流媒体服务器。像一个更酷的 Spotify……但请自带音乐。
+    fr_fr: Swing Music est un serveur de streaming musical magnifiquement conçu et auto-hébergé. Comme un Spotify plus cool... mais apportez votre propre musique.
+    de_de: Swing Music ist ein wunderschön gestalteter, selbstgehosteter Musik-Streaming-Server. Wie ein cooleres Spotify ... aber bringen Sie Ihre eigene Musik mit.
+    it_it: Swing Music è un server di streaming musicale splendidamente progettato e self-hosted. Come un Spotify più cool... ma porta la tua musica.
+    ru_ru: Swing Music — это красиво оформленный, самохостируемый сервер потоковой передачи музыки. Как более крутой Spotify... но приносите свою музыку.
+    ja_jp: Swing Musicは美しくデザインされたセルフホスト型音楽ストリーミングサーバーです。よりクールなSpotifyのよう...ただし、自分の音楽を持参してください。
   tips:
     before_install:
       en_US: |
@@ -256,9 +317,73 @@ x-casaos:
         | İsim | Şifre |
         | -------- | -------- |
         | `admin` | `admin` |
+      en_us: |
+        When you first start Swing Music, it will ask you to pick music directory: Where do you want to look for music?
+        select "Specific directories" Option, and select "/music" and rescan.
+
+        Default Account
+        | Name | Password |
+        | -------- | -------- |
+        | `admin` | `admin` |
+      pt_br: |
+        Quando iniciar o Swing Music pela primeira vez, será solicitado que escolha um diretório de música: Onde deseja procurar música?
+        Selecione a opção "Diretórios específicos", escolha "/music" e volte a fazer a varredura.
+
+        Conta padrão
+        | Nome | Senha |
+        | -------- | -------- |
+        | `admin` | `admin` |
+      zh_cn: |
+        首次启动 Swing Music 时，它会要求您选择音乐目录：您想在哪里查找音乐？
+        选择“特定目录”选项，然后选择“/music”并重新扫描。
+
+        默认账户
+        | 名称 | 密码 |
+        | -------- | -------- |
+        | `admin` | `admin` |
+      fr_fr: |
+        Lorsque vous lancez Swing Music pour la première fois, il vous demandera de choisir un répertoire musical : Où voulez-vous chercher de la musique ?
+        Sélectionnez l'option "Répertoires spécifiques", choisissez "/music" et relancez l'analyse.
+
+        Compte par défaut
+        | Nom | Mot de passe |
+        | -------- | -------- |
+        | `admin` | `admin` |
+      de_de: |
+        Wenn Sie Swing Music zum ersten Mal starten, werden Sie aufgefordert, ein Musikverzeichnis auszuwählen: Wo möchten Sie nach Musik suchen?
+        Wählen Sie die Option "Spezifische Verzeichnisse", wählen Sie "/music" und scannen Sie erneut.
+
+        Standardkonto
+        | Name | Passwort |
+        | -------- | -------- |
+        | `admin` | `admin` |
+      it_it: |
+        Quando avvii Swing Music per la prima volta, ti chiederà di scegliere la directory musicale: Dove vuoi cercare la musica?
+        Seleziona l'opzione "Directory specifiche" e scegli "/music" e riesegui la scansione.
+
+        Account predefinito
+        | Nome | Password |
+        | -------- | -------- |
+        | `admin` | `admin` |
+      ru_ru: |
+        При первом запуске Swing Music вас попросят выбрать музыкальную папку: Где вы хотите искать музыку?
+        Выберите опцию «Конкретные папки», выберите «/music» и выполните повторное сканирование.
+
+        Учетная запись по умолчанию
+        | Имя | Пароль |
+        | -------- | -------- |
+        | `admin` | `admin` |
+      ja_jp: |
+        Swing Musicを初めて起動すると、音楽ディレクトリの選択を求められます：音楽はどこで探しますか？
+        「特定のディレクトリ」オプションを選択し、「/music」を選択して再スキャンします。
+
+        デフォルトアカウント
+        | 名前 | パスワード |
+        | -------- | -------- |
+        | `admin` | `admin` |
   title:
     en_us: Swing Music
     zh_cn: Swing Music
   index: /
-  port_map: '1970'
+  port_map: "1970"
   scheme: http

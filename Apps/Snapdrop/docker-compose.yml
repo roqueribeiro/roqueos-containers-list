@@ -1,6 +1,14 @@
 name: snapdrop
 services:
   snapdrop:
+    x-casaos:
+      ports:
+        - container: '443'
+          description:
+            en_us: "HTTPS (port 443)"
+        - container: '80'
+          description:
+            en_us: "Web interface for snapdrop"
     environment:
       - PGID=$PGID
       - PUID=$PUID
@@ -67,4 +75,5 @@ x-casaos:
     en_us: snapdrop
   main: snapdrop
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

@@ -40,7 +40,7 @@ services:
       ports:
         - container: '8686'
           description:
-            en_us: ''
+            en_us: "Web interface for Lidarr"
       volumes:
         - container: /config
           description:

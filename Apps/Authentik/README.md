@@ -16,6 +16,7 @@ Arquiteturas suportadas: amd64, arm64.
 | 9000 | 9000      | tcp       | Porta da interface web HTTP  | server  |
 | 9443 | 9443      | tcp       | Porta da interface web HTTPS | server  |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

@@ -1,20 +1,20 @@
 # oPodSync
 
-> Podcast synchronization service
+> Serviço de sincronização de podcasts
 
 ## O que é
 
-oPodSync is a podcast synchronization service that allows users to sync their podcast subscriptions and listening progress across multiple devices. It provides a server-side solution for managing podcast data and ensures that users can seamlessly switch between their devices.
+O oPodSync é um serviço de sincronização de podcasts que permite aos utilizadores sincronizar as suas subscrições de podcasts e progresso de audição em múltiplos dispositivos. Fornece uma solução do lado do servidor para gerir dados de podcasts e garante que os utilizadores possam alternar sem problemas entre os seus dispositivos.
 
-**Key Features:**
-- Sync podcast subscriptions
-- Track listening progress across devices
-- Web-based management interface
-- Support for multiple podcast clients
-- Centralized data storage
-- Easy setup and configuration
+**Funcionalidades Principais:**
+- Sincronizar subscrições de podcasts
+- Acompanhar o progresso de audição em múltiplos dispositivos
+- Interface de gestão baseada na web
+- Suporte para múltiplos clientes de podcasts
+- Armazenamento de dados centralizado
+- Configuração e instalação fáceis
 
-**Learn More:**
+**Saiba Mais:**
 - [oPodSync GitHub Repo](https://github.com/kd2org/oPodSync)
 
 
@@ -23,10 +23,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve     | Serviço  |
-| ---- | --------- | --------- | ------------------ | -------- |
-| 8086 | 8080      | tcp       | Web interface port | opodsync |
+| Host | Container | Protocolo | Para que serve         | Serviço  |
+| ---- | --------- | --------- | ---------------------- | -------- |
+| 8086 | 8080      | tcp       | Porta da interface web | opodsync |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

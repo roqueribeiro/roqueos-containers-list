@@ -211,6 +211,11 @@ services:
     depends_on:
       - config
   nginx:
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: "Web interface for Dify"
     image: nginx:latest
     container_name: dify-nginx
     restart: unless-stopped

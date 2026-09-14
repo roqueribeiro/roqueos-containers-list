@@ -1,20 +1,20 @@
 # Syncthing
 
-> Open decentralized file synchronization
+> Sincronização de ficheiros aberta e descentralizada
 
 ## O que é
 
-# Unlocking the True Potential of Data Backup
+# Desbloquear o verdadeiro potencial do backup de dados
 
-Say goodbye to traditional cloud backup limitations and embrace the future with Syncthing. Unlike conventional cloud services that often come with privacy concerns and storage restrictions, Syncthing provides a secure, real-time file synchronization solution that keeps your data exclusively in your hands. Whether you're syncing work documents or personal photos, you have complete control over where and how your files are stored and shared.
+Diga adeus às limitações dos backups tradicionais na nuvem e abrace o futuro com o Syncthing. Ao contrário dos serviços de nuvem convencionais, que frequentemente trazem preocupações com privacidade e restrições de armazenamento, o Syncthing oferece uma solução segura de sincronização de ficheiros em tempo real que mantém os seus dados exclusivamente nas suas mãos. Quer esteja a sincronizar documentos de trabalho ou fotos pessoais, tem controlo total sobre onde e como os seus ficheiros são armazenados e partilhados.
 
-# Features That Make a Difference
+# Funcionalidades que fazem a diferença
 
-Syncthing offers a seamless, user-friendly experience with powerful features designed for everyday users. Enjoy continuous file synchronization between multiple devices without any subscription fees. Experience peace of mind knowing that your data is encrypted and protected from unauthorized access. Syncthing’s open-source nature means no hidden costs, providing a truly transparent and cost-effective solution for your file management needs.
+O Syncthing proporciona uma experiência fluida e fácil de usar com funcionalidades poderosas desenhadas para utilizadores do dia-a-dia. Desfrute de sincronização contínua de ficheiros entre múltiplos dispositivos sem custos de subscrição. Sinta a tranquilidade de saber que os seus dados estão encriptados e protegidos contra acessos não autorizados. A natureza de código aberto do Syncthing significa que não há custos ocultos, oferecendo uma solução verdadeiramente transparente e económica para as suas necessidades de gestão de ficheiros.
 
-# The Power of Syncthing on Zima
+# O poder do Syncthing no Zima
 
-Deploying Syncthing on Zima private cloud devices unlocks unparalleled convenience: enjoy unlimited storage capacity, ensure the privacy of your data, and benefit from blazing local network speeds. Transform your data management and synchronization with the perfect combination of Syncthing’s capabilities and Zima’s powerful infrastructure.
+Implementar o Syncthing em dispositivos de nuvem privada Zima proporciona uma conveniência incomparável: desfrute de capacidade de armazenamento ilimitada, garanta a privacidade dos seus dados e beneficie de velocidades de rede local extremamente rápidas. Transforme a gestão e sincronização dos seus dados com a combinação perfeita das capacidades do Syncthing e da infraestrutura poderosa do Zima.
 
 
 Categoria na App Store do RoqueOS: **Storage**.

@@ -122,3 +122,6 @@ x-casaos:
   index: /
   port_map: '81'
   scheme: https
+
+x-roqueos:
+  portaCompartilhada: true

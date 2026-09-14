@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve | Serviço   |
-| ----- | --------- | --------- | -------------- | --------- |
-| 10280 | 80        | tcp       | —              | smokeping |
+| Host  | Container | Protocolo | Para que serve              | Serviço   |
+| ----- | --------- | --------- | --------------------------- | --------- |
+| 10280 | 80        | tcp       | Web interface for Smokeping | smokeping |
 
 
 ## Volumes

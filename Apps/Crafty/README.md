@@ -13,11 +13,12 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 | Host        | Container   | Protocolo | Para que serve                         | Serviço |
 | ----------- | ----------- | --------- | -------------------------------------- | ------- |
-| 8111        | 8443        | tcp       | —                                      | crafty  |
-| 8112        | 8123        | tcp       | —                                      | crafty  |
+| 8111        | 8443        | tcp       | Web interface for Crafty               | crafty  |
+| 8112        | 8123        | tcp       | Service port 8123 of crafty            | crafty  |
 | 19132       | 19132       | tcp       | Minecraft Bedrock listening Port (UDP) | crafty  |
-| 25500-25600 | 25500-25600 | tcp       | —                                      | crafty  |
+| 25500-25600 | 25500-25600 | tcp       | Service port 25500-25600 of crafty     | crafty  |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

@@ -136,3 +136,6 @@ x-casaos:
   index: /
   port_map: '9000'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

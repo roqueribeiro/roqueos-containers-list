@@ -1,21 +1,21 @@
 # Pingvin-Share
 
-> Self-hosted file sharing with a modern web interface
+> Partilha de ficheiros auto-hospedada com uma interface web moderna
 
 ## O que é
 
-Pingvin-Share is a self-hosted file sharing application compatible with Nextcloud apps, offering a modern and intuitive web interface. It enables users to securely store, organize, and share files without relying on external cloud services. The application supports multiple authentication methods and provides features such as share links, user accounts, and a responsive interface.
+Pingvin-Share é uma aplicação de partilha de ficheiros auto-hospedada compatível com aplicações Nextcloud, oferecendo uma interface web moderna e intuitiva. Permite aos utilizadores armazenar, organizar e partilhar ficheiros de forma segura sem depender de serviços cloud externos. A aplicação suporta vários métodos de autenticação e fornece funcionalidades como links de partilha, contas de utilizador e uma interface responsiva.
 
-**Key features:**
-- Modern, responsive web interface
-- User accounts with a permission system
-- Secure share links for files
-- Drag-and-drop file upload
-- Password-protected shares
-- Multiple authentication methods
-- Docker-based deployment for easy installation
+**Funcionalidades principais:**
+- Interface web moderna e responsiva
+- Contas de utilizador com sistema de permissões
+- Links de partilha seguros para ficheiros
+- Carregamento de ficheiros com arrastar e largar
+- Partilhas protegidas por palavra-passe
+- Vários métodos de autenticação
+- Implementação baseada em Docker para fácil instalação
 
-**Learn more:**
+**Saiba mais:**
 - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
 
 
@@ -24,9 +24,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve                   | Serviço       |
-| ---- | --------- | --------- | -------------------------------- | ------------- |
-| 3410 | 3000      | tcp       | Pingvin-Share web interface port | pingvin-share |
+| Host | Container | Protocolo | Para que serve                       | Serviço       |
+| ---- | --------- | --------- | ------------------------------------ | ------------- |
+| 3410 | 3000      | tcp       | Porta da interface web Pingvin-Share | pingvin-share |
 
 
 ## Volumes

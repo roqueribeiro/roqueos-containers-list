@@ -15,6 +15,7 @@ Arquiteturas suportadas: amd64, arm64.
 | ---- | --------- | --------- | -------------------------------------------------- | ------- |
 | 8097 | 8080      | tcp       | Porta da API compatível com OpenAI + interface web | localai |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

@@ -41,7 +41,7 @@ services:
       ports:
         - container: '8083'
           description:
-            en_us: ''
+            en_us: "Web interface for Calibre-web"
       volumes:
         - container: /config
           description:
@@ -108,4 +108,5 @@ x-casaos:
   port_map: '8083'
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

@@ -1,27 +1,27 @@
 # RagFlow
 
-> RagFlow is an open-source RAG engine based on deep document understanding.
+> RagFlow é um motor RAG de código aberto baseado na compreensão profunda de documentos.
 
 ## O que é
 
-RagFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding. It enables users to build their own private ChatGPT by leveraging the power of large language models and deep document parsing capabilities. RagFlow supports various document formats including PDF, Word, Markdown, and more, allowing users to create intelligent question-answering systems based on their own documents.
+RagFlow é um motor RAG (Retrieval-Augmented Generation) de código aberto baseado na compreensão profunda de documentos. Permite aos utilizadores construir o seu próprio ChatGPT privado, aproveitando o poder dos grandes modelos de linguagem e das capacidades de análise profunda de documentos. RagFlow suporta vários formatos de documentos, incluindo PDF, Word, Markdown e mais, permitindo aos utilizadores criar sistemas inteligentes de pergunta-resposta baseados nos seus próprios documentos.
 
-**Key Features:**
-- Deep document understanding with advanced parsing capabilities
-- Support for multiple document formats (PDF, Word, Markdown, etc.)
-- Private knowledge base with data security assurance
-- Customizable RAG workflows for different use cases
-- Integration with popular large language models
-- Web-based interface for easy management and interaction
+**Características Principais:**
+- Compreensão profunda de documentos com capacidades de análise avançadas
+- Suporte para múltiplos formatos de documentos (PDF, Word, Markdown, etc.)
+- Base de conhecimento privado com garantia de segurança de dados
+- Fluxos de trabalho RAG personalizáveis para diferentes casos de uso
+- Integração com populares grandes modelos de linguagem
+- Interface baseada na Web para fácil gestão e interação
 
-**Hardware Requirements:**
-- CPU >= 4 cores
+**Requisitos de Hardware:**
+- CPU >= 4 núcleos
 - RAM >= 16 GB
-- Disk >= 50 GB
+- Disco >= 50 GB
 
-**Learn More:**
-- [RagFlow Official Website](https://ragflow.io)
-- [RagFlow GitHub Repository](https://github.com/infiniflow/ragflow)
+**Saiba Mais:**
+- [Website Oficial RagFlow](https://ragflow.io)
+- [Repositório GitHub RagFlow](https://github.com/infiniflow/ragflow)
 
 
 Categoria na App Store do RoqueOS: **AI**.
@@ -29,25 +29,26 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve           | Serviço                          |
-| ----- | --------- | --------- | ------------------------ | -------------------------------- |
-| 9380  | 9380      | tcp       | RagFlow API Port         | ragflow                          |
-| 30080 | 80        | tcp       | RagFlow HTTP Port        | ragflow                          |
-| 10443 | 443       | tcp       | RagFlow HTTPS Port       | ragflow                          |
-| 5678  | 5678      | tcp       | RagFlow Debug Port       | ragflow                          |
-| 5679  | 5679      | tcp       | RagFlow WebSocket Port   | ragflow                          |
-| 9382  | 9382      | tcp       | RagFlow MCP Port         | ragflow                          |
-| 9200  | 9200      | tcp       | Elasticsearch HTTP Port  | ragflow-es01                     |
-| 23817 | 23817     | tcp       | Infinity Admin Port      | ragflow-infinity                 |
-| 23820 | 23820     | tcp       | Infinity API Port        | ragflow-infinity                 |
-| 15432 | 5432      | tcp       | Infinity PostgreSQL Port | ragflow-infinity                 |
-| 9000  | 9000      | tcp       | MinIO API Port           | ragflow-minio                    |
-| 9001  | 9001      | tcp       | MinIO Console Port       | ragflow-minio                    |
-| 5455  | 3306      | tcp       | MySQL Port               | ragflow-mysql                    |
-| 9201  | 9201      | tcp       | OpenSearch HTTP Port     | ragflow-opensearch01             |
-| 6379  | 6379      | tcp       | Redis Port               | ragflow-redis                    |
-| 9385  | 9385      | tcp       | —                        | ragflow-sandbox-executor-manager |
+| Host  | Container | Protocolo | Para que serve                                        | Serviço                          |
+| ----- | --------- | --------- | ----------------------------------------------------- | -------------------------------- |
+| 9380  | 9380      | tcp       | Porta API RagFlow                                     | ragflow                          |
+| 30080 | 80        | tcp       | Porta HTTP RagFlow                                    | ragflow                          |
+| 10443 | 443       | tcp       | Porta HTTPS RagFlow                                   | ragflow                          |
+| 5678  | 5678      | tcp       | Porta de Debug RagFlow                                | ragflow                          |
+| 5679  | 5679      | tcp       | Porta WebSocket RagFlow                               | ragflow                          |
+| 9382  | 9382      | tcp       | Porta MCP RagFlow                                     | ragflow                          |
+| 9200  | 9200      | tcp       | Porta HTTP Elasticsearch                              | ragflow-es01                     |
+| 23817 | 23817     | tcp       | Porta de Admin Infinity                               | ragflow-infinity                 |
+| 23820 | 23820     | tcp       | Porta API Infinity                                    | ragflow-infinity                 |
+| 15432 | 5432      | tcp       | Porta PostgreSQL Infinity                             | ragflow-infinity                 |
+| 9000  | 9000      | tcp       | Porta API MinIO                                       | ragflow-minio                    |
+| 9001  | 9001      | tcp       | Porta da Consola MinIO                                | ragflow-minio                    |
+| 5455  | 3306      | tcp       | Porta MySQL                                           | ragflow-mysql                    |
+| 9201  | 9201      | tcp       | Porta HTTP OpenSearch                                 | ragflow-opensearch01             |
+| 6379  | 6379      | tcp       | Porta Redis                                           | ragflow-redis                    |
+| 9385  | 9385      | tcp       | Service port 9385 of ragflow-sandbox-executor-manager | ragflow-sandbox-executor-manager |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

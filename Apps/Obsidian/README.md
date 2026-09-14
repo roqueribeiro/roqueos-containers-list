@@ -1,26 +1,26 @@
 # Obsidian
 
-> Obsidian is a knowledge management app for creating, linking, and visually organizing Markdown notes.
+> Obsidian é uma aplicação de gestão de conhecimento para criar, ligar e organizar visualmente notas Markdown.
 
 ## O que é
 
-Obsidian is a self-hosted knowledge management app designed for creating, linking, and organizing notes, operating on local Markdown files, leveraging WebDAV and kasmVNC remote desktop technology to deliver a near-native experience in browsers. Its intuitive interface supports storing and editing notes on devices, ensuring full data ownership, ideal for crafting a lasting second brain.
+Obsidian é uma aplicação de gestão de conhecimento auto-hospedada concebida para criar, ligar e organizar notas, operando em ficheiros Markdown locais, aproveitando a tecnologia de ambiente de trabalho remoto WebDAV e kasmVNC para proporcionar uma experiência quase nativa em navegadores. A sua interface intuitiva suporta o armazenamento e edição de notas em dispositivos, garantindo propriedade total dos dados, ideal para criar um segundo cérebro duradouro.
 
-The app's core features include robust note management and connectivity, suitable for various scenarios. Bi-directional linking connects related notes, forming a web of knowledge, while the Graph View visualizes note relationships, helping users uncover hidden connections. It supports Markdown editing with live preview for easy formatting and structuring. Hundreds of community plugins and themes offer extended functionality, such as calendars, kanban boards, PDF annotation, and advanced search, enabling tailored workflows. The Canvas feature provides infinite visual organization space, aiding students in organizing research, writers in developing stories, or professionals in managing projects. Notes are stored as standard Markdown files, openable with any text editor, ensuring future-proof portability.
+As funcionalidades principais da aplicação incluem gestão robusta de notas e conectividade, adequadas para vários cenários. A ligação bidirecional conecta notas relacionadas, formando uma rede de conhecimento, enquanto a Vista de Gráfico visualiza relacionamentos de notas, ajudando utilizadores a descobrir ligações ocultas. Suporta edição Markdown com pré-visualização ao vivo para formatação e estruturação fáceis. Centenas de plugins e temas da comunidade oferecem funcionalidade estendida como calendários, quadros kanban, anotação PDF e pesquisa avançada, permitindo fluxos de trabalho personalizados. A funcionalidade Canvas fornece espaço infinito de organização visual, ajudando estudantes a organizar investigação, escritores a desenvolver histórias, ou profissionais a gerir projetos. As notas são armazenadas como ficheiros Markdown padrão, abríveis com qualquer editor de texto, garantindo portabilidade à prova de futuro.
 
-It enhances usability through community-provided documentation, and whether for personal knowledge bases or team collaboration, the app's high flexibility and intuitive operation offer a modern knowledge management solution.
+Melhora a usabilidade através de documentação fornecida pela comunidade, e seja para bases de conhecimento pessoais ou colaboração em equipa, a alta flexibilidade e operação intuitiva da aplicação oferecem uma solução moderna de gestão de conhecimento.
 
-**Key Features:**
-- Local storage, ensuring full data ownership
-- Bi-directional note linking for a knowledge web
-- Graph View for visualizing note connections
-- Extensible plugin system for personalized needs
-- Markdown support with live preview
-- Infinite Canvas for visual organization
-- Theme customization for enhanced visuals
+**Características Principais:**
+- Armazenamento local, garantindo propriedade total dos dados
+- Ligação bidirecional de notas para uma rede de conhecimento
+- Vista de Gráfico para visualizar ligações de notas
+- Sistema de plugins extensível para necessidades personalizadas
+- Suporte Markdown com pré-visualização ao vivo
+- Canvas infinito para organização visual
+- Personalização de temas para visuais melhorados
 
-**Learn More:**
-- [Obsidian Official Website](https://obsidian.md)
+**Saiba mais:**
+- [Site Oficial Obsidian](https://obsidian.md)
 - [DockerHub](https://hub.docker.com/r/linuxserver/obsidian)
 
 
@@ -29,10 +29,10 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve                  | Serviço  |
-| ----- | --------- | --------- | ------------------------------- | -------- |
-| 15323 | 3000      | tcp       | Obsidian Desktop GUI HTTP Port  | obsidian |
-| 15324 | 3001      | tcp       | Obsidian Desktop GUI HTTPS Port | obsidian |
+| Host  | Container | Protocolo | Para que serve                            | Serviço  |
+| ----- | --------- | --------- | ----------------------------------------- | -------- |
+| 15323 | 3000      | tcp       | Porta da interface desktop Obsidian HTTP  | obsidian |
+| 15324 | 3001      | tcp       | Porta da interface desktop Obsidian HTTPS | obsidian |
 
 
 ## Volumes

@@ -56,10 +56,10 @@ services:
       ports:
         - container: '8096'
           description:
-            en_us: ''
+            en_us: "Web interface for Emby(Nvidia GPU)"
         - container: '8920'
           description:
-            en_us: ''
+            en_us: "Service port 8920 of emby"
       volumes:
         - container: /config
           description:
@@ -120,4 +120,5 @@ x-casaos:
   port_map: '8096'
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

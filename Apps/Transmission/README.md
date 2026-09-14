@@ -1,12 +1,12 @@
 # Transmission
 
-> Transmission is a cross-platform BitTorrent client
+> Transmission é um cliente BitTorrent multiplataforma
 
 ## O que é
 
-Transmission is a BitTorrent client designed for simplicity and powerful performance, delivering an efficient and user-friendly downloading experience. It comes equipped with all the essential features you expect, including encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.
+Transmission é um cliente BitTorrent projetado para simplicidade e desempenho poderoso, proporcionando uma experiência de download eficiente e amigável. Ele vem equipado com todas as funcionalidades essenciais que você espera, incluindo encriptação, uma interface web, troca de peers, links magnéticos, DHT, µTP, encaminhamento de portas UPnP e NAT-PMP, suporte a webseed, diretórios de vigilância, edição de trackers, limites de velocidade globais e por torrent, e muito mais.
 
-With its intuitive interface, Transmission caters to both beginners and advanced users. Whether you’re managing a single download or juggling complex torrent queues, Transmission ensures a seamless experience with optimized resource usage and reliable performance. For casual users and tech enthusiasts alike, Transmission is the ideal BitTorrent solution.
+Com sua interface intuitiva, Transmission atende tanto a iniciantes quanto a utilizadores avançados. Seja gerindo um único download ou lidando com filas complexas de torrents, Transmission garante uma experiência fluida com uso otimizado de recursos e desempenho confiável. Para utilizadores casuais e entusiastas da tecnologia, Transmission é a solução BitTorrent ideal。
 
 
 Categoria na App Store do RoqueOS: **Utilities**.
@@ -14,12 +14,13 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve | Serviço      |
-| ----- | --------- | --------- | -------------- | ------------ |
-| 9091  | 9091      | tcp       | —              | transmission |
-| 51413 | 51413     | tcp       | —              | transmission |
-| 51413 | 51413     | udp       | —              | transmission |
+| Host  | Container | Protocolo | Para que serve                     | Serviço      |
+| ----- | --------- | --------- | ---------------------------------- | ------------ |
+| 9091  | 9091      | tcp       | Web interface for Transmission     | transmission |
+| 51413 | 51413     | tcp       | Service port 51413 of transmission | transmission |
+| 51413 | 51413     | udp       | Service port 51413 of transmission | transmission |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 
@@ -46,8 +47,8 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:9091/`.
 
-- | username | password |
-- | -------- | -------- |
+- | nome de utilizador | palavra-passe |
+- | ----------------- | ------------- |
 - | `roqueos` | `roqueos` |
 
 ## Imagens

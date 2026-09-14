@@ -11,10 +11,11 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 6789 | 6789      | tcp       | —              | nzbget  |
+| Host | Container | Protocolo | Para que serve           | Serviço |
+| ---- | --------- | --------- | ------------------------ | ------- |
+| 6789 | 6789      | tcp       | Web interface for Nzbget | nzbget  |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

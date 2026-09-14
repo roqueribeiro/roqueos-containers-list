@@ -1,29 +1,29 @@
 # Excalidraw
 
-> Virtual whiteboard for sketching hand-drawn like diagrams
+> Quadro branco virtual para esboçar diagramas estilo desenho à mão
 
 ## O que é
 
-Excalidraw is a virtual hand-drawn style whiteboard platform supporting infinite canvas and end-to-end encrypted collaboration. An intuitive interface offers a hand-drawn experience, ideal for brainstorming, design sketches, or educational scenarios, meeting diverse creative needs.
+O Excalidraw é uma plataforma de quadro branco virtual de estilo desenhado à mão que suporta tela infinita e colaboração encriptada ponto-a-ponto. Uma interface intuitiva oferece experiência desenhada à mão, ideal para brainstorming, esboços de design ou cenários educacionais, atendendo diversas necessidades criativas.
 
-Core features include an infinite canvas whiteboard and end-to-end encrypted collaboration. Hand-drawn style with shape library support allows creating rich graphics, enhanced by image insertion capabilities. Dark mode improves user experience, catering to diverse users.
+As funcionalidades principais incluem quadro branco de tela infinita e colaboração encriptada ponto-a-ponto. Estilo desenhado à mão com suporte de biblioteca de formas permite criar gráficos ricos, melhorado por capacidades de inserção de imagens. O modo escuro melhora a experiência do utilizador, atendendo utilizadores diversos.
 
-It provides export options including PNG, SVG, and clipboard for easy content sharing. Drawing capabilities cover rectangle, circle, diamond, arrow, line, free-draw, and eraser, with arrow-binding and labeled arrow support. Undo, redo, zoom, and panning functionalities optimize operations. With creativity and security at the core, the platform delivers a modern whiteboard design solution.
+Fornece opções de exportação incluindo PNG, SVG e área de transferência para partilha fácil de conteúdo. As capacidades de desenho cobrem rectângulo, círculo, diamante, seta, linha, desenho livre e borracha, com suporte de ligação de seta e setas etiquetadas.
 
-**Key Features:**
-- Infinite canvas whiteboard supporting hand-drawn style
-- Shape library support for creating rich graphics
-- Image insertion capability
-- Dark mode
-- Export to PNG, SVG, and clipboard
-- Open format - export drawings as an `.excalidraw` json file
-- Wide range of tools - rectangle, circle, diamond, arrow, line, free-draw, eraser...
-- Arrow-binding & labeled arrows
-- Undo and redo
-- Zoom and panning support
+**Funcionalidades Principais:**
+- Quadro branco de tela infinita suporta estilo desenhado à mão
+- Suporte de biblioteca de formas para criar gráficos ricos
+- Capacidade de inserção de imagens
+- Modo escuro
+- Exportação para PNG, SVG e área de transferência
+- Formato aberto - exportar desenhos como ficheiro json `.excalidraw`
+- Ampla gama de ferramentas - rectângulo, círculo, diamante, seta, linha, desenho livre, borracha...
+- Ligação de setas e setas etiquetadas
+- Desfazer e refazer
+- Suporte de zoom e panorâmica
 
-**Learn More:**
-- [Excalidraw Official Website](https://excalidraw.com/)
+**Saber Mais:**
+- [Website Oficial Excalidraw](https://excalidraw.com/)
 - [Excalidraw GitHub](https://github.com/excalidraw/excalidraw)
 
 
@@ -32,9 +32,9 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve  | Serviço    |
-| ----- | --------- | --------- | --------------- | ---------- |
-| 17638 | 80        | tcp       | WebUI HTTP Port | excalidraw |
+| Host  | Container | Protocolo | Para que serve   | Serviço    |
+| ----- | --------- | --------- | ---------------- | ---------- |
+| 17638 | 80        | tcp       | Porta HTTP WebUI | excalidraw |
 
 
 ## Volumes

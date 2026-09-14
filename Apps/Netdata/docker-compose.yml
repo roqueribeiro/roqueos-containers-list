@@ -1,6 +1,11 @@
 name: netdata
 services:
   app:
+    x-casaos:
+      ports:
+        - container: '19999'
+          description:
+            en_us: "Web interface for Netdata"
     cap_add:
       - SYS_PTRACE
       - SYS_ADMIN

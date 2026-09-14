@@ -9,13 +9,13 @@ services:
     network_mode: bridge
     ports:
       - target: 8000
-        published: '8000'
+        published: "8000"
         protocol: tcp
       - target: 9000
-        published: '9000'
+        published: "9000"
         protocol: tcp
       - target: 9443
-        published: '9443'
+        published: "9443"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -27,7 +27,10 @@ services:
         target: /var/run/docker.sock
     x-casaos:
       ports:
-        - container: '9000'
+        - container: '8000'
+          description:
+            en_us: "Service port 8000 of portainer"
+        - container: "9000"
           description:
             en_US: Portainer Web UI Port
             en_GB: Portainer Web UI Port
@@ -44,7 +47,15 @@ services:
             pt_PT: Porta Interface Web Portainer
             ru_RU: Порт Веб-Интерфейса Portainer
             tr_TR: Portainer Web UI Portu
-        - container: '9443'
+            en_us: Portainer Web UI Port
+            pt_br: Porta Interface Web Portainer
+            zh_cn: Portainer Web UI 端口
+            fr_fr: Port Interface Web Portainer
+            de_de: Portainer Web UI Port
+            it_it: Porta Interfaccia Web Portainer
+            ru_ru: Порт Веб-Интерфейса Portainer
+            ja_jp: Portainer Web UI ポート
+        - container: "9443"
           description:
             en_US: Portainer Web UI Port(https)
             en_GB: Portainer Web UI Port(https)
@@ -61,6 +72,14 @@ services:
             pt_PT: Porta Interface Web Portainer(https)
             ru_RU: Порт Веб-Интерфейса Portainer(https)
             tr_TR: Portainer Web UI Portu(https)
+            en_us: Portainer Web UI Port(https)
+            pt_br: Porta Interface Web Portainer(https)
+            zh_cn: Portainer Web UI 端口(https)
+            fr_fr: Port Interface Web Portainer(https)
+            de_de: Portainer Web UI Port(https)
+            it_it: Porta Interfaccia Web Portainer(https)
+            ru_ru: Порт Веб-Интерфейса Portainer(https)
+            ja_jp: Portainer Web UI ポート(https)
       volumes:
         - container: /data
           description:
@@ -79,6 +98,14 @@ services:
             pt_PT: Diretório de dados Portainer
             ru_RU: Каталог данных Portainer
             tr_TR: Portainer veri dizini
+            en_us: Portainer data directory
+            pt_br: Diretório de dados Portainer
+            zh_cn: Portainer 数据目录
+            fr_fr: Répertoire des données Portainer
+            de_de: Portainer Datenverzeichnis
+            it_it: Directory dati Portainer
+            ru_ru: Каталог данных Portainer
+            ja_jp: Portainer データディレクトリ
     container_name: portainer
 x-casaos:
   architectures:
@@ -343,6 +370,142 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Portainer Resmi Web Sitesi](https://www.portainer.io/)
       - [Portainer GitHub Deposu](https://github.com/portainer/portainer)
+    en_us: |
+      Portainer Community Edition (CE) is a lightweight container management tool offering an intuitive Web interface to simplify building, managing, and monitoring containerized applications. With over 500,000 active users, it is widely appreciated for its ease of use and robust functionality, ideal for individual developers, home lab users, and small teams.
+
+      The tool's core features include multi-platform support, resource management, and real-time monitoring. It supports managing various container platforms, covering containers, images, volumes, and networks. Users can quickly create, deploy, and manage containers via a “smart” graphical interface or comprehensive API, without needing deep command-line expertise. It provides real-time container status monitoring, log viewing, and configuration management, ensuring efficient control over application operations.
+
+      Its design philosophy is to “simplify container complexity” with an intuitive interface and default settings that lower the technical barrier. Users can manage containerized applications without complex configurations, saving time and boosting efficiency. It is completely free, with data stored locally, ensuring full user control. Community support via GitHub Discussions and Slack, along with rich documentation and regular updates, enhances the user experience, making it suitable for learning container technology or managing small projects.
+
+      **Key Features:**
+      - Intuitive Web interface for simplified containerized app management
+      - Supports multiple container platforms for unified resource management
+      - Real-time monitoring of container status and logs
+      - Rapid container deployment and management via API
+      - Community support with extensive documentation and assistance
+
+      **Learn More:**
+      - [Portainer Official Website](https://www.portainer.io/)
+      - [Portainer GitHub Repository](https://github.com/portainer/portainer)
+    pt_br: |
+      Portainer Community Edition (CE) é uma ferramenta leve de gestão de contentores que oferece uma interface Web intuitiva para simplificar a construção, gestão e monitorização de aplicações contentorizadas. Com mais de 500.000 utilizadores activos, é amplamente apreciado pela sua facilidade de uso e funcionalidade robusta, ideal para programadores individuais, utilizadores de laboratórios domésticos e pequenas equipas.
+
+      As características principais da ferramenta incluem suporte multi-plataforma, gestão de recursos e monitorização em tempo real. Suporta a gestão de várias plataformas de contentores, cobrindo contentores, imagens, volumes e redes. Os utilizadores podem rapidamente criar, implementar e gerir contentores através de uma interface gráfica "inteligente" ou API abrangente, sem necessitar de conhecimento profundo de linha de comandos. Proporciona monitorização em tempo real do estado dos contentores, visualização de registos e gestão de configuração, garantindo controlo eficiente das operações das aplicações.
+
+      A sua filosofia de design é "simplificar a complexidade dos contentores" com uma interface intuitiva e configurações predefinidas que reduzem a barreira técnica. Os utilizadores podem gerir aplicações contentorizadas sem configurações complexas, poupando tempo e aumentando a eficiência. É completamente gratuito, com dados armazenados localmente, garantindo controlo total do utilizador. O suporte da comunidade através de GitHub Discussions e Slack, juntamente com documentação rica e actualizações regulares, melhora a experiência do utilizador, tornando-o adequado para aprender tecnologia de contentores ou gerir pequenos projectos.
+
+      **Características Principais:**
+      - Interface Web intuitiva para gestão simplificada de aplicações contentorizadas
+      - Suporta múltiplas plataformas de contentores para gestão unificada de recursos
+      - Monitorização em tempo real do estado dos contentores e registos
+      - Implementação e gestão rápida de contentores através de API
+      - Suporte da comunidade com documentação extensa e assistência
+
+      **Saiba Mais:**
+      - [Site Oficial Portainer](https://www.portainer.io/)
+      - [Repositório GitHub Portainer](https://github.com/portainer/portainer)
+    zh_cn: |
+      Portainer Community Edition (CE) 是一款轻量级容器管理工具，提供直观的 Web 界面，简化容器化应用的构建、管理和监控。它拥有超过 50 万活跃用户，因其易用性和强大功能而广受欢迎，适合个人开发者、家庭实验室用户和小型团队。
+
+      该工具的核心功能包括多平台支持、资源管理和实时监控。它支持管理多种容器平台，覆盖容器、镜像、卷、网络等资源。用户可通过“智能”图形界面或全面的 API 快速创建、部署和管理容器，无需深入的命令行知识。它提供实时容器状态监控、日志查看和配置管理功能，确保用户能够高效掌控应用运行情况。
+
+      它的设计理念是“简化容器的复杂性”，通过直观的界面和默认设置，降低技术门槛。用户无需复杂配置即可管理容器化应用，节省时间并提高效率。它完全免费，数据存储在本地，确保用户完全掌控数据。社区通过 GitHub Discussions 和 Slack 提供支持，丰富的文档和定期更新进一步增强用户体验，适合学习容器技术或管理小型项目。
+
+      **主要功能：**
+      - 直观 Web 界面，简化容器化应用管理
+      - 支持多种容器平台，统一管理资源
+      - 实时监控容器状态与日志
+      - 通过 API 快速部署和管理容器
+      - 社区支持，提供丰富文档与帮助
+
+      **了解更多：**
+      - [Portainer官方网站](https://www.portainer.io/)
+      - [Portainer GitHub仓库](https://github.com/portainer/portainer)
+    fr_fr: |
+      Portainer Community Edition (CE) est un outil de gestion de conteneurs léger offrant une interface Web intuitive pour simplifier la construction, la gestion et la surveillance d'applications conteneurisées. Avec plus de 500 000 utilisateurs actifs, il est largement apprécié pour sa facilité d'utilisation et ses fonctionnalités robustes, idéal pour les développeurs individuels, les utilisateurs de laboratoires domestiques et les petites équipes.
+
+      Les fonctionnalités principales de l'outil incluent le support multi-plateforme, la gestion des ressources et la surveillance en temps réel. Il prend en charge la gestion de diverses plateformes de conteneurs, couvrant conteneurs, images, volumes et réseaux. Les utilisateurs peuvent rapidement créer, déployer et gérer des conteneurs via une interface graphique "intelligente" ou une API complète, sans nécessiter d'expertise approfondie en ligne de commande. Il fournit une surveillance en temps réel du statut des conteneurs, la visualisation des journaux et la gestion de configuration, assurant un contrôle efficace des opérations d'application.
+
+      Sa philosophie de conception est de "simplifier la complexité des conteneurs" avec une interface intuitive et des paramètres par défaut qui abaissent la barrière technique. Les utilisateurs peuvent gérer des applications conteneurisées sans configurations complexes, économisant du temps et améliorant l'efficacité. Il est entièrement gratuit, avec des données stockées localement, assurant un contrôle utilisateur complet. Le support communautaire via GitHub Discussions et Slack, ainsi qu'une riche documentation et des mises à jour régulières, améliore l'expérience utilisateur, le rendant adapté pour apprendre la technologie des conteneurs ou gérer de petits projets.
+
+      **Fonctionnalités Clés :**
+      - Interface Web intuitive pour la gestion simplifiée d'applications conteneurisées
+      - Prend en charge plusieurs plateformes de conteneurs pour une gestion unifiée des ressources
+      - Surveillance en temps réel du statut des conteneurs et des journaux
+      - Déploiement et gestion rapides de conteneurs via API
+      - Support communautaire avec documentation extensive et assistance
+
+      **En Savoir Plus :**
+      - [Site Officiel Portainer](https://www.portainer.io/)
+      - [Dépôt GitHub Portainer](https://github.com/portainer/portainer)
+    de_de: |
+      Portainer Community Edition (CE) ist ein leichtes Container-Management-Tool, das eine intuitive Web-Oberfläche bietet, um das Erstellen, Verwalten und Überwachen von containerisierten Anwendungen zu vereinfachen. Mit über 500.000 aktiven Benutzern wird es weithin für seine Benutzerfreundlichkeit und robuste Funktionalität geschätzt, ideal für einzelne Entwickler, Home-Lab-Benutzer und kleine Teams.
+
+      Die Kernfunktionen des Tools umfassen Multi-Plattform-Unterstützung, Ressourcenmanagement und Echtzeit-Überwachung. Es unterstützt die Verwaltung verschiedener Container-Plattformen und deckt Container, Images, Volumes und Netzwerke ab. Benutzer können Container schnell über eine "intelligente" grafische Oberfläche oder umfassende API erstellen, bereitstellen und verwalten, ohne tiefgreifende Kommandozeilen-Expertise zu benötigen. Es bietet Echtzeit-Container-Status-Überwachung, Log-Anzeige und Konfigurationsmanagement, um eine effiziente Kontrolle über Anwendungsoperationen zu gewährleisten.
+
+      Seine Design-Philosophie ist es, "Container-Komplexität zu vereinfachen" mit einer intuitiven Oberfläche und Standardeinstellungen, die die technische Barriere senken. Benutzer können containerisierte Anwendungen ohne komplexe Konfigurationen verwalten, Zeit sparen und die Effizienz steigern. Es ist völlig kostenlos, mit lokal gespeicherten Daten, die vollständige Benutzerkontrolle gewährleisten. Community-Support über GitHub Discussions und Slack, zusammen mit reichhaltiger Dokumentation und regelmäßigen Updates, verbessert die Benutzererfahrung und macht es geeignet für das Erlernen von Container-Technologie oder die Verwaltung kleiner Projekte.
+
+      **Hauptmerkmale:**
+      - Intuitive Web-Oberfläche für vereinfachte containerisierte App-Verwaltung
+      - Unterstützt mehrere Container-Plattformen für einheitliches Ressourcenmanagement
+      - Echtzeit-Überwachung von Container-Status und Logs
+      - Schnelle Container-Bereitstellung und -Verwaltung über API
+      - Community-Support mit umfangreicher Dokumentation und Unterstützung
+
+      **Mehr Erfahren:**
+      - [Portainer Offizielle Website](https://www.portainer.io/)
+      - [Portainer GitHub Repository](https://github.com/portainer/portainer)
+    it_it: |
+      Portainer Community Edition (CE) è uno strumento di gestione container leggero che offre un'interfaccia Web intuitiva per semplificare la creazione, gestione e monitoraggio di applicazioni containerizzate. Con oltre 500.000 utenti attivi, è ampiamente apprezzato per la sua facilità d'uso e funzionalità robuste, ideale per sviluppatori individuali, utenti di home lab e piccoli team.
+
+      Le funzionalità principali dello strumento includono supporto multi-piattaforma, gestione delle risorse e monitoraggio in tempo reale. Supporta la gestione di varie piattaforme container, coprendo container, immagini, volumi e reti. Gli utenti possono rapidamente creare, distribuire e gestire container tramite un'interfaccia grafica "intelligente" o API complete, senza necessità di esperienza approfondita da riga di comando. Fornisce monitoraggio in tempo reale dello stato dei container, visualizzazione log e gestione configurazioni, garantendo controllo efficiente delle operazioni applicative.
+
+      La sua filosofia di design è "semplificare la complessità dei container" con un'interfaccia intuitiva e impostazioni predefinite che abbassano la barriera tecnica. Gli utenti possono gestire applicazioni containerizzate senza configurazioni complesse, risparmiando tempo e aumentando l'efficienza. È completamente gratuito, con dati memorizzati localmente, garantendo pieno controllo utente. Il supporto della community tramite GitHub Discussions e Slack, insieme a documentazione ricca e aggiornamenti regolari, migliora l'esperienza utente, rendendolo adatto per apprendere la tecnologia container o gestire piccoli progetti.
+
+      **Caratteristiche Principali:**
+      - Interfaccia Web intuitiva per gestione semplificata app containerizzate
+      - Supporta piattaforme container multiple per gestione risorse unificata
+      - Monitoraggio in tempo reale di stato container e log
+      - Distribuzione e gestione rapida container tramite API
+      - Supporto community con documentazione estensiva e assistenza
+
+      **Scopri di Più:**
+      - [Sito Ufficiale Portainer](https://www.portainer.io/)
+      - [Repository GitHub Portainer](https://github.com/portainer/portainer)
+    ru_ru: |
+      Portainer Community Edition (CE) — это легкий инструмент управления контейнерами, предлагающий интуитивный веб-интерфейс для упрощения построения, управления и мониторинга контейнеризированных приложений. С более чем 500,000 активных пользователей, он широко ценится за простоту использования и надежную функциональность, идеально подходит для индивидуальных разработчиков, пользователей домашних лабораторий и небольших команд.
+
+      Основные функции инструмента включают поддержку множественных платформ, управление ресурсами и мониторинг в реальном времени. Он поддерживает управление различными платформами контейнеров, покрывая контейнеры, образы, тома и сети. Пользователи могут быстро создавать, развертывать и управлять контейнерами через "умный" графический интерфейс или комплексный API, не требуя глубоких знаний командной строки. Он обеспечивает мониторинг статуса контейнеров в реальном времени, просмотр журналов и управление конфигурацией, гарантируя эффективный контроль операций приложений.
+
+      Его философия дизайна — "упростить сложность контейнеров" с интуитивным интерфейсом и настройками по умолчанию, которые снижают технический барьер. Пользователи могут управлять контейнеризированными приложениями без сложных конфигураций, экономя время и повышая эффективность. Он полностью бесплатен, с данными, хранящимися локально, обеспечивая полный контроль пользователя. Поддержка сообщества через GitHub Discussions и Slack, вместе с богатой документацией и регулярными обновлениями, улучшает пользовательский опыт, делая его подходящим для изучения технологии контейнеров или управления небольшими проектами.
+
+      **Ключевые Особенности:**
+      - Интуитивный веб-интерфейс для упрощенного управления контейнеризированными приложениями
+      - Поддержка множественных платформ контейнеров для единого управления ресурсами
+      - Мониторинг статуса контейнеров и журналов в реальном времени
+      - Быстрое развертывание и управление контейнерами через API
+      - Поддержка сообщества с обширной документацией и помощью
+
+      **Узнать Больше:**
+      - [Официальный Сайт Portainer](https://www.portainer.io/)
+      - [Репозиторий GitHub Portainer](https://github.com/portainer/portainer)
+    ja_jp: |
+      Portainer Community Edition (CE)は、コンテナ化されたアプリケーションの構築、管理、監視を簡素化する直感的なWebインターフェースを提供する軽量コンテナ管理ツールです。50万人以上のアクティブユーザーを持ち、使いやすさと堅牢な機能性で広く評価されており、個人開発者、ホームラボユーザー、小規模チームに最適です。
+
+      このツールの中核機能には、マルチプラットフォームサポート、リソース管理、リアルタイム監視が含まれます。コンテナ、イメージ、ボリューム、ネットワークをカバーする様々なコンテナプラットフォームの管理をサポートします。ユーザーは「スマート」グラフィカルインターフェースまたは包括的なAPIを介して、深いコマンドライン専門知識を必要とせずに、コンテナを迅速に作成、デプロイ、管理できます。リアルタイムコンテナステータス監視、ログ表示、設定管理を提供し、アプリケーション操作の効率的な制御を確保します。
+
+      その設計哲学は、直感的なインターフェースとデフォルト設定で「コンテナの複雑さを簡素化」し、技術的ハードルを下げることです。ユーザーは複雑な設定なしでコンテナ化されたアプリケーションを管理でき、時間を節約し効率を向上させます。完全に無料で、データはローカルに保存され、ユーザーの完全な制御を保証します。GitHub DiscussionsとSlackを通じたコミュニティサポート、豊富なドキュメントと定期的な更新により、ユーザーエクスペリエンスが向上し、コンテナ技術の学習や小規模プロジェクトの管理に適しています。
+
+      **主な機能：**
+      - コンテナ化されたアプリ管理を簡素化する直感的なWebインターフェース
+      - 統合リソース管理のための複数コンテナプラットフォームサポート
+      - コンテナステータスとログのリアルタイム監視
+      - APIによる迅速なコンテナデプロイメントと管理
+      - 広範なドキュメントとサポートを提供するコミュニティサポート
+
+      **詳しく学ぶ：**
+      - [Portainer公式ウェブサイト](https://www.portainer.io/)
+      - [Portainer GitHubリポジトリ](https://github.com/portainer/portainer)
   developer: Portainer
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Portainer/icon.png
   screenshot_link:
@@ -364,11 +527,23 @@ x-casaos:
     pt_PT: Interface leve de gestão Docker
     ru_RU: Легкий интерфейс управления Docker
     tr_TR: Hafif Docker yönetim arayüzü
+    en_us: Lightweight Docker management UI
+    pt_br: Interface leve de gestão Docker
+    zh_cn: 轻量级 Docker 管理界面
+    fr_fr: Interface de gestion Docker légère
+    de_de: Leichtes Docker-Management-UI
+    it_it: Interfaccia di gestione Docker leggera
+    ru_ru: Легкий интерфейс управления Docker
+    ja_jp: 軽量 Docker 管理UI
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Portainer/thumbnail.png
   tips: null
   main: portainer
   title:
     en_US: Portainer
+    en_us: Portainer
   index: /
-  port_map: '9000'
+  port_map: "9000"
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

@@ -15,6 +15,7 @@ Arquiteturas suportadas: amd64, arm64, arm.
 | ---- | --------- | --------- | ---------------------- | ------- |
 | 5000 | 5000      | tcp       | Porta da interface web | whoogle |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

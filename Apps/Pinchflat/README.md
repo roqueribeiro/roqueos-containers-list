@@ -1,29 +1,29 @@
 # Pinchflat
 
-> Your next YouTube media manager
+> O seu próximo gestor multimédia YouTube
 
 ## O que é
 
-Pinchflat is a self-hosted app for downloading YouTube content built using yt-dlp. It's designed to be lightweight, self-contained, and easy to use. You set up rules for how to download content from YouTube channels or playlists and it'll do the rest, periodically checking for new content.
+Pinchflat é uma aplicação auto-hospedada para descarregar conteúdo do YouTube construída usando yt-dlp. Foi concebida para ser leve, auto-contida e fácil de usar. Define regras para como descarregar conteúdo de canais ou listas de reprodução do YouTube e fará o resto, verificando periodicamente novo conteúdo.
 
-Key features include:
-- Self-contained - just one Docker container with no external dependencies
-- Powerful naming system so content is stored where and how you want it
-- Easy-to-use web interface with presets to get you started right away
-- First-class support for media center apps like Plex, Jellyfin, and Kodi
-- Supports serving RSS feeds to your favourite podcast app
-- Automatically downloads new content from channels and playlists
-- Supports downloading audio content
-- Custom rules for handling YouTube Shorts and livestreams
-- Apprise support for notifications
-- Optionally automatically delete old content
-- Advanced options like setting cutoff dates and filtering by title
-- Reliable hands-off operation
-- Can pass cookies to YouTube to download your private playlists
-- Sponsorblock integration
-- Supports running custom scripts when after downloading/deleting media
+As funcionalidades principais incluem:
+- Auto-contida - apenas um contentor Docker sem dependências externas
+- Sistema de nomenclatura poderoso para que o conteúdo seja armazenado onde e como deseja
+- Interface web fácil de usar com predefinições para começar imediatamente
+- Suporte de primeira classe para aplicações de centro multimédia como Plex, Jellyfin e Kodi
+- Suporta servir feeds RSS para a sua aplicação de podcast favorita
+- Descarrega automaticamente novo conteúdo de canais e listas de reprodução
+- Suporta descarregar conteúdo áudio
+- Regras personalizadas para lidar com YouTube Shorts e livestreams
+- Suporte Apprise para notificações
+- Opcionalmente elimina automaticamente conteúdo antigo
+- Opções avançadas como definir datas de corte e filtrar por título
+- Operação fiável sem intervenção
+- Pode passar cookies para o YouTube para descarregar as suas listas de reprodução privadas
+- Integração Sponsorblock
+- Suporta executar scripts personalizados após descarregar/eliminar multimédia
 
-Perfect for people who want to download content for use with a media center app or for those who want to archive media!
+Perfeito para pessoas que querem descarregar conteúdo para usar com uma aplicação de centro multimédia ou para aqueles que querem arquivar multimédia!
 
 
 Categoria na App Store do RoqueOS: **Media**.
@@ -31,9 +31,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço   |
-| ---- | --------- | --------- | --------------- | --------- |
-| 8945 | 8945      | tcp       | WebUI HTTP Port | pinchflat |
+| Host | Container | Protocolo | Para que serve   | Serviço   |
+| ---- | --------- | --------- | ---------------- | --------- |
+| 8945 | 8945      | tcp       | Porta HTTP WebUI | pinchflat |
 
 
 ## Volumes
@@ -57,9 +57,9 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8945/`.
 
-- Pinchflat will automatically create the necessary directories and start downloading content based on your configured sources.
-- Make sure you have enough storage space for your downloads. The app uses /downloads as the default download directory.
-- After installation, access the web interface to configure your YouTube channels and playlists for automatic downloading.
+- Pinchflat criará automaticamente os diretórios necessários e começará a descarregar conteúdo baseado nas suas fontes configuradas.
+- Certifique-se de que tem espaço de armazenamento suficiente para os seus downloads. A aplicação usa /downloads como diretório de download padrão.
+- Após a instalação, aceda à interface web para configurar os seus canais YouTube e listas de reprodução para download automático.
 
 ## Imagens
 

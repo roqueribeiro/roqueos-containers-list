@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 8282 | 8080      | tcp       | —              | sabnzbd |
+| Host | Container | Protocolo | Para que serve            | Serviço |
+| ---- | --------- | --------- | ------------------------- | ------- |
+| 8282 | 8080      | tcp       | Web interface for Sabnzbd | sabnzbd |
 
 
 ## Volumes

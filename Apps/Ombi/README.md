@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 3579 | 3579      | tcp       | —              | ombi    |
+| Host | Container | Protocolo | Para que serve         | Serviço |
+| ---- | --------- | --------- | ---------------------- | ------- |
+| 3579 | 3579      | tcp       | Web interface for Ombi | ombi    |
 
 
 ## Volumes

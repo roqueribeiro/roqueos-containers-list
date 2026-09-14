@@ -11,11 +11,12 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 8096 | 8096      | tcp       | —              | emby    |
-| 8920 | 8920      | tcp       | —              | emby    |
+| Host | Container | Protocolo | Para que serve                     | Serviço |
+| ---- | --------- | --------- | ---------------------------------- | ------- |
+| 8096 | 8096      | tcp       | Web interface for Emby(Nvidia GPU) | emby    |
+| 8920 | 8920      | tcp       | Service port 8920 of emby          | emby    |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

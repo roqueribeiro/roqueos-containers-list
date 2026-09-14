@@ -1,46 +1,46 @@
 # Hugo
 
-> The world's fastest framework for building websites
+> O framework mais rápido do mundo para construir websites
 
 ## O que é
 
-Hugo is a high-speed static site generation platform written in Go, optimized for speed and designed for flexibility. Advanced templating system and fast asset pipelines render a complete website in seconds, ideal for creating documentation sites, landing pages, and various project websites.
+O Hugo é uma plataforma de geração de sites estáticos de alta velocidade escrita em Go, optimizada para velocidade e concebida para flexibilidade. O sistema de templates avançado e pipelines de recursos rápidos renderizam um website completo em segundos, ideal para criar sites de documentação, páginas de destino e vários websites de projetos.
 
-Core features include optimized speed and a flexible framework. Concurrency in Go enables rapid rendering, supporting image processing (convert, resize, crop, rotate, adjust colors, apply filters, overlay text/images, extract EXIF data), JavaScript bundling (tree shaking, code splitting), Sass processing, and TailwindCSS support. Multilingual support and taxonomy system make it suitable for diverse sites like documentation, news, or events.
+As funcionalidades principais incluem velocidade optimizada e uma estrutura flexível. A concorrência em Go permite renderização rápida, suportando processamento de imagens (conversão, redimensionamento, recorte, rotação, ajuste de cores, aplicação de filtros, sobreposição de texto/imagens, extracção de dados EXIF), empacotamento JavaScript (tree shaking, divisão de código), processamento Sass e forte suporte TailwindCSS. O suporte multilingue e sistema de taxonomia tornam-no adequado para sites diversos como documentação, notícias ou eventos.
 
-It includes an embedded web server for real-time previews of content, structure, and style changes during development. Frequent releases ensure ongoing feature enhancements, keeping it cutting-edge. With efficiency and flexibility at the core, the platform delivers a modern static site generation solution.
+Inclui um servidor web incorporado para pré-visualizações em tempo real de conteúdo, estrutura e alterações de estilo durante o desenvolvimento. Lançamentos frequentes garantem melhorias contínuas de funcionalidades, mantendo-o na vanguarda. Com eficiência e flexibilidade no centro, a plataforma proporciona uma solução moderna de geração de sites estáticos.
 
-**Key Features:**
-- High-speed rendering, generating sites in seconds
-- Fast asset pipelines: image processing, JavaScript bundling, Sass, and TailwindCSS support
-- Flexible framework with multilingual and taxonomy systems
-- Embedded web server for real-time development previews
-- Rich ecosystem of themes and plugins
+**Funcionalidades Principais:**
+- Renderização de alta velocidade, gerando sites em segundos
+- Pipelines de recursos rápidos: processamento de imagens, empacotamento JavaScript, Sass e suporte TailwindCSS
+- Estrutura flexível com sistemas multilingues e de taxonomia
+- Servidor web incorporado para pré-visualizações de desenvolvimento em tempo real
+- Rico ecossistema de temas e plugins
 
 
-**Prerequisites for Using Hugo:**
+**Pré-requisitos para Usar Hugo:**
 
-1. Open command line, navigate to `/DATA/AppData/hugo/project` directory
+1. Abrir linha de comandos, navegar para o directório `/DATA/AppData/hugo/project`
 
 ```cd /DATA/AppData/hugo/project```
 
-2. Initialize the `project` directory as an empty Git repository
+2. Inicializar o directório `project` como um repositório Git vazio
 
 ```git init```
 
-3. Download the Ananke theme
+3. Descarregar o tema Ananke
 
 ```git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke```
 
-4. Specify the current theme
+4. Especificar o tema actual
 
 ```echo "theme = 'ananke'" >> hugo.toml```
 
-5. Restart Hugo
+5. Reiniciar Hugo
 
 
-**Learn More:**
-- [Hugo Official Website](https://gohugo.io/)
+**Saber Mais:**
+- [Website Oficial Hugo](https://gohugo.io/)
 - [Hugo GitHub](https://github.com/gohugoio/hugo)
 
 
@@ -49,9 +49,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço |
-| ---- | --------- | --------- | --------------- | ------- |
-| 1313 | 1313      | tcp       | WebUI HTTP Port | hugo    |
+| Host | Container | Protocolo | Para que serve   | Serviço |
+| ---- | --------- | --------- | ---------------- | ------- |
+| 1313 | 1313      | tcp       | Porta HTTP WebUI | hugo    |
 
 
 ## Volumes
@@ -72,7 +72,7 @@ _Nenhum._
 
 Depois de instalar, abra `http://<endereço-do-servidor>:1313/`.
 
-- We recommend reviewing the [Quick Start](https://gohugo.io/getting-started/quick-start/) documentation to learn how to use Hugo.
+- Recomendamos rever a documentação [Início Rápido](https://gohugo.io/getting-started/quick-start/) para aprender como usar o Hugo.
 
 ## Imagens
 

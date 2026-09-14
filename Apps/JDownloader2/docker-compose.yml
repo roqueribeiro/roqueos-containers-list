@@ -105,4 +105,5 @@ x-casaos:
   title:
     en_us: JDownloader2
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

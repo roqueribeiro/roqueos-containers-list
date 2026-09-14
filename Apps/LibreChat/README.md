@@ -1,27 +1,27 @@
 # LibreChat
 
-> A full-featured, open-source AI chat interface
+> Uma interface de chat AI completa e open-source
 
 ## O que é
 
-LibreChat is a full-featured, open-source AI chat interface that allows users to interact with multiple AI models through a unified platform. It supports various AI providers and offers advanced features like conversation management, plugin support, and customizable interfaces.
-**Key Features:**
-- Support for multiple AI models and providers
-- Conversation history and management
-- Plugin system for extended functionality
-- Customizable themes and interfaces
-- User authentication and management
-- API integrations for various services
-- Search functionality with MeiliSearch
-- RAG (Retrieval-Augmented Generation) support
-- File upload and processing capabilities
-- Multi-language support
-**Learn More:**
-- [LibreChat Official Website](https://www.librechat.ai)
-- [LibreChat GitHub Repository](https://github.com/danny-avila/LibreChat)
+O LibreChat é uma interface de chat AI completa e open-source que permite aos usuários interagir com vários modelos de IA através de uma plataforma unificada. Suporta vários provedores de IA e oferece recursos avançados como gerenciamento de conversas, suporte a plugins e interfaces personalizáveis.
+**Principais Funcionalidades:**
+- Suporte para vários modelos e provedores de IA
+- Histórico e gerenciamento de conversas
+- Sistema de plugins para funcionalidade estendida
+- Temas e interfaces personalizáveis
+- Autenticação e gerenciamento de usuários
+- Integrações de API para vários serviços
+- Funcionalidade de pesquisa com MeiliSearch
+- Suporte a RAG (Retrieval-Augmented Generation)
+- Capacidades de upload e processamento de arquivos
+- Suporte multilíngue
+**Saiba Mais:**
+- [Site Oficial do LibreChat](https://www.librechat.ai)
+- [Repositório GitHub do LibreChat](https://github.com/danny-avila/LibreChat)
 
 ** extra: **
-You can refer to the [Custom AI Endpoints](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints) documentation to configure the relevant files for calling the APIs of Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify, and xAI.
+Pode consultar a documentação [Custom AI Endpoints](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints) para configurar os ficheiros relevantes para chamar as APIs da Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify e xAI.
 
 
 Categoria na App Store do RoqueOS: **AI**.
@@ -29,10 +29,11 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço       |
-| ---- | --------- | --------- | --------------- | ------------- |
-| 3080 | 3080      | tcp       | WebUI HTTP Port | librechat-api |
+| Host | Container | Protocolo | Para que serve   | Serviço       |
+| ---- | --------- | --------- | ---------------- | ------------- |
+| 3080 | 3080      | tcp       | Porta HTTP WebUI | librechat-api |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

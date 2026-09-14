@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, 386, arm64, arm.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 5005 | 80        | tcp       | —              | webdav  |
+| Host | Container | Protocolo | Para que serve           | Serviço |
+| ---- | --------- | --------- | ------------------------ | ------- |
+| 5005 | 80        | tcp       | Web interface for WebDAV | webdav  |
 
 
 ## Volumes

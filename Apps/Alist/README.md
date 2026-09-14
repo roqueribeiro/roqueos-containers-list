@@ -1,14 +1,14 @@
 # Alist
 
-> Mount your cloud drive on your home NAS
+> Monte o seu disco na nuvem no seu NAS doméstico
 
 ## O que é
 
-Alist transforms how you manage and access your files at home, whether on your TV, phone, or any other device. Unlike traditional cloud storage, Alist offers a unified experience across multiple platforms, making it a breeze to keep your media and documents at your fingertips.
+O Alist transforma a forma como gere e acede aos seus ficheiros em casa, seja na sua televisão, telemóvel ou qualquer outro dispositivo. Ao contrário do armazenamento em nuvem tradicional, o Alist oferece uma experiência unificada em várias plataformas, tornando simples manter os seus média e documentos ao seu alcance.
 
-With features like easy installation, support for multiple storage providers (local, Aliyundrive, Onedrive, Google Drive), WebDAV support, dark mode, protected routes with password authentication, file previews for videos, audio, office files, PDFs, code, images, package and batch downloads, single sign-on, offline torrent downloads, file encryption, and additional tools like a text editor and Cloudflare workers proxy, Alist ensures a seamless and secure file management experience.
+Com funcionalidades como instalação fácil, suporte para vários fornecedores de armazenamento (local, Aliyundrive, Onedrive, Google Drive), suporte WebDAV, modo escuro, rotas protegidas com autenticação por palavra-passe, pré-visualização de ficheiros para vídeos, áudio, ficheiros de escritório, PDFs, código, imagens, downloads em pacote e em lote, autenticação única, downloads de torrents offline, encriptação de ficheiros e ferramentas adicionais como um editor de texto e proxy de trabalhadores Cloudflare, o Alist garante uma experiência de gestão de ficheiros fluida e segura.
 
-Deploying Alist on private cloud devices like Zima brings unmatched convenience with multi-device access, ensuring your files are always within reach and secure, no matter where you are.
+A implementação do Alist em dispositivos de nuvem privada como o Zima proporciona uma conveniência inigualável com acesso multi-dispositivo, garantindo que os seus ficheiros estejam sempre acessíveis e seguros, onde quer que esteja.
 
 
 Categoria na App Store do RoqueOS: **Storage**.
@@ -38,7 +38,7 @@ _Nenhum._
 
 Depois de instalar, abra `http://<endereço-do-servidor>:5244/`.
 
-- After installation, please check the initial password in the container log (Settings - TopRight - Terminal and Logs - Logs).
+- Após a instalação, verifique a senha inicial no log do contêiner (Configurações - Canto superior direito - Terminal e Registos - Registos).
 
 ## Imagens
 

@@ -41,3 +41,6 @@ x-casaos:
     en_us: Adminer
   port_map: '8080'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

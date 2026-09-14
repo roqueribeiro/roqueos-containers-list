@@ -20,7 +20,7 @@ services:
       ports:
         - container: '8000'
           description:
-            en_us: ''
+            en_us: "Web interface for 2FAuth"
       volumes:
         - container: /2fauth
           description:
@@ -76,3 +76,6 @@ x-casaos:
   index: /
   port_map: '8000'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

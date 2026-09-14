@@ -32,6 +32,9 @@ services:
         target: /data/nes/roms
     x-casaos:
       ports:
+        - container: '4001'
+          description:
+            en_us: "Service port 4001 of emulatorjs"
         - container: '80'
           description:
             en_us: Play Game
@@ -87,6 +90,7 @@ x-casaos:
     en_us: emulatorjs
   main: emulatorjs
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true
   motivo:
     privileged: "acesso direto a dispositivos de entrada (gamepad) via /dev/input"

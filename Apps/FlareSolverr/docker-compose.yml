@@ -1,6 +1,11 @@
 name: flaresolverr
 services:
   flaresolverr:
+    x-casaos:
+      ports:
+        - container: '8191'
+          description:
+            en_us: "Web interface for FlareSolverr"
     environment:
       PGID: $PGID
       PUID: $PUID

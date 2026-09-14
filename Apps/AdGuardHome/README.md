@@ -11,14 +11,15 @@ Arquiteturas suportadas: 386, amd64, arm, arm64, ppc64le.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço      |
-| ---- | --------- | --------- | -------------- | ------------ |
-| 531  | 53        | tcp       | —              | adguard-home |
-| 531  | 53        | udp       | —              | adguard-home |
-| 3001 | 3000      | tcp       | —              | adguard-home |
-| 853  | 853       | tcp       | —              | adguard-home |
-| 784  | 784       | udp       | —              | adguard-home |
+| Host | Container | Protocolo | Para que serve                   | Serviço      |
+| ---- | --------- | --------- | -------------------------------- | ------------ |
+| 531  | 53        | tcp       | DNS (port 53)                    | adguard-home |
+| 531  | 53        | udp       | DNS (port 53)                    | adguard-home |
+| 3001 | 3000      | tcp       | Web interface for AdGuard Home   | adguard-home |
+| 853  | 853       | tcp       | Service port 853 of adguard-home | adguard-home |
+| 784  | 784       | udp       | Service port 784 of adguard-home | adguard-home |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

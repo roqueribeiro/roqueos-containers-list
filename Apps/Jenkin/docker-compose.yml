@@ -1,6 +1,11 @@
 name: jenkins
 services:
   jenkins:
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: "Web interface for Jenkins CI/CD"
     image: jenkins/jenkins:lts-jdk17
     privileged: false
     user: root
@@ -62,3 +67,6 @@ x-casaos:
   port_map: '8080'
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jenkin/icon.png
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

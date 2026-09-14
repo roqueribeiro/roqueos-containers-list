@@ -35,19 +35,19 @@ services:
       ports:
         - container: '53'
           description:
-            en_us: ''
+            en_us: "DNS (port 53)"
         - container: '53'
           description:
-            en_us: ''
+            en_us: "DNS (port 53)"
         - container: '3000'
           description:
-            en_us: ''
+            en_us: "Web interface for AdGuard Home"
         - container: '853'
           description:
-            en_us: ''
+            en_us: "Service port 853 of adguard-home"
         - container: '784'
           description:
-            en_us: ''
+            en_us: "Service port 784 of adguard-home"
       volumes:
         - container: /opt/adguardhome/work
           description:
@@ -117,3 +117,6 @@ x-casaos:
   index: /
   port_map: '3001'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

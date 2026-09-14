@@ -1,29 +1,29 @@
 # ArchiveBox
 
-> Self-hosted internet archiving solution
+> Solução de Arquivamento de Internet Auto-hospedada
 
 ## O que é
 
-ArchiveBox is a powerful, self-hosted internet archiving solution that allows you to create your own personal archive of web pages, PDFs, videos, and more. It functions as a personal internet archive, saving content in multiple formats for long-term preservation.
+ArchiveBox é uma poderosa solução de arquivamento de internet auto-hospedada que lhe permite criar o seu próprio arquivo pessoal de páginas web, PDFs, vídeos e mais. Funciona como um arquivo de internet pessoal, guardando conteúdo em múltiplos formatos para preservação a longo prazo.
 
-The system consists of multiple components:
-- **ArchiveBox**: The main application providing the web interface and archiving capabilities
-- **Sonic**: A fast search backend for full-text search across archived content
-- **ArchiveBox Scheduler**: A background service for scheduled archiving tasks
-- **NoVNC**: A web-based VNC client for browser-based archiving
+O sistema consiste em múltiplos componentes:
+- **ArchiveBox**: A aplicação principal que fornece a interface web e capacidades de arquivamento
+- **Sonic**: Um backend de pesquisa rápido para pesquisa de texto completo em conteúdo arquivado
+- **ArchiveBox Scheduler**: Um serviço de fundo para tarefas de arquivamento agendadas
+- **NoVNC**: Um cliente VNC baseado na web para arquivamento baseado em navegador
 
-**Key Features:**
-- Save web pages in multiple formats (HTML, PDF, screenshots, etc.)
-- Full-text search across all archived content
-- Scheduled archiving of websites and RSS feeds
-- Browser-based archiving with NoVNC
-- User authentication and access control
-- Extract and save media files (videos, audio, PDFs, etc.)
+**Características Principais:**
+- Guardar páginas web em múltiplos formatos (HTML, PDF, capturas de ecrã, etc.)
+- Pesquisa de texto completo em todo o conteúdo arquivado
+- Arquivamento agendado de websites e feeds RSS
+- Arquivamento baseado em navegador com NoVNC
+- Autenticação de utilizador e controlo de acesso
+- Extrair e guardar ficheiros multimédia (vídeos, áudio, PDFs, etc.)
 
-**Learn More:**
-- [ArchiveBox Official Website](https://archivebox.io)
-- [ArchiveBox GitHub Repository](https://github.com/ArchiveBox/ArchiveBox)
-- [ArchiveBox Documentation](https://github.com/ArchiveBox/ArchiveBox/wiki)
+**Saiba Mais:**
+- [Website Oficial ArchiveBox](https://archivebox.io)
+- [Repositório GitHub ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
+- [ArchiveBox Documentação](https://github.com/ArchiveBox/ArchiveBox/wiki)
 
 
 Categoria na App Store do RoqueOS: **Utilities**.
@@ -31,10 +31,10 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve                | Serviço          |
-| ----- | --------- | --------- | ----------------------------- | ---------------- |
-| 18010 | 8000      | tcp       | ArchiveBox Web Interface Port | archivebox       |
-| 18082 | 8080      | tcp       | NoVNC Web Interface Port      | archivebox_novnc |
+| Host  | Container | Protocolo | Para que serve                    | Serviço          |
+| ----- | --------- | --------- | --------------------------------- | ---------------- |
+| 18010 | 8000      | tcp       | Porta da Interface Web ArchiveBox | archivebox       |
+| 18082 | 8080      | tcp       | Porta da Interface Web NoVNC      | archivebox_novnc |
 
 
 ## Volumes
@@ -74,10 +74,10 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:18010/`.
 
-- **Default Account**
-- | Username | Password |
-- |----------|----------|
-- | `roqueos`    | `roqueos` |
+- **Conta Padrão**
+- | Nome de Utilizador | Palavra-passe |
+- |--------------------|----------------|
+- | `roqueos`           | `roqueos`       |
 
 ## Imagens
 

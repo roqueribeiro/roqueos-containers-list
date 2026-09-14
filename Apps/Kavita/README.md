@@ -1,30 +1,30 @@
 # Kavita
 
-> Kavita is a free and open source web based Comic and Book Server.
+> O Kavita é um servidor de banda desenhada e livros baseado na Web, gratuito e de código aberto.
 
 ## O que é
 
-Kavita is a self-hosted digital library app designed for managing and reading comics, light novels, and e-books (supporting CBZ, CBR, EPUB, PDF, and more), offering a secure and convenient solution for personal reading collections. Its responsive Web interface allows users to access content effortlessly via any browser, with fullscreen reading and full localization support, ideal for comic and e-book enthusiasts building personalized digital libraries.
+O Kavita é uma aplicação de biblioteca digital auto-hospedada, concebida para gerir e ler banda desenhada, light novels e e-books (suporta CBZ, CBR, EPUB, PDF, entre outros), oferecendo uma solução segura e conveniente para coleções de leitura pessoais. A sua interface Web responsiva permite aos utilizadores aceder facilmente ao conteúdo através de qualquer navegador, com leitura em ecrã inteiro e suporte total de localização, ideal para entusiastas de banda desenhada e e-books que pretendem construir bibliotecas digitais personalizadas.
 
-The app's core features include robust library management and an enhanced reading experience. Users can organize content with collections, reading lists, and custom tags, editing metadata to keep libraries neatly arranged. The built-in manga reader supports dual-page mode, Webtoon scrolling, and image splitting, while the e-book reader offers customizable fonts, spacing, and themes, with by-line progress syncing across devices. The PDF reader provides light/dark modes and diverse settings. It supports multi-user management, allowing custom permissions for sharing libraries or restricting content access, perfect for family or team use. Bulk imports and full-text search streamline large collection management.
+As principais funcionalidades da aplicação incluem uma gestão robusta da biblioteca e uma experiência de leitura melhorada. Os utilizadores podem organizar o conteúdo com coleções, listas de leitura e etiquetas personalizadas, editando metadados para manter as bibliotecas organizadas. O leitor de manga incorporado suporta modo de página dupla, scroll Webtoon e divisão de imagens, enquanto o leitor de e-books oferece fontes, espaçamento e temas personalizáveis, com sincronização de progresso linha a linha entre dispositivos. O leitor de PDF oferece modos claro/escuro e várias definições. Suporta gestão multiutilizador, permitindo permissões personalizadas para partilhar bibliotecas ou restringir o acesso a conteúdos, perfeito para famílias ou equipas. Importações em massa e pesquisa de texto integral simplificam a gestão de grandes coleções.
 
-It can be flexibly deployed on personal servers or NAS devices, with an active community providing extensive documentation to enhance functionality. Folder monitoring automatically detects file changes without manual scans, and sending content to Kindle or other devices improves cross-device access. Whether creating a personal reading hub or sharing media with others, the app's intuitive interface and high customizability deliver a modern management platform, meeting needs from casual reading to professional collections.
+Pode ser implementado de forma flexível em servidores pessoais ou dispositivos NAS, com uma comunidade ativa que fornece documentação extensa para melhorar a funcionalidade. A monitorização de pastas deteta automaticamente alterações de ficheiros sem análises manuais, e o envio de conteúdo para Kindle ou outros dispositivos melhora o acesso entre dispositivos. Quer esteja a criar um centro de leitura pessoal ou a partilhar media com outros, a interface intuitiva e a elevada personalização da aplicação oferecem uma plataforma de gestão moderna, satisfazendo necessidades desde a leitura casual até coleções profissionais.
 
-**Key Features:**
-- Serve up Manga/Webtoons/Comics (cbr, cbz, zip/rar/rar5, 7zip, raw images) and Books (epub, pdf)
-- First class responsive readers that work great on any device (phone, tablet, desktop)
-- Customizable theming support: [Theme Repo](https://github.com/Kareadita/Themes) and [Documentation](https://wiki.kavitareader.com/guides/themes/)
-- External metadata integration and scrobbling for read status, ratings, and reviews (available via Kavita+)
-- Rich Metadata support with filtering and searching
-- Ways to group reading material: Collections, Reading Lists (CBL Import), Want to Read
-- Ability to manage users with rich Role-based management for age restrictions, abilities within the app, etc
-- Rich web readers supporting webtoon, continuous reading mode (continue without leaving the reader), virtual pages (epub), etc
-- Ability to customize your dashboard and side nav with smart filters, custom order and visibility toggles
-- Ability to download metadata (available via Kavita+)
+**Funcionalidades Principais:**
+- Serve Manga/Webtoons/Banda Desenhada (cbr, cbz, zip/rar/rar5, 7zip, imagens brutas) e Livros (epub, pdf)
+- Leitores responsivos de primeira classe que funcionam perfeitamente em qualquer dispositivo (telefone, tablet, desktop)
+- Suporte de temas personalizáveis: [Repositório de Temas](https://github.com/Kareadita/Themes) e [Documentação](https://wiki.kavitareader.com/guides/themes/)
+- Integração de metadados externos e scrobbling para estado de leitura, classificações e críticas (disponível via Kavita+)
+- Suporte rico de metadados com filtragem e pesquisa
+- Formas de agrupar material de leitura: Coleções, Listas de Leitura (Importação CBL), Quero Ler
+- Capacidade de gerir utilizadores com gestão rica baseada em funções para restrições de idade, capacidades dentro da aplicação, etc
+- Leitores web ricos que suportam webtoon, modo de leitura contínua (continuar sem sair do leitor), páginas virtuais (epub), etc
+- Capacidade de personalizar o seu painel e navegação lateral com filtros inteligentes, ordem personalizada e alternadores de visibilidade
+- Capacidade de descarregar metadados (disponível via Kavita+)
 
-**Learn More:**
-- [Kavita Official Website](https://www.kavitareader.com)
-- [Kavita GitHub Repository](https://github.com/Kareadita/Kavita)
+**Saiba mais:**
+- [Site oficial do Kavita](https://www.kavitareader.com)
+- [Repositório GitHub do Kavita](https://github.com/Kareadita/Kavita)
 
 
 Categoria na App Store do RoqueOS: **Media**.
@@ -32,9 +32,9 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço |
-| ---- | --------- | --------- | --------------- | ------- |
-| 5150 | 5000      | tcp       | WebUI HTTP Port | kavita  |
+| Host | Container | Protocolo | Para que serve   | Serviço |
+| ---- | --------- | --------- | ---------------- | ------- |
+| 5150 | 5000      | tcp       | Porta HTTP WebUI | kavita  |
 
 
 ## Volumes

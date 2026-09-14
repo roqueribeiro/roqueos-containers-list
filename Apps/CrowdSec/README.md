@@ -16,6 +16,7 @@ Arquiteturas suportadas: amd64, arm64, arm.
 | 8081 | 8080      | tcp       | Porta da API local           | crowdsec |
 | 6060 | 6060      | tcp       | Porta de métricas Prometheus | crowdsec |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

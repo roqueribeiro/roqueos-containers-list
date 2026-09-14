@@ -1,19 +1,19 @@
 # Cloudflared
 
-> A tunneling daemon by Cloudflare that safely exposes your web servers into the internet.
+> Um daemon de tunneling da Cloudflare que expõe com segurança os seus servidores web à internet.
 
 ## O que é
 
-Cloudflare Tunnel offers an easy way to expose web servers securely to the internet, without opening up firewall ports and configuring ACLs. Cloudflare Tunnel also ensures requests route through Cloudflare before reaching the web server, so you can be sure attack traffic is stopped with Cloudflare’s WAF and Unmetered DDoS mitigation, and authenticated with Access if you’ve enabled those features for your account.
+O Cloudflare Tunnel oferece uma forma fácil de expor servidores web de forma segura à internet, sem abrir portas de firewall e configurar ACLs. O Cloudflare Tunnel também garante que os pedidos são encaminhados através do Cloudflare antes de chegarem ao servidor web, para que possa ter a certeza de que o tráfego de ataque é interrompido com o WAF do Cloudflare e a mitigação DDoS ilimitada, e autenticado com o Access se tiver ativado essas funcionalidades para a sua conta.
 
-The software provides a seamless way to securely expose web servers to the internet without configuring firewall ports or access control lists (ACLs). All requests are routed through Cloudflare before reaching your web server, leveraging Cloudflare’s Web Application Firewall (WAF) and unmetered DDoS mitigation to block attack traffic, with optional authentication via Cloudflare Access if enabled. With its intuitive Web interface and efficient tunnel management, this tool is the perfect solution for securely deploying web services.
+O software fornece uma forma transparente de expor servidores web de forma segura à internet sem configurar portas de firewall ou listas de controlo de acesso (ACLs). Todos os pedidos são encaminhados através do Cloudflare antes de chegarem ao seu servidor web, aproveitando o Web Application Firewall (WAF) do Cloudflare e a mitigação DDoS ilimitada para bloquear o tráfego de ataque, com autenticação opcional através do Cloudflare Access se ativada. Com a sua interface Web intuitiva e gestão eficiente de túneis, esta ferramenta é a solução perfeita para implementar serviços web de forma segura.
 
-**Discover How to Connect ZimaOS to Cloudflare Tunnel**
-Integrating ZimaOS with Cloudflare Tunnel allows you to securely expose local services to the internet without opening firewall ports, enabling seamless remote access. Below are two practical resources to guide you through the setup process:
-1. [**Cloudflare Official Tutorial**](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-remote-tunnel/): 
-  This tutorial provides detailed steps for creating and managing a Cloudflare Tunnel.
-2. [**Phiptech Practical Guide**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
-  This guide offers a concise, step-by-step walkthrough for setting up Cloudflare Tunnel on local devices like ZimaOS, with practical examples to help users easily expose services to the public internet.
+**Descubra como ligar o ZimaOS ao Cloudflare Tunnel**
+Integrar o ZimaOS com o Cloudflare Tunnel permite-lhe expor serviços locais de forma segura à internet sem abrir portas de firewall, permitindo um acesso remoto transparente. Abaixo estão dois recursos práticos para o guiar através do processo de configuração:
+1. [**Tutorial oficial do Cloudflare**](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-remote-tunnel/): 
+  Este tutorial fornece passos detalhados para criar e gerir um Cloudflare Tunnel.
+2. [**Guia prático da Phiptech**](https://phiptech.com/how-to-setup-cloudflare-tunnel-and-expose-your-local-service-or-application/): 
+  Este guia oferece um passo a passo conciso para configurar o Cloudflare Tunnel em dispositivos locais como o ZimaOS, com exemplos práticos para ajudar os utilizadores a expor facilmente serviços à internet pública.
 
 
 Categoria na App Store do RoqueOS: **Developer**.
@@ -21,9 +21,9 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve    | Serviço     |
-| ----- | --------- | --------- | ----------------- | ----------- |
-| 14333 | 14333     | tcp       | Token Setup WebUI | cloudflared |
+| Host  | Container | Protocolo | Para que serve                         | Serviço     |
+| ----- | --------- | --------- | -------------------------------------- | ----------- |
+| 14333 | 14333     | tcp       | Interface Web de Configuração de Token | cloudflared |
 
 
 ## Volumes

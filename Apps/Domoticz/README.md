@@ -16,6 +16,7 @@ Arquiteturas suportadas: amd64, arm64, arm.
 | 8096 | 8080      | tcp       | Porta da interface web (mapeada para 8096 no host) | domoticz |
 | 6144 | 6144      | tcp       | Porta da API do Domoticz (serviços extras)         | domoticz |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

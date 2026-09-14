@@ -9,7 +9,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8000
-        published: '8000'
+        published: "8000"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -27,7 +27,7 @@ services:
       - DEBUG=FALSE
     x-casaos:
       ports:
-        - container: '8000'
+        - container: "8000"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -44,6 +44,14 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP порт веб-интерфейса
             tr_TR: WebUI HTTP Portu
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP порт веб-интерфейса
+            ja_jp: WebUI HTTPポート
       volumes:
         - container: /home/nonroot/pdfding/db
           description:
@@ -62,6 +70,14 @@ services:
             pt_PT: Diretório da base de dados PdfDing
             ru_RU: Каталог базы данных PdfDing
             tr_TR: PdfDing veritabanı dizini
+            en_us: PdfDing database directory
+            pt_br: Diretório da base de dados PdfDing
+            zh_cn: PdfDing 数据库目录
+            fr_fr: Répertoire de base de données PdfDing
+            de_de: PdfDing Datenbankverzeichnis
+            it_it: Directory database PdfDing
+            ru_ru: Каталог базы данных PdfDing
+            ja_jp: PdfDing データベースディレクトリ
         - container: /home/nonroot/pdfding/media
           description:
             en_US: PdfDing media files directory
@@ -79,6 +95,14 @@ services:
             pt_PT: Diretório de ficheiros multimédia PdfDing
             ru_RU: Каталог медиафайлов PdfDing
             tr_TR: PdfDing medya dosyaları dizini
+            en_us: PdfDing media files directory
+            pt_br: Diretório de ficheiros multimédia PdfDing
+            zh_cn: PdfDing 媒体文件目录
+            fr_fr: Répertoire des fichiers multimédias PdfDing
+            de_de: PdfDing Mediendateienverzeichnis
+            it_it: Directory file multimediali PdfDing
+            ru_ru: Каталог медиафайлов PdfDing
+            ja_jp: PdfDing メディアファイルディレクトリ
     container_name: pdfding
 x-casaos:
   architectures:
@@ -177,6 +201,54 @@ x-casaos:
       Mevcut konumunuzu hatırlayan kusursuz tarayıcı tabanlı PDF görüntüleme, çok seviyeli etiketleme, yıldızlama ve arşivleme işlevleri, yorumlar, vurgulama ve çizimlerle PDF düzenleme, karanlık modlu temiz sezgisel kullanıcı arayüzü, OIDC aracılığıyla SSO desteği, harici kitleyle PDF paylaşımı, markdown notları ve okuma ilerlemesini gösteren ilerleme çubukları gibi özelliklerle PdfDing mükemmel bir PDF yönetim deneyimi sağlar.
 
       PdfDing'i Zima gibi özel bulut cihazlarında dağıtmak, çok cihazlı erişimle benzersiz kolaylık getirir ve PDF koleksiyonunuzun nerede olursanız olun her zaman elinizin altında ve güvenli olmasını sağlar.
+    en_us: |
+      PdfDing is a selfhosted PDF manager, viewer and editor offering a seamless user experience on multiple devices. It's designed to be minimal, fast, and easy to set up using Docker.
+
+      With features like seamless browser-based PDF viewing that remembers your current position, multi-level tagging, starring and archiving functionalities, PDF editing with comments, highlighting and drawings, clean intuitive UI with dark mode, SSO support via OIDC, PDF sharing with external audience, markdown notes, and progress bars showing reading progress, PdfDing ensures an excellent PDF management experience.
+
+      Deploying PdfDing on private cloud devices like Zima brings unmatched convenience with multi-device access, ensuring your PDF collection is always within reach and secure, no matter where you are.
+    pt_br: |
+      PdfDing é um gestor, visualizador e editor PDF auto-hospedado que oferece uma experiência de utilizador perfeita em múltiplos dispositivos. Foi concebido para ser mínimo, rápido e fácil de configurar usando Docker.
+
+      Com funcionalidades como visualização PDF baseada em navegador que lembra a sua posição atual, etiquetagem multi-nível, funcionalidades de favoritos e arquivo, edição PDF com comentários, realces e desenhos, interface de utilizador limpa e intuitiva com modo escuro, suporte SSO via OIDC, partilha de PDF com audiência externa, notas markdown e barras de progresso que mostram o progresso de leitura, PdfDing garante uma excelente experiência de gestão PDF.
+
+      Implementar PdfDing em dispositivos cloud privados como Zima traz conveniência incomparável com acesso multi-dispositivo, garantindo que a sua coleção PDF está sempre ao alcance e segura, não importa onde esteja.
+    zh_cn: |
+      PdfDing 是一个自托管的 PDF 管理器、查看器和编辑器，在多个设备上提供无缝的用户体验。它被设计为最小化、快速且易于使用 Docker 设置。
+
+      凭借无缝的基于浏览器的 PDF 查看（记住当前位置）、多级标签、收藏和归档功能、PDF 编辑（添加评论、高亮和绘图）、带有暗色模式的简洁直观 UI、通过 OIDC 的 SSO 支持、与外部受众的 PDF 共享、markdown 笔记以及显示阅读进度的进度条等功能，PdfDing 确保了出色的 PDF 管理体验。
+
+      在像 Zima 这样的私有云设备上部署 PdfDing，可实现多设备访问的无与伦比的便利，确保你的 PDF 收藏无论身处何地都能随时访问且安全。
+    fr_fr: |
+      PdfDing est un gestionnaire, visualiseur et éditeur PDF auto-hébergé offrant une expérience utilisateur transparente sur plusieurs appareils. Il est conçu pour être minimal, rapide et facile à configurer avec Docker.
+
+      Avec des fonctionnalités comme la visualisation PDF basée sur navigateur qui se souvient de votre position actuelle, le marquage multi-niveaux, les fonctionnalités de favoris et d'archivage, l'édition PDF avec commentaires, surlignage et dessins, une interface utilisateur propre et intuitive avec mode sombre, le support SSO via OIDC, le partage PDF avec un public externe, les notes markdown et les barres de progression montrant l'avancement de la lecture, PdfDing assure une excellente expérience de gestion PDF.
+
+      Déployer PdfDing sur des appareils cloud privés comme Zima apporte une commodité inégalée avec un accès multi-appareils, garantissant que votre collection PDF est toujours à portée de main et sécurisée, peu importe où vous êtes.
+    de_de: |
+      PdfDing ist ein selbst gehosteter PDF-Manager, -Betrachter und -Editor, der eine nahtlose Benutzererfahrung auf mehreren Geräten bietet. Es ist darauf ausgelegt, minimal, schnell und einfach mit Docker einzurichten zu sein.
+
+      Mit Funktionen wie nahtloser browserbasierter PDF-Anzeige, die sich Ihre aktuelle Position merkt, mehrstufigem Tagging, Favoriten- und Archivierungsfunktionen, PDF-Bearbeitung mit Kommentaren, Hervorhebungen und Zeichnungen, sauberer intuitiver Benutzeroberfläche mit dunklem Modus, SSO-Unterstützung über OIDC, PDF-Freigabe mit externem Publikum, Markdown-Notizen und Fortschrittsbalken, die den Lesefortschritt anzeigen, gewährleistet PdfDing eine ausgezeichnete PDF-Verwaltungserfahrung.
+
+      Die Bereitstellung von PdfDing auf privaten Cloud-Geräten wie Zima bringt unvergleichliche Bequemlichkeit mit Multi-Geräte-Zugriff und stellt sicher, dass Ihre PDF-Sammlung immer in Reichweite und sicher ist, egal wo Sie sind.
+    it_it: |
+      PdfDing è un gestore, visualizzatore ed editor PDF self-hosted che offre un'esperienza utente fluida su più dispositivi. È progettato per essere minimale, veloce e facile da configurare usando Docker.
+
+      Con funzionalità come la visualizzazione PDF basata su browser che ricorda la posizione corrente, tagging multi-livello, funzionalità di preferiti e archiviazione, editing PDF con commenti, evidenziazioni e disegni, UI pulita e intuitiva con modalità scura, supporto SSO tramite OIDC, condivisione PDF con pubblico esterno, note markdown e barre di progresso che mostrano l'avanzamento della lettura, PdfDing garantisce un'eccellente esperienza di gestione PDF.
+
+      Distribuire PdfDing su dispositivi cloud privati come Zima porta una comodità senza pari con accesso multi-dispositivo, assicurando che la tua collezione PDF sia sempre a portata di mano e sicura, ovunque tu sia.
+    ru_ru: |
+      PdfDing — это самостоятельно размещаемый менеджер, просмотрщик и редактор PDF, предлагающий бесшовный пользовательский опыт на нескольких устройствах. Он разработан для минимализма, скорости и простоты настройки с использованием Docker.
+
+      С такими функциями, как бесшовный просмотр PDF в браузере, который запоминает вашу текущую позицию, многоуровневая маркировка, функции избранного и архивирования, редактирование PDF с комментариями, выделением и рисунками, чистый интуитивный пользовательский интерфейс с темным режимом, поддержка SSO через OIDC, обмен PDF с внешней аудиторией, заметки markdown и индикаторы прогресса, показывающие прогресс чтения, PdfDing обеспечивает отличный опыт управления PDF.
+
+      Развертывание PdfDing на частных облачных устройствах, таких как Zima, приносит непревзойденное удобство с многоустройственным доступом, гарантируя, что ваша коллекция PDF всегда под рукой и в безопасности, где бы вы ни находились.
+    ja_jp: |
+      PdfDingは、複数のデバイスでシームレスなユーザーエクスペリエンスを提供するセルフホスト型PDFマネージャー、ビューアー、エディターです。Dockerを使用して最小限で高速、簡単にセットアップできるよう設計されています。
+
+      現在の位置を記憶するシームレスなブラウザベースのPDF表示、マルチレベルタグ付け、スター付けとアーカイブ機能、コメント、ハイライト、描画によるPDF編集、ダークモード付きのクリーンで直感的なUI、OIDC経由のSSO支援、外部オーディエンスとのPDF共有、markdownノート、読書進捗を示すプログレスバーなどの機能により、PdfDingは優れたPDF管理体験を保証します。
+
+      ZimaのようなプライベートクラウドデバイスにPdfDingを展開することで、マルチデバイスアクセスによる比類のない利便性をもたらし、どこにいてもPDFコレクションが常に手の届く範囲にあり、安全であることを保証します。
   developer: mrmn2
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PdfDing/icon.png
   screenshot_link:
@@ -184,7 +256,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PdfDing/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PdfDing/screenshot-3.png
   main: pdfding
-  port_map: '8000'
+  port_map: "8000"
   scheme: http
   tagline:
     en_US: Selfhosted PDF manager, viewer and editor
@@ -202,6 +274,14 @@ x-casaos:
     pt_PT: Gestor, visualizador e editor PDF auto-hospedado
     ru_RU: Самостоятельно размещаемый менеджер, просмотрщик и редактор PDF
     tr_TR: Kendi kendine barındırılan PDF yöneticisi, görüntüleyicisi ve düzenleyicisi
+    en_us: Selfhosted PDF manager, viewer and editor
+    pt_br: Gestor, visualizador e editor PDF auto-hospedado
+    zh_cn: 自托管的 PDF 管理器、查看器和编辑器
+    fr_fr: Gestionnaire, visualiseur et éditeur PDF auto-hébergé
+    de_de: Selbst gehosteter PDF-Manager, -Betrachter und -Editor
+    it_it: Gestore, visualizzatore ed editor PDF self-hosted
+    ru_ru: Самостоятельно размещаемый менеджер, просмотрщик и редактор PDF
+    ja_jp: セルフホスト型PDFマネージャー、ビューアー、エディター
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/PdfDing/thumbnail.png
   tips:
     before_install:
@@ -265,5 +345,41 @@ x-casaos:
         Kurulumdan sonra PdfDing'e http://your-server-ip:8000 adresinden erişebilirsiniz. İlk kurulum sırasında ilk yönetici hesabınızı oluşturun.
 
         Not: Erişim sorunlarıyla karşılaşırsanız, docker-compose.yml dosyasını manuel olarak düzenlemeniz ve HOST_NAME ortam değişkenini gerçek sunucu IP adresinizle değiştirmeniz gerekebilir.
+      en_us: |
+        After installation, you can access PdfDing at http://your-server-ip:8000. Create your first admin account during the initial setup.
+
+        Note: If you encounter access issues, you may need to manually edit the docker-compose.yml file and replace the HOST_NAME environment variable with your actual server IP address.
+      pt_br: |
+        Após a instalação, pode aceder ao PdfDing em http://your-server-ip:8000. Crie a sua primeira conta de administrador durante a configuração inicial.
+
+        Nota: Se encontrar problemas de acesso, poderá precisar de editar manualmente o ficheiro docker-compose.yml e substituir a variável de ambiente HOST_NAME pelo seu endereço IP real do servidor.
+      zh_cn: |
+        安装完成后，您可以通过 http://your-server-ip:8000 访问 PdfDing。在初始设置期间创建您的第一个管理员账户。
+
+        注意：如果遇到访问问题，您可能需要手动编辑 docker-compose.yml 文件，将 HOST_NAME 环境变量替换为您实际的服务器 IP 地址。
+      fr_fr: |
+        Après l'installation, vous pouvez accéder à PdfDing sur http://your-server-ip:8000. Créez votre premier compte administrateur lors de la configuration initiale.
+
+        Note : Si vous rencontrez des problèmes d'accès, vous devrez peut-être modifier manuellement le fichier docker-compose.yml et remplacer la variable d'environnement HOST_NAME par votre adresse IP de serveur réelle.
+      de_de: |
+        Nach der Installation können Sie auf PdfDing unter http://your-server-ip:8000 zugreifen. Erstellen Sie Ihr erstes Administratorkonto während der ersten Einrichtung.
+
+        Hinweis: Wenn Sie Zugriffsprobleme haben, müssen Sie möglicherweise die docker-compose.yml-Datei manuell bearbeiten und die HOST_NAME-Umgebungsvariable durch Ihre tatsächliche Server-IP-Adresse ersetzen.
+      it_it: |
+        Dopo l'installazione, puoi accedere a PdfDing su http://your-server-ip:8000. Crea il tuo primo account amministratore durante la configurazione iniziale.
+
+        Nota: Se riscontri problemi di accesso, potresti dover modificare manualmente il file docker-compose.yml e sostituire la variabile d'ambiente HOST_NAME con il tuo indirizzo IP del server effettivo.
+      ru_ru: |
+        После установки вы можете получить доступ к PdfDing по адресу http://your-server-ip:8000. Создайте свою первую учетную запись администратора во время первоначальной настройки.
+
+        Примечание: Если у вас возникнут проблемы с доступом, вам может потребоваться вручную отредактировать файл docker-compose.yml и заменить переменную окружения HOST_NAME на ваш фактический IP-адрес сервера.
+      ja_jp: |
+        インストール後、http://your-server-ip:8000 でPdfDingにアクセスできます。初期設定時に最初の管理者アカウントを作成してください。
+
+        注意：アクセスに問題が発生した場合、docker-compose.ymlファイルを手動で編集し、HOST_NAME環境変数を実際のサーバーIPアドレスに置き換える必要がある場合があります。
   title:
     en_US: PdfDing
+    en_us: PdfDing
+
+x-roqueos:
+  portaCompartilhada: true

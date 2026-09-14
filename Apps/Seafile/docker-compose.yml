@@ -92,3 +92,6 @@ x-casaos:
   index: /
   port_map: '8100'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

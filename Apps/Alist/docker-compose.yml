@@ -9,7 +9,7 @@ services:
     network_mode: bridge
     ports:
       - target: 5244
-        published: '5244'
+        published: "5244"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -18,7 +18,7 @@ services:
         target: /opt/alist/data
     x-casaos:
       ports:
-        - container: '5244'
+        - container: "5244"
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
@@ -126,6 +126,54 @@ x-casaos:
       Kolay kurulum, birden fazla depolama sağlayıcısı (yerel, Aliyundrive, Onedrive, Google Drive) desteği, WebDAV desteği, karanlık mod, şifre doğrulamalı korumalı yollar, video, ses, ofis dosyaları, PDF'ler, kod, resimler için dosya önizlemeleri, paket ve toplu indirmeler, tek oturum açma, çevrimdışı torrent indirmeleri, dosya şifreleme ve metin editörü ile Cloudflare workers proxy gibi ek araçlar gibi özelliklerle Alist, sorunsuz ve güvenli bir dosya yönetimi deneyimi sağlar.
 
       Alist'i Zima gibi özel bulut cihazlarına dağıtmak, çoklu cihaz erişimi ile eşsiz bir kolaylık sunar ve nerede olursanız olun dosyalarınıza her zaman erişilebilir ve güvenli olmasını sağlar.
+    en_us: |
+      Alist transforms how you manage and access your files at home, whether on your TV, phone, or any other device. Unlike traditional cloud storage, Alist offers a unified experience across multiple platforms, making it a breeze to keep your media and documents at your fingertips.
+
+      With features like easy installation, support for multiple storage providers (local, Aliyundrive, Onedrive, Google Drive), WebDAV support, dark mode, protected routes with password authentication, file previews for videos, audio, office files, PDFs, code, images, package and batch downloads, single sign-on, offline torrent downloads, file encryption, and additional tools like a text editor and Cloudflare workers proxy, Alist ensures a seamless and secure file management experience.
+
+      Deploying Alist on private cloud devices like Zima brings unmatched convenience with multi-device access, ensuring your files are always within reach and secure, no matter where you are.
+    pt_br: |
+      O Alist transforma a forma como gere e acede aos seus ficheiros em casa, seja na sua televisão, telemóvel ou qualquer outro dispositivo. Ao contrário do armazenamento em nuvem tradicional, o Alist oferece uma experiência unificada em várias plataformas, tornando simples manter os seus média e documentos ao seu alcance.
+
+      Com funcionalidades como instalação fácil, suporte para vários fornecedores de armazenamento (local, Aliyundrive, Onedrive, Google Drive), suporte WebDAV, modo escuro, rotas protegidas com autenticação por palavra-passe, pré-visualização de ficheiros para vídeos, áudio, ficheiros de escritório, PDFs, código, imagens, downloads em pacote e em lote, autenticação única, downloads de torrents offline, encriptação de ficheiros e ferramentas adicionais como um editor de texto e proxy de trabalhadores Cloudflare, o Alist garante uma experiência de gestão de ficheiros fluida e segura.
+
+      A implementação do Alist em dispositivos de nuvem privada como o Zima proporciona uma conveniência inigualável com acesso multi-dispositivo, garantindo que os seus ficheiros estejam sempre acessíveis e seguros, onde quer que esteja.
+    zh_cn: |
+      Alist 改变你在家中管理和访问文件的方式，无论是在电视、手机还是其他设备上。与传统的云存储不同，Alist 提供跨多个平台的统一体验，让你的媒体和文档随时触手可及。
+
+      凭借简单安装、支持多种存储提供商（本地、阿里云盘、OneDrive、Google Drive）、WebDAV 支持、暗色模式、密码认证保护路径、视频、音频、办公文件、PDF、代码、图片的文件预览、批量和打包下载、单点登录、离线 torrent 下载、文件加密以及文本编辑器和 Cloudflare workers 代理等额外工具等功能，Alist 确保了流畅且安全的文件管理体验。
+
+      在像 Zima 这样的私有云设备上部署 Alist，可实现多设备访问的无与伦比的便利，确保你的文件无论身处何地都能随时访问且安全。
+    fr_fr: |
+      Alist transforme la manière dont vous gérez et accédez à vos fichiers à la maison, que ce soit sur votre télévision, votre téléphone ou tout autre appareil. Contrairement au stockage cloud traditionnel, Alist offre une expérience unifiée sur plusieurs plateformes, rendant l'accès à vos médias et documents extrêmement simple.
+
+      Avec des fonctionnalités telles qu'une installation facile, la prise en charge de plusieurs fournisseurs de stockage (local, Aliyundrive, Onedrive, Google Drive), le support WebDAV, le mode sombre, des routes protégées par authentification par mot de passe, des aperçus de fichiers pour les vidéos, l'audio, les fichiers bureautiques, les PDF, le code, les images, les téléchargements par lots et par paquets, l'authentification unique, les téléchargements de torrents hors ligne, le chiffrement des fichiers, ainsi que des outils supplémentaires comme un éditeur de texte et un proxy Cloudflare workers, Alist garantit une expérience de gestion de fichiers fluide et sécurisée.
+
+      Le déploiement d'Alist sur des appareils cloud privés comme Zima offre une commodité inégalée avec un accès multi-appareils, garantissant que vos fichiers sont toujours à portée de main et sécurisés, où que vous soyez.
+    de_de: |
+      Alist verändert die Art und Weise, wie Sie Ihre Dateien zu Hause verwalten und darauf zugreifen, sei es auf Ihrem Fernseher, Telefon oder einem anderen Gerät. Im Gegensatz zu herkömmlichem Cloud-Speicher bietet Alist ein einheitliches Erlebnis auf mehreren Plattformen, sodass Ihre Medien und Dokumente immer griffbereit sind.
+
+      Mit Funktionen wie einfacher Installation, Unterstützung für mehrere Speicheranbieter (lokal, Aliyundrive, Onedrive, Google Drive), WebDAV-Unterstützung, Dunkelmodus, geschützte Routen mit Passwortauthentifizierung, Dateivorschauen für Videos, Audio, Office-Dateien, PDFs, Code, Bilder, Paket- und Stapel-Downloads, Single Sign-On, Offline-Torrent-Downloads, Dateiverschlüsselung sowie zusätzlichen Tools wie einem Texteditor und einem Cloudflare-Workers-Proxy gewährleistet Alist ein nahtloses und sicheres Dateiverwaltungserlebnis.
+
+      Die Bereitstellung von Alist auf privaten Cloud-Geräten wie Zima bietet unvergleichlichen Komfort mit Multi-Geräte-Zugriff und stellt sicher, dass Ihre Dateien immer erreichbar und sicher sind, egal wo Sie sich befinden.
+    it_it: |
+      Alist trasforma il modo in cui gestisci e accedi ai tuoi file a casa, sia che tu usi la TV, il telefono o qualsiasi altro dispositivo. A differenza dei tradizionali servizi di archiviazione cloud, Alist offre un'esperienza unificata su più piattaforme, rendendo semplice avere i tuoi media e documenti sempre a portata di mano.
+
+      Con funzionalità come un'installazione facile, supporto per più provider di archiviazione (locale, Aliyundrive, Onedrive, Google Drive), supporto WebDAV, modalità scura, percorsi protetti con autenticazione tramite password, anteprime di file per video, audio, file office, PDF, codice, immagini, download di pacchetti e in batch, accesso singolo, download di torrent offline, crittografia dei file e strumenti aggiuntivi come un editor di testo e un proxy Cloudflare workers, Alist garantisce un'esperienza di gestione dei file fluida e sicura.
+
+      L'implementazione di Alist su dispositivi cloud privati come Zima offre una comodità senza pari con accesso multi-dispositivo, garantendo che i tuoi file siano sempre accessibili e sicuri, ovunque tu sia.
+    ru_ru: |
+      Alist преобразует способ управления и доступа к вашим файлам дома, будь то на телевизоре, телефоне или любом другом устройстве. В отличие от традиционного облачного хранилища, Alist предлагает единый опыт работы на нескольких платформах, делая ваши медиа и документы легко доступными.
+
+      Благодаря таким функциям, как простая установка, поддержка нескольких провайдеров хранения (локальное, Aliyundrive, Onedrive, Google Drive), поддержка WebDAV, тёмный режим, защищённые маршруты с аутентификацией по паролю, предварительный просмотр файлов для видео, аудио, офисных файлов, PDF, кода, изображений, пакетная и групповая загрузка, единый вход, оффлайн-загрузка торрентов, шифрование файлов, а также дополнительные инструменты, такие как текстовый редактор и прокси Cloudflare workers, Alist обеспечивает плавный и безопасный процесс управления файлами.
+
+      Развёртывание Alist на частных облачных устройствах, таких как Zima, предоставляет непревзойдённое удобство с доступом с нескольких устройств, гарантируя, что ваши файлы всегда под рукой и в безопасности, где бы вы ни находились.
+    ja_jp: |
+      Alistは、テレビ、電話、その他のデバイスを問わず、家庭でのファイルの管理とアクセス方法を変革します。従来のクラウドストレージとは異なり、Alistは複数のプラットフォームで統一された体験を提供し、メディアやドキュメントを手元に置くことを簡単にしてくれます。
+
+      簡単なインストール、複数のストレージプロバイダー（ローカル、Aliyundrive、Onedrive、Google Drive）のサポート、WebDAV対応、ダークモード、パスワード認証による保護されたルート、ビデオ、オーディオ、オフィスファイル、PDF、コード、画像のファイルプレビュー、パッケージおよびバッチダウンロード、シングルサインオン、オフラインでのtorrentダウンロード、ファイル暗号化、テキストエディタやCloudflareワーカープロキシなどの追加ツールといった機能により、Alistはスムーズで安全なファイル管理体験を保証します。
+
+      ZimaのようなプライベートクラウドデバイスにAlistをデプロイすることで、マルチデバイスアクセスによる比類のない利便性を提供し、どこにいてもファイルが常に手の届くところにあり、安全であることを保証します。
   developer: Xhofe
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/icon.png
   screenshot_link:
@@ -135,7 +183,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/screenshot-4.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/screenshot-5.png
   main: alist
-  port_map: '5244'
+  port_map: "5244"
   scheme: http
   tagline:
     en_US: Mount your cloud drive on your home NAS
@@ -153,6 +201,14 @@ x-casaos:
     pt_PT: Monte o seu disco na nuvem no seu NAS doméstico
     ru_RU: Подключите ваш облачный диск к домашнему NAS
     tr_TR: Bulut sürücünüzü ev NAS'ınıza bağlayın
+    en_us: Mount your cloud drive on your home NAS
+    pt_br: Monte o seu disco na nuvem no seu NAS doméstico
+    zh_cn: 将你的云盘挂载到家用NAS上
+    fr_fr: Montez votre disque cloud sur votre NAS domestique
+    de_de: Mounten Sie Ihr Cloud-Laufwerk auf Ihrem Heim-NAS
+    it_it: Monta il tuo disco cloud sul tuo NAS domestico
+    ru_ru: Подключите ваш облачный диск к домашнему NAS
+    ja_jp: クラウドドライブをホームNASにマウント
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Alist/thumbnail.png
   tips:
     before_install:
@@ -171,5 +227,13 @@ x-casaos:
       pt_PT: Após a instalação, verifique a senha inicial no log do contêiner (Configurações - Canto superior direito - Terminal e Registos - Registos).
       ru_RU: После установки проверьте начальный пароль в журнале контейнера (Настройки - Вверху справа - Терминал и журналы - Журналы).
       tr_TR: Kurulumdan sonra, başlangıç şifresini konteyner günlüğünde kontrol edin (Ayarlar - Sağ Üst - Terminal ve Günlükler - Günlükler).
+      en_us: After installation, please check the initial password in the container log (Settings - TopRight - Terminal and Logs - Logs).
+      pt_br: Após a instalação, verifique a senha inicial no log do contêiner (Configurações - Canto superior direito - Terminal e Registos - Registos).
+      zh_cn: 安装完成后，请在容器日志中检查初始密码（设置 - 右上角 - 终端和日志 - 日志）。
+      fr_fr: Après l'installation, veuillez vérifier le mot de passe initial dans le journal du conteneur (Paramètres - En haut à droite - Terminal et journaux - Journaux).
+      de_de: Nach der Installation überprüfen Sie bitte das anfängliche Passwort im Containerprotokoll (Einstellungen - Oben rechts - Terminal und Protokolle - Protokolle).
+      it_it: Dopo l'installazione, verifica la password iniziale nel log del contenitore (Impostazioni - In alto a destra - Terminale e Log - Log).
+      ru_ru: После установки проверьте начальный пароль в журнале контейнера (Настройки - Вверху справа - Терминал и журналы - Журналы).
+      ja_jp: インストール後、コンテナログで初期パスワードを確認してください（設定 - 右上 - ターミナルとログ - ログ）。
   title:
     en_us: Alist

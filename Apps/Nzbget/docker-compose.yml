@@ -45,7 +45,7 @@ services:
       ports:
         - container: '6789'
           description:
-            en_us: ''
+            en_us: "Web interface for Nzbget"
       volumes:
         - container: /config
           description:
@@ -117,4 +117,5 @@ x-casaos:
   port_map: '6789'
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

@@ -1,26 +1,26 @@
 # ZTnet
 
-> Self-hosted ZeroTier network controller with web UI for centralized management.
+> Controlador de rede ZeroTier auto-hospedado com interface web para gestão centralizada.
 
 ## O que é
 
-ZTNET is a powerful ZeroTier network management tool that simplifies network configuration and management through an intuitive Web interface, ideal for teams and individual users. Its modern design and rich features provide an efficient solution for building secure, scalable virtual networks.
+O ZTNET é uma ferramenta poderosa de gestão de rede ZeroTier que simplifica a configuração e gestão de rede através de uma interface Web intuitiva, ideal para equipas e utilizadores individuais. O seu design moderno e funcionalidades ricas fornecem uma solução eficiente para construir redes virtuais seguras e escaláveis.
 
-The tool centers on an intuitive Web interface and organization with multi-user support. Developed in TypeScript, it acts as an intermediary between users and the ZeroTier Controller API, enabling collaborative network management within organizations to streamline team tasks. Integration with ZeroTier Central API allows direct management of networks, nodes, and members through a user-friendly interface, enhancing configuration efficiency.
+A ferramenta centra-se numa interface Web intuitiva e organização com suporte multi-utilizador. Desenvolvida em TypeScript, actua como intermediário entre utilizadores e a API do ZeroTier Controller, permitindo gestão colaborativa de rede dentro de organizações para simplificar tarefas de equipa. A integração com a API ZeroTier Central permite gestão directa de redes, nós e membros através de uma interface amigável ao utilizador, melhorando a eficiência de configuração.
 
-It supports custom private root servers to create isolated network environments, improving privacy and control. Personalized user spaces enable users to independently create and manage networks. Support for 6plane and rfc4193 IPv6 addressing enriches enterprise or personal networking capabilities. Compatibility with ARM64 and AMD64 architectures ensures broad device support. The tool focuses on user-friendly and flexible design to deliver a modern network management experience.
+Suporta servidores root privados personalizados para criar ambientes de rede isolados, melhorando privacidade e controlo. Espaços de utilizador personalizados permitem aos utilizadores criar e gerir redes independentemente. O suporte para endereçamento IPv6 6plane e rfc4193 enriquece as capacidades de rede empresarial ou pessoal. A compatibilidade com arquitecturas ARM64 e AMD64 garante amplo suporte de dispositivos. A ferramenta foca-se em design amigável ao utilizador e flexível para entregar uma experiência moderna de gestão de rede.
 
-**Key Features:**
-- Intuitive Web interface for simplified ZeroTier network management
-- Organization and multi-user support for team collaboration
-- Integration with ZeroTier Central API for managing networks and nodes
-- Custom private root server for enhanced privacy and control
-- Personalized user spaces for independent network creation and management
-- Support for 6plane and rfc4193 IPv6 addressing
-- Compatibility with ARM64 and AMD64 architectures for diverse devices
+**Funcionalidades Principais:**
+- Interface Web intuitiva para gestão simplificada de rede ZeroTier
+- Organização e suporte multi-utilizador para colaboração de equipa
+- Integração com API ZeroTier Central para gerir redes e nós
+- Servidor root privado personalizado para privacidade e controlo melhorados
+- Espaços de utilizador personalizados para criação e gestão independente de rede
+- Suporte para endereçamento IPv6 6plane e rfc4193
+- Compatibilidade com arquitecturas ARM64 e AMD64 para dispositivos diversos
 
-**Learn More:**
-- [ZTnet Official Website](https://ztnet.network/)
+**Saiba mais:**
+- [Website Oficial ZTnet](https://ztnet.network/)
 - [ZTnet GitHub](https://github.com/sinamics/ztnet)
 
 
@@ -29,10 +29,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço |
-| ---- | --------- | --------- | --------------- | ------- |
-| 3050 | 3000      | tcp       | WebUI HTTP Port | ztnet   |
+| Host | Container | Protocolo | Para que serve   | Serviço |
+| ---- | --------- | --------- | ---------------- | ------- |
+| 3050 | 3000      | tcp       | Porta HTTP WebUI | ztnet   |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 
@@ -64,9 +65,9 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:3050/`.
 
-- Prerequisites for using ZTnet:
-- 1. Allow ZTNET to manage your local ZeroTier instance, refer to [Step 2 of the documentation: Configure ZeroTier](https://ztnet.network/usage/migrate)
-- 2. (ZimaOS users do not need to perform this step) Modify the `ZT_ADDR` environment variable to your ZeroTier controller address
+- Pré-requisitos para usar ZTnet:
+- 1. Permitir que ZTNET gira a sua instância ZeroTier local, consulte [Passo 2 da documentação: Configurar ZeroTier](https://ztnet.network/usage/migrate)
+- 2. (Utilizadores ZimaOS não precisam de executar este passo) Modificar a variável de ambiente `ZT_ADDR` para o seu endereço de controlador ZeroTier
 
 ## Imagens
 

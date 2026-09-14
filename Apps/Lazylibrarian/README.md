@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço       |
-| ---- | --------- | --------- | -------------- | ------------- |
-| 5299 | 5299      | tcp       | —              | lazylibrarian |
+| Host | Container | Protocolo | Para que serve                  | Serviço       |
+| ---- | --------- | --------- | ------------------------------- | ------------- |
+| 5299 | 5299      | tcp       | Web interface for Lazylibrarian | lazylibrarian |
 
 
 ## Volumes

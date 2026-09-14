@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64, ppc64le, s390x, 386, arm.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço       |
-| ---- | --------- | --------- | -------------- | ------------- |
-| 3004 | 3000      | tcp       | —              | openspeedtest |
+| Host | Container | Protocolo | Para que serve                  | Serviço       |
+| ---- | --------- | --------- | ------------------------------- | ------------- |
+| 3004 | 3000      | tcp       | Web interface for OpenSpeedTest | openspeedtest |
 
 
 ## Volumes

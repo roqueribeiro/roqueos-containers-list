@@ -20,16 +20,16 @@ services:
     network_mode: bridge
     ports:
       - target: 8096
-        published: '8097'
+        published: "8097"
         protocol: tcp
       - target: 8920
-        published: '8921'
+        published: "8921"
         protocol: tcp
       - target: 7359
-        published: '7359'
+        published: "7359"
         protocol: tcp
       - target: 1900
-        published: '1901'
+        published: "1901"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -61,19 +61,19 @@ services:
             en_us: The autodiscovery response domain or IP address.
             zh_cn: 自动发现响应域名或IP地址
       ports:
-        - container: '8096'
+        - container: "8096"
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP端口
-        - container: '8920'
+        - container: "8920"
           description:
             en_us: WebUI HTTPS Port
             zh_cn: WebUI HTTPS端口
-        - container: '7359'
+        - container: "7359"
           description:
             en_us: Jellyfin auto-discovery Port
             zh_cn: Jellyfin自动发现端口
-        - container: '1900'
+        - container: "1900"
           description:
             en_us: Jellyfin DLNA Port
             zh_cn: Jellyfin DLNA端口
@@ -189,6 +189,54 @@ x-casaos:
       Filmlerinizin, TV programlarınızın ve müziğinizin parmaklarınızın ucunda, herhangi bir cihazdan erişilebilir olduğunu hayal edin. Jellyfin, medya koleksiyonunuzu kişiselleştirilmiş bir eğlence merkezine dönüştürerek, sorunsuz bir gezinme ve oynatma deneyimi ile geleneksel fotoğraf albümlerini geride bırakır.
       Jellyfin, yüksek kaliteli akış, otomatik meta veri alma ve kişiselleştirilmiş öneriler sunar, hepsi ücretsizdir. Birden fazla kullanıcıyı destekler, her biri kendi medya kütüphanesine sahip olup, ailelerin veya ekiplerin çeşitli ihtiyaçlarını karşılar.
       Zima gibi özel bulut cihazlarına Jellyfin'i kurmak, neredeyse sınırsız depolama, sorunsuz akış ve güvenli çoklu cihaz erişimi sağlar. NAS meraklıları veya ev medya kurulumlarını geliştirmek isteyen herkes için Jellyfin mükemmel bir çözümdür.
+    en_us: |
+      Jellyfin stands out among media server applications for its fully open-source, free, and privacy-focused design. Unlike Emby and Plex, Jellyfin delivers robust media management, real-time transcoding, and granular multi-user permissions without subscription costs, operating independently of cloud services to ensure full user control over data. Its community-driven development and efficient resource usage enable smooth performance on low-end devices, making it the go-to choice for privacy-conscious and budget-savvy users.
+
+      Picture your movies, TV shows, and music at your fingertips, accessible on any device. Jellyfin transforms your media collection into a personalized entertainment hub, surpassing traditional photo albums with a seamless browsing and playback experience.
+      Jellyfin offers high-quality streaming, automatic metadata fetching, and personalized recommendations, all at no cost. It supports multiple users, each with their own media library, catering to the diverse needs of families or teams.
+      Deploying Jellyfin on private cloud devices like Zima provides near-unlimited storage, smooth streaming, and secure multi-device access. For NAS enthusiasts or anyone looking to elevate their home media setup, Jellyfin is the perfect solution.
+    pt_br: |
+      O Jellyfin destaca-se entre as aplicações de servidor de media pelo seu design completamente open-source, gratuito e focado na privacidade. Ao contrário do Emby e do Plex, o Jellyfin oferece uma gestão de media robusta, transcodificação em tempo real e permissões granulares para múltiplos utilizadores sem custos de subscrição, operando independentemente de serviços na cloud para garantir o controlo total dos dados pelo utilizador. O seu desenvolvimento orientado para a comunidade e a utilização eficiente de recursos permitem um desempenho suave em dispositivos de baixo custo, tornando-o a escolha ideal para utilizadores preocupados com a privacidade e com o orçamento.
+
+      Imagine os seus filmes, programas de TV e música ao alcance dos seus dedos, acessíveis em qualquer dispositivo. O Jellyfin transforma a sua coleção de media num centro de entretenimento personalizado, superando os álbuns de fotos tradicionais com uma experiência de navegação e reprodução perfeita.
+      O Jellyfin oferece streaming de alta qualidade, obtenção automática de metadados e recomendações personalizadas, tudo sem custos. Suporta múltiplos utilizadores, cada um com a sua própria biblioteca de media, atendendo às diversas necessidades de famílias ou equipas.
+      Implementar o Jellyfin em dispositivos de cloud privada como o Zima proporciona armazenamento quase ilimitado, streaming suave e acesso seguro a vários dispositivos. Para entusiastas de NAS ou qualquer pessoa que queira elevar a sua configuração de media doméstica, o Jellyfin é a solução perfeita.
+    zh_cn: |
+      Jellyfin 在媒体服务器应用中脱颖而出，凭借其完全开源、免费和注重隐私的设计。与 Emby 和 Plex 不同，Jellyfin 提供强大的媒体管理、实时转码和细粒度的多用户权限，无需订阅费用，且独立于云服务运行，确保用户对数据拥有完全控制权。其社区驱动的开发和高效的资源使用使其在低端设备上也能流畅运行，成为注重隐私和预算用户的首选。
+
+      想象一下，您的电影、电视节目和音乐触手可及，可在任何设备上访问。Jellyfin 将您的媒体收藏转变为个性化的娱乐中心，超越传统相册，提供无缝的浏览和播放体验。
+      Jellyfin 提供高质量的流媒体、自动元数据获取和个性化推荐，所有这些都是免费的。它支持多个用户，每个用户都有自己的媒体库，满足家庭或团队的多样化需求。
+      在 Zima 等私有云设备上部署 Jellyfin 可提供近乎无限的存储、流畅的流媒体和安全的跨设备访问。对于 NAS 爱好者或任何希望提升家庭媒体设置的人来说，Jellyfin 是完美的解决方案。
+    fr_fr: |
+      Jellyfin se distingue parmi les applications de serveur multimédia pour sa conception entièrement open-source, gratuite et axée sur la confidentialité. Contrairement à Emby et Plex, Jellyfin offre une gestion multimédia robuste, un transcodage en temps réel et des autorisations multi-utilisateurs granulaires sans frais d'abonnement, fonctionnant indépendamment des services cloud pour garantir un contrôle total des données par l'utilisateur. Son développement axé sur la communauté et son utilisation efficace des ressources permettent des performances fluides sur des appareils bas de gamme, ce qui en fait le choix idéal pour les utilisateurs soucieux de leur vie privée et de leur budget.
+
+      Imaginez vos films, émissions de télévision et musique à portée de main, accessibles sur n'importe quel appareil. Jellyfin transforme votre collection multimédia en un centre de divertissement personnalisé, surpassant les albums photo traditionnels avec une expérience de navigation et de lecture transparente.
+      Jellyfin offre un streaming de haute qualité, une récupération automatique des métadonnées et des recommandations personnalisées, le tout gratuitement. Il prend en charge plusieurs utilisateurs, chacun avec sa propre bibliothèque multimédia, répondant aux divers besoins des familles ou des équipes.
+      Déployer Jellyfin sur des appareils cloud privés comme Zima offre un stockage quasi illimité, un streaming fluide et un accès sécurisé multi-appareils. Pour les passionnés de NAS ou toute personne cherchant à améliorer sa configuration multimédia domestique, Jellyfin est la solution parfaite.
+    de_de: |
+      Jellyfin hebt sich unter den Medienserver-Anwendungen durch sein vollständig Open-Source, kostenloses und datenschutzorientiertes Design hervor. Im Gegensatz zu Emby und Plex bietet Jellyfin robustes Medienmanagement, Echtzeit-Transkodierung und granulare Multi-User-Berechtigungen ohne Abonnementkosten. Es funktioniert unabhängig von Cloud-Diensten, um dem Benutzer die volle Kontrolle über seine Daten zu gewährleisten. Seine community-getriebene Entwicklung und effiziente Ressourcennutzung ermöglichen eine reibungslose Leistung auf Low-End-Geräten, was es zur bevorzugten Wahl für datenschutzbewusste und budgetbewusste Benutzer macht.
+
+      Stellen Sie sich vor, Ihre Filme, Fernsehsendungen und Musik sind jederzeit griffbereit und auf jedem Gerät zugänglich. Jellyfin verwandelt Ihre Mediensammlung in ein personalisiertes Unterhaltungszentrum, das traditionelle Fotoalben mit einem nahtlosen Browsing- und Wiedergabeerlebnis übertrifft.
+      Jellyfin bietet hochwertiges Streaming, automatisches Abrufen von Metadaten und personalisierte Empfehlungen, alles kostenlos. Es unterstützt mehrere Benutzer, jeder mit seiner eigenen Medienbibliothek, und erfüllt die vielfältigen Bedürfnisse von Familien oder Teams.
+      Die Bereitstellung von Jellyfin auf privaten Cloud-Geräten wie Zima bietet nahezu unbegrenzten Speicher, reibungsloses Streaming und sicheren Zugriff von mehreren Geräten. Für NAS-Enthusiasten oder alle, die ihr Heim-Medien-Setup verbessern möchten, ist Jellyfin die perfekte Lösung.
+    it_it: |
+      Jellyfin si distingue tra le applicazioni server multimediali per il suo design completamente open-source, gratuito e incentrato sulla privacy. A differenza di Emby e Plex, Jellyfin offre una gestione multimediale robusta, transcodifica in tempo reale e permessi granulari per più utenti senza costi di abbonamento, operando indipendentemente dai servizi cloud per garantire il pieno controllo dei dati da parte dell'utente. Il suo sviluppo guidato dalla comunità e l'uso efficiente delle risorse consentono prestazioni fluide su dispositivi di fascia bassa, rendendolo la scelta ideale per gli utenti attenti alla privacy e al budget.
+
+      Immagina i tuoi film, programmi TV e musica a portata di mano, accessibili su qualsiasi dispositivo. Jellyfin trasforma la tua collezione multimediale in un hub di intrattenimento personalizzato, superando gli album fotografici tradizionali con un'esperienza di navigazione e riproduzione senza interruzioni.
+      Jellyfin offre streaming di alta qualità, recupero automatico dei metadati e raccomandazioni personalizzate, il tutto a costo zero. Supporta più utenti, ognuno con la propria libreria multimediale, soddisfacendo le diverse esigenze di famiglie o team.
+      Implementare Jellyfin su dispositivi cloud privati come Zima offre storage quasi illimitato, streaming fluido e accesso sicuro da più dispositivi. Per gli appassionati di NAS o per chiunque desideri migliorare la propria configurazione multimediale domestica, Jellyfin è la soluzione perfetta.
+    ru_ru: |
+      Jellyfin выделяется среди приложений для медиа-серверов своим полностью открытым исходным кодом, бесплатным и ориентированным на конфиденциальность дизайном. В отличие от Emby и Plex, Jellyfin обеспечивает надежное управление медиа, транскодирование в реальном времени и детализированные разрешения для нескольких пользователей без подписки, работая независимо от облачных сервисов, чтобы гарантировать полный контроль пользователя над данными. Его разработка, основанная на сообществе, и эффективное использование ресурсов позволяют ему работать плавно на устройствах с низкой производительностью, что делает его идеальным выбором для пользователей, заботящихся о конфиденциальности и бюджете.
+
+      Представьте, что ваши фильмы, телешоу и музыка всегда под рукой, доступны на любом устройстве. Jellyfin превращает вашу медиа-коллекцию в персональный развлекательный центр, превосходя традиционные фотоальбомы с плавным просмотром и воспроизведением.
+      Jellyfin предлагает высококачественный стриминг, автоматическое получение метаданных и персонализированные рекомендации, и все это бесплатно. Он поддерживает нескольких пользователей, каждый из которых имеет свою собственную медиа-библиотеку, что отвечает разнообразным потребностям семей или команд.
+      Развертывание Jellyfin на частных облачных устройствах, таких как Zima, обеспечивает почти неограниченное хранилище, плавный стриминг и безопасный доступ с нескольких устройств. Для энтузиастов NAS или тех, кто хочет улучшить свою домашнюю медиа-систему, Jellyfin — идеальное решение.
+    ja_jp: |
+      Jellyfinは、完全にオープンソースで無料、プライバシーに重点を置いた設計で、メディアサーバーアプリケーションの中でも際立っています。EmbyやPlexとは異なり、Jellyfinはサブスクリプション費用なしで堅牢なメディア管理、リアルタイムトランスコーディング、細かいマルチユーザーパーミッションを提供し、クラウドサービスに依存せずに動作することで、ユーザーがデータに対する完全な制御を維持できるようにします。コミュニティ主導の開発と効率的なリソース使用により、低スペックのデバイスでもスムーズなパフォーマンスを実現し、プライバシーを重視し、予算に配慮したユーザーのための最適な選択肢となっています。
+
+      映画、テレビ番組、音楽が手元にあり、どのデバイスからでもアクセスできることを想像してください。Jellyfinは、メディアコレクションをパーソナライズされたエンターテイメントハブに変え、シームレスな閲覧と再生体験で従来の写真アルバムを超えます。
+      Jellyfinは、高品質のストリーミング、自動メタデータ取得、パーソナライズされたおすすめをすべて無料で提供します。複数のユーザーをサポートし、それぞれが独自のメディアライブラリを持ち、家族やチームの多様なニーズに対応します。
+      ZimaのようなプライベートクラウドデバイスにJellyfinを展開すると、ほぼ無制限のストレージ、スムーズなストリーミング、セキュアなマルチデバイスアクセスが提供されます。NAS愛好家や家庭のメディア設定を向上させたい人にとって、Jellyfinは完璧なソリューションです。
   developer: Jellyfin
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyfin/icon.png
   screenshot_link:
@@ -211,12 +259,21 @@ x-casaos:
     pt_PT: O sistema de media pessoal
     ru_RU: Личная медиа-система
     tr_TR: Kişisel Medya Sistemi
+    en_us: The personal Media System
+    pt_br: O sistema de media pessoal
+    zh_cn: 个人媒体系统
+    fr_fr: Le système multimédia personnel
+    de_de: Das persönliche Mediensystem
+    it_it: Il sistema multimediale personale
+    ru_ru: Личная медиа-система
+    ja_jp: 個人用メディアシステム
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyfin/thumbnail.png
   tips: {}
   title:
     en_us: Jellyfin
   index: /
-  port_map: '8097'
+  port_map: "8097"
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

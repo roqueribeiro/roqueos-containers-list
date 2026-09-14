@@ -34,7 +34,7 @@ services:
       ports:
         - container: '9696'
           description:
-            en_us: ''
+            en_us: "Web interface for Prowlarr"
       volumes:
         - container: /config
           description:

@@ -12,6 +12,10 @@ services:
           memory: 2048M
     restart: unless-stopped
     x-casaos:
+      ports:
+        - container: '8000'
+          description:
+            en_us: "Web interface for FileDrop"
       envs:
         - container: PUID
           description:
@@ -97,4 +101,5 @@ x-casaos:
   port_map: '8000'
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

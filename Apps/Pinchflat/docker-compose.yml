@@ -9,7 +9,7 @@ services:
     network_mode: bridge
     ports:
       - target: 8945
-        published: '8945'
+        published: "8945"
         protocol: tcp
     restart: unless-stopped
     environment:
@@ -25,7 +25,7 @@ services:
         target: /downloads
     x-casaos:
       ports:
-        - container: '8945'
+        - container: "8945"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -42,6 +42,14 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP порт веб-интерфейса
             tr_TR: WebUI HTTP Portu
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP порт веб-интерфейса
+            ja_jp: WebUI HTTPポート
       volumes:
         - container: /config
           description:
@@ -60,6 +68,14 @@ services:
             pt_PT: Diretório de configuração Pinchflat.
             ru_RU: Каталог конфигурации Pinchflat.
             tr_TR: Pinchflat yapılandırma dizini.
+            en_us: Pinchflat config directory.
+            pt_br: Diretório de configuração Pinchflat.
+            zh_cn: Pinchflat 配置目录
+            fr_fr: Répertoire de configuration Pinchflat.
+            de_de: Pinchflat Konfigurationsverzeichnis.
+            it_it: Directory di configurazione Pinchflat.
+            ru_ru: Каталог конфигурации Pinchflat.
+            ja_jp: Pinchflat 設定ディレクトリ
         - container: /downloads
           description:
             en_US: Pinchflat downloads directory.
@@ -77,6 +93,14 @@ services:
             pt_PT: Diretório de downloads Pinchflat.
             ru_RU: Каталог загрузок Pinchflat.
             tr_TR: Pinchflat indirme dizini.
+            en_us: Pinchflat downloads directory.
+            pt_br: Diretório de downloads Pinchflat.
+            zh_cn: Pinchflat 下载目录
+            fr_fr: Répertoire de téléchargements Pinchflat.
+            de_de: Pinchflat Download-Verzeichnis.
+            it_it: Directory download Pinchflat.
+            ru_ru: Каталог загрузок Pinchflat.
+            ja_jp: Pinchflat ダウンロードディレクトリ
     container_name: pinchflat
 x-casaos:
   architectures:
@@ -400,13 +424,181 @@ x-casaos:
       - Medya indirme/silme sonrası özel betikleri çalıştırmayı destekler
 
       Medya merkezi uygulamasıyla kullanmak için içerik indirmek isteyen kişiler veya medyayı arşivlemek isteyenler için mükemmel!
+    en_us: |
+      Pinchflat is a self-hosted app for downloading YouTube content built using yt-dlp. It's designed to be lightweight, self-contained, and easy to use. You set up rules for how to download content from YouTube channels or playlists and it'll do the rest, periodically checking for new content.
+
+      Key features include:
+      - Self-contained - just one Docker container with no external dependencies
+      - Powerful naming system so content is stored where and how you want it
+      - Easy-to-use web interface with presets to get you started right away
+      - First-class support for media center apps like Plex, Jellyfin, and Kodi
+      - Supports serving RSS feeds to your favourite podcast app
+      - Automatically downloads new content from channels and playlists
+      - Supports downloading audio content
+      - Custom rules for handling YouTube Shorts and livestreams
+      - Apprise support for notifications
+      - Optionally automatically delete old content
+      - Advanced options like setting cutoff dates and filtering by title
+      - Reliable hands-off operation
+      - Can pass cookies to YouTube to download your private playlists
+      - Sponsorblock integration
+      - Supports running custom scripts when after downloading/deleting media
+
+      Perfect for people who want to download content for use with a media center app or for those who want to archive media!
+    pt_br: |
+      Pinchflat é uma aplicação auto-hospedada para descarregar conteúdo do YouTube construída usando yt-dlp. Foi concebida para ser leve, auto-contida e fácil de usar. Define regras para como descarregar conteúdo de canais ou listas de reprodução do YouTube e fará o resto, verificando periodicamente novo conteúdo.
+
+      As funcionalidades principais incluem:
+      - Auto-contida - apenas um contentor Docker sem dependências externas
+      - Sistema de nomenclatura poderoso para que o conteúdo seja armazenado onde e como deseja
+      - Interface web fácil de usar com predefinições para começar imediatamente
+      - Suporte de primeira classe para aplicações de centro multimédia como Plex, Jellyfin e Kodi
+      - Suporta servir feeds RSS para a sua aplicação de podcast favorita
+      - Descarrega automaticamente novo conteúdo de canais e listas de reprodução
+      - Suporta descarregar conteúdo áudio
+      - Regras personalizadas para lidar com YouTube Shorts e livestreams
+      - Suporte Apprise para notificações
+      - Opcionalmente elimina automaticamente conteúdo antigo
+      - Opções avançadas como definir datas de corte e filtrar por título
+      - Operação fiável sem intervenção
+      - Pode passar cookies para o YouTube para descarregar as suas listas de reprodução privadas
+      - Integração Sponsorblock
+      - Suporta executar scripts personalizados após descarregar/eliminar multimédia
+
+      Perfeito para pessoas que querem descarregar conteúdo para usar com uma aplicação de centro multimédia ou para aqueles que querem arquivar multimédia!
+    zh_cn: |
+      Pinchflat 是一个基于 yt-dlp 构建的自托管 YouTube 内容下载应用。它设计轻量、自包含且易于使用。你可以设置从 YouTube 频道或播放列表下载内容的规则，它会自动完成其余工作，定期检查新内容。
+
+      主要功能包括：
+      - 自包含 - 只需一个 Docker 容器，无外部依赖
+      - 强大的命名系统，让内容按你想要的方式存储
+      - 易于使用的 Web 界面，预设帮你快速开始
+      - 对 Plex、Jellyfin 和 Kodi 等媒体中心应用的一流支持
+      - 支持为你喜爱的播客应用提供 RSS 源
+      - 自动从频道和播放列表下载新内容
+      - 支持下载音频内容
+      - 处理 YouTube Shorts 和直播的自定义规则
+      - Apprise 通知支持
+      - 可选择自动删除旧内容
+      - 高级选项如设置截止日期和按标题过滤
+      - 可靠的免维护操作
+      - 可传递 cookies 到 YouTube 以下载私人播放列表
+      - Sponsorblock 集成
+      - 支持在下载/删除媒体后运行自定义脚本
+
+      非常适合想要下载内容用于媒体中心应用或想要存档媒体的用户！
+    fr_fr: |
+      Pinchflat est une application auto-hébergée pour télécharger du contenu YouTube construite avec yt-dlp. Elle est conçue pour être légère, autonome et facile à utiliser. Vous configurez des règles pour télécharger du contenu depuis des chaînes ou playlists YouTube et elle fait le reste, vérifiant périodiquement le nouveau contenu.
+
+      Les fonctionnalités clés incluent :
+      - Autonome - juste un conteneur Docker sans dépendances externes
+      - Système de nommage puissant pour que le contenu soit stocké où et comme vous le voulez
+      - Interface web facile à utiliser avec des préréglages pour commencer immédiatement
+      - Support de première classe pour les applications de centre multimédia comme Plex, Jellyfin et Kodi
+      - Supporte la diffusion de flux RSS vers votre application podcast préférée
+      - Télécharge automatiquement le nouveau contenu des chaînes et playlists
+      - Supporte le téléchargement de contenu audio
+      - Règles personnalisées pour gérer les YouTube Shorts et livestreams
+      - Support Apprise pour les notifications
+      - Supprime optionnellement automatiquement l'ancien contenu
+      - Options avancées comme définir des dates de coupure et filtrer par titre
+      - Fonctionnement fiable sans intervention
+      - Peut passer des cookies à YouTube pour télécharger vos playlists privées
+      - Intégration Sponsorblock
+      - Supporte l'exécution de scripts personnalisés après téléchargement/suppression de média
+
+      Parfait pour les personnes qui veulent télécharger du contenu pour l'utiliser avec une application de centre multimédia ou pour ceux qui veulent archiver des médias !
+    de_de: |
+      Pinchflat ist eine selbst gehostete App zum Herunterladen von YouTube-Inhalten, die mit yt-dlp erstellt wurde. Sie ist darauf ausgelegt, leichtgewichtig, eigenständig und einfach zu verwenden zu sein. Sie richten Regeln ein, wie Inhalte von YouTube-Kanälen oder Playlists heruntergeladen werden sollen, und sie erledigt den Rest und überprüft regelmäßig neue Inhalte.
+
+      Zu den Hauptfunktionen gehören:
+      - Eigenständig - nur ein Docker-Container ohne externe Abhängigkeiten
+      - Leistungsstarkes Benennungssystem, damit Inhalte dort und so gespeichert werden, wie Sie es möchten
+      - Benutzerfreundliche Weboberfläche mit Voreinstellungen, um sofort loszulegen
+      - Erstklassige Unterstützung für Media-Center-Apps wie Plex, Jellyfin und Kodi
+      - Unterstützt die Bereitstellung von RSS-Feeds für Ihre Lieblings-Podcast-App
+      - Lädt automatisch neue Inhalte von Kanälen und Playlists herunter
+      - Unterstützt das Herunterladen von Audioinhalten
+      - Benutzerdefinierte Regeln für den Umgang mit YouTube Shorts und Livestreams
+      - Apprise-Unterstützung für Benachrichtigungen
+      - Optional automatisches Löschen alter Inhalte
+      - Erweiterte Optionen wie das Festlegen von Stichtagen und Filtern nach Titel
+      - Zuverlässiger Hands-off-Betrieb
+      - Kann Cookies an YouTube weitergeben, um Ihre privaten Playlists herunterzuladen
+      - Sponsorblock-Integration
+      - Unterstützt das Ausführen benutzerdefinierter Skripte nach dem Herunterladen/Löschen von Medien
+
+      Perfekt für Leute, die Inhalte für die Verwendung mit einer Media-Center-App herunterladen möchten oder für diejenigen, die Medien archivieren möchten!
+    it_it: |
+      Pinchflat è un'app self-hosted per scaricare contenuti YouTube costruita usando yt-dlp. È progettata per essere leggera, autonoma e facile da usare. Imposti le regole per come scaricare contenuti da canali o playlist YouTube e farà il resto, controllando periodicamente nuovi contenuti.
+
+      Le caratteristiche principali includono:
+      - Autonoma - solo un container Docker senza dipendenze esterne
+      - Sistema di denominazione potente così il contenuto è memorizzato dove e come vuoi
+      - Interfaccia web facile da usare con preset per iniziare subito
+      - Supporto di prima classe per app media center come Plex, Jellyfin e Kodi
+      - Supporta la fornitura di feed RSS alla tua app podcast preferita
+      - Scarica automaticamente nuovi contenuti da canali e playlist
+      - Supporta il download di contenuti audio
+      - Regole personalizzate per gestire YouTube Shorts e livestream
+      - Supporto Apprise per le notifiche
+      - Opzionalmente elimina automaticamente contenuti vecchi
+      - Opzioni avanzate come impostare date di cutoff e filtrare per titolo
+      - Funzionamento affidabile senza intervento
+      - Può passare cookie a YouTube per scaricare le tue playlist private
+      - Integrazione Sponsorblock
+      - Supporta l'esecuzione di script personalizzati dopo il download/eliminazione media
+
+      Perfetto per persone che vogliono scaricare contenuti per l'uso con un'app media center o per coloro che vogliono archiviare media!
+    ru_ru: |
+      Pinchflat — это самостоятельно размещаемое приложение для загрузки контента YouTube, созданное с использованием yt-dlp. Оно разработано для того, чтобы быть легким, автономным и простым в использовании. Вы настраиваете правила загрузки контента с каналов или плейлистов YouTube, и оно делает все остальное, периодически проверяя новый контент.
+
+      Ключевые функции включают:
+      - Автономность - всего один Docker-контейнер без внешних зависимостей
+      - Мощная система именования, чтобы контент хранился там и так, как вы хотите
+      - Простой в использовании веб-интерфейс с предустановками для немедленного начала работы
+      - Первоклассная поддержка приложений медиацентра, таких как Plex, Jellyfin и Kodi
+      - Поддерживает предоставление RSS-лент вашему любимому приложению подкастов
+      - Автоматически загружает новый контент с каналов и плейлистов
+      - Поддерживает загрузку аудиоконтента
+      - Пользовательские правила для обработки YouTube Shorts и прямых трансляций
+      - Поддержка Apprise для уведомлений
+      - Опционально автоматически удаляет старый контент
+      - Расширенные опции, такие как установка дат отсечения и фильтрация по заголовку
+      - Надежная работа без вмешательства
+      - Может передавать cookies в YouTube для загрузки ваших частных плейлистов
+      - Интеграция Sponsorblock
+      - Поддерживает выполнение пользовательских скриптов после загрузки/удаления медиа
+
+      Идеально подходит для людей, которые хотят загружать контент для использования с приложением медиацентра или для тех, кто хочет архивировать медиа!
+    ja_jp: |
+      Pinchflatは、yt-dlpを使用して構築されたYouTubeコンテンツをダウンロードするためのセルフホスト型アプリです。軽量で自己完結型、使いやすく設計されています。YouTubeチャンネルやプレイリストからコンテンツをダウンロードする方法のルールを設定すると、残りの作業を行い、定期的に新しいコンテンツをチェックします。
+
+      主な機能には以下が含まれます：
+      - 自己完結型 - 外部依存関係のない単一のDockerコンテナ
+      - 強力な命名システムでコンテンツを希望の場所と方法で保存
+      - すぐに始められるプリセット付きの使いやすいWebインターフェース
+      - Plex、Jellyfin、Kodiなどのメディアセンターアプリの一流サポート
+      - お気に入りのポッドキャストアプリへのRSSフィード配信をサポート
+      - チャンネルとプレイリストから新しいコンテンツを自動ダウンロード
+      - オーディオコンテンツのダウンロードをサポート
+      - YouTube Shortsとライブストリームのカスタムルール
+      - 通知のAppriseサポート
+      - オプションで古いコンテンツを自動削除
+      - カットオフ日の設定やタイトルでのフィルタリングなどの高度なオプション
+      - 信頼性の高いハンズオフ操作
+      - プライベートプレイリストをダウンロードするためにYouTubeにクッキーを渡すことが可能
+      - Sponsorblock統合
+      - メディアのダウンロード/削除後のカスタムスクリプト実行をサポート
+
+      メディアセンターアプリで使用するコンテンツをダウンロードしたい人や、メディアをアーカイブしたい人に最適です！
   developer: kieraneglin
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/screenshot-2.png
   main: pinchflat
-  port_map: '8945'
+  port_map: "8945"
   scheme: http
   tagline:
     en_US: Your next YouTube media manager
@@ -424,6 +616,14 @@ x-casaos:
     pt_PT: O seu próximo gestor multimédia YouTube
     ru_RU: Ваш следующий менеджер медиа YouTube
     tr_TR: Bir sonraki YouTube medya yöneticiniz
+    en_us: Your next YouTube media manager
+    pt_br: O seu próximo gestor multimédia YouTube
+    zh_cn: 你的下一个 YouTube 媒体管理器
+    fr_fr: Votre prochain gestionnaire multimédia YouTube
+    de_de: Ihr nächster YouTube-Medienmanager
+    it_it: Il tuo prossimo gestore multimediale YouTube
+    ru_ru: Ваш следующий менеджер медиа YouTube
+    ja_jp: あなたの次のYouTubeメディアマネージャー
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pinchflat/thumbnail.png
   tips:
     before_install:
@@ -517,7 +717,56 @@ x-casaos:
         İndirmeleriniz için yeterli depolama alanınız olduğundan emin olun. Uygulama varsayılan indirme dizini olarak /downloads kullanır.
 
         Kurulumdan sonra, otomatik indirme için YouTube kanallarınızı ve çalma listelerinizi yapılandırmak için web arayüzüne erişin.
+      en_us: |
+        Pinchflat will automatically create the necessary directories and start downloading content based on your configured sources.
+
+        Make sure you have enough storage space for your downloads. The app uses /downloads as the default download directory.
+
+        After installation, access the web interface to configure your YouTube channels and playlists for automatic downloading.
+      pt_br: |
+        Pinchflat criará automaticamente os diretórios necessários e começará a descarregar conteúdo baseado nas suas fontes configuradas.
+
+        Certifique-se de que tem espaço de armazenamento suficiente para os seus downloads. A aplicação usa /downloads como diretório de download padrão.
+
+        Após a instalação, aceda à interface web para configurar os seus canais YouTube e listas de reprodução para download automático.
+      zh_cn: |
+        Pinchflat 将自动创建必要的目录并根据你配置的源开始下载内容。
+
+        确保你有足够的存储空间用于下载。应用使用 /downloads 作为默认下载目录。
+
+        安装后，访问 Web 界面配置你的 YouTube 频道和播放列表以进行自动下载。
+      fr_fr: |
+        Pinchflat créera automatiquement les répertoires nécessaires et commencera à télécharger du contenu basé sur vos sources configurées.
+
+        Assurez-vous d'avoir suffisamment d'espace de stockage pour vos téléchargements. L'application utilise /downloads comme répertoire de téléchargement par défaut.
+
+        Après l'installation, accédez à l'interface web pour configurer vos chaînes YouTube et playlists pour le téléchargement automatique.
+      de_de: |
+        Pinchflat erstellt automatisch die notwendigen Verzeichnisse und beginnt mit dem Herunterladen von Inhalten basierend auf Ihren konfigurierten Quellen.
+
+        Stellen Sie sicher, dass Sie genügend Speicherplatz für Ihre Downloads haben. Die App verwendet /downloads als Standard-Download-Verzeichnis.
+
+        Nach der Installation greifen Sie auf die Weboberfläche zu, um Ihre YouTube-Kanäle und Playlists für automatische Downloads zu konfigurieren.
+      it_it: |
+        Pinchflat creerà automaticamente le directory necessarie e inizierà a scaricare contenuti basati sulle tue fonti configurate.
+
+        Assicurati di avere abbastanza spazio di archiviazione per i tuoi download. L'app usa /downloads come directory di download predefinita.
+
+        Dopo l'installazione, accedi all'interfaccia web per configurare i tuoi canali YouTube e playlist per il download automatico.
+      ru_ru: |
+        Pinchflat автоматически создаст необходимые каталоги и начнет загружать контент на основе ваших настроенных источников.
+
+        Убедитесь, что у вас достаточно места для хранения ваших загрузок. Приложение использует /downloads как каталог загрузки по умолчанию.
+
+        После установки получите доступ к веб-интерфейсу для настройки ваших каналов YouTube и плейлистов для автоматической загрузки.
+      ja_jp: |
+        Pinchflatは必要なディレクトリを自動的に作成し、設定されたソースに基づいてコンテンツのダウンロードを開始します。
+
+        ダウンロード用に十分なストレージ容量があることを確認してください。アプリはデフォルトのダウンロードディレクトリとして/downloadsを使用します。
+
+        インストール後、Webインターフェースにアクセスして、自動ダウンロード用のYouTubeチャンネルとプレイリストを設定してください。
   title:
     en_US: Pinchflat
+    en_us: Pinchflat
 x-roqueos:
   mountShared: true

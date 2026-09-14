@@ -1,25 +1,25 @@
 # Portainer
 
-> Lightweight Docker management UI
+> Interface leve de gestão Docker
 
 ## O que é
 
-Portainer Community Edition (CE) is a lightweight container management tool offering an intuitive Web interface to simplify building, managing, and monitoring containerized applications. With over 500,000 active users, it is widely appreciated for its ease of use and robust functionality, ideal for individual developers, home lab users, and small teams.
+Portainer Community Edition (CE) é uma ferramenta leve de gestão de contentores que oferece uma interface Web intuitiva para simplificar a construção, gestão e monitorização de aplicações contentorizadas. Com mais de 500.000 utilizadores activos, é amplamente apreciado pela sua facilidade de uso e funcionalidade robusta, ideal para programadores individuais, utilizadores de laboratórios domésticos e pequenas equipas.
 
-The tool's core features include multi-platform support, resource management, and real-time monitoring. It supports managing various container platforms, covering containers, images, volumes, and networks. Users can quickly create, deploy, and manage containers via a “smart” graphical interface or comprehensive API, without needing deep command-line expertise. It provides real-time container status monitoring, log viewing, and configuration management, ensuring efficient control over application operations.
+As características principais da ferramenta incluem suporte multi-plataforma, gestão de recursos e monitorização em tempo real. Suporta a gestão de várias plataformas de contentores, cobrindo contentores, imagens, volumes e redes. Os utilizadores podem rapidamente criar, implementar e gerir contentores através de uma interface gráfica "inteligente" ou API abrangente, sem necessitar de conhecimento profundo de linha de comandos. Proporciona monitorização em tempo real do estado dos contentores, visualização de registos e gestão de configuração, garantindo controlo eficiente das operações das aplicações.
 
-Its design philosophy is to “simplify container complexity” with an intuitive interface and default settings that lower the technical barrier. Users can manage containerized applications without complex configurations, saving time and boosting efficiency. It is completely free, with data stored locally, ensuring full user control. Community support via GitHub Discussions and Slack, along with rich documentation and regular updates, enhances the user experience, making it suitable for learning container technology or managing small projects.
+A sua filosofia de design é "simplificar a complexidade dos contentores" com uma interface intuitiva e configurações predefinidas que reduzem a barreira técnica. Os utilizadores podem gerir aplicações contentorizadas sem configurações complexas, poupando tempo e aumentando a eficiência. É completamente gratuito, com dados armazenados localmente, garantindo controlo total do utilizador. O suporte da comunidade através de GitHub Discussions e Slack, juntamente com documentação rica e actualizações regulares, melhora a experiência do utilizador, tornando-o adequado para aprender tecnologia de contentores ou gerir pequenos projectos.
 
-**Key Features:**
-- Intuitive Web interface for simplified containerized app management
-- Supports multiple container platforms for unified resource management
-- Real-time monitoring of container status and logs
-- Rapid container deployment and management via API
-- Community support with extensive documentation and assistance
+**Características Principais:**
+- Interface Web intuitiva para gestão simplificada de aplicações contentorizadas
+- Suporta múltiplas plataformas de contentores para gestão unificada de recursos
+- Monitorização em tempo real do estado dos contentores e registos
+- Implementação e gestão rápida de contentores através de API
+- Suporte da comunidade com documentação extensa e assistência
 
-**Learn More:**
-- [Portainer Official Website](https://www.portainer.io/)
-- [Portainer GitHub Repository](https://github.com/portainer/portainer)
+**Saiba Mais:**
+- [Site Oficial Portainer](https://www.portainer.io/)
+- [Repositório GitHub Portainer](https://github.com/portainer/portainer)
 
 
 Categoria na App Store do RoqueOS: **Utilities**.
@@ -27,12 +27,13 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve               | Serviço   |
-| ---- | --------- | --------- | ---------------------------- | --------- |
-| 8000 | 8000      | tcp       | —                            | portainer |
-| 9000 | 9000      | tcp       | Portainer Web UI Port        | portainer |
-| 9443 | 9443      | tcp       | Portainer Web UI Port(https) | portainer |
+| Host | Container | Protocolo | Para que serve                       | Serviço   |
+| ---- | --------- | --------- | ------------------------------------ | --------- |
+| 8000 | 8000      | tcp       | Service port 8000 of portainer       | portainer |
+| 9000 | 9000      | tcp       | Porta Interface Web Portainer        | portainer |
+| 9443 | 9443      | tcp       | Porta Interface Web Portainer(https) | portainer |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

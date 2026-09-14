@@ -1,14 +1,14 @@
 # VoceChat
 
-> Have a Private Social Space Hosted on Your Site
+> Tenha um Espaço Social Privado Hospedado no Seu Site
 
 ## O que é
 
-VoceChat is a secure chat software designed for independent deployment, offering a flexible solution for seamless communication. It combines instant messaging with channel-based group chats, allowing you to engage in one-on-one conversations or create themed channels for group discussions.
+VoceChat é um software de chat seguro desenhado para implementação independente, oferecendo uma solução flexível para uma comunicação fluida. Combina mensagens instantâneas com chats de grupo baseados em canais, permitindo-lhe participar em conversas individuais ou criar canais temáticos para discussões em grupo.
 
-VoceChat supports a variety of message formats, including text, images, files, emojis, and rich text (Markdown), making your communication vibrant and expressive. Once deployed, it can be accessed via a WebAPP or mobile APP, ensuring a consistent experience across platforms.
+VoceChat suporta uma variedade de formatos de mensagens, incluindo texto, imagens, ficheiros, emojis e texto rico (Markdown), tornando a sua comunicação vibrante e expressiva. Uma vez implementado, pode ser acedido através de uma WebAPP ou aplicação móvel, garantindo uma experiência consistente em todas as plataformas.
 
-With robust management features, VoceChat enables easy member and channel administration, giving you full control over your team or group’s communication environment. Whether for individual users or enterprise teams, VoceChat delivers a secure, versatile, and efficient chat solution.
+Com funcionalidades robustas de gestão, o VoceChat permite uma fácil administração de membros e canais, dando-lhe controlo total sobre o ambiente de comunicação da sua equipa ou grupo. Seja para utilizadores individuais ou equipas empresariais, o VoceChat oferece uma solução de chat segura, versátil e eficiente.
 
 
 Categoria na App Store do RoqueOS: **Communication**.

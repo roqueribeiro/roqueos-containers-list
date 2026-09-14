@@ -1,28 +1,28 @@
 # Monica
 
-> A Personal Relationship Management tool to help you document your social life.
+> Uma ferramenta de gestão de relacionamentos pessoais para ajudá-lo a documentar a sua vida social.
 
 ## O que é
 
-Monica is a self-hosted personal relationship management tool that helps users document and organize interactions with family and friends via an intuitive Web interface, creating a personalized contact database. It is ideal for users balancing work and life, ensuring key personal connections are never missed.
+Monica é uma ferramenta de gestão de relacionamentos pessoais auto-hospedada que ajuda os utilizadores a documentar e organizar interações com família e amigos através de uma interface Web intuitiva, criando uma base de dados de contactos personalizada. É ideal para utilizadores que equilibram trabalho e vida, garantindo que as conexões pessoais importantes nunca sejam perdidas.
 
-The tool's core features include comprehensive contact management and smart reminders. It supports creating detailed contact profiles, logging personal details, relationships (e.g., family, friends), and how contacts were met. Users can set automatic reminders for birthdays, anniversaries, and other key dates, while tracking conversations, activities, and gift ideas. A diary feature records daily moods and significant moments, maintaining a clear life record.
+As funcionalidades principais da ferramenta incluem gestão abrangente de contactos e lembretes inteligentes. Suporta a criação de perfis detalhados de contactos, registo de detalhes pessoais, relacionamentos (ex: família, amigos) e como os contactos foram conhecidos. Os utilizadores podem definir lembretes automáticos para aniversários, datas comemorativas e outras datas importantes, enquanto acompanham conversas, atividades e ideias de presentes. Uma funcionalidade de diário regista humores diários e momentos significativos, mantendo um registo de vida claro.
 
-It offers task and debt management to track to-dos or financial interactions. Users can upload photos and documents, favorite contacts, and organize relationships with labels for streamlined data management. Full control over local data ensures privacy. The tool’s intuitive operation and high flexibility deliver a modern relationship management solution.
+Oferece gestão de tarefas e dívidas para acompanhar afazeres ou interações financeiras. Os utilizadores podem carregar fotografias e documentos, marcar contactos como favoritos e organizar relacionamentos com etiquetas para gestão de dados simplificada. O controlo total sobre dados locais garante privacidade. O funcionamento intuitivo e alta flexibilidade da ferramenta proporcionam uma solução moderna de gestão de relacionamentos.
 
-**Key Features:**
-- Comprehensive contact management with detailed profiles
-- Automatic reminders for birthdays, anniversaries, and key dates
-- Track conversations, activities, and gift ideas
-- Diary feature to record daily moods and moments
-- Task and debt management for to-dos and finances
-- Upload photos and documents, favorite contacts
-- Organize contacts with labels
-- Local data storage for privacy assurance
+**Características Principais:**
+- Gestão abrangente de contactos com perfis detalhados
+- Lembretes automáticos para aniversários, datas comemorativas e datas importantes
+- Acompanhar conversas, atividades e ideias de presentes
+- Funcionalidade de diário para registar humores e momentos diários
+- Gestão de tarefas e dívidas para afazeres e finanças
+- Carregar fotografias e documentos, contactos favoritos
+- Organizar contactos com etiquetas
+- Armazenamento de dados local para garantia de privacidade
 
-**Learn More:**
-- [Monica Official Website](https://www.monicahq.com)
-- [Monica GitHub Repository](https://github.com/monicahq/monica)
+**Saiba Mais:**
+- [Website Oficial Monica](https://www.monicahq.com)
+- [Repositório GitHub Monica](https://github.com/monicahq/monica)
 
 
 Categoria na App Store do RoqueOS: **Utilities**.
@@ -30,9 +30,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve  | Serviço |
-| ----- | --------- | --------- | --------------- | ------- |
-| 18930 | 80        | tcp       | WebUI HTTP Port | monica  |
+| Host  | Container | Protocolo | Para que serve   | Serviço |
+| ----- | --------- | --------- | ---------------- | ------- |
+| 18930 | 80        | tcp       | Porta HTTP WebUI | monica  |
 
 
 ## Volumes

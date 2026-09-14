@@ -34,7 +34,7 @@ services:
       ports:
         - container: '6555'
           description:
-            en_us: ''
+            en_us: "Web interface for Embystat"
       volumes:
         - container: /config
           description:

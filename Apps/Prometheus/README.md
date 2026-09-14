@@ -15,6 +15,7 @@ Arquiteturas suportadas: amd64, arm64.
 | ---- | --------- | --------- | --------------------------------- | ---------- |
 | 9090 | 9090      | tcp       | Porta da API HTTP + interface web | prometheus |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

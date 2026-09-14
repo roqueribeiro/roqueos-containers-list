@@ -8,8 +8,8 @@ services:
       - /dev/video11:/dev/video11
       - /dev/video12:/dev/video12
     environment:
-      PGID: '1000'
-      PUID: '1000'
+      PGID: "1000"
+      PUID: "1000"
       TZ: $TZ
     image: linuxserver/emby:4.9.1
     deploy:
@@ -19,10 +19,10 @@ services:
     network_mode: bridge
     ports:
       - target: 8096
-        published: '8096'
+        published: "8096"
         protocol: tcp
       - target: 8920
-        published: '8920'
+        published: "8920"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -39,30 +39,30 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ''
+            en_us: ""
         - container: PGID
           description:
-            en_us: ''
+            en_us: ""
         - container: TZ
           description:
-            en_us: ''
+            en_us: ""
       ports:
-        - container: '8096'
+        - container: "8096"
           description:
-            en_us: ''
-        - container: '8920'
+            en_us: "Web interface for Emby"
+        - container: "8920"
           description:
-            en_us: ''
+            en_us: "Service port 8920 of emby"
       volumes:
         - container: /config
           description:
-            en_us: ''
+            en_us: ""
         - container: /data/tvshows
           description:
-            en_us: ''
+            en_us: ""
         - container: /data/movies
           description:
-            en_us: ''
+            en_us: ""
     container_name: emby
 x-casaos:
   architectures:
@@ -372,6 +372,166 @@ x-casaos:
 
       **Daha Fazla Bilgi:**
       - [Emby Resmi Web Sitesi](https://emby.media/)
+    en_us: |
+      Emby is a personal media management platform that brings home videos, music, and photos together, automatically converting and streaming to any device. An intuitive design makes it ideal for users to enjoy media content anytime, anywhere, meeting family entertainment and media management needs.
+
+      Core features include cross-device media streaming and easy access. It supports real-time conversion and streaming of personal media to any device for seamless playback. A connection service enables easy media access while away from home. Live TV functionality supports streaming, managing DVR, and accessing a library of recordings. Mobile sync delivers media to smartphones and tablets for offline access, automatically updating new content.
+
+      It offers parental controls to restrict children's content access, set schedules and time limits, and remotely monitor sessions. Chromecast support enables easy streaming of videos, music, photos, and Live TV. Content is presented elegantly, enhancing visual experience. Cloud sync supports backup, archiving, and multi-resolution storage for optimized streaming. Web-based media management facilitates editing metadata, images, and searching subtitles, while DLNA integration auto-detects network devices for content streaming. With convenience and versatility at the core, the platform delivers a modern media management solution.
+
+      **Key Features:**
+      - Automatic conversion and streaming of media to any device
+      - Easy access via connection service while away from home
+      - Live TV streaming, DVR management, and recording library access
+      - Mobile sync to smartphones and tablets for offline access
+      - Parental controls with content restrictions, schedules, and remote monitoring
+      - Chromecast support for streaming videos, music, photos, and Live TV
+      - Cloud sync for backup and multi-resolution storage
+      - Web-based media management for editing metadata and searching subtitles
+      - DLNA integration for auto-detecting network devices and streaming content
+
+      **Learn More:**
+      - [Emby Official Website](https://emby.media/)
+    pt_br: |
+      O Emby é uma plataforma de gestão de mídia pessoal que reúne vídeos domésticos, música e fotografias, convertendo automaticamente e transmitindo para qualquer dispositivo. Um design intuitivo torna-o ideal para os utilizadores desfrutarem de conteúdo multimédia a qualquer momento, em qualquer lugar, atendendo às necessidades de entretenimento familiar e gestão de mídia.
+
+      As funcionalidades principais incluem transmissão de mídia entre dispositivos e acesso fácil. Suporta conversão em tempo real e transmissão de mídia pessoal para qualquer dispositivo para reprodução sem falhas. Um serviço de ligação permite acesso fácil à mídia enquanto se está longe de casa. A funcionalidade TV ao Vivo suporta transmissão, gestão de DVR e acesso a uma biblioteca de gravações. A sincronização móvel fornece mídia a smartphones e tablets para acesso offline, actualizando automaticamente novo conteúdo.
+
+      Oferece controlos parentais para restringir o acesso de crianças ao conteúdo, definir horários e limites de tempo, e monitorizar sessões remotamente. O suporte Chromecast permite transmissão fácil de vídeos, música, fotografias e TV ao Vivo. O conteúdo é apresentado elegantemente, melhorando a experiência visual. A sincronização na nuvem suporta cópia de segurança, arquivo e armazenamento multi-resolução para transmissão optimizada. A gestão de mídia baseada na web facilita a edição de metadados, imagens e pesquisa de legendas, enquanto a integração DLNA detecta automaticamente dispositivos de rede para transmissão de conteúdo.
+
+      **Funcionalidades Principais:**
+      - Conversão automática e transmissão de mídia para qualquer dispositivo
+      - Acesso fácil via serviço de ligação enquanto se está longe de casa
+      - Transmissão TV ao Vivo, gestão DVR e acesso biblioteca de gravações
+      - Sincronização móvel para smartphones e tablets para acesso offline
+      - Controlos parentais com restrições de conteúdo, horários e monitorização remota
+      - Suporte Chromecast para transmissão de vídeos, música, fotografias e TV ao Vivo
+      - Sincronização na nuvem para cópia de segurança e armazenamento multi-resolução
+      - Gestão de mídia baseada na web para edição de metadados e pesquisa de legendas
+      - Integração DLNA para detecção automática de dispositivos de rede e transmissão de conteúdo
+
+      **Saber Mais:**
+      - [Website Oficial Emby](https://emby.media/)
+    zh_cn: |
+      Emby 是一款个人媒体管理平台，将家庭视频、音乐和照片整合为一，自动转换并流式传输至任何设备。其直观设计适合用户随时随地享受媒体内容，满足家庭娱乐和媒体管理需求。
+
+      核心功能包括跨设备媒体流和便捷访问。它支持实时转换和流式传输个人媒体至任何设备，确保无缝播放。通过连接服务，用户可轻松在外出时访问媒体内容。直播电视功能支持流式传输、管理录像设备和查看录像库。移动同步功能将媒体同步至智能手机和平板电脑，实现离线访问并自动更新新内容。
+
+      它提供家长控制，允许限制儿童内容访问、设置时间表和时限，并支持远程监控会话。支持 Chromecast 轻松传输视频、音乐、照片和直播电视。内容以优雅方式呈现，提升视觉体验。云同步支持备份、存档和多分辨率存储，优化流式传输。基于网页的媒体管理功能便于编辑元数据、图片和搜索字幕，DLNA 集成自动检测网络设备以传输内容。以便利性和多样性为核心，该平台为媒体管理提供现代化解决方案。
+
+      **主要功能：**
+      - 自动转换和流式传输媒体至任何设备
+      - 通过连接服务实现外出时的便捷访问
+      - 直播电视流式传输、管理录像设备和录像库
+      - 移动同步至智能手机和平板电脑，支持离线访问
+      - 家长控制，含内容限制、时间表和远程监控
+      - 支持 Chromecast 传输视频、音乐、照片和直播电视
+      - 云同步，支持备份和多分辨率存储
+      - 基于网页的媒体管理，编辑元数据和搜索字幕
+      - DLNA 集成，自动检测网络设备传输内容
+
+      **了解更多：**
+      - [Emby 官方网站](https://emby.media/)
+    fr_fr: |
+      Emby est une plateforme de gestion de médias personnels qui rassemble vidéos domestiques, musique et photos, convertissant automatiquement et diffusant vers n'importe quel appareil. Un design intuitif la rend idéale pour que les utilisateurs puissent profiter du contenu multimédia à tout moment, n'importe où, répondant aux besoins de divertissement familial et de gestion de médias.
+
+      Les fonctionnalités principales incluent le streaming média cross-device et l'accès facile. Elle supporte la conversion en temps réel et le streaming de médias personnels vers n'importe quel appareil pour une lecture transparente. Un service de connexion permet un accès facile aux médias lorsqu'on est loin de chez soi. La fonctionnalité TV Live supporte le streaming, la gestion DVR et l'accès à une bibliothèque d'enregistrements. La synchronisation mobile livre des médias aux smartphones et tablettes pour un accès hors ligne, mettant automatiquement à jour le nouveau contenu.
+
+      Elle offre des contrôles parentaux pour restreindre l'accès au contenu des enfants, définir des horaires et des limites de temps, et surveiller à distance les sessions. Le support Chromecast permet un streaming facile de vidéos, musique, photos et TV Live. Le contenu est présenté élégamment, améliorant l'expérience visuelle. La synchronisation cloud supporte la sauvegarde, l'archivage et le stockage multi-résolution pour un streaming optimisé. La gestion de médias basée web facilite l'édition de métadonnées, images et recherche de sous-titres, tandis que l'intégration DLNA détecte automatiquement les appareils réseau pour le streaming de contenu.
+
+      **Fonctionnalités Principales :**
+      - Conversion automatique et streaming de médias vers n'importe quel appareil
+      - Accès facile via service de connexion lorsqu'on est loin de chez soi
+      - Streaming TV Live, gestion DVR et accès bibliothèque d'enregistrements
+      - Synchronisation mobile vers smartphones et tablettes pour accès hors ligne
+      - Contrôles parentaux avec restrictions de contenu, horaires et surveillance à distance
+      - Support Chromecast pour streaming vidéos, musique, photos et TV Live
+      - Synchronisation cloud pour sauvegarde et stockage multi-résolution
+      - Gestion de médias basée web pour édition métadonnées et recherche sous-titres
+      - Intégration DLNA pour détection automatique appareils réseau et streaming contenu
+
+      **En Savoir Plus :**
+      - [Site Officiel Emby](https://emby.media/)
+    de_de: |
+      Emby ist eine persönliche Medienverwaltungsplattform, die Heimvideos, Musik und Fotos zusammenbringt, automatisch konvertiert und auf jedes Gerät streamt. Ein intuitives Design macht es ideal für Benutzer, Medieninhalte jederzeit und überall zu genießen und erfüllt Familienunterhaltungs- und Medienverwaltungsbedürfnisse.
+
+      Kernfunktionen umfassen geräteübergreifendes Medienstreaming und einfachen Zugang. Es unterstützt Echtzeit-Konvertierung und Streaming persönlicher Medien auf jedes Gerät für nahtlose Wiedergabe. Ein Verbindungsdienst ermöglicht einfachen Medienzugang, wenn man nicht zu Hause ist. Live-TV-Funktionalität unterstützt Streaming, DVR-Verwaltung und Zugang zu einer Aufnahmenbibliothek. Mobile Synchronisation liefert Medien an Smartphones und Tablets für Offline-Zugang und aktualisiert automatisch neue Inhalte.
+
+      Es bietet Kindersicherungen, um Kinderzugang zu Inhalten zu beschränken, Zeitpläne und Zeitlimits festzulegen und Sitzungen remote zu überwachen. Chromecast-Unterstützung ermöglicht einfaches Streaming von Videos, Musik, Fotos und Live-TV. Inhalte werden elegant präsentiert und verbessern die visuelle Erfahrung. Cloud-Synchronisation unterstützt Backup, Archivierung und Multi-Auflösung-Speicher für optimiertes Streaming. Web-basierte Medienverwaltung erleichtert das Bearbeiten von Metadaten, Bildern und das Suchen von Untertiteln, während DLNA-Integration automatisch Netzwerkgeräte für Content-Streaming erkennt.
+
+      **Hauptmerkmale:**
+      - Automatische Konvertierung und Streaming von Medien auf jedes Gerät
+      - Einfacher Zugang über Verbindungsdienst, wenn man nicht zu Hause ist
+      - Live-TV-Streaming, DVR-Verwaltung und Aufnahmenbibliothek-Zugang
+      - Mobile Synchronisation zu Smartphones und Tablets für Offline-Zugang
+      - Kindersicherungen mit Inhaltsbeschränkungen, Zeitplänen und Remote-Überwachung
+      - Chromecast-Unterstützung für Streaming von Videos, Musik, Fotos und Live-TV
+      - Cloud-Synchronisation für Backup und Multi-Auflösung-Speicher
+      - Web-basierte Medienverwaltung für Metadaten-Bearbeitung und Untertitel-Suche
+      - DLNA-Integration für automatische Netzwerkgeräte-Erkennung und Content-Streaming
+
+      **Mehr Erfahren:**
+      - [Emby Offizielle Website](https://emby.media/)
+    it_it: |
+      Emby è una piattaforma di gestione media personale che riunisce video domestici, musica e foto, convertendo automaticamente e trasmettendo in streaming a qualsiasi dispositivo. Un design intuitivo la rende ideale per gli utenti per godere dei contenuti multimediali sempre e ovunque, soddisfacendo le esigenze di intrattenimento familiare e gestione media.
+
+      Le caratteristiche principali includono streaming media cross-device e accesso facile. Supporta conversione in tempo reale e streaming di media personali a qualsiasi dispositivo per riproduzione senza soluzione di continuità. Un servizio di connessione consente accesso facile ai media mentre si è fuori casa. La funzionalità TV Live supporta streaming, gestione DVR e accesso a una libreria di registrazioni. La sincronizzazione mobile fornisce media a smartphone e tablet per accesso offline, aggiornando automaticamente nuovi contenuti.
+
+      Offre controlli parentali per limitare l'accesso ai contenuti dei bambini, impostare programmi e limiti di tempo, e monitorare sessioni da remoto. Il supporto Chromecast consente streaming facile di video, musica, foto e TV Live. I contenuti sono presentati elegantemente, migliorando l'esperienza visiva. La sincronizzazione cloud supporta backup, archiviazione e storage multi-risoluzione per streaming ottimizzato. La gestione media basata su web facilita la modifica di metadati, immagini e ricerca sottotitoli, mentre l'integrazione DLNA rileva automaticamente dispositivi di rete per streaming contenuti.
+
+      **Caratteristiche Principali:**
+      - Conversione automatica e streaming di media a qualsiasi dispositivo
+      - Accesso facile tramite servizio di connessione mentre si è fuori casa
+      - Streaming TV Live, gestione DVR e accesso libreria registrazioni
+      - Sincronizzazione mobile a smartphone e tablet per accesso offline
+      - Controlli parentali con restrizioni contenuti, programmi e monitoraggio remoto
+      - Supporto Chromecast per streaming video, musica, foto e TV Live
+      - Sincronizzazione cloud per backup e storage multi-risoluzione
+      - Gestione media basata su web per modifica metadati e ricerca sottotitoli
+      - Integrazione DLNA per rilevamento automatico dispositivi di rete e streaming contenuti
+
+      **Scopri di Più:**
+      - [Sito Ufficiale Emby](https://emby.media/)
+    ru_ru: |
+      Emby — это платформа управления личными медиа, которая объединяет домашние видео, музыку и фотографии, автоматически преобразуя и транслируя на любое устройство. Интуитивный дизайн делает её идеальной для пользователей, чтобы наслаждаться медиа-контентом в любое время, в любом месте, удовлетворяя потребности семейных развлечений и управления медиа.
+
+      Основные функции включают кросс-устройственную трансляцию медиа и лёгкий доступ. Поддерживает преобразование в реальном времени и трансляцию личных медиа на любое устройство для бесшовного воспроизведения. Служба подключения обеспечивает лёгкий доступ к медиа, когда вы находитесь вдали от дома. Функциональность Live TV поддерживает трансляцию, управление DVR и доступ к библиотеке записей. Мобильная синхронизация доставляет медиа на смартфоны и планшеты для офлайн-доступа, автоматически обновляя новый контент.
+
+      Предлагает родительский контроль для ограничения доступа детей к контенту, установки расписаний и временных ограничений, а также удалённого мониторинга сессий. Поддержка Chromecast обеспечивает лёгкую трансляцию видео, музыки, фотографий и Live TV. Контент представлен элегантно, улучшая визуальный опыт. Облачная синхронизация поддерживает резервное копирование, архивирование и мультиразрешающее хранение для оптимизированной трансляции. Веб-управление медиа облегчает редактирование метаданных, изображений и поиск субтитров, в то время как интеграция DLNA автоматически обнаруживает сетевые устройства для трансляции контента.
+
+      **Ключевые Особенности:**
+      - Автоматическое преобразование и трансляция медиа на любое устройство
+      - Лёгкий доступ через службу подключения, когда вы находитесь вдали от дома
+      - Трансляция Live TV, управление DVR и доступ к библиотеке записей
+      - Мобильная синхронизация на смартфоны и планшеты для офлайн-доступа
+      - Родительский контроль с ограничениями контента, расписаниями и удалённым мониторингом
+      - Поддержка Chromecast для трансляции видео, музыки, фотографий и Live TV
+      - Облачная синхронизация для резервного копирования и мультиразрешающего хранения
+      - Веб-управление медиа для редактирования метаданных и поиска субтитров
+      - Интеграция DLNA для автоматического обнаружения сетевых устройств и трансляции контента
+
+      **Узнать Больше:**
+      - [Официальный Сайт Emby](https://emby.media/)
+    ja_jp: |
+      Embyは、ホームビデオ、音楽、写真をまとめ、自動的に変換して任意のデバイスにストリーミングする個人メディア管理プラットフォームです。直感的なデザインにより、ユーザーがいつでもどこでもメディアコンテンツを楽しむのに最適で、家族エンターテイメントとメディア管理のニーズを満たします。
+
+      コア機能には、クロスデバイスメディアストリーミングと簡単なアクセスが含まれます。個人メディアの任意のデバイスへのリアルタイム変換とストリーミングをサポートし、シームレスな再生を実現します。接続サービスにより、自宅から離れているときでも簡単にメディアアクセスが可能です。ライブTV機能は、ストリーミング、DVR管理、録画ライブラリへのアクセスをサポートします。モバイル同期により、スマートフォンやタブレットにメディアを配信してオフラインアクセスを可能にし、新しいコンテンツを自動的に更新します。
+
+      子供のコンテンツアクセスを制限し、スケジュールと時間制限を設定し、セッションをリモート監視するペアレンタルコントロールを提供します。Chromecastサポートにより、ビデオ、音楽、写真、ライブTVの簡単なストリーミングが可能です。コンテンツはエレガントに表示され、視覚体験を向上させます。クラウド同期は、バックアップ、アーカイブ、最適化されたストリーミングのためのマルチ解像度ストレージをサポートします。Webベースのメディア管理により、メタデータ、画像の編集、字幕の検索が容易になり、DLNA統合により、ネットワークデバイスを自動検出してコンテンツストリーミングを行います。
+
+      **主な機能：**
+      - 任意のデバイスへのメディアの自動変換とストリーミング
+      - 自宅から離れているときの接続サービスによる簡単なアクセス
+      - ライブTVストリーミング、DVR管理、録画ライブラリアクセス
+      - オフラインアクセスのためのスマートフォンとタブレットへのモバイル同期
+      - コンテンツ制限、スケジュール、リモート監視を備えたペアレンタルコントロール
+      - ビデオ、音楽、写真、ライブTVストリーミングのためのChromecastサポート
+      - バックアップとマルチ解像度ストレージのためのクラウド同期
+      - メタデータ編集と字幕検索のためのWebベースメディア管理
+      - ネットワークデバイスの自動検出とコンテンツストリーミングのためのDLNA統合
+
+      **詳細はこちら：**
+      - [Emby公式ウェブサイト](https://emby.media/)
   developer: linuxserver
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/icon.png
   screenshot_link:
@@ -394,12 +554,22 @@ x-casaos:
     pt_PT: O Emby reúne os seus vídeos pessoais, música, fotografias e televisão ao vivo.
     ru_RU: Emby объединяет ваши личные видео, музыку, фотографии и прямое телевидение.
     tr_TR: Emby kişisel videolarınızı, müziğinizi, fotoğraflarınızı ve canlı televizyonu bir araya getirir.
+    en_us: Emby brings together your personal videos, music, photos, and live television.
+    pt_br: O Emby reúne os seus vídeos pessoais, música, fotografias e televisão ao vivo.
+    zh_cn: Emby 整合您的个人视频、音乐、照片和直播电视。
+    fr_fr: Emby rassemble vos vidéos personnelles, musique, photos et télévision en direct.
+    de_de: Emby bringt Ihre persönlichen Videos, Musik, Fotos und Live-Fernsehen zusammen.
+    it_it: Emby riunisce i tuoi video personali, musica, foto e televisione dal vivo.
+    ru_ru: Emby объединяет ваши личные видео, музыку, фотографии и прямое телевидение.
+    ja_jp: Embyは個人ビデオ、音楽、写真、ライブテレビをまとめます。
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/thumbnail.png
   tips: {}
   title:
     en_US: Emby
+    en_us: Emby
   index: /
-  port_map: '8096'
+  port_map: "8096"
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

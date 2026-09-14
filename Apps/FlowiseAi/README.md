@@ -1,34 +1,25 @@
 # Flowise
 
-> An open source generative AI development platform for building AI Agents and LLM workflows
+> Plataforma de desenvolvimento de IA generativa de código aberto para construir Agentes de IA e fluxos de trabalho LLM
 
 ## O que é
 
-Flowise is a generative AI development platform for building AI agents and LLM workflows. An intuitive interface with a visual editor simplifies complex workflow design, ideal for developers creating diverse AI applications, from chatbots to data processing pipelines.
+O Flowise é uma plataforma de desenvolvimento de IA generativa para construir agentes de IA e fluxos de trabalho LLM. Uma interface intuitiva com editor visual simplifica o design de fluxos de trabalho complexos, ideal para programadores que criam diversas aplicações de IA, desde chatbots a pipelines de processamento de dados.
 
-Core features include visual orchestration and data integration. Support for various models, custom code, and branching, looping, and routing logic enables complex workflow creation. Connection to over 100 data sources, vector databases, and memory modules ensures flexible data ingestion. Monitoring capabilities provide execution logs and visual debugging for workflow transparency and maintenance. Self-hosted and air-gapped deployment options accommodate diverse infrastructure needs.
+As funcionalidades principais incluem orquestração visual e integração de dados. O suporte para vários modelos, código personalizado e lógica de ramificação, looping e encaminhamento permite a criação de fluxos de trabalho complexos. A ligação a mais de 100 fontes de dados, bases de dados vectoriais e módulos de memória garante ingestão de dados flexível.
 
-It offers data processing with transforms, filters, aggregates, and RAG indexing pipelines. Memory optimization and planning techniques enhance performance, while MCP integration supports tool connections and authentication. Security controls include role-based access, single sign-on, and encrypted credentials for data protection. API, JavaScript and Python SDKs, and command-line interface enable extensibility, with embedded chat components and a template marketplace accelerating development. Scalability supports high-throughput workflows, and evaluation features optimize performance. With flexibility and efficiency at the core, the platform delivers a modern solution for AI development.
+Oferece processamento de dados com transformações, filtros, agregados e pipelines de indexação RAG. As técnicas de optimização de memória e planeamento melhoram o desempenho, enquanto a integração MCP suporta ligações de ferramentas e autenticação.
 
-**Key Features:**
-- Visual editor supporting multiple models, custom code, branching looping routing logic
-- Connection to over 100 data sources, vector databases, and memory modules
-- Execution logs and visual debugging for enhanced monitoring
-- Data processing with transforms, filters, aggregates, and RAG indexing pipelines
-- Various memory optimization technique and integrations
-- MCP client and server nodes for tool integration
-- Input moderation and output post-processing for safety
-- API, JavaScript and Python SDKs, and command-line interface
-- Customizable embedded chat components
-- Template marketplace and reusable components
-- Role-based access control, single sign-on, encrypted credentials
-- Vertical and horizontal scalability for high-throughput workflows
-- Datasets and evaluation features for workflow optimization
+**Funcionalidades Principais:**
+- Editor visual suporta múltiplos modelos, código personalizado, lógica ramificação-looping-encaminhamento
+- Ligação a mais de 100 fontes de dados, bases de dados vectoriais e módulos memória
+- Registos de execução e depuração visual para monitorização melhorada
+- Processamento de dados com transformações, filtros, agregados e pipelines indexação RAG
 
-**Learn More:**
-- [Flowise Official Website](https://flowiseai.com/)
+**Saber Mais:**
+- [Website Oficial Flowise](https://flowiseai.com/)
 - [Flowise GitHub](https://github.com/flowiseai/flowise)
-- [Flowise Documentation](https://docs.flowiseai.com/)
+- [Documentação Flowise](https://docs.flowiseai.com/)
 
 
 Categoria na App Store do RoqueOS: **Developer**.
@@ -36,9 +27,9 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 3025 | 3025      | tcp       | —              | flowise |
+| Host | Container | Protocolo | Para que serve            | Serviço |
+| ---- | --------- | --------- | ------------------------- | ------- |
+| 3025 | 3025      | tcp       | Web interface for Flowise | flowise |
 
 
 ## Volumes

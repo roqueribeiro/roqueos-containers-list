@@ -1,6 +1,11 @@
 name: fileflows
 services:
   fileflows:
+    x-casaos:
+      ports:
+        - container: '5000'
+          description:
+            en_us: "Web interface for FileFlows"
     container_name: fileflows
     devices:
       - /dev/dri:/dev/dri

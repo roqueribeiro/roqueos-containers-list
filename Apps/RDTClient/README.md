@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço   |
-| ---- | --------- | --------- | -------------- | --------- |
-| 6500 | 6500      | tcp       | —              | rdtclient |
+| Host | Container | Protocolo | Para que serve                               | Serviço   |
+| ---- | --------- | --------- | -------------------------------------------- | --------- |
+| 6500 | 6500      | tcp       | Web interface for Real-Debrid Torrent Client | rdtclient |
 
 
 ## Volumes

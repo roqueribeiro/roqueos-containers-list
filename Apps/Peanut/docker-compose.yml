@@ -10,7 +10,7 @@ services:
         target: /config
     ports:
       - target: 8080
-        published: '8084'
+        published: "8084"
         protocol: tcp
     environment:
       WEB_PORT: 8080
@@ -37,8 +37,16 @@ services:
             sv_SE: Intern webbserverport
             tr_TR: Dahili web sunucusu portu
             zh_CN: 内部Web服务器端口
+            en_us: Internal web server port
+            pt_br: Porta do servidor web interno
+            zh_cn: 内部Web服务器端口
+            fr_fr: Port du serveur web interne
+            de_de: Interner Web-Server-Port
+            it_it: Porta del server web interno
+            ru_ru: Внутренний порт веб-сервера
+            ja_jp: 内部Webサーバーポート
       ports:
-        - container: '8080'
+        - container: "8080"
           description:
             de_DE: PeaNUT Web-Interface-Port
             el_GR: Θύρα διασύνδεσης web PeaNUT
@@ -55,6 +63,14 @@ services:
             sv_SE: PeaNUT webbgränssnittsport
             tr_TR: PeaNUT web arayüzü portu
             zh_CN: PeaNUT Web界面端口
+            en_us: PeaNUT web interface port
+            pt_br: Porta da interface web PeaNUT
+            zh_cn: PeaNUT Web界面端口
+            fr_fr: Port de l'interface web PeaNUT
+            de_de: PeaNUT Web-Interface-Port
+            it_it: Porta dell'interfaccia web PeaNUT
+            ru_ru: Порт веб-интерфейса PeaNUT
+            ja_jp: PeaNUT Webインターフェースポート
       volumes:
         - container: /config
           description:
@@ -73,6 +89,14 @@ services:
             sv_SE: PeaNUT konfigurationskatalog
             tr_TR: PeaNUT yapılandırma dizini
             zh_CN: PeaNUT配置目录
+            en_us: PeaNUT configuration directory
+            pt_br: Diretório de configuração PeaNUT
+            zh_cn: PeaNUT配置目录
+            fr_fr: Répertoire de configuration PeaNUT
+            de_de: PeaNUT-Konfigurationsverzeichnis
+            it_it: Directory di configurazione PeaNUT
+            ru_ru: Каталог конфигурации PeaNUT
+            ja_jp: PeaNUT設定ディレクトリ
 x-casaos:
   title:
     de_DE: PeaNUT
@@ -90,6 +114,14 @@ x-casaos:
     sv_SE: PeaNUT
     tr_TR: PeaNUT
     zh_CN: PeaNUT
+    en_us: PeaNUT
+    pt_br: PeaNUT
+    zh_cn: PeaNUT
+    fr_fr: PeaNUT
+    de_de: PeaNUT
+    it_it: PeaNUT
+    ru_ru: PeaNUT
+    ja_jp: PeaNUT
   tagline:
     de_DE: UPS-Überwachungs- und Stromausfallbenachrichtigungssystem
     el_GR: Σύστημα παρακολούθησης UPS και ειδοποιήσεων διακοπής ρεύματος
@@ -106,6 +138,14 @@ x-casaos:
     sv_SE: UPS övervakning och strömavbrott notifikationssystem
     tr_TR: UPS izleme ve güç kesintisi bildirim sistemi
     zh_CN: UPS监控和停电通知系统
+    en_us: UPS monitoring and power outage notification system
+    pt_br: Sistema de monitorização UPS e notificação de interrupção de energia
+    zh_cn: UPS监控和停电通知系统
+    fr_fr: Système de surveillance UPS et de notification de coupure de courant
+    de_de: UPS-Überwachungs- und Stromausfallbenachrichtigungssystem
+    it_it: Sistema di monitoraggio UPS e notifica interruzione di corrente
+    ru_ru: Система мониторинга ИБП и уведомлений об отключении электроэнергии
+    ja_jp: UPS監視および停電通知システム
   tips:
     before_install:
       zh_CN: |
@@ -183,6 +223,46 @@ x-casaos:
         | Adresa poslužitelja | Port | Korisničko ime | Lozinka |
         |---------------------|------|---------------|---------|
         | ZimaOS IP           | `3493` | `monuser` | `secret` |
+      en_us: |
+        The UPS service parameters for ZimaOS are as follows:
+        | Server Address | Port | Username | Password |
+        |----------------|------|----------|----------|
+        | ZimaOS IP      | `3493` | `monuser` | `secret` |
+      pt_br: |
+        Os parâmetros do serviço UPS do ZimaOS são os seguintes:
+        | Endereço do servidor | Porta | Nome de utilizador | Palavra-passe |
+        |----------------------|-------|-------------------|---------------|
+        | ZimaOS IP            | `3493` | `monuser` | `secret` |
+      zh_cn: |
+        ZimaOS 的 UPS 服务参数如下：
+        | 服务器地址 | 端口号 | 用户名 | 密码 |
+        |------------|--------|--------|------|
+        | ZimaOS IP  | `3493` | `monuser` | `secret` |
+      fr_fr: |
+        Les paramètres du service UPS de ZimaOS sont les suivants :
+        | Adresse du serveur | Port | Nom d’utilisateur | Mot de passe |
+        |--------------------|------|-------------------|--------------|
+        | ZimaOS IP          | `3493` | `monuser` | `secret` |
+      de_de: |
+        Die UPS-Dienstparameter von ZimaOS lauten wie folgt:
+        | Serveradresse | Port | Benutzername | Passwort |
+        |---------------|------|--------------|----------|
+        | ZimaOS IP     | `3493` | `monuser` | `secret` |
+      it_it: |
+        I parametri del servizio UPS di ZimaOS sono i seguenti:
+        | Indirizzo server | Porta | Nome utente | Password |
+        |------------------|-------|-------------|----------|
+        | ZimaOS IP        | `3493` | `monuser` | `secret` |
+      ru_ru: |
+        Параметры службы UPS для ZimaOS приведены ниже:
+        | Адрес сервера | Порт | Имя пользователя | Пароль |
+        |---------------|------|------------------|--------|
+        | ZimaOS IP     | `3493` | `monuser` | `secret` |
+      ja_jp: |
+        ZimaOS の UPS サービスのパラメータは以下のとおりです：
+        | サーバーアドレス | ポート | ユーザー名 | パスワード |
+        |------------------|--------|------------|------------|
+        | ZimaOS IP        | `3493` | `monuser` | `secret` |
   description:
     de_DE: |
       PeaNUT ist ein webbasiertes UPS-Überwachungssystem, das speziell für die Überwachung von Unterbrechungsfreien Stromversorgungen (USV) entwickelt wurde. Es bietet eine benutzerfreundliche Oberfläche zur Überwachung des UPS-Status, der Batterielebensdauer und zur Benachrichtigung bei Stromausfällen, um sicherzustellen, dass Ihre Systeme immer geschützt sind.
@@ -409,6 +489,126 @@ x-casaos:
 
       **了解更多：**
       - [PeaNUT GitHub仓库](https://github.com/brandawg93/peanut)
+    en_us: |
+      PeaNUT is a web-based UPS monitoring system specifically designed for monitoring Uninterruptible Power Supplies (UPS). It provides a user-friendly interface for monitoring UPS status, battery life, and power outage notifications to ensure your systems are always protected.
+
+      **Key Features:**
+      - Real-time UPS status monitoring and control
+      - Battery life and charge level monitoring
+      - Automatic power outage notifications via email/webhook
+      - Historical data logging and reporting
+      - Support for various UPS manufacturers and models
+      - Mobile-friendly responsive web interface for remote access
+      - Configurable warning thresholds and alerts
+      - Docker-based deployment for easy installation
+
+      **Learn More:**
+      - [PeaNUT GitHub Repository](https://github.com/brandawg93/peanut)
+    pt_br: |
+      PeaNUT é um sistema de monitorização UPS baseado na web, especificamente projetado para monitorizar Fontes de Alimentação Ininterrupta (UPS). Fornece uma interface amigável para monitorizar o estado UPS, a vida útil da bateria e notificações de interrupção de energia para garantir que os seus sistemas estejam sempre protegidos.
+
+      **Funcionalidades Principais:**
+      - Monitorização e controlo do estado UPS em tempo real
+      - Monitorização da vida útil da bateria e nível de carga
+      - Notificações automáticas de interrupção de energia via email/webhook
+      - Registo de dados históricos e relatórios
+      - Suporte para vários fabricantes e modelos UPS
+      - Interface web responsiva amigável para acesso remoto
+      - Limiares de aviso configuráveis e alertas
+      - Implementação baseada em Docker para fácil instalação
+
+      **Saiba Mais:**
+      - [Repositório GitHub PeaNUT](https://github.com/brandawg93/peanut)
+    zh_cn: |
+      PeaNUT是一个基于Web的UPS监控系统，专门设计用于监控不间断电源（UPS）。它提供用户友好的界面来监控UPS状态、电池寿命和停电通知，确保您的系统始终受到保护。
+
+      **主要功能：**
+      - 实时UPS状态监控和控制
+      - 电池寿命和充电水平监控
+      - 通过邮件/Webhook自动发送停电通知
+      - 历史数据记录和报告
+      - 支持各种UPS制造商和型号
+      - 移动友好的响应式Web界面，支持远程访问
+      - 可配置的警告阈值和警报
+      - 基于Docker的部署，便于安装
+
+      **了解更多：**
+      - [PeaNUT GitHub仓库](https://github.com/brandawg93/peanut)
+    fr_fr: |
+      PeaNUT est un système de surveillance UPS basé sur le web, spécifiquement conçu pour surveiller les Alimentations Sans Interruption (ASI/UPS). Il fournit une interface conviviale pour surveiller le statut UPS, la durée de vie de la batterie et les notifications de coupure de courant pour garantir que vos systèmes sont toujours protégés.
+
+      **Fonctionnalités Clés:**
+      - Surveillance et contrôle du statut UPS en temps réel
+      - Surveillance de la durée de vie de la batterie et du niveau de charge
+      - Notifications automatiques de coupure de courant via email/webhook
+      - Journalisation des données historiques et rapports
+      - Support pour divers fabricants et modèles UPS
+      - Interface web responsive adaptée aux mobiles pour accès à distance
+      - Seuils d'avertissement et alertes configurables
+      - Déploiement basé sur Docker pour une installation facile
+
+      **En Savoir Plus:**
+      - [Dépôt GitHub PeaNUT](https://github.com/brandawg93/peanut)
+    de_de: |
+      PeaNUT ist ein webbasiertes UPS-Überwachungssystem, das speziell für die Überwachung von Unterbrechungsfreien Stromversorgungen (USV) entwickelt wurde. Es bietet eine benutzerfreundliche Oberfläche zur Überwachung des UPS-Status, der Batterielebensdauer und zur Benachrichtigung bei Stromausfällen, um sicherzustellen, dass Ihre Systeme immer geschützt sind.
+
+      **Hauptfunktionen:**
+      - Echtzeit-UPS-Statusüberwachung und -steuerung
+      - Batterielebensdauer- und Ladezustandsüberwachung
+      - Automatische Stromausfallbenachrichtigungen per E-Mail/Webhook
+      - Historische Datenprotokollierung und Berichterstattung
+      - Unterstützung für verschiedene UPS-Hersteller und Modelle
+      - Mobiles responsives Web-Interface für Fernzugriff
+      - Konfigurierbare Warnschwellen und Alarme
+      - Docker-basierte Bereitstellung für einfache Installation
+
+      **Mehr Erfahren:**
+      - [PeaNUT GitHub-Repository](https://github.com/brandawg93/peanut)
+    it_it: |
+      PeaNUT è un sistema di monitoraggio UPS basato sul web, specificamente progettato per monitorare i Gruppi di Continuità (UPS). Fornisce un'interfaccia user-friendly per monitorare lo stato UPS, la durata della batteria e le notifiche di interruzione di corrente per garantire che i sistemi siano sempre protetti.
+
+      **Funzionalità Principali:**
+      - Monitoraggio e controllo dello stato UPS in tempo reale
+      - Monitoraggio della durata della batteria e del livello di carica
+      - Notifiche automatiche di interruzione di corrente via email/webhook
+      - Registrazione dati storici e reportistica
+      - Supporto per vari produttori e modelli UPS
+      - Interfaccia web responsive adatta ai dispositivi mobili per accesso remoto
+      - Soglie di avviso e allarmi configurabili
+      - Distribuzione basata su Docker per facile installazione
+
+      **Scopri di Più:**
+      - [Repository GitHub PeaNUT](https://github.com/brandawg93/peanut)
+    ru_ru: |
+      PeaNUT - это веб-система мониторинга ИБП, специально разработанная для мониторинга источников бесперебойного питания (ИБП). Она предоставляет удобный интерфейс для мониторинга статуса ИБП, срока службы батареи и уведомлений об отключении электроэнергии, чтобы обеспечить постоянную защиту ваших систем.
+
+      **Ключевые Особенности:**
+      - Мониторинг и контроль статуса ИБП в реальном времени
+      - Мониторинг срока службы батареи и уровня заряда
+      - Автоматические уведомления об отключении электроэнергии через email/webhook
+      - Запись исторических данных и создание отчетов
+      - Поддержка различных производителей и моделей ИБП
+      - Адаптивный веб-интерфейс, дружественный к мобильным устройствам, для удаленного доступа
+      - Настраиваемые пороги предупреждений и оповещения
+      - Развертывание на основе Docker для простой установки
+
+      **Узнать Больше:**
+      - [Репозиторий GitHub PeaNUT](https://github.com/brandawg93/peanut)
+    ja_jp: |
+      PeaNUTは、無停電電源装置（UPS）の監視専用に設計されたWebベースのUPS監視システムです。UPSステータス、バッテリー寿命、停電通知を監視するユーザーフレンドリーなインターフェースを提供し、システムが常に保護されていることを保証します。
+
+      **主な機能：**
+      - リアルタイムUPSステータス監視と制御
+      - バッテリー寿命と充電レベルの監視
+      - Eメール/Webhookによる自動停電通知
+      - 履歴データの記録とレポート作成
+      - 様々なUPSメーカーとモデルのサポート
+      - リモートアクセス用のモバイルフレンドリーなレスポンシブWebインターフェース
+      - 設定可能な警告しきい値とアラート
+      - 簡単なインストールのためのDockerベースのデプロイメント
+
+      **詳細情報：**
+      - [PeaNUT GitHubリポジトリ](https://github.com/brandawg93/peanut)
   category: Utilities
   author: brandawg93
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Peanut/icon.png
@@ -417,7 +617,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Peanut/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Peanut/screenshot-3.png
   main: peanut
-  port_map: '8084'
+  port_map: "8084"
   architectures:
     - amd64
     - arm64
@@ -425,3 +625,6 @@ x-casaos:
   scheme: http
   developer: brandawg93
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Peanut/thumbnail.png
+
+x-roqueos:
+  portaCompartilhada: true

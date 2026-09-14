@@ -13,16 +13,16 @@ services:
     network_mode: bridge
     ports:
       - target: 80
-        published: '8800'
+        published: "8800"
         protocol: tcp
       - target: 53
-        published: '53'
+        published: "53"
         protocol: tcp
       - target: 53
-        published: '53'
+        published: "53"
         protocol: udp
       - target: 443
-        published: '8443'
+        published: "8443"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -50,6 +50,14 @@ services:
             pt_PT: Fuso Horário
             ru_RU: Часовой Пояс
             tr_TR: Saat Dilimi
+            en_us: TimeZone
+            pt_br: Fuso Horário
+            zh_cn: 时区
+            fr_fr: Fuseau Horaire
+            de_de: Zeitzone
+            it_it: Fuso Orario
+            ru_ru: Часовой Пояс
+            ja_jp: タイムゾーン
         - container: FTLCONF_webserver_api_password
           description:
             en_US: Pi-hole admin password
@@ -67,6 +75,14 @@ services:
             pt_PT: Palavra-passe de administrador Pi-hole
             ru_RU: Пароль администратора Pi-hole
             tr_TR: Pi-hole yönetici şifresi
+            en_us: Pi-hole admin password
+            pt_br: Palavra-passe de administrador Pi-hole
+            zh_cn: Pi-hole 管理密码
+            fr_fr: Mot de passe administrateur Pi-hole
+            de_de: Pi-hole Administrator-Passwort
+            it_it: Password amministratore Pi-hole
+            ru_ru: Пароль администратора Pi-hole
+            ja_jp: Pi-hole 管理者パスワード
         - container: FTLCONF_dns_listeningMode
           description:
             en_US: DNS listening mode
@@ -84,8 +100,16 @@ services:
             pt_PT: Modo de escuta DNS
             ru_RU: Режим прослушивания DNS
             tr_TR: DNS dinleme modu
+            en_us: DNS listening mode
+            pt_br: Modo de escuta DNS
+            zh_cn: DNS 监听模式
+            fr_fr: Mode d'écoute DNS
+            de_de: DNS-Hörmodus
+            it_it: Modalità di ascolto DNS
+            ru_ru: Режим прослушивания DNS
+            ja_jp: DNS リスニングモード
       ports:
-        - container: '80'
+        - container: "80"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -102,7 +126,15 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP порт WebUI
             tr_TR: WebUI HTTP Portu
-        - container: '53'
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP 端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP порт WebUI
+            ja_jp: WebUI HTTPポート
+        - container: "53"
           description:
             en_US: Pi-hole DNS port
             en_GB: Pi-hole DNS port
@@ -119,7 +151,15 @@ services:
             pt_PT: Porta DNS Pi-hole
             ru_RU: DNS порт Pi-hole
             tr_TR: Pi-hole DNS portu
-        - container: '53'
+            en_us: Pi-hole DNS port
+            pt_br: Porta DNS Pi-hole
+            zh_cn: Pi-hole DNS 端口
+            fr_fr: Port DNS Pi-hole
+            de_de: Pi-hole DNS Port
+            it_it: Porta DNS Pi-hole
+            ru_ru: DNS порт Pi-hole
+            ja_jp: Pi-hole DNSポート
+        - container: "53"
           description:
             en_US: Pi-hole DNS port
             en_GB: Pi-hole DNS port
@@ -136,8 +176,16 @@ services:
             pt_PT: Porta DNS Pi-hole
             ru_RU: DNS порт Pi-hole
             tr_TR: Pi-hole DNS portu
+            en_us: Pi-hole DNS port
+            pt_br: Porta DNS Pi-hole
+            zh_cn: Pi-hole DNS 端口
+            fr_fr: Port DNS Pi-hole
+            de_de: Pi-hole DNS Port
+            it_it: Porta DNS Pi-hole
+            ru_ru: DNS порт Pi-hole
+            ja_jp: Pi-hole DNSポート
           protocol: udp
-        - container: '443'
+        - container: "443"
           description:
             en_US: Pi-hole HTTPS port
             en_GB: Pi-hole HTTPS port
@@ -154,6 +202,14 @@ services:
             pt_PT: Porta HTTPS Pi-hole
             ru_RU: HTTPS порт Pi-hole
             tr_TR: Pi-hole HTTPS portu
+            en_us: Pi-hole HTTPS port
+            pt_br: Porta HTTPS Pi-hole
+            zh_cn: Pi-hole HTTPS 端口
+            fr_fr: Port HTTPS Pi-hole
+            de_de: Pi-hole HTTPS Port
+            it_it: Porta HTTPS Pi-hole
+            ru_ru: HTTPS порт Pi-hole
+            ja_jp: Pi-hole HTTPSポート
           protocol: tcp
       volumes:
         - container: /etc/pihole
@@ -173,12 +229,20 @@ services:
             pt_PT: Diretório Pi-hole /etc/pihole
             ru_RU: Каталог Pi-hole /etc/pihole
             tr_TR: Pi-hole /etc/pihole dizini
+            en_us: Pi-hole /etc/pihole directory
+            pt_br: Diretório Pi-hole /etc/pihole
+            zh_cn: Pi-hole /etc/pihole 目录
+            fr_fr: Répertoire Pi-hole /etc/pihole
+            de_de: Pi-hole /etc/pihole Verzeichnis
+            it_it: Directory Pi-hole /etc/pihole
+            ru_ru: Каталог Pi-hole /etc/pihole
+            ja_jp: Pi-hole /etc/pihole ディレクトリ
     container_name: pihole
 x-casaos:
   architectures:
     - amd64
     - arm64
-    - '386'
+    - "386"
     - arm
   main: pihole
   author: RoqueOS Team
@@ -469,6 +533,158 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Pi-hole Resmi Web Sitesi](https://pi-hole.net/)
       - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
+    en_us: |
+      Pi-hole is a network-wide ad-blocking platform for Linux hardware, using DNS sinkhole technology to protect devices from unwanted content without requiring client-side software. Designed for home or enterprise networks, it offers efficient ad blocking and network optimization.
+
+      Core features include network-wide ad blocking and content blocking in non-browser environments. It uses DNS sinkhole to block ads, covering mobile apps and smart TVs. Caching DNS queries speeds up everyday browsing. A command-line interface ensures interoperability with reliable control options.
+
+      It provides an intuitive web interface dashboard for viewing and managing system status. An optional DHCP server function automatically protects all devices. Capable of handling high query volumes on server-grade hardware, it supports ad blocking over IPv4 and IPv6. With efficiency and versatility at the core, the platform delivers a modern network protection solution.
+
+      **Key Features:**
+      - Network-wide ad blocking via DNS sinkhole technology
+      - Blocking content in non-browser environments, including mobile apps and smart TVs
+      - Caching DNS queries to speed up browsing
+      - Command-line interface for interoperability
+      - Intuitive web interface dashboard for system viewing and control
+      - Optional DHCP server function for automatic device protection
+      - Ad blocking support for IPv4 and IPv6
+
+      **Learn More:**
+      - [Pi-hole Official Website](https://pi-hole.net/)
+      - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
+    pt_br: |
+      O Pi-hole é uma plataforma de bloqueio de anúncios ao nível da rede para hardware Linux, usando tecnologia DNS sinkhole para proteger dispositivos de conteúdo indesejado sem requerer software do lado do cliente. Concebido para redes domésticas ou empresariais, oferece bloqueio eficiente de anúncios e optimização de rede.
+
+      As funcionalidades principais incluem bloqueio de anúncios ao nível da rede e bloqueio de conteúdo em ambientes não-navegador. Usa DNS sinkhole para bloquear anúncios, cobrindo aplicações móveis e smart TVs. O cache de consultas DNS acelera a navegação quotidiana. Uma interface de linha de comandos garante interoperabilidade com opções de controlo fiáveis.
+
+      Fornece um painel de interface web intuitivo para visualizar e gerir o estado do sistema. Uma função de servidor DHCP opcional protege automaticamente todos os dispositivos. Capaz de lidar com volumes elevados de consultas em hardware de nível servidor, suporta bloqueio de anúncios sobre IPv4 e IPv6.
+
+      **Funcionalidades Principais:**
+      - Bloqueio de anúncios ao nível da rede via tecnologia DNS sinkhole
+      - Bloqueio de conteúdo em ambientes não-navegador, incluindo aplicações móveis e smart TVs
+      - Cache de consultas DNS para acelerar navegação
+      - Interface de linha de comandos para interoperabilidade
+      - Painel de interface web intuitivo para visualização e controlo do sistema
+      - Função de servidor DHCP opcional para protecção automática de dispositivos
+      - Suporte de bloqueio de anúncios para IPv4 e IPv6
+
+      **Saber Mais:**
+      - [Website Oficial Pi-hole](https://pi-hole.net/)
+      - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
+    zh_cn: |
+      Pi-hole 是一款基于 Linux 硬件的网络级广告拦截平台，通过 DNS 沉洞技术保护设备免受不受欢迎内容干扰，无需安装客户端软件。其设计适合家庭或企业网络，提供高效广告拦截和网络优化体验。
+
+      核心功能包括网络级广告拦截和非浏览器内容屏蔽。它通过 DNS 沉洞拦截广告，覆盖移动应用和智能电视等非浏览器环境。缓存 DNS 查询加速日常浏览体验。命令行界面确保互操作性，提供稳定控制选项。
+
+      它提供直观的网页仪表板，方便查看和管理系统状态。可选的 DHCP 服务器功能自动保护所有设备。支持大规模查询处理，适合服务器级硬件，兼容 IPv4 和 IPv6 广告拦截。以高效性和通用性为核心，该平台为网络保护提供现代化解决方案。
+
+      **主要功能：**
+      - 网络级广告拦截，通过 DNS 沉洞技术
+      - 屏蔽非浏览器环境内容，包括移动应用和智能电视
+      - 缓存 DNS 查询，加速浏览体验
+      - 命令行界面，支持互操作性
+      - 直观网页仪表板，查看和控制系统
+      - 可选 DHCP 服务器功能，自动保护设备
+      - 兼容 IPv4 和 IPv6 广告拦截
+
+      **了解更多：**
+      - [Pi-hole 官方网站](https://pi-hole.net/)
+      - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
+    fr_fr: |
+      Pi-hole est une plateforme de blocage de publicités à l'échelle du réseau pour le matériel Linux, utilisant la technologie DNS sinkhole pour protéger les appareils contre le contenu indésirable sans nécessiter de logiciel côté client. Conçue pour les réseaux domestiques ou d'entreprise, elle offre un blocage de publicités efficace et une optimisation réseau.
+
+      Les fonctionnalités principales incluent le blocage de publicités à l'échelle du réseau et le blocage de contenu dans les environnements non-navigateur. Elle utilise DNS sinkhole pour bloquer les publicités, couvrant les applications mobiles et les téléviseurs intelligents. La mise en cache des requêtes DNS accélère la navigation quotidienne. Une interface en ligne de commande assure l'interopérabilité avec des options de contrôle fiables.
+
+      Elle fournit un tableau de bord d'interface web intuitif pour visualiser et gérer l'état du système. Une fonction serveur DHCP optionnelle protège automatiquement tous les appareils. Capable de gérer des volumes élevés de requêtes sur du matériel de niveau serveur, elle prend en charge le blocage de publicités sur IPv4 et IPv6.
+
+      **Fonctionnalités Principales :**
+      - Blocage de publicités à l'échelle du réseau via la technologie DNS sinkhole
+      - Blocage de contenu dans les environnements non-navigateur, y compris les applications mobiles et téléviseurs intelligents
+      - Mise en cache des requêtes DNS pour accélérer la navigation
+      - Interface en ligne de commande pour l'interopérabilité
+      - Tableau de bord d'interface web intuitif pour la visualisation et le contrôle du système
+      - Fonction serveur DHCP optionnelle pour la protection automatique des appareils
+      - Support de blocage de publicités pour IPv4 et IPv6
+
+      **En Savoir Plus :**
+      - [Site Officiel Pi-hole](https://pi-hole.net/)
+      - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
+    de_de: |
+      Pi-hole ist eine netzwerkweite Werbeblockierungs-Plattform für Linux-Hardware, die DNS-Sinkhole-Technologie verwendet, um Geräte vor unerwünschten Inhalten zu schützen, ohne clientseitige Software zu benötigen. Für Heim- oder Unternehmensnetzwerke konzipiert, bietet sie effiziente Werbeblockierung und Netzwerkoptimierung.
+
+      Kernfunktionen umfassen netzwerkweite Werbeblockierung und Inhaltsblockierung in Nicht-Browser-Umgebungen. Sie verwendet DNS-Sinkhole zum Blockieren von Werbung und deckt mobile Apps und Smart-TVs ab. Das Zwischenspeichern von DNS-Abfragen beschleunigt das tägliche Surfen. Eine Befehlszeilenschnittstelle gewährleistet Interoperabilität mit zuverlässigen Steuerungsoptionen.
+
+      Sie bietet ein intuitives Web-Interface-Dashboard zum Anzeigen und Verwalten des Systemstatus. Eine optionale DHCP-Serverfunktion schützt automatisch alle Geräte. Fähig, hohe Abfragevolumen auf Server-Hardware zu bewältigen, unterstützt sie Werbeblockierung über IPv4 und IPv6.
+
+      **Hauptmerkmale:**
+      - Netzwerkweite Werbeblockierung über DNS-Sinkhole-Technologie
+      - Inhaltsblockierung in Nicht-Browser-Umgebungen, einschließlich mobiler Apps und Smart-TVs
+      - DNS-Abfragen-Zwischenspeicherung zur Beschleunigung des Surfens
+      - Befehlszeilenschnittstelle für Interoperabilität
+      - Intuitives Web-Interface-Dashboard für Systemanzeige und -steuerung
+      - Optionale DHCP-Serverfunktion für automatischen Geräteschutz
+      - Werbeblockierungs-Unterstützung für IPv4 und IPv6
+
+      **Mehr Erfahren:**
+      - [Pi-hole Offizielle Website](https://pi-hole.net/)
+      - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
+    it_it: |
+      Pi-hole è una piattaforma di blocco pubblicità a livello di rete per hardware Linux, che utilizza la tecnologia DNS sinkhole per proteggere i dispositivi da contenuti indesiderati senza richiedere software client-side. Progettata per reti domestiche o aziendali, offre blocco pubblicità efficiente e ottimizzazione di rete.
+
+      Le caratteristiche principali includono blocco pubblicità a livello di rete e blocco contenuti in ambienti non-browser. Utilizza DNS sinkhole per bloccare annunci, coprendo app mobili e smart TV. Il caching delle query DNS accelera la navigazione quotidiana. Un'interfaccia a riga di comando assicura interoperabilità con opzioni di controllo affidabili.
+
+      Fornisce un dashboard dell'interfaccia web intuitivo per visualizzare e gestire lo stato del sistema. Una funzione server DHCP opzionale protegge automaticamente tutti i dispositivi. Capace di gestire volumi elevati di query su hardware server-grade, supporta il blocco pubblicità su IPv4 e IPv6.
+
+      **Caratteristiche Principali:**
+      - Blocco pubblicità a livello di rete tramite tecnologia DNS sinkhole
+      - Blocco contenuti in ambienti non-browser, incluse app mobili e smart TV
+      - Caching query DNS per accelerare la navigazione
+      - Interfaccia a riga di comando per interoperabilità
+      - Dashboard interfaccia web intuitivo per visualizzazione e controllo sistema
+      - Funzione server DHCP opzionale per protezione automatica dispositivi
+      - Supporto blocco pubblicità per IPv4 e IPv6
+
+      **Scopri di Più:**
+      - [Sito Ufficiale Pi-hole](https://pi-hole.net/)
+      - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
+    ru_ru: |
+      Pi-hole — это платформа блокировки рекламы на уровне сети для Linux-оборудования, использующая технологию DNS sinkhole для защиты устройств от нежелательного контента без требования клиентского программного обеспечения. Разработанная для домашних или корпоративных сетей, она предлагает эффективную блокировку рекламы и оптимизацию сети.
+
+      Основные функции включают блокировку рекламы на уровне сети и блокировку контента в небраузерных средах. Использует DNS sinkhole для блокировки рекламы, покрывая мобильные приложения и умные телевизоры. Кэширование DNS-запросов ускоряет повседневный просмотр. Интерфейс командной строки обеспечивает совместимость с надёжными опциями управления.
+
+      Предоставляет интуитивную панель веб-интерфейса для просмотра и управления состоянием системы. Дополнительная функция DHCP-сервера автоматически защищает все устройства. Способная обрабатывать большие объёмы запросов на серверном оборудовании, поддерживает блокировку рекламы через IPv4 и IPv6.
+
+      **Ключевые Особенности:**
+      - Блокировка рекламы на уровне сети через технологию DNS sinkhole
+      - Блокировка контента в небраузерных средах, включая мобильные приложения и умные телевизоры
+      - Кэширование DNS-запросов для ускорения просмотра
+      - Интерфейс командной строки для совместимости
+      - Интуитивная панель веб-интерфейса для просмотра и управления системой
+      - Дополнительная функция DHCP-сервера для автоматической защиты устройств
+      - Поддержка блокировки рекламы для IPv4 и IPv6
+
+      **Узнать Больше:**
+      - [Официальный Сайт Pi-hole](https://pi-hole.net/)
+      - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
+    ja_jp: |
+      Pi-holeは、DNS sinkholeテクノロジーを使用してクライアントサイドソフトウェアを必要とせずにデバイスを不要なコンテンツから保護する、Linuxハードウェア向けのネットワーク全体の広告ブロッキングプラットフォームです。家庭または企業ネットワーク向けに設計され、効率的な広告ブロッキングとネットワーク最適化を提供します。
+
+      コア機能には、ネットワーク全体の広告ブロッキングと非ブラウザ環境でのコンテンツブロッキングが含まれます。DNS sinkholeを使用して広告をブロックし、モバイルアプリやスマートTVをカバーします。DNSクエリのキャッシュにより日常的なブラウジングが高速化されます。コマンドラインインターフェースにより、信頼性の高いコントロールオプションでの相互運用性が確保されます。
+
+      システムステータスの表示と管理のための直感的なWebインターフェースダッシュボードを提供します。オプションのDHCPサーバー機能により、すべてのデバイスが自動的に保護されます。サーバーグレードハードウェアでの高クエリボリュームを処理でき、IPv4とIPv6での広告ブロッキングをサポートします。
+
+      **主な機能：**
+      - DNS sinkholeテクノロジーによるネットワーク全体広告ブロッキング
+      - モバイルアプリやスマートTVを含む非ブラウザ環境でのコンテンツブロッキング
+      - ブラウジング高速化のためのDNSクエリキャッシュ
+      - 相互運用性のためのコマンドラインインターフェース
+      - システム表示とコントロールのための直感的Webインターフェースダッシュボード
+      - 自動デバイス保護のためのオプションDHCPサーバー機能
+      - IPv4とIPv6での広告ブロッキングサポート
+
+      **詳細はこちら：**
+      - [Pi-hole公式ウェブサイト](https://pi-hole.net/)
+      - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
   developer: Pi-hole
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pihole/icon.png
   screenshot_link:
@@ -491,6 +707,14 @@ x-casaos:
     pt_PT: Bloqueio de Anúncios ao Nível da Rede
     ru_RU: Блокировка Рекламы на Уровне Сети
     tr_TR: Ağ Çapında Reklam Engelleme
+    en_us: Network-wide Ad Blocking
+    pt_br: Bloqueio de Anúncios ao Nível da Rede
+    zh_cn: 网络广告拦截
+    fr_fr: Blocage de Publicités sur Tout le Réseau
+    de_de: Netzwerkweite Werbeblockierung
+    it_it: Blocco Pubblicità a Livello di Rete
+    ru_ru: Блокировка Рекламы на Уровне Сети
+    ja_jp: ネットワーク全体広告ブロッキング
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pihole/thumbnail.jpg
   tips:
     before_install:
@@ -524,12 +748,29 @@ x-casaos:
         Пароль по умолчанию: `roqueos`
       tr_TR: |
         Varsayılan şifre: `roqueos`
+      en_us: |
+        Default password: `roqueos`
+      pt_br: |
+        Palavra-passe padrão: `roqueos`
+      zh_cn: |
+        默认密码：`roqueos`
+      fr_fr: |
+        Mot de passe par défaut : `roqueos`
+      de_de: |
+        Standard-Passwort: `roqueos`
+      it_it: |
+        Password predefinita: `roqueos`
+      ru_ru: |
+        Пароль по умолчанию: `roqueos`
+      ja_jp: |
+        デフォルトパスワード：`roqueos`
   title:
     en_US: Pi-hole
+    en_us: Pi-hole
   index: /admin
-  port_map: '8800'
+  port_map: "8800"
   scheme: https
-
 x-roqueos:
+  portaCompartilhada: true
   motivo:
-    capAdd: "capacidade exigida pelo upstream para a função declarada do container"
+    capAdd: capacidade exigida pelo upstream para a função declarada do container

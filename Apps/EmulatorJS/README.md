@@ -10,12 +10,13 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço    |
-| ---- | --------- | --------- | -------------- | ---------- |
-| 3001 | 3000      | tcp       | Manage ROMS    | emulatorjs |
-| 4001 | 4001      | tcp       | —              | emulatorjs |
-| 88   | 80        | tcp       | Play Game      | emulatorjs |
+| Host | Container | Protocolo | Para que serve                  | Serviço    |
+| ---- | --------- | --------- | ------------------------------- | ---------- |
+| 3001 | 3000      | tcp       | Manage ROMS                     | emulatorjs |
+| 4001 | 4001      | tcp       | Service port 4001 of emulatorjs | emulatorjs |
+| 88   | 80        | tcp       | Play Game                       | emulatorjs |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

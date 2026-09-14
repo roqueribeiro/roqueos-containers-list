@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     ports:
       - target: 3000
-        published: '3410'
+        published: "3410"
         protocol: tcp
     environment:
       TRUST_PROXY: false
@@ -39,8 +39,16 @@ services:
             sv_SE: Proxy-tillitsinställning för reverse proxy-konfigurationer
             tr_TR: Ters proxy yapılandırmaları için proxy güven ayarı
             zh_CN: 反向代理配置的代理信任设置
+            en_us: Proxy trust setting for reverse proxy configurations
+            pt_br: Definição de confiança do proxy para configurações de proxy inverso
+            zh_cn: 反向代理配置的代理信任设置
+            fr_fr: Paramètre de confiance du proxy pour les configurations de proxy inverse
+            de_de: Proxy-Vertrauenseinstellung für reverse Proxy-Konfigurationen
+            it_it: Impostazione di fiducia del proxy per le configurazioni di proxy inverso
+            ru_ru: Настройка доверия прокси для конфигураций обратного прокси
+            ja_jp: リバースプロキシ構成用のプロキシ信頼設定
       ports:
-        - container: '3000'
+        - container: "3000"
           description:
             de_DE: Pingvin-Share Web-Interface-Port
             el_GR: Θύρα διασύνδεσης web Pingvin-Share
@@ -57,6 +65,14 @@ services:
             sv_SE: Pingvin-Share webbgränssnittsport
             tr_TR: Pingvin-Share web arayüzü portu
             zh_CN: Pingvin-Share Web界面端口
+            en_us: Pingvin-Share web interface port
+            pt_br: Porta da interface web Pingvin-Share
+            zh_cn: Pingvin-Share Web界面端口
+            fr_fr: Port de l'interface web Pingvin-Share
+            de_de: Pingvin-Share Web-Interface-Port
+            it_it: Porta dell'interfaccia web Pingvin-Share
+            ru_ru: Порт веб-интерфейса Pingvin-Share
+            ja_jp: Pingvin-Share Webインターフェースポート
       volumes:
         - container: /opt/app/backend/data
           description:
@@ -75,6 +91,14 @@ services:
             sv_SE: Backend datakatalog för användardata och konfigurationer
             tr_TR: Kullanıcı verileri ve yapılandırmalar için arka uç veri dizini
             zh_CN: 用户数据和配置的后端数据目录
+            en_us: Backend data directory for user data and configurations
+            pt_br: Diretório de dados backend para dados de utilizador e configurações
+            zh_cn: 用户数据和配置的后端数据目录
+            fr_fr: Répertoire de données backend pour les données utilisateur et les configurations
+            de_de: Backend-Datenverzeichnis für Benutzerdaten und Konfigurationen
+            it_it: Directory dati backend per dati utente e configurazioni
+            ru_ru: Каталог данных бэкенда для пользовательских данных и конфигураций
+            ja_jp: ユーザーデータと設定用のバックエンドデータディレクトリ
         - container: /opt/app/frontend/public/img
           description:
             de_DE: Frontend-Bilderverzeichnis für benutzerdefinierte Logos und Symbole
@@ -92,6 +116,14 @@ services:
             sv_SE: Frontend bildkatalog för anpassade logotyper och ikoner
             tr_TR: Özel logolar ve simgeler için ön uç görüntü dizini
             zh_CN: 自定义徽标和图标的前端图像目录
+            en_us: Frontend image directory for custom logos and icons
+            pt_br: Diretório de imagens frontend para logótipos e ícones personalizados
+            zh_cn: 自定义徽标和图标的前端图像目录
+            fr_fr: Répertoire d'images frontend pour les logos et icônes personnalisés
+            de_de: Frontend-Bilderverzeichnis für benutzerdefinierte Logos und Symbole
+            it_it: Directory immagini frontend per loghi e icone personalizzati
+            ru_ru: Каталог изображений фронтенда для пользовательских логотипов и иконок
+            ja_jp: カスタムロゴとアイコン用のフロントエンド画像ディレクトリ
 x-casaos:
   title:
     de_DE: Pingvin-Share
@@ -109,6 +141,14 @@ x-casaos:
     sv_SE: Pingvin-Share
     tr_TR: Pingvin-Share
     zh_CN: Pingvin-Share
+    en_us: Pingvin-Share
+    pt_br: Pingvin-Share
+    zh_cn: Pingvin-Share
+    fr_fr: Pingvin-Share
+    de_de: Pingvin-Share
+    it_it: Pingvin-Share
+    ru_ru: Pingvin-Share
+    ja_jp: Pingvin-Share
   tagline:
     de_DE: Selbst gehostete Dateifreigabe mit modernem Web-Interface
     el_GR: Αυτο-φιλοξενούμενη κοινή χρήση αρχείων με σύγχρονο web περιβάλλον
@@ -125,6 +165,14 @@ x-casaos:
     sv_SE: Självhostad fildelning med ett modernt webbgränssnitt
     tr_TR: Modern web arayüzü ile kendi kendine barındırılan dosya paylaşımı
     zh_CN: 具有现代Web界面的自托管文件共享
+    en_us: Self-hosted file sharing with a modern web interface
+    pt_br: Partilha de ficheiros auto-hospedada com uma interface web moderna
+    zh_cn: 具有现代Web界面的自托管文件共享
+    fr_fr: Partage de fichiers auto-hébergé avec une interface web moderne
+    de_de: Selbst gehostete Dateifreigabe mit modernem Web-Interface
+    it_it: Condivisione file self-hosted con interfaccia web moderna
+    ru_ru: Самостоятельно размещенный обмен файлами с современным веб-интерфейсом
+    ja_jp: モダンなWebインターフェースを備えたセルフホスト型ファイル共有
   description:
     de_DE: |
       Pingvin-Share ist eine selbstgehostete Dateifreigabe-Anwendung, die mit Nextcloud-Apps kompatibel ist und eine moderne, intuitive Weboberfläche bietet. Sie ermöglicht es Benutzern, Dateien sicher zu speichern, zu organisieren und zu teilen, ohne auf externe Cloud-Dienste angewiesen zu sein. Die Anwendung unterstützt verschiedene Authentifizierungsmethoden und bietet Funktionen wie Freigabelinks, Benutzerkonten und eine responsive Oberfläche.
@@ -336,6 +384,118 @@ x-casaos:
 
       **了解更多：**
       - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
+    en_us: |
+      Pingvin-Share is a self-hosted file sharing application compatible with Nextcloud apps, offering a modern and intuitive web interface. It enables users to securely store, organize, and share files without relying on external cloud services. The application supports multiple authentication methods and provides features such as share links, user accounts, and a responsive interface.
+
+      **Key features:**
+      - Modern, responsive web interface
+      - User accounts with a permission system
+      - Secure share links for files
+      - Drag-and-drop file upload
+      - Password-protected shares
+      - Multiple authentication methods
+      - Docker-based deployment for easy installation
+
+      **Learn more:**
+      - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
+    pt_br: |
+      Pingvin-Share é uma aplicação de partilha de ficheiros auto-hospedada compatível com aplicações Nextcloud, oferecendo uma interface web moderna e intuitiva. Permite aos utilizadores armazenar, organizar e partilhar ficheiros de forma segura sem depender de serviços cloud externos. A aplicação suporta vários métodos de autenticação e fornece funcionalidades como links de partilha, contas de utilizador e uma interface responsiva.
+
+      **Funcionalidades principais:**
+      - Interface web moderna e responsiva
+      - Contas de utilizador com sistema de permissões
+      - Links de partilha seguros para ficheiros
+      - Carregamento de ficheiros com arrastar e largar
+      - Partilhas protegidas por palavra-passe
+      - Vários métodos de autenticação
+      - Implementação baseada em Docker para fácil instalação
+
+      **Saiba mais:**
+      - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
+    zh_cn: |
+      Pingvin-Share是一个与Nextcloud应用兼容的自托管文件共享应用，提供现代、直观的Web界面。它允许用户安全地存储、整理和共享文件，而无需依赖外部云服务。该应用支持多种身份验证方法，并提供共享链接、用户账户和响应式界面等功能。
+
+      **主要功能：**
+      - 现代、响应式Web界面
+      - 具有权限系统的用户账户
+      - 文件的安全共享链接
+      - 拖放式文件上传
+      - 密码保护的共享
+      - 多种身份验证方法
+      - 基于Docker的部署，便于安装
+
+      **了解更多：**
+      - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
+    fr_fr: |
+      Pingvin-Share est une application de partage de fichiers auto-hébergée compatible avec les applications Nextcloud, offrant une interface web moderne et intuitive. Elle permet aux utilisateurs de stocker, d’organiser et de partager des fichiers en toute sécurité sans dépendre de services cloud externes. L’application prend en charge plusieurs méthodes d’authentification et propose des fonctionnalités telles que des liens de partage, des comptes utilisateurs et une interface responsive.
+
+      **Fonctionnalités principales :**
+      - Interface web moderne et responsive
+      - Comptes utilisateurs avec système de permissions
+      - Liens de partage sécurisés pour les fichiers
+      - Téléversement de fichiers par glisser-déposer
+      - Partages protégés par mot de passe
+      - Plusieurs méthodes d’authentification
+      - Déploiement basé sur Docker pour une installation facile
+
+      **En savoir plus :**
+      - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
+    de_de: |
+      Pingvin-Share ist eine selbstgehostete Dateifreigabe-Anwendung, die mit Nextcloud-Apps kompatibel ist und eine moderne, intuitive Weboberfläche bietet. Sie ermöglicht es Benutzern, Dateien sicher zu speichern, zu organisieren und zu teilen, ohne auf externe Cloud-Dienste angewiesen zu sein. Die Anwendung unterstützt verschiedene Authentifizierungsmethoden und bietet Funktionen wie Freigabelinks, Benutzerkonten und eine responsive Oberfläche.
+
+      **Hauptfunktionen:**
+      - Moderne, responsive Weboberfläche
+      - Benutzerkonten mit Berechtigungssystem
+      - Sichere Freigabelinks für Dateien
+      - Drag-and-Drop-Dateiupload
+      - Passwortgeschützte Freigaben
+      - Mehrere Authentifizierungsmethoden
+      - Docker-basierte Bereitstellung für einfache Installation
+
+      **Mehr erfahren:**
+      - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
+    it_it: |
+      Pingvin-Share è un'applicazione di condivisione file self-hosted compatibile con le app Nextcloud, che offre un'interfaccia web moderna e intuitiva. Consente agli utenti di archiviare, organizzare e condividere file in modo sicuro senza dipendere da servizi cloud esterni. L'applicazione supporta più metodi di autenticazione e offre funzionalità come link di condivisione, account utente e un'interfaccia responsive.
+
+      **Funzionalità principali:**
+      - Interfaccia web moderna e responsive
+      - Account utente con sistema di autorizzazioni
+      - Link di condivisione sicuri per i file
+      - Caricamento file con drag-and-drop
+      - Condivisioni protette da password
+      - Più metodi di autenticazione
+      - Distribuzione basata su Docker per una facile installazione
+
+      **Scopri di più:**
+      - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
+    ru_ru: |
+      Pingvin-Share — это самостоятельно размещаемое приложение для обмена файлами, совместимое с приложениями Nextcloud и предлагающее современный и интуитивно понятный веб-интерфейс. Оно позволяет пользователям безопасно хранить, организовывать и делиться файлами без зависимости от внешних облачных сервисов. Приложение поддерживает несколько методов аутентификации и предоставляет такие функции, как ссылки для обмена, учетные записи пользователей и адаптивный интерфейс.
+
+      **Основные возможности:**
+      - Современный, адаптивный веб-интерфейс
+      - Учетные записи пользователей с системой прав доступа
+      - Безопасные ссылки для обмена файлами
+      - Загрузка файлов методом drag-and-drop
+      - Общий доступ, защищённый паролем
+      - Несколько методов аутентификации
+      - Docker-развертывание для простой установки
+
+      **Подробнее:**
+      - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
+    ja_jp: |
+      Pingvin-ShareはNextcloudアプリと互換性のあるセルフホスト型のファイル共有アプリケーションで、モダンで直感的なWebインターフェースを提供します。外部のクラウドサービスに依存せず、ファイルを安全に保存・整理・共有できます。複数の認証方式をサポートし、共有リンク、ユーザーアカウント、レスポンシブなUIなどの機能を備えています。
+
+      **主な機能：**
+      - モダンでレスポンシブなWebインターフェース
+      - 権限システム付きユーザーアカウント
+      - ファイル用の安全な共有リンク
+      - ドラッグ＆ドロップによるファイルアップロード
+      - パスワード保護された共有
+      - 複数の認証方式
+      - Dockerによる簡単な導入
+
+      **詳細：**
+      - [Pingvin-Share GitHub](https://github.com/stonith404/pingvin-share)
   category: Utilities
   author: stonith404
   developer: stonith404
@@ -345,7 +505,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pingvin-Share/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Pingvin-Share/screenshot-3.png
   main: pingvin-share
-  port_map: '3410'
+  port_map: "3410"
   architectures:
     - amd64
     - arm64

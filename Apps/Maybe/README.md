@@ -1,28 +1,28 @@
 # Maybe
 
-> Personal finance management application
+> Aplicação de gestão financeira pessoal
 
 ## O que é
 
-Maybe is a personal finance management application designed to help you track your expenses, income, and investments in one place. With an intuitive interface and powerful features, Maybe makes it easy to understand your financial situation and make informed decisions about your money.
+Maybe é uma aplicação de gestão financeira pessoal concebida para o ajudar a acompanhar as suas despesas, rendimentos e investimentos num só lugar. Com uma interface intuitiva e funcionalidades poderosas, o Maybe torna fácil compreender a sua situação financeira e tomar decisões informadas sobre o seu dinheiro.
 
-**Key Features:**
-- **Expense Tracking**: Easily log and categorize your expenses
-- **Income Management**: Track multiple income sources
-- **Investment Monitoring**: Keep an eye on your investments and their performance
-- **Budget Planning**: Create and maintain budgets to control your spending
-- **Financial Reports**: Generate detailed reports to understand your financial habits
-- **AI-Powered Insights**: Get personalized financial advice using AI technology
+**Funcionalidades Principais:**
+- **Acompanhamento de Despesas**: Registe e categorize facilmente as suas despesas
+- **Gestão de Rendimentos**: Acompanhe múltiplas fontes de rendimento
+- **Monitorização de Investimentos**: Mantenha-se atento aos seus investimentos e ao seu desempenho
+- **Planeamento de Orçamento**: Crie e mantenha orçamentos para controlar as suas despesas
+- **Relatórios Financeiros**: Gere relatórios detalhados para compreender os seus hábitos financeiros
+- **Informações com IA**: Obtenha aconselhamento financeiro personalizado utilizando tecnologia IA
 
-**Use Cases:**
-- Personal budget management
-- Expense tracking and categorization
-- Investment portfolio monitoring
-- Financial goal setting and tracking
-- Cash flow analysis
+**Casos de Uso:**
+- Gestão de orçamento pessoal
+- Acompanhamento e categorização de despesas
+- Monitorização de carteira de investimentos
+- Definição e acompanhamento de objetivos financeiros
+- Análise de fluxo de caixa
 
-**Learn More:**
-- [Maybe GitHub Repository](https://github.com/maybe-finance/maybe)
+**Saiba Mais:**
+- [Repositório GitHub Maybe](https://github.com/maybe-finance/maybe)
 
 
 Categoria na App Store do RoqueOS: **Finance**.
@@ -30,10 +30,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve             | Serviço   |
-| ----- | --------- | --------- | -------------------------- | --------- |
-| 23000 | 3000      | tcp       | Maybe Web Application Port | maybe-web |
+| Host  | Container | Protocolo | Para que serve               | Serviço   |
+| ----- | --------- | --------- | ---------------------------- | --------- |
+| 23000 | 3000      | tcp       | Porta da Aplicação Web Maybe | maybe-web |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

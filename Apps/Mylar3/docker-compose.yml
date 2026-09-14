@@ -40,7 +40,7 @@ services:
       ports:
         - container: '8090'
           description:
-            en_us: ''
+            en_us: "Web interface for Mylar3"
       volumes:
         - container: /config
           description:
@@ -101,4 +101,5 @@ x-casaos:
   port_map: '8090'
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

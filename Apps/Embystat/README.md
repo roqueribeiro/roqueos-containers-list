@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço  |
-| ---- | --------- | --------- | -------------- | -------- |
-| 6555 | 6555      | tcp       | —              | embystat |
+| Host | Container | Protocolo | Para que serve             | Serviço  |
+| ---- | --------- | --------- | -------------------------- | -------- |
+| 6555 | 6555      | tcp       | Web interface for Embystat | embystat |
 
 
 ## Volumes

@@ -1,23 +1,23 @@
 # PeaNUT
 
-> UPS monitoring and power outage notification system
+> Sistema de monitorização UPS e notificação de interrupção de energia
 
 ## O que é
 
-PeaNUT is a web-based UPS monitoring system specifically designed for monitoring Uninterruptible Power Supplies (UPS). It provides a user-friendly interface for monitoring UPS status, battery life, and power outage notifications to ensure your systems are always protected.
+PeaNUT é um sistema de monitorização UPS baseado na web, especificamente projetado para monitorizar Fontes de Alimentação Ininterrupta (UPS). Fornece uma interface amigável para monitorizar o estado UPS, a vida útil da bateria e notificações de interrupção de energia para garantir que os seus sistemas estejam sempre protegidos.
 
-**Key Features:**
-- Real-time UPS status monitoring and control
-- Battery life and charge level monitoring
-- Automatic power outage notifications via email/webhook
-- Historical data logging and reporting
-- Support for various UPS manufacturers and models
-- Mobile-friendly responsive web interface for remote access
-- Configurable warning thresholds and alerts
-- Docker-based deployment for easy installation
+**Funcionalidades Principais:**
+- Monitorização e controlo do estado UPS em tempo real
+- Monitorização da vida útil da bateria e nível de carga
+- Notificações automáticas de interrupção de energia via email/webhook
+- Registo de dados históricos e relatórios
+- Suporte para vários fabricantes e modelos UPS
+- Interface web responsiva amigável para acesso remoto
+- Limiares de aviso configuráveis e alertas
+- Implementação baseada em Docker para fácil instalação
 
-**Learn More:**
-- [PeaNUT GitHub Repository](https://github.com/brandawg93/peanut)
+**Saiba Mais:**
+- [Repositório GitHub PeaNUT](https://github.com/brandawg93/peanut)
 
 
 Categoria na App Store do RoqueOS: **Utilities**.
@@ -25,10 +25,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve            | Serviço |
-| ---- | --------- | --------- | ------------------------- | ------- |
-| 8084 | 8080      | tcp       | PeaNUT web interface port | peanut  |
+| Host | Container | Protocolo | Para que serve                | Serviço |
+| ---- | --------- | --------- | ----------------------------- | ------- |
+| 8084 | 8080      | tcp       | Porta da interface web PeaNUT | peanut  |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 
@@ -48,10 +49,10 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8084/`.
 
-- The UPS service parameters for ZimaOS are as follows:
-- | Server Address | Port | Username | Password |
-- |----------------|------|----------|----------|
-- | ZimaOS IP      | `3493` | `monuser` | `secret` |
+- Os parâmetros do serviço UPS do ZimaOS são os seguintes:
+- | Endereço do servidor | Porta | Nome de utilizador | Palavra-passe |
+- |----------------------|-------|-------------------|---------------|
+- | ZimaOS IP            | `3493` | `monuser` | `secret` |
 
 ## Imagens
 

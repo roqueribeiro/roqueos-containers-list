@@ -1,24 +1,24 @@
 # BeaverHabitTracker
 
-> A self-hosted, goal-free habit tracking tool.
+> Uma ferramenta de rastreamento de hábitos auto-hospedada e sem objetivos.
 
 ## O que é
 
-Beaver Habit Tracker is a self-hosted habit tracking tool designed for users who want to effortlessly monitor daily behaviors without the stress of goal-setting. Its intuitive Web interface offers a pressure-free tracking experience, ideal for those focused on behavior observation and personal growth.
+O Beaver Habit Tracker é uma ferramenta de rastreamento de hábitos auto-hospedada concebida para utilizadores que querem monitorizar facilmente comportamentos diários sem o stress de definir objetivos. A sua interface Web intuitiva oferece uma experiência de rastreamento sem pressão, ideal para aqueles focados na observação de comportamento e crescimento pessoal.
 
-The tool's core features include goal-free habit tracking and a minimalist interface. It allows users to log multiple habits easily, without focusing on streaks or targets, and provides simple visualizations to understand behavior patterns. Users can add daily notes to record specific activities or reflections, with a smooth, low-effort interface.
+As características principais da ferramenta incluem rastreamento de hábitos sem objetivos e uma interface minimalista. Permite aos utilizadores registar facilmente múltiplos hábitos, sem focar em sequências ou metas, e fornece visualizações simples para compreender padrões de comportamento. Os utilizadores podem adicionar notas diárias para registar atividades específicas ou reflexões, com uma interface suave e de baixo esforço.
 
-It uses a self-hosted approach, ensuring data privacy and full control, with a lightweight, efficient design requiring minimal server resources. Users can manually reorder habits for an optimized experience. The tool's stress-free observation and intuitive operation help users gradually improve habits, delivering a modern habit management solution.
+Utiliza uma abordagem auto-hospedada, garantindo privacidade de dados e controlo total, com um design leve e eficiente que requer recursos mínimos do servidor. Os utilizadores podem reordenar manualmente os hábitos para uma experiência otimizada. A observação sem stress e operação intuitiva da ferramenta ajudam os utilizadores a melhorar gradualmente os hábitos, fornecendo uma solução moderna de gestão de hábitos.
 
-**Key Features:**
-- Goal-free habit tracking focused on awareness, not achievement
-- Clean, minimalist interface for effortless daily logging
-- Lightweight and efficient, requiring minimal server resources
-- Simple visualizations to understand behavior patterns
-- Daily notes for recording activities or reflections
+**Características Principais:**
+- Rastreamento de hábitos sem objetivos focado na consciência, não na conquista
+- Interface limpa e minimalista para registo diário sem esforço
+- Leve e eficiente, requer recursos mínimos do servidor
+- Visualizações simples para compreender padrões de comportamento
+- Notas diárias para registar atividades ou reflexões
 
-**Learn More:**
-- [Beaver Habit Tracker Official Website](https://beaverhabits.com/)
+**Saiba Mais:**
+- [Site Oficial Beaver Habit Tracker](https://beaverhabits.com/)
 - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
 
 
@@ -27,9 +27,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve  | Serviço            |
-| ----- | --------- | --------- | --------------- | ------------------ |
-| 15580 | 8080      | tcp       | WebUI HTTP Port | beaverhabittracker |
+| Host  | Container | Protocolo | Para que serve   | Serviço            |
+| ----- | --------- | --------- | ---------------- | ------------------ |
+| 15580 | 8080      | tcp       | Porta HTTP WebUI | beaverhabittracker |
 
 
 ## Volumes

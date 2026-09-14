@@ -1,25 +1,25 @@
 # Gopeed
 
-> Open source, lightweight, native, supports (HTTP, BitTorrent, Magnet, etc.) for downloading.
+> Código aberto, leve, nativo, suporta (HTTP, BitTorrent, Magnet, etc.) para descarregamento.
 
 ## O que é
 
-Gopeed is a modern high-speed download tool supporting HTTP, BitTorrent, and Magnet protocols, offering a beautiful interface and powerful functionality. Its lightweight design and multi-platform support make it ideal for efficient file downloading across various devices.
+O Gopeed é uma ferramenta moderna de descarregamento de alta velocidade que suporta protocolos HTTP, BitTorrent e Magnet, oferecendo uma interface bonita e funcionalidade poderosa. O seu design leve e suporte multiplataforma tornam-no ideal para descarregamento eficiente de ficheiros em vários dispositivos.
 
-The tool's core features include high-speed downloading and an elegant interface. It leverages Golang coroutines for concurrent downloading, supporting HTTP, HTTPS, BitTorrent, and Magnet protocols for fast, stable performance. The interface follows Material Design standards, including a dark mode, balancing aesthetics and usability. Advanced features include seeding, DHT, PEX, uTP, Webtorrent, and UPnP support, with daily automatic tracker list updates to enhance download efficiency.
+As funcionalidades principais da ferramenta incluem descarregamento de alta velocidade e uma interface elegante. Aproveita as corrotinas Golang para descarregamento simultâneo, suportando protocolos HTTP, HTTPS, BitTorrent e Magnet para desempenho rápido e estável. A interface segue os padrões Material Design, incluindo um modo escuro, equilibrando estética e usabilidade. As funcionalidades avançadas incluem seeding, DHT, PEX, uTP, Webtorrent e suporte UPnP, com actualizações diárias automáticas da lista de trackers para melhorar a eficiência dos descarregamentos.
 
-It provides a RESTful API for open integration, allowing users to remotely control download tasks, pause, or delete them. Decentralized extensions enable JavaScript plugins to enhance functionality, such as downloading videos or music from websites. The tool's speed, flexibility, and user-friendly design deliver a modern download solution.
+Fornece uma API RESTful para integração aberta, permitindo aos utilizadores controlar remotamente tarefas de descarregamento, pausá-las ou eliminá-las. As extensões descentralizadas permitem plugins JavaScript para melhorar a funcionalidade, como descarregar vídeos ou música de websites. A velocidade, flexibilidade e design amigável da ferramenta oferecem uma solução moderna de descarregamento.
 
-**Key Features:**
-- High-speed downloading with HTTP, BitTorrent, Magnet protocols
+**Funcionalidades Principais:**
+- Descarregamento de alta velocidade com protocolos HTTP, BitTorrent, Magnet
 - Seeding, DHT, PEX, uTP, Webtorrent, UPnP
-- Daily automatic tracker list updates
-- RESTful API for remote download task control
-- Decentralized extensions with JavaScript plugins
+- Actualizações diárias automáticas da lista de trackers
+- API RESTful para controlo remoto de tarefas de descarregamento
+- Extensões descentralizadas com plugins JavaScript
 
-**Learn More:**
-- [Gopeed Official Website](https://gopeed.com)
-- [Gopeed GitHub Repository](https://github.com/gopeedlab/gopeed)
+**Saber Mais:**
+- [Website Oficial Gopeed](https://gopeed.com)
+- [Repositório GitHub Gopeed](https://github.com/gopeedlab/gopeed)
 
 
 Categoria na App Store do RoqueOS: **Utilities**.
@@ -27,9 +27,9 @@ Arquiteturas suportadas: amd64, arm64, arm.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço |
-| ---- | --------- | --------- | --------------- | ------- |
-| 9999 | 9999      | tcp       | WebUI HTTP Port | gopeed  |
+| Host | Container | Protocolo | Para que serve   | Serviço |
+| ---- | --------- | --------- | ---------------- | ------- |
+| 9999 | 9999      | tcp       | Porta HTTP WebUI | gopeed  |
 
 
 ## Volumes

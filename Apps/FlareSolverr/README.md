@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço      |
-| ---- | --------- | --------- | -------------- | ------------ |
-| 8191 | 8191      | tcp       | —              | flaresolverr |
+| Host | Container | Protocolo | Para que serve                 | Serviço      |
+| ---- | --------- | --------- | ------------------------------ | ------------ |
+| 8191 | 8191      | tcp       | Web interface for FlareSolverr | flaresolverr |
 
 
 ## Volumes

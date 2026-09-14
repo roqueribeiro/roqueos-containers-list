@@ -11,11 +11,12 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço  |
-| ---- | --------- | --------- | -------------- | -------- |
-| 443  | 443       | tcp       | —              | snapdrop |
-| 89   | 80        | tcp       | —              | snapdrop |
+| Host | Container | Protocolo | Para que serve             | Serviço  |
+| ---- | --------- | --------- | -------------------------- | -------- |
+| 443  | 443       | tcp       | HTTPS (port 443)           | snapdrop |
+| 89   | 80        | tcp       | Web interface for snapdrop | snapdrop |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

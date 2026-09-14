@@ -64,3 +64,6 @@ x-casaos:
   index: /
   port_map: '9091'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

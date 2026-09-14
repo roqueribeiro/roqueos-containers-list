@@ -7,7 +7,7 @@ services:
       - SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.49-nikolaik
       - WORKSPACE_MOUNT_PATH=/DATA/AppData/$AppID/workspace
     ports:
-      - '13333:3000'
+      - "13333:3000"
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
@@ -18,7 +18,7 @@ services:
     tty: true
     x-casaos:
       ports:
-        - container: '3000'
+        - container: "3000"
           description:
             en_US: OpenHands Web Interface Port
             en_GB: OpenHands Web Interface Port
@@ -35,6 +35,14 @@ services:
             pt_PT: Porta da Interface Web OpenHands
             ru_RU: Порт веб-интерфейса OpenHands
             tr_TR: OpenHands Web Arayüz Portu
+            en_us: OpenHands Web Interface Port
+            pt_br: Porta da Interface Web OpenHands
+            zh_cn: OpenHands Web界面端口
+            fr_fr: Port de l'interface web OpenHands
+            de_de: OpenHands Web-Oberflächen-Port
+            it_it: Porta interfaccia web OpenHands
+            ru_ru: Порт веб-интерфейса OpenHands
+            ja_jp: OpenHands Webインターフェースポート
       volumes:
         - container: /var/run/docker.sock
           description:
@@ -53,6 +61,14 @@ services:
             pt_PT: Montagem do Socket Docker para Gestão de Contentores
             ru_RU: Монтирование сокета Docker для управления контейнерами
             tr_TR: Kapsayıcı Yönetimi için Docker Soket Bağlantısı
+            en_us: Docker Socket Mount for Container Management
+            pt_br: Montagem do Socket Docker para Gestão de Contentores
+            zh_cn: 用于容器管理的Docker套接字挂载
+            fr_fr: Montage du socket Docker pour la gestion des conteneurs
+            de_de: Docker-Socket-Mount für die Container-Verwaltung
+            it_it: Mount socket Docker per la gestione dei container
+            ru_ru: Монтирование сокета Docker для управления контейнерами
+            ja_jp: コンテナ管理用のDockerソケットマウント
         - container: /.openhands
           description:
             en_US: OpenHands Configuration and Data Directory
@@ -70,6 +86,14 @@ services:
             pt_PT: Diretório de Configuração e Dados OpenHands
             ru_RU: Каталог конфигурации и данных OpenHands
             tr_TR: OpenHands Yapılandırma ve Veri Dizini
+            en_us: OpenHands Configuration and Data Directory
+            pt_br: Diretório de Configuração e Dados OpenHands
+            zh_cn: OpenHands配置和数据目录
+            fr_fr: Répertoire de configuration et de données OpenHands
+            de_de: OpenHands-Konfigurations- und Datenverzeichnis
+            it_it: Directory di configurazione e dati OpenHands
+            ru_ru: Каталог конфигурации и данных OpenHands
+            ja_jp: OpenHands設定とデータディレクトリ
         - container: /opt/workspace_base
           description:
             en_US: Workspace Directory for Project Files
@@ -87,6 +111,14 @@ services:
             pt_PT: Diretório do Espaço de Trabalho para Ficheiros de Projeto
             ru_RU: Рабочий каталог для файлов проекта
             tr_TR: Proje Dosyaları için Çalışma Alanı Dizini
+            en_us: Workspace Directory for Project Files
+            pt_br: Diretório do Espaço de Trabalho para Ficheiros de Projeto
+            zh_cn: 项目文件的工作区目录
+            fr_fr: Répertoire de l'espace de travail pour les fichiers de projet
+            de_de: Arbeitsbereichsverzeichnis für Projektdateien
+            it_it: Directory workspace per i file di progetto
+            ru_ru: Рабочий каталог для файлов проекта
+            ja_jp: プロジェクトファイル用ワークスペースディレクトリ
       envs:
         - container: SANDBOX_RUNTIME_CONTAINER_IMAGE
           description:
@@ -105,6 +137,14 @@ services:
             pt_PT: Imagem de Contentor para o Ambiente de Execução
             ru_RU: Образ контейнера для среды выполнения
             tr_TR: Çalışma Ortamı için Kapsayıcı İmajı
+            en_us: Container Image for Runtime Environment
+            pt_br: Imagem de Contentor para o Ambiente de Execução
+            zh_cn: 运行时环境的容器镜像
+            fr_fr: Image de conteneur pour l'environnement d'exécution
+            de_de: Container-Image für die Laufzeitumgebung
+            it_it: Immagine container per l'ambiente di runtime
+            ru_ru: Образ контейнера для среды выполнения
+            ja_jp: ランタイム環境用コンテナイメージ
         - container: SANDBOX_USER_ID
           description:
             en_US: User ID for Sandbox Environment
@@ -122,6 +162,14 @@ services:
             pt_PT: ID de Utilizador para o Ambiente Sandbox
             ru_RU: ID пользователя для песочницы
             tr_TR: Sandbox Ortamı için Kullanıcı Kimliği
+            en_us: User ID for Sandbox Environment
+            pt_br: ID de Utilizador para o Ambiente Sandbox
+            zh_cn: 沙盒环境的用户ID
+            fr_fr: ID utilisateur pour l'environnement de bac à sable
+            de_de: Benutzer-ID für die Sandbox-Umgebung
+            it_it: ID utente per l'ambiente sandbox
+            ru_ru: ID пользователя для песочницы
+            ja_jp: サンドボックス環境のユーザーID
         - container: WORKSPACE_MOUNT_PATH
           description:
             en_US: Mount Path for Workspace Directory
@@ -139,6 +187,14 @@ services:
             pt_PT: Caminho de Montagem para o Diretório do Espaço de Trabalho
             ru_RU: Путь монтирования для рабочего каталога
             tr_TR: Çalışma Alanı Dizini için Bağlantı Yolu
+            en_us: Mount Path for Workspace Directory
+            pt_br: Caminho de Montagem para o Diretório do Espaço de Trabalho
+            zh_cn: 工作区目录的挂载路径
+            fr_fr: Chemin de montage pour le répertoire de l'espace de travail
+            de_de: Mount-Pfad für das Arbeitsbereichsverzeichnis
+            it_it: Percorso di mount per la directory workspace
+            ru_ru: Путь монтирования для рабочего каталога
+            ja_jp: ワークスペースディレクトリのマウントパス
 x-casaos:
   architectures:
     - amd64
@@ -162,6 +218,14 @@ x-casaos:
     pt_PT: Assistente de Codificação de Código Aberto Alimentado por IA
     ru_RU: Ассистент программирования с открытым исходным кодом на основе ИИ
     tr_TR: Açık Kaynaklı AI Destekli Kodlama Asistanı
+    en_us: Open-source AI-powered coding assistant
+    pt_br: Assistente de Codificação de Código Aberto Alimentado por IA
+    zh_cn: 开源AI驱动的编程助手
+    fr_fr: Assistant de codage open source alimenté par l'IA
+    de_de: Open-Source-KI-gestützter Codierungsassistent
+    it_it: Assistente per la programmazione basato su AI open source
+    ru_ru: Ассистент программирования с открытым исходным кодом на основе ИИ
+    ja_jp: オープンソースAI駆動型コーディングアシスタント
   description:
     en_US: |
       OpenHands is an open-source AI-powered coding assistant that provides developers with intelligent code completion, generation, and debugging capabilities. It runs in a sandboxed environment to ensure security and isolation while allowing access to various development tools and resources.
@@ -388,14 +452,134 @@ x-casaos:
       - [OpenHands Resmi Web Sitesi](https://www.all-hands.dev)
       - [OpenHands GitHub Deposu](https://github.com/All-Hands-AI/OpenHands)
       - [Belgeler](https://docs.all-hands.dev)
+    en_us: |
+      OpenHands is an open-source AI-powered coding assistant that provides developers with intelligent code completion, generation, and debugging capabilities. It runs in a sandboxed environment to ensure security and isolation while allowing access to various development tools and resources.
+
+      **Key Features:**
+      - AI-powered code completion and generation
+      - Interactive debugging and error resolution
+      - Support for multiple programming languages
+      - Secure sandboxed execution environment
+      - Customizable runtime configurations
+      - Integration with Docker for containerized workflows
+
+      **Learn More:**
+      - [OpenHands Official Website](https://www.all-hands.dev)
+      - [OpenHands GitHub Repository](https://github.com/All-Hands-AI/OpenHands)
+      - [Documentation](https://docs.all-hands.dev)
+    pt_br: |
+      OpenHands é um assistente de codificação de código aberto alimentado por IA que fornece aos programadores capacidades inteligentes de conclusão, geração e depuração de código. Ele é executado num ambiente sandbox para garantir segurança e isolamento, permitindo ao mesmo tempo o acesso a várias ferramentas e recursos de desenvolvimento.
+
+      **Características Principais:**
+      - Conclusão e geração de código alimentadas por IA
+      - Depuração interativa e resolução de erros
+      - Suporte para múltiplas linguagens de programação
+      - Ambiente de execução sandbox seguro
+      - Configurações de runtime personalizáveis
+      - Integração com Docker para fluxos de trabalho contentorizados
+
+      **Saiba Mais:**
+      - [Website Oficial OpenHands](https://www.all-hands.dev)
+      - [Repositório GitHub OpenHands](https://github.com/All-Hands-AI/OpenHands)
+      - [Documentação](https://docs.all-hands.dev)
+    zh_cn: |
+      OpenHands是一个开源的AI驱动编程助手，为开发人员提供智能代码补全、生成和调试功能。它在沙盒环境中运行，确保安全和隔离，同时允许访问各种开发工具和资源。
+
+      **主要功能：**
+      - AI驱动的代码补全和生成
+      - 交互式调试和错误解决
+      - 支持多种编程语言
+      - 安全的沙盒执行环境
+      - 可定制的运行时配置
+      - 与Docker集成，实现容器化工作流
+
+      **了解更多：**
+      - [OpenHands官方网站](https://www.all-hands.dev)
+      - [OpenHands GitHub仓库](https://github.com/All-Hands-AI/OpenHands)
+      - [文档](https://docs.all-hands.dev)
+    fr_fr: |
+      OpenHands est un assistant de codage open source alimenté par l'IA qui fournit aux développeurs des capacités intelligentes de complétion, de génération et de débogage de code. Il s'exécute dans un environnement de bac à sable pour assurer la sécurité et l'isolement tout en permettant l'accès à divers outils et ressources de développement.
+
+      **Fonctionnalités clés :**
+      - Complétion et génération de code alimentées par l'IA
+      - Débogage interactif et résolution d'erreurs
+      - Prise en charge de plusieurs langages de programmation
+      - Environnement d'exécution sécurisé en bac à sable
+      - Configurations d'exécution personnalisables
+      - Intégration avec Docker pour les flux de travail conteneurisés
+
+      **En savoir plus :**
+      - [Site officiel d'OpenHands](https://www.all-hands.dev)
+      - [Dépôt GitHub d'OpenHands](https://github.com/All-Hands-AI/OpenHands)
+      - [Documentation](https://docs.all-hands.dev)
+    de_de: |
+      OpenHands ist ein Open-Source-KI-gestützter Codierungsassistent, der Entwicklern intelligente Code-Vervollständigung, -Generierung und Debugging-Fähigkeiten bietet. Er läuft in einer Sandbox-Umgebung, um Sicherheit und Isolation zu gewährleisten, während der Zugriff auf verschiedene Entwicklungstools und Ressourcen ermöglicht wird.
+
+      **Hauptmerkmale:**
+      - KI-gestützte Code-Vervollständigung und -Generierung
+      - Interaktives Debugging und Fehlerbehebung
+      - Unterstützung für mehrere Programmiersprachen
+      - Sichere Sandbox-Ausführungsumgebung
+      - Anpassbare Laufzeitkonfigurationen
+      - Integration mit Docker für containerisierte Workflows
+
+      **Mehr erfahren:**
+      - [OpenHands offizielle Website](https://www.all-hands.dev)
+      - [OpenHands GitHub Repository](https://github.com/All-Hands-AI/OpenHands)
+      - [Dokumentation](https://docs.all-hands.dev)
+    it_it: |
+      OpenHands è un assistente per la programmazione open source basato su AI che fornisce agli sviluppatori funzionalità intelligenti di completamento, generazione e debug del codice. Funziona in un ambiente sandbox per garantire sicurezza e isolamento, consentendo al contempo l'accesso a vari strumenti e risorse di sviluppo.
+
+      **Caratteristiche principali:**
+      - Completamento e generazione del codice basati su AI
+      - Debug interattivo e risoluzione degli errori
+      - Supporto per più linguaggi di programmazione
+      - Ambiente di esecuzione sandbox sicuro
+      - Configurazioni di runtime personalizzabili
+      - Integrazione con Docker per flussi di lavoro containerizzati
+
+      **Scopri di più:**
+      - [Sito web ufficiale di OpenHands](https://www.all-hands.dev)
+      - [Repository GitHub di OpenHands](https://github.com/All-Hands-AI/OpenHands)
+      - [Documentazione](https://docs.all-hands.dev)
+    ru_ru: |
+      OpenHands - это ассистент программирования с открытым исходным кодом на основе ИИ, который предоставляет разработчикам интеллектуальные возможности автодополнения, генерации и отладки кода. Он работает в изолированной среде для обеспечения безопасности и изоляции, позволяя при этом доступ к различным инструментам и ресурсам разработки.
+
+      **Ключевые особенности:**
+      - Автодополнение и генерация кода на основе ИИ
+      - Интерактивная отладка и устранение ошибок
+      - Поддержка нескольких языков программирования
+      - Безопасная изолированная среда выполнения
+      - Настраиваемые конфигурации среды выполнения
+      - Интеграция с Docker для контейнеризированных рабочих процессов
+
+      **Узнать больше:**
+      - [Официальный сайт OpenHands](https://www.all-hands.dev)
+      - [Репозиторий OpenHands на GitHub](https://github.com/All-Hands-AI/OpenHands)
+      - [Документация](https://docs.all-hands.dev)
+    ja_jp: |
+      OpenHandsは、開発者にインテリジェントなコード補完、生成、デバッグ機能を提供するオープンソースのAI駆動型コーディングアシスタントです。セキュリティと分離を確保しながら、さまざまな開発ツールやリソースへのアクセスを可能にするサンドボックス環境で実行されます。
+
+      **主な機能：**
+      - AI駆動のコード補完と生成
+      - インタラクティブなデバッグとエラー解決
+      - 複数のプログラミング言語のサポート
+      - 安全なサンドボックス実行環境
+      - カスタマイズ可能なランタイム構成
+      - コンテナ化されたワークフローのためのDockerとの統合
+
+      **詳細情報：**
+      - [OpenHands公式ウェブサイト](https://www.all-hands.dev)
+      - [OpenHands GitHubリポジトリ](https://github.com/All-Hands-AI/OpenHands)
+      - [ドキュメント](https://docs.all-hands.dev)
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHands/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHands/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHands/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/OpenHands/screenshot-3.png
-  thumbnail: ''
+  thumbnail: ""
   scheme: http
-  port_map: '13333'
+  port_map: "13333"
   index: /
   title:
     en_US: OpenHands
@@ -413,3 +597,11 @@ x-casaos:
     pt_PT: OpenHands
     ru_RU: OpenHands
     tr_TR: OpenHands
+    en_us: OpenHands
+    pt_br: OpenHands
+    zh_cn: OpenHands
+    fr_fr: OpenHands
+    de_de: OpenHands
+    it_it: OpenHands
+    ru_ru: OpenHands
+    ja_jp: OpenHands

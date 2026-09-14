@@ -1,27 +1,27 @@
 # Docmost
 
-> A modern wiki and knowledge base for teams
+> Um wiki moderno e base de conhecimento para equipas
 
 ## O que é
 
-Docmost is a self-hosted collaborative wiki and documentation tool designed for real-time collaboration, allowing multiple users to edit the same page simultaneously without conflicts. Its intuitive interface is ideal for teams managing knowledge bases, project documentation, or wikis, offering an efficient knowledge creation and sharing experience.
+O Docmost é uma ferramenta colaborativa de wiki e documentação auto-hospedada projetada para colaboração em tempo real, permitindo que múltiplos utilizadores editem a mesma página simultaneamente sem conflitos. A sua interface intuitiva é ideal para equipas que gerem bases de conhecimento, documentação de projeto ou wikis, oferecendo uma experiência eficiente de criação e partilha de conhecimento.
 
-The tool's core features include real-time collaborative editing and space organization. It supports multiple users editing pages in real time for seamless collaboration and organizes pages into 'spaces' for teams, projects, or departments, each with independent permission settings. A rich text editor with Markdown shortcuts simplifies content creation. Built-in Draw.io, Excalidraw, and Mermaid tools provide robust diagramming capabilities.
+As funcionalidades principais da ferramenta incluem edição colaborativa em tempo real e organização de espaços. Suporta múltiplos utilizadores editando páginas em tempo real para colaboração perfeita e organiza páginas em 'espaços' para equipas, projetos ou departamentos, cada um com configurações de permissões independentes. Um editor de texto rico com atalhos Markdown simplifica a criação de conteúdo. As ferramentas integradas Draw.io, Excalidraw e Mermaid fornecem capacidades robustas de diagramas.
 
-It offers permissions management, assigning access via user groups for content security. Pages can be publicly shared via links for external access. Comments enhance communication and feedback, while page history tracks changes. Features like nested navigation, quick search, file attachments, and Markdown/HTML import/export are supported. The tool’s collaboration and flexibility deliver a modern documentation solution.
+Oferece gestão de permissões, atribuindo acesso através de grupos de utilizadores para segurança de conteúdo. As páginas podem ser partilhadas publicamente através de links para acesso externo. Os comentários melhoram a comunicação e feedback, enquanto o histórico de páginas rastreia alterações. São suportadas funcionalidades como navegação aninhada, pesquisa rápida, anexos de ficheiros e importação/exportação Markdown/HTML. A colaboração e flexibilidade da ferramenta oferecem uma solução moderna de documentação.
 
-**Key Features:**
-- Real-time collaborative editing for multiple users
-- Spaces for organizing pages by team, project or department
-- Permissions management with user group access control
-- Rich text editor with Markdown shortcuts
-- Built-in Draw.io, Excalidraw, Mermaid diagramming tools
-- Public page sharing via links
-- Page comments for communication and feedback
-- Page history, nested navigation, search, and file attachments
+**Funcionalidades Principais:**
+- Edição colaborativa em tempo real para múltiplos utilizadores
+- Espaços para organizar páginas por equipa, projeto ou departamento
+- Gestão de permissões com controlo de acesso por grupos de utilizadores
+- Editor de texto rico com atalhos Markdown
+- Ferramentas de diagramas integradas Draw.io, Excalidraw, Mermaid
+- Partilha pública de páginas através de links
+- Comentários de página para comunicação e feedback
+- Histórico de páginas, navegação aninhada, pesquisa e anexos de ficheiros
 
-**Learn More:**
-- [Docmost Official Website](https://docmost.com/)
+**Saber Mais:**
+- [Website Oficial Docmost](https://docmost.com/)
 - [Docmost GitHub](https://github.com/docmost/docmost)
 
 
@@ -30,10 +30,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço |
-| ---- | --------- | --------- | --------------- | ------- |
-| 3000 | 3000      | tcp       | WebUI HTTP Port | docmost |
+| Host | Container | Protocolo | Para que serve   | Serviço |
+| ---- | --------- | --------- | ---------------- | ------- |
+| 3000 | 3000      | tcp       | Porta HTTP WebUI | docmost |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

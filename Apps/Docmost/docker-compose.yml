@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
     ports:
       - target: 3000
-        published: '3000'
+        published: "3000"
         protocol: tcp
     volumes:
       - type: bind
@@ -28,7 +28,7 @@ services:
       - docmost-redis
     x-casaos:
       ports:
-        - container: '3000'
+        - container: "3000"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -45,6 +45,14 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP-порт WebUI
             tr_TR: WebUI HTTP Portu
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP-Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP-порт WebUI
+            ja_jp: WebUI HTTPポート
       volumes:
         - container: /app/data/storage
           description:
@@ -63,6 +71,14 @@ services:
             pt_PT: Diretório de armazenamento de dados Docmost
             ru_RU: Каталог хранения данных Docmost
             tr_TR: Docmost veri depolama dizini
+            en_us: Docmost Data Storage Directory
+            pt_br: Diretório de armazenamento de dados Docmost
+            zh_cn: Docmost数据存储目录
+            fr_fr: Répertoire de stockage de données Docmost
+            de_de: Docmost Datenspeicher-Verzeichnis
+            it_it: Directory di archiviazione dati Docmost
+            ru_ru: Каталог хранения данных Docmost
+            ja_jp: Docmostデータストレージディレクトリ
       envs:
         - container: APP_URL
           description:
@@ -81,6 +97,14 @@ services:
             pt_PT: O URL base da sua aplicação
             ru_RU: Базовый URL вашего приложения
             tr_TR: Uygulamanızın temel URL'si
+            en_us: The base URL of your application
+            pt_br: O URL base da sua aplicação
+            zh_cn: 应用程序的基础URL
+            fr_fr: L'URL de base de votre application
+            de_de: Die Basis-URL Ihrer Anwendung
+            it_it: L'URL base della tua applicazione
+            ru_ru: Базовый URL вашего приложения
+            ja_jp: アプリケーションのベースURL
         - container: APP_SECRET
           description:
             en_US: Application Secret Key
@@ -98,6 +122,14 @@ services:
             pt_PT: Chave secreta da aplicação
             ru_RU: Секретный ключ приложения
             tr_TR: Uygulama gizli anahtarı
+            en_us: Application Secret Key
+            pt_br: Chave secreta da aplicação
+            zh_cn: 应用程序密钥
+            fr_fr: Clé secrète de l'application
+            de_de: Anwendungs-Geheimschlüssel
+            it_it: Chiave segreta dell'applicazione
+            ru_ru: Секретный ключ приложения
+            ja_jp: アプリケーションシークレットキー
         - container: DATABASE_URL
           description:
             en_US: Database Connection URL
@@ -115,6 +147,14 @@ services:
             pt_PT: URL de ligação à base de dados
             ru_RU: URL подключения к базе данных
             tr_TR: Veritabanı bağlantı URL'si
+            en_us: Database Connection URL
+            pt_br: URL de ligação à base de dados
+            zh_cn: 数据库连接URL
+            fr_fr: URL de connexion à la base de données
+            de_de: Datenbank-Verbindungs-URL
+            it_it: URL di connessione al database
+            ru_ru: URL подключения к базе данных
+            ja_jp: データベース接続URL
         - container: REDIS_URL
           description:
             en_US: Redis Connection URL
@@ -132,6 +172,14 @@ services:
             pt_PT: URL de ligação Redis
             ru_RU: URL подключения Redis
             tr_TR: Redis bağlantı URL'si
+            en_us: Redis Connection URL
+            pt_br: URL de ligação Redis
+            zh_cn: Redis连接URL
+            fr_fr: URL de connexion Redis
+            de_de: Redis-Verbindungs-URL
+            it_it: URL di connessione Redis
+            ru_ru: URL подключения Redis
+            ja_jp: Redis接続URL
   docmost-db:
     container_name: docmost-db
     image: postgres:16-alpine
@@ -165,6 +213,14 @@ services:
             pt_PT: Nome da base de dados PostgreSQL
             ru_RU: Имя базы данных PostgreSQL
             tr_TR: PostgreSQL veritabanı adı
+            en_us: PostgreSQL Database Name
+            pt_br: Nome da base de dados PostgreSQL
+            zh_cn: PostgreSQL数据库名称
+            fr_fr: Nom de la base de données PostgreSQL
+            de_de: PostgreSQL-Datenbankname
+            it_it: Nome del database PostgreSQL
+            ru_ru: Имя базы данных PostgreSQL
+            ja_jp: PostgreSQLデータベース名
         - container: POSTGRES_USER
           description:
             en_US: PostgreSQL User
@@ -182,6 +238,14 @@ services:
             pt_PT: Utilizador PostgreSQL
             ru_RU: Пользователь PostgreSQL
             tr_TR: PostgreSQL kullanıcısı
+            en_us: PostgreSQL User
+            pt_br: Utilizador PostgreSQL
+            zh_cn: PostgreSQL用户
+            fr_fr: Utilisateur PostgreSQL
+            de_de: PostgreSQL-Benutzer
+            it_it: Utente PostgreSQL
+            ru_ru: Пользователь PostgreSQL
+            ja_jp: PostgreSQLユーザー
         - container: POSTGRES_PASSWORD
           description:
             en_US: PostgreSQL Password
@@ -199,6 +263,14 @@ services:
             pt_PT: Palavra-passe PostgreSQL
             ru_RU: Пароль PostgreSQL
             tr_TR: PostgreSQL şifresi
+            en_us: PostgreSQL Password
+            pt_br: Palavra-passe PostgreSQL
+            zh_cn: PostgreSQL密码
+            fr_fr: Mot de passe PostgreSQL
+            de_de: PostgreSQL-Passwort
+            it_it: Password PostgreSQL
+            ru_ru: Пароль PostgreSQL
+            ja_jp: PostgreSQLパスワード
       volumes:
         - container: /var/lib/postgresql/data
           description:
@@ -217,6 +289,14 @@ services:
             pt_PT: Diretório de dados PostgreSQL
             ru_RU: Каталог данных PostgreSQL
             tr_TR: PostgreSQL veri dizini
+            en_us: PostgreSQL Data Directory
+            pt_br: Diretório de dados PostgreSQL
+            zh_cn: PostgreSQL数据目录
+            fr_fr: Répertoire de données PostgreSQL
+            de_de: PostgreSQL-Datenverzeichnis
+            it_it: Directory dati PostgreSQL
+            ru_ru: Каталог данных PostgreSQL
+            ja_jp: PostgreSQLデータディレクトリ
   docmost-redis:
     container_name: docmost-redis
     image: redis:7.2-alpine
@@ -246,6 +326,14 @@ services:
             pt_PT: Diretório de dados Redis
             ru_RU: Каталог данных Redis
             tr_TR: Redis veri dizini
+            en_us: Redis Data Directory
+            pt_br: Diretório de dados Redis
+            zh_cn: Redis数据目录
+            fr_fr: Répertoire de données Redis
+            de_de: Redis-Datenverzeichnis
+            it_it: Directory dati Redis
+            ru_ru: Каталог данных Redis
+            ja_jp: Redisデータディレクトリ
 networks:
   docmost-network:
     driver: bridge
@@ -273,6 +361,14 @@ x-casaos:
     pt_PT: Um wiki moderno e base de conhecimento para equipas
     ru_RU: Современная вики и база знаний для команд
     tr_TR: Takımlar için modern bir wiki ve bilgi tabanı
+    en_us: A modern wiki and knowledge base for teams
+    pt_br: Um wiki moderno e base de conhecimento para equipas
+    zh_cn: 现代化的团队知识库和wiki平台
+    fr_fr: Un wiki moderne et une base de connaissances pour les équipes
+    de_de: Ein modernes Wiki und eine Wissensbasis für Teams
+    it_it: Un wiki moderno e base di conoscenze per i team
+    ru_ru: Современная вики и база знаний для команд
+    ja_jp: チーム向けのモダンなwikiと知識ベース
   description:
     en_US: |
       Docmost is a self-hosted collaborative wiki and documentation tool designed for real-time collaboration, allowing multiple users to edit the same page simultaneously without conflicts. Its intuitive interface is ideal for teams managing knowledge bases, project documentation, or wikis, offering an efficient knowledge creation and sharing experience.
@@ -574,6 +670,166 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Docmost Resmi Web Sitesi](https://docmost.com/)
       - [Docmost GitHub](https://github.com/docmost/docmost)
+    en_us: |
+      Docmost is a self-hosted collaborative wiki and documentation tool designed for real-time collaboration, allowing multiple users to edit the same page simultaneously without conflicts. Its intuitive interface is ideal for teams managing knowledge bases, project documentation, or wikis, offering an efficient knowledge creation and sharing experience.
+
+      The tool's core features include real-time collaborative editing and space organization. It supports multiple users editing pages in real time for seamless collaboration and organizes pages into 'spaces' for teams, projects, or departments, each with independent permission settings. A rich text editor with Markdown shortcuts simplifies content creation. Built-in Draw.io, Excalidraw, and Mermaid tools provide robust diagramming capabilities.
+
+      It offers permissions management, assigning access via user groups for content security. Pages can be publicly shared via links for external access. Comments enhance communication and feedback, while page history tracks changes. Features like nested navigation, quick search, file attachments, and Markdown/HTML import/export are supported. The tool’s collaboration and flexibility deliver a modern documentation solution.
+
+      **Key Features:**
+      - Real-time collaborative editing for multiple users
+      - Spaces for organizing pages by team, project or department
+      - Permissions management with user group access control
+      - Rich text editor with Markdown shortcuts
+      - Built-in Draw.io, Excalidraw, Mermaid diagramming tools
+      - Public page sharing via links
+      - Page comments for communication and feedback
+      - Page history, nested navigation, search, and file attachments
+
+      **Learn More:**
+      - [Docmost Official Website](https://docmost.com/)
+      - [Docmost GitHub](https://github.com/docmost/docmost)
+    pt_br: |
+      O Docmost é uma ferramenta colaborativa de wiki e documentação auto-hospedada projetada para colaboração em tempo real, permitindo que múltiplos utilizadores editem a mesma página simultaneamente sem conflitos. A sua interface intuitiva é ideal para equipas que gerem bases de conhecimento, documentação de projeto ou wikis, oferecendo uma experiência eficiente de criação e partilha de conhecimento.
+
+      As funcionalidades principais da ferramenta incluem edição colaborativa em tempo real e organização de espaços. Suporta múltiplos utilizadores editando páginas em tempo real para colaboração perfeita e organiza páginas em 'espaços' para equipas, projetos ou departamentos, cada um com configurações de permissões independentes. Um editor de texto rico com atalhos Markdown simplifica a criação de conteúdo. As ferramentas integradas Draw.io, Excalidraw e Mermaid fornecem capacidades robustas de diagramas.
+
+      Oferece gestão de permissões, atribuindo acesso através de grupos de utilizadores para segurança de conteúdo. As páginas podem ser partilhadas publicamente através de links para acesso externo. Os comentários melhoram a comunicação e feedback, enquanto o histórico de páginas rastreia alterações. São suportadas funcionalidades como navegação aninhada, pesquisa rápida, anexos de ficheiros e importação/exportação Markdown/HTML. A colaboração e flexibilidade da ferramenta oferecem uma solução moderna de documentação.
+
+      **Funcionalidades Principais:**
+      - Edição colaborativa em tempo real para múltiplos utilizadores
+      - Espaços para organizar páginas por equipa, projeto ou departamento
+      - Gestão de permissões com controlo de acesso por grupos de utilizadores
+      - Editor de texto rico com atalhos Markdown
+      - Ferramentas de diagramas integradas Draw.io, Excalidraw, Mermaid
+      - Partilha pública de páginas através de links
+      - Comentários de página para comunicação e feedback
+      - Histórico de páginas, navegação aninhada, pesquisa e anexos de ficheiros
+
+      **Saber Mais:**
+      - [Website Oficial Docmost](https://docmost.com/)
+      - [Docmost GitHub](https://github.com/docmost/docmost)
+    zh_cn: |
+      Docmost 是一款自托管的协作式 wiki 和文档管理工具，专为实时协作设计，允许多用户同时编辑同一页面而不相互覆盖。其直观的界面适合团队管理知识库、项目文档或 wiki，提供高效的知识创建与分享体验。
+
+      该工具的核心功能包括实时协作编辑和空间组织。它支持多人实时编辑页面，确保无缝协作，并通过‘空间’功能按团队、项目或部门组织页面，每一空间拥有独立权限设置。富文本编辑器支持 Markdown 快捷方式，简化内容创作。内置 Draw.io、Excalidraw 和 Mermaid 工具，提供强大的图表功能。
+
+      它提供权限管理，通过用户组统一分配访问权限，确保内容安全。页面支持公开分享，允许通过链接与外部用户共享。评论功能促进沟通与反馈，页面历史记录跟踪更改。支持嵌套导航、快速搜索、文件附件以及 Markdown 和 HTML 格式的导入导出。该工具以协作性和灵活性为核心，提供现代化的文档管理解决方案。
+
+      **主要功能：**
+      - 实时协作编辑，支持多人同时编辑
+      - 空间功能，按团队、项目或部门组织页面
+      - 权限管理，通过用户组控制访问
+      - 富文本编辑器，支持 Markdown 快捷方式
+      - 内置 Draw.io、Excalidraw、Mermaid 图表工具
+      - 公开分享页面，通过链接访问
+      - 页面评论，促进沟通与反馈
+      - 页面历史、嵌套导航、搜索和文件附件
+
+      **了解更多：**
+      - [Docmost 官方网站](https://docmost.com/)
+      - [Docmost GitHub](https://github.com/docmost/docmost)
+    fr_fr: |
+      Docmost est un outil de wiki et de documentation collaboratif auto-hébergé conçu pour la collaboration en temps réel, permettant à plusieurs utilisateurs de modifier la même page simultanément sans conflits. Son interface intuitive est idéale pour les équipes gérant des bases de connaissances, de la documentation de projet ou des wikis, offrant une expérience efficace de création et de partage de connaissances.
+
+      Les fonctionnalités principales de l'outil incluent l'édition collaborative en temps réel et l'organisation d'espaces. Il prend en charge plusieurs utilisateurs éditant des pages en temps réel pour une collaboration transparente et organise les pages en 'espaces' pour les équipes, projets ou départements, chacun avec des paramètres de permissions indépendants. Un éditeur de texte riche avec des raccourcis Markdown simplifie la création de contenu. Les outils intégrés Draw.io, Excalidraw et Mermaid fournissent des capacités de diagrammes robustes.
+
+      Il offre la gestion des permissions, attribuant l'accès via les groupes d'utilisateurs pour la sécurité du contenu. Les pages peuvent être partagées publiquement via des liens pour l'accès externe. Les commentaires améliorent la communication et les retours, tandis que l'historique des pages suit les modifications. Des fonctionnalités comme la navigation imbriquée, la recherche rapide, les pièces jointes et l'import/export Markdown/HTML sont prises en charge. La collaboration et la flexibilité de l'outil offrent une solution de documentation moderne.
+
+      **Fonctionnalités Principales :**
+      - Édition collaborative en temps réel pour plusieurs utilisateurs
+      - Espaces pour organiser les pages par équipe, projet ou département
+      - Gestion des permissions avec contrôle d'accès par groupe d'utilisateurs
+      - Éditeur de texte riche avec raccourcis Markdown
+      - Outils de diagrammes intégrés Draw.io, Excalidraw, Mermaid
+      - Partage public de pages via liens
+      - Commentaires de page pour communication et retours
+      - Historique des pages, navigation imbriquée, recherche et pièces jointes
+
+      **En Savoir Plus :**
+      - [Site Officiel Docmost](https://docmost.com/)
+      - [Docmost GitHub](https://github.com/docmost/docmost)
+    de_de: |
+      Docmost ist ein selbst-gehostetes kollaboratives Wiki- und Dokumentations-Tool, das für Echtzeit-Zusammenarbeit entwickelt wurde und es mehreren Benutzern ermöglicht, dieselbe Seite gleichzeitig ohne Konflikte zu bearbeiten. Seine intuitive Oberfläche ist ideal für Teams, die Wissensbasen, Projektdokumentation oder Wikis verwalten, und bietet eine effiziente Erfahrung bei der Wissenserstellung und -weitergabe.
+
+      Die Kernfunktionen des Tools umfassen kollaborative Echtzeitbearbeitung und Raumorganisation. Es unterstützt mehrere Benutzer, die Seiten in Echtzeit für nahtlose Zusammenarbeit bearbeiten, und organisiert Seiten in 'Räume' für Teams, Projekte oder Abteilungen, jeweils mit unabhängigen Berechtigungseinstellungen. Ein Rich-Text-Editor mit Markdown-Shortcuts vereinfacht die Inhaltserstellung. Integrierte Draw.io-, Excalidraw- und Mermaid-Tools bieten robuste Diagrammfunktionen.
+
+      Es bietet Berechtigungsverwaltung durch Zuweisung von Zugriff über Benutzergruppen für Inhaltssicherheit. Seiten können öffentlich über Links für externen Zugriff geteilt werden. Kommentare verbessern Kommunikation und Feedback, während Seitenverlauf Änderungen verfolgt. Funktionen wie verschachtelte Navigation, Schnellsuche, Dateianhänge und Markdown/HTML-Import/Export werden unterstützt. Die Zusammenarbeit und Flexibilität des Tools liefern eine moderne Dokumentationslösung.
+
+      **Hauptmerkmale:**
+      - Kollaborative Echtzeitbearbeitung für mehrere Benutzer
+      - Räume zur Seitenorganisation nach Team, Projekt oder Abteilung
+      - Berechtigungsverwaltung mit Benutzergruppenns-Zugriffskontrolle
+      - Rich-Text-Editor mit Markdown-Shortcuts
+      - Integrierte Draw.io-, Excalidraw-, Mermaid-Diagramm-Tools
+      - Öffentliches Seitenteilen über Links
+      - Seitenkommentare für Kommunikation und Feedback
+      - Seitenverlauf, verschachtelte Navigation, Suche und Dateianhänge
+
+      **Mehr Erfahren:**
+      - [Docmost Offizielle Website](https://docmost.com/)
+      - [Docmost GitHub](https://github.com/docmost/docmost)
+    it_it: |
+      Docmost è uno strumento collaborativo di wiki e documentazione self-hosted progettato per la collaborazione in tempo reale, che consente a più utenti di modificare la stessa pagina simultaneamente senza conflitti. La sua interfaccia intuitiva è ideale per team che gestiscono basi di conoscenze, documentazione di progetti o wiki, offrendo un'esperienza efficiente di creazione e condivisione della conoscenza.
+
+      Le funzionalità principali dello strumento includono l'editing collaborativo in tempo reale e l'organizzazione degli spazi. Supporta più utenti che modificano le pagine in tempo reale per una collaborazione senza interruzioni e organizza le pagine in 'spazi' per team, progetti o dipartimenti, ciascuno con impostazioni di permessi indipendenti. Un editor di testo ricco con scorciatoie Markdown semplifica la creazione di contenuti. Gli strumenti integrati Draw.io, Excalidraw e Mermaid forniscono robuste capacità di diagrammi.
+
+      Offre gestione dei permessi, assegnando l'accesso tramite gruppi di utenti per la sicurezza dei contenuti. Le pagine possono essere condivise pubblicamente tramite link per l'accesso esterno. I commenti migliorano la comunicazione e il feedback, mentre la cronologia delle pagine traccia le modifiche. Sono supportate funzionalità come navigazione nidificata, ricerca rapida, allegati di file e importazione/esportazione Markdown/HTML. La collaborazione e flessibilità dello strumento offrono una soluzione di documentazione moderna.
+
+      **Caratteristiche Principali:**
+      - Editing collaborativo in tempo reale per più utenti
+      - Spazi per organizzare pagine per team, progetto o dipartimento
+      - Gestione permessi con controllo accesso gruppi utenti
+      - Editor di testo ricco con scorciatoie Markdown
+      - Strumenti di diagrammi integrati Draw.io, Excalidraw, Mermaid
+      - Condivisione pubblica pagine tramite link
+      - Commenti pagina per comunicazione e feedback
+      - Cronologia pagine, navigazione nidificata, ricerca e allegati file
+
+      **Scopri di Più:**
+      - [Sito Ufficiale Docmost](https://docmost.com/)
+      - [Docmost GitHub](https://github.com/docmost/docmost)
+    ru_ru: |
+      Docmost — это самохостинговый инструмент для совместной работы с вики и документацией, разработанный для совместной работы в реальном времени, позволяющий нескольким пользователям одновременно редактировать одну и ту же страницу без конфликтов. Его интуитивный интерфейс идеален для команд, управляющих базами знаний, проектной документацией или вики, предлагая эффективный опыт создания и обмена знаниями.
+
+      Основные функции инструмента включают совместное редактирование в реальном времени и организацию пространств. Он поддерживает нескольких пользователей, редактирующих страницы в реальном времени для бесшовной совместной работы, и организует страницы в 'пространства' для команд, проектов или отделов, каждое с независимыми настройками разрешений. Редактор форматированного текста с ярлыками Markdown упрощает создание контента. Встроенные инструменты Draw.io, Excalidraw и Mermaid обеспечивают надежные возможности создания диаграмм.
+
+      Предлагает управление разрешениями, назначая доступ через группы пользователей для безопасности контента. Страницы могут быть публично опубликованы через ссылки для внешнего доступа. Комментарии улучшают коммуникацию и обратную связь, а история страниц отслеживает изменения. Поддерживаются функции, такие как вложенная навигация, быстрый поиск, вложения файлов и импорт/экспорт Markdown/HTML. Совместная работа и гибкость инструмента обеспечивают современное решение для документации.
+
+      **Ключевые Особенности:**
+      - Совместное редактирование в реальном времени для нескольких пользователей
+      - Пространства для организации страниц по команде, проекту или отделу
+      - Управление разрешениями с контролем доступа групп пользователей
+      - Редактор форматированного текста с ярлыками Markdown
+      - Встроенные инструменты диаграмм Draw.io, Excalidraw, Mermaid
+      - Публичная публикация страниц через ссылки
+      - Комментарии страниц для коммуникации и обратной связи
+      - История страниц, вложенная навигация, поиск и вложения файлов
+
+      **Узнать Больше:**
+      - [Официальный Сайт Docmost](https://docmost.com/)
+      - [Docmost GitHub](https://github.com/docmost/docmost)
+    ja_jp: |
+      Docmostは、リアルタイムコラボレーション用に設計されたセルフホスト型のコラボレーションwikiおよびドキュメントツールで、複数のユーザーが競合することなく同じページを同時に編集できます。その直感的なインターフェースは、ナレッジベース、プロジェクトドキュメント、またはwikiを管理するチームに最適で、効率的な知識作成と共有体験を提供します。
+
+      このツールの中核機能には、リアルタイムコラボレーション編集とスペース組織化が含まれます。複数のユーザーがリアルタイムでページを編集してシームレスなコラボレーションを実現し、チーム、プロジェクト、または部門ごとにページを「スペース」に整理し、それぞれが独立した権限設定を持ちます。Markdownショートカット付きのリッチテキストエディターがコンテンツ作成を簡素化します。内蔵のDraw.io、Excalidraw、Mermaidツールが堅牢な図表作成機能を提供します。
+
+      コンテンツセキュリティのためユーザーグループを介してアクセスを割り当てる権限管理を提供します。ページは外部アクセス用にリンク経由で公開共有できます。コメントがコミュニケーションとフィードバックを向上させ、ページ履歴が変更を追跡します。ネストされたナビゲーション、クイック検索、ファイル添付、Markdown/HTMLインポート/エクスポートなどの機能がサポートされています。このツールのコラボレーションと柔軟性が現代的なドキュメントソリューションを提供します。
+
+      **主な機能：**
+      - 複数ユーザー向けリアルタイムコラボレーション編集
+      - チーム、プロジェクト、部門別ページ整理用スペース
+      - ユーザーグループアクセス制御による権限管理
+      - Markdownショートカット付きリッチテキストエディター
+      - 内蔵Draw.io、Excalidraw、Mermaid図表ツール
+      - リンク経由での公開ページ共有
+      - コミュニケーションとフィードバック用ページコメント
+      - ページ履歴、ネストナビゲーション、検索、ファイル添付
+
+      **詳細はこちら：**
+      - [Docmost公式ウェブサイト](https://docmost.com/)
+      - [Docmost GitHub](https://github.com/docmost/docmost)
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Docmost/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Docmost/screenshot-1.png
@@ -586,9 +842,13 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Docmost/screenshot-8.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Docmost/screenshot-9.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Docmost/screenshot-10.png
-  thumbnail: ''
+  thumbnail: ""
   scheme: http
-  port_map: '3000'
+  port_map: "3000"
   index: /
   title:
     en_US: Docmost
+    en_us: Docmost
+
+x-roqueos:
+  portaCompartilhada: true

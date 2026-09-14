@@ -41,7 +41,7 @@ services:
       ports:
         - container: '9117'
           description:
-            en_us: ''
+            en_us: "Web interface for Jackett"
       volumes:
         - container: /config
           description:

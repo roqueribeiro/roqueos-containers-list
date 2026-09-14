@@ -21,9 +21,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve | Serviço |
-| ----- | --------- | --------- | -------------- | ------- |
-| 58000 | 8080      | tcp       | —              | albyhub |
+| Host  | Container | Protocolo | Para que serve               | Serviço |
+| ----- | --------- | --------- | ---------------------------- | ------- |
+| 58000 | 8080      | tcp       | Web interface for Alby Hub ✨ | albyhub |
 
 
 ## Volumes

@@ -10,10 +10,10 @@ services:
         reservations:
           memory: 128M
     restart: unless-stopped
-    user: '1000:1000'
+    user: "1000:1000"
     ports:
       - target: 8080
-        published: '15580'
+        published: "15580"
         protocol: tcp
     volumes:
       - type: bind
@@ -26,7 +26,7 @@ services:
       ENABLE_IOS_STANDALONE: true
     x-casaos:
       ports:
-        - container: '8080'
+        - container: "8080"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -43,6 +43,14 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP порт WebUI
             tr_TR: WebUI HTTP Portu
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP порт WebUI
+            ja_jp: WebUI HTTPポート
       volumes:
         - container: /app/.user
           description:
@@ -61,6 +69,14 @@ services:
             pt_PT: Diretório de Dados do Utilizador BeaverHabitTracker
             ru_RU: Каталог пользовательских данных BeaverHabitTracker
             tr_TR: BeaverHabitTracker Kullanıcı Veri Dizini
+            en_us: BeaverHabitTracker User Data Directory
+            pt_br: Diretório de Dados do Utilizador BeaverHabitTracker
+            zh_cn: BeaverHabitTracker用户数据目录
+            fr_fr: Répertoire des Données Utilisateur BeaverHabitTracker
+            de_de: BeaverHabitTracker Benutzerdatenverzeichnis
+            it_it: Directory Dati Utente BeaverHabitTracker
+            ru_ru: Каталог пользовательских данных BeaverHabitTracker
+            ja_jp: BeaverHabitTrackerユーザーデータディレクトリ
       envs:
         - container: HABITS_STORAGE
           description:
@@ -79,6 +95,14 @@ services:
             pt_PT: Define o tipo de armazenamento para hábitos
             ru_RU: Устанавливает тип хранения для привычек
             tr_TR: Alışkanlıklar için depolama türünü ayarlar
+            en_us: Sets the storage type for habits
+            pt_br: Define o tipo de armazenamento para hábitos
+            zh_cn: 设置习惯的存储类型
+            fr_fr: Définit le type de stockage pour les habitudes
+            de_de: Legt den Speichertyp für Gewohnheiten fest
+            it_it: Imposta il tipo di archiviazione per le abitudini
+            ru_ru: Устанавливает тип хранения для привычек
+            ja_jp: 習慣のストレージタイプを設定
         - container: TRUSTED_LOCAL_EMAIL
           description:
             en_US: Sets the trusted local email
@@ -96,6 +120,14 @@ services:
             pt_PT: Define o email local confiável
             ru_RU: Устанавливает доверенный локальный email
             tr_TR: Güvenilen yerel e-postayı ayarlar
+            en_us: Sets the trusted local email
+            pt_br: Define o email local confiável
+            zh_cn: 设置受信任的本地邮箱
+            fr_fr: Définit l'email local de confiance
+            de_de: Legt die vertrauenswürdige lokale E-Mail fest
+            it_it: Imposta l'email locale affidabile
+            ru_ru: Устанавливает доверенный локальный email
+            ja_jp: 信頼できるローカルメールを設定
         - container: INDEX_HABIT_DATE_COLUMNS
           description:
             en_US: Customize the displayed dates for the index page
@@ -113,6 +145,14 @@ services:
             pt_PT: Personaliza as datas exibidas para a página índice
             ru_RU: Настройка отображаемых дат для индексной страницы
             tr_TR: Ana sayfa için görüntülenen tarihleri özelleştir
+            en_us: Customize the displayed dates for the index page
+            pt_br: Personaliza as datas exibidas para a página índice
+            zh_cn: 自定义首页显示的日期
+            fr_fr: Personnalise les dates affichées pour la page d'index
+            de_de: Passt die angezeigten Daten für die Indexseite an
+            it_it: Personalizza le date visualizzate per la pagina indice
+            ru_ru: Настройка отображаемых дат для индексной страницы
+            ja_jp: インデックスページに表示される日付をカスタマイズ
         - container: ENABLE_IOS_STANDALONE
           description:
             en_US: Enables iOS standalone mode
@@ -130,6 +170,14 @@ services:
             pt_PT: Ativa o modo independente iOS
             ru_RU: Включает автономный режим iOS
             tr_TR: iOS bağımsız modunu etkinleştirir
+            en_us: Enables iOS standalone mode
+            pt_br: Ativa o modo independente iOS
+            zh_cn: 启用iOS独立模式
+            fr_fr: Active le mode autonome iOS
+            de_de: Aktiviert den iOS Standalone-Modus
+            it_it: Abilita la modalità standalone iOS
+            ru_ru: Включает автономный режим iOS
+            ja_jp: iOS独立モードを有効にする
 x-casaos:
   architectures:
     - amd64
@@ -154,6 +202,14 @@ x-casaos:
     pt_PT: Uma ferramenta de rastreamento de hábitos auto-hospedada e sem objetivos.
     ru_RU: Самостоятельно размещаемый инструмент отслеживания привычек без целей.
     tr_TR: Kendi kendine barındırılan, hedefsiz alışkanlık takip aracı.
+    en_us: A self-hosted, goal-free habit tracking tool.
+    pt_br: Uma ferramenta de rastreamento de hábitos auto-hospedada e sem objetivos.
+    zh_cn: 一款自托管的无目标习惯跟踪工具。
+    fr_fr: Un outil de suivi d'habitudes auto-hébergé et sans objectifs.
+    de_de: Ein selbst gehostetes, zielfreies Gewohnheits-Tracking-Tool.
+    it_it: Uno strumento di tracciamento delle abitudini self-hosted e senza obiettivi.
+    ru_ru: Самостоятельно размещаемый инструмент отслеживания привычек без целей.
+    ja_jp: セルフホスト型のゴールフリー習慣追跡ツール。
   description:
     en_US: |
       Beaver Habit Tracker is a self-hosted habit tracking tool designed for users who want to effortlessly monitor daily behaviors without the stress of goal-setting. Its intuitive Web interface offers a pressure-free tracking experience, ideal for those focused on behavior observation and personal growth.
@@ -410,14 +466,151 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Beaver Habit Tracker Resmi Web Sitesi](https://beaverhabits.com/)
       - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
+    en_us: |
+      Beaver Habit Tracker is a self-hosted habit tracking tool designed for users who want to effortlessly monitor daily behaviors without the stress of goal-setting. Its intuitive Web interface offers a pressure-free tracking experience, ideal for those focused on behavior observation and personal growth.
+
+      The tool's core features include goal-free habit tracking and a minimalist interface. It allows users to log multiple habits easily, without focusing on streaks or targets, and provides simple visualizations to understand behavior patterns. Users can add daily notes to record specific activities or reflections, with a smooth, low-effort interface.
+
+      It uses a self-hosted approach, ensuring data privacy and full control, with a lightweight, efficient design requiring minimal server resources. Users can manually reorder habits for an optimized experience. The tool's stress-free observation and intuitive operation help users gradually improve habits, delivering a modern habit management solution.
+
+      **Key Features:**
+      - Goal-free habit tracking focused on awareness, not achievement
+      - Clean, minimalist interface for effortless daily logging
+      - Lightweight and efficient, requiring minimal server resources
+      - Simple visualizations to understand behavior patterns
+      - Daily notes for recording activities or reflections
+
+      **Learn More:**
+      - [Beaver Habit Tracker Official Website](https://beaverhabits.com/)
+      - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
+    pt_br: |
+      O Beaver Habit Tracker é uma ferramenta de rastreamento de hábitos auto-hospedada concebida para utilizadores que querem monitorizar facilmente comportamentos diários sem o stress de definir objetivos. A sua interface Web intuitiva oferece uma experiência de rastreamento sem pressão, ideal para aqueles focados na observação de comportamento e crescimento pessoal.
+
+      As características principais da ferramenta incluem rastreamento de hábitos sem objetivos e uma interface minimalista. Permite aos utilizadores registar facilmente múltiplos hábitos, sem focar em sequências ou metas, e fornece visualizações simples para compreender padrões de comportamento. Os utilizadores podem adicionar notas diárias para registar atividades específicas ou reflexões, com uma interface suave e de baixo esforço.
+
+      Utiliza uma abordagem auto-hospedada, garantindo privacidade de dados e controlo total, com um design leve e eficiente que requer recursos mínimos do servidor. Os utilizadores podem reordenar manualmente os hábitos para uma experiência otimizada. A observação sem stress e operação intuitiva da ferramenta ajudam os utilizadores a melhorar gradualmente os hábitos, fornecendo uma solução moderna de gestão de hábitos.
+
+      **Características Principais:**
+      - Rastreamento de hábitos sem objetivos focado na consciência, não na conquista
+      - Interface limpa e minimalista para registo diário sem esforço
+      - Leve e eficiente, requer recursos mínimos do servidor
+      - Visualizações simples para compreender padrões de comportamento
+      - Notas diárias para registar atividades ou reflexões
+
+      **Saiba Mais:**
+      - [Site Oficial Beaver Habit Tracker](https://beaverhabits.com/)
+      - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
+    zh_cn: |
+      Beaver Habit Tracker 是一款自托管的习惯跟踪工具，专为希望轻松记录日常行为、避免目标压力的用户设计。其直观的 Web 界面提供无压力的跟踪体验，适合注重行为观察和个人成长的用户。
+
+      该工具的核心功能包括无目标的习惯跟踪和简洁的界面设计。它允许用户轻松记录多种习惯，无需关注连胜或目标，通过简单的可视化图表了解行为模式。用户可添加每日笔记，记录具体活动或感受，界面操作流畅，降低记录负担。
+
+      它采用自托管方式，确保数据隐私和完全控制，运行轻量高效，仅需最少服务器资源。用户可手动重新排序习惯，优化管理体验。该工具以无压力的观察方式和直观操作，帮助用户逐步改善生活习惯，提供现代化的习惯管理解决方案。
+
+      **主要特性：**
+      - 专注于意识而非成就的无目标习惯追踪
+      - 干净、极简的界面，轻松进行日常记录
+      - 轻量级高效，需要最少的服务器资源
+      - 简单的可视化来理解行为模式
+      - 每日笔记，记录活动或感受
+
+      **了解更多：**
+      - [Beaver Habit Tracker 官方网站](https://beaverhabits.com/)
+      - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
+    fr_fr: |
+      Beaver Habit Tracker est un outil de suivi d'habitudes auto-hébergé conçu pour les utilisateurs qui souhaitent surveiller sans effort les comportements quotidiens sans le stress de la fixation d'objectifs. Son interface Web intuitive offre une expérience de suivi sans pression, idéale pour ceux qui se concentrent sur l'observation du comportement et la croissance personnelle.
+
+      Les caractéristiques principales de l'outil incluent le suivi d'habitudes sans objectifs et une interface minimaliste. Il permet aux utilisateurs d'enregistrer facilement plusieurs habitudes, sans se concentrer sur les séries ou les objectifs, et fournit des visualisations simples pour comprendre les modèles de comportement. Les utilisateurs peuvent ajouter des notes quotidiennes pour enregistrer des activités spécifiques ou des réflexions, avec une interface fluide et à faible effort.
+
+      Il utilise une approche auto-hébergée, garantissant la confidentialité des données et un contrôle complet, avec un design léger et efficace nécessitant des ressources serveur minimales. Les utilisateurs peuvent réorganiser manuellement les habitudes pour une expérience optimisée. L'observation sans stress et le fonctionnement intuitif de l'outil aident les utilisateurs à améliorer progressivement les habitudes, offrant une solution moderne de gestion des habitudes.
+
+      **Caractéristiques Clés :**
+      - Suivi d'habitudes sans objectifs axé sur la conscience, pas sur la réalisation
+      - Interface propre et minimaliste pour une journalisation quotidienne sans effort
+      - Léger et efficace, nécessitant des ressources serveur minimales
+      - Visualisations simples pour comprendre les modèles de comportement
+      - Notes quotidiennes pour enregistrer des activités ou des réflexions
+
+      **En Savoir Plus :**
+      - [Site Officiel Beaver Habit Tracker](https://beaverhabits.com/)
+      - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
+    de_de: |
+      Beaver Habit Tracker ist ein selbst gehostetes Gewohnheits-Tracking-Tool, das für Benutzer entwickelt wurde, die täglich Verhaltensweisen mühelos überwachen möchten, ohne den Stress der Zielsetzung. Seine intuitive Web-Oberfläche bietet eine druckfreie Tracking-Erfahrung, ideal für diejenigen, die sich auf Verhaltensbeobachtung und persönliches Wachstum konzentrieren.
+
+      Die Kernfunktionen des Tools umfassen zielfreies Gewohnheits-Tracking und eine minimalistische Oberfläche. Es ermöglicht Benutzern, mehrere Gewohnheiten einfach zu protokollieren, ohne sich auf Serien oder Ziele zu konzentrieren, und bietet einfache Visualisierungen, um Verhaltensmuster zu verstehen. Benutzer können tägliche Notizen hinzufügen, um spezifische Aktivitäten oder Reflexionen zu erfassen, mit einer glatten, geringaufwändigen Oberfläche.
+
+      Es verwendet einen selbst gehosteten Ansatz, der Datenschutz und vollständige Kontrolle gewährleistet, mit einem leichten, effizienten Design, das minimale Serverressourcen erfordert. Benutzer können Gewohnheiten manuell neu ordnen für eine optimierte Erfahrung. Die stressfreie Beobachtung und intuitive Bedienung des Tools helfen Benutzern, Gewohnheiten schrittweise zu verbessern und eine moderne Gewohnheitsmanagement-Lösung zu liefern.
+
+      **Hauptmerkmale:**
+      - Zielfreies Gewohnheits-Tracking fokussiert auf Bewusstsein, nicht auf Leistung
+      - Saubere, minimalistische Oberfläche für müheloses tägliches Protokollieren
+      - Leicht und effizient, erfordert minimale Serverressourcen
+      - Einfache Visualisierungen zum Verstehen von Verhaltensmustern
+      - Tägliche Notizen zur Aufzeichnung von Aktivitäten oder Reflexionen
+
+      **Mehr Erfahren:**
+      - [Beaver Habit Tracker Offizielle Website](https://beaverhabits.com/)
+      - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
+    it_it: |
+      Beaver Habit Tracker è uno strumento di tracciamento delle abitudini self-hosted progettato per utenti che vogliono monitorare senza sforzo i comportamenti quotidiani senza lo stress di impostare obiettivi. La sua interfaccia Web intuitiva offre un'esperienza di tracciamento senza pressione, ideale per coloro che si concentrano sull'osservazione del comportamento e sulla crescita personale.
+
+      Le caratteristiche principali dello strumento includono il tracciamento delle abitudini senza obiettivi e un'interfaccia minimalista. Permette agli utenti di registrare facilmente più abitudini, senza concentrarsi su serie o obiettivi, e fornisce visualizzazioni semplici per comprendere i modelli comportamentali. Gli utenti possono aggiungere note quotidiane per registrare attività specifiche o riflessioni, con un'interfaccia fluida e a basso sforzo.
+
+      Utilizza un approccio self-hosted, garantendo privacy dei dati e controllo completo, con un design leggero ed efficiente che richiede risorse server minime. Gli utenti possono riordinare manualmente le abitudini per un'esperienza ottimizzata. L'osservazione senza stress e l'operazione intuitiva dello strumento aiutano gli utenti a migliorare gradualmente le abitudini, fornendo una soluzione moderna di gestione delle abitudini.
+
+      **Caratteristiche Principali:**
+      - Tracciamento delle abitudini senza obiettivi focalizzato sulla consapevolezza, non sul risultato
+      - Interfaccia pulita e minimalista per la registrazione quotidiana senza sforzo
+      - Leggero ed efficiente, richiede risorse server minime
+      - Visualizzazioni semplici per comprendere i modelli comportamentali
+      - Note quotidiane per registrare attività o riflessioni
+
+      **Ulteriori Informazioni:**
+      - [Sito Ufficiale Beaver Habit Tracker](https://beaverhabits.com/)
+      - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
+    ru_ru: |
+      Beaver Habit Tracker — это самостоятельно размещаемый инструмент отслеживания привычек, предназначенный для пользователей, которые хотят легко контролировать ежедневное поведение без стресса постановки целей. Его интуитивный веб-интерфейс предлагает опыт отслеживания без давления, идеальный для тех, кто сосредоточен на наблюдении за поведением и личностном росте.
+
+      Основные функции инструмента включают отслеживание привычек без целей и минималистичный интерфейс. Он позволяет пользователям легко регистрировать несколько привычек, не сосредотачиваясь на сериях или целях, и предоставляет простые визуализации для понимания поведенческих паттернов. Пользователи могут добавлять ежедневные заметки для записи конкретных действий или размышлений, с гладким, малоусильным интерфейсом.
+
+      Он использует самостоятельно размещаемый подход, обеспечивающий конфиденциальность данных и полный контроль, с легким, эффективным дизайном, требующим минимальных серверных ресурсов. Пользователи могут вручную переупорядочивать привычки для оптимизированного опыта. Наблюдение без стресса и интуитивная работа инструмента помогают пользователям постепенно улучшать привычки, предоставляя современное решение управления привычками.
+
+      **Ключевые Особенности:**
+      - Отслеживание привычек без целей, сосредоточенное на осознанности, а не на достижении
+      - Чистый, минималистичный интерфейс для легкого ежедневного ведения записей
+      - Легкий и эффективный, требует минимальных серверных ресурсов
+      - Простые визуализации для понимания поведенческих паттернов
+      - Ежедневные заметки для записи действий или размышлений
+
+      **Узнать Больше:**
+      - [Официальный Сайт Beaver Habit Tracker](https://beaverhabits.com/)
+      - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
+    ja_jp: |
+      Beaver Habit Trackerは、目標設定のストレスなしに日常行動を簡単に監視したいユーザー向けに設計されたセルフホスト型の習慣追跡ツールです。直感的なWebインターフェースはプレッシャーフリーな追跡体験を提供し、行動観察と個人成長に焦点を当てた人に最適です。
+
+      このツールのコア機能には、ゴールフリーな習慣追跡とミニマリストなインターフェースが含まれます。ユーザーは連続記録や目標に焦点を当てることなく、複数の習慣を簡単にログでき、行動パターンを理解するためのシンプルな視覚化を提供します。ユーザーは特定の活動や反省を記録するために日記を追加でき、滑らかで低負荷なインターフェースを備えています。
+
+      セルフホスト型アプローチを使用し、データプライバシーと完全な制御を保証し、最小限のサーバーリソースを必要とする軽量で効率的な設計です。ユーザーは最適化された体験のために習慣を手動で並べ替えることができます。このツールのストレスフリーな観察と直感的な操作により、ユーザーは徐々に習慣を改善し、現代的な習慣管理ソリューションを提供します。
+
+      **主要機能：**
+      - 達成ではなく意識に焦点を当てたゴールフリー習慣追跡
+      - 簡単な日常ログのためのクリーンでミニマリストなインターフェース
+      - 軽量で効率的、最小限のサーバーリソースを要求
+      - 行動パターンを理解するためのシンプルな視覚化
+      - 活動や反省を記録するための日記
+
+      **詳細情報：**
+      - [Beaver Habit Tracker公式ウェブサイト](https://beaverhabits.com/)
+      - [Beaver Habit Tracker GitHub](https://github.com/daya0576/beaverhabits)
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/BeaverHabitTracker/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/BeaverHabitTracker/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/BeaverHabitTracker/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/BeaverHabitTracker/screenshot-3.png
-  thumbnail: ''
+  thumbnail: ""
   scheme: http
-  port_map: '15580'
+  port_map: "15580"
   index: /
   title:
     en_US: BeaverHabitTracker
+    en_us: BeaverHabitTracker

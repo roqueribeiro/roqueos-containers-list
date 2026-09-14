@@ -14,9 +14,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 3306 | 3306      | tcp       | —              | mariadb |
+| Host | Container | Protocolo | Para que serve          | Serviço |
+| ---- | --------- | --------- | ----------------------- | ------- |
+| 3306 | 3306      | tcp       | banco MySQL (port 3306) | mariadb |
 
 
 ## Volumes

@@ -1,29 +1,29 @@
 # Index-TTS
 
-> An Industrial-Level Controllable and Efficient Zero-Shot Text-To-Speech System
+> Um sistema de texto para fala zero-shot controlável e eficiente de nível industrial
 
 ## O que é
 
-IndexTTS2 is an advanced zero-shot text-to-speech model that innovatively achieves complete decoupling of emotional expression and speaker identity. The model supports precise speech duration control and multimodal emotion control, capable of maintaining the target timbre while accurately reproducing the specified emotional intonation.
+IndexTTS2 é um modelo avançado de texto para fala zero-shot que alcança inovadoramente o desacoplamento completo entre expressão emocional e identidade do falante. O modelo suporta controle preciso da duração da fala e controle emocional multimodal, capaz de manter o timbre alvo enquanto reproduz com precisão a entonação emocional especificada.
 
-The model employs a three-stage training paradigm and introduces GPT latent representations, ensuring excellent speech clarity and stability even under high emotional expression. Through the Qwen-based soft instruction mechanism, users can easily control the emotional characteristics of generated speech using natural language descriptions.
+O modelo emprega um paradigma de treinamento em três fases e introduz representações latentes GPT, garantindo excelente clareza e estabilidade da fala mesmo sob alta expressão emocional. Através do mecanismo de instrução suave baseado em Qwen, os usuários podem facilmente controlar as características emocionais da fala gerada usando descrições em linguagem natural.
 
-In multi-dataset evaluations, IndexTTS2 surpasses existing zero-shot TTS models in key metrics such as word error rate, speaker similarity, and emotion fidelity, providing industry-leading speech synthesis quality.
+Em avaliações multi-conjuntos de dados, IndexTTS2 supera os modelos TTS zero-shot existentes em métricas-chave como taxa de erro de palavras, similaridade do falante e fidelidade emocional, fornecendo qualidade de síntese de fala líder da indústria.
 
-**Key Features:**
-- Zero-shot TTS capability to replicate any timbre without training
-- Independent control of emotion and timbre with multimodal emotion input
-- Precise duration control with explicit token count specification for perfect audio-video synchronization
-- Natural language-based emotion control to guide speech generation through text descriptions
+**Funcionalidades Principais:**
+- Capacidade TTS zero-shot para replicar qualquer timbre sem treinamento
+- Controle independente de emoção e timbre com entrada emocional multimodal
+- Controle preciso de duração com especificação explícita de contagem de tokens para sincronização perfeita de áudio-vídeo
+- Controle emocional baseado em linguagem natural para guiar a geração de fala através de descrições textuais
 
-**Additional Notes:**
-- Please ensure available memory > 12 GB, otherwise the application may not run properly
-- This application runs on CPU by default. This mode has low computational efficiency and will cause extremely high resource consumption and potential system instability. For optimal performance and stability, it is strongly recommended to use NVIDIA GPU to run this application
-- If you need to use NVIDIA GPU, please select "Custom Install" and enable the GPU option (supported in ZimaOS 1.5.0 and above)
-- For NVIDIA GPU usage, ≥ 8 GB VRAM is required (recommended for optimal performance)
-- For NVIDIA GPU usage, NVIDIA CUDA Toolkit version ≥ 12.8 is required
+**Notas Adicionais:**
+- Por favor, certifique-se de que a memória disponível > 12 GB, caso contrário a aplicação poderá não funcionar corretamente
+- Esta aplicação executa em CPU por padrão. Este modo tem baixa eficiência computacional e causará consumo de recursos extremamente alto e potencial instabilidade do sistema. Para desempenho e estabilidade ideais, é fortemente recomendado usar GPU NVIDIA para executar esta aplicação
+- Se você precisar usar GPU NVIDIA, selecione "Custom Install" e ative a opção GPU (suportado no ZimaOS 1.5.0 e superior)
+- Para uso de GPU NVIDIA, é necessário ≥ 8 GB de VRAM (recomendado para desempenho ideal)
+- Para uso de GPU NVIDIA, é necessário NVIDIA CUDA Toolkit versão ≥ 12.8
 
-**Learn More:**
+**Saiba Mais:**
 - [IndexTTS GitHub](https://github.com/index-tts/index-tts)
 
 
@@ -32,9 +32,9 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve  | Serviço   |
-| ----- | --------- | --------- | --------------- | --------- |
-| 17869 | 7860      | tcp       | WebUI HTTP Port | index-tts |
+| Host  | Container | Protocolo | Para que serve   | Serviço   |
+| ----- | --------- | --------- | ---------------- | --------- |
+| 17869 | 7860      | tcp       | Porta WebUI HTTP | index-tts |
 
 
 ## Volumes
@@ -53,10 +53,10 @@ _Nenhum._
 
 Depois de instalar, abra `http://<endereço-do-servidor>:17869/`.
 
-- 1. Please ensure available memory > 12 GB, otherwise the application may not run properly
-- 2. The application takes approximately 5 minutes to start, please be patient
-- 3. This application runs on CPU by default. This mode has low computational efficiency and will cause extremely high resource consumption and potential system instability. For optimal performance and stability, it is strongly recommended to use NVIDIA GPU to run this application
-- 4. If you need to use NVIDIA GPU, please select "Custom Install" and enable the GPU option (supported in ZimaOS 1.5.0 and above)
+- 1. Por favor, certifique-se de que a memória disponível > 12 GB, caso contrário a aplicação poderá não funcionar corretamente
+- 2. A aplicação leva aproximadamente 5 minutos para iniciar, por favor seja paciente
+- 3. Esta aplicação executa em CPU por padrão. Este modo tem baixa eficiência computacional e causará consumo de recursos extremamente alto e potencial instabilidade do sistema. Para desempenho e estabilidade ideais, é fortemente recomendado usar GPU NVIDIA para executar esta aplicação
+- 4. Se você precisar usar GPU NVIDIA, selecione "Custom Install" e ative a opção GPU (suportado no ZimaOS 1.5.0 e superior)
 
 ## Imagens
 

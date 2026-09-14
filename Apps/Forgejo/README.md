@@ -16,6 +16,7 @@ Arquiteturas suportadas: amd64, arm64.
 | 8094 | 3000      | tcp       | Porta HTTP WebUI / Git (mapeada para 8094 no host)       | forgejo |
 | 2222 | 22        | tcp       | Porta SSH para git push/pull (mapeada para 2222 no host) | forgejo |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

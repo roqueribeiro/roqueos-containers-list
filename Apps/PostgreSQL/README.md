@@ -16,9 +16,9 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço    |
-| ---- | --------- | --------- | -------------- | ---------- |
-| 5432 | 5432      | tcp       | —              | postgresql |
+| Host | Container | Protocolo | Para que serve               | Serviço    |
+| ---- | --------- | --------- | ---------------------------- | ---------- |
+| 5432 | 5432      | tcp       | banco PostgreSQL (port 5432) | postgresql |
 
 
 ## Volumes

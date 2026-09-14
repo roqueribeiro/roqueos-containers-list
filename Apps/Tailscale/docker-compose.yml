@@ -41,6 +41,14 @@ services:
             pt_PT: Diretório de estado Tailscale
             ru_RU: Каталог состояния Tailscale
             tr_TR: Tailscale durum dizini
+            en_us: Tailscale State Directory
+            pt_br: Diretório de estado Tailscale
+            zh_cn: Tailscale状态目录
+            fr_fr: Répertoire d'état Tailscale
+            de_de: Tailscale Zustandsverzeichnis
+            it_it: Directory di stato Tailscale
+            ru_ru: Каталог состояния Tailscale
+            ja_jp: Tailscale状態ディレクトリ
         - container: /dev/net/tun
           description:
             en_US: TUN Device for VPN
@@ -58,6 +66,14 @@ services:
             pt_PT: Dispositivo TUN para VPN
             ru_RU: TUN устройство для VPN
             tr_TR: VPN için TUN Cihazı
+            en_us: TUN Device for VPN
+            pt_br: Dispositivo TUN para VPN
+            zh_cn: VPN TUN设备
+            fr_fr: Périphérique TUN pour VPN
+            de_de: TUN-Gerät für VPN
+            it_it: Dispositivo TUN per VPN
+            ru_ru: TUN устройство для VPN
+            ja_jp: VPN用TUNデバイス
       envs:
         - container: TS_STATE_DIR
           description:
@@ -76,12 +92,20 @@ services:
             pt_PT: Caminho do diretório de estado Tailscale
             ru_RU: Путь каталога состояния Tailscale
             tr_TR: Tailscale Durum Dizini Yolu
+            en_us: Tailscale State Directory Path
+            pt_br: Caminho do diretório de estado Tailscale
+            zh_cn: Tailscale状态目录路径
+            fr_fr: Chemin du répertoire d'état Tailscale
+            de_de: Tailscale Zustandsverzeichnispfad
+            it_it: Percorso directory di stato Tailscale
+            ru_ru: Путь каталога состояния Tailscale
+            ja_jp: Tailscale状態ディレクトリパス
 x-casaos:
   architectures:
     - amd64
     - arm
     - arm64
-    - '386'
+    - "386"
   main: tailscale
   category: Network
   developer: Tailscale Inc.
@@ -102,6 +126,14 @@ x-casaos:
     pt_PT: Conecte os seus dispositivos e utilizadores numa rede privada virtual segura.
     ru_RU: Подключите ваши устройства и пользователей в собственной безопасной виртуальной частной сети.
     tr_TR: Cihazlarınızı ve kullanıcılarınızı kendi güvenli sanal özel ağınızda birbirine bağlayın.
+    en_us: Connect your devices and users together in your own secure virtual private network.
+    pt_br: Conecte os seus dispositivos e utilizadores numa rede privada virtual segura.
+    zh_cn: 在您自己的安全虚拟专用网络中连接您的设备和用户。
+    fr_fr: Connectez vos appareils et utilisateurs ensemble dans votre propre réseau privé virtuel sécurisé.
+    de_de: Verbinden Sie Ihre Geräte und Benutzer in Ihrem eigenen sicheren virtuellen privaten Netzwerk.
+    it_it: Connetti i tuoi dispositivi e utenti insieme nella tua rete privata virtuale sicura.
+    ru_ru: Подключите ваши устройства и пользователей в собственной безопасной виртуальной частной сети.
+    ja_jp: 安全な仮想プライベートネットワークでデバイスとユーザーを接続します。
   description:
     en_US: |
       A modern self-hosted networking app built on WireGuard®, providing secure, encrypted connections between devices regardless of their location. Its zero-configuration networking eliminates the need for complex firewall rules, port forwarding, or network administration, making it ideal for businesses and individuals creating efficient, secure network environments.
@@ -418,17 +450,185 @@ x-casaos:
       **Daha fazla bilgi edinin:**
       - [Tailscale Resmi Web Sitesi](https://tailscale.com)
       - [Tailscale GitHub Deposu](https://github.com/tailscale/tailscale)
+    en_us: |
+      A modern self-hosted networking app built on WireGuard®, providing secure, encrypted connections between devices regardless of their location. Its zero-configuration networking eliminates the need for complex firewall rules, port forwarding, or network administration, making it ideal for businesses and individuals creating efficient, secure network environments.
+
+      The app's core features include seamless device connectivity and robust security. It uses WireGuard® for end-to-end encryption, ensuring traffic cannot be intercepted, with private keys stored solely on user devices. Automatic NAT traversal enables connections across computers, phones, servers, and IoT devices over different network types, forming a unified private network. It also offers identity-based access control, integrating with Google, Microsoft, GitHub, or custom SSO solutions for simple authentication, replacing traditional IP-based restrictions to enhance security.
+
+      It excels in delivering secure remote access to services and infrastructure. Users can effortlessly access home servers, connect to office networks while traveling, or establish secure links between cloud services. Subnet routing allows access to entire networks, exit nodes enable secure internet browsing, and MagicDNS simplifies device discovery. These features ensure efficient, secure access to resources from any location.
+
+      It supports nearly all platforms, including Linux, Windows, macOS, iOS, Android, and various router firmwares, with flexible deployment in cloud or on-premises environments. A user-friendly Web interface provides real-time monitoring of network topology, device status, and access controls, with community documentation aiding configuration optimization. Whether setting up secure access for small teams or managing enterprise-scale networks, the app’s intuitive operation and high flexibility deliver a modern networking solution.
+
+      **Key Features:**
+      - End-to-end encryption via WireGuard®, ensuring uninterceptible traffic
+      - Zero-configuration networking, eliminating complex firewall or port forwarding setup
+      - Automatic NAT traversal for seamless device connectivity across network types
+      - Identity-based access control with SSO integration (Google, Microsoft, GitHub)
+      - Subnet routing for secure network-wide access
+      - Exit nodes for safe internet browsing
+      - MagicDNS for simplified device discovery
+
+      **Learn More:**
+      - [Tailscale Official Website](https://tailscale.com)
+      - [Tailscale GitHub Repository](https://github.com/tailscale/tailscale)
+    pt_br: |
+      Uma aplicação de rede auto-hospedada moderna construída sobre WireGuard®, fornecendo ligações seguras e encriptadas entre dispositivos independentemente da sua localização. A sua rede de configuração zero elimina a necessidade de regras complexas de firewall, redirecionamento de portas ou administração de rede, tornando-a ideal para empresas e indivíduos que criam ambientes de rede eficientes e seguros.
+
+      As funcionalidades principais da aplicação incluem conectividade de dispositivos sem interrupções e segurança robusta. Utiliza WireGuard® para encriptação ponto-a-ponto, garantindo que o tráfego não pode ser interceptado, com chaves privadas armazenadas exclusivamente nos dispositivos do utilizador. A travessia NAT automática permite ligações entre computadores, telefones, servidores e dispositivos IoT em diferentes tipos de rede, formando uma rede privada unificada. Oferece também controlo de acesso baseado em identidade, integrando-se com Google, Microsoft, GitHub ou soluções SSO personalizadas para autenticação simples, substituindo as restrições tradicionais baseadas em IP para melhorar a segurança.
+
+      Destaca-se na entrega de acesso remoto seguro a serviços e infraestrutura. Os utilizadores podem aceder facilmente a servidores domésticos, ligar-se a redes de escritório durante viagens ou estabelecer ligações seguras entre serviços de nuvem. O encaminhamento de sub-redes permite acesso a redes inteiras, os nós de saída permitem navegação segura na internet, e o MagicDNS simplifica a descoberta de dispositivos. Estas funcionalidades garantem acesso eficiente e seguro a recursos de qualquer localização.
+
+      Suporta quase todas as plataformas, incluindo Linux, Windows, macOS, iOS, Android e vários firmwares de router, com implementação flexível em ambientes de nuvem ou no local. Uma interface Web amigável fornece monitorização em tempo real da topologia de rede, estado dos dispositivos e controlos de acesso, com documentação da comunidade ajudando na otimização da configuração. Seja configurando acesso seguro para pequenas equipas ou gerindo redes à escala empresarial, a operação intuitiva e alta flexibilidade da aplicação fornecem uma solução de rede moderna.
+
+      **Características principais:**
+      - Encriptação ponto-a-ponto via WireGuard®, garantindo tráfego não interceptável
+      - Rede de configuração zero, eliminando configuração complexa de firewall ou redirecionamento de portas
+      - Travessia NAT automática para conectividade perfeita de dispositivos entre tipos de rede
+      - Controlo de acesso baseado em identidade com integração SSO (Google, Microsoft, GitHub)
+      - Encaminhamento de sub-redes para acesso seguro a toda a rede
+      - Nós de saída para navegação segura na internet
+      - MagicDNS para descoberta simplificada de dispositivos
+
+      **Saiba mais:**
+      - [Site oficial Tailscale](https://tailscale.com)
+      - [Repositório GitHub Tailscale](https://github.com/tailscale/tailscale)
+    zh_cn: |
+      一款现代化的自托管网络应用，基于 WireGuard® 协议构建，提供安全、加密的设备间连接，无论设备位于何处。其零配置网络功能无需复杂的防火墙规则、端口转发或网络管理，即可实现无缝连接，适合企业和个人打造高效、安全的网络环境。
+
+      该应用的核心功能包括无缝的设备连接和强大的安全特性。它采用 WireGuard® 协议实现端到端加密，确保流量无法被拦截，私钥始终保留在用户设备上。自动 NAT 穿透支持跨不同网络类型连接电脑、手机、服务器和物联网设备，构建统一的私有网络。它还提供基于身份的访问控制，通过 Google、Microsoft、GitHub 或自定义 SSO 解决方案进行简单认证，取代传统的 IP 地址限制，增强安全性。
+
+      它在提供安全远程访问方面表现出色。用户可轻松访问家庭服务器、旅行时连接办公网络，或在云服务间建立安全连接。子网路由功能允许访问整个网络，出口节点支持安全互联网浏览，MagicDNS 简化设备发现。这些功能确保用户无论身处何地，都能高效、安全地访问服务和基础设施。
+
+      它支持几乎所有平台，包括 Linux、Windows、macOS、iOS、Android 和多种路由器固件，灵活部署于云端或本地环境。用户友好的 Web 界面提供网络拓扑、设备状态和访问控制的实时监控，社区支持文档进一步优化配置。无论是为小型团队设置安全访问还是管理企业级网络，该应用以直观操作和高灵活性，提供现代化网络管理解决方案。
+
+      **关键功能：**
+      - 通过 WireGuard® 实现端到端加密，确保流量无法被拦截
+      - 零配置网络，无需复杂的防火墙规则、端口转发或网络管理
+      - 自动 NAT 穿透，支持跨不同网络类型连接设备
+      - 基于身份的访问控制，集成 Google、Microsoft、GitHub 或自定义 SSO 解决方案
+      - 子网路由，安全访问整个网络
+      - 出口节点，支持安全互联网浏览
+      - MagicDNS，简化设备发现
+
+      **了解更多：**
+      - [Tailscale 官方网站](https://tailscale.com)
+      - [Tailscale GitHub 仓库](https://github.com/tailscale/tailscale)
+    fr_fr: |
+      Une application de réseau auto-hébergée moderne construite sur WireGuard®, fournissant des connexions sécurisées et chiffrées entre appareils indépendamment de leur emplacement. Son réseau à configuration zéro élimine le besoin de règles de pare-feu complexes, de redirection de ports ou d'administration réseau, la rendant idéale pour les entreprises et les particuliers créant des environnements réseau efficaces et sécurisés.
+
+      Les fonctionnalités principales de l'application incluent une connectivité d'appareils transparente et une sécurité robuste. Elle utilise WireGuard® pour le chiffrement de bout en bout, garantissant que le trafic ne peut pas être intercepté, avec des clés privées stockées uniquement sur les appareils utilisateur. La traversée NAT automatique permet des connexions entre ordinateurs, téléphones, serveurs et appareils IoT sur différents types de réseau, formant un réseau privé unifié. Elle offre également un contrôle d'accès basé sur l'identité, s'intégrant avec Google, Microsoft, GitHub ou des solutions SSO personnalisées pour une authentification simple, remplaçant les restrictions traditionnelles basées sur IP pour améliorer la sécurité.
+
+      Elle excelle dans la fourniture d'accès distant sécurisé aux services et infrastructures. Les utilisateurs peuvent facilement accéder aux serveurs domestiques, se connecter aux réseaux de bureau en voyage, ou établir des liens sécurisés entre services cloud. Le routage de sous-réseau permet l'accès à des réseaux entiers, les nœuds de sortie permettent une navigation internet sécurisée, et MagicDNS simplifie la découverte d'appareils. Ces fonctionnalités garantissent un accès efficace et sécurisé aux ressources depuis n'importe quel emplacement.
+
+      Elle prend en charge presque toutes les plateformes, y compris Linux, Windows, macOS, iOS, Android et divers firmwares de routeur, avec un déploiement flexible dans des environnements cloud ou sur site. Une interface Web conviviale fournit une surveillance en temps réel de la topologie réseau, du statut des appareils et des contrôles d'accès, avec une documentation communautaire aidant à l'optimisation de la configuration. Que ce soit pour configurer un accès sécurisé pour de petites équipes ou gérer des réseaux à l'échelle entreprise, l'opération intuitive et la haute flexibilité de l'application fournissent une solution de réseau moderne.
+
+      **Fonctionnalités clés :**
+      - Chiffrement de bout en bout via WireGuard®, garantissant un trafic non interceptable
+      - Réseau à configuration zéro, éliminant la configuration complexe de pare-feu ou de redirection de ports
+      - Traversée NAT automatique pour une connectivité transparente des appareils entre les types de réseau
+      - Contrôle d'accès basé sur l'identité avec intégration SSO (Google, Microsoft, GitHub)
+      - Routage de sous-réseau pour un accès sécurisé à l'ensemble du réseau
+      - Nœuds de sortie pour une navigation internet sécurisée
+      - MagicDNS pour simplifier la découverte d'appareils
+
+      **En savoir plus :**
+      - [Site officiel Tailscale](https://tailscale.com)
+      - [Dépôt GitHub Tailscale](https://github.com/tailscale/tailscale)
+    de_de: |
+      Eine moderne selbst-gehostete Netzwerk-App, die auf WireGuard® aufbaut und sichere, verschlüsselte Verbindungen zwischen Geräten unabhängig von ihrem Standort bereitstellt. Ihr Null-Konfigurations-Netzwerk eliminiert die Notwendigkeit komplexer Firewall-Regeln, Port-Weiterleitung oder Netzwerkverwaltung und macht sie ideal für Unternehmen und Einzelpersonen, die effiziente, sichere Netzwerkumgebungen schaffen.
+
+      Die Kernfunktionen der App umfassen nahtlose Gerätekonnektivität und robuste Sicherheit. Sie verwendet WireGuard® für End-to-End-Verschlüsselung und stellt sicher, dass Datenverkehr nicht abgefangen werden kann, wobei private Schlüssel ausschließlich auf Benutzergeräten gespeichert werden. Automatische NAT-Durchquerung ermöglicht Verbindungen zwischen Computern, Telefonen, Servern und IoT-Geräten über verschiedene Netzwerktypen hinweg und bildet ein einheitliches privates Netzwerk. Sie bietet auch identitätsbasierte Zugriffskontrolle, integriert sich in Google, Microsoft, GitHub oder benutzerdefinierte SSO-Lösungen für einfache Authentifizierung und ersetzt traditionelle IP-basierte Beschränkungen zur Verbesserung der Sicherheit.
+
+      Sie zeichnet sich bei der Bereitstellung sicheren Remote-Zugriffs auf Dienste und Infrastruktur aus. Benutzer können mühelos auf Heimserver zugreifen, sich während der Reise mit Büronetzwerken verbinden oder sichere Verbindungen zwischen Cloud-Diensten herstellen. Subnetz-Routing ermöglicht Zugriff auf ganze Netzwerke, Exit-Knoten ermöglichen sicheres Internet-Browsing und MagicDNS vereinfacht die Geräteerkennung. Diese Funktionen gewährleisten effizienten, sicheren Zugriff auf Ressourcen von jedem Standort aus.
+
+      Sie unterstützt nahezu alle Plattformen, einschließlich Linux, Windows, macOS, iOS, Android und verschiedene Router-Firmwares, mit flexibler Bereitstellung in Cloud- oder On-Premises-Umgebungen. Eine benutzerfreundliche Web-Oberfläche bietet Echtzeit-Überwachung der Netzwerktopologie, Gerätestatus und Zugriffskontrollen, mit Community-Dokumentation zur Konfigurationsoptimierung. Ob beim Einrichten sicheren Zugriffs für kleine Teams oder bei der Verwaltung unternehmensweiter Netzwerke, die intuitive Bedienung und hohe Flexibilität der App liefern eine moderne Netzwerklösung.
+
+      **Hauptmerkmale:**
+      - End-to-End-Verschlüsselung über WireGuard®, gewährleistet nicht abfangbaren Datenverkehr
+      - Null-Konfigurations-Netzwerk, eliminiert komplexe Firewall- oder Port-Weiterleitungs-Einrichtung
+      - Automatische NAT-Durchquerung für nahtlose Gerätekonnektivität zwischen Netzwerktypen
+      - Identitätsbasierte Zugriffskontrolle mit SSO-Integration (Google, Microsoft, GitHub)
+      - Subnetz-Routing für sicheren netzwerkweiten Zugriff
+      - Exit-Knoten für sicheres Internet-Browsing
+      - MagicDNS zur vereinfachten Geräteerkennung
+
+      **Mehr erfahren:**
+      - [Tailscale Offizielle Website](https://tailscale.com)
+      - [Tailscale GitHub Repository](https://github.com/tailscale/tailscale)
+    it_it: |
+      Un'applicazione di rete self-hosted moderna costruita su WireGuard®, che fornisce connessioni sicure e crittografate tra dispositivi indipendentemente dalla loro posizione. La sua rete a configurazione zero elimina la necessità di regole firewall complesse, port forwarding o amministrazione di rete, rendendola ideale per aziende e individui che creano ambienti di rete efficienti e sicuri.
+
+      Le caratteristiche principali dell'app includono connettività dispositivi senza soluzione di continuità e sicurezza robusta. Utilizza WireGuard® per la crittografia end-to-end, garantendo che il traffico non possa essere intercettato, con chiavi private memorizzate esclusivamente sui dispositivi utente. Il NAT traversal automatico abilita connessioni tra computer, telefoni, server e dispositivi IoT su diversi tipi di rete, formando una rete privata unificata. Offre anche controllo dell'accesso basato sull'identità, integrandosi con Google, Microsoft, GitHub o soluzioni SSO personalizzate per un'autenticazione semplice, sostituendo le tradizionali restrizioni basate su IP per migliorare la sicurezza.
+
+      Eccelle nel fornire accesso remoto sicuro a servizi e infrastrutture. Gli utenti possono accedere facilmente ai server domestici, connettersi alle reti dell'ufficio durante i viaggi o stabilire collegamenti sicuri tra servizi cloud. Il routing delle sottoreti consente l'accesso a intere reti, i nodi di uscita abilitano la navigazione internet sicura e MagicDNS semplifica la scoperta dei dispositivi. Queste caratteristiche garantiscono un accesso efficiente e sicuro alle risorse da qualsiasi posizione.
+
+      Supporta quasi tutte le piattaforme, inclusi Linux, Windows, macOS, iOS, Android e vari firmware per router, con distribuzione flessibile in ambienti cloud o on-premises. Un'interfaccia Web user-friendly fornisce monitoraggio in tempo reale della topologia di rete, stato dei dispositivi e controlli di accesso, con documentazione della community che aiuta l'ottimizzazione della configurazione. Che si tratti di configurare accesso sicuro per piccoli team o gestire reti su scala aziendale, l'operazione intuitiva e l'alta flessibilità dell'app forniscono una soluzione di rete moderna.
+
+      **Caratteristiche principali:**
+      - Crittografia end-to-end via WireGuard®, garantendo traffico non intercettabile
+      - Rete a configurazione zero, eliminando la necessità di configurazione complessa del firewall o della port forwarding
+      - Traversata NAT automatica per connettività dispositivo senza soluzione di continuità tra diversi tipi di rete
+      - Controllo dell'accesso basato sull'identità con integrazione SSO (Google, Microsoft, GitHub)
+      - Routing delle sottoreti per accesso sicuro a tutta la rete
+      - Nodi di uscita per navigazione internet sicura
+      - MagicDNS per semplificare la scoperta dei dispositivi
+
+      **Per saperne di più:**
+      - [Sito ufficiale Tailscale](https://tailscale.com)
+      - [Repository GitHub Tailscale](https://github.com/tailscale/tailscale)
+    ru_ru: |
+      Современное самохостингое сетевое приложение, построенное на WireGuard®, обеспечивающее безопасные, зашифрованные соединения между устройствами независимо от их местоположения. Его сеть с нулевой конфигурацией устраняет необходимость в сложных правилах межсетевого экрана, переадресации портов или администрировании сети, делая его идеальным для предприятий и частных лиц, создающих эффективные, безопасные сетевые среды.
+
+      Основные функции приложения включают бесшовную связь устройств и надежную безопасность. Оно использует WireGuard® для сквозного шифрования, гарантируя, что трафик не может быть перехвачен, с приватными ключами, хранящимися исключительно на пользовательских устройствах. Автоматический обход NAT обеспечивает соединения между компьютерами, телефонами, серверами и IoT-устройствами через разные типы сетей, формируя единую частную сеть. Оно также предлагает контроль доступа на основе идентичности, интегрируясь с Google, Microsoft, GitHub или кастомными SSO-решениями для простой аутентификации, заменяя традиционные ограничения на основе IP для повышения безопасности.
+
+      Оно превосходно в обеспечении безопасного удаленного доступа к сервисам и инфраструктуре. Пользователи могут легко получать доступ к домашним серверам, подключаться к офисным сетям во время путешествий или устанавливать безопасные связи между облачными сервисами. Маршрутизация подсетей позволяет доступ к целым сетям, выходные узлы обеспечивают безопасный интернет-браузинг, а MagicDNS упрощает обнаружение устройств. Эти функции обеспечивают эффективный, безопасный доступ к ресурсам из любого местоположения.
+
+      Оно поддерживает почти все платформы, включая Linux, Windows, macOS, iOS, Android и различные прошивки маршрутизаторов, с гибким развертыванием в облачных или локальных средах. Дружественный веб-интерфейс обеспечивает мониторинг топологии сети, статуса устройств и контроля доступа в реальном времени, с документацией сообщества, помогающей в оптимизации конфигурации. Будь то настройка безопасного доступа для небольших команд или управление сетями масштаба предприятия, интуитивная работа и высокая гибкость приложения обеспечивают современное сетевое решение.
+
+      **Ключевые функции:**
+      - Сквозное шифрование через WireGuard®, обеспечивающее неперехватываемый трафик
+      - Сеть с нулевой конфигурацией, устраняющая сложную настройку межсетевого экрана или переадресации портов
+      - Автоматический обход NAT для бесшовной связи устройств между типами сетей
+      - Контроль доступа на основе идентичности с интеграцией SSO (Google, Microsoft, GitHub)
+      - Маршрутизация подсетей для безопасного доступа ко всей сети
+      - Выходные узлы для безопасного интернет-браузинга
+      - MagicDNS для упрощенного обнаружения устройств
+
+      **Узнать больше:**
+      - [Официальный сайт Tailscale](https://tailscale.com)
+      - [GitHub репозиторий Tailscale](https://github.com/tailscale/tailscale)
+    ja_jp: |
+      WireGuard®上に構築された現代的なセルフホスト型ネットワークアプリで、場所に関係なくデバイス間の安全で暗号化された接続を提供します。ゼロ設定ネットワークにより、複雑なファイアウォールルール、ポート転送、ネットワーク管理の必要がなくなり、効率的で安全なネットワーク環境を作成する企業や個人に最適です。
+
+      アプリの主な機能には、シームレスなデバイス接続と堅牢なセキュリティが含まれます。エンドツーエンドの暗号化にWireGuard®を使用し、トラフィックが傍受されないことを保証し、秘密鍵はユーザーデバイスにのみ保存されます。自動NAT通過により、異なるネットワークタイプでコンピューター、電話、サーバー、IoTデバイス間の接続が可能になり、統一されたプライベートネットワークを形成します。また、Google、Microsoft、GitHub、またはカスタムSSOソリューションと統合した単純な認証のためのアイデンティティベースのアクセス制御を提供し、従来のIPベースの制限を置き換えてセキュリティを強化します。
+
+      サービスとインフラストラクチャへの安全なリモートアクセスの提供に優れています。ユーザーは家庭サーバーに簡単にアクセスし、旅行中にオフィスネットワークに接続し、クラウドサービス間の安全なリンクを確立できます。サブネットルーティングはネットワーク全体へのアクセスを可能にし、出口ノードは安全なインターネットブラウジングを可能にし、MagicDNSはデバイス発見を簡素化します。これらの機能により、どこからでもリソースへの効率的で安全なアクセスが保証されます。
+
+      Linux、Windows、macOS、iOS、Android、さまざまなルーターファームウェアを含むほぼすべてのプラットフォームをサポートし、クラウドまたはオンプレミス環境での柔軟な展開が可能です。ユーザーフレンドリーなWebインターフェースは、ネットワークトポロジー、デバイスステータス、アクセス制御のリアルタイム監視を提供し、コミュニティドキュメントが設定最適化を支援します。小規模チームのための安全なアクセスの設定から企業規模のネットワーク管理まで、アプリの直感的な操作と高い柔軟性により、現代的なネットワークソリューションを提供します。
+
+      **主要機能:**
+      - WireGuard®によるエンドツーエンド暗号化、トラフィックが傍受されないことを保証
+      - ゼロ設定ネットワーク、複雑なファイアウォールルール、ポート転送、ネットワーク管理の必要なし
+      - 異なるネットワークタイプ間でのシームレスなデバイス接続のための自動NAT通過
+      - シンプルな認証のためのIDベースのアクセス制御、Google、Microsoft、GitHub、またはカスタムSSOソリューションとの統合
+      - サブネットルーティングによるネットワーク全体への安全なアクセス
+      - 安全なインターネットブラウジングのための出口ノード
+      - MagicDNSによるデバイス発見の簡素化
+
+      **詳細を見る:**
+      - [Tailscale公式ウェブサイト](https://tailscale.com)
+      - [Tailscale GitHubリポジトリ](https://github.com/tailscale/tailscale)
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tailscale/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Tailscale/screenshot-1.png
-  thumbnail: ''
+  thumbnail: ""
   scheme: http
-  port_map: '5252'
+  port_map: "5252"
   index: /
   title:
     en_US: Tailscale
-
+    en_us: Tailscale
 x-roqueos:
   motivo:
-    capAdd: "NET_ADMIN e NET_RAW para criar e configurar a interface de rede da VPN"
-    networkHost: "cria a interface de rede da VPN no host, e ela precisa existir no host"
+    capAdd: NET_ADMIN e NET_RAW para criar e configurar a interface de rede da VPN
+    networkHost: cria a interface de rede da VPN no host, e ela precisa existir no host

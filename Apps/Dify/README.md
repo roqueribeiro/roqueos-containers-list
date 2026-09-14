@@ -11,9 +11,9 @@ Arquiteturas suportadas: arm64, amd64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 3701 | 80        | tcp       | —              | nginx   |
+| Host | Container | Protocolo | Para que serve         | Serviço |
+| ---- | --------- | --------- | ---------------------- | ------- |
+| 3701 | 80        | tcp       | Web interface for Dify | nginx   |
 
 
 ## Volumes

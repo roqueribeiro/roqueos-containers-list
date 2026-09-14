@@ -71,3 +71,6 @@ x-casaos:
   index: /
   port_map: '5055'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

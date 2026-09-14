@@ -1,6 +1,11 @@
 name: handbrake
 services:
   handbrake:
+    x-casaos:
+      ports:
+        - container: '5800'
+          description:
+            en_us: "Web interface for handbrake"
     image: jlesage/handbrake:v25.10.1
     network_mode: bridge
     ports:
@@ -77,5 +82,6 @@ x-casaos:
   main: handbrake
 
 x-roqueos:
+  portaCompartilhada: true
   motivo:
     privileged: "acesso a /dev/dri para transcodificação por hardware"

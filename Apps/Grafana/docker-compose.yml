@@ -20,7 +20,7 @@ services:
       ports:
         - container: '3000'
           description:
-            en_us: ''
+            en_us: "Web interface for Grafana"
       volumes:
         - container: /var/lib/grafana
           description:

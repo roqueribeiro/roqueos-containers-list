@@ -1,28 +1,28 @@
 # Emby
 
-> Emby brings together your personal videos, music, photos, and live television.
+> O Emby reúne os seus vídeos pessoais, música, fotografias e televisão ao vivo.
 
 ## O que é
 
-Emby is a personal media management platform that brings home videos, music, and photos together, automatically converting and streaming to any device. An intuitive design makes it ideal for users to enjoy media content anytime, anywhere, meeting family entertainment and media management needs.
+O Emby é uma plataforma de gestão de mídia pessoal que reúne vídeos domésticos, música e fotografias, convertendo automaticamente e transmitindo para qualquer dispositivo. Um design intuitivo torna-o ideal para os utilizadores desfrutarem de conteúdo multimédia a qualquer momento, em qualquer lugar, atendendo às necessidades de entretenimento familiar e gestão de mídia.
 
-Core features include cross-device media streaming and easy access. It supports real-time conversion and streaming of personal media to any device for seamless playback. A connection service enables easy media access while away from home. Live TV functionality supports streaming, managing DVR, and accessing a library of recordings. Mobile sync delivers media to smartphones and tablets for offline access, automatically updating new content.
+As funcionalidades principais incluem transmissão de mídia entre dispositivos e acesso fácil. Suporta conversão em tempo real e transmissão de mídia pessoal para qualquer dispositivo para reprodução sem falhas. Um serviço de ligação permite acesso fácil à mídia enquanto se está longe de casa. A funcionalidade TV ao Vivo suporta transmissão, gestão de DVR e acesso a uma biblioteca de gravações. A sincronização móvel fornece mídia a smartphones e tablets para acesso offline, actualizando automaticamente novo conteúdo.
 
-It offers parental controls to restrict children's content access, set schedules and time limits, and remotely monitor sessions. Chromecast support enables easy streaming of videos, music, photos, and Live TV. Content is presented elegantly, enhancing visual experience. Cloud sync supports backup, archiving, and multi-resolution storage for optimized streaming. Web-based media management facilitates editing metadata, images, and searching subtitles, while DLNA integration auto-detects network devices for content streaming. With convenience and versatility at the core, the platform delivers a modern media management solution.
+Oferece controlos parentais para restringir o acesso de crianças ao conteúdo, definir horários e limites de tempo, e monitorizar sessões remotamente. O suporte Chromecast permite transmissão fácil de vídeos, música, fotografias e TV ao Vivo. O conteúdo é apresentado elegantemente, melhorando a experiência visual. A sincronização na nuvem suporta cópia de segurança, arquivo e armazenamento multi-resolução para transmissão optimizada. A gestão de mídia baseada na web facilita a edição de metadados, imagens e pesquisa de legendas, enquanto a integração DLNA detecta automaticamente dispositivos de rede para transmissão de conteúdo.
 
-**Key Features:**
-- Automatic conversion and streaming of media to any device
-- Easy access via connection service while away from home
-- Live TV streaming, DVR management, and recording library access
-- Mobile sync to smartphones and tablets for offline access
-- Parental controls with content restrictions, schedules, and remote monitoring
-- Chromecast support for streaming videos, music, photos, and Live TV
-- Cloud sync for backup and multi-resolution storage
-- Web-based media management for editing metadata and searching subtitles
-- DLNA integration for auto-detecting network devices and streaming content
+**Funcionalidades Principais:**
+- Conversão automática e transmissão de mídia para qualquer dispositivo
+- Acesso fácil via serviço de ligação enquanto se está longe de casa
+- Transmissão TV ao Vivo, gestão DVR e acesso biblioteca de gravações
+- Sincronização móvel para smartphones e tablets para acesso offline
+- Controlos parentais com restrições de conteúdo, horários e monitorização remota
+- Suporte Chromecast para transmissão de vídeos, música, fotografias e TV ao Vivo
+- Sincronização na nuvem para cópia de segurança e armazenamento multi-resolução
+- Gestão de mídia baseada na web para edição de metadados e pesquisa de legendas
+- Integração DLNA para detecção automática de dispositivos de rede e transmissão de conteúdo
 
-**Learn More:**
-- [Emby Official Website](https://emby.media/)
+**Saber Mais:**
+- [Website Oficial Emby](https://emby.media/)
 
 
 Categoria na App Store do RoqueOS: **Media**.
@@ -30,11 +30,12 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 8096 | 8096      | tcp       | —              | emby    |
-| 8920 | 8920      | tcp       | —              | emby    |
+| Host | Container | Protocolo | Para que serve            | Serviço |
+| ---- | --------- | --------- | ------------------------- | ------- |
+| 8096 | 8096      | tcp       | Web interface for Emby    | emby    |
+| 8920 | 8920      | tcp       | Service port 8920 of emby | emby    |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

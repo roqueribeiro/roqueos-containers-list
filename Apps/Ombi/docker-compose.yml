@@ -38,7 +38,7 @@ services:
       ports:
         - container: '3579'
           description:
-            en_us: ''
+            en_us: "Web interface for Ombi"
       volumes:
         - container: /config
           description:

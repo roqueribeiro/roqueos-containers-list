@@ -1,34 +1,34 @@
 # Komga
 
-> Komga is a media server for your comics, mangas, BDs, magazines and eBooks.
+> O Komga é um servidor multimédia para as suas bandas desenhadas, mangas, revistas e eBooks.
 
 ## O que é
 
-Komga is a self-hosted app designed for managing comics, manga, magazines, and e-books (supporting CBZ, CBR, PDF, and EPUB formats), offering a secure and convenient solution for personal media libraries. Its responsive Web interface enables users to access and manage content effortlessly via any browser, without complex local installations, ideal for comic and e-book enthusiasts.
+O Komga é uma aplicação auto-hospedada concebida para gerir bandas desenhadas, manga, revistas e e-books (suporta os formatos CBZ, CBR, PDF e EPUB), oferecendo uma solução segura e conveniente para bibliotecas multimédia pessoais. A sua interface Web responsiva permite aos utilizadores aceder e gerir conteúdos facilmente através de qualquer navegador, sem instalações locais complexas – ideal para entusiastas de banda desenhada e e-books.
 
-The app's core features include versatile content organization and diverse reading options. Users can arrange their library with collections and reading lists, edit metadata for series or books, and keep content neatly organized. It integrates a built-in Web reader, supports Mihon SDK extensions, or connects with third-party OPDS readers, catering to varied reading preferences. Whether managing a personal comic collection or sharing e-books with family, it supports multi-user access and delivers a smooth browsing experience. Bulk import streamlines large media library management, perfect for efficient content organization.
+As principais funcionalidades da aplicação incluem organização versátil de conteúdos e diversas opções de leitura. Os utilizadores podem organizar a sua biblioteca com coleções e listas de leitura, editar metadados de séries ou livros e manter o conteúdo bem organizado. Integra um leitor Web incorporado, suporta extensões Mihon SDK ou liga-se a leitores OPDS de terceiros, respondendo a diferentes preferências de leitura. Quer esteja a gerir uma coleção pessoal de banda desenhada ou a partilhar e-books com a família, suporta acesso multiutilizador e proporciona uma experiência de navegação fluida. A importação em massa simplifica a gestão de grandes bibliotecas multimédia, perfeita para uma organização eficiente de conteúdos.
 
-It can be flexibly deployed on personal servers or NAS devices, with an active community providing support documentation, enabling users to extend functionality through community resources. Whether building a personal digital library or a private media-sharing hub, the app's intuitive interface and high customizability offer a secure, modern media management platform, meeting needs from casual reading to professional collections.
+Pode ser implementada de forma flexível em servidores pessoais ou dispositivos NAS, com uma comunidade ativa a fornecer documentação de suporte, permitindo aos utilizadores expandir as funcionalidades através de recursos comunitários. Quer esteja a construir uma biblioteca digital pessoal ou um hub privado de partilha de multimédia, a interface intuitiva e a elevada personalização da aplicação oferecem uma plataforma de gestão multimédia segura e moderna, adequada desde a leitura casual até às coleções profissionais.
 
-**Key Features:**
-- Organize your library with collections and read lists
-- Edit metadata for your series and books
-- Import embedded metadata automatically
-- Webreader with multiple reading modes
-- Manage multiple users, with per-library access control, age restrictions, and labels restrictions
-- Offers a REST API, many community tools and scripts can interact with Komga
-- OPDS v1 and v2 support
-- Kobo Sync with your Kobo eReader
-- KOReader Sync
-- Download book files, whole series, or read lists
-- Duplicate files detection
-- Duplicate pages detection and removal
-- Import books from outside your libraries directly into your series folder
-- Import ComicRack cbl read lists
+**Funcionalidades Principais:**
+- Organize a sua biblioteca com coleções e listas de leitura
+- Edite metadados para as suas séries e livros
+- Importe metadados incorporados automaticamente
+- Leitor web com múltiplos modos de leitura
+- Gira múltiplos utilizadores, com controlo de acesso por biblioteca, restrições de idade e restrições de etiquetas
+- Oferece uma API REST, muitas ferramentas e scripts da comunidade podem interagir com o Komga
+- Suporte OPDS v1 e v2
+- Sincronização Kobo com o seu eReader Kobo
+- Sincronização KOReader
+- Descarregue ficheiros de livros, séries completas ou listas de leitura
+- Deteção de ficheiros duplicados
+- Deteção e remoção de páginas duplicadas
+- Importe livros de fora das suas bibliotecas diretamente para a pasta da série
+- Importe listas de leitura ComicRack cbl
 
-**Learn More:**
-- [Komga Official Website](https://komga.org)
-- [Komga GitHub Repository](https://github.com/gotson/komga)
+**Saiba mais:**
+- [Site oficial do Komga](https://komga.org)
+- [Repositório GitHub do Komga](https://github.com/gotson/komga)
 
 
 Categoria na App Store do RoqueOS: **Media**.
@@ -36,9 +36,9 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve  | Serviço |
-| ----- | --------- | --------- | --------------- | ------- |
-| 25600 | 25600     | tcp       | WebUI HTTP Port | komga   |
+| Host  | Container | Protocolo | Para que serve   | Serviço |
+| ----- | --------- | --------- | ---------------- | ------- |
+| 25600 | 25600     | tcp       | Porta HTTP WebUI | komga   |
 
 
 ## Volumes

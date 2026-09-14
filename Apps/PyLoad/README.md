@@ -16,6 +16,7 @@ Arquiteturas suportadas: amd64, arm64.
 | 8000 | 8000      | tcp       | WebUI HTTP Port             | pyload  |
 | 9666 | 9666      | tcp       | PyLoad listening Port (TCP) | pyload  |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

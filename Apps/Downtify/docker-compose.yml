@@ -20,6 +20,10 @@ services:
         source: /DATA/Downloads/downtify
         target: /downloads
     x-casaos:
+      ports:
+        - container: '8000'
+          description:
+            en_us: "Web interface for Downtify"
       envs:
         - container: PUID
           description:

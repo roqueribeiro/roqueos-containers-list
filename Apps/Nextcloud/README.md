@@ -16,6 +16,7 @@ Arquiteturas suportadas: amd64, arm, arm64, 386, mips64le, ppc64le, s390x.
 | 10081 | 80        | tcp       | WebUI HTTP Port  | nextcloud |
 | 10443 | 443       | tcp       | WebUI HTTPS Port | nextcloud |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

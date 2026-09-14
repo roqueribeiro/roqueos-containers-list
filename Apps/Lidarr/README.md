@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 8686 | 8686      | tcp       | —              | lidarr  |
+| Host | Container | Protocolo | Para que serve           | Serviço |
+| ---- | --------- | --------- | ------------------------ | ------- |
+| 8686 | 8686      | tcp       | Web interface for Lidarr | lidarr  |
 
 
 ## Volumes

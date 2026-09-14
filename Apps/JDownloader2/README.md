@@ -17,6 +17,7 @@ Arquiteturas suportadas: amd64, arm64.
 | 5900 | 5900      | tcp       | Port to access the application's GUI via the VNC protocol. Mapping to the host is optional if access through the VNC protocol is not wanted. For a container not using the default bridge network, the port can be changed with the VNC_LISTENING_PORT environment variable.                                                                                                                      | jdownloader2 |
 | 3129 | 3129      | tcp       | Port used by MyJDownloader mobile applications and browser extensions to establish a direct connect to the JDownloader Docker container instance. Port needs to be exposed only if MyJDownloader is enabled and configured in Direct Connection mode. NOTE: Since this port is being reported to the MyJDownloader online service, the port mapped on the host side must be the same (i.e. 3129). | jdownloader2 |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

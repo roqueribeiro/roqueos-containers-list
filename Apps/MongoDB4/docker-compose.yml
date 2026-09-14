@@ -89,3 +89,6 @@ x-casaos:
   title:
     en_us: MongoDB 4
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

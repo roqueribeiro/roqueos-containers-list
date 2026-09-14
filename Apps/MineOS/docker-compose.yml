@@ -42,6 +42,9 @@ services:
             en_us: If the "mc" account is being created, it will use the default password "root" (without quotes). It is recommended to change this to something more secure.
             es_es: Si se está creando la cuenta "mc", utilizará la contraseña "root" (sin comillas) por defecto. Es recomendable cambiar esto por algo más seguro.
       ports:
+        - container: '25565-25570'
+          description:
+            en_us: "Service port 25565-25570 of mineos"
         - container: '8443'
           description:
             en_us: WebUI HTTP Port

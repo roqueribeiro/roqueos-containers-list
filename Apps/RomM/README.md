@@ -1,30 +1,30 @@
 # RomM
 
-> RomM is a self-hosted ROM manager for managing and playing game collections.
+> O RomM é um gestor de ROM auto-hospedado para gerir e jogar coleções de jogos.
 
 ## O que é
 
-RomM is a self-hosted game collection management app designed for emulator enthusiasts, offering a convenient way to scan, enrich, browse, and play games. Its responsive Web interface allows users to manage collections via any modern browser, supporting over 400 platforms, ideal for retro gaming fans building personal game libraries.
+O RomM é uma aplicação de gestão de coleções de jogos auto-hospedada, concebida para entusiastas de emuladores, oferecendo uma forma conveniente de digitalizar, enriquecer, navegar e jogar jogos. A sua interface Web responsiva permite aos utilizadores gerir coleções através de qualquer navegador moderno, suportando mais de 400 plataformas – ideal para fãs de jogos retro que constroem bibliotecas pessoais.
 
-The app's core features include robust library management and seamless gameplay. It fetches metadata from IGDB, Screenscraper, and MobyGames, and custom artwork from SteamGridDB, enhancing the visual appeal of collections. Users can play games directly in the browser using EmulatorJS and RuffleRS, with support for multi-disk games, DLCs, patches, and manuals. It also enables parsing and filtering by filename tags for tailored organization. Additionally, it supports multi-user accounts with limited access permissions, allowing library sharing with friends and displaying RetroAchievements.
+As principais funcionalidades incluem uma gestão robusta da biblioteca e uma jogabilidade fluida. Obtém metadados do IGDB, Screenscraper e MobyGames, e arte personalizada do SteamGridDB, melhorando o aspeto visual das coleções. Os utilizadores podem jogar diretamente no navegador usando EmulatorJS e RuffleRS, com suporte para jogos multi-disco, DLCs, patches e manuais. Permite também a análise e filtragem por tags de nomes de ficheiros para organização personalizada. Além disso, suporta contas multiutilizador com permissões de acesso limitadas, permitindo a partilha da biblioteca com amigos e a exibição de RetroAchievements.
 
-It can be flexibly deployed on personal servers or NAS devices, with official apps for Playnite and muOS enhancing cross-device access. Users can upload, update, or delete games via the Web interface, with community support documentation expanding functionality. Whether managing a personal retro game library or sharing with others, the app's intuitive interface and high customizability deliver a modern game management platform, meeting diverse needs.
+Pode ser implementado de forma flexível em servidores pessoais ou dispositivos NAS, com aplicações oficiais para Playnite e muOS que melhoram o acesso entre dispositivos. Os utilizadores podem carregar, atualizar ou eliminar jogos através da interface Web, com documentação de suporte da comunidade que expande a funcionalidade. Quer esteja a gerir uma biblioteca pessoal de jogos retro ou a partilhá-la com outros, a interface intuitiva e a elevada personalização da aplicação oferecem uma plataforma de gestão de jogos moderna que responde a diversas necessidades.
 
-**Key Features:**
-- Scan and enhance your game library with metadata from IGDB, Screenscraper and MobyGames
-- Fetch custom artwork from SteamGridDB
-- Display your achievements from Retroachievements
-- Metadata available for 400+ platforms
-- Play games directly from the browser using EmulatorJS and RuffleRS
-- Share your library with friends with limited access and permissions
-- Official apps for Playnite and muOS
-- Supports multi-disk games, DLCs, mods, hacks, patches, and manuals
-- Parse and filter by tags in filenames
-- View, upload, update, and delete games from any modern web browser
+**Funcionalidades Principais:**
+- Digitalize e melhore a sua biblioteca de jogos com metadados do IGDB, Screenscraper e MobyGames
+- Obtenha arte personalizada do SteamGridDB
+- Exiba as suas conquistas do Retroachievements
+- Metadados disponíveis para mais de 400 plataformas
+- Jogue jogos diretamente do navegador usando EmulatorJS e RuffleRS
+- Partilhe a sua biblioteca com amigos com acesso e permissões limitadas
+- Aplicações oficiais para Playnite e muOS
+- Suporta jogos multi-disco, DLCs, mods, hacks, patches e manuais
+- Analise e filtre por tags em nomes de ficheiros
+- Visualize, carregue, atualize e elimine jogos de qualquer navegador moderno
 
-**Learn More:**
-- [RomM Official Website](https://romm.app)
-- [RomM GitHub Repository](https://github.com/rommapp/romm)
+**Saiba mais:**
+- [Site oficial do RomM](https://romm.app)
+- [Repositório GitHub do RomM](https://github.com/rommapp/romm)
 
 
 Categoria na App Store do RoqueOS: **Gaming**.
@@ -32,9 +32,9 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço |
-| ---- | --------- | --------- | --------------- | ------- |
-| 8285 | 8080      | tcp       | WebUI HTTP Port | romm    |
+| Host | Container | Protocolo | Para que serve   | Serviço |
+| ---- | --------- | --------- | ---------------- | ------- |
+| 8285 | 8080      | tcp       | Porta HTTP WebUI | romm    |
 
 
 ## Volumes

@@ -12,9 +12,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço  |
-| ---- | --------- | --------- | -------------- | -------- |
-| 8582 | 8000      | tcp       | —              | downtify |
+| Host | Container | Protocolo | Para que serve             | Serviço  |
+| ---- | --------- | --------- | -------------------------- | -------- |
+| 8582 | 8000      | tcp       | Web interface for Downtify | downtify |
 
 
 ## Volumes

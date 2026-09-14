@@ -1,6 +1,11 @@
 name: webdav
 services:
   webdav:
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: "Web interface for WebDAV"
     cpu_shares: 90
     command: []
     container_name: webdav

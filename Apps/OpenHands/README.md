@@ -1,23 +1,23 @@
 # OpenHands
 
-> Open-source AI-powered coding assistant
+> Assistente de Codificação de Código Aberto Alimentado por IA
 
 ## O que é
 
-OpenHands is an open-source AI-powered coding assistant that provides developers with intelligent code completion, generation, and debugging capabilities. It runs in a sandboxed environment to ensure security and isolation while allowing access to various development tools and resources.
+OpenHands é um assistente de codificação de código aberto alimentado por IA que fornece aos programadores capacidades inteligentes de conclusão, geração e depuração de código. Ele é executado num ambiente sandbox para garantir segurança e isolamento, permitindo ao mesmo tempo o acesso a várias ferramentas e recursos de desenvolvimento.
 
-**Key Features:**
-- AI-powered code completion and generation
-- Interactive debugging and error resolution
-- Support for multiple programming languages
-- Secure sandboxed execution environment
-- Customizable runtime configurations
-- Integration with Docker for containerized workflows
+**Características Principais:**
+- Conclusão e geração de código alimentadas por IA
+- Depuração interativa e resolução de erros
+- Suporte para múltiplas linguagens de programação
+- Ambiente de execução sandbox seguro
+- Configurações de runtime personalizáveis
+- Integração com Docker para fluxos de trabalho contentorizados
 
-**Learn More:**
-- [OpenHands Official Website](https://www.all-hands.dev)
-- [OpenHands GitHub Repository](https://github.com/All-Hands-AI/OpenHands)
-- [Documentation](https://docs.all-hands.dev)
+**Saiba Mais:**
+- [Website Oficial OpenHands](https://www.all-hands.dev)
+- [Repositório GitHub OpenHands](https://github.com/All-Hands-AI/OpenHands)
+- [Documentação](https://docs.all-hands.dev)
 
 
 Categoria na App Store do RoqueOS: **AI**.
@@ -25,9 +25,9 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve               | Serviço   |
-| ----- | --------- | --------- | ---------------------------- | --------- |
-| 13333 | 3000      | tcp       | OpenHands Web Interface Port | openhands |
+| Host  | Container | Protocolo | Para que serve                   | Serviço   |
+| ----- | --------- | --------- | -------------------------------- | --------- |
+| 13333 | 3000      | tcp       | Porta da Interface Web OpenHands | openhands |
 
 
 ## Volumes

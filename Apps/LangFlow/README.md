@@ -1,26 +1,26 @@
 # Langflow
 
-> Open-source UI for building and debugging multi-agent and RAG applications
+> Interface de código aberto para criar e depurar aplicações multi-agente e RAG
 
 ## O que é
 
-Langflow is a powerful, open-source UI designed specifically for building and debugging multi-agent and Retrieval-Augmented Generation (RAG) applications. It provides a visual, drag-and-drop interface that simplifies the process of creating complex AI workflows.
+Langflow é uma poderosa interface de utilizador de código aberto, projetada especificamente para construir e depurar aplicações multi-agente e de Geração Aumentada por Recuperação (RAG). Fornece uma interface visual de arrastar e largar que simplifica o processo de criação de fluxos de trabalho de IA complexos.
 
-The system consists of two main components:
-- **Langflow**: The main application providing a visual interface for building AI workflows
-- **PostgreSQL**: A robust database system for storing application data and configurations
+O sistema consiste em dois componentes principais:
+- **Langflow**: A aplicação principal que fornece uma interface visual para construir fluxos de trabalho de IA
+- **PostgreSQL**: Um sistema de base de dados robusto para armazenar dados de aplicação e configurações
 
-**Key Features:**
-- Visual, drag-and-drop interface for building AI workflows
-- Support for multi-agent systems and RAG applications
-- Integrated debugging tools for testing and optimization
-- Persistent storage for workflows and configurations
-- Easy deployment with Docker containers
+**Características Principais:**
+- Interface visual de arrastar e largar para construir fluxos de trabalho de IA
+- Suporte para sistemas multi-agente e aplicações RAG
+- Ferramentas de depuração integradas para teste e otimização
+- Armazenamento persistente para fluxos de trabalho e configurações
+- Implementação fácil com contentores Docker
 
-**Learn More:**
-- [Langflow Official Website](https://www.langflow.org)
-- [Langflow GitHub Repository](https://github.com/langflow-ai/langflow)
-- [Documentation](https://docs.langflow.org)
+**Saiba Mais:**
+- [Website Oficial do Langflow](https://www.langflow.org)
+- [Repositório GitHub do Langflow](https://github.com/langflow-ai/langflow)
+- [Documentação](https://docs.langflow.org)
 
 
 Categoria na App Store do RoqueOS: **AI**.
@@ -28,9 +28,9 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve              | Serviço  |
-| ----- | --------- | --------- | --------------------------- | -------- |
-| 17860 | 7860      | tcp       | Langflow Web Interface Port | langflow |
+| Host  | Container | Protocolo | Para que serve                  | Serviço  |
+| ----- | --------- | --------- | ------------------------------- | -------- |
+| 17860 | 7860      | tcp       | Porta da Interface Web Langflow | langflow |
 
 
 ## Volumes

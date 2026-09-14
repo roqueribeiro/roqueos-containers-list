@@ -5,7 +5,7 @@ services:
     container_name: llama-factory-nvidia
     ports:
       - target: 7860
-        published: '18877'
+        published: "18877"
         protocol: tcp
     tty: true
     stdin_open: true
@@ -24,7 +24,7 @@ services:
     restart: unless-stopped
     x-casaos:
       ports:
-        - container: '7860'
+        - container: "7860"
           description:
             de_DE: LLaMA Factory Web UI Port
             el_GR: Θύρα Διεπαφής Ιστού LLaMA Factory
@@ -41,6 +41,14 @@ services:
             sv_SE: LLaMA Factory webbgränssnitt port
             tr_TR: LLaMA Factory Web Arayüzü Portu
             zh_CN: LLaMA Factory Web UI 端口
+            en_us: LLaMA Factory Web UI Port
+            pt_br: Porta da Interface Web LLaMA Factory
+            zh_cn: LLaMA Factory Web UI 端口
+            fr_fr: Port de l'Interface Web LLaMA Factory
+            de_de: LLaMA Factory Web UI Port
+            it_it: Porta Interfaccia Web LLaMA Factory
+            ru_ru: Порт веб-интерфейса LLaMA Factory
+            ja_jp: LLaMA Factory Web UI ポート
 x-casaos:
   architectures:
     - amd64
@@ -302,6 +310,142 @@ x-casaos:
       **了解更多:**
       - [GitHub Repository](https://github.com/hiyouga/LLaMA-Factory)
       - [官方文档](https://llamafactory.readthedocs.io/)
+    en_us: |
+      LLaMA Factory is a comprehensive framework for fine-tuning Large Language Models (LLMs) with support for over 100 models. It provides a user-friendly web interface and powerful training methods including LoRA, QLoRA, and full-parameter training.
+
+      **Key Features:**
+      - Support for 100+ LLMs including LLaMA, Mistral, Qwen, and more
+      - Multiple fine-tuning methods (LoRA, QLoRA, Full, Freeze)
+      - Intuitive Web UI for easy model management
+      - Built-in API server for model inference
+      - Multi-GPU training support
+      - Quantization and model export capabilities
+
+      **Hardware Requirements:**
+      - GPU: NVIDIA GPU with CUDA support required
+
+      **Learn More:**
+      - [GitHub Repository](https://github.com/hiyouga/LLaMA-Factory)
+      - [Documentation](https://llamafactory.readthedocs.io/)
+    pt_br: |
+      LLaMA Factory é uma estrutura abrangente para ajuste fino de Modelos de Linguagem Grandes (LLMs) com suporte para mais de 100 modelos. Fornece uma interface web amigável e métodos de treino poderosos, incluindo LoRA, QLoRA e treino de parâmetros completos.
+
+      **Características Principais:**
+      - Suporte para 100+ LLMs incluindo LLaMA, Mistral, Qwen e mais
+      - Múltiplos métodos de ajuste fino (LoRA, QLoRA, Full, Freeze)
+      - Interface Web intuitiva para fácil gestão de modelos
+      - Servidor API integrado para inferência de modelos
+      - Suporte para treino multi-GPU
+      - Capacidades de quantização e exportação de modelos
+
+      **Requisitos de Hardware:**
+      - GPU: GPU NVIDIA com suporte CUDA necessária
+
+      **Saiba Mais:**
+      - [Repositório GitHub](https://github.com/hiyouga/LLaMA-Factory)
+      - [Documentação](https://llamafactory.readthedocs.io/)
+    zh_cn: |
+      LLaMA Factory 是一个全面的大语言模型(LLMs)微调框架,支持超过100个模型。它提供了用户友好的Web界面和强大的训练方法,包括LoRA、QLoRA和全参数训练。
+
+      **主要功能:**
+      - 支持100+个LLMs,包括LLaMA、Mistral、Qwen等
+      - 多种微调方法(LoRA、QLoRA、Full、Freeze)
+      - 直观的Web UI,轻松管理模型
+      - 内置API服务器用于模型推理
+      - 多GPU训练支持
+      - 量化和模型导出功能
+
+      **硬件要求:**
+      - GPU: 需要支持CUDA的NVIDIA GPU
+
+      **了解更多:**
+      - [GitHub Repository](https://github.com/hiyouga/LLaMA-Factory)
+      - [官方文档](https://llamafactory.readthedocs.io/)
+    fr_fr: |
+      LLaMA Factory est un framework complet pour l'ajustement fin des grands modèles de langage (LLMs) avec prise en charge de plus de 100 modèles. Il fournit une interface web conviviale et des méthodes d'entraînement puissantes, notamment LoRA, QLoRA et l'entraînement complet des paramètres.
+
+      **Fonctionnalités Principales:**
+      - Support de 100+ LLMs incluant LLaMA, Mistral, Qwen et plus
+      - Multiples méthodes de fine-tuning (LoRA, QLoRA, Full, Freeze)
+      - Interface Web intuitive pour une gestion facile des modèles
+      - Serveur API intégré pour l'inférence de modèles
+      - Support de l'entraînement multi-GPU
+      - Capacités de quantification et d'exportation de modèles
+
+      **Configuration Matérielle Requise:**
+      - GPU: GPU NVIDIA avec support CUDA requis
+
+      **En Savoir Plus:**
+      - [Dépôt GitHub](https://github.com/hiyouga/LLaMA-Factory)
+      - [Documentation](https://llamafactory.readthedocs.io/)
+    de_de: |
+      LLaMA Factory ist ein umfassendes Framework für das Fine-Tuning von Large Language Models (LLMs) mit über 100 unterstützten Modellen. Es bietet eine benutzerfreundliche Web-Oberfläche und leistungsstarke Trainingsmethoden wie LoRA, QLoRA und Full-Parameter-Training.
+
+      **Hauptfunktionen:**
+      - Unterstützung für 100+ LLMs einschließlich LLaMA, Mistral, Qwen und mehr
+      - Mehrere Fine-Tuning-Methoden (LoRA, QLoRA, Full, Freeze)
+      - Intuitive Web-UI für einfache Modellverwaltung
+      - Integrierter API-Server für Modellinferenz
+      - Multi-GPU-Training-Unterstützung
+      - Quantisierung und Modellexport
+
+      **Hardwareanforderungen:**
+      - GPU: NVIDIA GPU mit CUDA-Unterstützung erforderlich
+
+      **Weitere Informationen:**
+      - [GitHub Repository](https://github.com/hiyouga/LLaMA-Factory)
+      - [Dokumentation](https://llamafactory.readthedocs.io/)
+    it_it: |
+      LLaMA Factory è un framework completo per il fine-tuning di Large Language Models (LLMs) con supporto per oltre 100 modelli. Fornisce un'interfaccia web user-friendly e potenti metodi di addestramento tra cui LoRA, QLoRA e addestramento a parametri completi.
+
+      **Caratteristiche Principali:**
+      - Supporto per 100+ LLMs inclusi LLaMA, Mistral, Qwen e altri
+      - Multipli metodi di fine-tuning (LoRA, QLoRA, Full, Freeze)
+      - Interfaccia Web intuitiva per una facile gestione dei modelli
+      - Server API integrato per l'inferenza dei modelli
+      - Supporto per addestramento multi-GPU
+      - Capacità di quantizzazione ed esportazione modelli
+
+      **Requisiti Hardware:**
+      - GPU: GPU NVIDIA con supporto CUDA richiesta
+
+      **Ulteriori Informazioni:**
+      - [Repository GitHub](https://github.com/hiyouga/LLaMA-Factory)
+      - [Documentazione](https://llamafactory.readthedocs.io/)
+    ru_ru: |
+      LLaMA Factory — это комплексная платформа для тонкой настройки больших языковых моделей (LLMs) с поддержкой более 100 моделей. Она предоставляет удобный веб-интерфейс и мощные методы обучения, включая LoRA, QLoRA и полное обучение параметров.
+
+      **Основные Функции:**
+      - Поддержка 100+ LLMs, включая LLaMA, Mistral, Qwen и другие
+      - Множественные методы тонкой настройки (LoRA, QLoRA, Full, Freeze)
+      - Интуитивный веб-интерфейс для простого управления моделями
+      - Встроенный API-сервер для вывода моделей
+      - Поддержка обучения на нескольких GPU
+      - Возможности квантования и экспорта моделей
+
+      **Требования к Оборудованию:**
+      - GPU: требуется NVIDIA GPU с поддержкой CUDA
+
+      **Узнать Больше:**
+      - [Репозиторий GitHub](https://github.com/hiyouga/LLaMA-Factory)
+      - [Документация](https://llamafactory.readthedocs.io/)
+    ja_jp: |
+      LLaMA Factoryは、100以上のモデルをサポートする大規模言語モデル(LLMs)のファインチューニング用の包括的なフレームワークです。ユーザーフレンドリーなWebインターフェースと、LoRA、QLoRA、フルパラメータトレーニングなどの強力なトレーニング手法を提供します。
+
+      **主な機能:**
+      - LLaMA、Mistral、Qwenなど100以上のLLMsをサポート
+      - 複数のファインチューニング手法(LoRA、QLoRA、Full、Freeze)
+      - モデル管理を簡単にする直感的なWeb UI
+      - モデル推論用の組み込みAPIサーバー
+      - マルチGPUトレーニングのサポート
+      - 量子化とモデルエクスポート機能
+
+      **ハードウェア要件:**
+      - GPU: CUDA対応のNVIDIA GPUが必要
+
+      **詳細情報:**
+      - [GitHubリポジトリ](https://github.com/hiyouga/LLaMA-Factory)
+      - [ドキュメント](https://llamafactory.readthedocs.io/)
   developer: hiyouga
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LLaMA-Factory_Nvidia/icon.png
   screenshot_link:
@@ -324,6 +468,14 @@ x-casaos:
     sv_SE: Enhetlig LLM-finjustering med 100+ modeller
     tr_TR: 100+ Model ile Birleşik LLM İnce Ayarı
     zh_CN: 统一的LLM微调,支持100+模型
+    en_us: Unified LLM Fine-Tuning with 100+ Models
+    pt_br: Ajuste fino unificado de LLM com 100+ modelos
+    zh_cn: 统一的LLM微调,支持100+模型
+    fr_fr: Ajustement unifié des LLM avec 100+ modèles
+    de_de: Einheitliche LLM-Feinabstimmung mit 100+ Modellen
+    it_it: Fine-Tuning unificato di LLM con 100+ modelli
+    ru_ru: Унифицированная тонкая настройка LLM с 100+ моделями
+    ja_jp: 100以上のモデルで統一されたLLMファインチューニング
   title:
     de_DE: LLaMA Factory(Nvidia GPU)
     el_GR: LLaMA Factory(Nvidia GPU)
@@ -340,7 +492,15 @@ x-casaos:
     sv_SE: LLaMA Factory(Nvidia GPU)
     tr_TR: LLaMA Factory(Nvidia GPU)
     zh_CN: LLaMA Factory(Nvidia GPU)
+    en_us: LLaMA Factory(Nvidia GPU)
+    pt_br: LLaMA Factory(Nvidia GPU)
+    zh_cn: LLaMA Factory(Nvidia GPU)
+    fr_fr: LLaMA Factory(Nvidia GPU)
+    de_de: LLaMA Factory(Nvidia GPU)
+    it_it: LLaMA Factory(Nvidia GPU)
+    ru_ru: LLaMA Factory(Nvidia GPU)
+    ja_jp: LLaMA Factory(Nvidia GPU)
   index: /
   scheme: http
   main: llama-factory-nvidia
-  port_map: '18877'
+  port_map: "18877"

@@ -14,7 +14,7 @@ services:
       - archivebox_sonic
     ports:
       - target: 8000
-        published: '18010'
+        published: "18010"
         protocol: tcp
     volumes:
       - type: bind
@@ -35,15 +35,15 @@ services:
       test:
         - CMD
         - wget
-        - '--no-verbose'
-        - '--tries=1'
-        - '--spider'
+        - "--no-verbose"
+        - "--tries=1"
+        - "--spider"
         - http://localhost:8000
       interval: 1m
       timeout: 3s
     x-casaos:
       ports:
-        - container: '8000'
+        - container: "8000"
           description:
             en_US: ArchiveBox Web Interface Port
             en_GB: ArchiveBox Web Interface Port
@@ -60,6 +60,14 @@ services:
             pt_PT: Porta da Interface Web ArchiveBox
             ru_RU: Порт веб-интерфейса ArchiveBox
             tr_TR: ArchiveBox Web Arayüz Portu
+            en_us: ArchiveBox Web Interface Port
+            pt_br: Porta da Interface Web ArchiveBox
+            zh_cn: ArchiveBox Web界面端口
+            fr_fr: Port de l'interface web ArchiveBox
+            de_de: ArchiveBox Web-Oberflächen-Port
+            it_it: Porta interfaccia web ArchiveBox
+            ru_ru: Порт веб-интерфейса ArchiveBox
+            ja_jp: ArchiveBox Webインターフェースポート
       volumes:
         - container: /data
           description:
@@ -78,6 +86,14 @@ services:
             pt_PT: Diretório de Dados ArchiveBox
             ru_RU: Каталог данных ArchiveBox
             tr_TR: ArchiveBox Veri Dizini
+            en_us: ArchiveBox Data Directory
+            pt_br: Diretório de Dados ArchiveBox
+            zh_cn: ArchiveBox数据目录
+            fr_fr: Répertoire de données ArchiveBox
+            de_de: ArchiveBox-Datenverzeichnis
+            it_it: Directory dati ArchiveBox
+            ru_ru: Каталог данных ArchiveBox
+            ja_jp: ArchiveBoxデータディレクトリ
       envs:
         - container: ADMIN_USERNAME
           description:
@@ -96,6 +112,14 @@ services:
             pt_PT: Nome de Utilizador Administrador para Autenticação
             ru_RU: Имя администратора для аутентификации
             tr_TR: Kimlik Doğrulama için Yönetici Kullanıcı Adı
+            en_us: Admin Username for Authentication
+            pt_br: Nome de Utilizador Administrador para Autenticação
+            zh_cn: 管理员用户名，用于身份验证
+            fr_fr: Nom d'utilisateur administrateur pour l'authentification
+            de_de: Administrator-Benutzername für die Authentifizierung
+            it_it: Nome utente amministratore per l'autenticazione
+            ru_ru: Имя администратора для аутентификации
+            ja_jp: 認証用管理者ユーザー名
         - container: ADMIN_PASSWORD
           description:
             en_US: Admin Password for Authentication
@@ -113,6 +137,14 @@ services:
             pt_PT: Palavra-passe de Administrador para Autenticação
             ru_RU: Пароль администратора для аутентификации
             tr_TR: Kimlik Doğrulama için Yönetici Parolası
+            en_us: Admin Password for Authentication
+            pt_br: Palavra-passe de Administrador para Autenticação
+            zh_cn: 管理员密码，用于身份验证
+            fr_fr: Mot de passe administrateur pour l'authentification
+            de_de: Administrator-Passwort für die Authentifizierung
+            it_it: Password amministratore per l'autenticazione
+            ru_ru: Пароль администратора для аутентификации
+            ja_jp: 認証用管理者パスワード
         - container: ALLOWED_HOSTS
           description:
             en_US: Allowed Hosts for Web Interface
@@ -130,6 +162,14 @@ services:
             pt_PT: Hosts Permitidos para a Interface Web
             ru_RU: Разрешенные хосты для веб-интерфейса
             tr_TR: Web Arayüzü için İzin Verilen Hostlar
+            en_us: Allowed Hosts for Web Interface
+            pt_br: Hosts Permitidos para a Interface Web
+            zh_cn: Web界面的允许主机
+            fr_fr: Hôtes autorisés pour l'interface web
+            de_de: Zugelassene Hosts für die Weboberfläche
+            it_it: Host consentiti per l'interfaccia web
+            ru_ru: Разрешенные хосты для веб-интерфейса
+            ja_jp: Webインターフェースの許可ホスト
         - container: CSRF_TRUSTED_ORIGINS
           description:
             en_US: Trusted Origins for CSRF Protection
@@ -147,6 +187,14 @@ services:
             pt_PT: Origens Confiáveis para Proteção CSRF
             ru_RU: Доверенные источники для CSRF-защиты
             tr_TR: CSRF Koruması için Güvenilir Kaynaklar
+            en_us: Trusted Origins for CSRF Protection
+            pt_br: Origens Confiáveis para Proteção CSRF
+            zh_cn: CSRF保护的可信来源
+            fr_fr: Origines de confiance pour la protection CSRF
+            de_de: Vertrauenswürdige Ursprünge für den CSRF-Schutz
+            it_it: Origini attendute per la protezione CSRF
+            ru_ru: Доверенные источники для CSRF-защиты
+            ja_jp: CSRF保護の信頼できるオリジン
         - container: PUBLIC_INDEX
           description:
             en_US: Allow Public Access to Snapshot List
@@ -164,6 +212,14 @@ services:
             pt_PT: Permitir Acesso Público à Lista de Snapshots
             ru_RU: Разрешить публичный доступ к списку снимков
             tr_TR: Anlık Görüntü Listesine Genel Erişime İzin Ver
+            en_us: Allow Public Access to Snapshot List
+            pt_br: Permitir Acesso Público à Lista de Snapshots
+            zh_cn: 允许公开访问快照列表
+            fr_fr: Autoriser l'accès public à la liste des instantanés
+            de_de: Öffentlichen Zugriff auf die Snapshot-Liste zulassen
+            it_it: Consenti accesso pubblico all'elenco snapshot
+            ru_ru: Разрешить публичный доступ к списку снимков
+            ja_jp: スナップショットリストへの公開アクセスを許可
         - container: PUBLIC_SNAPSHOTS
           description:
             en_US: Allow Public Access to Snapshot Content
@@ -181,6 +237,14 @@ services:
             pt_PT: Permitir Acesso Público ao Conteúdo do Snapshot
             ru_RU: Разрешить публичный доступ к содержимому снимков
             tr_TR: Anlık Görüntü İçeriğine Genel Erişime İzin Ver
+            en_us: Allow Public Access to Snapshot Content
+            pt_br: Permitir Acesso Público ao Conteúdo do Snapshot
+            zh_cn: 允许公开访问快照内容
+            fr_fr: Autoriser l'accès public au contenu des instantanés
+            de_de: Öffentlichen Zugriff auf den Snapshot-Inhalt zulassen
+            it_it: Consenti accesso pubblico ai contenuti snapshot
+            ru_ru: Разрешить публичный доступ к содержимому снимков
+            ja_jp: スナップショットコンテンツへの公開アクセスを許可
         - container: PUBLIC_ADD_VIEW
           description:
             en_US: Allow Public URL Submission
@@ -198,6 +262,14 @@ services:
             pt_PT: Permitir Submissão Pública de URL
             ru_RU: Разрешить публичную отправку URL
             tr_TR: Genel URL Gönderimine İzin Ver
+            en_us: Allow Public URL Submission
+            pt_br: Permitir Submissão Pública de URL
+            zh_cn: 允许公开URL提交
+            fr_fr: Autoriser la soumission d'URL publique
+            de_de: Öffentliche URL-Übermittlung zulassen
+            it_it: Consenti invio URL pubblico
+            ru_ru: Разрешить публичную отправку URL
+            ja_jp: 公開URLの送信を許可
         - container: SEARCH_BACKEND_ENGINE
           description:
             en_US: Search Backend Engine
@@ -215,6 +287,14 @@ services:
             pt_PT: Motor de Busca do Backend
             ru_RU: Поисковый движок бэкенда
             tr_TR: Arama Backend Motoru
+            en_us: Search Backend Engine
+            pt_br: Motor de Busca do Backend
+            zh_cn: 搜索后端引擎
+            fr_fr: Moteur de recherche backend
+            de_de: Such-Backend-Engine
+            it_it: Motore di ricerca backend
+            ru_ru: Поисковый движок бэкенда
+            ja_jp: 検索バックエンドエンジン
         - container: SEARCH_BACKEND_HOST_NAME
           description:
             en_US: Search Backend Host Name
@@ -232,6 +312,14 @@ services:
             pt_PT: Nome do Host do Backend de Busca
             ru_RU: Имя хоста поискового бэкенда
             tr_TR: Arama Backend Ana Makine Adı
+            en_us: Search Backend Host Name
+            pt_br: Nome do Host do Backend de Busca
+            zh_cn: 搜索后端主机名
+            fr_fr: Nom d'hôte du backend de recherche
+            de_de: Hostname des Such-Backends
+            it_it: Nome host backend ricerca
+            ru_ru: Имя хоста поискового бэкенда
+            ja_jp: 検索バックエンドホスト名
         - container: SEARCH_BACKEND_PASSWORD
           description:
             en_US: Search Backend Password
@@ -249,6 +337,14 @@ services:
             pt_PT: Palavra-passe do Backend de Busca
             ru_RU: Пароль поискового бэкенда
             tr_TR: Arama Backend Parolası
+            en_us: Search Backend Password
+            pt_br: Palavra-passe do Backend de Busca
+            zh_cn: 搜索后端密码
+            fr_fr: Mot de passe du backend de recherche
+            de_de: Passwort des Such-Backends
+            it_it: Password backend ricerca
+            ru_ru: Пароль поискового бэкенда
+            ja_jp: 検索バックエンドパスワード
   archivebox_scheduler:
     image: archivebox/archivebox:0.7.3
     container_name: archivebox_scheduler
@@ -263,9 +359,9 @@ services:
       - archivebox_sonic
     command:
       - schedule
-      - '--foreground'
-      - '--update'
-      - '--every=day'
+      - "--foreground"
+      - "--update"
+      - "--every=day"
     environment:
       - TIMEOUT=120
       - SEARCH_BACKEND_ENGINE=sonic
@@ -294,6 +390,14 @@ services:
             pt_PT: Diretório de Dados ArchiveBox
             ru_RU: Каталог данных ArchiveBox
             tr_TR: ArchiveBox Veri Dizini
+            en_us: ArchiveBox Data Directory
+            pt_br: Diretório de Dados ArchiveBox
+            zh_cn: ArchiveBox数据目录
+            fr_fr: Répertoire de données ArchiveBox
+            de_de: ArchiveBox-Datenverzeichnis
+            it_it: Directory dati ArchiveBox
+            ru_ru: Каталог данных ArchiveBox
+            ja_jp: ArchiveBoxデータディレクトリ
       envs:
         - container: TIMEOUT
           description:
@@ -312,6 +416,14 @@ services:
             pt_PT: Tempo Limite para Operações de Download
             ru_RU: Тайм-аут для операций загрузки
             tr_TR: İndirme İşlemleri için Zaman Aşımı
+            en_us: Timeout for Download Operations
+            pt_br: Tempo Limite para Operações de Download
+            zh_cn: 下载操作超时时间
+            fr_fr: Délai d'attente pour les opérations de téléchargement
+            de_de: Zeitüberschreitung für Download-Vorgänge
+            it_it: Timeout per le operazioni di download
+            ru_ru: Тайм-аут для операций загрузки
+            ja_jp: ダウンロード操作のタイムアウト
         - container: SEARCH_BACKEND_ENGINE
           description:
             en_US: Search Backend Engine
@@ -329,6 +441,14 @@ services:
             pt_PT: Motor de Busca do Backend
             ru_RU: Поисковый движок бэкенда
             tr_TR: Arama Backend Motoru
+            en_us: Search Backend Engine
+            pt_br: Motor de Busca do Backend
+            zh_cn: 搜索后端引擎
+            fr_fr: Moteur de recherche backend
+            de_de: Such-Backend-Engine
+            it_it: Motore di ricerca backend
+            ru_ru: Поисковый движок бэкенда
+            ja_jp: 検索バックエンドエンジン
         - container: SEARCH_BACKEND_HOST_NAME
           description:
             en_US: Search Backend Host Name
@@ -346,6 +466,14 @@ services:
             pt_PT: Nome do Host do Backend de Busca
             ru_RU: Имя хоста поискового бэкенда
             tr_TR: Arama Backend Ana Makine Adı
+            en_us: Search Backend Host Name
+            pt_br: Nome do Host do Backend de Busca
+            zh_cn: 搜索后端主机名
+            fr_fr: Nom d'hôte du backend de recherche
+            de_de: Hostname des Such-Backends
+            it_it: Nome host backend ricerca
+            ru_ru: Имя хоста поискового бэкенда
+            ja_jp: 検索バックエンドホスト名
         - container: SEARCH_BACKEND_PASSWORD
           description:
             en_US: Search Backend Password
@@ -363,6 +491,14 @@ services:
             pt_PT: Palavra-passe do Backend de Busca
             ru_RU: Пароль поискового бэкенда
             tr_TR: Arama Backend Parolası
+            en_us: Search Backend Password
+            pt_br: Palavra-passe do Backend de Busca
+            zh_cn: 搜索后端密码
+            fr_fr: Mot de passe du backend de recherche
+            de_de: Passwort des Such-Backends
+            it_it: Password backend ricerca
+            ru_ru: Пароль поискового бэкенда
+            ja_jp: 検索バックエンドパスワード
   archivebox_sonic:
     image: archivebox/sonic:1.4.9
     container_name: archivebox_sonic
@@ -400,6 +536,14 @@ services:
             pt_PT: Diretório de Dados do Índice de Busca Sonic
             ru_RU: Каталог данных поискового индекса Sonic
             tr_TR: Sonic Arama İndeks Veri Dizini
+            en_us: Sonic Search Index Data Directory
+            pt_br: Diretório de Dados do Índice de Busca Sonic
+            zh_cn: Sonic搜索索引数据目录
+            fr_fr: Répertoire de données d'index de recherche Sonic
+            de_de: Sonic-Suchindex-Datenverzeichnis
+            it_it: Directory dati indice di ricerca Sonic
+            ru_ru: Каталог данных поискового индекса Sonic
+            ja_jp: Sonic検索インデックスデータディレクトリ
       envs:
         - container: SEARCH_BACKEND_PASSWORD
           description:
@@ -418,6 +562,14 @@ services:
             pt_PT: Palavra-passe do Backend de Busca
             ru_RU: Пароль поискового бэкенда
             tr_TR: Arama Backend Parolası
+            en_us: Search Backend Password
+            pt_br: Palavra-passe do Backend de Busca
+            zh_cn: 搜索后端密码
+            fr_fr: Mot de passe du backend de recherche
+            de_de: Passwort des Such-Backends
+            it_it: Password backend ricerca
+            ru_ru: Пароль поискового бэкенда
+            ja_jp: 検索バックエンドパスワード
   archivebox_novnc:
     image: theasp/novnc:latest
     container_name: archivebox_novnc
@@ -430,7 +582,7 @@ services:
       - archivebox_network
     ports:
       - target: 8080
-        published: '18082'
+        published: "18082"
         protocol: tcp
     environment:
       - DISPLAY_WIDTH=1920
@@ -438,7 +590,7 @@ services:
       - RUN_XTERM=no
     x-casaos:
       ports:
-        - container: '8080'
+        - container: "8080"
           description:
             en_US: NoVNC Web Interface Port
             en_GB: NoVNC Web Interface Port
@@ -455,6 +607,14 @@ services:
             pt_PT: Porta da Interface Web NoVNC
             ru_RU: Порт веб-интерфейса NoVNC
             tr_TR: NoVNC Web Arayüz Portu
+            en_us: NoVNC Web Interface Port
+            pt_br: Porta da Interface Web NoVNC
+            zh_cn: NoVNC Web界面端口
+            fr_fr: Port de l'interface web NoVNC
+            de_de: NoVNC Web-Oberflächen-Port
+            it_it: Porta interfaccia web NoVNC
+            ru_ru: Порт веб-интерфейса NoVNC
+            ja_jp: NoVNC Webインターフェースポート
       envs:
         - container: DISPLAY_WIDTH
           description:
@@ -473,6 +633,14 @@ services:
             pt_PT: Largura do Ecrã em Píxeis
             ru_RU: Ширина дисплея в пикселях
             tr_TR: Piksel Cinsinden Ekran Genişliği
+            en_us: Display Width in Pixels
+            pt_br: Largura do Ecrã em Píxeis
+            zh_cn: 显示器宽度（像素）
+            fr_fr: Largeur d'affichage en pixels
+            de_de: Anzeigebreite in Pixeln
+            it_it: Larghezza display in pixel
+            ru_ru: Ширина дисплея в пикселях
+            ja_jp: ディスプレイ幅（ピクセル）
         - container: DISPLAY_HEIGHT
           description:
             en_US: Display Height in Pixels
@@ -490,6 +658,14 @@ services:
             pt_PT: Altura do Ecrã em Píxeis
             ru_RU: Высота дисплея в пикселях
             tr_TR: Piksel Cinsinden Ekran Yüksekliği
+            en_us: Display Height in Pixels
+            pt_br: Altura do Ecrã em Píxeis
+            zh_cn: 显示器高度（像素）
+            fr_fr: Hauteur d'affichage en pixels
+            de_de: Anzeigehöhe in Pixeln
+            it_it: Altezza display in pixel
+            ru_ru: Высота дисплея в пикселях
+            ja_jp: ディスプレイ高さ（ピクセル）
         - container: RUN_XTERM
           description:
             en_US: Run XTerm Terminal
@@ -507,6 +683,14 @@ services:
             pt_PT: Executar Terminal XTerm
             ru_RU: Запустить терминал XTerm
             tr_TR: XTerm Terminalini Çalıştır
+            en_us: Run XTerm Terminal
+            pt_br: Executar Terminal XTerm
+            zh_cn: 运行XTerm终端
+            fr_fr: Exécuter le terminal XTerm
+            de_de: XTerm-Terminal ausführen
+            it_it: Esegui terminale XTerm
+            ru_ru: Запустить терминал XTerm
+            ja_jp: XTermターミナルを実行
 networks:
   archivebox_network:
     driver: bridge
@@ -533,6 +717,14 @@ x-casaos:
     pt_PT: Solução de Arquivamento de Internet Auto-hospedada
     ru_RU: Самохостинговое решение для архивирования интернета
     tr_TR: Kendi barındırdığınız internet arşivleme çözümü
+    en_us: Self-hosted internet archiving solution
+    pt_br: Solução de Arquivamento de Internet Auto-hospedada
+    zh_cn: 自托管互联网存档解决方案
+    fr_fr: Solution d'archivage Internet auto-hébergée
+    de_de: Selbst gehostete Internet-Archivierungslösung
+    it_it: Soluzione di archiviazione internet self-hosted
+    ru_ru: Самохостинговое решение для архивирования интернета
+    ja_jp: セルフホスト型インターネットアーカイブソリューション
   description:
     en_US: |
       ArchiveBox is a powerful, self-hosted internet archiving solution that allows you to create your own personal archive of web pages, PDFs, videos, and more. It functions as a personal internet archive, saving content in multiple formats for long-term preservation.
@@ -849,6 +1041,174 @@ x-casaos:
       - [ArchiveBox Resmi Web Sitesi](https://archivebox.io)
       - [ArchiveBox GitHub Deposu](https://github.com/ArchiveBox/ArchiveBox)
       - [ArchiveBox Belgelendirme](https://github.com/ArchiveBox/ArchiveBox/wiki)
+    en_us: |
+      ArchiveBox is a powerful, self-hosted internet archiving solution that allows you to create your own personal archive of web pages, PDFs, videos, and more. It functions as a personal internet archive, saving content in multiple formats for long-term preservation.
+
+      The system consists of multiple components:
+      - **ArchiveBox**: The main application providing the web interface and archiving capabilities
+      - **Sonic**: A fast search backend for full-text search across archived content
+      - **ArchiveBox Scheduler**: A background service for scheduled archiving tasks
+      - **NoVNC**: A web-based VNC client for browser-based archiving
+
+      **Key Features:**
+      - Save web pages in multiple formats (HTML, PDF, screenshots, etc.)
+      - Full-text search across all archived content
+      - Scheduled archiving of websites and RSS feeds
+      - Browser-based archiving with NoVNC
+      - User authentication and access control
+      - Extract and save media files (videos, audio, PDFs, etc.)
+
+      **Learn More:**
+      - [ArchiveBox Official Website](https://archivebox.io)
+      - [ArchiveBox GitHub Repository](https://github.com/ArchiveBox/ArchiveBox)
+      - [ArchiveBox Documentation](https://github.com/ArchiveBox/ArchiveBox/wiki)
+    pt_br: |
+      ArchiveBox é uma poderosa solução de arquivamento de internet auto-hospedada que lhe permite criar o seu próprio arquivo pessoal de páginas web, PDFs, vídeos e mais. Funciona como um arquivo de internet pessoal, guardando conteúdo em múltiplos formatos para preservação a longo prazo.
+
+      O sistema consiste em múltiplos componentes:
+      - **ArchiveBox**: A aplicação principal que fornece a interface web e capacidades de arquivamento
+      - **Sonic**: Um backend de pesquisa rápido para pesquisa de texto completo em conteúdo arquivado
+      - **ArchiveBox Scheduler**: Um serviço de fundo para tarefas de arquivamento agendadas
+      - **NoVNC**: Um cliente VNC baseado na web para arquivamento baseado em navegador
+
+      **Características Principais:**
+      - Guardar páginas web em múltiplos formatos (HTML, PDF, capturas de ecrã, etc.)
+      - Pesquisa de texto completo em todo o conteúdo arquivado
+      - Arquivamento agendado de websites e feeds RSS
+      - Arquivamento baseado em navegador com NoVNC
+      - Autenticação de utilizador e controlo de acesso
+      - Extrair e guardar ficheiros multimédia (vídeos, áudio, PDFs, etc.)
+
+      **Saiba Mais:**
+      - [Website Oficial ArchiveBox](https://archivebox.io)
+      - [Repositório GitHub ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
+      - [ArchiveBox Documentação](https://github.com/ArchiveBox/ArchiveBox/wiki)
+    zh_cn: |
+      ArchiveBox是一个强大的自托管互联网存档解决方案，允许您创建自己的网页、PDF、视频等个人存档。它作为个人互联网存档运行，以多种格式保存内容以供长期保存。
+
+      该系统由多个组件组成：
+      - **ArchiveBox**: 提供Web界面和存档功能的主应用程序
+      - **Sonic**: 用于在存档内容中进行全文搜索的快速搜索后端
+      - **ArchiveBox Scheduler**: 用于计划存档任务的后台服务
+      - **NoVNC**: 用于基于浏览器的存档的基于Web的VNC客户端
+
+      **主要功能：**
+      - 以多种格式保存网页（HTML、PDF、截图等）
+      - 在所有存档内容中进行全文搜索
+      - 计划存档网站和RSS源
+      - 使用NoVNC进行基于浏览器的存档
+      - 用户身份验证和访问控制
+      - 提取和保存媒体文件（视频、音频、PDF等）
+
+      **了解更多：**
+      - [ArchiveBox官方网站](https://archivebox.io)
+      - [ArchiveBox GitHub仓库](https://github.com/ArchiveBox/ArchiveBox)
+      - [ArchiveBox 文档](https://github.com/ArchiveBox/ArchiveBox/wiki)
+    fr_fr: |
+      ArchiveBox est une puissante solution d'archivage Internet auto-hébergée qui vous permet de créer votre propre archive personnelle de pages Web, de PDF, de vidéos et plus encore. Elle fonctionne comme une archive Internet personnelle, sauvegardant le contenu dans plusieurs formats pour une préservation à long terme.
+
+      Le système se compose de plusieurs composants :
+      - **ArchiveBox** : L'application principale fournissant l'interface Web et les capacités d'archivage
+      - **Sonic** : Un backend de recherche rapide pour la recherche en texte intégral dans le contenu archivé
+      - **ArchiveBox Scheduler** : Un service d'arrière-plan pour les tâches d'archivage planifiées
+      - **NoVNC** : Un client VNC basé sur le Web pour l'archivage basé sur le navigateur
+
+      **Fonctionnalités clés :**
+      - Sauvegardez les pages Web dans plusieurs formats (HTML, PDF, captures d'écran, etc.)
+      - Recherche en texte intégral dans tout le contenu archivé
+      - Archivage planifié de sites Web et de flux RSS
+      - Archivage basé sur le navigateur avec NoVNC
+      - Authentification utilisateur et contrôle d'accès
+      - Extrayez et sauvegardez des fichiers multimédias (vidéos, audio, PDF, etc.)
+
+      **En savoir plus :**
+      - [Site officiel d'ArchiveBox](https://archivebox.io)
+      - [Dépôt GitHub d'ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
+      - [ArchiveBox Documentation](https://github.com/ArchiveBox/ArchiveBox/wiki)
+    de_de: |
+      ArchiveBox ist eine leistungsstarke, selbst gehostete Internet-Archivierungslösung, mit der Sie Ihr eigenes persönliches Archiv von Webseiten, PDFs, Videos und mehr erstellen können. Es funktioniert als persönliches Internet-Archiv und speichert Inhalte in mehreren Formaten für die langfristige Aufbewahrung.
+
+      Das System besteht aus mehreren Komponenten:
+      - **ArchiveBox**: Die Hauptanwendung, die die Weboberfläche und Archivierungsfunktionen bereitstellt
+      - **Sonic**: Ein schnelles Such-Backend für die Volltextsuche in archivierten Inhalten
+      - **ArchiveBox Scheduler**: Ein Hintergrunddienst für geplante Archivierungsaufgaben
+      - **NoVNC**: Ein webbasierter VNC-Client für die browserbasierte Archivierung
+
+      **Hauptmerkmale:**
+      - Speichern Sie Webseiten in mehreren Formaten (HTML, PDF, Screenshots, etc.)
+      - Volltextsuche über alle archivierten Inhalte
+      - Geplante Archivierung von Websites und RSS-Feeds
+      - Browserbasierte Archivierung mit NoVNC
+      - Benutzerauthentifizierung und Zugriffskontrolle
+      - Extrahieren und Speichern von Mediendateien (Videos, Audio, PDFs, etc.)
+
+      **Mehr erfahren:**
+      - [ArchiveBox offizielle Website](https://archivebox.io)
+      - [ArchiveBox GitHub Repository](https://github.com/ArchiveBox/ArchiveBox)
+      - [ArchiveBox Dokumentation](https://github.com/ArchiveBox/ArchiveBox/wiki)
+    it_it: |
+      ArchiveBox è una potente soluzione di archiviazione internet self-hosted che ti permette di creare il tuo archivio personale di pagine web, PDF, video e altro ancora. Funziona come un archivio internet personale, salvando i contenuti in più formati per la conservazione a lungo termine.
+
+      Il sistema è composto da più componenti:
+      - **ArchiveBox**: L'applicazione principale che fornisce l'interfaccia web e le capacità di archiviazione
+      - **Sonic**: Un backend di ricerca veloce per la ricerca full-text nei contenuti archiviati
+      - **ArchiveBox Scheduler**: Un servizio in background per le attività di archiviazione pianificate
+      - **NoVNC**: Un client VNC basato sul web per l'archiviazione basata su browser
+
+      **Caratteristiche principali:**
+      - Salva pagine web in più formati (HTML, PDF, screenshot, ecc.)
+      - Ricerca full-text su tutti i contenuti archiviati
+      - Archiviazione pianificata di siti web e feed RSS
+      - Archiviazione basata su browser con NoVNC
+      - Autenticazione utente e controllo degli accessi
+      - Estrai e salva file multimediali (video, audio, PDF, ecc.)
+
+      **Scopri di più:**
+      - [Sito web ufficiale di ArchiveBox](https://archivebox.io)
+      - [Repository GitHub di ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)
+      - [ArchiveBox Documentazione](https://github.com/ArchiveBox/ArchiveBox/wiki)
+    ru_ru: |
+      ArchiveBox - это мощное самохостинговое решение для архивирования интернета, которое позволяет создавать собственный личный архив веб-страниц, PDF-файлов, видео и многого другого. Оно функционирует как личный интернет-архив, сохраняя контент в нескольких форматах для долгосрочного хранения.
+
+      Система состоит из нескольких компонентов:
+      - **ArchiveBox**: Основное приложение, предоставляющее веб-интерфейс и возможности архивирования
+      - **Sonic**: Быстрый бэкенд поиска для полнотекстового поиска по заархивированному контенту
+      - **ArchiveBox Scheduler**: Фоновая служба для запланированных задач архивирования
+      - **NoVNC**: Веб-клиент VNC для архивирования на основе браузера
+
+      **Ключевые особенности:**
+      - Сохранение веб-страниц в нескольких форматах (HTML, PDF, скриншоты и т.д.)
+      - Полнотекстовый поиск по всему заархивированному контенту
+      - Запланированное архивирование веб-сайтов и RSS-лент
+      - Архивирование на основе браузера с помощью NoVNC
+      - Аутентификация пользователей и контроль доступа
+      - Извлечение и сохранение медиафайлов (видео, аудио, PDF и т.д.)
+
+      **Узнать больше:**
+      - [Официальный сайт ArchiveBox](https://archivebox.io)
+      - [Репозиторий ArchiveBox на GitHub](https://github.com/ArchiveBox/ArchiveBox)
+      - [ArchiveBox Документация](https://github.com/ArchiveBox/ArchiveBox/wiki)
+    ja_jp: |
+      ArchiveBoxは、Webページ、PDF、ビデオなどの独自の個人アーカイブを作成できる強力なセルフホスト型インターネットアーカイブソリューションです。個人用インターネットアーカイブとして機能し、長期保存のために複数の形式でコンテンツを保存します。
+
+      このシステムは複数のコンポーネントで構成されています：
+      - **ArchiveBox**: Webインターフェースとアーカイブ機能を提供するメインアプリケーション
+      - **Sonic**: アーカイブされたコンテンツ全体で全文検索を行うための高速検索バックエンド
+      - **ArchiveBox Scheduler**: スケジュールされたアーカイブタスク用のバックグラウンドサービス
+      - **NoVNC**: ブラウザベースのアーカイブ用のWebベースのVNCクライアント
+
+      **主な機能：**
+      - 複数の形式でWebページを保存（HTML、PDF、スクリーンショットなど）
+      - すべてのアーカイブされたコンテンツで全文検索
+      - WebサイトとRSSフィードのスケジュールされたアーカイブ
+      - NoVNCを使用したブラウザベースのアーカイブ
+      - ユーザー認証とアクセス制御
+      - メディアファイルの抽出と保存（ビデオ、オーディオ、PDFなど）
+
+      **詳細情報：**
+      - [ArchiveBox公式ウェブサイト](https://archivebox.io)
+      - [ArchiveBox GitHubリポジトリ](https://github.com/ArchiveBox/ArchiveBox)
+      - [ArchiveBox ドキュメント](https://github.com/ArchiveBox/ArchiveBox/wiki)
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ArchiveBox/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ArchiveBox/screenshot-1.png
@@ -856,7 +1216,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ArchiveBox/screenshot-3.png
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/ArchiveBox/thumbnail.png
   scheme: http
-  port_map: '18010'
+  port_map: "18010"
   tips:
     before_install:
       en_US: |
@@ -949,6 +1309,54 @@ x-casaos:
         | Kullanıcı Adı | Parola |
         |---------------|--------|
         | `roqueos`      | `roqueos` |
+      en_us: |
+        **Default Account**
+
+        | Username | Password |
+        |----------|----------|
+        | `roqueos`    | `roqueos` |
+      pt_br: |
+        **Conta Padrão**
+
+        | Nome de Utilizador | Palavra-passe |
+        |--------------------|----------------|
+        | `roqueos`           | `roqueos`       |
+      zh_cn: |
+        **默认账户**
+
+        | 用户名 | 密码 |
+        |--------|------|
+        | `roqueos` | `roqueos` |
+      fr_fr: |
+        **Compte par Défaut**
+
+        | Nom d'utilisateur | Mot de passe |
+        |-------------------|--------------|
+        | `roqueos`          | `roqueos`      |
+      de_de: |
+        **Standardkonto**
+
+        | Benutzername | Passwort |
+        |--------------|----------|
+        | `roqueos`     | `roqueos`  |
+      it_it: |
+        **Account Predefinito**
+
+        | Nome utente | Password |
+        |-------------|----------|
+        | `roqueos`    | `roqueos` |
+      ru_ru: |
+        **Учетная запись по умолчанию**
+
+        | Имя пользователя | Пароль |
+        |------------------|--------|
+        | `roqueos`         | `roqueos` |
+      ja_jp: |
+        **デフォルトアカウント**
+
+        | ユーザー名 | パスワード |
+        |------------|------------|
+        | `roqueos`   | `roqueos`   |
   index: /
   title:
     en_US: ArchiveBox
@@ -966,5 +1374,13 @@ x-casaos:
     pt_PT: ArchiveBox
     ru_RU: ArchiveBox
     tr_TR: ArchiveBox
+    en_us: ArchiveBox
+    pt_br: ArchiveBox
+    zh_cn: ArchiveBox
+    fr_fr: ArchiveBox
+    de_de: ArchiveBox
+    it_it: ArchiveBox
+    ru_ru: ArchiveBox
+    ja_jp: ArchiveBox
 x-roqueos:
   mountShared: true

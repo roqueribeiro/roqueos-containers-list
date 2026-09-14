@@ -10,7 +10,7 @@ services:
     network_mode: bridge
     ports:
       - target: 80
-        published: '25661'
+        published: "25661"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -24,9 +24,9 @@ services:
       test:
         - CMD
         - wget
-        - '--no-verbose'
-        - '--tries=1'
-        - '--spider'
+        - "--no-verbose"
+        - "--tries=1"
+        - "--spider"
         - http://localhost/api/info
       interval: 1m
       timeout: 3s
@@ -49,6 +49,14 @@ services:
             pt_PT: Diretório de imagens do Wallabag
             ru_RU: Каталог изображений Wallabag
             tr_TR: Wallabag resim dizini
+            en_us: Wallabag images directory
+            pt_br: Diretório de imagens do Wallabag
+            zh_cn: Wallabag 图片目录
+            fr_fr: Répertoire des images Wallabag
+            de_de: Wallabag Bilderverzeichnis
+            it_it: Directory delle immagini di Wallabag
+            ru_ru: Каталог изображений Wallabag
+            ja_jp: Wallabag 画像ディレクトリ
       envs:
         - container: SYMFONY__ENV__DOMAIN_NAME
           description:
@@ -67,6 +75,14 @@ services:
             pt_PT: Nome de domínio da instância
             ru_RU: Доменное имя экземпляра
             tr_TR: Örnek alan adı
+            en_us: Instance domain name
+            pt_br: Nome de domínio da instância
+            zh_cn: 实例域名
+            fr_fr: Nom de domaine de l'instance
+            de_de: Instanz-Domain-Name
+            it_it: Nome dominio dell'istanza
+            ru_ru: Доменное имя экземпляра
+            ja_jp: インスタンスドメイン名
         - container: SYMFONY__ENV__SERVER_NAME
           description:
             en_US: Server name
@@ -84,8 +100,16 @@ services:
             pt_PT: Nome do servidor
             ru_RU: Имя сервера
             tr_TR: Sunucu adı
+            en_us: Server name
+            pt_br: Nome do servidor
+            zh_cn: 服务器名称
+            fr_fr: Nom du serveur
+            de_de: Servername
+            it_it: Nome del server
+            ru_ru: Имя сервера
+            ja_jp: サーバー名
       ports:
-        - container: '80'
+        - container: "80"
           description:
             en_US: Wallabag HTTP Port
             en_GB: Wallabag HTTP Port
@@ -102,6 +126,14 @@ services:
             pt_PT: Porta HTTP do Wallabag
             ru_RU: HTTP порт Wallabag
             tr_TR: Wallabag HTTP Portu
+            en_us: Wallabag HTTP Port
+            pt_br: Porta HTTP do Wallabag
+            zh_cn: Wallabag HTTP 端口
+            fr_fr: Port HTTP de Wallabag
+            de_de: Wallabag HTTP-Port
+            it_it: Porta HTTP di Wallabag
+            ru_ru: HTTP порт Wallabag
+            ja_jp: Wallabag HTTP ポート
 x-casaos:
   architectures:
     - amd64
@@ -126,6 +158,14 @@ x-casaos:
     pt_PT: Guarde e classifique artigos. Leia-os mais tarde. Livremente.
     ru_RU: Сохраняйте и классифицируйте статьи. Читайте их позже. Свободно.
     tr_TR: Makaleleri kaydedin ve sınıflandırın. Sonra özgürce okuyun.
+    en_us: Save and classify articles. Read them later. Freely.
+    pt_br: Guarde e classifique artigos. Leia-os mais tarde. Livremente.
+    zh_cn: 保存并分类文章，稍后自由阅读。
+    fr_fr: Sauvegarder et classer les articles. Les lire plus tard. Librement.
+    de_de: Artikel speichern und klassifizieren. Später frei lesen.
+    it_it: Salva e classifica gli articoli. Leggili dopo. Liberamente.
+    ru_ru: Сохраняйте и классифицируйте статьи. Читайте их позже. Свободно.
+    ja_jp: 記事を保存・分類し、後で自由に読めます。
   description:
     en_US: |
       Wallabag is a web page saving app that allows users to save articles for offline reading, extracting content for a distraction-free experience. Its intuitive Web interface enables saving articles with a click, ensuring users can read them at their convenience.
@@ -456,12 +496,187 @@ x-casaos:
       - [Wallabag GitHub Deposu](https://github.com/wallabag/wallabag)
       - [Wallabag Belgeleri](https://doc.wallabag.org)
       - [Wallabag Docker İmajı](https://hub.docker.com/r/wallabag/wallabag)
+    en_us: |
+      Wallabag is a web page saving app that allows users to save articles for offline reading, extracting content for a distraction-free experience. Its intuitive Web interface enables saving articles with a click, ensuring users can read them at their convenience.
+
+      The app's core features include convenient web page saving, optimized reading, and flexible content organization. It extracts only the article's content, removing pop-ups and ads, and displays it in a clean, comfortable view. Users can organize saved articles with tags and automatic tagging rules, creating a personalized content library accessible on demand. Browser extensions enable quick saving, compatible with Chrome, Firefox, Opera, and more. Cross-platform clients cover Android, iOS, and other devices, ensuring a seamless reading experience. It also supports multi-user collaboration for sharing saved articles.
+
+      It enables importing data from services like Pocket, Readability, Instapaper, or Pinboard, simplifying content library migration. RSS generation allows users to access saved articles in RSS readers. Community documentation enhances usability, and the app's high flexibility and intuitive operation deliver a modern web content management solution.
+
+      **Key Features:**
+      - Save web pages for offline reading
+      - Extract pure content for a distraction-free reading view
+      - Article classification with automatic tagging rules for a personalized content library
+      - Browser extensions for quick web page saving
+      - Cross-platform clients (Android, iOS, Chrome, Firefox, Opera)
+      - Multi-user collaboration for sharing saved articles
+      - Import data from Pocket, Readability, Instapaper, Pinboard and other services
+      - RSS generation for accessing saved articles in readers
+
+      **Learn More:**
+      - [Wallabag Official Website](https://wallabag.org)
+      - [Wallabag GitHub Repository](https://github.com/wallabag/wallabag)
+      - [Wallabag Documentation](https://doc.wallabag.org)
+      - [Wallabag Docker Image](https://hub.docker.com/r/wallabag/wallabag)
+    pt_br: |
+      Wallabag é uma aplicação de poupança de páginas web que permite aos utilizadores guardar artigos para leitura offline, extraindo conteúdo para uma experiência livre de distrações. A sua interface web intuitiva permite guardar artigos com um clique, assegurando que os utilizadores podem lê-los quando for conveniente.
+
+      As funcionalidades principais da aplicação incluem poupança conveniente de páginas web, leitura optimizada e organização flexível de conteúdo. Extrai apenas o conteúdo do artigo, removendo pop-ups e anúncios, e exibe-o numa visualização limpa e confortável. Os utilizadores podem organizar artigos guardados com etiquetas e regras de etiquetagem automática, criando uma biblioteca de conteúdo personalizada acessível sob demanda. As extensões do navegador permitem poupança rápida, compatível com Chrome, Firefox, Opera e mais. Os clientes multiplataforma cobrem Android, iOS e outros dispositivos, assegurando uma experiência de leitura perfeita. Também suporta colaboração multi-utilizador para partilha de artigos guardados.
+
+      Permite importar dados de serviços como Pocket, Readability, Instapaper ou Pinboard, simplificando a migração da biblioteca de conteúdo. A geração RSS permite aos utilizadores aceder a artigos guardados em leitores RSS. A documentação da comunidade melhora a usabilidade, e a alta flexibilidade e funcionamento intuitivo da aplicação entregam uma solução moderna de gestão de conteúdo web.
+
+      **Funcionalidades Principais:**
+      - Guardar páginas web para leitura offline
+      - Extrair conteúdo puro para uma visualização de leitura livre de distrações
+      - Classificação de artigos com regras de etiquetagem automática para uma biblioteca de conteúdo personalizada
+      - Extensões do navegador para poupança rápida de páginas web
+      - Clientes multiplataforma (Android, iOS, Chrome, Firefox, Opera)
+      - Colaboração multi-utilizador para partilha de artigos guardados
+      - Importar dados do Pocket, Readability, Instapaper, Pinboard e outros serviços
+      - Geração RSS para acesso a artigos guardados em leitores
+
+      **Saiba Mais:**
+      - [Website Oficial Wallabag](https://wallabag.org)
+      - [Repositório GitHub Wallabag](https://github.com/wallabag/wallabag)
+      - [Documentação Wallabag](https://doc.wallabag.org)
+      - [Imagem Docker Wallabag](https://hub.docker.com/r/wallabag/wallabag)
+    zh_cn: |
+      Wallabag 是一款网页保存应用，允许用户保存网页以供离线阅读，提取内容以提供无干扰的阅读体验。其直观的 Web 界面支持通过点击保存文章，确保用户可在方便时阅读。
+
+      该应用的核心功能包括便捷的网页保存、优化的阅读体验和灵活的内容整理。它能提取网页的纯内容，剔除弹窗和广告，呈现简洁的阅读视图。用户可通过标签和自动标签规则整理保存的文章，构建个人化的内容库，随时按需访问。浏览器扩展支持快速保存网页，兼容 Chrome、Firefox、Opera 等。跨平台客户端覆盖 Android、iOS 等设备，确保无缝阅读体验。它还支持多用户协作，共享保存的文章。
+
+      它支持从 Pocket、Readability、Instapaper 或 Pinboard 等服务导入数据，方便迁移现有内容库。RSS 生成功能允许用户在 RSS 阅读器中访问保存的文章。社区支持文档进一步优化使用体验，该应用以高灵活性和直观操作，提供现代化的网页内容管理解决方案。
+      **主要功能：**
+      - 保存网页以供离线阅读
+      - 提取纯内容以获得无干扰的阅读视图
+      - 文章分类与自动标签规则，构建个人内容库
+      - 用于快速保存网页的浏览器扩展
+      - 跨平台客户端（Android、iOS、Chrome、Firefox、Opera）
+      - 多用户协作以共享保存的文章
+      - 从 Pocket、Readability、Instapaper、Pinboard 和其他服务导入数据
+      - RSS 生成以在阅读器中访问保存的文章
+
+      **了解更多：**
+      - [Wallabag 官方网站](https://wallabag.org)
+      - [Wallabag GitHub 仓库](https://github.com/wallabag/wallabag)
+      - [Wallabag 文档](https://doc.wallabag.org)
+      - [Wallabag Docker 镜像](https://hub.docker.com/r/wallabag/wallabag)
+    fr_fr: |
+      Wallabag est une application de sauvegarde de pages web qui permet aux utilisateurs de sauvegarder des articles pour une lecture hors ligne, en extrayant le contenu pour une expérience sans distraction. Son interface web intuitive permet de sauvegarder des articles d'un clic, garantissant aux utilisateurs de pouvoir les lire à leur convenance.
+
+      Les fonctionnalités principales de l'application incluent la sauvegarde pratique de pages web, la lecture optimisée et l'organisation flexible du contenu. Elle extrait uniquement le contenu de l'article, supprime les pop-ups et les publicités, et l'affiche dans une vue propre et confortable. Les utilisateurs peuvent organiser les articles sauvegardés avec des étiquettes et des règles d'étiquetage automatique, créant une bibliothèque de contenu personnalisée accessible à la demande. Les extensions de navigateur permettent une sauvegarde rapide, compatible avec Chrome, Firefox, Opera et plus. Les clients multiplateformes couvrent Android, iOS et d'autres appareils, garantissant une expérience de lecture fluide. Elle prend également en charge la collaboration multi-utilisateurs pour partager les articles sauvegardés.
+
+      Elle permet d'importer des données depuis des services comme Pocket, Readability, Instapaper ou Pinboard, simplifiant la migration de bibliothèque de contenu. La génération RSS permet aux utilisateurs d'accéder aux articles sauvegardés dans les lecteurs RSS. La documentation communautaire améliore l'utilisabilité, et la haute flexibilité et le fonctionnement intuitif de l'application offrent une solution moderne de gestion de contenu web.
+
+      **Fonctionnalités Clés :**
+      - Sauvegarder des pages web pour la lecture hors ligne
+      - Extraire le contenu pur pour une vue de lecture sans distraction
+      - Classification d'articles avec règles d'étiquetage automatique pour une bibliothèque de contenu personnalisée
+      - Extensions de navigateur pour la sauvegarde rapide de pages web
+      - Clients multiplateformes (Android, iOS, Chrome, Firefox, Opera)
+      - Collaboration multi-utilisateurs pour partager les articles sauvegardés
+      - Importer des données depuis Pocket, Readability, Instapaper, Pinboard et d'autres services
+      - Génération RSS pour accéder aux articles sauvegardés dans les lecteurs
+
+      **En Savoir Plus :**
+      - [Site Officiel Wallabag](https://wallabag.org)
+      - [Dépôt GitHub Wallabag](https://github.com/wallabag/wallabag)
+      - [Documentation Wallabag](https://doc.wallabag.org)
+      - [Image Docker Wallabag](https://hub.docker.com/r/wallabag/wallabag)
+    de_de: |
+      Wallabag ist eine Webseiten-Speicher-App, die es Benutzern ermöglicht, Artikel für das Offline-Lesen zu speichern und Inhalte für ein ablenkungsfreies Erlebnis zu extrahieren. Die intuitive Web-Oberfläche ermöglicht das Speichern von Artikeln mit einem Klick und stellt sicher, dass Benutzer sie nach Belieben lesen können.
+
+      Die Kernfunktionen der App umfassen bequemes Webseiten-Speichern, optimiertes Lesen und flexible Inhaltsorganisation. Sie extrahiert nur den Inhalt des Artikels, entfernt Pop-ups und Werbung und zeigt ihn in einer sauberen, komfortablen Ansicht an. Benutzer können gespeicherte Artikel mit Tags und automatischen Tagging-Regeln organisieren und eine personalisierte Inhaltsbibliothek erstellen, die auf Abruf zugänglich ist. Browser-Erweiterungen ermöglichen schnelles Speichern, kompatibel mit Chrome, Firefox, Opera und mehr. Plattformübergreifende Clients decken Android, iOS und andere Geräte ab und gewährleisten ein nahtloses Leseerlebnis. Sie unterstützt auch Multi-User-Kollaboration zum Teilen gespeicherter Artikel.
+
+      Sie ermöglicht den Import von Daten aus Diensten wie Pocket, Readability, Instapaper oder Pinboard und vereinfacht die Migration von Inhaltsbibliotheken. RSS-Generierung ermöglicht Benutzern den Zugriff auf gespeicherte Artikel in RSS-Readern. Community-Dokumentation verbessert die Benutzerfreundlichkeit, und die hohe Flexibilität und intuitive Bedienung der App liefern eine moderne Web-Content-Management-Lösung.
+
+      **Hauptfunktionen:**
+      - Webseiten für Offline-Lesen speichern
+      - Reinen Inhalt für eine ablenkungsfreie Leseansicht extrahieren
+      - Artikelklassifizierung mit automatischen Tagging-Regeln für eine personalisierte Inhaltsbibliothek
+      - Browser-Erweiterungen für schnelles Webseiten-Speichern
+      - Plattformübergreifende Clients (Android, iOS, Chrome, Firefox, Opera)
+      - Multi-User-Kollaboration zum Teilen gespeicherter Artikel
+      - Daten aus Pocket, Readability, Instapaper, Pinboard und anderen Diensten importieren
+      - RSS-Generierung für Zugriff auf gespeicherte Artikel in Readern
+
+      **Mehr Erfahren:**
+      - [Wallabag Offizielle Website](https://wallabag.org)
+      - [Wallabag GitHub Repository](https://github.com/wallabag/wallabag)
+      - [Wallabag Dokumentation](https://doc.wallabag.org)
+      - [Wallabag Docker Image](https://hub.docker.com/r/wallabag/wallabag)
+    it_it: |
+      Wallabag è un'app per salvare pagine web che consente agli utenti di salvare articoli per la lettura offline, estraendo il contenuto per un'esperienza senza distrazioni. La sua interfaccia web intuitiva permette di salvare articoli con un clic, garantendo agli utenti di poterli leggere quando è più comodo.
+
+      Le funzionalità principali dell'app includono il salvataggio conveniente di pagine web, la lettura ottimizzata e l'organizzazione flessibile dei contenuti. Estrae solo il contenuto dell'articolo, rimuovendo pop-up e pubblicità, e lo visualizza in una vista pulita e confortevole. Gli utenti possono organizzare gli articoli salvati con tag e regole di tagging automatico, creando una libreria di contenuti personalizzata accessibile su richiesta. Le estensioni del browser abilitano il salvataggio rapido, compatibili con Chrome, Firefox, Opera e altri. I client cross-platform coprono Android, iOS e altri dispositivi, garantendo un'esperienza di lettura fluida. Supporta anche la collaborazione multi-utente per condividere articoli salvati.
+
+      Permette l'importazione di dati da servizi come Pocket, Readability, Instapaper o Pinboard, semplificando la migrazione della libreria di contenuti. La generazione RSS consente agli utenti di accedere agli articoli salvati nei lettori RSS. La documentazione della community migliora l'usabilità, e l'alta flessibilità e il funzionamento intuitivo dell'app offrono una soluzione moderna per la gestione dei contenuti web.
+
+      **Caratteristiche Principali:**
+      - Salva pagine web per la lettura offline
+      - Estrai contenuto puro per una vista di lettura senza distrazioni
+      - Classificazione articoli con regole di tagging automatico per una libreria di contenuti personalizzata
+      - Estensioni browser per il salvataggio rapido di pagine web
+      - Client cross-platform (Android, iOS, Chrome, Firefox, Opera)
+      - Collaborazione multi-utente per condividere articoli salvati
+      - Importa dati da Pocket, Readability, Instapaper, Pinboard e altri servizi
+      - Generazione RSS per accedere agli articoli salvati nei lettori
+
+      **Scopri di Più:**
+      - [Sito Ufficiale Wallabag](https://wallabag.org)
+      - [Repository GitHub Wallabag](https://github.com/wallabag/wallabag)
+      - [Documentazione Wallabag](https://doc.wallabag.org)
+      - [Immagine Docker Wallabag](https://hub.docker.com/r/wallabag/wallabag)
+    ru_ru: |
+      Wallabag — это приложение для сохранения веб-страниц, которое позволяет пользователям сохранять статьи для автономного чтения, извлекая контент для незагромождённого опыта. Его интуитивный веб-интерфейс позволяет сохранять статьи одним щелчком, обеспечивая возможность читать их в удобное время.
+
+      Основные функции приложения включают удобное сохранение веб-страниц, оптимизированное чтение и гибкую организацию контента. Оно извлекает только содержимое статьи, удаляя всплывающие окна и рекламу, и отображает его в чистом, удобном виде. Пользователи могут организовывать сохранённые статьи с помощью тегов и правил автоматической разметки, создавая персонализированную библиотеку контента, доступную по требованию. Расширения браузера обеспечивают быстрое сохранение, совместимые с Chrome, Firefox, Opera и другими. Кроссплатформенные клиенты охватывают Android, iOS и другие устройства, обеспечивая бесшовный опыт чтения. Также поддерживается многопользовательское сотрудничество для обмена сохранёнными статьями.
+
+      Позволяет импортировать данные из сервисов, таких как Pocket, Readability, Instapaper или Pinboard, упрощая миграцию библиотеки контента. Генерация RSS позволяет пользователям получать доступ к сохранённым статьям в RSS-читалках. Документация сообщества улучшает удобство использования, а высокая гибкость и интуитивная работа приложения обеспечивают современное решение для управления веб-контентом.
+
+      **Ключевые Особенности:**
+      - Сохранение веб-страниц для автономного чтения
+      - Извлечение чистого контента для незагромождённого вида чтения
+      - Классификация статей с правилами автоматической разметки для персонализированной библиотеки контента
+      - Расширения браузера для быстрого сохранения веб-страниц
+      - Кроссплатформенные клиенты (Android, iOS, Chrome, Firefox, Opera)
+      - Многопользовательское сотрудничество для обмена сохранёнными статьями
+      - Импорт данных из Pocket, Readability, Instapaper, Pinboard и других сервисов
+      - Генерация RSS для доступа к сохранённым статьям в читалках
+
+      **Узнать Больше:**
+      - [Официальный Сайт Wallabag](https://wallabag.org)
+      - [Репозиторий GitHub Wallabag](https://github.com/wallabag/wallabag)
+      - [Документация Wallabag](https://doc.wallabag.org)
+      - [Docker Образ Wallabag](https://hub.docker.com/r/wallabag/wallabag)
+    ja_jp: |
+      Wallabagは、ユーザーがオフライン読書用に記事を保存し、気を散らさない体験のためにコンテンツを抽出できるWebページ保存アプリです。直感的なWebインターフェースにより、クリック一つで記事を保存でき、ユーザーが都合の良い時に読めることを保証します。
+
+      アプリの中核機能には、便利なWebページ保存、最適化された読書、柔軟なコンテンツ整理が含まれます。記事のコンテンツのみを抽出し、ポップアップや広告を除去し、清潔で快適なビューで表示します。ユーザーはタグと自動タグ付けルールで保存された記事を整理し、オンデマンドでアクセス可能な個人化されたコンテンツライブラリを作成できます。ブラウザ拡張機能により素早い保存が可能で、Chrome、Firefox、Operaなどに対応しています。クロスプラットフォームクライアントはAndroid、iOS、その他のデバイスをカバーし、シームレスな読書体験を保証します。また、保存された記事を共有するためのマルチユーザー協力もサポートしています。
+
+      Pocket、Readability、Instapaper、Pinboardなどのサービスからのデータインポートを可能にし、コンテンツライブラリの移行を簡素化します。RSS生成により、ユーザーはRSSリーダーで保存された記事にアクセスできます。コミュニティドキュメンテーションが使いやすさを向上させ、アプリの高い柔軟性と直感的な操作により、現代的なWebコンテンツ管理ソリューションを提供します。
+
+      **主な機能：**
+      - オフライン読書用のWebページ保存
+      - 気を散らさない読書ビューのための純粋なコンテンツ抽出
+      - 個人化されたコンテンツライブラリのための自動タグ付けルールによる記事分類
+      - 素早いWebページ保存のためのブラウザ拡張機能
+      - クロスプラットフォームクライアント（Android、iOS、Chrome、Firefox、Opera）
+      - 保存された記事を共有するためのマルチユーザー協力
+      - Pocket、Readability、Instapaper、Pinboardなどのサービスからのデータインポート
+      - リーダーで保存された記事にアクセスするためのRSS生成
+
+      **詳細はこちら：**
+      - [Wallabag公式ウェブサイト](https://wallabag.org)
+      - [Wallabag GitHubリポジトリ](https://github.com/wallabag/wallabag)
+      - [Wallabagドキュメンテーション](https://doc.wallabag.org)
+      - [Wallabag Dockerイメージ](https://hub.docker.com/r/wallabag/wallabag)
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Wallabag/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Wallabag/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Wallabag/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Wallabag/screenshot-3.png
-  thumbnail: ''
+  thumbnail: ""
   tips:
     before_install:
       en_US: |
@@ -584,8 +799,73 @@ x-casaos:
         | Kullanıcı Adı | Şifre |
         |---------------|-------|
         | `wallabag`    | `wallabag` |
+      en_us: |
+        You need to set the environment variable `SYMFONY__ENV__DOMAIN_NAME` to your domain name or IP address, which can be modified through the Wallabag settings page.
+
+        **Default Account**
+
+        | Username | Password |
+        |----------|----------|
+        | `wallabag`    | `wallabag` |
+      pt_br: |
+        Precisa de definir a variável de ambiente `SYMFONY__ENV__DOMAIN_NAME` para o seu nome de domínio ou endereço IP, que pode ser modificado através da página de configurações do Wallabag.
+
+        **Conta Predefinida**
+
+        | Nome de Utilizador | Palavra-passe |
+        |-------------------|---------------|
+        | `wallabag`        | `wallabag`    |
+      zh_cn: |
+        需要将环境变量 `SYMFONY__ENV__DOMAIN_NAME` 设置为你的域名或者 IP 地址，可以通过 Wallabag 的设置页面进行修改。
+
+        **默认账号**
+
+        | 用户名 | 密码   |
+        | -------- | ---------- |
+        | `wallabag`    | `wallabag` |
+      fr_fr: |
+        Vous devez définir la variable d'environnement `SYMFONY__ENV__DOMAIN_NAME` sur votre nom de domaine ou adresse IP, qui peut être modifiée via la page des paramètres Wallabag.
+
+        **Compte Par Défaut**
+
+        | Nom d'utilisateur | Mot de passe |
+        |-------------------|--------------|
+        | `wallabag`        | `wallabag`   |
+      de_de: |
+        Sie müssen die Umgebungsvariable `SYMFONY__ENV__DOMAIN_NAME` auf Ihren Domainnamen oder Ihre IP-Adresse setzen, die über die Wallabag-Einstellungsseite geändert werden kann.
+
+        **Standard-Konto**
+
+        | Benutzername | Passwort |
+        |--------------|----------|
+        | `wallabag`   | `wallabag` |
+      it_it: |
+        È necessario impostare la variabile d'ambiente `SYMFONY__ENV__DOMAIN_NAME` al tuo nome di dominio o indirizzo IP, che può essere modificato attraverso la pagina delle impostazioni di Wallabag.
+
+        **Account Predefinito**
+
+        | Nome Utente | Password |
+        |-------------|----------|
+        | `wallabag`  | `wallabag` |
+      ru_ru: |
+        Вам нужно установить переменную окружения `SYMFONY__ENV__DOMAIN_NAME` на ваше доменное имя или IP-адрес, которое можно изменить через страницу настроек Wallabag.
+
+        **Учётная запись по умолчанию**
+
+        | Имя пользователя | Пароль |
+        |------------------|--------|
+        | `wallabag`       | `wallabag` |
+      ja_jp: |
+        環境変数 `SYMFONY__ENV__DOMAIN_NAME` をあなたのドメイン名またはIPアドレスに設定する必要があります。これはWallabag設定ページから変更できます。
+
+        **デフォルトアカウント**
+
+        | ユーザー名 | パスワード |
+        |-----------|-----------|
+        | `wallabag` | `wallabag` |
   scheme: http
-  port_map: '25661'
+  port_map: "25661"
   index: /
   title:
     en_US: Wallabag
+    en_us: Wallabag

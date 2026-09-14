@@ -14,9 +14,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve | Serviço   |
-| ----- | --------- | --------- | -------------- | --------- |
-| 19200 | 5000      | tcp       | —              | fileflows |
+| Host  | Container | Protocolo | Para que serve              | Serviço   |
+| ----- | --------- | --------- | --------------------------- | --------- |
+| 19200 | 5000      | tcp       | Web interface for FileFlows | fileflows |
 
 
 ## Volumes

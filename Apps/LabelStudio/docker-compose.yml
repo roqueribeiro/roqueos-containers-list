@@ -27,6 +27,9 @@ services:
             en_us: timezone
             zh_cn: 时区
       ports:
+        - container: '8080'
+          description:
+            en_us: "Web interface for Label Studio"
         - container: '3080'
           description:
             en_us: WebUI HTTP Port
@@ -54,3 +57,6 @@ x-casaos:
     en_us: Label Studio
   port_map: '3080'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

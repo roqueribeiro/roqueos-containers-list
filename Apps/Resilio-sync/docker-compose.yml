@@ -1,6 +1,14 @@
 name: resilio-sync
 services:
   resilio-sync:
+    x-casaos:
+      ports:
+        - container: '55555'
+          description:
+            en_us: "Service port 55555 of resilio-sync"
+        - container: '8888'
+          description:
+            en_us: "Web interface for resilio-sync"
     environment:
       - PGID=$PGID
       - PUID=$PUID
@@ -73,4 +81,5 @@ x-casaos:
     en_us: resilio-sync
   main: resilio-sync
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

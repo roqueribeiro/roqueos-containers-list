@@ -15,6 +15,7 @@ Arquiteturas suportadas: amd64, arm64, arm.
 | ---- | --------- | --------- | -------------------------------------------------- | ------- |
 | 8083 | 8080      | tcp       | Porta da interface web (mapeada para 8083 no host) | shiori  |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

@@ -18,6 +18,7 @@ Arquiteturas suportadas: amd64, arm64.
 | 7359 | 7359      | tcp       | Jellyfin auto-discovery Port | jellyfin |
 | 1901 | 1900      | tcp       | Jellyfin DLNA Port           | jellyfin |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

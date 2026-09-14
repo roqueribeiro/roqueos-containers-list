@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço   |
-| ---- | --------- | --------- | -------------- | --------- |
-| 8200 | 8200      | tcp       | —              | duplicati |
+| Host | Container | Protocolo | Para que serve              | Serviço   |
+| ---- | --------- | --------- | --------------------------- | --------- |
+| 8200 | 8200      | tcp       | Web interface for Duplicati | duplicati |
 
 
 ## Volumes

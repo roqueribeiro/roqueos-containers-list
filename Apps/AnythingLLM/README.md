@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço     |
-| ---- | --------- | --------- | -------------- | ----------- |
-| 3051 | 3001      | tcp       | —              | anythingllm |
+| Host | Container | Protocolo | Para que serve                | Serviço     |
+| ---- | --------- | --------- | ----------------------------- | ----------- |
+| 3051 | 3001      | tcp       | Web interface for AnythingLLM | anythingllm |
 
 
 ## Volumes

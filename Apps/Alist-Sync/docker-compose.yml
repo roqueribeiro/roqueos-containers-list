@@ -1,6 +1,11 @@
 name: alist-sync
 services:
   alist-sync:
+    x-casaos:
+      ports:
+        - container: '52441'
+          description:
+            en_us: "Web interface for Alist-Sync"
     image: xjxjin/alist-sync:1.1.5
     container_name: alist-sync
     restart: unless-stopped

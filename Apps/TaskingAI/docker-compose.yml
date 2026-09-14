@@ -150,6 +150,11 @@ services:
     networks:
       - taskingai_network
   nginx:
+    x-casaos:
+      ports:
+        - container: '80'
+          description:
+            en_us: "Web interface for TaskingAI"
     image: nginx:1.24
     ports:
       - '3080:80'
@@ -240,3 +245,6 @@ configs:
             proxy_pass http://frontend:80;
         }
       }
+
+x-roqueos:
+  portaCompartilhada: true

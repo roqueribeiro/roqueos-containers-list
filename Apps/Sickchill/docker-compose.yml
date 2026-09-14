@@ -40,7 +40,7 @@ services:
       ports:
         - container: '8081'
           description:
-            en_us: ''
+            en_us: "Web interface for Sickchill"
       volumes:
         - container: /config
           description:
@@ -116,4 +116,5 @@ x-casaos:
   port_map: '8081'
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

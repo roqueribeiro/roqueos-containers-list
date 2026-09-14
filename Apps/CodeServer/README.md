@@ -15,6 +15,7 @@ Arquiteturas suportadas: amd64, arm64.
 | ---- | --------- | --------- | ------------------------------------------------------------------- | ---------- |
 | 8443 | 8443      | tcp       | Porta da interface web (HTTP — use reverse proxy https em produção) | codeserver |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

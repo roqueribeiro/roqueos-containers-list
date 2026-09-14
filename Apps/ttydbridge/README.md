@@ -12,10 +12,11 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço    |
-| ---- | --------- | --------- | -------------- | ---------- |
-| 2222 | 2222      | tcp       | —              | ttydbridge |
+| Host | Container | Protocolo | Para que serve               | Serviço    |
+| ---- | --------- | --------- | ---------------------------- | ---------- |
+| 2222 | 2222      | tcp       | Web interface for ttydBridge | ttydbridge |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

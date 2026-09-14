@@ -11,10 +11,11 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço    |
-| ---- | --------- | --------- | -------------- | ---------- |
-| 8090 | 8090      | tcp       | —              | pocketbase |
+| Host | Container | Protocolo | Para que serve               | Serviço    |
+| ---- | --------- | --------- | ---------------------------- | ---------- |
+| 8090 | 8090      | tcp       | Web interface for PocketBase | pocketbase |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

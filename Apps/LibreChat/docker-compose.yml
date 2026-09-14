@@ -3,7 +3,7 @@ services:
   librechat-api:
     container_name: librechat-api
     ports:
-      - '3080:3080'
+      - "3080:3080"
     depends_on:
       - librechat-mongodb
       - librechat-rag-api
@@ -90,7 +90,7 @@ services:
           memory: 1024M
     x-casaos:
       ports:
-        - container: '3080'
+        - container: "3080"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -107,6 +107,14 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP порт WebUI
             tr_TR: WebUI HTTP Portu
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP порт WebUI
+            ja_jp: WebUI HTTPポート
       volumes:
         - container: /app/client/public/images
           description:
@@ -125,6 +133,14 @@ services:
             pt_PT: Diretório de Imagens
             ru_RU: Каталог изображений
             tr_TR: Görüntüler Dizini
+            en_us: Images Directory
+            pt_br: Diretório de Imagens
+            zh_cn: 图片目录
+            fr_fr: Répertoire d'Images
+            de_de: Bilder-Verzeichnis
+            it_it: Directory Immagini
+            ru_ru: Каталог изображений
+            ja_jp: 画像ディレクトリ
         - container: /app/uploads
           description:
             en_US: Uploads Directory
@@ -142,6 +158,14 @@ services:
             pt_PT: Diretório de Carregamentos
             ru_RU: Каталог загрузок
             tr_TR: Yüklemeler Dizini
+            en_us: Uploads Directory
+            pt_br: Diretório de Carregamentos
+            zh_cn: 上传目录
+            fr_fr: Répertoire de Téléchargements
+            de_de: Upload-Verzeichnis
+            it_it: Directory Caricamenti
+            ru_ru: Каталог загрузок
+            ja_jp: アップロードディレクトリ
         - container: /app/api/logs
           description:
             en_US: Logs Directory
@@ -159,6 +183,14 @@ services:
             pt_PT: Diretório de Registos
             ru_RU: Каталог журналов
             tr_TR: Günlük Dizini
+            en_us: Logs Directory
+            pt_br: Diretório de Registos
+            zh_cn: 日志目录
+            fr_fr: Répertoire de Journaux
+            de_de: Protokoll-Verzeichnis
+            it_it: Directory Log
+            ru_ru: Каталог журналов
+            ja_jp: ログディレクトリ
       envs:
         - container: HOST
           description:
@@ -177,6 +209,14 @@ services:
             pt_PT: Endereço do Anfitrião
             ru_RU: Адрес хоста
             tr_TR: Ana Bilgisayar Adresi
+            en_us: Host Address
+            pt_br: Endereço do Anfitrião
+            zh_cn: 主机地址
+            fr_fr: Adresse Hôte
+            de_de: Host-Adresse
+            it_it: Indirizzo Host
+            ru_ru: Адрес хоста
+            ja_jp: ホストアドレス
         - container: MONGO_URI
           description:
             en_US: MongoDB Connection URI
@@ -194,6 +234,14 @@ services:
             pt_PT: URI de Ligação MongoDB
             ru_RU: URI подключения MongoDB
             tr_TR: MongoDB Bağlantı URI'si
+            en_us: MongoDB Connection URI
+            pt_br: URI de Ligação MongoDB
+            zh_cn: MongoDB连接URI
+            fr_fr: URI de Connexion MongoDB
+            de_de: MongoDB-Verbindungs-URI
+            it_it: URI Connessione MongoDB
+            ru_ru: URI подключения MongoDB
+            ja_jp: MongoDB接続URI
         - container: MEILI_HOST
           description:
             en_US: MeiliSearch Host
@@ -211,6 +259,14 @@ services:
             pt_PT: Anfitrião MeiliSearch
             ru_RU: Хост MeiliSearch
             tr_TR: MeiliSearch Ana Bilgisayarı
+            en_us: MeiliSearch Host
+            pt_br: Anfitrião MeiliSearch
+            zh_cn: MeiliSearch主机
+            fr_fr: Hôte MeiliSearch
+            de_de: MeiliSearch-Host
+            it_it: Host MeiliSearch
+            ru_ru: Хост MeiliSearch
+            ja_jp: MeiliSearchホスト
         - container: RAG_PORT
           description:
             en_US: RAG API Port
@@ -228,6 +284,14 @@ services:
             pt_PT: Porta API RAG
             ru_RU: Порт API RAG
             tr_TR: RAG API Bağlantı Noktası
+            en_us: RAG API Port
+            pt_br: Porta API RAG
+            zh_cn: RAG API端口
+            fr_fr: Port API RAG
+            de_de: RAG API Port
+            it_it: Porta API RAG
+            ru_ru: Порт API RAG
+            ja_jp: RAG APIポート
         - container: RAG_API_URL
           description:
             en_US: RAG API URL
@@ -245,6 +309,14 @@ services:
             pt_PT: URL API RAG
             ru_RU: URL API RAG
             tr_TR: RAG API URL'si
+            en_us: RAG API URL
+            pt_br: URL API RAG
+            zh_cn: RAG API URL
+            fr_fr: URL API RAG
+            de_de: RAG API URL
+            it_it: URL API RAG
+            ru_ru: URL API RAG
+            ja_jp: RAG API URL
         - container: SEARCH
           description:
             en_US: Enable Search Functionality
@@ -262,6 +334,14 @@ services:
             pt_PT: Ativar Funcionalidade de Pesquisa
             ru_RU: Включить функцию поиска
             tr_TR: Arama İşlevselliğini Etkinleştir
+            en_us: Enable Search Functionality
+            pt_br: Ativar Funcionalidade de Pesquisa
+            zh_cn: 启用搜索功能
+            fr_fr: Activer la Fonctionnalité de Recherche
+            de_de: Suchfunktionalität aktivieren
+            it_it: Abilita Funzionalità di Ricerca
+            ru_ru: Включить функцию поиска
+            ja_jp: 検索機能を有効化
         - container: MEILI_NO_ANALYTICS
           description:
             en_US: Disable MeiliSearch Analytics in API
@@ -279,6 +359,14 @@ services:
             pt_PT: Desativar Análises MeiliSearch na API
             ru_RU: Отключить аналитику MeiliSearch в API
             tr_TR: API'de MeiliSearch Analytics'i Devre Dışı Bırak
+            en_us: Disable MeiliSearch Analytics in API
+            pt_br: Desativar Análises MeiliSearch na API
+            zh_cn: 在API中禁用MeiliSearch分析
+            fr_fr: Désactiver les Analyses MeiliSearch dans l'API
+            de_de: MeiliSearch-Analytics in API deaktivieren
+            it_it: Disabilita Analisi MeiliSearch in API
+            ru_ru: Отключить аналитику MeiliSearch в API
+            ja_jp: APIでMeiliSearch分析を無効化
         - container: OPENAI_MODERATION
           description:
             en_US: Enable OpenAI Content Moderation
@@ -296,6 +384,14 @@ services:
             pt_PT: Ativar Moderação de Conteúdo OpenAI
             ru_RU: Включить модерацию контента OpenAI
             tr_TR: OpenAI İçerik Moderasyonunu Etkinleştir
+            en_us: Enable OpenAI Content Moderation
+            pt_br: Ativar Moderação de Conteúdo OpenAI
+            zh_cn: 启用OpenAI内容审核
+            fr_fr: Activer la Modération de Contenu OpenAI
+            de_de: OpenAI-Inhaltsmoderation aktivieren
+            it_it: Abilita Moderazione Contenuti OpenAI
+            ru_ru: Включить модерацию контента OpenAI
+            ja_jp: OpenAIコンテンツモデレーションを有効化
         - container: JWT_SECRET
           description:
             en_US: JWT Secret Key for Authentication
@@ -313,6 +409,14 @@ services:
             pt_PT: Chave Secreta JWT para Autenticação
             ru_RU: Секретный ключ JWT для аутентификации
             tr_TR: Kimlik Doğrulama için JWT Gizli Anahtarı
+            en_us: JWT Secret Key for Authentication
+            pt_br: Chave Secreta JWT para Autenticação
+            zh_cn: JWT认证密钥
+            fr_fr: Clé Secrète JWT pour l'Authentification
+            de_de: JWT-Geheimschlüssel für Authentifizierung
+            it_it: Chiave Segreta JWT per Autenticazione
+            ru_ru: Секретный ключ JWT для аутентификации
+            ja_jp: 認証用のJWT秘密鍵
         - container: JWT_REFRESH_SECRET
           description:
             en_US: JWT Refresh Secret Key
@@ -330,6 +434,14 @@ services:
             pt_PT: Chave Secreta de Atualização JWT
             ru_RU: Секретный ключ обновления JWT
             tr_TR: JWT Yenileme Gizli Anahtarı
+            en_us: JWT Refresh Secret Key
+            pt_br: Chave Secreta de Atualização JWT
+            zh_cn: JWT刷新密钥
+            fr_fr: Clé Secrète de Rafraîchissement JWT
+            de_de: JWT-Aktualisierungs-Geheimschlüssel
+            it_it: Chiave Segreta Aggiornamento JWT
+            ru_ru: Секретный ключ обновления JWT
+            ja_jp: JWT更新秘密鍵
   librechat-mongodb:
     container_name: librechat-mongodb
     image: mongo:6.0
@@ -340,7 +452,7 @@ services:
         target: /data/db
     command:
       - mongod
-      - '--noauth'
+      - "--noauth"
     networks:
       - librechat-net
     deploy:
@@ -366,6 +478,14 @@ services:
             pt_PT: Diretório de Dados MongoDB
             ru_RU: Каталог данных MongoDB
             tr_TR: MongoDB Veri Dizini
+            en_us: MongoDB Data Directory
+            pt_br: Diretório de Dados MongoDB
+            zh_cn: MongoDB数据目录
+            fr_fr: Répertoire de Données MongoDB
+            de_de: MongoDB-Datenverzeichnis
+            it_it: Directory Dati MongoDB
+            ru_ru: Каталог данных MongoDB
+            ja_jp: MongoDBデータディレクトリ
         - container: MONGO_INITDB_ROOT_USERNAME
           description:
             en_US: MongoDB Root Username
@@ -383,6 +503,14 @@ services:
             pt_PT: Nome de Utilizador Root MongoDB
             ru_RU: Имя пользователя root MongoDB
             tr_TR: MongoDB Kök Kullanıcı Adı
+            en_us: MongoDB Root Username
+            pt_br: Nome de Utilizador Root MongoDB
+            zh_cn: MongoDB根用户名
+            fr_fr: Nom d'Utilisateur Root MongoDB
+            de_de: MongoDB-Root-Benutzername
+            it_it: Nome Utente Root MongoDB
+            ru_ru: Имя пользователя root MongoDB
+            ja_jp: MongoDBルートユーザー名
         - container: MONGO_INITDB_ROOT_PASSWORD
           description:
             en_US: MongoDB Root Password
@@ -400,11 +528,19 @@ services:
             pt_PT: Palavra-passe Root MongoDB
             ru_RU: Пароль root MongoDB
             tr_TR: MongoDB Kök Şifresi
+            en_us: MongoDB Root Password
+            pt_br: Palavra-passe Root MongoDB
+            zh_cn: MongoDB根密码
+            fr_fr: Mot de Passe Root MongoDB
+            de_de: MongoDB-Root-Passwort
+            it_it: Password Root MongoDB
+            ru_ru: Пароль root MongoDB
+            ja_jp: MongoDBルートパスワード
   librechat-meilisearch:
     container_name: librechat-meilisearch
     image: getmeili/meilisearch:v1.12.3
     restart: unless-stopped
-    user: '1000:1000'
+    user: "1000:1000"
     environment:
       - MEILI_HOST=http://librechat-meilisearch:7700
       - MEILI_NO_ANALYTICS=true
@@ -434,6 +570,14 @@ services:
             pt_PT: Diretório de Dados MeiliSearch
             ru_RU: Каталог данных MeiliSearch
             tr_TR: MeiliSearch Veri Dizini
+            en_us: MeiliSearch Data Directory
+            pt_br: Diretório de Dados MeiliSearch
+            zh_cn: MeiliSearch数据目录
+            fr_fr: Répertoire de Données MeiliSearch
+            de_de: MeiliSearch-Datenverzeichnis
+            it_it: Directory Dati MeiliSearch
+            ru_ru: Каталог данных MeiliSearch
+            ja_jp: MeiliSearchデータディレクトリ
       envs:
         - container: MEILI_HOST
           description:
@@ -452,6 +596,14 @@ services:
             pt_PT: Endereço do Anfitrião MeiliSearch
             ru_RU: Адрес хоста MeiliSearch
             tr_TR: MeiliSearch Ana Bilgisayar Adresi
+            en_us: MeiliSearch Host Address
+            pt_br: Endereço do Anfitrião MeiliSearch
+            zh_cn: MeiliSearch主机地址
+            fr_fr: Adresse Hôte MeiliSearch
+            de_de: MeiliSearch-Host-Adresse
+            it_it: Indirizzo Host MeiliSearch
+            ru_ru: Адрес хоста MeiliSearch
+            ja_jp: MeiliSearchホストアドレス
         - container: MEILI_NO_ANALYTICS
           description:
             en_US: Disable MeiliSearch Analytics
@@ -469,6 +621,14 @@ services:
             pt_PT: Desativar Análises MeiliSearch
             ru_RU: Отключить аналитику MeiliSearch
             tr_TR: MeiliSearch Analytics'i Devre Dışı Bırak
+            en_us: Disable MeiliSearch Analytics
+            pt_br: Desativar Análises MeiliSearch
+            zh_cn: 禁用MeiliSearch分析
+            fr_fr: Désactiver les Analyses MeiliSearch
+            de_de: MeiliSearch-Analytics deaktivieren
+            it_it: Disabilita Analisi MeiliSearch
+            ru_ru: Отключить аналитику MeiliSearch
+            ja_jp: MeiliSearch分析を無効化
         - container: MEILI_MASTER_KEY
           description:
             en_US: MeiliSearch Master Key
@@ -486,6 +646,14 @@ services:
             pt_PT: Chave Mestra MeiliSearch
             ru_RU: Главный ключ MeiliSearch
             tr_TR: MeiliSearch Ana Anahtarı
+            en_us: MeiliSearch Master Key
+            pt_br: Chave Mestra MeiliSearch
+            zh_cn: MeiliSearch主密钥
+            fr_fr: Clé Maître MeiliSearch
+            de_de: MeiliSearch-Masterschlüssel
+            it_it: Chiave Master MeiliSearch
+            ru_ru: Главный ключ MeiliSearch
+            ja_jp: MeiliSearchマスターキー
   librechat-vectordb:
     container_name: librechat-vectordb
     image: ankane/pgvector:v0.5.1
@@ -521,6 +689,14 @@ services:
             pt_PT: Nome da Base de Dados PostgreSQL
             ru_RU: Имя базы данных PostgreSQL
             tr_TR: PostgreSQL Veritabanı Adı
+            en_us: PostgreSQL Database Name
+            pt_br: Nome da Base de Dados PostgreSQL
+            zh_cn: PostgreSQL数据库名称
+            fr_fr: Nom de Base de Données PostgreSQL
+            de_de: PostgreSQL-Datenbankname
+            it_it: Nome Database PostgreSQL
+            ru_ru: Имя базы данных PostgreSQL
+            ja_jp: PostgreSQLデータベース名
         - container: POSTGRES_USER
           description:
             en_US: PostgreSQL Username
@@ -538,6 +714,14 @@ services:
             pt_PT: Nome de Utilizador PostgreSQL
             ru_RU: Имя пользователя PostgreSQL
             tr_TR: PostgreSQL Kullanıcı Adı
+            en_us: PostgreSQL Username
+            pt_br: Nome de Utilizador PostgreSQL
+            zh_cn: PostgreSQL用户名
+            fr_fr: Nom d'Utilisateur PostgreSQL
+            de_de: PostgreSQL-Benutzername
+            it_it: Nome Utente PostgreSQL
+            ru_ru: Имя пользователя PostgreSQL
+            ja_jp: PostgreSQLユーザー名
         - container: POSTGRES_PASSWORD
           description:
             en_US: PostgreSQL Password
@@ -555,6 +739,14 @@ services:
             pt_PT: Palavra-passe PostgreSQL
             ru_RU: Пароль PostgreSQL
             tr_TR: PostgreSQL Şifresi
+            en_us: PostgreSQL Password
+            pt_br: Palavra-passe PostgreSQL
+            zh_cn: PostgreSQL密码
+            fr_fr: Mot de Passe PostgreSQL
+            de_de: PostgreSQL-Passwort
+            it_it: Password PostgreSQL
+            ru_ru: Пароль PostgreSQL
+            ja_jp: PostgreSQLパスワード
   librechat-rag-api:
     container_name: librechat-rag-api
     image: ghcr.io/danny-avila/librechat-rag-api-dev-lite:v0.6.0
@@ -589,6 +781,14 @@ services:
             pt_PT: Anfitrião da Base de Dados para RAG
             ru_RU: Хост базы данных для RAG
             tr_TR: RAG için Veritabanı Ana Bilgisayarı
+            en_us: Database Host for RAG
+            pt_br: Anfitrião da Base de Dados para RAG
+            zh_cn: RAG数据库主机
+            fr_fr: Hôte de Base de Données pour RAG
+            de_de: Datenbankhost für RAG
+            it_it: Host Database per RAG
+            ru_ru: Хост базы данных для RAG
+            ja_jp: RAG用データベースホスト
         - container: RAG_PORT
           description:
             en_US: RAG Service Port
@@ -606,6 +806,14 @@ services:
             pt_PT: Porta de Serviço RAG
             ru_RU: Порт службы RAG
             tr_TR: RAG Hizmet Bağlantı Noktası
+            en_us: RAG Service Port
+            pt_br: Porta de Serviço RAG
+            zh_cn: RAG服务端口
+            fr_fr: Port de Service RAG
+            de_de: RAG-Service-Port
+            it_it: Porta Servizio RAG
+            ru_ru: Порт службы RAG
+            ja_jp: RAGサービスポート
 networks:
   librechat-net:
     driver: bridge
@@ -629,6 +837,14 @@ x-casaos:
     sv_SE: LibreChat
     tr_TR: LibreChat
     zh_CN: LibreChat
+    en_us: LibreChat
+    pt_br: LibreChat
+    zh_cn: LibreChat
+    fr_fr: LibreChat
+    de_de: LibreChat
+    it_it: LibreChat
+    ru_ru: LibreChat
+    ja_jp: LibreChat
   category: AI
   developer: LibreChat
   author: LibreChat
@@ -648,7 +864,15 @@ x-casaos:
     pt_PT: Uma interface de chat AI completa e open-source
     ru_RU: Полнофункциональный интерфейс AI-чата с открытым исходным кодом
     tr_TR: Tam özellikli, açık kaynaklı AI sohbet arayüzü
-  port_map: '3080'
+    en_us: A full-featured, open-source AI chat interface
+    pt_br: Uma interface de chat AI completa e open-source
+    zh_cn: 功能完整的开源AI聊天界面
+    fr_fr: Une interface de chat IA complète et open-source
+    de_de: Eine vollständig ausgestattete Open-Source-AI-Chat-Schnittstelle
+    it_it: Un'interfaccia chat AI completa e open-source
+    ru_ru: Полнофункциональный интерфейс AI-чата с открытым исходным кодом
+    ja_jp: フル機能のオープンソースAIチャットインターフェース
+  port_map: "3080"
   scheme: http
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LibreChat/icon.png
   screenshot_link:
@@ -941,3 +1165,158 @@ x-casaos:
 
       ** ekstra: **
       Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify ve xAI API'lerini çağırmak için ilgili dosyaları yapılandırmak üzere [Özel AI Uç Noktaları](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints) belgelerine başvurabilirsiniz.
+    en_us: |
+      LibreChat is a full-featured, open-source AI chat interface that allows users to interact with multiple AI models through a unified platform. It supports various AI providers and offers advanced features like conversation management, plugin support, and customizable interfaces.
+      **Key Features:**
+      - Support for multiple AI models and providers
+      - Conversation history and management
+      - Plugin system for extended functionality
+      - Customizable themes and interfaces
+      - User authentication and management
+      - API integrations for various services
+      - Search functionality with MeiliSearch
+      - RAG (Retrieval-Augmented Generation) support
+      - File upload and processing capabilities
+      - Multi-language support
+      **Learn More:**
+      - [LibreChat Official Website](https://www.librechat.ai)
+      - [LibreChat GitHub Repository](https://github.com/danny-avila/LibreChat)
+
+      ** extra: **
+      You can refer to the [Custom AI Endpoints](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints) documentation to configure the relevant files for calling the APIs of Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify, and xAI.
+    pt_br: |
+      O LibreChat é uma interface de chat AI completa e open-source que permite aos usuários interagir com vários modelos de IA através de uma plataforma unificada. Suporta vários provedores de IA e oferece recursos avançados como gerenciamento de conversas, suporte a plugins e interfaces personalizáveis.
+      **Principais Funcionalidades:**
+      - Suporte para vários modelos e provedores de IA
+      - Histórico e gerenciamento de conversas
+      - Sistema de plugins para funcionalidade estendida
+      - Temas e interfaces personalizáveis
+      - Autenticação e gerenciamento de usuários
+      - Integrações de API para vários serviços
+      - Funcionalidade de pesquisa com MeiliSearch
+      - Suporte a RAG (Retrieval-Augmented Generation)
+      - Capacidades de upload e processamento de arquivos
+      - Suporte multilíngue
+      **Saiba Mais:**
+      - [Site Oficial do LibreChat](https://www.librechat.ai)
+      - [Repositório GitHub do LibreChat](https://github.com/danny-avila/LibreChat)
+
+      ** extra: **
+      Pode consultar a documentação [Custom AI Endpoints](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints) para configurar os ficheiros relevantes para chamar as APIs da Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify e xAI.
+    zh_cn: |
+      LibreChat 是一款功能完整的开源 AI 聊天界面，允许用户通过统一平台与多个 AI 模型进行交互。它支持各种 AI 提供商，并提供高级功能，如对话管理、插件支持和可定制界面。
+      **主要功能：**
+      - 支持多个 AI 模型和提供商
+      - 对话历史记录和管理
+      - 插件系统以扩展功能
+      - 可定制主题和界面
+      - 用户认证和管理
+      - 各种服务的 API 集成
+      - 使用 MeiliSearch 的搜索功能
+      - RAG（检索增强生成）支持
+      - 文件上传和处理能力
+      - 多语言支持
+      **了解更多：**
+      - [LibreChat官方网站](https://www.librechat.ai)
+      - [LibreChat GitHub仓库](https://github.com/danny-avila/LibreChat)
+
+      ** 附加信息: **
+      您可以参考[自定义AI端点](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints)文档来配置相关文件，以调用Anyscale、ApiPie、Cohere、Deepseek、Databricks、Fireworks、Groq、HuggingFace、Mistral、OpenRouter、Perplexity、ShuttleAI、TogetherAI、Unify和xAI的API。
+    fr_fr: |
+      LibreChat est une interface de chat IA complète et open-source qui permet aux utilisateurs d'interagir avec plusieurs modèles d'IA à travers une plateforme unifiée. Elle prend en charge divers fournisseurs d'IA et offre des fonctionnalités avancées comme la gestion des conversations, le support des plugins et les interfaces personnalisables.
+      **Fonctionnalités Clés :**
+      - Support pour plusieurs modèles et fournisseurs d'IA
+      - Historique et gestion des conversations
+      - Système de plugins pour une fonctionnalité étendue
+      - Thèmes et interfaces personnalisables
+      - Authentification et gestion des utilisateurs
+      - Intégrations API pour divers services
+      - Fonctionnalité de recherche avec MeiliSearch
+      - Support RAG (Retrieval-Augmented Generation)
+      - Capacités de téléchargement et de traitement de fichiers
+      - Support multilingue
+      **En Savoir Plus :**
+      - [Site Officiel LibreChat](https://www.librechat.ai)
+      - [Dépôt GitHub LibreChat](https://github.com/danny-avila/LibreChat)
+
+      ** supplémentaire: **
+      Vous pouvez vous référer à la documentation [Custom AI Endpoints](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints) pour configurer les fichiers pertinents pour appeler les API d'Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify et xAI.
+    de_de: |
+      LibreChat ist eine vollständig ausgestattete Open-Source-AI-Chat-Schnittstelle, die es Benutzern ermöglicht, über eine einheitliche Plattform mit mehreren KI-Modellen zu interagieren. Es unterstützt verschiedene KI-Anbieter und bietet erweiterte Funktionen wie Gesprächsverwaltung, Plugin-Unterstützung und anpassbare Schnittstellen.
+      **Hauptfunktionen:**
+      - Unterstützung für mehrere KI-Modelle und -Anbieter
+      - Gesprächsverlauf und -verwaltung
+      - Plugin-System für erweiterte Funktionalität
+      - Anpassbare Themen und Schnittstellen
+      - Benutzerauthentifizierung und -verwaltung
+      - API-Integrationen für verschiedene Dienste
+      - Suchfunktionalität mit MeiliSearch
+      - RAG (Retrieval-Augmented Generation) Unterstützung
+      - Datei-Upload- und Verarbeitungsfähigkeiten
+      - Mehrsprachiger Support
+      **Mehr Erfahren:**
+      - [LibreChat Offizielle Website](https://www.librechat.ai)
+      - [LibreChat GitHub Repository](https://github.com/danny-avila/LibreChat)
+
+      ** extra: **
+      Sie können sich auf die Dokumentation [Custom AI Endpoints](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints) beziehen, um die relevanten Dateien für den Aufruf der APIs von Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify und xAI zu konfigurieren.
+    it_it: |
+      LibreChat è un'interfaccia chat AI completa e open-source che permette agli utenti di interagire con molteplici modelli AI attraverso una piattaforma unificata. Supporta vari fornitori AI e offre funzionalità avanzate come gestione conversazioni, supporto plugin e interfacce personalizzabili.
+      **Funzionalità Principali:**
+      - Supporto per molteplici modelli e fornitori AI
+      - Cronologia e gestione conversazioni
+      - Sistema plugin per funzionalità estese
+      - Temi e interfacce personalizzabili
+      - Autenticazione e gestione utenti
+      - Integrazioni API per vari servizi
+      - Funzionalità di ricerca con MeiliSearch
+      - Supporto RAG (Retrieval-Augmented Generation)
+      - Capacità di caricamento e processamento file
+      - Supporto multilingua
+      **Ulteriori Informazioni:**
+      - [Sito Ufficiale LibreChat](https://www.librechat.ai)
+      - [Repository GitHub LibreChat](https://github.com/danny-avila/LibreChat)
+
+      ** extra: **
+      Puoi fare riferimento alla documentazione [Custom AI Endpoints](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints) per configurare i file pertinenti per chiamare le API di Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify e xAI.
+    ru_ru: |
+      LibreChat - это полнофункциональный интерфейс AI-чата с открытым исходным кодом, который позволяет пользователям взаимодействовать с несколькими моделями ИИ через единую платформу. Он поддерживает различных поставщиков ИИ и предлагает расширенные функции, такие как управление разговорами, поддержка плагинов и настраиваемые интерфейсы.
+      **Ключевые Возможности:**
+      - Поддержка нескольких моделей и поставщиков ИИ
+      - История и управление разговорами
+      - Система плагинов для расширенной функциональности
+      - Настраиваемые темы и интерфейсы
+      - Аутентификация и управление пользователями
+      - API-интеграции для различных сервисов
+      - Функциональность поиска с MeiliSearch
+      - Поддержка RAG (Retrieval-Augmented Generation)
+      - Возможности загрузки и обработки файлов
+      - Многоязычная поддержка
+      **Узнать Больше:**
+      - [Официальный Сайт LibreChat](https://www.librechat.ai)
+      - [Репозиторий LibreChat на GitHub](https://github.com/danny-avila/LibreChat)
+
+      ** дополнительно: **
+      Вы можете обратиться к документации [Custom AI Endpoints](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints), чтобы настроить соответствующие файлы для вызова API Anyscale, ApiPie, Cohere, Deepseek, Databricks, Fireworks, Groq, HuggingFace, Mistral, OpenRouter, Perplexity, ShuttleAI, TogetherAI, Unify и xAI.
+    ja_jp: |
+      LibreChatは、統一されたプラットフォームを通じて複数のAIモデルと対話できる、フル機能のオープンソースAIチャットインターフェースです。さまざまなAIプロバイダーをサポートし、会話管理、プラグインサポート、カスタマイズ可能なインターフェースなどの高度な機能を提供します。
+      **主な機能：**
+      - 複数のAIモデルとプロバイダーのサポート
+      - 会話履歴と管理
+      - 拡張機能のためのプラグインシステム
+      - カスタマイズ可能なテーマとインターフェース
+      - ユーザー認証と管理
+      - さまざまなサービスのAPI統合
+      - MeiliSearchによる検索機能
+      - RAG（Retrieval-Augmented Generation）サポート
+      - ファイルアップロードと処理機能
+      - 多言語サポート
+      **詳細情報：**
+      - [LibreChat公式ウェブサイト](https://www.librechat.ai)
+      - [LibreChat GitHubリポジトリ](https://github.com/danny-avila/LibreChat)
+
+      ** 追加情報: **
+      [カスタムAIエンドポイント](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints)のドキュメントを参照して、Anyscale、ApiPie、Cohere、Deepseek、Databricks、Fireworks、Groq、HuggingFace、Mistral、OpenRouter、Perplexity、ShuttleAI、TogetherAI、Unify、およびxAIのAPIを呼び出すための関連ファイルを設定できます。
+
+x-roqueos:
+  portaCompartilhada: true

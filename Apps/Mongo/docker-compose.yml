@@ -104,3 +104,6 @@ x-casaos:
   title:
     en_us: MongoDB
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

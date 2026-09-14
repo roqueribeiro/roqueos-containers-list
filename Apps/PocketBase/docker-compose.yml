@@ -1,6 +1,11 @@
 name: pocketbase
 services:
   pocketbase:
+    x-casaos:
+      ports:
+        - container: '8090'
+          description:
+            en_us: "Web interface for PocketBase"
     image: argonptg/pocketbase:0.25.9
     deploy:
       resources:
@@ -53,3 +58,6 @@ x-casaos:
   index: /_/
   port_map: '8090'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

@@ -13,7 +13,7 @@ services:
     network_mode: bridge
     ports:
       - target: 5230
-        published: '5230'
+        published: "5230"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -24,16 +24,16 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ''
+            en_us: ""
         - container: PGID
           description:
-            en_us: ''
+            en_us: ""
         - container: TZ
           description:
             en_us: timezone
             zh_cn: 时区
       ports:
-        - container: '5230'
+        - container: "5230"
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
@@ -144,6 +144,54 @@ x-casaos:
       Basitlik ve verimlilik için tasarlanan Memos, çeşitli kullanım senaryolarına hitap eder. Günlük düşünceleri not etmek, çalışma notlarını düzenlemek veya küçük ekiplerde görev notlarını paylaşmak olsun, Memos sezgisel etiket sistemi ve Markdown formatlaması ile sorunsuz bir deneyim sunar. Herhangi bir web tarayıcısı aracılığıyla erişilebilir, özel istemciler veya karmaşık kurulum gerektirmez, kullanıcıların notlarını her zaman ve her yerde yönetmelerini sağlar.
 
       Uzun vadeli kişisel bilgi arşivleme veya ekip işbirliği için hafif bir araç olarak kullanılsın, Memos güvenli, esnek ve kullanıcı dostu bir çözüm sunar, kullanıcıların verileri üzerinde tam kontrol sahibi olmalarını sağlarken akıcı bir not alma deneyimi sunar。
+    en_us: |
+      Memos is a lightweight, open-source, self-hosted note-taking application that offers a secure and streamlined solution for users prioritizing privacy and data control. All notes are stored on the user’s own server, eliminating risks associated with third-party cloud services. Its minimalist Web interface supports Markdown syntax and tag-based organization, enabling effortless capture of ideas, personal knowledge management, or small-scale team collaboration. The open-source design ensures transparency, long-term maintainability, and no subscription costs, making it ideal for users seeking data ownership and cost efficiency.
+
+      Designed for simplicity and efficiency, Memos caters to a variety of use cases. Whether jotting down daily thoughts, organizing study notes, or sharing task memos in small teams, Memos delivers a seamless experience through its intuitive tag system and Markdown formatting. Accessible via any web browser, it requires no proprietary clients or complex setup, allowing users to manage notes anytime, anywhere.
+
+      Whether used for long-term personal knowledge archiving or as a lightweight tool for team collaboration, Memos offers a secure, flexible, and user-friendly solution, empowering users to maintain full control over their data while enjoying a streamlined note-taking experience.
+    pt_br: |
+      Memos é uma aplicação de notas leve, de código aberto e auto-hospedada que oferece uma solução segura e simplificada para utilizadores que priorizam a privacidade e o controlo de dados. Todas as notas são armazenadas no servidor do próprio utilizador, eliminando os riscos associados a serviços de nuvem de terceiros. A sua interface Web minimalista suporta sintaxe Markdown e organização baseada em etiquetas, permitindo a captura sem esforço de ideias, gestão de conhecimento pessoal ou colaboração em pequenas equipas. O design de código aberto garante transparência, capacidade de manutenção a longo prazo e sem custos de subscrição, tornando-o ideal para utilizadores que procuram propriedade de dados e eficiência de custos.
+
+      Projetado para simplicidade e eficiência, o Memos atende a uma variedade de casos de uso. Seja para anotar pensamentos diários, organizar notas de estudo ou partilhar memorandos de tarefas em pequenas equipas, o Memos proporciona uma experiência perfeita através do seu sistema de etiquetas intuitivo e formatação Markdown. Acessível através de qualquer navegador Web, não requer clientes proprietários ou configuração complexa, permitindo aos utilizadores gerir notas a qualquer hora e em qualquer lugar.
+
+      Seja usado para arquivo de conhecimento pessoal a longo prazo ou como uma ferramenta leve para colaboração em equipa, o Memos oferece uma solução segura, flexível e fácil de usar, capacitando os utilizadores a manter total controlo sobre os seus dados enquanto desfrutam de uma experiência de tomada de notas simplificada。
+    zh_cn: |
+      Memos 是一款轻量级、开源、自托管的笔记应用，为注重隐私和数据控制的用户提供安全且简洁的解决方案。所有笔记都存储在用户自己的服务器上，消除了与第三方云服务相关的风险。其简约的 Web 界面支持 Markdown 语法和基于标签的组织，使用户能够轻松捕捉想法、管理个人知识或进行小规模团队协作。开源设计确保了透明度、长期可维护性和无订阅费用，非常适合寻求数据所有权和成本效益的用户。
+
+      Memos 专为简单高效而设计，适用于多种使用场景。无论是记录日常想法、整理学习笔记，还是在小团队中共享任务备忘，Memos 都能通过其直观的标签系统和 Markdown 格式提供流畅的体验。用户可以通过任何 Web 浏览器访问，无需专有客户端或复杂设置，随时随地管理笔记。
+
+      无论是用于长期的个人知识归档，还是作为团队协作的轻量级工具，Memos 都提供了一个安全、灵活且用户友好的解决方案，使用户能够在享受流畅笔记体验的同时，保持对数据的完全控制。
+    fr_fr: |
+      Memos est une application de prise de notes légère, open-source et auto-hébergée qui offre une solution sécurisée et simplifiée pour les utilisateurs qui accordent la priorité à la confidentialité et au contrôle des données. Toutes les notes sont stockées sur le serveur de l'utilisateur, éliminant ainsi les risques associés aux services cloud tiers. Son interface Web minimaliste prend en charge la syntaxe Markdown et l'organisation basée sur des tags, permettant une capture sans effort des idées, une gestion de la connaissance personnelle ou une collaboration en petite équipe. La conception open-source garantit la transparence, la maintenabilité à long terme et l'absence de frais d'abonnement, ce qui en fait une solution idéale pour les utilisateurs recherchant la propriété des données et l'efficacité des coûts.
+
+      Conçu pour la simplicité et l'efficacité, Memos répond à une variété de cas d'utilisation. Que ce soit pour noter des pensées quotidiennes, organiser des notes d'étude ou partager des mémos de tâches dans de petites équipes, Memos offre une expérience fluide grâce à son système de tags intuitif et à la mise en forme Markdown. Accessible via n'importe quel navigateur Web, il ne nécessite aucun client propriétaire ni configuration complexe, permettant aux utilisateurs de gérer leurs notes à tout moment et en tout lieu.
+
+      Qu'il soit utilisé pour l'archivage à long terme de la connaissance personnelle ou comme un outil léger pour la collaboration en équipe, Memos offre une solution sécurisée, flexible et conviviale, permettant aux utilisateurs de maintenir un contrôle total sur leurs données tout en profitant d'une expérience de prise de notes simplifiée。
+    de_de: |
+      Memos ist eine leichte, Open-Source- und selbst gehostete Notiz-App, die eine sichere und schlanke Lösung für Nutzer bietet, die Datenschutz und Datenkontrolle priorisieren. Alle Notizen werden auf dem eigenen Server des Nutzers gespeichert, wodurch Risiken im Zusammenhang mit Cloud-Diensten Dritter eliminiert werden. Die minimalistische Web-Oberfläche unterstützt Markdown-Syntax und tagbasierte Organisation, was das mühelose Erfassen von Ideen, das persönliche Wissensmanagement oder die Zusammenarbeit in kleinen Teams ermöglicht. Das Open-Source-Design gewährleistet Transparenz, langfristige Wartbarkeit und keine Abonnementkosten, was es ideal für Nutzer macht, die Datenhoheit und Kosteneffizienz suchen.
+
+      Für Einfachheit und Effizienz konzipiert, deckt Memos eine Vielzahl von Anwendungsfällen ab. Ob es darum geht, tägliche Gedanken festzuhalten, Lernnotizen zu organisieren oder Aufgabennotizen in kleinen Teams zu teilen, Memos bietet eine nahtlose Erfahrung durch sein intuitives Tag-System und Markdown-Formatierung. Über jeden Webbrowser zugänglich, erfordert es keine proprietären Clients oder komplexe Einrichtung, sodass Nutzer ihre Notizen jederzeit und überall verwalten können.
+
+      Ob für die langfristige Archivierung persönlichen Wissens oder als leichtes Werkzeug für die Teamzusammenarbeit, Memos bietet eine sichere, flexible und benutzerfreundliche Lösung, die es Nutzern ermöglicht, die volle Kontrolle über ihre Daten zu behalten und gleichzeitig ein schlankes Notizerlebnis zu genießen。
+    it_it: |
+      Memos è un'applicazione leggera, open-source e auto-ospitata per prendere appunti che offre una soluzione sicura e snella per gli utenti che danno priorità alla privacy e al controllo dei dati. Tutte le note sono archiviate sul server dell'utente, eliminando i rischi associati ai servizi cloud di terze parti. La sua interfaccia web minimalista supporta la sintassi Markdown e l'organizzazione basata su tag, consentendo di catturare facilmente idee, gestire la conoscenza personale o collaborare in team su piccola scala. Il design open-source garantisce trasparenza, mantenibilità a lungo termine e nessun costo di abbonamento, rendendolo ideale per gli utenti che cercano la proprietà dei dati e l'efficienza dei costi.
+
+      Progettato per la semplicità e l'efficienza, Memos si adatta a una varietà di casi d'uso. Che si tratti di annotare pensieri quotidiani, organizzare appunti di studio o condividere memo di attività in piccoli team, Memos offre un'esperienza fluida grazie al suo sistema di tag intuitivo e alla formattazione Markdown. Accessibile tramite qualsiasi browser web, non richiede client proprietari o configurazioni complesse, consentendo agli utenti di gestire le note in qualsiasi momento e ovunque.
+
+      Che sia utilizzato per l'archiviazione a lungo termine della conoscenza personale o come strumento leggero per la collaborazione in team, Memos offre una soluzione sicura, flessibile e user-friendly, consentendo agli utenti di mantenere il pieno controllo sui propri dati mentre godono di un'esperienza di presa di appunti snella.
+    ru_ru: |
+      Memos — это легкое, открытое и саморазмещаемое приложение для заметок, которое предлагает безопасное и упрощенное решение для пользователей, придающих приоритет конфиденциальности и контролю над данными. Все заметки хранятся на собственном сервере пользователя, что исключает риски, связанные с облачными сервисами третьих лиц. Его минималистичный веб-интерфейс поддерживает синтаксис Markdown и организацию на основе тегов, что позволяет легко фиксировать идеи, управлять личными знаниями или сотрудничать в небольших командах. Открытый исходный код обеспечивает прозрачность, долгосрочную поддержку и отсутствие подписных платежей, что делает его идеальным для пользователей, стремящихся к владению данными и экономической эффективности.
+
+      Разработанный для простоты и эффективности, Memos подходит для различных сценариев использования. Будь то запись ежедневных мыслей, организация учебных заметок или обмен задачами в небольших командах, Memos обеспечивает безупречный опыт благодаря интуитивной системе тегов и форматированию Markdown. Доступный через любой веб-браузер, он не требует проприетарных клиентов или сложной настройки, позволяя пользователям управлять заметками в любое время и в любом месте.
+
+      Будь то для долгосрочного архива личных знаний или как легкий инструмент для командной работы, Memos предлагает безопасное, гибкое и удобное решение, позволяя пользователям сохранять полный контроль над своими данными, наслаждаясь при этом упрощенным процессом ведения заметок。
+    ja_jp: |
+      Memosは、軽量でオープンソースの自己ホスト型メモアプリケーションで、プライバシーとデータ管理を重視するユーザーに安全で効率的なソリューションを提供します。すべてのメモはユーザーのサーバーに保存され、サードパーティのクラウドサービスに関連するリスクを排除します。ミニマリストなWebインターフェースはMarkdown構文とタグベースの整理をサポートし、アイデアのキャプチャ、個人の知識管理、または小規模チームのコラボレーションを容易に行えます。オープンソース設計により、透明性、長期的なメンテナンス性、サブスクリプションコストの不要が保証され、データの所有権とコスト効率を求めるユーザーに最適です。
+
+      シンプルさと効率性を追求して設計されたMemosは、さまざまなユースケースに対応します。日常の考えを書き留めたり、学習ノートを整理したり、小規模チームでタスクメモを共有したりする場合でも、Memosは直感的なタグシステムとMarkdownフォーマットを通じてシームレスな体験を提供します。任意のWebブラウザからアクセス可能で、専用のクライアントや複雑な設定は不要で、いつでもどこでもメモを管理できます。
+
+      長期的な個人の知識アーカイブやチームコラボレーションの軽量ツールとして使用する場合でも、Memosは安全で柔軟、かつユーザーフレンドリーなソリューションを提供し、ユーザーがデータの完全な管理を維持しながら、効率的なメモ作成体験を楽しむことができます。
   developer: usememos Team
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/icon.png
   screenshot_link:
@@ -166,9 +214,17 @@ x-casaos:
     pt_PT: Memos é um hub de memos leve e auto-hospedado. Código aberto e grátis para sempre。
     ru_RU: Memos — это легкий, саморазмещаемый центр заметок. Открытый исходный код и бесплатный навсегда。
     tr_TR: Memos, hafif ve kendi kendine barındırılan bir not merkezi. Açık Kaynak ve sonsuza kadar ücretsiz。
+    en_us: Memos is a lightweight, self-hosted memo hub. Open Source and Free forever.
+    pt_br: Memos é um hub de memos leve e auto-hospedado. Código aberto e grátis para sempre。
+    zh_cn: Memos 是一个轻量级的自托管备忘录中心。开源且永久免费。
+    fr_fr: Memos est un hub de memos léger et auto-hébergé. Open Source et gratuit pour toujours.
+    de_de: Memos ist ein leichter, selbst gehosteter Memo-Hub. Open Source und für immer kostenlos.
+    it_it: Memos è un hub di memo leggero e auto-ospitato. Open Source e gratuito per sempre.
+    ru_ru: Memos — это легкий, саморазмещаемый центр заметок. Открытый исходный код и бесплатный навсегда。
+    ja_jp: Memosは軽量な自己ホスト型メモハブです。オープンソースで永遠に無料。
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Memos/thumbnail.png
   tips: {}
   title:
     en_us: Memos
-  port_map: '5230'
+  port_map: "5230"
   scheme: http

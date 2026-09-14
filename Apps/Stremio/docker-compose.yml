@@ -28,6 +28,9 @@ services:
     privileged: false
     x-casaos:
       ports:
+        - container: '8080'
+          description:
+            en_us: "Web interface for Stremio"
         - container: '11470'
           description:
             en_us: Server Port
@@ -85,3 +88,6 @@ x-casaos:
   index: /
   port_map: '8100'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

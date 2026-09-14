@@ -13,9 +13,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço |
-| ---- | --------- | --------- | -------------- | ------- |
-| 3003 | 3000      | tcp       | —              | grafana |
+| Host | Container | Protocolo | Para que serve            | Serviço |
+| ---- | --------- | --------- | ------------------------- | ------- |
+| 3003 | 3000      | tcp       | Web interface for Grafana | grafana |
 
 
 ## Volumes

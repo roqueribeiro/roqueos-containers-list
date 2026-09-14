@@ -1,14 +1,14 @@
 # PdfDing
 
-> Selfhosted PDF manager, viewer and editor
+> Gestor, visualizador e editor PDF auto-hospedado
 
 ## O que é
 
-PdfDing is a selfhosted PDF manager, viewer and editor offering a seamless user experience on multiple devices. It's designed to be minimal, fast, and easy to set up using Docker.
+PdfDing é um gestor, visualizador e editor PDF auto-hospedado que oferece uma experiência de utilizador perfeita em múltiplos dispositivos. Foi concebido para ser mínimo, rápido e fácil de configurar usando Docker.
 
-With features like seamless browser-based PDF viewing that remembers your current position, multi-level tagging, starring and archiving functionalities, PDF editing with comments, highlighting and drawings, clean intuitive UI with dark mode, SSO support via OIDC, PDF sharing with external audience, markdown notes, and progress bars showing reading progress, PdfDing ensures an excellent PDF management experience.
+Com funcionalidades como visualização PDF baseada em navegador que lembra a sua posição atual, etiquetagem multi-nível, funcionalidades de favoritos e arquivo, edição PDF com comentários, realces e desenhos, interface de utilizador limpa e intuitiva com modo escuro, suporte SSO via OIDC, partilha de PDF com audiência externa, notas markdown e barras de progresso que mostram o progresso de leitura, PdfDing garante uma excelente experiência de gestão PDF.
 
-Deploying PdfDing on private cloud devices like Zima brings unmatched convenience with multi-device access, ensuring your PDF collection is always within reach and secure, no matter where you are.
+Implementar PdfDing em dispositivos cloud privados como Zima traz conveniência incomparável com acesso multi-dispositivo, garantindo que a sua coleção PDF está sempre ao alcance e segura, não importa onde esteja.
 
 
 Categoria na App Store do RoqueOS: **Productivity**.
@@ -16,10 +16,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço |
-| ---- | --------- | --------- | --------------- | ------- |
-| 8000 | 8000      | tcp       | WebUI HTTP Port | pdfding |
+| Host | Container | Protocolo | Para que serve   | Serviço |
+| ---- | --------- | --------- | ---------------- | ------- |
+| 8000 | 8000      | tcp       | Porta HTTP WebUI | pdfding |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 
@@ -44,8 +45,8 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8000/`.
 
-- After installation, you can access PdfDing at http://your-server-ip:8000. Create your first admin account during the initial setup.
-- Note: If you encounter access issues, you may need to manually edit the docker-compose.yml file and replace the HOST_NAME environment variable with your actual server IP address.
+- Após a instalação, pode aceder ao PdfDing em http://your-server-ip:8000. Crie a sua primeira conta de administrador durante a configuração inicial.
+- Nota: Se encontrar problemas de acesso, poderá precisar de editar manualmente o ficheiro docker-compose.yml e substituir a variável de ambiente HOST_NAME pelo seu endereço IP real do servidor.
 
 ## Imagens
 

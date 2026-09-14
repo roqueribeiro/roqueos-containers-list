@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64, arm.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve | Serviço |
-| ----- | --------- | --------- | -------------- | ------- |
-| 19999 | 19999     | tcp       | —              | app     |
+| Host  | Container | Protocolo | Para que serve            | Serviço |
+| ----- | --------- | --------- | ------------------------- | ------- |
+| 19999 | 19999     | tcp       | Web interface for Netdata | app     |
 
 
 ## Volumes

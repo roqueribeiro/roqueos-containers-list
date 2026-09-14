@@ -1,28 +1,28 @@
 # Sure
 
-> Personal finance management application
+> Aplicativo de gerenciamento de finanças pessoais
 
 ## O que é
 
-Sure is a personal finance management application designed to help you track your expenses, income, and investments in one place. With an intuitive interface and powerful features, Sure makes it easy to understand your financial situation and make informed decisions about your money.
+Sure é um aplicativo de gerenciamento de finanças pessoais projetado para ajudá-lo a rastrear suas despesas, receitas e investimentos em um só lugar. Com uma interface intuitiva e recursos poderosos, o Sure facilita a compreensão da sua situação financeira e a tomada de decisões informadas sobre seu dinheiro.
 
-**Key Features:**
-- **Expense Tracking**: Easily log and categorize your expenses
-- **Income Management**: Track multiple income sources
-- **Investment Monitoring**: Keep an eye on your investments and their performance
-- **Budget Planning**: Create and maintain budgets to control your spending
-- **Financial Reports**: Generate detailed reports to understand your financial habits
-- **AI-Powered Insights**: Get personalized financial advice using AI technology
+**Principais Recursos:**
+- **Rastreamento de Despesas**: Registre e categorize facilmente suas despesas
+- **Gerenciamento de Receitas**: Acompanhe várias fontes de receita
+- **Monitoramento de Investimentos**: Fique de olho em seus investimentos e seu desempenho
+- **Planejamento Orçamentário**: Crie e mantenha orçamentos para controlar seus gastos
+- **Relatórios Financeiros**: Gere relatórios detalhados para entender seus hábitos financeiros
+- **Insights com IA**: Obtenha conselhos financeiros personalizados usando tecnologia de IA
 
-**Use Cases:**
-- Personal budget management
-- Expense tracking and categorization
-- Investment portfolio monitoring
-- Financial goal setting and tracking
-- Cash flow analysis
+**Casos de Uso:**
+- Gerenciamento de orçamento pessoal
+- Rastreamento e categorização de despesas
+- Monitoramento de portfólio de investimentos
+- Definição e acompanhamento de metas financeiras
+- Análise de fluxo de caixa
 
-**Learn More:**
-- [Sure GitHub Repository](https://github.com/we-promise/sure)
+**Saiba Mais:**
+- [Repositório GitHub Sure](
 
 
 Categoria na App Store do RoqueOS: **Finance**.
@@ -30,10 +30,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve            | Serviço  |
-| ----- | --------- | --------- | ------------------------- | -------- |
-| 23000 | 3000      | tcp       | Sure Web Application Port | sure-web |
+| Host  | Container | Protocolo | Para que serve              | Serviço  |
+| ----- | --------- | --------- | --------------------------- | -------- |
+| 23000 | 3000      | tcp       | Porta da Aplicação Web Sure | sure-web |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

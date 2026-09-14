@@ -44,7 +44,7 @@ services:
       ports:
         - container: '5299'
           description:
-            en_us: ''
+            en_us: "Web interface for Lazylibrarian"
       volumes:
         - container: /downloads
           description:

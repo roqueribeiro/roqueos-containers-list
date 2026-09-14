@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço                         |
-| ---- | --------- | --------- | -------------- | ------------------------------- |
-| 7860 | 7860      | tcp       | —              | icewhale-stable-diffusion-webui |
+| Host | Container | Protocolo | Para que serve                     | Serviço                         |
+| ---- | --------- | --------- | ---------------------------------- | ------------------------------- |
+| 7860 | 7860      | tcp       | Web interface for Stable Diffusion | icewhale-stable-diffusion-webui |
 
 
 ## Volumes

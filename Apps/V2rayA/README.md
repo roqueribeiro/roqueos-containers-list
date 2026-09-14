@@ -1,25 +1,25 @@
 # V2rayA
 
-> A web GUI client of Project V which supports VMess, VLESS, SS, SSR, Trojan, Tuic and Juicity protocols
+> Um cliente GUI web do Project V que suporta protocolos VMess, VLESS, SS, SSR, Trojan, Tuic e Juicity
 
 ## O que é
 
-v2rayA is a V2Ray client supporting global transparent proxy, compatible with SS, SSR, Trojan (trojan-go), Tuic, and Juicity protocols. Designed for simplicity, it meets most user needs, ideal for scenarios requiring efficient proxy services.
+O v2rayA é um cliente V2Ray que suporta proxy transparente global, compatível com protocolos SS, SSR, Trojan (trojan-go), Tuic e Juicity. Concebido para simplicidade, atende à maioria das necessidades dos utilizadores, ideal para cenários que requerem serviços de proxy eficientes.
 
-Core features include global transparent proxy and multi-outbound load balancing with traffic splitting. It provides proxy services for nearly all applications without requiring application-specific proxy support. Support for creating and connecting multiple outbound nodes ensures load balancing and efficient traffic splitting for optimal network performance.
+As funcionalidades principais incluem proxy transparente global e balanceamento de carga multi-saída com divisão de tráfego. Fornece serviços de proxy para quase todas as aplicações sem requerer suporte de proxy específico da aplicação. O suporte para criar e conectar múltiplos nós de saída garante balanceamento de carga e divisão eficiente de tráfego para desempenho de rede óptimo.
 
-It offers RoutingA, a custom routing language for V2Ray, providing powerful and convenient traffic splitting support. Multiple strategies address DNS pollution, with advanced settings enabling customized configurations. With simplicity and functionality at the core, the platform delivers a modern solution for proxy management.
+Oferece RoutingA, uma linguagem de encaminhamento personalizada para V2Ray, fornecendo suporte poderoso e conveniente para divisão de tráfego. Múltiplas estratégias abordam a poluição DNS, com configurações avançadas que permitem configurações personalizadas. Com simplicidade e funcionalidade no núcleo, a plataforma entrega uma solução moderna para gestão de proxy.
 
-**Key Features:**
-- Web-based GUI for easy configuration and management
-- Support for multiple protocols: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
-- Global transparent proxy for seamless application proxy services
-- Multi-outbound load balancing and traffic splitting
-- RoutingA custom routing for convenient traffic splitting
-- Multiple DNS pollution mitigation strategies with advanced custom settings
+**Funcionalidades Principais:**
+- GUI baseada na web para configuração e gestão fáceis
+- Suporte para múltiplos protocolos: VMess, VLESS, SS, SSR, Trojan, Tuic, Juicity
+- Proxy transparente global para serviços de proxy de aplicações sem emendas
+- Balanceamento de carga multi-saída e divisão de tráfego
+- RoutingA encaminhamento personalizado para divisão de tráfego conveniente
+- Múltiplas estratégias de mitigação de poluição DNS com configurações personalizadas avançadas
 
-**Learn More:**
-- [V2rayA Official Website](https://v2raya.org/)
+**Saber Mais:**
+- [Website Oficial V2rayA](https://v2raya.org/)
 - [V2rayA GitHub](https://github.com/v2rayA/v2rayA)
 
 

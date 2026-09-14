@@ -33,7 +33,7 @@ services:
       ports:
         - container: '8181'
           description:
-            en_us: ''
+            en_us: "Web interface for Tautulli"
           protocol: ''
       volumes:
         - container: /config
@@ -89,3 +89,6 @@ x-casaos:
   index: /
   port_map: '8181'
   scheme: http
+
+x-roqueos:
+  portaCompartilhada: true

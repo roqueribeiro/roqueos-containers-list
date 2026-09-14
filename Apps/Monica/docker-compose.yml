@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
     ports:
       - target: 80
-        published: '18930'
+        published: "18930"
         protocol: tcp
     volumes:
       - type: bind
@@ -29,7 +29,7 @@ services:
       - monica-db
     x-casaos:
       ports:
-        - container: '80'
+        - container: "80"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -46,6 +46,14 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP порт WebUI
             tr_TR: WebUI HTTP Portu
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP порт WebUI
+            ja_jp: WebUI HTTPポート
       volumes:
         - container: /var/www/html/storage
           description:
@@ -64,6 +72,14 @@ services:
             pt_PT: Diretório de Armazenamento da Aplicação Monica
             ru_RU: Каталог хранения приложения Monica
             tr_TR: Monica Uygulama Depolama Dizini
+            en_us: Monica Application Storage Directory
+            pt_br: Diretório de Armazenamento da Aplicação Monica
+            zh_cn: Monica应用存储目录
+            fr_fr: Répertoire de Stockage Application Monica
+            de_de: Monica Anwendungs-Speicherverzeichnis
+            it_it: Directory di Archiviazione Applicazione Monica
+            ru_ru: Каталог хранения приложения Monica
+            ja_jp: Monicaアプリケーションストレージディレクトリ
       envs:
         - container: APP_KEY
           description:
@@ -82,6 +98,14 @@ services:
             pt_PT: Chave de Encriptação da Aplicação
             ru_RU: Ключ шифрования приложения
             tr_TR: Uygulama Şifreleme Anahtarı
+            en_us: Application Encryption Key
+            pt_br: Chave de Encriptação da Aplicação
+            zh_cn: 加密密钥
+            fr_fr: Clé de Chiffrement Application
+            de_de: Anwendungsverschlüsselungsschlüssel
+            it_it: Chiave di Crittografia Applicazione
+            ru_ru: Ключ шифрования приложения
+            ja_jp: アプリケーション暗号化キー
         - container: DB_HOST
           description:
             en_US: Database Host
@@ -99,6 +123,14 @@ services:
             pt_PT: Anfitrião da Base de Dados
             ru_RU: Хост базы данных
             tr_TR: Veritabanı Ana Bilgisayarı
+            en_us: Database Host
+            pt_br: Anfitrião da Base de Dados
+            zh_cn: 数据库主机
+            fr_fr: Hôte de base de données
+            de_de: Datenbankhost
+            it_it: Host Database
+            ru_ru: Хост базы данных
+            ja_jp: データベースホスト
         - container: DB_USERNAME
           description:
             en_US: Database Username
@@ -116,6 +148,14 @@ services:
             pt_PT: Nome de Utilizador da Base de Dados
             ru_RU: Имя пользователя базы данных
             tr_TR: Veritabanı Kullanıcı Adı
+            en_us: Database Username
+            pt_br: Nome de Utilizador da Base de Dados
+            zh_cn: 数据库用户名
+            fr_fr: Nom d'utilisateur de base de données
+            de_de: Datenbankbenutzername
+            it_it: Nome utente Database
+            ru_ru: Имя пользователя базы данных
+            ja_jp: データベースユーザー名
         - container: DB_PASSWORD
           description:
             en_US: Database Password
@@ -133,6 +173,14 @@ services:
             pt_PT: Palavra-passe da Base de Dados
             ru_RU: Пароль базы данных
             tr_TR: Veritabanı Şifresi
+            en_us: Database Password
+            pt_br: Palavra-passe da Base de Dados
+            zh_cn: 数据库密码
+            fr_fr: Mot de passe de base de données
+            de_de: Datenbankpasswort
+            it_it: Password Database
+            ru_ru: Пароль базы данных
+            ja_jp: データベースパスワード
   monica-db:
     image: mariadb:11.8.2
     container_name: monica-db
@@ -171,6 +219,14 @@ services:
             pt_PT: Diretório de Armazenamento da Base de Dados
             ru_RU: Каталог хранения базы данных
             tr_TR: Veritabanı Depolama Dizini
+            en_us: Database Storage Directory
+            pt_br: Diretório de Armazenamento da Base de Dados
+            zh_cn: 数据库存储目录
+            fr_fr: Répertoire de Stockage Base de Données
+            de_de: Datenbank-Speicherverzeichnis
+            it_it: Directory di Archiviazione Database
+            ru_ru: Каталог хранения базы данных
+            ja_jp: データベースストレージディレクトリ
       envs:
         - container: MARIADB_RANDOM_ROOT_PASSWORD
           description:
@@ -189,6 +245,14 @@ services:
             pt_PT: Gerar Palavra-passe Root Aleatória
             ru_RU: Сгенерировать случайный пароль для корня
             tr_TR: Rastgele Kök Şifresi Oluştur
+            en_us: Generate Random Root Password
+            pt_br: Gerar Palavra-passe Root Aleatória
+            zh_cn: 生成随机根密码
+            fr_fr: Générer un mot de passe root aléatoire
+            de_de: Zufälliges Root-Passwort generieren
+            it_it: Genera Password Root Casuale
+            ru_ru: Сгенерировать случайный пароль для корня
+            ja_jp: ランダムルートパスワード生成
         - container: MARIADB_DATABASE
           description:
             en_US: Database Name
@@ -206,6 +270,14 @@ services:
             pt_PT: Nome da Base de Dados
             ru_RU: Имя базы данных
             tr_TR: Veritabanı Adı
+            en_us: Database Name
+            pt_br: Nome da Base de Dados
+            zh_cn: 数据库名称
+            fr_fr: Nom de base de données
+            de_de: Datenbankname
+            it_it: Nome Database
+            ru_ru: Имя базы данных
+            ja_jp: データベース名
         - container: MARIADB_USER
           description:
             en_US: Database User
@@ -223,6 +295,14 @@ services:
             pt_PT: Nome de Utilizador da Base de Dados
             ru_RU: Имя пользователя базы данных
             tr_TR: Veritabanı Kullanıcı Adı
+            en_us: Database User
+            pt_br: Nome de Utilizador da Base de Dados
+            zh_cn: 数据库用户
+            fr_fr: Utilisateur de base de données
+            de_de: Datenbankbenutzer
+            it_it: Utente Database
+            ru_ru: Имя пользователя базы данных
+            ja_jp: データベースユーザー名
         - container: MARIADB_PASSWORD
           description:
             en_US: Database Password
@@ -240,6 +320,14 @@ services:
             pt_PT: Palavra-passe da Base de Dados
             ru_RU: Пароль базы данных
             tr_TR: Veritabanı Şifresi
+            en_us: Database Password
+            pt_br: Palavra-passe da Base de Dados
+            zh_cn: 数据库密码
+            fr_fr: Mot de passe de base de données
+            de_de: Datenbankpasswort
+            it_it: Password Database
+            ru_ru: Пароль базы данных
+            ja_jp: データベースパスワード
 networks:
   monica_network:
     driver: bridge
@@ -267,6 +355,14 @@ x-casaos:
     pt_PT: Uma ferramenta de gestão de relacionamentos pessoais para ajudá-lo a documentar a sua vida social.
     ru_RU: Инструмент управления личными отношениями, который поможет вам документировать вашу социальную жизнь.
     tr_TR: Sosyal yaşamınızı belgelemenize yardımcı olacak Kişisel İlişki Yönetimi aracı.
+    en_us: A Personal Relationship Management tool to help you document your social life.
+    pt_br: Uma ferramenta de gestão de relacionamentos pessoais para ajudá-lo a documentar a sua vida social.
+    zh_cn: 个人关系管理工具，帮助您记录社交生活。
+    fr_fr: Un outil de gestion des relations personnelles pour vous aider à documenter votre vie sociale.
+    de_de: Ein persönliches Beziehungsmanagement-Tool, das Ihnen hilft, Ihr soziales Leben zu dokumentieren.
+    it_it: Uno strumento di gestione delle relazioni personali per aiutarti a documentare la tua vita sociale.
+    ru_ru: Инструмент управления личными отношениями, который поможет вам документировать вашу социальную жизнь.
+    ja_jp: 社交生活を記録するための個人関係管理ツール。
   description:
     en_US: |
       Monica is a self-hosted personal relationship management tool that helps users document and organize interactions with family and friends via an intuitive Web interface, creating a personalized contact database. It is ideal for users balancing work and life, ensuring key personal connections are never missed.
@@ -568,14 +664,175 @@ x-casaos:
       **Daha Fazla Bilgi:**
       - [Monica Resmi Web Sitesi](https://www.monicahq.com)
       - [Monica GitHub Deposu](https://github.com/monicahq/monica)
+    en_us: |
+      Monica is a self-hosted personal relationship management tool that helps users document and organize interactions with family and friends via an intuitive Web interface, creating a personalized contact database. It is ideal for users balancing work and life, ensuring key personal connections are never missed.
+
+      The tool's core features include comprehensive contact management and smart reminders. It supports creating detailed contact profiles, logging personal details, relationships (e.g., family, friends), and how contacts were met. Users can set automatic reminders for birthdays, anniversaries, and other key dates, while tracking conversations, activities, and gift ideas. A diary feature records daily moods and significant moments, maintaining a clear life record.
+
+      It offers task and debt management to track to-dos or financial interactions. Users can upload photos and documents, favorite contacts, and organize relationships with labels for streamlined data management. Full control over local data ensures privacy. The tool’s intuitive operation and high flexibility deliver a modern relationship management solution.
+
+      **Key Features:**
+      - Comprehensive contact management with detailed profiles
+      - Automatic reminders for birthdays, anniversaries, and key dates
+      - Track conversations, activities, and gift ideas
+      - Diary feature to record daily moods and moments
+      - Task and debt management for to-dos and finances
+      - Upload photos and documents, favorite contacts
+      - Organize contacts with labels
+      - Local data storage for privacy assurance
+
+      **Learn More:**
+      - [Monica Official Website](https://www.monicahq.com)
+      - [Monica GitHub Repository](https://github.com/monicahq/monica)
+    pt_br: |
+      Monica é uma ferramenta de gestão de relacionamentos pessoais auto-hospedada que ajuda os utilizadores a documentar e organizar interações com família e amigos através de uma interface Web intuitiva, criando uma base de dados de contactos personalizada. É ideal para utilizadores que equilibram trabalho e vida, garantindo que as conexões pessoais importantes nunca sejam perdidas.
+
+      As funcionalidades principais da ferramenta incluem gestão abrangente de contactos e lembretes inteligentes. Suporta a criação de perfis detalhados de contactos, registo de detalhes pessoais, relacionamentos (ex: família, amigos) e como os contactos foram conhecidos. Os utilizadores podem definir lembretes automáticos para aniversários, datas comemorativas e outras datas importantes, enquanto acompanham conversas, atividades e ideias de presentes. Uma funcionalidade de diário regista humores diários e momentos significativos, mantendo um registo de vida claro.
+
+      Oferece gestão de tarefas e dívidas para acompanhar afazeres ou interações financeiras. Os utilizadores podem carregar fotografias e documentos, marcar contactos como favoritos e organizar relacionamentos com etiquetas para gestão de dados simplificada. O controlo total sobre dados locais garante privacidade. O funcionamento intuitivo e alta flexibilidade da ferramenta proporcionam uma solução moderna de gestão de relacionamentos.
+
+      **Características Principais:**
+      - Gestão abrangente de contactos com perfis detalhados
+      - Lembretes automáticos para aniversários, datas comemorativas e datas importantes
+      - Acompanhar conversas, atividades e ideias de presentes
+      - Funcionalidade de diário para registar humores e momentos diários
+      - Gestão de tarefas e dívidas para afazeres e finanças
+      - Carregar fotografias e documentos, contactos favoritos
+      - Organizar contactos com etiquetas
+      - Armazenamento de dados local para garantia de privacidade
+
+      **Saiba Mais:**
+      - [Website Oficial Monica](https://www.monicahq.com)
+      - [Repositório GitHub Monica](https://github.com/monicahq/monica)
+    zh_cn: |
+      Monica 是一款自托管的个人关系管理工具，通过直观的 Web 界面，帮助用户记录和组织与家人、朋友的互动，打造个人化的联系人数据库。它适合忙于工作与生活平衡的用户，确保不错过重要的人际联系时刻。
+
+      该工具的核心功能包括全面的联系人管理和智能提醒功能。它支持创建详细的联系人档案，记录个人信息、关系（如家庭、朋友）以及相识经过。用户可为生日、周年纪念等重要日期设置自动提醒，并跟踪与联系人的对话、活动和礼物想法。日记功能允许记录每日心情和重要时刻，保持生活轨迹清晰。
+
+      它提供任务和债务管理，方便跟踪待办事项或财务往来。支持上传照片和文档，标记收藏联系人，并通过标签组织关系，确保数据井然有序。用户完全掌控本地数据，隐私得到保障。该工具以直观操作和高灵活性，提供现代化的人际关系管理解决方案。
+
+      **主要功能：**
+      - 全面联系人管理，创建详细个人档案
+      - 自动提醒生日、周年纪念等重要日期
+      - 跟踪对话、活动和礼物想法
+      - 日记功能，记录每日心情和时刻
+      - 任务和债务管理，跟踪待办与财务
+      - 上传照片和文档，标记收藏联系人
+      - 通过标签组织联系人
+      - 本地数据存储，保障隐私
+
+      **了解更多：**
+      - [Monica官方网站](https://www.monicahq.com)
+      - [Monica GitHub仓库](https://github.com/monicahq/monica)
+    fr_fr: |
+      Monica est un outil de gestion des relations personnelles auto-hébergé qui aide les utilisateurs à documenter et organiser les interactions avec la famille et les amis via une interface Web intuitive, créant une base de données de contacts personnalisée. Il est idéal pour les utilisateurs qui équilibrent travail et vie privée, garantissant que les connexions personnelles importantes ne soient jamais manquées.
+
+      Les fonctionnalités principales de l'outil incluent une gestion complète des contacts et des rappels intelligents. Il prend en charge la création de profils de contacts détaillés, l'enregistrement de détails personnels, de relations (par exemple, famille, amis) et de la façon dont les contacts ont été rencontrés. Les utilisateurs peuvent définir des rappels automatiques pour les anniversaires, les anniversaires de mariage et autres dates importantes, tout en suivant les conversations, activités et idées de cadeaux. Une fonction journal enregistre les humeurs quotidiennes et les moments significatifs, maintenant un enregistrement de vie clair.
+
+      Il offre une gestion des tâches et des dettes pour suivre les tâches ou les interactions financières. Les utilisateurs peuvent télécharger des photos et des documents, mettre en favoris des contacts et organiser les relations avec des étiquettes pour une gestion de données rationalisée. Le contrôle total sur les données locales garantit la confidentialité. Le fonctionnement intuitif et la haute flexibilité de l'outil offrent une solution moderne de gestion des relations.
+
+      **Fonctionnalités Clés :**
+      - Gestion complète des contacts avec profils détaillés
+      - Rappels automatiques pour anniversaires, anniversaires de mariage et dates importantes
+      - Suivi des conversations, activités et idées de cadeaux
+      - Fonction journal pour enregistrer les humeurs et moments quotidiens
+      - Gestion des tâches et dettes pour les tâches et finances
+      - Téléchargement de photos et documents, contacts favoris
+      - Organisation des contacts avec étiquettes
+      - Stockage de données local pour assurance de confidentialité
+
+      **En Savoir Plus :**
+      - [Site Officiel Monica](https://www.monicahq.com)
+      - [Dépôt GitHub Monica](https://github.com/monicahq/monica)
+    de_de: |
+      Monica ist ein selbstgehostetes Tool für persönliches Beziehungsmanagement, das Benutzern hilft, Interaktionen mit Familie und Freunden über eine intuitive Weboberfläche zu dokumentieren und zu organisieren und eine personalisierte Kontaktdatenbank zu erstellen. Es ist ideal für Benutzer, die Arbeit und Leben in Einklang bringen und sicherstellen möchten, dass wichtige persönliche Verbindungen niemals verpasst werden.
+
+             Die Kernfunktionen des Tools umfassen umfassendes Kontaktmanagement und intelligente Erinnerungen. Es unterstützt die Erstellung detaillierter Kontaktprofile, das Protokollieren persönlicher Details, Beziehungen (z.B. Familie, Freunde) und wie Kontakte kennengelernt wurden. Benutzer können automatische Erinnerungen für Geburtstage, Jahrestage und andere wichtige Daten festlegen, während sie Gespräche, Aktivitäten und Geschenkideen verfolgen. Eine Tagebuchfunktion zeichnet tägliche Stimmungen und bedeutsame Momente auf und bewahrt eine klare Lebensaufzeichnung.
+
+      Es bietet Aufgaben- und Schuldenverwaltung zur Verfolgung von To-dos oder finanziellen Interaktionen. Benutzer können Fotos und Dokumente hochladen, Kontakte zu Favoriten hinzufügen und Beziehungen mit Etiketten organisieren für optimierte Datenverwaltung. Vollständige Kontrolle über lokale Daten gewährleistet Datenschutz. Die intuitive Bedienung und hohe Flexibilität des Tools bietet eine moderne Beziehungsmanagement-Lösung.
+
+      **Hauptfunktionen:**
+      - Umfassendes Kontaktmanagement mit detaillierten Profilen
+      - Automatische Erinnerungen für Geburtstage, Jahrestage und wichtige Daten
+      - Verfolgung von Gesprächen, Aktivitäten und Geschenkideen
+      - Tagebuchfunktion zur Aufzeichnung täglicher Stimmungen und Momente
+      - Aufgaben- und Schuldenverwaltung für To-dos und Finanzen
+      - Upload von Fotos und Dokumenten, Lieblingskontakte
+      - Organisation von Kontakten mit Etiketten
+      - Lokale Datenspeicherung für Datenschutzgewährleistung
+
+      **Mehr Erfahren:**
+      - [Monica Offizielle Website](https://www.monicahq.com)
+      - [Monica GitHub Repository](https://github.com/monicahq/monica)
+    it_it: |
+      Monica è uno strumento di gestione delle relazioni personali self-hosted che aiuta gli utenti a documentare e organizzare le interazioni con famiglia e amici tramite un'interfaccia Web intuitiva, creando un database di contatti personalizzato. È ideale per utenti che bilanciano lavoro e vita privata, assicurando che le connessioni personali importanti non vengano mai perse.
+
+      Le funzionalità principali dello strumento includono gestione completa dei contatti e promemoria intelligenti. Supporta la creazione di profili dettagliati dei contatti, registrando dettagli personali, relazioni (es. famiglia, amici) e come i contatti sono stati conosciuti. Gli utenti possono impostare promemoria automatici per compleanni, anniversari e altre date importanti, mentre tracciano conversazioni, attività e idee regalo. Una funzione diario registra umori quotidiani e momenti significativi, mantenendo un registro di vita chiaro.
+
+      Offre gestione di attività e debiti per tracciare to-do o interazioni finanziarie. Gli utenti possono caricare foto e documenti, aggiungere contatti ai preferiti e organizzare relazioni con etichette per una gestione dati semplificata. Il controllo completo sui dati locali garantisce la privacy. L'operazione intuitiva e l'alta flessibilità dello strumento offrono una soluzione moderna di gestione delle relazioni.
+
+      **Funzionalità Principali:**
+      - Gestione completa dei contatti con profili dettagliati
+      - Promemoria automatici per compleanni, anniversari e date importanti
+      - Tracciamento di conversazioni, attività e idee regalo
+      - Funzione diario per registrare umori e momenti quotidiani
+      - Gestione di attività e debiti per to-do e finanze
+      - Caricamento di foto e documenti, contatti preferiti
+      - Organizzazione contatti con etichette
+      - Archiviazione dati locale per garanzia privacy
+
+      **Ulteriori Informazioni:**
+      - [Sito Ufficiale Monica](https://www.monicahq.com)
+      - [Repository GitHub Monica](https://github.com/monicahq/monica)
+    ru_ru: |
+      Monica — это самостоятельно размещаемый инструмент управления личными отношениями, который помогает пользователям документировать и организовывать взаимодействия с семьей и друзьями через интуитивный веб-интерфейс, создавая персонализированную базу данных контактов. Идеально подходит для пользователей, балансирующих работу и жизнь, гарантируя, что важные личные связи никогда не будут упущены.
+
+      Основные функции инструмента включают комплексное управление контактами и умные напоминания. Он поддерживает создание подробных профилей контактов, ведение журнала личных данных, отношений (например, семья, друзья) и того, как были встречены контакты. Пользователи могут устанавливать автоматические напоминания для дней рождения, годовщин и других важных дат, отслеживая разговоры, активности и идеи подарков. Функция дневника записывает ежедневные настроения и значимые моменты, поддерживая четкую запись жизни.
+
+      Предлагает управление задачами и долгами для отслеживания дел или финансовых взаимодействий. Пользователи могут загружать фотографии и документы, отмечать избранные контакты и организовывать отношения с помощью меток для упрощенного управления данными. Полный контроль над локальными данными обеспечивает конфиденциальность. Интуитивная работа и высокая гибкость инструмента обеспечивают современное решение для управления отношениями.
+
+      **Ключевые Особенности:**
+      - Комплексное управление контактами с подробными профилями
+      - Автоматические напоминания для дней рождения, годовщин и важных дат
+      - Отслеживание разговоров, активностей и идей подарков
+      - Функция дневника для записи ежедневных настроений и моментов
+      - Управление задачами и долгами для дел и финансов
+      - Загрузка фотографий и документов, избранные контакты
+      - Организация контактов с помощью меток
+      - Локальное хранение данных для обеспечения конфиденциальности
+
+      **Узнать Больше:**
+      - [Официальный Сайт Monica](https://www.monicahq.com)
+      - [GitHub Репозиторий Monica](https://github.com/monicahq/monica)
+    ja_jp: |
+      Monicaは、直感的なWebインターフェースを通じて家族や友人との交流を記録・整理し、パーソナライズされた連絡先データベースを作成するセルフホスト型個人関係管理ツールです。仕事と生活のバランスを取るユーザーに最適で、重要な個人的つながりを見逃すことがないよう支援します。
+
+      このツールの中核機能には、包括的な連絡先管理とスマートリマインダーが含まれます。詳細な連絡先プロフィールの作成、個人情報、関係（家族、友人など）、連絡先との出会いの記録をサポートします。ユーザーは誕生日、記念日、その他の重要な日付の自動リマインダーを設定でき、会話、活動、ギフトアイデアを追跡します。日記機能は日々の気分と重要な瞬間を記録し、明確な人生記録を維持します。
+
+      タスクと債務管理を提供し、To-doや金融取引を追跡できます。ユーザーは写真や文書をアップロード、連絡先をお気に入りに追加、ラベルで関係を整理して合理化されたデータ管理を実現できます。ローカルデータの完全制御により、プライバシーが確保されます。このツールの直感的な操作と高い柔軟性により、モダンな関係管理ソリューションを提供します。
+
+      **主要機能：**
+      - 詳細プロフィールを含む包括的連絡先管理
+      - 誕生日、記念日、重要な日付の自動リマインダー
+      - 会話、活動、ギフトアイデアの追跡
+      - 日々の気分と瞬間を記録する日記機能
+      - To-doと財務のタスク・債務管理
+      - 写真と文書のアップロード、お気に入り連絡先
+      - ラベルによる連絡先整理
+      - プライバシー保証のためのローカルデータストレージ
+
+      **詳細情報：**
+      - [Monica公式ウェブサイト](https://www.monicahq.com)
+      - [Monica GitHubリポジトリ](https://github.com/monicahq/monica)
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Monica/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Monica/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Monica/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Monica/screenshot-3.png
-  thumbnail: ''
+  thumbnail: ""
   scheme: http
-  port_map: '18930'
+  port_map: "18930"
   index: /
   title:
     en_US: Monica
+    en_us: Monica

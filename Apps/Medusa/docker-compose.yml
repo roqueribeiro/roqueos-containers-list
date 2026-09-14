@@ -1,6 +1,11 @@
 name: medusa
 services:
   medusa:
+    x-casaos:
+      ports:
+        - container: '8081'
+          description:
+            en_us: "Web interface for Medusa"
     container_name: medusa
     deploy:
       resources:
@@ -51,3 +56,6 @@ x-casaos:
   store_app_id: medusa
   title:
     en_us: Medusa
+
+x-roqueos:
+  portaCompartilhada: true

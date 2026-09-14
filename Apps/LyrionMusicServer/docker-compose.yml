@@ -11,16 +11,16 @@ services:
     restart: unless-stopped
     ports:
       - target: 9000
-        published: '9000'
+        published: "9000"
         protocol: tcp
       - target: 9090
-        published: '9090'
+        published: "9090"
         protocol: tcp
       - target: 3483
-        published: '3483'
+        published: "3483"
         protocol: tcp
       - target: 3483
-        published: '3483'
+        published: "3483"
         protocol: udp
     volumes:
       - type: bind
@@ -42,10 +42,10 @@ services:
         target: /etc/timezone
         read_only: true
     environment:
-      HTTP_PORT: '9000'
+      HTTP_PORT: "9000"
     x-casaos:
       ports:
-        - container: '9000'
+        - container: "9000"
           description:
             en_US: WebUI HTTP Port
             en_GB: WebUI HTTP Port
@@ -62,7 +62,15 @@ services:
             pt_PT: Porta HTTP WebUI
             ru_RU: HTTP порт веб-интерфейса
             tr_TR: WebUI HTTP Portu
-        - container: '9090'
+            en_us: WebUI HTTP Port
+            pt_br: Porta HTTP WebUI
+            zh_cn: WebUI HTTP端口
+            fr_fr: Port HTTP WebUI
+            de_de: WebUI HTTP Port
+            it_it: Porta HTTP WebUI
+            ru_ru: HTTP порт веб-интерфейса
+            ja_jp: WebUI HTTPポート
+        - container: "9090"
           description:
             en_US: CLI Port
             en_GB: CLI Port
@@ -79,7 +87,15 @@ services:
             pt_PT: Porta CLI
             ru_RU: CLI порт
             tr_TR: CLI Portu
-        - container: '3483'
+            en_us: CLI Port
+            pt_br: Porta CLI
+            zh_cn: CLI端口
+            fr_fr: Port CLI
+            de_de: CLI Port
+            it_it: Porta CLI
+            ru_ru: CLI порт
+            ja_jp: CLIポート
+        - container: "3483"
           description:
             en_US: Discovery Port (TCP)
             en_GB: Discovery Port (TCP)
@@ -96,7 +112,15 @@ services:
             pt_PT: Porta Discovery (TCP)
             ru_RU: Порт обнаружения (TCP)
             tr_TR: Discovery Portu (TCP)
-        - container: '3483'
+            en_us: Discovery Port (TCP)
+            pt_br: Porta Discovery (TCP)
+            zh_cn: 发现端口 (TCP)
+            fr_fr: Port Discovery (TCP)
+            de_de: Discovery Port (TCP)
+            it_it: Porta Discovery (TCP)
+            ru_ru: Порт обнаружения (TCP)
+            ja_jp: ディスカバリポート (TCP)
+        - container: "3483"
           description:
             en_US: Discovery Port (UDP)
             en_GB: Discovery Port (UDP)
@@ -113,6 +137,14 @@ services:
             pt_PT: Porta Discovery (UDP)
             ru_RU: Порт обнаружения (UDP)
             tr_TR: Discovery Portu (UDP)
+            en_us: Discovery Port (UDP)
+            pt_br: Porta Discovery (UDP)
+            zh_cn: 发现端口 (UDP)
+            fr_fr: Port Discovery (UDP)
+            de_de: Discovery Port (UDP)
+            it_it: Porta Discovery (UDP)
+            ru_ru: Порт обнаружения (UDP)
+            ja_jp: ディスカバリポート (UDP)
       volumes:
         - container: /config
           description:
@@ -131,6 +163,14 @@ services:
             pt_PT: Diretório de configuração
             ru_RU: Каталог конфигурации
             tr_TR: Yapılandırma dizini
+            en_us: Config directory
+            pt_br: Diretório de configuração
+            zh_cn: 配置目录
+            fr_fr: Répertoire de configuration
+            de_de: Konfigurationsverzeichnis
+            it_it: Directory di configurazione
+            ru_ru: Каталог конфигурации
+            ja_jp: 設定ディレクトリ
         - container: /music
           description:
             en_US: Music directory
@@ -148,6 +188,14 @@ services:
             pt_PT: Diretório de música
             ru_RU: Каталог музыки
             tr_TR: Müzik dizini
+            en_us: Music directory
+            pt_br: Diretório de música
+            zh_cn: 音乐目录
+            fr_fr: Répertoire de musique
+            de_de: Musikverzeichnis
+            it_it: Directory della musica
+            ru_ru: Каталог музыки
+            ja_jp: 音楽ディレクトリ
         - container: /playlist
           description:
             en_US: Playlist directory
@@ -165,6 +213,14 @@ services:
             pt_PT: Diretório de playlist
             ru_RU: Каталог плейлистов
             tr_TR: Çalma listesi dizini
+            en_us: Playlist directory
+            pt_br: Diretório de playlist
+            zh_cn: 播放列表目录
+            fr_fr: Répertoire des playlists
+            de_de: Playlist-Verzeichnis
+            it_it: Directory delle playlist
+            ru_ru: Каталог плейлистов
+            ja_jp: プレイリストディレクトリ
         - container: /etc/localtime
           description:
             en_US: Local time
@@ -182,6 +238,14 @@ services:
             pt_PT: Hora local
             ru_RU: Местное время
             tr_TR: Yerel saat
+            en_us: Local time
+            pt_br: Hora local
+            zh_cn: 本地时间
+            fr_fr: Heure locale
+            de_de: Lokale Zeit
+            it_it: Ora locale
+            ru_ru: Местное время
+            ja_jp: ローカル時間
         - container: /etc/timezone
           description:
             en_US: Timezone
@@ -199,6 +263,14 @@ services:
             pt_PT: Fuso horário
             ru_RU: Часовой пояс
             tr_TR: Saat dilimi
+            en_us: Timezone
+            pt_br: Fuso horário
+            zh_cn: 时区
+            fr_fr: Fuseau horaire
+            de_de: Zeitzone
+            it_it: Fuso orario
+            ru_ru: Часовой пояс
+            ja_jp: タイムゾーン
       envs:
         - container: HTTP_PORT
           description:
@@ -217,6 +289,14 @@ services:
             pt_PT: Porta HTTP para interface web
             ru_RU: HTTP порт для веб-интерфейса
             tr_TR: Web arayüzü için HTTP portu
+            en_us: HTTP Port for Web Interface
+            pt_br: Porta HTTP para interface web
+            zh_cn: Web界面HTTP端口
+            fr_fr: Port HTTP pour interface web
+            de_de: HTTP-Port für Web-Interface
+            it_it: Porta HTTP per interfaccia web
+            ru_ru: HTTP порт для веб-интерфейса
+            ja_jp: WebインターフェースのHTTPポート
 x-casaos:
   architectures:
     - amd64
@@ -242,6 +322,14 @@ x-casaos:
     pt_PT: O Lyrion Music Server é um servidor de áudio streaming para reprodutores de áudio Squeezebox.
     ru_RU: Lyrion Music Server — это потоковый аудиосервер для аудиоплееров Squeezebox.
     tr_TR: Lyrion Music Server, Squeezebox ses oynatıcıları için bir akış ses sunucusudur.
+    en_us: Lyrion Music Server is a streaming audio server for Squeezebox audio players.
+    pt_br: O Lyrion Music Server é um servidor de áudio streaming para reprodutores de áudio Squeezebox.
+    zh_cn: Lyrion Music Server 是一个支持 Squeezebox 音频播放器的流媒体音频服务器。
+    fr_fr: Lyrion Music Server est un serveur audio en streaming pour les lecteurs audio Squeezebox.
+    de_de: Lyrion Music Server ist ein Streaming-Audio-Server für Squeezebox-Audioplayer.
+    it_it: Lyrion Music Server è un server audio streaming per lettori audio Squeezebox.
+    ru_ru: Lyrion Music Server — это потоковый аудиосервер для аудиоплееров Squeezebox.
+    ja_jp: Lyrion Music Server は Squeezebox オーディオプレーヤー用のストリーミングオーディオサーバーです。
   description:
     en_US: |
       Lyrion Music Server is a self-hosted music management app designed to control a variety of audio playback devices, supporting streaming of local music collections, internet radio, and multiple streaming services (with or without subscriptions). Its intuitive Web interface enables users to access and control music effortlessly via any browser, ideal for music enthusiasts creating personalized audio experiences.
@@ -494,14 +582,154 @@ x-casaos:
       - Sunucu işlevselliği, etkileşim yöntemleri ve arayüz görünümü için kapsamlı özelleştirme seçenekleri
       - Telefonlar, bilgisayarlar ve diğer oynatıcılarda tutarlı deneyim sağlayan birleşik çoklu cihaz arayüzü
       - Kurulumları optimize etmek ve işlevselliği genişletmek için topluluk belge desteği
+    en_us: |
+      Lyrion Music Server is a self-hosted music management app designed to control a variety of audio playback devices, supporting streaming of local music collections, internet radio, and multiple streaming services (with or without subscriptions). Its intuitive Web interface enables users to access and control music effortlessly via any browser, ideal for music enthusiasts creating personalized audio experiences.
+
+      The app's core features include versatile music streaming and extensive customization. Users can seamlessly play local music libraries, listen to global internet radio, or connect to streaming services, catering to diverse listening needs. It offers flexible control options, allowing customization of server functionality, interaction methods, and interface appearance. Additionally, it supports a unified interface across multiple devices, ensuring a consistent experience on phones, computers, or other players, with the ability to select the ideal playback device for any scenario.
+
+      It can be flexibly deployed on personal servers or NAS devices, with community-provided documentation aiding users in optimising setups and extending functionality. Whether managing personal music collections or creating a shared audio hub for family, the app's intuitive operation and high flexibility deliver a modern music management platform, meeting needs from casual listening to professional audio management.
+
+      **Key Features:**
+      - Music streaming for local collections, internet radio, and multiple streaming services
+      - Intuitive Web interface for effortless music access and control via any browser
+      - Extensive customisation options for server functionality, interaction methods, and interface appearance
+      - Unified multi-device interface ensuring consistent experience across phones, computers, and other players
+      - Community documentation support for optimising setups and extending functionality
+
+      **Learn More:**
+      - [Lyrion Music Server Official Website](https://www.lyrion.org)
+      - [Lyrion Music Server GitHub Repository](https://github.com/lms-community/slimserver)
+    pt_br: |
+      O Lyrion Music Server é uma aplicação de gestão musical auto-hospedada concebida para controlar uma variedade de dispositivos de reprodução áudio, suportando streaming de coleções musicais locais, rádio internet e múltiplos serviços de streaming (com ou sem subscrições). A sua interface Web intuitiva permite aos utilizadores aceder e controlar música sem esforço através de qualquer navegador, ideal para entusiastas da música que criam experiências áudio personalizadas.
+
+      As funcionalidades principais da aplicação incluem streaming musical versátil e personalização extensiva. Os utilizadores podem reproduzir sem problemas bibliotecas musicais locais, ouvir rádio internet global ou conectar-se a serviços de streaming, atendendo a diversas necessidades de audição. Oferece opções de controlo flexíveis, permitindo personalização da funcionalidade do servidor, métodos de interação e aparência da interface. Além disso, suporta uma interface unificada em múltiplos dispositivos, garantindo uma experiência consistente em telefones, computadores ou outros reprodutores, com a capacidade de selecionar o dispositivo de reprodução ideal para qualquer cenário.
+
+      Pode ser implementado de forma flexível em servidores pessoais ou dispositivos NAS, com documentação fornecida pela comunidade ajudando os utilizadores a otimizar configurações e estender funcionalidades. Seja gerindo coleções musicais pessoais ou criando um centro áudio partilhado para a família, a operação intuitiva e alta flexibilidade da aplicação oferecem uma plataforma moderna de gestão musical, atendendo necessidades desde audição casual até gestão áudio profissional.
+
+      **Funcionalidades Principais:**
+      - Streaming musical para coleções locais, rádio internet e múltiplos serviços de streaming
+      - Interface Web intuitiva para acesso e controlo musical sem esforço através de qualquer navegador
+      - Opções extensivas de personalização para funcionalidade do servidor, métodos de interação e aparência da interface
+      - Interface multi-dispositivo unificada garantindo experiência consistente em telefones, computadores e outros reprodutores
+      - Suporte de documentação comunitária para otimizar configurações e estender funcionalidades
+
+      **Saiba mais:**
+      - [Site oficial do Lyrion Music Server](https://www.lyrion.org)
+      - [Repositório GitHub do Lyrion Music Server](https://github.com/lms-community/slimserver)
+    zh_cn: |
+      Lyrion Music Server 是一款自托管音乐管理应用，专为控制多种音频播放设备设计，支持流式播放本地音乐收藏、互联网电台和多种流媒体服务（无论是否需要订阅）。其直观的 Web 界面让用户通过任何浏览器轻松访问和控制音乐，适合音乐爱好者打造个性化的音频体验。
+
+      该应用的核心功能包括多样化的音乐流媒体和高度自定义化。用户可无缝播放本地音乐库、收听全球互联网电台或连接流媒体服务，满足不同聆听需求。它提供灵活的控制选项，允许用户自定义服务器功能、交互方式和界面外观。此外，它支持在多个设备上使用统一的界面，确保在手机、电脑或其他播放器上都能获得一致的体验，并可根据需求选择合适的播放设备。
+
+      它可灵活部署于个人服务器或 NAS 设备，社区提供支持文档，助力用户优化设置和扩展功能。无论是管理个人音乐收藏还是为家庭打造共享音频中心，该应用以直观的操作和高灵活性，提供现代化的音乐管理平台，满足从日常聆听到专业音频管理的多样化需求。
+
+      **主要功能：**
+      - 支持本地音乐、互联网广播和多种流媒体服务的音乐流
+      - 直观的 Web 界面，通过任何浏览器轻松访问和控制音乐
+      - 广泛的自定义选项，调整服务器功能、交互方式和界面外观
+      - 统一的多设备界面，确保手机、电脑和其他播放器一致体验
+      - 支持社区文档，优化设置和扩展功能
+
+      **了解更多：**
+      - [Lyrion Music Server 官方网站](https://www.lyrion.org)
+      - [Lyrion Music Server GitHub 仓库](https://github.com/lms-community/slimserver)
+    fr_fr: |
+      Lyrion Music Server est une application de gestion musicale auto-hébergée conçue pour contrôler une variété d'appareils de lecture audio, prenant en charge le streaming de collections musicales locales, la radio internet et plusieurs services de streaming (avec ou sans abonnements). Son interface Web intuitive permet aux utilisateurs d'accéder et de contrôler la musique sans effort via n'importe quel navigateur, idéal pour les passionnés de musique créant des expériences audio personnalisées.
+
+      Les fonctionnalités principales de l'application incluent le streaming musical polyvalent et une personnalisation étendue. Les utilisateurs peuvent lire de manière transparente les bibliothèques musicales locales, écouter la radio internet mondiale ou se connecter aux services de streaming, répondant à divers besoins d'écoute. Elle offre des options de contrôle flexibles, permettant la personnalisation des fonctionnalités du serveur, des méthodes d'interaction et de l'apparence de l'interface. De plus, elle prend en charge une interface unifiée sur plusieurs appareils, garantissant une expérience cohérente sur les téléphones, ordinateurs ou autres lecteurs, avec la capacité de sélectionner l'appareil de lecture idéal pour tout scénario.
+
+      Elle peut être déployée de manière flexible sur des serveurs personnels ou des dispositifs NAS, avec une documentation fournie par la communauté aidant les utilisateurs à optimiser les configurations et étendre les fonctionnalités. Qu'il s'agisse de gérer des collections musicales personnelles ou de créer un hub audio partagé pour la famille, le fonctionnement intuitif et la haute flexibilité de l'application offrent une plateforme moderne de gestion musicale, répondant aux besoins de l'écoute occasionnelle à la gestion audio professionnelle.
+
+      **Fonctionnalités Principales :**
+      - Streaming musical pour collections locales, radio internet et services de streaming multiples
+      - Interface Web intuitive pour accès et contrôle musical sans effort via n'importe quel navigateur
+      - Options de personnalisation étendues pour fonctionnalités serveur, méthodes d'interaction et apparence interface
+      - Interface multi-appareils unifiée garantissant expérience cohérente sur téléphones, ordinateurs et autres lecteurs
+      - Support documentation communautaire pour optimiser configurations et étendre fonctionnalités
+
+      **En savoir plus :**
+      - [Site officiel de Lyrion Music Server](https://www.lyrion.org)
+      - [Dépôt GitHub de Lyrion Music Server](https://github.com/lms-community/slimserver)
+    de_de: |
+      Lyrion Music Server ist eine selbstgehostete Musik-Management-App, die zur Steuerung einer Vielzahl von Audio-Wiedergabegeräten entwickelt wurde und das Streaming lokaler Musiksammlungen, Internetradio und mehrerer Streaming-Dienste (mit oder ohne Abonnements) unterstützt. Die intuitive Web-Oberfläche ermöglicht es Benutzern, Musik mühelos über jeden Browser zu erreichen und zu steuern, ideal für Musikliebhaber, die personalisierte Audio-Erlebnisse schaffen.
+
+      Die Kernfunktionen der App umfassen vielseitiges Musik-Streaming und umfangreiche Anpassung. Benutzer können nahtlos lokale Musikbibliotheken abspielen, globales Internetradio hören oder sich mit Streaming-Diensten verbinden, um verschiedene Hörbedürfnisse zu erfüllen. Sie bietet flexible Steuerungsoptionen, die die Anpassung von Serverfunktionalität, Interaktionsmethoden und Interface-Erscheinungsbild ermöglichen. Zusätzlich unterstützt sie eine einheitliche Benutzeroberfläche über mehrere Geräte hinweg, die eine konsistente Erfahrung auf Telefonen, Computern oder anderen Playern gewährleistet, mit der Fähigkeit, das ideale Wiedergabegerät für jedes Szenario auszuwählen.
+
+      Sie kann flexibel auf persönlichen Servern oder NAS-Geräten bereitgestellt werden, wobei von der Community bereitgestellte Dokumentation Benutzern hilft, Setups zu optimieren und Funktionalitäten zu erweitern. Ob es um die Verwaltung persönlicher Musiksammlungen oder die Schaffung eines gemeinsamen Audio-Hubs für die Familie geht, die intuitive Bedienung und hohe Flexibilität der App bieten eine moderne Musik-Management-Plattform, die Bedürfnisse vom gelegentlichen Hören bis zum professionellen Audio-Management erfüllt.
+
+      **Hauptmerkmale:**
+      - Musik-Streaming für lokale Sammlungen, Internetradio und mehrere Streaming-Dienste
+      - Intuitive Web-Oberfläche für mühelosen Musikzugang und -kontrolle über jeden Browser
+      - Umfangreiche Anpassungsoptionen für Serverfunktionalität, Interaktionsmethoden und Interface-Erscheinungsbild
+      - Einheitliche Multi-Geräte-Benutzeroberfläche mit konsistenter Erfahrung auf Telefonen, Computern und anderen Playern
+      - Community-Dokumentationsunterstützung zur Optimierung von Setups und Funktionserweiterung
+
+      **Mehr erfahren:**
+      - [Lyrion Music Server offizielle Website](https://www.lyrion.org)
+      - [Lyrion Music Server GitHub Repository](https://github.com/lms-community/slimserver)
+    it_it: |
+      Lyrion Music Server è un'applicazione di gestione musicale self-hosted progettata per controllare una varietà di dispositivi di riproduzione audio, supportando lo streaming di collezioni musicali locali, radio internet e molteplici servizi di streaming (con o senza abbonamenti). La sua interfaccia Web intuitiva consente agli utenti di accedere e controllare la musica senza sforzo tramite qualsiasi browser, ideale per gli appassionati di musica che creano esperienze audio personalizzate.
+
+      Le funzionalità principali dell'app includono streaming musicale versatile e personalizzazione estensiva. Gli utenti possono riprodurre senza problemi le librerie musicali locali, ascoltare radio internet globali o connettersi a servizi di streaming, soddisfacendo diverse esigenze di ascolto. Offre opzioni di controllo flessibili, consentendo la personalizzazione delle funzionalità del server, dei metodi di interazione e dell'aspetto dell'interfaccia. Inoltre, supporta un'interfaccia unificata su più dispositivi, garantendo un'esperienza coerente su telefoni, computer o altri lettori, con la capacità di selezionare il dispositivo di riproduzione ideale per qualsiasi scenario.
+
+      Può essere distribuito in modo flessibile su server personali o dispositivi NAS, con documentazione fornita dalla comunità che aiuta gli utenti a ottimizzare le configurazioni ed estendere le funzionalità. Che si tratti di gestire collezioni musicali personali o creare un hub audio condiviso per la famiglia, l'operazione intuitiva e l'alta flessibilità dell'app offrono una piattaforma moderna di gestione musicale, soddisfacendo le esigenze dall'ascolto casuale alla gestione audio professionale.
+
+      **Caratteristiche Principali:**
+      - Streaming musicale per collezioni locali, radio internet e servizi di streaming multipli
+      - Interfaccia Web intuitiva per accesso e controllo musicale senza sforzo tramite qualsiasi browser
+      - Ampie opzioni di personalizzazione per funzionalità server, metodi di interazione e aspetto interfaccia
+      - Interfaccia multi-dispositivo unificata che garantisce esperienza coerente su telefoni, computer e altri lettori
+      - Supporto documentazione comunitaria per ottimizzare configurazioni ed estendere funzionalità
+
+      **Per saperne di più:**
+      - [Sito ufficiale di Lyrion Music Server](https://www.lyrion.org)
+      - [Repository GitHub di Lyrion Music Server](https://github.com/lms-community/slimserver)
+    ru_ru: |
+      Lyrion Music Server — это самостоятельно размещаемое приложение для управления музыкой, предназначенное для управления различными устройствами воспроизведения аудио, поддерживающее потоковую передачу локальных музыкальных коллекций, интернет-радио и множественных потоковых сервисов (с подписками или без них). Его интуитивный веб-интерфейс позволяет пользователям легко получать доступ к музыке и управлять ею через любой браузер, идеально подходя для музыкальных энтузиастов, создающих персонализированные аудио-впечатления.
+
+      Основные функции приложения включают универсальную музыкальную потоковую передачу и обширную настройку. Пользователи могут беспрепятственно воспроизводить локальные музыкальные библиотеки, слушать глобальное интернет-радио или подключаться к потоковым сервисам, удовлетворяя различные потребности прослушивания. Оно предлагает гибкие варианты управления, позволяя настройку функциональности сервера, методов взаимодействия и внешнего вида интерфейса. Кроме того, оно поддерживает единый интерфейс на нескольких устройствах, обеспечивая последовательный опыт на телефонах, компьютерах или других плеерах, с возможностью выбора идеального устройства воспроизведения для любого сценария.
+
+      Оно может быть гибко развернуто на персональных серверах или NAS-устройствах, с документацией, предоставляемой сообществом, помогающей пользователям оптимизировать настройки и расширять функциональность. Будь то управление персональными музыкальными коллекциями или создание общего аудио-хаба для семьи, интуитивная работа и высокая гибкость приложения обеспечивают современную платформу управления музыкой, удовлетворяя потребности от случайного прослушивания до профессионального управления аудио.
+
+      **Ключевые Особенности:**
+      - Музыкальная потоковая передача для локальных коллекций, интернет-радио и множественных потоковых сервисов
+      - Интуитивный Web-интерфейс для легкого доступа к музыке и управления через любой браузер
+      - Обширные параметры настройки для функциональности сервера, методов взаимодействия и внешнего вида интерфейса
+      - Единый мульти-устройственный интерфейс, обеспечивающий последовательный опыт на телефонах, компьютерах и других плеерах
+      - Поддержка документации сообщества для оптимизации настроек и расширения функциональности
+
+      **Узнайте больше:**
+      - [Официальный сайт Lyrion Music Server](https://www.lyrion.org)
+      - [GitHub репозиторий Lyrion Music Server](https://github.com/lms-community/slimserver)
+    ja_jp: |
+      Lyrion Music Serverは、さまざまなオーディオ再生デバイスを制御するために設計されたセルフホスト型音楽管理アプリで、ローカル音楽コレクション、インターネットラジオ、および複数のストリーミングサービス（サブスクリプションありまたはなし）のストリーミングをサポートします。直感的なWebインターフェースにより、ユーザーはどのブラウザからでも音楽に簡単にアクセスし制御することができ、パーソナライズされたオーディオ体験を作り出す音楽愛好家に最適です。
+
+      アプリの主要機能には、多様な音楽ストリーミングと豊富なカスタマイズが含まれます。ユーザーはローカル音楽ライブラリをシームレスに再生し、グローバルなインターネットラジオを聴いたり、ストリーミングサービスに接続したりして、多様な聴取ニーズに対応できます。サーバー機能、操作方法、インターフェース外観のカスタマイズを可能にする柔軟な制御オプションを提供します。さらに、複数のデバイス間で統一されたインターフェースをサポートし、電話、コンピュータ、その他のプレーヤーで一貫した体験を保証し、任意のシナリオに理想的な再生デバイスを選択する能力を提供します。
+
+      個人サーバーやNASデバイスに柔軟に展開でき、コミュニティ提供のドキュメントがユーザーのセットアップ最適化と機能拡張を支援します。個人音楽コレクションの管理から家族向け共有オーディオハブの作成まで、アプリの直感的な操作と高い柔軟性により、カジュアルリスニングからプロフェッショナルオーディオ管理まで、幅広いニーズに応える現代的な音楽管理プラットフォームを提供します。
+
+      **主な機能:**
+      - ローカル音楽、インターネットラジオ、複数ストリーミングサービスの音楽ストリーミング
+      - 直感的な Web インターフェースによる、任意のブラウザからの簡単な音楽アクセスと制御
+      - 幅広いカスタマイズオプションでサーバー機能、操作方法、インターフェース外観を調整
+      - 統一されたマルチデバイスインターフェースで、電話、コンピュータ、その他プレーヤーでの一貫した体験を保証
+      - コミュニティドキュメントサポートによるセットアップ最適化と機能拡張
+
+      **詳細情報:**
+      - [Lyrion Music Server公式サイト](https://www.lyrion.org)
+      - [Lyrion Music Server GitHubリポジトリ](https://github.com/lms-community/slimserver)
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LyrionMusicServer/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LyrionMusicServer/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LyrionMusicServer/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/LyrionMusicServer/screenshot-3.png
-  thumbnail: ''
+  thumbnail: ""
   scheme: http
-  port_map: '9000'
+  port_map: "9000"
   index: /
   title:
     en_US: LyrionMusicServer
+    en_us: LyrionMusicServer
+
+x-roqueos:
+  portaCompartilhada: true

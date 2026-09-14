@@ -11,10 +11,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve | Serviço     |
-| ---- | --------- | --------- | -------------- | ----------- |
-| 8083 | 8083      | tcp       | —              | calibre-web |
+| Host | Container | Protocolo | Para que serve                | Serviço     |
+| ---- | --------- | --------- | ----------------------------- | ----------- |
+| 8083 | 8083      | tcp       | Web interface for Calibre-web | calibre-web |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

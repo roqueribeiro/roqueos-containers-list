@@ -1,27 +1,27 @@
 # Node-RED
 
-> Low-code programming for event-driven applications
+> Programação de baixo código para aplicações baseadas em eventos
 
 ## O que é
 
-Node-RED is a flow-based low-code development platform that enables creating automation tasks and applications by connecting various nodes. A browser-based editor, simple to use, makes it ideal for users in home automation, industrial control, or other fields to quickly build data processing flows.
+O Node-RED é uma plataforma de desenvolvimento de baixo código baseada em fluxos que permite criar tarefas de automação e aplicações conectando vários nós. Um editor baseado no browser, simples de usar, torna-o ideal para utilizadores em automação doméstica, controlo industrial ou outros campos para construir rapidamente fluxos de processamento de dados.
 
-Core features include a low-code flow editor and robust data handling. Built on Node.js with an event-driven, non-blocking model, the platform supports real-time data collection, transformation, and visualization. A palette with over 5000 nodes allows users to construct flows via drag-and-drop. A rich text editor enables creating JavaScript functions for enhanced customization.
+As funcionalidades principais incluem um editor de fluxos de baixo código e tratamento robusto de dados. Construído em Node.js com um modelo orientado a eventos e não-bloqueante, a plataforma suporta recolha, transformação e visualização de dados em tempo real. Uma paleta com mais de 5000 nós permite aos utilizadores construir fluxos via arrastar-e-largar. Um editor de texto rico permite criar funções JavaScript para personalização melhorada.
 
-It stores flows in JSON format, facilitating easy import and export for sharing. A built-in library allows saving useful functions, templates, or flows for reuse, and an online flow library supports sharing top flows globally. With ease of use and efficiency at the core, the platform delivers a modern solution for diverse automation needs.
+Armazena fluxos em formato JSON, facilitando importação e exportação fáceis para partilha. Uma biblioteca incorporada permite guardar funções úteis, modelos ou fluxos para reutilização, e uma biblioteca de fluxos online suporta partilha dos melhores fluxos globalmente. Com facilidade de uso e eficiência no centro, a plataforma oferece uma solução moderna para diversas necessidades de automação.
 
-**Key Features:**
-- Browser-based low-code flow editor with drag-and-drop node connections
-- Real-time data collection, transformation, and visualization
-- Event-driven, non-blocking model with Node.js
-- Palette with over 5000 nodes for extended functionality
-- Rich text editor for creating JavaScript functions
-- JSON-based flow storage for easy sharing
-- Built-in library for saving functions, templates, and flows
-- Online flow library for sharing top flows
+**Funcionalidades Principais:**
+- Editor de fluxos de baixo código baseado no browser com ligações de nós arrastar-e-largar
+- Recolha, transformação e visualização de dados em tempo real
+- Modelo orientado a eventos, não-bloqueante com Node.js
+- Paleta com mais de 5000 nós para funcionalidade estendida
+- Editor de texto rico para criar funções JavaScript
+- Armazenamento de fluxos baseado em JSON para partilha fácil
+- Biblioteca incorporada para guardar funções, modelos e fluxos
+- Biblioteca de fluxos online para partilhar os melhores fluxos
 
-**Learn More:**
-- [Node-RED Official Website](https://nodered.org/)
+**Saber Mais:**
+- [Website Oficial Node-RED](https://nodered.org/)
 - [Node-RED GitHub](https://github.com/node-red/node-red)
 
 
@@ -30,9 +30,9 @@ Arquiteturas suportadas: amd64, arm64, s390x, arm.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço  |
-| ---- | --------- | --------- | --------------- | -------- |
-| 1880 | 1880      | tcp       | WebUI HTTP Port | node-red |
+| Host | Container | Protocolo | Para que serve   | Serviço  |
+| ---- | --------- | --------- | ---------------- | -------- |
+| 1880 | 1880      | tcp       | Porta HTTP WebUI | node-red |
 
 
 ## Volumes

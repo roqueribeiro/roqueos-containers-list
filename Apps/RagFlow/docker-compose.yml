@@ -23,22 +23,22 @@ services:
     image: icewhaletech/ragflow:v0.21.1
     ports:
       - target: 9380
-        published: '9380'
+        published: "9380"
         protocol: tcp
       - target: 80
-        published: '30080'
+        published: "30080"
         protocol: tcp
       - target: 443
-        published: '10443'
+        published: "10443"
         protocol: tcp
       - target: 5678
-        published: '5678'
+        published: "5678"
         protocol: tcp
       - target: 5679
-        published: '5679'
+        published: "5679"
         protocol: tcp
       - target: 9382
-        published: '9382'
+        published: "9382"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -71,6 +71,14 @@ services:
             sv_SE: Tidszon
             tr_TR: Saat Dilimi
             zh_CN: 时区
+            en_us: Time Zone
+            pt_br: Fuso Horário
+            zh_cn: 时区
+            fr_fr: Fuseau Horaire
+            de_de: Zeitzone
+            it_it: Fuso Orario
+            ru_ru: Часовой пояс
+            ja_jp: タイムゾーン
         - container: MYSQL_HOST
           description:
             de_DE: MySQL Host
@@ -88,6 +96,14 @@ services:
             sv_SE: MySQL Värd
             tr_TR: MySQL Ana Bilgisayarı
             zh_CN: MySQL主机
+            en_us: MySQL Host
+            pt_br: Anfitrião MySQL
+            zh_cn: MySQL主机
+            fr_fr: Hôte MySQL
+            de_de: MySQL Host
+            it_it: Host MySQL
+            ru_ru: Хост MySQL
+            ja_jp: MySQLホスト
         - container: MINIO_HOST
           description:
             de_DE: MinIO Host
@@ -105,6 +121,14 @@ services:
             sv_SE: MinIO Värd
             tr_TR: MinIO Ana Bilgisayarı
             zh_CN: MinIO主机
+            en_us: MinIO Host
+            pt_br: Anfitrião MinIO
+            zh_cn: MinIO主机
+            fr_fr: Hôte MinIO
+            de_de: MinIO Host
+            it_it: Host MinIO
+            ru_ru: Хост MinIO
+            ja_jp: MinIOホスト
         - container: ES_HOST
           description:
             de_DE: Elasticsearch Host
@@ -122,6 +146,14 @@ services:
             sv_SE: Elasticsearch Värd
             tr_TR: Elasticsearch Ana Bilgisayarı
             zh_CN: Elasticsearch主机
+            en_us: Elasticsearch Host
+            pt_br: Anfitrião Elasticsearch
+            zh_cn: Elasticsearch主机
+            fr_fr: Hôte Elasticsearch
+            de_de: Elasticsearch Host
+            it_it: Host Elasticsearch
+            ru_ru: Хост Elasticsearch
+            ja_jp: Elasticsearchホスト
         - container: OS_HOST
           description:
             de_DE: OpenSearch Host
@@ -139,6 +171,14 @@ services:
             sv_SE: OpenSearch Värd
             tr_TR: OpenSearch Ana Bilgisayarı
             zh_CN: OpenSearch主机
+            en_us: OpenSearch Host
+            pt_br: Anfitrião OpenSearch
+            zh_cn: OpenSearch主机
+            fr_fr: Hôte OpenSearch
+            de_de: OpenSearch Host
+            it_it: Host OpenSearch
+            ru_ru: Хост OpenSearch
+            ja_jp: OpenSearchホスト
         - container: INFINITY_HOST
           description:
             de_DE: Infinity Host
@@ -156,6 +196,14 @@ services:
             sv_SE: Infinity Värd
             tr_TR: Infinity Ana Bilgisayarı
             zh_CN: Infinity主机
+            en_us: Infinity Host
+            pt_br: Anfitrião Infinity
+            zh_cn: Infinity主机
+            fr_fr: Hôte Infinity
+            de_de: Infinity Host
+            it_it: Host Infinity
+            ru_ru: Хост Infinity
+            ja_jp: Infinityホスト
         - container: REDIS_HOST
           description:
             de_DE: Redis Host
@@ -173,8 +221,16 @@ services:
             sv_SE: Redis Värd
             tr_TR: Redis Ana Bilgisayarı
             zh_CN: Redis主机
+            en_us: Redis Host
+            pt_br: Anfitrião Redis
+            zh_cn: Redis主机
+            fr_fr: Hôte Redis
+            de_de: Redis Host
+            it_it: Host Redis
+            ru_ru: Хост Redis
+            ja_jp: Redisホスト
       ports:
-        - container: '9380'
+        - container: "9380"
           description:
             de_DE: RagFlow API Port
             el_GR: Θύρα API RagFlow
@@ -191,7 +247,15 @@ services:
             sv_SE: RagFlow API Port
             tr_TR: RagFlow API Portu
             zh_CN: RagFlow API端口
-        - container: '80'
+            en_us: RagFlow API Port
+            pt_br: Porta API RagFlow
+            zh_cn: RagFlow API端口
+            fr_fr: Port API RagFlow
+            de_de: RagFlow API Port
+            it_it: Porta API RagFlow
+            ru_ru: Порт API RagFlow
+            ja_jp: RagFlow APIポート
+        - container: "80"
           description:
             de_DE: RagFlow HTTP Port
             el_GR: Θύρα HTTP RagFlow
@@ -208,7 +272,15 @@ services:
             sv_SE: RagFlow HTTP Port
             tr_TR: RagFlow HTTP Portu
             zh_CN: RagFlow HTTP端口
-        - container: '443'
+            en_us: RagFlow HTTP Port
+            pt_br: Porta HTTP RagFlow
+            zh_cn: RagFlow HTTP端口
+            fr_fr: Port HTTP RagFlow
+            de_de: RagFlow HTTP Port
+            it_it: Porta HTTP RagFlow
+            ru_ru: HTTP порт RagFlow
+            ja_jp: RagFlow HTTPポート
+        - container: "443"
           description:
             de_DE: RagFlow HTTPS Port
             el_GR: Θύρα HTTPS RagFlow
@@ -225,7 +297,15 @@ services:
             sv_SE: RagFlow HTTPS Port
             tr_TR: RagFlow HTTPS Portu
             zh_CN: RagFlow HTTPS端口
-        - container: '5678'
+            en_us: RagFlow HTTPS Port
+            pt_br: Porta HTTPS RagFlow
+            zh_cn: RagFlow HTTPS端口
+            fr_fr: Port HTTPS RagFlow
+            de_de: RagFlow HTTPS Port
+            it_it: Porta HTTPS RagFlow
+            ru_ru: HTTPS порт RagFlow
+            ja_jp: RagFlow HTTPSポート
+        - container: "5678"
           description:
             de_DE: RagFlow Debug Port
             el_GR: Θύρα Debug RagFlow
@@ -242,7 +322,15 @@ services:
             sv_SE: RagFlow Debug Port
             tr_TR: RagFlow Hata Ayıklama Portu
             zh_CN: RagFlow调试端口
-        - container: '5679'
+            en_us: RagFlow Debug Port
+            pt_br: Porta de Debug RagFlow
+            zh_cn: RagFlow调试端口
+            fr_fr: Port Debug RagFlow
+            de_de: RagFlow Debug Port
+            it_it: Porta Debug RagFlow
+            ru_ru: Порт отладки RagFlow
+            ja_jp: RagFlowデバッグポート
+        - container: "5679"
           description:
             de_DE: RagFlow WebSocket Port
             el_GR: Θύρα WebSocket RagFlow
@@ -259,7 +347,15 @@ services:
             sv_SE: RagFlow WebSocket Port
             tr_TR: RagFlow WebSocket Portu
             zh_CN: RagFlow WebSocket端口
-        - container: '9382'
+            en_us: RagFlow WebSocket Port
+            pt_br: Porta WebSocket RagFlow
+            zh_cn: RagFlow WebSocket端口
+            fr_fr: Port WebSocket RagFlow
+            de_de: RagFlow WebSocket Port
+            it_it: Porta WebSocket RagFlow
+            ru_ru: Порт WebSocket RagFlow
+            ja_jp: RagFlow WebSocketポート
+        - container: "9382"
           description:
             de_DE: RagFlow MCP Port
             el_GR: Θύρα MCP RagFlow
@@ -276,6 +372,14 @@ services:
             sv_SE: RagFlow MCP Port
             tr_TR: RagFlow MCP Portu
             zh_CN: RagFlow MCP端口
+            en_us: RagFlow MCP Port
+            pt_br: Porta MCP RagFlow
+            zh_cn: RagFlow MCP端口
+            fr_fr: Port MCP RagFlow
+            de_de: RagFlow MCP Port
+            it_it: Porta MCP RagFlow
+            ru_ru: Порт MCP RagFlow
+            ja_jp: RagFlow MCPポート
       volumes:
         - container: /ragflow/logs
           description:
@@ -294,6 +398,14 @@ services:
             sv_SE: RagFlow Loggkatalog
             tr_TR: RagFlow Günlük Dizini
             zh_CN: RagFlow日志目录
+            en_us: RagFlow Logs Directory
+            pt_br: Diretório de Logs RagFlow
+            zh_cn: RagFlow日志目录
+            fr_fr: Répertoire de Logs RagFlow
+            de_de: RagFlow-Protokollverzeichnis
+            it_it: Directory Log RagFlow
+            ru_ru: Каталог журналов RagFlow
+            ja_jp: RagFlowログディレクトリ
         - container: /ragflow/history_data_agent
           description:
             de_DE: RagFlow-Verlaufsdatenverzeichnis
@@ -311,6 +423,14 @@ services:
             sv_SE: RagFlow Historikdatakatalog
             tr_TR: RagFlow Geçmiş Veri Dizini
             zh_CN: RagFlow历史数据目录
+            en_us: RagFlow History Data Directory
+            pt_br: Diretório de Dados Históricos RagFlow
+            zh_cn: RagFlow历史数据目录
+            fr_fr: Répertoire de Données Historiques RagFlow
+            de_de: RagFlow-Verlaufsdatenverzeichnis
+            it_it: Directory Dati Storici RagFlow
+            ru_ru: Каталог исторических данных RagFlow
+            ja_jp: RagFlow履歴データディレクトリ
     networks:
       - ragflow
     privileged: false
@@ -343,7 +463,7 @@ services:
     image: elasticsearch:8.11.3
     ports:
       - target: 9200
-        published: '9200'
+        published: "9200"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -369,6 +489,14 @@ services:
             sv_SE: Nodnamn
             tr_TR: Düğüm Adı
             zh_CN: 节点名称
+            en_us: Node Name
+            pt_br: Nome do Nó
+            zh_cn: 节点名称
+            fr_fr: Nom du Nœud
+            de_de: Knotenname
+            it_it: Nome Nodo
+            ru_ru: Имя узла
+            ja_jp: ノード名
         - container: ELASTIC_PASSWORD
           description:
             de_DE: Elasticsearch-Passwort
@@ -386,6 +514,14 @@ services:
             sv_SE: Elasticsearch Lösenord
             tr_TR: Elasticsearch Şifresi
             zh_CN: Elasticsearch密码
+            en_us: Elasticsearch Password
+            pt_br: Palavra-passe Elasticsearch
+            zh_cn: Elasticsearch密码
+            fr_fr: Mot de passe Elasticsearch
+            de_de: Elasticsearch-Passwort
+            it_it: Password Elasticsearch
+            ru_ru: Пароль Elasticsearch
+            ja_jp: Elasticsearchパスワード
         - container: discovery.type
           description:
             de_DE: Discovery-Typ
@@ -403,6 +539,14 @@ services:
             sv_SE: Upptäcktstyp
             tr_TR: Keşif Türü
             zh_CN: 发现类型
+            en_us: Discovery Type
+            pt_br: Tipo de Descoberta
+            zh_cn: 发现类型
+            fr_fr: Type de Découverte
+            de_de: Discovery-Typ
+            it_it: Tipo di Scoperta
+            ru_ru: Тип обнаружения
+            ja_jp: ディスカバリータイプ
         - container: xpack.security.enabled
           description:
             de_DE: X-Pack-Sicherheit aktivieren
@@ -420,6 +564,14 @@ services:
             sv_SE: Aktivera X-Pack Säkerhet
             tr_TR: X-Pack Güvenliğini Etkinleştir
             zh_CN: 启用X-Pack安全
+            en_us: Enable X-Pack Security
+            pt_br: Ativar Segurança X-Pack
+            zh_cn: 启用X-Pack安全
+            fr_fr: Activer la Sécurité X-Pack
+            de_de: X-Pack-Sicherheit aktivieren
+            it_it: Abilita Sicurezza X-Pack
+            ru_ru: Включить безопасность X-Pack
+            ja_jp: X-Packセキュリティを有効にする
         - container: TZ
           description:
             de_DE: Zeitzone
@@ -437,8 +589,16 @@ services:
             sv_SE: Tidszon
             tr_TR: Saat Dilimi
             zh_CN: 时区
+            en_us: Time Zone
+            pt_br: Fuso Horário
+            zh_cn: 时区
+            fr_fr: Fuseau Horaire
+            de_de: Zeitzone
+            it_it: Fuso Orario
+            ru_ru: Часовой пояс
+            ja_jp: タイムゾーン
       ports:
-        - container: '9200'
+        - container: "9200"
           description:
             de_DE: Elasticsearch HTTP Port
             el_GR: Θύρα HTTP Elasticsearch
@@ -455,6 +615,14 @@ services:
             sv_SE: Elasticsearch HTTP Port
             tr_TR: Elasticsearch HTTP Portu
             zh_CN: Elasticsearch HTTP端口
+            en_us: Elasticsearch HTTP Port
+            pt_br: Porta HTTP Elasticsearch
+            zh_cn: Elasticsearch HTTP端口
+            fr_fr: Port HTTP Elasticsearch
+            de_de: Elasticsearch HTTP Port
+            it_it: Porta HTTP Elasticsearch
+            ru_ru: HTTP порт Elasticsearch
+            ja_jp: Elasticsearch HTTPポート
       volumes:
         - container: /usr/share/elasticsearch/data
           description:
@@ -473,6 +641,14 @@ services:
             sv_SE: Elasticsearch Datakatalog
             tr_TR: Elasticsearch Veri Dizini
             zh_CN: Elasticsearch数据目录
+            en_us: Elasticsearch Data Directory
+            pt_br: Diretório de Dados Elasticsearch
+            zh_cn: Elasticsearch数据目录
+            fr_fr: Répertoire de Données Elasticsearch
+            de_de: Elasticsearch-Datenverzeichnis
+            it_it: Directory Dati Elasticsearch
+            ru_ru: Каталог данных Elasticsearch
+            ja_jp: Elasticsearchデータディレクトリ
     networks:
       - ragflow
     privileged: false
@@ -492,13 +668,13 @@ services:
     image: icewhaletech/ragflow-infinity:v0.6.1
     ports:
       - target: 23817
-        published: '23817'
+        published: "23817"
         protocol: tcp
       - target: 23820
-        published: '23820'
+        published: "23820"
         protocol: tcp
       - target: 5432
-        published: '15432'
+        published: "15432"
         protocol: tcp
     restart: unless-stopped
     ulimits:
@@ -528,8 +704,16 @@ services:
             sv_SE: Tidszon
             tr_TR: Saat Dilimi
             zh_CN: 时区
+            en_us: Time Zone
+            pt_br: Fuso Horário
+            zh_cn: 时区
+            fr_fr: Fuseau Horaire
+            de_de: Zeitzone
+            it_it: Fuso Orario
+            ru_ru: Часовой пояс
+            ja_jp: タイムゾーン
       ports:
-        - container: '23817'
+        - container: "23817"
           description:
             de_DE: Infinity Admin Port
             el_GR: Θύρα Διαχειριστή Infinity
@@ -546,7 +730,15 @@ services:
             sv_SE: Infinity Admin Port
             tr_TR: Infinity Yönetici Portu
             zh_CN: Infinity管理端口
-        - container: '23820'
+            en_us: Infinity Admin Port
+            pt_br: Porta de Admin Infinity
+            zh_cn: Infinity管理端口
+            fr_fr: Port Admin Infinity
+            de_de: Infinity Admin Port
+            it_it: Porta Admin Infinity
+            ru_ru: Порт администратора Infinity
+            ja_jp: Infinity管理ポート
+        - container: "23820"
           description:
             de_DE: Infinity API Port
             el_GR: Θύρα API Infinity
@@ -563,7 +755,15 @@ services:
             sv_SE: Infinity API Port
             tr_TR: Infinity API Portu
             zh_CN: Infinity API端口
-        - container: '5432'
+            en_us: Infinity API Port
+            pt_br: Porta API Infinity
+            zh_cn: Infinity API端口
+            fr_fr: Port API Infinity
+            de_de: Infinity API Port
+            it_it: Porta API Infinity
+            ru_ru: Порт API Infinity
+            ja_jp: Infinity APIポート
+        - container: "5432"
           description:
             de_DE: Infinity PostgreSQL Port
             el_GR: Θύρα PostgreSQL Infinity
@@ -580,6 +780,14 @@ services:
             sv_SE: Infinity PostgreSQL Port
             tr_TR: Infinity PostgreSQL Portu
             zh_CN: Infinity PostgreSQL端口
+            en_us: Infinity PostgreSQL Port
+            pt_br: Porta PostgreSQL Infinity
+            zh_cn: Infinity PostgreSQL端口
+            fr_fr: Port PostgreSQL Infinity
+            de_de: Infinity PostgreSQL Port
+            it_it: Porta PostgreSQL Infinity
+            ru_ru: Порт PostgreSQL Infinity
+            ja_jp: Infinity PostgreSQLポート
       volumes:
         - container: /var/infinity
           description:
@@ -598,6 +806,14 @@ services:
             sv_SE: Infinity Datakatalog
             tr_TR: Infinity Veri Dizini
             zh_CN: Infinity数据目录
+            en_us: Infinity Data Directory
+            pt_br: Diretório de Dados Infinity
+            zh_cn: Infinity数据目录
+            fr_fr: Répertoire de Données Infinity
+            de_de: Infinity-Datenverzeichnis
+            it_it: Directory Dati Infinity
+            ru_ru: Каталог данных Infinity
+            ja_jp: Infinityデータディレクトリ
     networks:
       - ragflow
     privileged: false
@@ -609,8 +825,8 @@ services:
   ragflow-minio:
     command:
       - server
-      - '--console-address'
-      - ':9001'
+      - "--console-address"
+      - ":9001"
       - /data
     container_name: ragflow-minio
     deploy:
@@ -625,7 +841,7 @@ services:
       test:
         - CMD
         - curl
-        - '-f'
+        - "-f"
         - http://localhost:9000/minio/health/live
       timeout: 20s
       interval: 30s
@@ -633,10 +849,10 @@ services:
     image: quay.io/minio/minio:RELEASE.2025-06-13T11-33-47Z
     ports:
       - target: 9000
-        published: '9000'
+        published: "9000"
         protocol: tcp
       - target: 9001
-        published: '9001'
+        published: "9001"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -662,6 +878,14 @@ services:
             sv_SE: MinIO Root Användare
             tr_TR: MinIO Root Kullanıcısı
             zh_CN: MinIO根用户
+            en_us: MinIO Root User
+            pt_br: Utilizador Root MinIO
+            zh_cn: MinIO根用户
+            fr_fr: Utilisateur Root MinIO
+            de_de: MinIO Root Benutzer
+            it_it: Utente Root MinIO
+            ru_ru: Пользователь root MinIO
+            ja_jp: MinIOルートユーザー
         - container: MINIO_ROOT_PASSWORD
           description:
             de_DE: MinIO Root Passwort
@@ -679,6 +903,14 @@ services:
             sv_SE: MinIO Root Lösenord
             tr_TR: MinIO Root Şifresi
             zh_CN: MinIO根密码
+            en_us: MinIO Root Password
+            pt_br: Palavra-passe Root MinIO
+            zh_cn: MinIO根密码
+            fr_fr: Mot de passe Root MinIO
+            de_de: MinIO Root Passwort
+            it_it: Password Root MinIO
+            ru_ru: Пароль root MinIO
+            ja_jp: MinIOルートパスワード
         - container: TZ
           description:
             de_DE: Zeitzone
@@ -696,8 +928,16 @@ services:
             sv_SE: Tidszon
             tr_TR: Saat Dilimi
             zh_CN: 时区
+            en_us: Time Zone
+            pt_br: Fuso Horário
+            zh_cn: 时区
+            fr_fr: Fuseau Horaire
+            de_de: Zeitzone
+            it_it: Fuso Orario
+            ru_ru: Часовой пояс
+            ja_jp: タイムゾーン
       ports:
-        - container: '9000'
+        - container: "9000"
           description:
             de_DE: MinIO API Port
             el_GR: Θύρα API MinIO
@@ -714,7 +954,15 @@ services:
             sv_SE: MinIO API Port
             tr_TR: MinIO API Portu
             zh_CN: MinIO API端口
-        - container: '9001'
+            en_us: MinIO API Port
+            pt_br: Porta API MinIO
+            zh_cn: MinIO API端口
+            fr_fr: Port API MinIO
+            de_de: MinIO API Port
+            it_it: Porta API MinIO
+            ru_ru: Порт API MinIO
+            ja_jp: MinIO APIポート
+        - container: "9001"
           description:
             de_DE: MinIO Konsole Port
             el_GR: Θύρα Κονσόλας MinIO
@@ -731,6 +979,14 @@ services:
             sv_SE: MinIO Konsoll Port
             tr_TR: MinIO Konsol Portu
             zh_CN: MinIO控制台端口
+            en_us: MinIO Console Port
+            pt_br: Porta da Consola MinIO
+            zh_cn: MinIO控制台端口
+            fr_fr: Port Console MinIO
+            de_de: MinIO Konsole Port
+            it_it: Porta Console MinIO
+            ru_ru: Порт консоли MinIO
+            ja_jp: MinIOコンソールポート
       volumes:
         - container: /data
           description:
@@ -749,18 +1005,26 @@ services:
             sv_SE: MinIO Datakatalog
             tr_TR: MinIO Veri Dizini
             zh_CN: MinIO数据目录
+            en_us: MinIO Data Directory
+            pt_br: Diretório de Dados MinIO
+            zh_cn: MinIO数据目录
+            fr_fr: Répertoire de Données MinIO
+            de_de: MinIO-Datenverzeichnis
+            it_it: Directory Dati MinIO
+            ru_ru: Каталог данных MinIO
+            ja_jp: MinIOデータディレクトリ
     networks:
       - ragflow
     privileged: false
     cpu_shares: 90
   ragflow-mysql:
     command:
-      - '--max_connections=1000'
-      - '--character-set-server=utf8mb4'
-      - '--collation-server=utf8mb4_unicode_ci'
-      - '--default-authentication-plugin=mysql_native_password'
-      - '--tls_version=TLSv1.2,TLSv1.3'
-      - '--binlog_expire_logs_seconds=604800'
+      - "--max_connections=1000"
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
+      - "--default-authentication-plugin=mysql_native_password"
+      - "--tls_version=TLSv1.2,TLSv1.3"
+      - "--binlog_expire_logs_seconds=604800"
     container_name: ragflow-mysql
     deploy:
       resources:
@@ -775,8 +1039,8 @@ services:
         - CMD
         - mysqladmin
         - ping
-        - '-uroot'
-        - '-pinfini_rag_flow'
+        - "-uroot"
+        - "-pinfini_rag_flow"
       timeout: 10s
       interval: 10s
       retries: 10
@@ -784,7 +1048,7 @@ services:
     image: icewhaletech/ragflow-mysql:8.0.39
     ports:
       - target: 3306
-        published: '5455'
+        published: "5455"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -810,6 +1074,14 @@ services:
             sv_SE: MySQL Root Lösenord
             tr_TR: MySQL Root Şifresi
             zh_CN: MySQL根密码
+            en_us: MySQL Root Password
+            pt_br: Palavra-passe Root MySQL
+            zh_cn: MySQL根密码
+            fr_fr: Mot de passe Root MySQL
+            de_de: MySQL Root Passwort
+            it_it: Password Root MySQL
+            ru_ru: Пароль root MySQL
+            ja_jp: MySQLルートパスワード
         - container: MYSQL_PASSWORD
           description:
             de_DE: MySQL Benutzerpasswort
@@ -827,6 +1099,14 @@ services:
             sv_SE: MySQL Användarlösenord
             tr_TR: MySQL Kullanıcı Şifresi
             zh_CN: MySQL用户密码
+            en_us: MySQL User Password
+            pt_br: Palavra-passe do Utilizador MySQL
+            zh_cn: MySQL用户密码
+            fr_fr: Mot de passe Utilisateur MySQL
+            de_de: MySQL Benutzerpasswort
+            it_it: Password Utente MySQL
+            ru_ru: Пароль пользователя MySQL
+            ja_jp: MySQLユーザーパスワード
         - container: TZ
           description:
             de_DE: Zeitzone
@@ -844,8 +1124,16 @@ services:
             sv_SE: Tidszon
             tr_TR: Saat Dilimi
             zh_CN: 时区
+            en_us: Time Zone
+            pt_br: Fuso Horário
+            zh_cn: 时区
+            fr_fr: Fuseau Horaire
+            de_de: Zeitzone
+            it_it: Fuso Orario
+            ru_ru: Часовой пояс
+            ja_jp: タイムゾーン
       ports:
-        - container: '3306'
+        - container: "3306"
           description:
             de_DE: MySQL Port
             el_GR: Θύρα MySQL
@@ -862,6 +1150,14 @@ services:
             sv_SE: MySQL Port
             tr_TR: MySQL Portu
             zh_CN: MySQL端口
+            en_us: MySQL Port
+            pt_br: Porta MySQL
+            zh_cn: MySQL端口
+            fr_fr: Port MySQL
+            de_de: MySQL Port
+            it_it: Porta MySQL
+            ru_ru: Порт MySQL
+            ja_jp: MySQLポート
       volumes:
         - container: /var/lib/mysql
           description:
@@ -880,6 +1176,14 @@ services:
             sv_SE: MySQL Datakatalog
             tr_TR: MySQL Veri Dizini
             zh_CN: MySQL数据目录
+            en_us: MySQL Data Directory
+            pt_br: Diretório de Dados MySQL
+            zh_cn: MySQL数据目录
+            fr_fr: Répertoire de Données MySQL
+            de_de: MySQL-Datenverzeichnis
+            it_it: Directory Dati MySQL
+            ru_ru: Каталог данных MySQL
+            ja_jp: MySQLデータディレクトリ
     networks:
       - ragflow
     privileged: false
@@ -914,7 +1218,7 @@ services:
     image: opensearchproject/opensearch:2.19.1
     ports:
       - target: 9201
-        published: '9201'
+        published: "9201"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -940,6 +1244,14 @@ services:
             sv_SE: Nodnamn
             tr_TR: Düğüm Adı
             zh_CN: 节点名称
+            en_us: Node Name
+            pt_br: Nome do Nó
+            zh_cn: 节点名称
+            fr_fr: Nom du Nœud
+            de_de: Knotenname
+            it_it: Nome Nodo
+            ru_ru: Имя узла
+            ja_jp: ノード名
         - container: OPENSEARCH_PASSWORD
           description:
             de_DE: OpenSearch-Passwort
@@ -957,6 +1269,14 @@ services:
             sv_SE: OpenSearch Lösenord
             tr_TR: OpenSearch Şifresi
             zh_CN: OpenSearch密码
+            en_us: OpenSearch Password
+            pt_br: Palavra-passe OpenSearch
+            zh_cn: OpenSearch密码
+            fr_fr: Mot de passe OpenSearch
+            de_de: OpenSearch-Passwort
+            it_it: Password OpenSearch
+            ru_ru: Пароль OpenSearch
+            ja_jp: OpenSearchパスワード
         - container: OPENSEARCH_INITIAL_ADMIN_PASSWORD
           description:
             de_DE: Initiales OpenSearch-Administratorpasswort
@@ -974,6 +1294,14 @@ services:
             sv_SE: OpenSearch Initialt Administratörslösenord
             tr_TR: OpenSearch Başlangıç Yönetici Şifresi
             zh_CN: OpenSearch初始管理员密码
+            en_us: OpenSearch Initial Admin Password
+            pt_br: Palavra-passe Inicial do Administrador OpenSearch
+            zh_cn: OpenSearch初始管理员密码
+            fr_fr: Mot de passe Administrateur Initial OpenSearch
+            de_de: Initiales OpenSearch-Administratorpasswort
+            it_it: Password Iniziale Amministratore OpenSearch
+            ru_ru: Начальный пароль администратора OpenSearch
+            ja_jp: OpenSearch初期管理者パスワード
         - container: discovery.type
           description:
             de_DE: Discovery-Typ
@@ -991,6 +1319,14 @@ services:
             sv_SE: Upptäcktstyp
             tr_TR: Keşif Türü
             zh_CN: 发现类型
+            en_us: Discovery Type
+            pt_br: Tipo de Descoberta
+            zh_cn: 发现类型
+            fr_fr: Type de Découverte
+            de_de: Discovery-Typ
+            it_it: Tipo di Scoperta
+            ru_ru: Тип обнаружения
+            ja_jp: ディスカバリータイプ
         - container: plugins.security.disabled
           description:
             de_DE: Plugin-Sicherheit deaktivieren
@@ -1008,6 +1344,14 @@ services:
             sv_SE: Inaktiver Plugin Säkerhet
             tr_TR: Eklenti Güvenliğini Devre Dışı Bırak
             zh_CN: 禁用插件安全
+            en_us: Disable Plugins Security
+            pt_br: Desativar Segurança de Plugins
+            zh_cn: 禁用插件安全
+            fr_fr: Désactiver la Sécurité des Plugins
+            de_de: Plugin-Sicherheit deaktivieren
+            it_it: Disabilita Sicurezza Plugin
+            ru_ru: Отключить безопасность плагинов
+            ja_jp: プラグインセキュリティを無効にする
         - container: TZ
           description:
             de_DE: Zeitzone
@@ -1025,6 +1369,14 @@ services:
             sv_SE: Tidszon
             tr_TR: Saat Dilimi
             zh_CN: 时区
+            en_us: Time Zone
+            pt_br: Fuso Horário
+            zh_cn: 时区
+            fr_fr: Fuseau Horaire
+            de_de: Zeitzone
+            it_it: Fuso Orario
+            ru_ru: Часовой пояс
+            ja_jp: タイムゾーン
         - container: http.port
           description:
             de_DE: HTTP-Port
@@ -1042,8 +1394,16 @@ services:
             sv_SE: HTTP Port
             tr_TR: HTTP Portu
             zh_CN: HTTP端口
+            en_us: HTTP Port
+            pt_br: Porta HTTP
+            zh_cn: HTTP端口
+            fr_fr: Port HTTP
+            de_de: HTTP-Port
+            it_it: Porta HTTP
+            ru_ru: HTTP порт
+            ja_jp: HTTPポート
       ports:
-        - container: '9201'
+        - container: "9201"
           description:
             de_DE: OpenSearch HTTP Port
             el_GR: Θύρα HTTP OpenSearch
@@ -1060,6 +1420,14 @@ services:
             sv_SE: OpenSearch HTTP Port
             tr_TR: OpenSearch HTTP Portu
             zh_CN: OpenSearch HTTP端口
+            en_us: OpenSearch HTTP Port
+            pt_br: Porta HTTP OpenSearch
+            zh_cn: OpenSearch HTTP端口
+            fr_fr: Port HTTP OpenSearch
+            de_de: OpenSearch HTTP Port
+            it_it: Porta HTTP OpenSearch
+            ru_ru: HTTP порт OpenSearch
+            ja_jp: OpenSearch HTTPポート
       volumes:
         - container: /usr/share/opensearch/data
           description:
@@ -1078,6 +1446,14 @@ services:
             sv_SE: OpenSearch Datakatalog
             tr_TR: OpenSearch Veri Dizini
             zh_CN: OpenSearch数据目录
+            en_us: OpenSearch Data Directory
+            pt_br: Diretório de Dados OpenSearch
+            zh_cn: OpenSearch数据目录
+            fr_fr: Répertoire de Données OpenSearch
+            de_de: OpenSearch-Datenverzeichnis
+            it_it: Directory Dati OpenSearch
+            ru_ru: Каталог данных OpenSearch
+            ja_jp: OpenSearchデータディレクトリ
     networks:
       - ragflow
     privileged: false
@@ -1085,11 +1461,11 @@ services:
   ragflow-redis:
     command:
       - redis-server
-      - '--requirepass'
+      - "--requirepass"
       - infini_rag_flow
-      - '--maxmemory'
+      - "--maxmemory"
       - 128mb
-      - '--maxmemory-policy'
+      - "--maxmemory-policy"
       - allkeys-lru
     container_name: ragflow-redis
     deploy:
@@ -1100,7 +1476,7 @@ services:
       test:
         - CMD
         - redis-cli
-        - '-a'
+        - "-a"
         - infini_rag_flow
         - ping
       timeout: 3s
@@ -1110,7 +1486,7 @@ services:
     image: valkey/valkey:8
     ports:
       - target: 6379
-        published: '6379'
+        published: "6379"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -1119,7 +1495,7 @@ services:
         target: /data
     x-casaos:
       ports:
-        - container: '6379'
+        - container: "6379"
           description:
             de_DE: Redis Port
             el_GR: Θύρα Redis
@@ -1136,6 +1512,14 @@ services:
             sv_SE: Redis Port
             tr_TR: Redis Portu
             zh_CN: Redis端口
+            en_us: Redis Port
+            pt_br: Porta Redis
+            zh_cn: Redis端口
+            fr_fr: Port Redis
+            de_de: Redis Port
+            it_it: Porta Redis
+            ru_ru: Порт Redis
+            ja_jp: Redisポート
       volumes:
         - container: /data
           description:
@@ -1154,6 +1538,14 @@ services:
             sv_SE: Redis Datakatalog
             tr_TR: Redis Veri Dizini
             zh_CN: Redis数据目录
+            en_us: Redis Data Directory
+            pt_br: Diretório de Dados Redis
+            zh_cn: Redis数据目录
+            fr_fr: Répertoire de Données Redis
+            de_de: Redis-Datenverzeichnis
+            it_it: Directory Dati Redis
+            ru_ru: Каталог данных Redis
+            ja_jp: Redisデータディレクトリ
     networks:
       - ragflow
     privileged: false
@@ -1185,7 +1577,7 @@ services:
     image: infiniflow/sandbox-executor-manager:latest
     ports:
       - target: 9385
-        published: '9385'
+        published: "9385"
         protocol: tcp
     privileged: true
     restart: unless-stopped
@@ -1198,6 +1590,10 @@ services:
         bind:
           create_host_path: true
     x-casaos:
+      ports:
+        - container: '9385'
+          description:
+            en_us: "Service port 9385 of ragflow-sandbox-executor-manager"
       envs:
         - container: TZ
           description:
@@ -1216,6 +1612,14 @@ services:
             sv_SE: Tidszon
             tr_TR: Saat Dilimi
             zh_CN: 时区
+            en_us: Time Zone
+            pt_br: Fuso Horário
+            zh_cn: 时区
+            fr_fr: Fuseau Horaire
+            de_de: Zeitzone
+            it_it: Fuso Orario
+            ru_ru: Часовой пояс
+            ja_jp: タイムゾーン
         - container: SANDBOX_EXECUTOR_MANAGER_POOL_SIZE
           description:
             de_DE: Sandbox Executor Manager Pool Größe
@@ -1233,6 +1637,14 @@ services:
             sv_SE: Sandbox Executor Manager Pool Storlek
             tr_TR: Sandbox Yürütücü Yöneticisi Havuzu Boyutu
             zh_CN: 沙箱执行管理器池大小
+            en_us: Sandbox Executor Manager Pool Size
+            pt_br: Tamanho do Pool do Gestor de Executor Sandbox
+            zh_cn: 沙箱执行管理器池大小
+            fr_fr: Taille du Pool du Gestionnaire d'Exécuteur Sandbox
+            de_de: Sandbox Executor Manager Pool Größe
+            it_it: Dimensione Pool Gestore Esecutore Sandbox
+            ru_ru: Размер пула менеджера исполнителя песочницы
+            ja_jp: サンドボックス実行マネージャープールサイズ
         - container: SANDBOX_BASE_PYTHON_IMAGE
           description:
             de_DE: Sandbox Base Python Image
@@ -1250,6 +1662,14 @@ services:
             sv_SE: Sandbox Base Python Image
             tr_TR: Sandbox Temel Python Görüntüsü
             zh_CN: 沙箱基础Python镜像
+            en_us: Sandbox Base Python Image
+            pt_br: Imagem Base Python Sandbox
+            zh_cn: 沙箱基础Python镜像
+            fr_fr: Image Python de Base Sandbox
+            de_de: Sandbox Base Python Image
+            it_it: Immagine Base Python Sandbox
+            ru_ru: Базовый образ Python песочницы
+            ja_jp: サンドボックスベースPythonイメージ
         - container: SANDBOX_BASE_NODEJS_IMAGE
           description:
             de_DE: Sandbox Base NodeJS Image
@@ -1267,6 +1687,14 @@ services:
             sv_SE: Sandbox Base NodeJS Image
             tr_TR: Sandbox Temel NodeJS Görüntüsü
             zh_CN: 沙箱基础NodeJS镜像
+            en_us: Sandbox Base NodeJS Image
+            pt_br: Imagem Base NodeJS Sandbox
+            zh_cn: 沙箱基础NodeJS镜像
+            fr_fr: Image NodeJS de Base Sandbox
+            de_de: Sandbox Base NodeJS Image
+            it_it: Immagine Base NodeJS Sandbox
+            ru_ru: Базовый образ NodeJS песочницы
+            ja_jp: サンドボックスベースNodeJSイメージ
         - container: SANDBOX_ENABLE_SECCOMP
           description:
             de_DE: Seccomp aktivieren
@@ -1284,6 +1712,14 @@ services:
             sv_SE: Aktivera Seccomp
             tr_TR: Seccomp'u Etkinleştir
             zh_CN: 启用Seccomp
+            en_us: Enable Seccomp
+            pt_br: Ativar Seccomp
+            zh_cn: 启用Seccomp
+            fr_fr: Activer Seccomp
+            de_de: Seccomp aktivieren
+            it_it: Abilita Seccomp
+            ru_ru: Включить Seccomp
+            ja_jp: Seccompを有効にする
         - container: SANDBOX_MAX_MEMORY
           description:
             de_DE: Sandbox Max Speicher
@@ -1301,6 +1737,14 @@ services:
             sv_SE: Sandbox Max Minne
             tr_TR: Sandbox Maksimum Bellek
             zh_CN: 沙箱最大内存
+            en_us: Sandbox Max Memory
+            pt_br: Memória Máxima Sandbox
+            zh_cn: 沙箱最大内存
+            fr_fr: Mémoire Maximale Sandbox
+            de_de: Sandbox Max Speicher
+            it_it: Memoria Massima Sandbox
+            ru_ru: Максимальная память песочницы
+            ja_jp: サンドボックス最大メモリ
         - container: SANDBOX_TIMEOUT
           description:
             de_DE: Sandbox Timeout
@@ -1318,6 +1762,14 @@ services:
             sv_SE: Sandbox Timeout
             tr_TR: Sandbox Zaman Aşımı
             zh_CN: 沙箱超时
+            en_us: Sandbox Timeout
+            pt_br: Timeout Sandbox
+            zh_cn: 沙箱超时
+            fr_fr: Timeout Sandbox
+            de_de: Sandbox Timeout
+            it_it: Timeout Sandbox
+            ru_ru: Тайм-аут песочницы
+            ja_jp: サンドボックスタイムアウト
       volumes:
         - container: /var/run/docker.sock
           description:
@@ -1336,6 +1788,14 @@ services:
             sv_SE: Docker Socket
             tr_TR: Docker Soketi
             zh_CN: Docker套接字
+            en_us: Docker Socket
+            pt_br: Socket Docker
+            zh_cn: Docker套接字
+            fr_fr: Socket Docker
+            de_de: Docker-Socket
+            it_it: Socket Docker
+            ru_ru: Сокет Docker
+            ja_jp: Dockerソケット
     networks:
       - ragflow
     cpu_shares: 90
@@ -1630,11 +2090,163 @@ x-casaos:
       **了解更多：**
       - [RagFlow官方网站](https://ragflow.io)
       - [RagFlow GitHub仓库](https://github.com/infiniflow/ragflow)
+    en_us: |
+      RagFlow is an open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding. It enables users to build their own private ChatGPT by leveraging the power of large language models and deep document parsing capabilities. RagFlow supports various document formats including PDF, Word, Markdown, and more, allowing users to create intelligent question-answering systems based on their own documents.
+
+      **Key Features:**
+      - Deep document understanding with advanced parsing capabilities
+      - Support for multiple document formats (PDF, Word, Markdown, etc.)
+      - Private knowledge base with data security assurance
+      - Customizable RAG workflows for different use cases
+      - Integration with popular large language models
+      - Web-based interface for easy management and interaction
+
+      **Hardware Requirements:**
+      - CPU >= 4 cores
+      - RAM >= 16 GB
+      - Disk >= 50 GB
+
+      **Learn More:**
+      - [RagFlow Official Website](https://ragflow.io)
+      - [RagFlow GitHub Repository](https://github.com/infiniflow/ragflow)
+    pt_br: |
+      RagFlow é um motor RAG (Retrieval-Augmented Generation) de código aberto baseado na compreensão profunda de documentos. Permite aos utilizadores construir o seu próprio ChatGPT privado, aproveitando o poder dos grandes modelos de linguagem e das capacidades de análise profunda de documentos. RagFlow suporta vários formatos de documentos, incluindo PDF, Word, Markdown e mais, permitindo aos utilizadores criar sistemas inteligentes de pergunta-resposta baseados nos seus próprios documentos.
+
+      **Características Principais:**
+      - Compreensão profunda de documentos com capacidades de análise avançadas
+      - Suporte para múltiplos formatos de documentos (PDF, Word, Markdown, etc.)
+      - Base de conhecimento privado com garantia de segurança de dados
+      - Fluxos de trabalho RAG personalizáveis para diferentes casos de uso
+      - Integração com populares grandes modelos de linguagem
+      - Interface baseada na Web para fácil gestão e interação
+
+      **Requisitos de Hardware:**
+      - CPU >= 4 núcleos
+      - RAM >= 16 GB
+      - Disco >= 50 GB
+
+      **Saiba Mais:**
+      - [Website Oficial RagFlow](https://ragflow.io)
+      - [Repositório GitHub RagFlow](https://github.com/infiniflow/ragflow)
+    zh_cn: |
+      RagFlow是一个基于深度文档理解的开源RAG（检索增强生成）引擎。它使用户能够利用大语言模型和深度文档解析功能构建自己的私有ChatGPT。RagFlow支持多种文档格式，包括PDF、Word、Markdown等，允许用户基于自己的文档创建智能问答系统。
+
+      **主要功能：**
+      - 具备高级解析能力的深度文档理解
+      - 支持多种文档格式（PDF、Word、Markdown等）
+      - 数据安全保障的私有知识库
+      - 针对不同用例的可定制RAG工作流
+      - 与流行的大语言模型集成
+      - 基于Web的界面，便于管理和交互
+
+      **硬件要求：**
+      - CPU >= 4 核
+      - RAM >= 16 GB
+      - Disk >= 50 GB
+
+      **了解更多：**
+      - [RagFlow官方网站](https://ragflow.io)
+      - [RagFlow GitHub仓库](https://github.com/infiniflow/ragflow)
+    fr_fr: |
+      RagFlow est un moteur RAG (Retrieval-Augmented Generation) open source basé sur la compréhension approfondie de documents. Il permet aux utilisateurs de construire leur propre ChatGPT privé en exploitant la puissance des grands modèles de langage et des capacités d'analyse approfondie de documents. RagFlow prend en charge divers formats de documents, notamment PDF, Word, Markdown, etc., permettant aux utilisateurs de créer des systèmes de questions-réponses intelligents basés sur leurs propres documents.
+
+      **Caractéristiques Clés :**
+      - Compréhension approfondie des documents avec des capacités d'analyse avancées
+      - Prise en charge de plusieurs formats de documents (PDF, Word, Markdown, etc.)
+      - Base de connaissances privée avec garantie de sécurité des données
+      - Flux de travail RAG personnalisables pour différents cas d'utilisation
+      - Intégration avec les grands modèles de langage populaires
+      - Interface Web pour une gestion et une interaction faciles
+
+      **Exigences Matérielles :**
+      - CPU >= 4 cœurs
+      - RAM >= 16 GB
+      - Disque >= 50 GB
+
+      **En Savoir Plus :**
+      - [Site Officiel RagFlow](https://ragflow.io)
+      - [Dépôt GitHub RagFlow](https://github.com/infiniflow/ragflow)
+    de_de: |
+      RagFlow ist eine Open-Source-RAG-Engine (Retrieval-Augmented Generation), die auf tiefem Dokumentenverständnis basiert. Sie ermöglicht es Benutzern, ihr eigenes privates ChatGPT zu erstellen, indem sie die Leistungsfähigkeit großer Sprachmodelle und tiefgreifender Dokumentenanalysefähigkeiten nutzt. RagFlow unterstützt verschiedene Dokumentformate, einschließlich PDF, Word, Markdown und mehr, und ermöglicht es Benutzern, intelligente Frage-Antwort-Systeme auf der Grundlage ihrer eigenen Dokumente zu erstellen.
+
+      **Hauptfunktionen:**
+      - Tiefes Dokumentenverständnis mit erweiterten Analysefähigkeiten
+      - Unterstützung für mehrere Dokumentformate (PDF, Word, Markdown, etc.)
+      - Private Wissensdatenbank mit Datensicherheitsgarantie
+      - Anpassbare RAG-Workflows für verschiedene Anwendungsfälle
+      - Integration mit beliebten großen Sprachmodellen
+      - Webbasierte Oberfläche für einfache Verwaltung und Interaktion
+
+      **Hardware-Anforderungen:**
+      - CPU >= 4 Kerne
+      - RAM >= 16 GB
+      - Festplatte >= 50 GB
+
+      **Mehr Erfahren:**
+      - [RagFlow Offizielle Website](https://ragflow.io)
+      - [RagFlow GitHub Repository](https://github.com/infiniflow/ragflow)
+    it_it: |
+      RagFlow è un motore RAG (Retrieval-Augmented Generation) open source basato sulla comprensione approfondita dei documenti. Consente agli utenti di creare il proprio ChatGPT privato sfruttando la potenza dei modelli linguistici di grandi dimensioni e le capacità di analisi approfondita dei documenti. RagFlow supporta vari formati di documenti, tra cui PDF, Word, Markdown e altri, consentendo agli utenti di creare sistemi di domanda-risposta intelligenti basati sui propri documenti.
+
+      **Caratteristiche Principali:**
+      - Comprensione approfondita dei documenti con capacità di analisi avanzate
+      - Supporto per più formati di documenti (PDF, Word, Markdown, ecc.)
+      - Base di conoscenza privata con garanzia di sicurezza dei dati
+      - Flussi di lavoro RAG personalizzabili per diversi casi d'uso
+      - Integrazione con modelli linguistici di grandi dimensioni popolari
+      - Interfaccia web per una facile gestione e interazione
+
+      **Requisiti Hardware:**
+      - CPU >= 4 core
+      - RAM >= 16 GB
+      - Disco >= 50 GB
+
+      **Ulteriori Informazioni:**
+      - [Sito Ufficiale RagFlow](https://ragflow.io)
+      - [Repository GitHub RagFlow](https://github.com/infiniflow/ragflow)
+    ru_ru: |
+      RagFlow — это механизм RAG (Retrieval-Augmented Generation) с открытым исходным кодом, основанный на глубоком понимании документов. Он позволяет пользователям создавать свой собственный частный ChatGPT, используя возможности больших языковых моделей и глубокого анализа документов. RagFlow поддерживает различные форматы документов, включая PDF, Word, Markdown и другие, что позволяет пользователям создавать интеллектуальные системы вопросов-ответов на основе собственных документов.
+
+      **Ключевые Особенности:**
+      - Глубокое понимание документов с расширенными возможностями анализа
+      - Поддержка различных форматов документов (PDF, Word, Markdown и т.д.)
+      - Частная база знаний с гарантией безопасности данных
+      - Настраиваемые рабочие процессы RAG для различных случаев использования
+      - Интеграция с популярными большими языковыми моделями
+      - Веб-интерфейс для удобного управления и взаимодействия
+
+      **Требования к оборудованию:**
+      - CPU >= 4 ядра
+      - RAM >= 16 GB
+      - Диск >= 50 GB
+
+      **Узнать Больше:**
+      - [Официальный сайт RagFlow](https://ragflow.io)
+      - [Репозиторий GitHub RagFlow](https://github.com/infiniflow/ragflow)
+    ja_jp: |
+      RagFlowは、深い文書理解に基づいたオープンソースのRAG（検索強化生成）エンジンです。大規模言語モデルの力と深い文書解析機能を活用して、ユーザーが独自のプライベートChatGPTを構築できるようにします。RagFlowは、PDF、Word、Markdownなどを含むさまざまな文書形式をサポートし、ユーザーが独自の文書に基づいてインテリジェントな質問応答システムを作成できるようにします。
+
+      **主な機能：**
+      - 高度な解析機能を備えた深い文書理解
+      - 複数の文書形式のサポート（PDF、Word、Markdownなど）
+      - データセキュリティ保証付きのプライベートナレッジベース
+      - さまざまなユースケースに対応したカスタマイズ可能なRAGワークフロー
+      - 人気の大規模言語モデルとの統合
+      - 簡単な管理と対話のためのWebベースのインターフェース
+
+      **ハードウェア要件：**
+      - CPU >= 4コア
+      - RAM >= 16 GB
+      - ディスク >= 50 GB
+
+      **詳細情報：**
+      - [RagFlow公式ウェブサイト](https://ragflow.io)
+      - [RagFlow GitHubリポジトリ](https://github.com/infiniflow/ragflow)
   developer: RagFlow
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RagFlow/icon.png
   index: /
   main: ragflow
-  port_map: '30080'
+  port_map: "30080"
   scheme: http
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RagFlow/screenshot-1.png
@@ -1656,6 +2268,14 @@ x-casaos:
     sv_SE: RagFlow är en öppen källkods RAG-motor baserad på djup dokumentförståelse.
     tr_TR: RagFlow, derin belge anlayışına dayalı açık kaynaklı bir RAG motorudur.
     zh_CN: RagFlow是一个基于深度文档理解的开源RAG引擎。
+    en_us: RagFlow is an open-source RAG engine based on deep document understanding.
+    pt_br: RagFlow é um motor RAG de código aberto baseado na compreensão profunda de documentos.
+    zh_cn: RagFlow是一个基于深度文档理解的开源RAG引擎。
+    fr_fr: RagFlow est un moteur RAG open source basé sur la compréhension approfondie de documents.
+    de_de: RagFlow ist eine Open-Source-RAG-Engine, die auf tiefem Dokumentenverständnis basiert.
+    it_it: RagFlow è un motore RAG open source basato sulla comprensione approfondita dei documenti.
+    ru_ru: RagFlow — это механизм RAG с открытым исходным кодом, основанный на глубоком понимании документов.
+    ja_jp: RagFlowは、深い文書理解に基づいたオープンソースのRAGエンジンです。
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RagFlow/thumbnail.png
   title:
     de_DE: RagFlow
@@ -1673,7 +2293,15 @@ x-casaos:
     sv_SE: RagFlow
     tr_TR: RagFlow
     zh_CN: RagFlow
-
+    en_us: RagFlow
+    pt_br: RagFlow
+    zh_cn: RagFlow
+    fr_fr: RagFlow
+    de_de: RagFlow
+    it_it: RagFlow
+    ru_ru: RagFlow
+    ja_jp: RagFlow
 x-roqueos:
+  portaCompartilhada: true
   motivo:
-    privileged: "sandbox de execução de código do RagFlow exige isolamento por namespace próprio"
+    privileged: sandbox de execução de código do RagFlow exige isolamento por namespace próprio

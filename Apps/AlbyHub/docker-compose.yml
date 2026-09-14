@@ -1,6 +1,11 @@
 name: albyhub
 services:
   albyhub:
+    x-casaos:
+      ports:
+        - container: '8080'
+          description:
+            en_us: "Web interface for Alby Hub ✨"
     environment:
       PGID: $PGID
       PUID: $PUID

@@ -15,6 +15,10 @@ services:
           memory: 2048M
     restart: unless-stopped
     x-casaos:
+      ports:
+        - container: '5432'
+          description:
+            en_us: "banco PostgreSQL (port 5432)"
       envs:
         - container: PUID
           description:

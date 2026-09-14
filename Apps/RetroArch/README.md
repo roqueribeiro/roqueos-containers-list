@@ -1,29 +1,29 @@
 # RetroArch
 
-> Online retro games emulator
+> Emulador de jogos retro online
 
 ## O que é
 
-RetroArch-web is a web-based classic game emulator that enables users to enjoy a wide range of retro games directly in modern browsers. Supporting platforms like GBA, N64, DOS games, and NES (FC), it brings nostalgic gaming to life. Built on the open-source RetroArch project, RetroArch-web delivers robust features, including high-quality graphics rendering, audio processing, input controls, and save/load game progress, ensuring a precise and smooth emulation experience.
+O RetroArch-web é um emulador de jogos clássicos baseado na web que permite aos utilizadores desfrutar de uma vasta gama de jogos retro diretamente nos navegadores modernos. Suportando plataformas como GBA, N64, jogos DOS e NES (FC), traz à vida a nostalgia dos jogos. Baseado no projeto open source RetroArch, o RetroArch-web oferece funcionalidades robustas, incluindo renderização gráfica de alta qualidade, processamento de áudio, controlos de entrada e guardar/carregar o progresso do jogo, garantindo uma experiência de emulação precisa e suave.
 
-Designed for ease of use, RetroArch-web requires no complex software installation, running seamlessly in browsers. Its flexible configuration options let users customize controller setups, visual filters, and audio settings to suit individual preferences. With broad cross-platform compatibility, it ensures stable performance across devices, offering retro gaming enthusiasts a consistent experience on the go.
+Concebido para ser fácil de usar, o RetroArch-web não requer instalação de software complexa e funciona perfeitamente nos navegadores. As suas opções de configuração flexíveis permitem aos utilizadores personalizar as definições do comando, filtros visuais e definições de áudio de acordo com as preferências individuais. Com ampla compatibilidade entre plataformas, garante um desempenho estável em todos os dispositivos, oferecendo aos entusiastas de jogos retro uma experiência consistente em qualquer lugar.
 
-Backed by an active open-source community, RetroArch-web continually improves performance and expands supported game platforms. Whether revisiting classic arcade titles or exploring vintage console games, RetroArch-web stands out as the ideal choice for retro gamers, combining powerful emulation with a user-friendly interface.
+Apoiado por uma comunidade open source ativa, o RetroArch-web melhora continuamente o desempenho e expande as plataformas de jogos suportadas. Quer esteja a revisitar títulos clássicos de arcada ou a explorar consolas antigas, o RetroArch-web destaca-se como a escolha ideal para os jogadores retro, combinando uma emulação poderosa com uma interface amigável.
 
-**Key Features:**
-- Polished interface for browsing game collections with thumbnails and animated backgrounds
-- Supports multiple emulators and game engines for running classic games and discs
-- Next-frame response time for near-native hardware low-latency experience
-- Highly configurable settings to tweak game performance and display options
-- Automatic controller configuration for easy multiplayer gaming
-- Shaders to enhance old game rendering and mimic CRT monitor effects
-- Netplay for multiplayer gaming and spectator mode
-- Achievements system to unlock trophies and badges in classic games
-- Recording and streaming for capturing gameplay or live streaming
+**Funcionalidades Principais:**
+- Interface polida para navegar coleções de jogos com miniaturas e fundos animados
+- Suporta múltiplos emuladores e motores de jogo para executar jogos clássicos e discos
+- Tempo de resposta do próximo frame para experiência de baixa latência próxima do hardware nativo
+- Definições altamente configuráveis para ajustar o desempenho do jogo e opções de visualização
+- Configuração automática de comando para facilitar jogos multijogador
+- Shaders para melhorar a renderização de jogos antigos e imitar efeitos de monitor CRT
+- Netplay para jogos multijogador e modo espectador
+- Sistema de conquistas para desbloquear troféus e distintivos em jogos clássicos
+- Gravação e streaming para capturar gameplay ou transmissão ao vivo
 
-**Learn More:**
-- [RetroArch Official Website](https://www.retroarch.com)
-- [RetroArch GitHub Repository](https://github.com/libretro/RetroArch)
+**Saiba mais:**
+- [Site oficial do RetroArch](https://www.retroarch.com)
+- [Repositório GitHub do RetroArch](https://github.com/libretro/RetroArch)
 
 
 Categoria na App Store do RoqueOS: **Gaming**.
@@ -31,9 +31,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço   |
-| ---- | --------- | --------- | --------------- | --------- |
-| 8183 | 80        | tcp       | WebUI HTTP Port | retroarch |
+| Host | Container | Protocolo | Para que serve   | Serviço   |
+| ---- | --------- | --------- | ---------------- | --------- |
+| 8183 | 80        | tcp       | Porta HTTP WebUI | retroarch |
 
 
 ## Volumes

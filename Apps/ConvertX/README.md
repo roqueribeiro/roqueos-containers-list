@@ -1,24 +1,24 @@
 # ConvertX
 
-> A versatile file conversion tool that supports multiple formats.
+> Uma ferramenta de conversão de arquivos versátil que suporta múltiplos formatos.
 
 ## O que é
 
-ConvertX is a self-hosted file conversion service that allows users to convert files between different formats through an intuitive web interface. It supports a wide range of file types including documents, images, videos, and audio files, making it a comprehensive solution for all your file conversion needs.
+ConvertX é um serviço de conversão de ficheiros auto-hospedado que permite aos utilizadores converter ficheiros entre diferentes formatos através de uma interface web intuitiva. Suporta uma vasta gama de tipos de ficheiros incluindo documentos, imagens, vídeos e ficheiros de áudio, tornando-o uma solução abrangente para todas as suas necessidades de conversão de ficheiros.
 
-The service is designed with simplicity and ease of use in mind. Users can simply upload their files, select the desired output format, and let ConvertX handle the conversion process. The web interface provides a clean and user-friendly experience, with drag-and-drop support and batch conversion capabilities.
+O serviço é concebido com simplicidade e facilidade de utilização em mente. Os utilizadores podem simplesmente carregar os seus ficheiros, selecionar o formato de saída desejado e deixar o ConvertX tratar do processo de conversão. A interface web proporciona uma experiência limpa e amigável, com suporte para arrastar e largar e capacidades de conversão em lote.
 
-ConvertX runs entirely on your own infrastructure, ensuring that your files remain private and secure. There's no need to upload sensitive documents to third-party services, giving you full control over your data. The service is containerized for easy deployment and can be integrated into existing home server setups.
+ConvertX funciona inteiramente na sua própria infraestrutura, garantindo que os seus ficheiros permanecem privados e seguros. Não há necessidade de carregar documentos sensíveis para serviços de terceiros, dando-lhe controlo total sobre os seus dados. O serviço é contentorizado para fácil implementação e pode ser integrado em configurações existentes de servidores domésticos.
 
-**Key Features:**
-- Support for multiple file formats (documents, images, videos, audio)
-- Intuitive web interface with drag-and-drop support
-- Batch conversion capabilities
-- Self-hosted for privacy and security
-- Containerized for easy deployment
-- No file size limitations
+**Características Principais:**
+- Suporte para múltiplos formatos de ficheiros (documentos, imagens, vídeos, áudio)
+- Interface web intuitiva com suporte para arrastar e largar
+- Capacidades de conversão em lote
+- Auto-hospedado para privacidade e segurança
+- Contentorizado para fácil implementação
+- Sem limitações de tamanho de ficheiro
 
-**Learn More:**
+**Saiba Mais:**
 - [ConvertX GitHub Repository](https://github.com/c4illin/convertx)
 
 
@@ -27,9 +27,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve  | Serviço  |
-| ---- | --------- | --------- | --------------- | -------- |
-| 3333 | 3000      | tcp       | WebUI HTTP Port | convertx |
+| Host | Container | Protocolo | Para que serve   | Serviço  |
+| ---- | --------- | --------- | ---------------- | -------- |
+| 3333 | 3000      | tcp       | Porta HTTP WebUI | convertx |
 
 
 ## Volumes

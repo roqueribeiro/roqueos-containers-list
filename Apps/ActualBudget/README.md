@@ -1,31 +1,31 @@
 # Actual Budget
 
-> Privacy-first finance app with envelope budgeting and multi-device sync.
+> Aplicação financeira que prioriza privacidade com orçamentação por envelopes e sincronização multi-dispositivos.
 
 ## O que é
 
-Actual Budget is a fast, privacy-focused finance management app using local-first envelope budgeting, ensuring full control over data. Its intuitive interface supports offline use, with multi-device sync and optional end-to-end encryption, delivering a secure, efficient financial management experience, ideal for users seeking clear financial oversight.
+Actual Budget é uma aplicação de gestão financeira rápida e focada na privacidade que utiliza orçamentação por envelopes local-primeiro, garantindo controlo total sobre os dados. A sua interface intuitiva suporta utilização offline, com sincronização multi-dispositivos e encriptação ponta-a-ponta opcional, proporcionando uma experiência de gestão financeira segura e eficiente, ideal para utilizadores que procuram supervisão financeira clara.
 
-The app's core features include envelope budgeting based on real income, rapid transaction handling, and intuitive financial reporting. It helps users track spending and monitor monthly savings clearly, with a streamlined transaction editor for quick categorization, split transactions, and transfers. Built-in net worth and cash flow reports provide financial insights, and a custom report engine allows tailored reports for specific needs. Undo and redo functionality ensures users can easily correct mistakes, maintaining operational flexibility.
+As funcionalidades principais da aplicação incluem orçamentação por envelopes baseada em rendimento real, processamento rápido de transacções e relatórios financeiros intuitivos. Ajuda os utilizadores a rastrear despesas e monitorizar claramente as poupanças mensais, com um editor de transacções simplificado para categorização rápida, transacções divididas e transferências. Relatórios integrados de património líquido e fluxo de caixa fornecem insights financeiros, e um motor de relatórios personalizado permite relatórios adaptados para necessidades específicas. A funcionalidade de desfazer e refazer garante que os utilizadores podem facilmente corrigir erros, mantendo flexibilidade operacional.
 
-It integrates bank accounts via goCardless (EU/UK) or SimpleFIN (US/Canada), supports multi-device syncing for data privacy, and enables importing transaction data from YNAB4, nYNAB, and QIF, OFX, QFX, CAMT.053, CSV files, simplifying migration of existing financial records. Community documentation enhances usability, and the app's simple operation and high flexibility deliver a modern finance management solution.
+Integra contas bancárias via goCardless (EU/UK) ou SimpleFIN (US/Canadá), suporta sincronização multi-dispositivos para privacidade de dados, e permite importação de dados de transacções de YNAB4, nYNAB, e ficheiros QIF, OFX, QFX, CAMT.053, CSV, simplificando a migração de registos financeiros existentes. A documentação da comunidade melhora a usabilidade, e a operação simples e alta flexibilidade da aplicação entregam uma solução moderna de gestão financeira.
 
-**Key Features:**
-- Privacy-focused personal finance management
-- Envelope budgeting methodology
-- Multi-device synchronization
-- End-to-end encryption support
-- Local data ownership
-- Fast and responsive interface
-- Open source and self-hosted
-- Bank account synchronization
-- Detailed financial reporting
-- Budget tracking and analysis
+**Características Principais:**
+- Gestão financeira pessoal focada na privacidade
+- Metodologia de orçamentação por envelopes
+- Sincronização multi-dispositivos
+- Suporte a encriptação ponta-a-ponta
+- Propriedade local dos dados
+- Interface rápida e responsiva
+- Código aberto e auto-hospedado
+- Sincronização de contas bancárias
+- Relatórios financeiros detalhados
+- Rastreamento e análise de orçamento
 
-**Learn More:**
-- [Actual Budget Official Website](https://actualbudget.org)
-- [Actual Budget GitHub Repository](https://github.com/actualbudget/actual)
-- [Actual Budget Docker Image](https://hub.docker.com/r/actualbudget/actual-server)
+**Saiba Mais:**
+- [Site Oficial Actual Budget](https://actualbudget.org)
+- [Repositório GitHub Actual Budget](https://github.com/actualbudget/actual)
+- [Imagem Docker Actual Budget](https://hub.docker.com/r/actualbudget/actual-server)
 
 
 Categoria na App Store do RoqueOS: **Finance**.
@@ -33,9 +33,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve                   | Serviço      |
-| ----- | --------- | --------- | -------------------------------- | ------------ |
-| 15006 | 5006      | tcp       | Actual Budget Web Interface Port | actualbudget |
+| Host  | Container | Protocolo | Para que serve                    | Serviço      |
+| ----- | --------- | --------- | --------------------------------- | ------------ |
+| 15006 | 5006      | tcp       | Porta Interface Web Actual Budget | actualbudget |
 
 
 ## Volumes
@@ -55,7 +55,7 @@ _Nenhum._
 
 Depois de instalar, abra `http://<endereço-do-servidor>:15006/`.
 
-- After opening the web page for the first time, you will see an error popup. Click the `Advanced options` option to successfully enter the Actual Budget web page.
+- Após abrir a página web pela primeira vez, você verá uma janela de erro. Clique na opção `Opções avançadas` para acessar com sucesso a página web do Actual Budget.
 
 ## Imagens
 

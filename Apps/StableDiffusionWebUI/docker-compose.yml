@@ -1,6 +1,11 @@
 name: icewhale-stable-diffusion-webui
 services:
   icewhale-stable-diffusion-webui:
+    x-casaos:
+      ports:
+        - container: '7860'
+          description:
+            en_us: "Web interface for Stable Diffusion"
     image: johnguan/stable-diffusion-webui:latest
     runtime: nvidia
     ipc: host

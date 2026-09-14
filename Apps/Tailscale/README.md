@@ -1,29 +1,29 @@
 # Tailscale
 
-> Connect your devices and users together in your own secure virtual private network.
+> Conecte os seus dispositivos e utilizadores numa rede privada virtual segura.
 
 ## O que é
 
-A modern self-hosted networking app built on WireGuard®, providing secure, encrypted connections between devices regardless of their location. Its zero-configuration networking eliminates the need for complex firewall rules, port forwarding, or network administration, making it ideal for businesses and individuals creating efficient, secure network environments.
+Uma aplicação de rede auto-hospedada moderna construída sobre WireGuard®, fornecendo ligações seguras e encriptadas entre dispositivos independentemente da sua localização. A sua rede de configuração zero elimina a necessidade de regras complexas de firewall, redirecionamento de portas ou administração de rede, tornando-a ideal para empresas e indivíduos que criam ambientes de rede eficientes e seguros.
 
-The app's core features include seamless device connectivity and robust security. It uses WireGuard® for end-to-end encryption, ensuring traffic cannot be intercepted, with private keys stored solely on user devices. Automatic NAT traversal enables connections across computers, phones, servers, and IoT devices over different network types, forming a unified private network. It also offers identity-based access control, integrating with Google, Microsoft, GitHub, or custom SSO solutions for simple authentication, replacing traditional IP-based restrictions to enhance security.
+As funcionalidades principais da aplicação incluem conectividade de dispositivos sem interrupções e segurança robusta. Utiliza WireGuard® para encriptação ponto-a-ponto, garantindo que o tráfego não pode ser interceptado, com chaves privadas armazenadas exclusivamente nos dispositivos do utilizador. A travessia NAT automática permite ligações entre computadores, telefones, servidores e dispositivos IoT em diferentes tipos de rede, formando uma rede privada unificada. Oferece também controlo de acesso baseado em identidade, integrando-se com Google, Microsoft, GitHub ou soluções SSO personalizadas para autenticação simples, substituindo as restrições tradicionais baseadas em IP para melhorar a segurança.
 
-It excels in delivering secure remote access to services and infrastructure. Users can effortlessly access home servers, connect to office networks while traveling, or establish secure links between cloud services. Subnet routing allows access to entire networks, exit nodes enable secure internet browsing, and MagicDNS simplifies device discovery. These features ensure efficient, secure access to resources from any location.
+Destaca-se na entrega de acesso remoto seguro a serviços e infraestrutura. Os utilizadores podem aceder facilmente a servidores domésticos, ligar-se a redes de escritório durante viagens ou estabelecer ligações seguras entre serviços de nuvem. O encaminhamento de sub-redes permite acesso a redes inteiras, os nós de saída permitem navegação segura na internet, e o MagicDNS simplifica a descoberta de dispositivos. Estas funcionalidades garantem acesso eficiente e seguro a recursos de qualquer localização.
 
-It supports nearly all platforms, including Linux, Windows, macOS, iOS, Android, and various router firmwares, with flexible deployment in cloud or on-premises environments. A user-friendly Web interface provides real-time monitoring of network topology, device status, and access controls, with community documentation aiding configuration optimization. Whether setting up secure access for small teams or managing enterprise-scale networks, the app’s intuitive operation and high flexibility deliver a modern networking solution.
+Suporta quase todas as plataformas, incluindo Linux, Windows, macOS, iOS, Android e vários firmwares de router, com implementação flexível em ambientes de nuvem ou no local. Uma interface Web amigável fornece monitorização em tempo real da topologia de rede, estado dos dispositivos e controlos de acesso, com documentação da comunidade ajudando na otimização da configuração. Seja configurando acesso seguro para pequenas equipas ou gerindo redes à escala empresarial, a operação intuitiva e alta flexibilidade da aplicação fornecem uma solução de rede moderna.
 
-**Key Features:**
-- End-to-end encryption via WireGuard®, ensuring uninterceptible traffic
-- Zero-configuration networking, eliminating complex firewall or port forwarding setup
-- Automatic NAT traversal for seamless device connectivity across network types
-- Identity-based access control with SSO integration (Google, Microsoft, GitHub)
-- Subnet routing for secure network-wide access
-- Exit nodes for safe internet browsing
-- MagicDNS for simplified device discovery
+**Características principais:**
+- Encriptação ponto-a-ponto via WireGuard®, garantindo tráfego não interceptável
+- Rede de configuração zero, eliminando configuração complexa de firewall ou redirecionamento de portas
+- Travessia NAT automática para conectividade perfeita de dispositivos entre tipos de rede
+- Controlo de acesso baseado em identidade com integração SSO (Google, Microsoft, GitHub)
+- Encaminhamento de sub-redes para acesso seguro a toda a rede
+- Nós de saída para navegação segura na internet
+- MagicDNS para descoberta simplificada de dispositivos
 
-**Learn More:**
-- [Tailscale Official Website](https://tailscale.com)
-- [Tailscale GitHub Repository](https://github.com/tailscale/tailscale)
+**Saiba mais:**
+- [Site oficial Tailscale](https://tailscale.com)
+- [Repositório GitHub Tailscale](https://github.com/tailscale/tailscale)
 
 
 Categoria na App Store do RoqueOS: **Network**.

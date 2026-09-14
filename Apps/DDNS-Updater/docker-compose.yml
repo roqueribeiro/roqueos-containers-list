@@ -68,3 +68,6 @@ x-casaos:
     zh_cn: 简单好用的DDNS
   title:
     en_us: ddns-updater
+
+x-roqueos:
+  portaCompartilhada: true

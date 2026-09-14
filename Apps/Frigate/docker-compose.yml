@@ -99,5 +99,6 @@ x-casaos:
   scheme: http
 
 x-roqueos:
+  portaCompartilhada: true
   motivo:
     privileged: "acesso ao acelerador de inferência (Coral TPU / GPU) em /dev"

@@ -3,9 +3,9 @@ services:
   transmission:
     environment:
       PASS: roqueos
-      PEERPORT: '51413'
-      PGID: '1000'
-      PUID: '1000'
+      PEERPORT: "51413"
+      PGID: "1000"
+      PUID: "1000"
       TZ: Europe/London
       USER: roqueos
     image: linuxserver/transmission:4.0.4
@@ -16,13 +16,13 @@ services:
     network_mode: bridge
     ports:
       - target: 9091
-        published: '9091'
+        published: "9091"
         protocol: tcp
       - target: 51413
-        published: '51413'
+        published: "51413"
         protocol: tcp
       - target: 51413
-        published: '51413'
+        published: "51413"
         protocol: udp
     restart: unless-stopped
     volumes:
@@ -39,46 +39,46 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ''
+            en_us: ""
         - container: PGID
           description:
-            en_us: ''
+            en_us: ""
         - container: TZ
           description:
-            en_us: ''
+            en_us: ""
         - container: TRANSMISSION_WEB_HOME
           description:
-            en_us: ''
+            en_us: ""
         - container: USER
           description:
-            en_us: ''
+            en_us: ""
         - container: PASS
           description:
-            en_us: ''
+            en_us: ""
         - container: PEERPORT
           description:
-            en_us: ''
+            en_us: ""
       ports:
-        - container: '9091'
+        - container: "9091"
           description:
-            en_us: ''
-        - container: '51413'
+            en_us: "Web interface for Transmission"
+        - container: "51413"
           description:
-            en_us: ''
-        - container: '51413'
+            en_us: "Service port 51413 of transmission"
+        - container: "51413"
           description:
-            en_us: ''
+            en_us: "Service port 51413 of transmission"
           protocol: udp
       volumes:
         - container: /config
           description:
-            en_us: ''
+            en_us: ""
         - container: /downloads
           description:
-            en_us: ''
+            en_us: ""
         - container: /watch
           description:
-            en_us: ''
+            en_us: ""
     container_name: transmission
 x-casaos:
   architectures:
@@ -148,6 +148,38 @@ x-casaos:
       Transmission, basitlik ve güçlü performans için tasarlanmış bir BitTorrent istemcisidir ve verimli ve kullanıcı dostu bir indirme deneyimi sunar. Şifreleme, web arayüzü, eş değişimi, manyetik bağlantılar, DHT, µTP, UPnP ve NAT-PMP bağlantı noktası yönlendirme, webseed desteği, izleme dizinleri, izleyici düzenleme, global ve torrent başına hız limitleri ve daha fazlası gibi beklediğiniz tüm temel özelliklerle donatılmıştır.
 
       Sezgisel arayüzü ile Transmission, hem yeni başlayanlara hem de ileri düzey kullanıcılara hitap eder. Tek bir indirmeyi yönetiyor olun ya da karmaşık torrent kuyruklarıyla uğraşıyor olun, Transmission optimize edilmiş kaynak kullanımı ve güvenilir performans ile sorunsuz bir deneyim sağlar. Gündelik kullanıcılar ve teknoloji meraklıları için Transmission, ideal BitTorrent çözümüdür。
+    en_us: |
+      Transmission is a BitTorrent client designed for simplicity and powerful performance, delivering an efficient and user-friendly downloading experience. It comes equipped with all the essential features you expect, including encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.
+
+      With its intuitive interface, Transmission caters to both beginners and advanced users. Whether you’re managing a single download or juggling complex torrent queues, Transmission ensures a seamless experience with optimized resource usage and reliable performance. For casual users and tech enthusiasts alike, Transmission is the ideal BitTorrent solution.
+    pt_br: |
+      Transmission é um cliente BitTorrent projetado para simplicidade e desempenho poderoso, proporcionando uma experiência de download eficiente e amigável. Ele vem equipado com todas as funcionalidades essenciais que você espera, incluindo encriptação, uma interface web, troca de peers, links magnéticos, DHT, µTP, encaminhamento de portas UPnP e NAT-PMP, suporte a webseed, diretórios de vigilância, edição de trackers, limites de velocidade globais e por torrent, e muito mais.
+
+      Com sua interface intuitiva, Transmission atende tanto a iniciantes quanto a utilizadores avançados. Seja gerindo um único download ou lidando com filas complexas de torrents, Transmission garante uma experiência fluida com uso otimizado de recursos e desempenho confiável. Para utilizadores casuais e entusiastas da tecnologia, Transmission é a solução BitTorrent ideal。
+    zh_cn: |
+      Transmission 是一款 BitTorrent 客户端，专为简单性和强大性能而设计，提供高效且用户友好的下载体验。它配备了您期望的所有基本功能，包括加密、Web 界面、peer 交换、磁力链接、DHT、µTP、UPnP 和 NAT-PMP 端口转发、webseed 支持、监视目录、tracker 编辑、全局和每个 torrent 的速度限制等。
+
+      Transmission 凭借其直观的界面，适合初学者和高级用户。无论您是管理单个下载还是处理复杂的 torrent 队列，Transmission 都能确保以优化的资源使用和可靠的性能提供无缝体验。对于普通用户和技术爱好者来说，Transmission 是理想的 BitTorrent 解决方案。
+    fr_fr: |
+      Transmission est un client BitTorrent conçu pour la simplicité et des performances puissantes, offrant une expérience de téléchargement efficace et conviviale. Il est équipé de toutes les fonctionnalités essentielles que vous attendez, y compris le chiffrement, une interface web, l'échange de pairs, les liens magnet, DHT, µTP, le redirection de port UPnP et NAT-PMP, la prise en charge des webseeds, les répertoires de surveillance, l'édition de trackers, les limites de vitesse globales et par torrent, et plus encore.
+
+      Avec son interface intuitive, Transmission s'adresse aussi bien aux débutants qu'aux utilisateurs avancés. Que vous gériez un seul téléchargement ou que vous jongliez avec des files d'attente de torrents complexes, Transmission garantit une expérience fluide avec une utilisation optimisée des ressources et des performances fiables. Pour les utilisateurs occasionnels et les passionnés de technologie, Transmission est la solution BitTorrent idéale。
+    de_de: |
+      Transmission ist ein BitTorrent-Client, der für Einfachheit und leistungsstarke Performance entwickelt wurde und ein effizientes und benutzerfreundliches Download-Erlebnis bietet. Er ist mit allen wesentlichen Funktionen ausgestattet, die Sie erwarten, darunter Verschlüsselung, eine Weboberfläche, Peer-Austausch, Magnet-Links, DHT, µTP, UPnP- und NAT-PMP-Portweiterleitung, Webseed-Unterstützung, Überwachungsverzeichnisse, Tracker-Bearbeitung, globale und torrent-spezifische Geschwindigkeitsbegrenzungen und mehr.
+
+      Mit seiner intuitiven Benutzeroberfläche richtet sich Transmission sowohl an Anfänger als auch an fortgeschrittene Benutzer. Egal, ob Sie einen einzelnen Download verwalten oder komplexe Torrent-Warteschlangen jonglieren, Transmission sorgt für ein nahtloses Erlebnis mit optimierter Ressourcennutzung und zuverlässiger Leistung. Für Gelegenheitsnutzer und Technikbegeisterte gleichermaßen ist Transmission die ideale BitTorrent-Lösung。
+    it_it: |
+      Transmission è un client BitTorrent progettato per la semplicità e le prestazioni potenti, offrendo un'esperienza di download efficiente e user-friendly. È dotato di tutte le funzionalità essenziali che ti aspetti, tra cui crittografia, un'interfaccia web, scambio di peer, link magnetici, DHT, µTP, port forwarding UPnP e NAT-PMP, supporto webseed, directory di monitoraggio, modifica del tracker, limiti di velocità globali e per torrent, e altro ancora.
+
+      Con la sua interfaccia intuitiva, Transmission si rivolge sia ai principianti che agli utenti avanzati. Che tu stia gestendo un singolo download o bilanciando code di torrent complesse, Transmission garantisce un'esperienza senza interruzioni con un utilizzo ottimizzato delle risorse e prestazioni affidabili. Per gli utenti occasionali e gli appassionati di tecnologia, Transmission è la soluzione BitTorrent ideale.
+    ru_ru: |
+      Transmission — это BitTorrent-клиент, разработанный для простоты и мощной производительности, обеспечивающий эффективный и удобный опыт загрузки. Он оснащен всеми основными функциями, которые вы ожидаете, включая шифрование, веб-интерфейс, обмен пирами, магнитные ссылки, DHT, µTP, перенаправление портов UPnP и NAT-PMP, поддержку webseed, отслеживание директорий, редактирование трекеров, глобальные и индивидуальные для каждого торрента ограничения скорости и многое другое.
+
+      Благодаря интуитивно понятному интерфейсу Transmission подходит как для начинающих, так и для продвинутых пользователей. Управляете ли вы одной загрузкой или жонглируете сложными очередями торрентов, Transmission обеспечивает бесперебойную работу с оптимизированным использованием ресурсов и надежной производительностью. Для обычных пользователей и технических энтузиастов Transmission является идеальным решением для BitTorrent。
+    ja_jp: |
+      Transmissionは、シンプルさと強力なパフォーマンスを追求して設計されたBitTorrentクライアントで、効率的でユーザーフレンドリーなダウンロード体験を提供します。暗号化、Webインターフェース、ピア交換、マグネットリンク、DHT、µTP、UPnPおよびNAT-PMPポートフォワーディング、webseedサポート、監視ディレクトリ、トラッカー編集、グローバルおよびトレントごとの速度制限など、期待されるすべての基本機能が搭載されています。
+
+      直感的なインターフェースにより、Transmissionは初心者から上級者まで対応しています。単一のダウンロードを管理する場合でも、複雑なトレントキューをやりくりする場合でも、Transmissionは最適化されたリソース使用と信頼性の高いパフォーマンスでシームレスな体験を保証します。カジュアルユーザーとテクノロジー愛好家の両方にとって、Transmissionは理想的なBitTorrentソリューションです。
   developer: Transmission
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Transmission/icon.png
   screenshot_link:
@@ -170,6 +202,14 @@ x-casaos:
     pt_PT: Transmission é um cliente BitTorrent multiplataforma
     ru_RU: Transmission — это кроссплатформенный BitTorrent-клиент
     tr_TR: Transmission, platformlar arası bir BitTorrent istemcisidir
+    en_us: Transmission is a cross-platform BitTorrent client
+    pt_br: Transmission é um cliente BitTorrent multiplataforma
+    zh_cn: Transmission 是一个跨平台的 BitTorrent 客户端
+    fr_fr: Transmission est un client BitTorrent multiplateforme
+    de_de: Transmission ist ein plattformübergreifender BitTorrent-Client
+    it_it: Transmission è un client BitTorrent multipiattaforma
+    ru_ru: Transmission — это кроссплатформенный BitTorrent-клиент
+    ja_jp: Transmission はクロスプラットフォームの BitTorrent クライアントです
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Transmission/thumbnail.png
   tips:
     before_install:
@@ -233,10 +273,43 @@ x-casaos:
         | kullanıcı adı | şifre |
         | ------------- | ----- |
         | `roqueos` | `roqueos` |
+      en_us: |
+        | username | password |
+        | -------- | -------- |
+        | `roqueos` | `roqueos` |
+      pt_br: |
+        | nome de utilizador | palavra-passe |
+        | ----------------- | ------------- |
+        | `roqueos` | `roqueos` |
+      zh_cn: |
+        | 用户名 | 密码 |
+        | ------ | ---- |
+        | `roqueos` | `roqueos` |
+      fr_fr: |
+        | nom d'utilisateur | mot de passe |
+        | ----------------- | ------------ |
+        | `roqueos` | `roqueos` |
+      de_de: |
+        | Benutzername | Passwort |
+        | ----------- | -------- |
+        | `roqueos` | `roqueos` |
+      it_it: |
+        | nome utente | password |
+        | ---------- | -------- |
+        | `roqueos` | `roqueos` |
+      ru_ru: |
+        | имя пользователя | пароль |
+        | ---------------- | ------ |
+        | `roqueos` | `roqueos` |
+      ja_jp: |
+        | ユーザー名 | パスワード |
+        | --------- | --------- |
+        | `roqueos` | `roqueos` |
   title:
     en_us: Transmission
   index: /
-  port_map: '9091'
+  port_map: "9091"
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

@@ -1,6 +1,11 @@
 name: ttydbridge
 services:
   ttydbridge:
+    x-casaos:
+      ports:
+        - container: '2222'
+          description:
+            en_us: "Web interface for ttydBridge"
     container_name: ttydbridge
     deploy:
       resources:
@@ -69,5 +74,6 @@ x-casaos:
     en_us: ttydBridge
 
 x-roqueos:
+  portaCompartilhada: true
   motivo:
     privileged: "expõe um shell do host, que é a função declarada do container"

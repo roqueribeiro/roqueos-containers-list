@@ -11,7 +11,7 @@ services:
     network_mode: bridge
     ports:
       - target: 3000
-        published: '3009'
+        published: "3009"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -25,7 +25,7 @@ services:
             en_us: TimeZone
             zh_cn: 时区
       ports:
-        - container: '3000'
+        - container: "3000"
           description:
             en_us: WebUI HTTP Port
             zh_cn: WebUI HTTP 端口
@@ -132,6 +132,54 @@ x-casaos:
       VoceChat, metin, resimler, dosyalar, emojiler ve zengin metin (Markdown) gibi çeşitli mesaj formatlarını destekler, iletişiminizi canlı ve etkileyici hale getirir. Dağıtıldıktan sonra, bir WebAPP veya mobil uygulama aracılığıyla erişilebilir, tüm platformlarda tutarlı bir deneyim sağlar.
 
       Güçlü yönetim özellikleriyle VoceChat, üyeler ve kanallar üzerinde kolay yönetim imkanı sunar, ekibinizin veya grubunuzun iletişim ortamı üzerinde tam kontrol sağlar. Bireysel kullanıcılar veya kurumsal ekipler için VoceChat, güvenli, çok yönlü ve verimli bir sohbet çözümü sunar.
+    en_us: |
+      VoceChat is a secure chat software designed for independent deployment, offering a flexible solution for seamless communication. It combines instant messaging with channel-based group chats, allowing you to engage in one-on-one conversations or create themed channels for group discussions.
+
+      VoceChat supports a variety of message formats, including text, images, files, emojis, and rich text (Markdown), making your communication vibrant and expressive. Once deployed, it can be accessed via a WebAPP or mobile APP, ensuring a consistent experience across platforms.
+
+      With robust management features, VoceChat enables easy member and channel administration, giving you full control over your team or group’s communication environment. Whether for individual users or enterprise teams, VoceChat delivers a secure, versatile, and efficient chat solution.
+    pt_br: |
+      VoceChat é um software de chat seguro desenhado para implementação independente, oferecendo uma solução flexível para uma comunicação fluida. Combina mensagens instantâneas com chats de grupo baseados em canais, permitindo-lhe participar em conversas individuais ou criar canais temáticos para discussões em grupo.
+
+      VoceChat suporta uma variedade de formatos de mensagens, incluindo texto, imagens, ficheiros, emojis e texto rico (Markdown), tornando a sua comunicação vibrante e expressiva. Uma vez implementado, pode ser acedido através de uma WebAPP ou aplicação móvel, garantindo uma experiência consistente em todas as plataformas.
+
+      Com funcionalidades robustas de gestão, o VoceChat permite uma fácil administração de membros e canais, dando-lhe controlo total sobre o ambiente de comunicação da sua equipa ou grupo. Seja para utilizadores individuais ou equipas empresariais, o VoceChat oferece uma solução de chat segura, versátil e eficiente.
+    zh_cn: |
+      VoceChat 是一款专为独立部署设计的安全聊天软件，提供灵活的解决方案以实现无缝沟通。它结合了即时消息和基于频道的群聊功能，允许您进行一对一对话或创建主题频道进行群组讨论。
+
+      VoceChat 支持多种消息格式，包括文本、图片、文件、表情符号和富文本（Markdown），使您的沟通生动而富有表现力。一旦部署完成，可通过 WebAPP 或移动 APP 访问，确保跨平台的一致体验。
+
+      凭借强大的管理功能，VoceChat 使成员和频道管理变得简单，让您完全掌控团队或群组的沟通环境。无论是个人用户还是企业团队，VoceChat 都提供了一个安全、多功能且高效的聊天解决方案。
+    fr_fr: |
+      VoceChat est un logiciel de chat sécurisé conçu pour un déploiement indépendant, offrant une solution flexible pour une communication fluide. Il combine la messagerie instantanée avec des discussions de groupe basées sur des canaux, permettant des conversations individuelles ou la création de canaux thématiques pour des discussions de groupe.
+
+      VoceChat prend en charge une variété de formats de messages, y compris le texte, les images, les fichiers, les emojis et le texte enrichi (Markdown), rendant votre communication dynamique et expressive. Une fois déployé, il peut être accessible via une WebAPP ou une application mobile, garantissant une expérience cohérente sur toutes les plateformes.
+
+      Avec des fonctionnalités de gestion robustes, VoceChat permet une administration facile des membres et des canaux, vous donnant un contrôle total sur l'environnement de communication de votre équipe ou groupe. Que ce soit pour des utilisateurs individuels ou des équipes d'entreprise, VoceChat offre une solution de chat sécurisée, polyvalente et efficace.
+    de_de: |
+      VoceChat ist eine sichere Chat-Software, die für eine unabhängige Bereitstellung entwickelt wurde und eine flexible Lösung für nahtlose Kommunikation bietet. Sie kombiniert Instant Messaging mit kanalbasierter Gruppenkommunikation, sodass Sie Einzelgespräche führen oder thematische Kanäle für Gruppendiskussionen erstellen können.
+
+      VoceChat unterstützt eine Vielzahl von Nachrichtenformaten, darunter Text, Bilder, Dateien, Emojis und Rich Text (Markdown), was Ihre Kommunikation lebendig und ausdrucksstark macht. Nach der Bereitstellung kann sie über eine WebAPP oder mobile APP genutzt werden, was eine konsistente Erfahrung über alle Plattformen hinweg gewährleistet.
+
+      Mit robusten Verwaltungsfunktionen ermöglicht VoceChat eine einfache Verwaltung von Mitgliedern und Kanälen, wodurch Sie die volle Kontrolle über die Kommunikationsumgebung Ihres Teams oder Ihrer Gruppe haben. Ob für einzelne Nutzer oder Unternehmensteams, VoceChat bietet eine sichere, vielseitige und effiziente Chat-Lösung.
+    it_it: |
+      VoceChat è un software di chat sicuro progettato per un'implementazione indipendente, offrendo una soluzione flessibile per una comunicazione fluida. Combina la messaggistica istantanea con chat di gruppo basate su canali, consentendo conversazioni individuali o la creazione di canali tematici per discussioni di gruppo.
+
+      VoceChat supporta una varietà di formati di messaggi, inclusi testo, immagini, file, emoji e testo ricco (Markdown), rendendo la tua comunicazione vivace ed espressiva. Una volta implementato, può essere accessibile tramite WebAPP o APP mobile, garantendo un'esperienza coerente su tutte le piattaforme.
+
+      Con robuste funzionalità di gestione, VoceChat consente una facile amministrazione di membri e canali, offrendoti il pieno controllo dell'ambiente di comunicazione del tuo team o gruppo. Che sia per utenti individuali o team aziendali, VoceChat offre una soluzione di chat sicura, versatile ed efficiente.
+    ru_ru: |
+      VoceChat — это безопасное программное обеспечение для чата, разработанное для независимого развертывания, предлагающее гибкое решение для бесперебойной коммуникации. Оно сочетает в себе мгновенные сообщения и групповые чаты на основе каналов, позволяя вам участвовать в личных беседах или создавать тематические каналы для групповых обсуждений.
+
+      VoceChat поддерживает различные форматы сообщений, включая текст, изображения, файлы, эмодзи и форматированный текст (Markdown), что делает вашу коммуникацию яркой и выразительной. После развертывания доступ возможен через WebAPP или мобильное приложение, обеспечивая единообразный опыт на всех платформах.
+
+      Благодаря мощным функциям управления VoceChat позволяет легко управлять участниками и каналами, предоставляя вам полный контроль над коммуникационной средой вашей команды или группы. Будь то для отдельных пользователей или корпоративных команд, VoceChat предлагает безопасное, универсальное и эффективное решение для чата.
+    ja_jp: |
+      VoceChatは、独立したデプロイメント向けに設計された安全なチャットソフトウェアで、シームレスなコミュニケーションのための柔軟なソリューションを提供します。インスタントメッセージングとチャネルベースのグループチャットを組み合わせ、一対一の会話やグループディスカッションのためのテーマ別チャネルを作成できます。
+
+      VoceChatは、テキスト、画像、ファイル、絵文字、リッチテキスト（Markdown）など、さまざまなメッセージ形式をサポートし、コミュニケーションを活発で表現力豊かにします。デプロイ後は、WebAPPまたはモバイルAPPを介してアクセスでき、プラットフォーム間で一貫した体験を保証します。
+
+      強力な管理機能を備えたVoceChatは、メンバーやチャネルの管理を容易にし、チームやグループのコミュニケーション環境を完全に制御できます。個人ユーザーや企業チーム向けに、VoceChatは安全で多機能かつ効率的なチャットソリューションを提供します。
   developer: Privoce
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/icon.png
   screenshot_link:
@@ -155,10 +203,18 @@ x-casaos:
     pt_PT: Tenha um Espaço Social Privado Hospedado no Seu Site
     ru_RU: Создайте Приватное Социальное Пространство на Вашем Сайте
     tr_TR: Sitenizde Barındırılan Özel Bir Sosyal Alan Sahip Olun
+    en_us: Have a Private Social Space Hosted on Your Site
+    pt_br: Tenha um Espaço Social Privado Hospedado no Seu Site
+    zh_cn: 在您的网站上托管一个私人社交空间
+    fr_fr: Hébergez un Espace Social Privé sur Votre Site
+    de_de: Haben Sie einen Privaten Sozialen Raum auf Ihrer Website
+    it_it: Ospita uno Spazio Sociale Privato sul Tuo Sito
+    ru_ru: Создайте Приватное Социальное Пространство на Вашем Сайте
+    ja_jp: あなたのサイトでホストされるプライベートなソーシャルスペースを持つ
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/VoceChat/thumbnail.png
   tips: {}
   title:
     en_us: VoceChat
   index: /
-  port_map: '3009'
+  port_map: "3009"
   scheme: http

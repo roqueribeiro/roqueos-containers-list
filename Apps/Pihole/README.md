@@ -1,26 +1,26 @@
 # Pi-hole
 
-> Network-wide Ad Blocking
+> Bloqueio de Anúncios ao Nível da Rede
 
 ## O que é
 
-Pi-hole is a network-wide ad-blocking platform for Linux hardware, using DNS sinkhole technology to protect devices from unwanted content without requiring client-side software. Designed for home or enterprise networks, it offers efficient ad blocking and network optimization.
+O Pi-hole é uma plataforma de bloqueio de anúncios ao nível da rede para hardware Linux, usando tecnologia DNS sinkhole para proteger dispositivos de conteúdo indesejado sem requerer software do lado do cliente. Concebido para redes domésticas ou empresariais, oferece bloqueio eficiente de anúncios e optimização de rede.
 
-Core features include network-wide ad blocking and content blocking in non-browser environments. It uses DNS sinkhole to block ads, covering mobile apps and smart TVs. Caching DNS queries speeds up everyday browsing. A command-line interface ensures interoperability with reliable control options.
+As funcionalidades principais incluem bloqueio de anúncios ao nível da rede e bloqueio de conteúdo em ambientes não-navegador. Usa DNS sinkhole para bloquear anúncios, cobrindo aplicações móveis e smart TVs. O cache de consultas DNS acelera a navegação quotidiana. Uma interface de linha de comandos garante interoperabilidade com opções de controlo fiáveis.
 
-It provides an intuitive web interface dashboard for viewing and managing system status. An optional DHCP server function automatically protects all devices. Capable of handling high query volumes on server-grade hardware, it supports ad blocking over IPv4 and IPv6. With efficiency and versatility at the core, the platform delivers a modern network protection solution.
+Fornece um painel de interface web intuitivo para visualizar e gerir o estado do sistema. Uma função de servidor DHCP opcional protege automaticamente todos os dispositivos. Capaz de lidar com volumes elevados de consultas em hardware de nível servidor, suporta bloqueio de anúncios sobre IPv4 e IPv6.
 
-**Key Features:**
-- Network-wide ad blocking via DNS sinkhole technology
-- Blocking content in non-browser environments, including mobile apps and smart TVs
-- Caching DNS queries to speed up browsing
-- Command-line interface for interoperability
-- Intuitive web interface dashboard for system viewing and control
-- Optional DHCP server function for automatic device protection
-- Ad blocking support for IPv4 and IPv6
+**Funcionalidades Principais:**
+- Bloqueio de anúncios ao nível da rede via tecnologia DNS sinkhole
+- Bloqueio de conteúdo em ambientes não-navegador, incluindo aplicações móveis e smart TVs
+- Cache de consultas DNS para acelerar navegação
+- Interface de linha de comandos para interoperabilidade
+- Painel de interface web intuitivo para visualização e controlo do sistema
+- Função de servidor DHCP opcional para protecção automática de dispositivos
+- Suporte de bloqueio de anúncios para IPv4 e IPv6
 
-**Learn More:**
-- [Pi-hole Official Website](https://pi-hole.net/)
+**Saber Mais:**
+- [Website Oficial Pi-hole](https://pi-hole.net/)
 - [Pi-hole GitHub](https://github.com/pi-hole/pi-hole)
 
 
@@ -29,13 +29,14 @@ Arquiteturas suportadas: amd64, arm64, 386, arm.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve     | Serviço |
-| ---- | --------- | --------- | ------------------ | ------- |
-| 8800 | 80        | tcp       | WebUI HTTP Port    | pihole  |
-| 53   | 53        | tcp       | Pi-hole DNS port   | pihole  |
-| 53   | 53        | udp       | Pi-hole DNS port   | pihole  |
-| 8443 | 443       | tcp       | Pi-hole HTTPS port | pihole  |
+| Host | Container | Protocolo | Para que serve      | Serviço |
+| ---- | --------- | --------- | ------------------- | ------- |
+| 8800 | 80        | tcp       | Porta HTTP WebUI    | pihole  |
+| 53   | 53        | tcp       | Porta DNS Pi-hole   | pihole  |
+| 53   | 53        | udp       | Porta DNS Pi-hole   | pihole  |
+| 8443 | 443       | tcp       | Porta HTTPS Pi-hole | pihole  |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 
@@ -57,7 +58,7 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `https://<endereço-do-servidor>:8800/admin`.
 
-- Default password: `roqueos`
+- Palavra-passe padrão: `roqueos`
 
 ### Por que este app pede privilégio
 

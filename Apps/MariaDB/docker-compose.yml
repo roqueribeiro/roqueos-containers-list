@@ -13,6 +13,10 @@ services:
       MYSQL_PASSWORD: roqueos
       REMOTE_SQL: ''
     x-casaos:
+      ports:
+        - container: '3306'
+          description:
+            en_us: "banco MySQL (port 3306)"
       envs:
         - container: PUID
           description:
