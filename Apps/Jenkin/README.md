@@ -21,10 +21,10 @@ Arquiteturas suportadas: amd64, arm64.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                                                                                        | No container      | Serviço |
-| ---------------------------------------------------------------------------------------------- | ----------------- | ------- |
-| /DATA/AppData/Jenkins/data                                                                     | /data             | jenkins |
-| /var/lib/docker/volumes/b098c98b2c5dec792246dc33375853c05958ace7c144f4aa157326a6f6c0de4c/_data | /var/jenkins_home | jenkins |
+| No host                            | No container      | Serviço |
+| ---------------------------------- | ----------------- | ------- |
+| /DATA/AppData/Jenkins/data         | /data             | jenkins |
+| /DATA/AppData/Jenkins/jenkins_home | /var/jenkins_home | jenkins |
 
 ## Variáveis de ambiente
 

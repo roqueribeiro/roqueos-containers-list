@@ -29,7 +29,7 @@ services:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: /media/ZimaOS-HD/Media
+        source: /DATA/roqueos/shared
         target: /media
     network_mode: bridge
     privileged: false

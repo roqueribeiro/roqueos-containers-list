@@ -28,13 +28,13 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável      | Valor padrão | Serviço |
-| ------------- | ------------ | ------- |
-| USE_HTTPS     | true         | mineos  |
-| SERVER_PORT   | 8443         | mineos  |
-| USER_NAME     | mc           | mineos  |
-| USER_UID      | 1000         | mineos  |
-| USER_PASSWORD | $default_pwd | mineos  |
+| Variável      | Valor padrão            | Serviço |
+| ------------- | ----------------------- | ------- |
+| USE_HTTPS     | true                    | mineos  |
+| SERVER_PORT   | 8443                    | mineos  |
+| USER_NAME     | mc                      | mineos  |
+| USER_UID      | 1000                    | mineos  |
+| USER_PASSWORD | change-me-on-first-boot | mineos  |
 
 ## Primeiro acesso
 

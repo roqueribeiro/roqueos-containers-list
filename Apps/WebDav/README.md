@@ -20,9 +20,9 @@ Arquiteturas suportadas: amd64, 386, arm64, arm.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                | No container | Serviço |
-| ---------------------- | ------------ | ------- |
-| /media/ZimaOS-HD/Media | /media       | webdav  |
+| No host              | No container | Serviço |
+| -------------------- | ------------ | ------- |
+| /DATA/roqueos/shared | /media       | webdav  |
 
 ## Variáveis de ambiente
 

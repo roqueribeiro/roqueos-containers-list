@@ -44,6 +44,29 @@ const CATEGORIAS = new Set([
 
 const SERVER = '../roqueos-server/src/modules/catalog/catalog.service.ts'
 
+/**
+ * Montagens de host que NÃO são defeito.
+ *
+ * A primeira versão desta checagem reprovava tudo fora de /DATA e acusou 46
+ * volumes, sendo que 7 eram o socket do Docker que o Portainer precisa, 9 eram
+ * fuso horário e o resto era /proc, /sys e módulos de kernel. Cobrar disso é
+ * ruído; o que interessa é o caminho que só existe na máquina de quem empacotou.
+ */
+const SISTEMA = [
+  /^\/etc\/(localtime|timezone|passwd|group|os-release|resolv\.conf)$/,
+  /^\/var\/run\/docker\.sock$/,
+  /^\/var\/run\/libvirt\//,
+  /^\/var\/lib\/libvirt$/,
+  /^\/dev(\/|$)/,
+  /^\/proc$/,
+  /^\/sys(\/|$)/,
+  /^\/lib\/modules$/,
+  /^\/run\/(dbus|udev)$/,
+  /^\/opt\/vc\/lib$/,
+  /^\/var\/log$/,
+  /^\/mnt$/,
+]
+
 /** Avisa (sem reprovar) quando a cópia acima ficou para trás do server. */
 function conferirMapaDoServer() {
   if (!fs.existsSync(SERVER)) return null
@@ -164,8 +187,10 @@ function premissas(app, conflitos) {
     if (!s.restart) p.P4.push(`${nomeSvc}: sem restart`)
     for (const v of s.volumes || []) {
       const src = typeof v === 'string' ? v.split(':')[0] : v.source
-      if (src && src.startsWith('/') && !src.startsWith('/DATA/'))
-        p.P4.push(`${nomeSvc}: volume ${src} fora de /DATA/`)
+      if (!src || !src.startsWith('/')) continue
+      if (src === '/DATA' || src.startsWith('/DATA/')) continue
+      if (SISTEMA.some((re) => re.test(src))) continue
+      p.P4.push(`${nomeSvc}: volume ${src} não é /DATA nem montagem de sistema conhecida`)
     }
   }
 
