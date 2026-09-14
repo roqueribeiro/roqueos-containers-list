@@ -15,7 +15,7 @@
 
 import { execFileSync } from 'node:child_process'
 import yaml from 'js-yaml'
-import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs'
+import { mkdirSync, readdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { todosOsApps } from './uid-imagem.mjs'
@@ -109,7 +109,11 @@ function logs(projeto, servico) {
 // direção ensina a ignorar gate.
 export const LIMITE_DO_LABORATORIO = [
   {
-    re: /Address family not supported by protocol|EAFNOSUPPORT|address family not supported/i,
+    // Cada runtime escreve a mesma falta de IPv6 com um texto diferente: nginx
+    // diz "Address family not supported by protocol", node diz EAFNOSUPPORT,
+    // PHP diz "getaddrinfo for :: failed". O denominador comum e escutar em
+    // [::] e falhar.
+    re: /Address family not supported|EAFNOSUPPORT|getaddrinfo for :: failed|Failed to listen on \[::\]|bind: cannot assign requested address.*:::/i,
     motivo: 'kernel do laboratório sem IPv6',
   },
   { re: /error setting rlimit/i, motivo: 'laboratório não permite levantar rlimit' },
@@ -211,6 +215,30 @@ export function testa(app) {
 
 const isCli = import.meta.url === pathToFileURL(process.argv[1] || '').href
 if (isCli) {
+  // Reclassifica a evidencia ja gravada sem subir nada de novo. Cada vez que um
+  // limite do laboratorio aparece com texto novo, e a varredura inteira que
+  // muda de leitura — e ela leva horas. O JSON guarda o log cru, entao da para
+  // reler.
+  if (process.argv.includes('--reclassifica')) {
+    const arquivos = existsSync(EVID)
+      ? readdirSync(EVID).filter((f) => f.endsWith('.json') && f !== 'resumo.json')
+      : []
+    const linhas = []
+    for (const f of arquivos) {
+      const r = JSON.parse(readFileSync(join(EVID, f), 'utf8'))
+      if (r.ok) continue
+      const m = inconclusivo(r.erro)
+      if (m !== r.inconclusivo) {
+        r.inconclusivo = m
+        writeFileSync(join(EVID, f), JSON.stringify(r, null, 2) + '\n')
+      }
+      linhas.push(`${m ? '?    ' : 'FALHA'} ${r.app}${m ? ' — ' + m : ''}`)
+    }
+    console.log(linhas.sort().join('\n'))
+    console.log(`\n${arquivos.length} apps na evidência, ${linhas.length} sem subir`)
+    process.exit(0)
+  }
+
   const forca = process.argv.includes('--forca')
   const host = hostLinux()
   if (!host.linux && !forca) {
