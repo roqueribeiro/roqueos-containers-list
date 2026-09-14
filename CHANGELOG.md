@@ -65,13 +65,19 @@ Com a P10 ligando container de verdade, apareceram cinco classes que nenhuma lei
 
 - **App que exige chave de terceiro para subir** — o RAG do `LibreChat` nascia apontando para a OpenAI e morria em `The api_key client option must be set`. A variante `lite` da imagem só fala com OpenAI (não traz `langchain_huggingface`), então foi trocada pela completa, com modelo de embedding local.
 
+### Removed — três apps que não instalavam (2026-09-14)
+
+Decisão do founder, depois da evidência de boot. Saem do catálogo, 252 → 249. Nenhum dos três chegou a funcionar para ninguém, então não há dado de usuário a preservar; voltam com um `git revert` se forem repacotados direito.
+
+- **`Logseq`** — `logseq/logseq-publish-server` sumiu do Docker Hub e não existe substituto oficial, só forks de comunidade sem procedência. A loja oficial do CasaOS usa `correctroad/logseq`, que é outro produto: o Logseq web completo, não o visualizador de grafo publicado que esta ficha prometia.
+- **`InvoiceNinja`** — herdado do BigBear, espera arquivos que o pacote não traz. O nginx faz bind de `invoice-ninja.conf` num caminho que não existe (o Docker cria diretório e o bind falha: `not a directory`) e o init aborta em `Error: /tmp/data/init/init.sh not found!`.
+- **`Authelia`** — a imagem não traz configuração padrão e o manifesto não manda nenhuma: `storage: option 'encryption_key' is required`, `authentication_backend: you must ensure either the 'file' or 'ldap'...`. Escrever essa configuração é decidir como o gateway de autenticação da casa se comporta.
+
+Os três são apps usados, não obscuros — Authelia é dos gateways de SSO mais comuns em self-hosted e o InvoiceNinja é conhecido. Saíram porque o pacote não instala, não por falta de demanda. Repacotar qualquer um deles é trabalho de verdade, não conserto mecânico.
+
 ### Known issues — decisão do founder
 
-- **`InvoiceNinja` não instala.** Herdado do BigBear, ele espera arquivos que o pacote não traz: o nginx faz bind de `invoice-ninja.conf` num caminho que não existe (o Docker cria diretório e o bind falha: `not a directory`) e o serviço de init aborta em `Error: /tmp/data/init/init.sh not found!`. Empacotar direito significa escrever a configuração do nginx, os dois `php.ini` e o `init.sh` num serviço de semente. Enquanto isso não acontece, ele é um app da loja que não instala.
-
 - **48 outros serviços trazem segredo literal fixo** no manifesto, no mesmo formato que quebrou o LibreChat. Não são senhas fracas — a P3 passa neles —, são valores iguais para toda instalação, publicados aqui. Levantamento feito, correção não.
-
-- **`Authelia` não instala.** A imagem não traz configuração padrão e o manifesto não manda nenhuma, então ela morre na validação: `storage: option 'encryption_key' is required`, `authentication_backend: you must ensure either the 'file' or 'ldap'...`. Escrever essa configuração não é preencher campo: é decidir como o gateway de autenticação da casa se comporta. Precisa de decisão, não de conserto mecânico.
 
 - **`RagFlow` continua sem veredito.** O `chown` resolveu o `can not run elasticsearch as root`, e o Elasticsearch passou a carregar módulo e nomear nó — mas o container morre com 137 nos dois laboratórios, que é falta de memória. Ele precisa de uma máquina com RAM de verdade para ter veredito.
 
