@@ -1,8 +1,28 @@
 name: whoogle
 services:
+  # O Whoogle roda com cap_drop: ALL. Sem DAC_OVERRIDE, nem root escapa da
+  # permissão de arquivo: com user: "0:0" ele quebra dentro da própria imagem
+  # ("PermissionError: /whoogle/app/static/css/search.css"). Então aqui o
+  # conserto não é rodar como root, é dar o dono certo ao bind que o instalador
+  # criou root:root, e deixar o processo com o usuário que a imagem escolheu.
+  # Medido em Linux em 14/09/2026, dos dois jeitos.
+  whoogle-permissao:
+    image: benbusby/whoogle-search:0.9.4
+    user: "0:0"
+    entrypoint:
+      - /bin/sh
+      - -c
+      - chown -R whoogle /config || true
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+    restart: 'no'
   whoogle:
     image: benbusby/whoogle-search:0.9.4
-    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid whoogle
+    depends_on:
+      whoogle-permissao:
+        condition: service_completed_successfully
     deploy:
       resources:
         reservations:

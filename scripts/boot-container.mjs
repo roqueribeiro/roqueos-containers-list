@@ -50,9 +50,14 @@ export function renderiza(texto, appId) {
 }
 
 export function veredito(estados) {
-  const ruins = estados.filter(
-    (s) => s.state !== 'running' || s.restarts > 0 || /Restarting/i.test(s.status),
-  )
+  const ruins = estados.filter((s) => {
+    if (/Restarting/i.test(s.status) || s.restarts > 0) return true
+    if (s.state === 'running') return false
+    // Serviço de semente termina e fica assim de propósito: ele copia o
+    // arquivo de configuração que a imagem traz para dentro do bind vazio que o
+    // instalador criou, e sai. Sair com 0 é o sucesso dele.
+    return !/Exited \(0\)/.test(s.status)
+  })
   return { ok: ruins.length === 0, ruins }
 }
 

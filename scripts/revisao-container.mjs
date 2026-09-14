@@ -312,10 +312,11 @@ export function premissas(app, conflitos) {
   // por scripts/uid-imagem.mjs, para o veredito ser o mesmo aqui e na CI.
   p.P10 = []
   const cacheUid = cacheUidMemo()
+  const svcs = servicosDoApp(app.nome, path.dirname(dir))
   for (const [nomeSvc] of servicos) {
-    const svc = servicosDoApp(app.nome, path.dirname(dir)).find((s) => s.servico === nomeSvc)
+    const svc = svcs.find((s) => s.servico === nomeSvc)
     if (!svc) continue
-    const r = riscoUid(svc, cacheUid)
+    const r = riscoUid(svc, cacheUid, svcs)
     if (r)
       p.P10.push(
         `${nomeSvc}: imagem roda como uid ${r.uid} e escreve em ${r.binds.join(', ')}, que o instalador cria root:root — sem user: nem PUID o container não sobe`,

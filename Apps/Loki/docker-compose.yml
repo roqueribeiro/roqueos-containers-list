@@ -1,7 +1,26 @@
 name: loki
 services:
+  # Mesma armadilha do Prometheus: o bind sobre /etc/loki esconde o
+  # local-config.yaml que a imagem traz, e o instalador cria o diretório vazio.
+  # Sem isto o Loki reinicia para sempre com "failed parsing config:
+  # /etc/loki/local-config.yaml does not exist". Medido em Linux em 14/09/2026.
+  loki-semente:
+    image: grafana/loki:3.3.2
+    user: "0:0"
+    entrypoint:
+      - /bin/sh
+      - -c
+      - cp -n /etc/loki/local-config.yaml /semente/local-config.yaml || true
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /semente
+    restart: 'no'
   loki:
     image: grafana/loki:3.3.2
+    depends_on:
+      loki-semente:
+        condition: service_completed_successfully
     user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 10001
     deploy:
       resources:

@@ -62,6 +62,7 @@ export function servicos(nome, appsDir = APPS) {
       user: s.user == null ? null : String(s.user),
       binds: binds.map((b) => b.source),
       puid: chaves.some((k) => /^(PUID|UID|USER_ID)$/i.test(k)),
+      arranque: [s.entrypoint, s.command].flat().filter(Boolean).join(' '),
     })
   }
   return out
@@ -77,10 +78,26 @@ export function todosOsApps(appsDir = APPS) {
 // O veredito. Risco = a imagem larga privilegio para um uid fixo, o servico
 // escreve num bind que o instalador cria root:root, e o manifesto nao diz
 // nada sobre usuario. Nesse caso o container nunca sobe.
-export function risco(svc, cache) {
+// Um servico de arranque que roda como root e faz chown no mesmo bind resolve o
+// problema sem tirar o privilegio reduzido do servico principal. E o conserto do
+// Whoogle, que com cap_drop: ALL quebra quando roda como root. A checagem e
+// mecanica: mesmo caminho de bind, usuario root, e chown na linha de comando.
+export function tratadoPorInit(svc, irmaos) {
+  return irmaos.some(
+    (o) =>
+      o.servico !== svc.servico &&
+      naoRoot(o.user) === null &&
+      o.user != null &&
+      /chown/.test(o.arranque || '') &&
+      o.binds.some((b) => svc.binds.includes(b)),
+  )
+}
+
+export function risco(svc, cache, irmaos = []) {
   if (!svc.imagem) return null
   if (!svc.binds.length) return null
   if (svc.puid) return null
+  if (tratadoPorInit(svc, irmaos)) return null
 
   // `user:` escrito no manifesto vale mais que o USER da imagem — e quando ele
   // aponta para um uid nao-root a falha e a mesma. Sete apps do catalogo ja

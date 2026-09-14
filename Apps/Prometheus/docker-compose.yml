@@ -1,7 +1,29 @@
 name: prometheus
 services:
+  # O bind sobre /etc/prometheus esconde o prometheus.yml que a imagem traz, e
+  # o instalador cria esse diretório vazio. Sem este serviço o Prometheus nunca
+  # sobe: "open /etc/prometheus/prometheus.yml: no such file or directory",
+  # reiniciando para sempre. Medido em Linux em 14/09/2026.
+  #
+  # Ele copia o arquivo padrão da imagem para dentro do bind e sai. `cp -n` não
+  # sobrescreve: depois da primeira vez, quem manda é o arquivo do usuário.
+  prometheus-semente:
+    image: prom/prometheus:v3.1.0
+    user: "0:0"
+    entrypoint:
+      - /bin/sh
+      - -c
+      - cp -n /etc/prometheus/prometheus.yml /semente/prometheus.yml || true
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /semente
+    restart: 'no'
   prometheus:
     image: prom/prometheus:v3.1.0
+    depends_on:
+      prometheus-semente:
+        condition: service_completed_successfully
     user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid nobody
     deploy:
       resources:
