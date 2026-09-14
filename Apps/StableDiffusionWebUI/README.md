@@ -41,7 +41,7 @@ Depois de instalar, abra `http://<endereço-do-servidor>:7860/`.
 
 | Serviço                         | Imagem                                 |
 | ------------------------------- | -------------------------------------- |
-| icewhale-stable-diffusion-webui | johnguan/stable-diffusion-webui:latest |
+| icewhale-stable-diffusion-webui | johnguan/stable-diffusion-webui:v1.7.0 |
 
 ## Fonte oficial
 

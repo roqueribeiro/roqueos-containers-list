@@ -55,9 +55,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8183/`.
 
 ## Imagens
 
-| Serviço   | Imagem                         |
-| --------- | ------------------------------ |
-| retroarch | inglebard/retroarch-web:latest |
+| Serviço   | Imagem                                                                                          |
+| --------- | ----------------------------------------------------------------------------------------------- |
+| retroarch | inglebard/retroarch-web@sha256:bf03014db81776a715b6289f017be2fc988688f9302590413cd6dcb615f07393 |
 
 ## Fonte oficial
 

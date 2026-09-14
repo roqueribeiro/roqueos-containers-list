@@ -2,6 +2,7 @@ name: deepseek-ocr-nvidia
 services:
   deepseek-ocr-backend:
     image: icewhaletech/deepseek-ocr-backend:v2.2.0
+    restart: unless-stopped
     container_name: deepseek-ocr-backend
     environment:
       API_HOST: 0.0.0.0
@@ -312,6 +313,7 @@ services:
             ja_jp: モデルディレクトリ
   deepseek-ocr-frontend:
     image: icewhaletech/deepseek-ocr-frontend:v2.2.0
+    restart: unless-stopped
     container_name: deepseek-ocr-frontend
     ports:
       - target: 80

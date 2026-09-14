@@ -1,7 +1,7 @@
 name: pinchflat
 services:
   pinchflat:
-    image: ghcr.io/kieraneglin/pinchflat:latest
+    image: ghcr.io/kieraneglin/pinchflat:v2025.6.6
     deploy:
       resources:
         reservations:

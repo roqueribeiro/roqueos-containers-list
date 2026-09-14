@@ -40,7 +40,7 @@ Depois de instalar, abra `http://<endereço-do-servidor>:34400/web/`.
 
 | Serviço   | Imagem                      |
 | --------- | --------------------------- |
-| threadfin | fyb3roptik/threadfin:latest |
+| threadfin | fyb3roptik/threadfin:1.2.37 |
 
 ## Fonte oficial
 

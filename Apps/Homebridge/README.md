@@ -38,9 +38,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8581/`.
 
 ## Imagens
 
-| Serviço    | Imagem                       |
-| ---------- | ---------------------------- |
-| homebridge | homebridge/homebridge:latest |
+| Serviço    | Imagem                                                                                        |
+| ---------- | --------------------------------------------------------------------------------------------- |
+| homebridge | homebridge/homebridge@sha256:77c685a40911b3b95448f3550be0c8b94cd7b4e66daecc1cc39a8285be75b245 |
 
 ## Fonte oficial
 

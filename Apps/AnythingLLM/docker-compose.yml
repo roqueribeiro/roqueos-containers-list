@@ -7,7 +7,7 @@ services:
         - container: '3001'
           description:
             en_us: "Web interface for AnythingLLM"
-    image: mintplexlabs/anythingllm:latest
+    image: mintplexlabs/anythingllm:1.16.1
     container_name: anythingllm
     ports:
       - target: 3001

@@ -45,6 +45,7 @@ Depois de instalar, abra `http://<endereço-do-servidor>:2222/`.
 ### Por que este app pede privilégio
 
 - `privileged`: expõe um shell do host, que é a função declarada do container
+- `volumeHost`: monta /opt do host porque o shell exposto precisa enxergar o que está instalado lá
 
 ## Imagens
 

@@ -28,7 +28,7 @@ services:
         source: /DATA/AppData/$AppID/data
         target: /data
       - type: bind
-        source: /ROMS/nes
+        source: /DATA/roqueos/shared/ROMS/nes
         target: /data/nes/roms
     x-casaos:
       ports:

@@ -81,12 +81,12 @@ Depois de instalar, abra `http://<endereço-do-servidor>:18010/`.
 
 ## Imagens
 
-| Serviço              | Imagem                      |
-| -------------------- | --------------------------- |
-| archivebox           | archivebox/archivebox:0.7.3 |
-| archivebox_scheduler | archivebox/archivebox:0.7.3 |
-| archivebox_sonic     | archivebox/sonic:1.4.9      |
-| archivebox_novnc     | theasp/novnc:latest         |
+| Serviço              | Imagem                                                                               |
+| -------------------- | ------------------------------------------------------------------------------------ |
+| archivebox           | archivebox/archivebox:0.7.3                                                          |
+| archivebox_scheduler | archivebox/archivebox:0.7.3                                                          |
+| archivebox_sonic     | archivebox/sonic:1.4.9                                                               |
+| archivebox_novnc     | theasp/novnc@sha256:f2d05e35c8d2550d39bb2e01db36c46f35bf72159666596855e5660c017d847e |
 
 ## Fonte oficial
 

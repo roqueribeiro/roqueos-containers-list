@@ -50,9 +50,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:3410/`.
 
 ## Imagens
 
-| Serviço       | Imagem                          |
-| ------------- | ------------------------------- |
-| pingvin-share | stonith404/pingvin-share:latest |
+| Serviço       | Imagem                         |
+| ------------- | ------------------------------ |
+| pingvin-share | stonith404/pingvin-share:v1.13 |
 
 ## Fonte oficial
 

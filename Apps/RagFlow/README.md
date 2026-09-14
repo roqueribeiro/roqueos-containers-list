@@ -126,16 +126,16 @@ Depois de instalar, abra `http://<endereço-do-servidor>:30080/`.
 
 ## Imagens
 
-| Serviço                          | Imagem                                           |
-| -------------------------------- | ------------------------------------------------ |
-| ragflow                          | icewhaletech/ragflow:v0.21.1                     |
-| ragflow-es01                     | elasticsearch:8.11.3                             |
-| ragflow-infinity                 | icewhaletech/ragflow-infinity:v0.6.1             |
-| ragflow-minio                    | quay.io/minio/minio:RELEASE.2025-06-13T11-33-47Z |
-| ragflow-mysql                    | icewhaletech/ragflow-mysql:8.0.39                |
-| ragflow-opensearch01             | opensearchproject/opensearch:2.19.1              |
-| ragflow-redis                    | valkey/valkey:8                                  |
-| ragflow-sandbox-executor-manager | infiniflow/sandbox-executor-manager:latest       |
+| Serviço                          | Imagem                                                                                                      |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| ragflow                          | icewhaletech/ragflow:v0.21.1                                                                                |
+| ragflow-es01                     | elasticsearch:8.11.3                                                                                        |
+| ragflow-infinity                 | icewhaletech/ragflow-infinity:v0.6.1                                                                        |
+| ragflow-minio                    | quay.io/minio/minio:RELEASE.2025-06-13T11-33-47Z                                                            |
+| ragflow-mysql                    | icewhaletech/ragflow-mysql:8.0.39                                                                           |
+| ragflow-opensearch01             | opensearchproject/opensearch:2.19.1                                                                         |
+| ragflow-redis                    | valkey/valkey:8                                                                                             |
+| ragflow-sandbox-executor-manager | infiniflow/sandbox-executor-manager@sha256:3515d06f2364e886dd4ac38d0daa28409fa63c7443763d2b9a7311362aa16702 |
 
 ## Fonte oficial
 

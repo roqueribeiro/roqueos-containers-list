@@ -67,10 +67,10 @@ Depois de instalar, abra `https://<endereço-do-servidor>:8443/`.
 
 ## Imagens
 
-| Serviço                   | Imagem                                               |
-| ------------------------- | ---------------------------------------------------- |
-| unifi-network-application | lscr.io/linuxserver/unifi-network-application:latest |
-| unifi-db                  | docker.io/mongo:3.6                                  |
+| Serviço                   | Imagem                                                 |
+| ------------------------- | ------------------------------------------------------ |
+| unifi-network-application | lscr.io/linuxserver/unifi-network-application:10.6.101 |
+| unifi-db                  | docker.io/mongo:3.6                                    |
 
 ## Fonte oficial
 

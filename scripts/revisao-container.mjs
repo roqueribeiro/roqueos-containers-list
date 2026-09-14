@@ -65,6 +65,7 @@ const SISTEMA = [
   /^\/opt\/vc\/lib$/,
   /^\/var\/log$/,
   /^\/mnt$/,
+  /^\/var\/lib\/zerotier-one$/,
 ]
 
 /** Avisa (sem reprovar) quando a cópia acima ficou para trás do server. */
@@ -190,6 +191,9 @@ function premissas(app, conflitos) {
       if (!src || !src.startsWith('/')) continue
       if (src === '/DATA' || src.startsWith('/DATA/')) continue
       if (SISTEMA.some((re) => re.test(src))) continue
+      // O app pode declarar que monta um caminho do host de propósito. É o caso
+      // do ttydbridge, cuja função declarada é justamente expor um shell do host.
+      if (xr.motivo?.volumeHost) continue
       p.P4.push(`${nomeSvc}: volume ${src} não é /DATA nem montagem de sistema conhecida`)
     }
   }

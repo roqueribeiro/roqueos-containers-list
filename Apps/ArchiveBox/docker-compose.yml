@@ -571,7 +571,7 @@ services:
             ru_ru: Пароль поискового бэкенда
             ja_jp: 検索バックエンドパスワード
   archivebox_novnc:
-    image: theasp/novnc:latest
+    image: theasp/novnc@sha256:f2d05e35c8d2550d39bb2e01db36c46f35bf72159666596855e5660c017d847e
     container_name: archivebox_novnc
     deploy:
       resources:

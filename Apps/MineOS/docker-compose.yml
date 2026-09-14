@@ -1,14 +1,14 @@
 name: mineos-node
 services:
   mineos:
-    image: hexparrot/mineos:latest
+    image: hexparrot/mineos@sha256:247be835fbdc48932e92dc3dee9e2a9fcee5fa877ce5cbb0edf7abda6f0323f5
     container_name: mineos_server
     networks:
       - mineos
     restart: unless-stopped
     stop_grace_period: 10m
     volumes:
-      - /var/games/mineos/minecraft:/var/games/minecraft
+      - /DATA/AppData/$AppID/minecraft:/var/games/minecraft
     environment:
       USE_HTTPS: 'true'
       SERVER_PORT: 8443

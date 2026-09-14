@@ -314,6 +314,11 @@
             "capAdd": {
               "type": "string",
               "minLength": 10
+            },
+            "volumeHost": {
+              "type": "string",
+              "minLength": 10,
+              "description": "Por que este app monta um caminho do host fora de /DATA. Use so quando montar o host E a funcao declarada do container."
             }
           }
         },

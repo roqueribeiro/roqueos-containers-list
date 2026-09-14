@@ -43,9 +43,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:50121/`.
 
 ## Imagens
 
-| Serviço | Imagem               |
-| ------- | -------------------- |
-| firefly | uusec/firefly:latest |
+| Serviço | Imagem            |
+| ------- | ----------------- |
+| firefly | uusec/firefly:4.4 |
 
 ## Fonte oficial
 

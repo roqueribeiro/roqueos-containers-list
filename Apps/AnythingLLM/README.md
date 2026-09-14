@@ -45,7 +45,7 @@ Depois de instalar, abra `http://<endereço-do-servidor>:3051/`.
 
 | Serviço     | Imagem                          |
 | ----------- | ------------------------------- |
-| anythingllm | mintplexlabs/anythingllm:latest |
+| anythingllm | mintplexlabs/anythingllm:1.16.1 |
 
 ## Fonte oficial
 

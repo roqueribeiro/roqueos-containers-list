@@ -1,7 +1,7 @@
 name: threadfin
 services:
   threadfin:
-    image: fyb3roptik/threadfin:latest
+    image: fyb3roptik/threadfin:1.2.37
     restart: unless-stopped
     environment:
       - THREADFIN_BRANCH=main

@@ -46,9 +46,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:5800/`.
 
 ## Imagens
 
-| Serviço      | Imagem                       |
-| ------------ | ---------------------------- |
-| jdownloader2 | jlesage/jdownloader-2:latest |
+| Serviço      | Imagem                         |
+| ------------ | ------------------------------ |
+| jdownloader2 | jlesage/jdownloader-2:v26.08.2 |
 
 ## Fonte oficial
 

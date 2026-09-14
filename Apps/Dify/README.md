@@ -133,18 +133,18 @@ Depois de instalar, abra `http://<endereço-do-servidor>:3701/`.
 
 ## Imagens
 
-| Serviço    | Imagem                           |
-| ---------- | -------------------------------- |
-| config     | ns2kracy/dify-config:latest      |
-| api        | langgenius/dify-api:0.12.1       |
-| worker     | langgenius/dify-api:0.12.1       |
-| web        | langgenius/dify-web:0.12.1       |
-| db         | postgres:15-alpine               |
-| redis      | redis:6-alpine                   |
-| weaviate   | semitechnologies/weaviate:1.19.0 |
-| sandbox    | langgenius/dify-sandbox:0.2.10   |
-| ssrf_proxy | ubuntu/squid:latest              |
-| nginx      | nginx:latest                     |
+| Serviço    | Imagem                                                                                       |
+| ---------- | -------------------------------------------------------------------------------------------- |
+| config     | ns2kracy/dify-config@sha256:668eb78b044b4382b6b49f667a27b312941890218005807818cfecc4ecbf27a9 |
+| api        | langgenius/dify-api:0.12.1                                                                   |
+| worker     | langgenius/dify-api:0.12.1                                                                   |
+| web        | langgenius/dify-web:0.12.1                                                                   |
+| db         | postgres:15-alpine                                                                           |
+| redis      | redis:6-alpine                                                                               |
+| weaviate   | semitechnologies/weaviate:1.19.0                                                             |
+| sandbox    | langgenius/dify-sandbox:0.2.10                                                               |
+| ssrf_proxy | ubuntu/squid@sha256:6a097f68bae708cedbabd6188d68c7e2e7a38cedd05a176e1cc0ba29e3bbe029         |
+| nginx      | nginx:1.31.5                                                                                 |
 
 ## Fonte oficial
 

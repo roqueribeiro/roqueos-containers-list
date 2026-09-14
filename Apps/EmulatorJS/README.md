@@ -22,11 +22,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                     | No container   | Serviço    |
-| --------------------------- | -------------- | ---------- |
-| /DATA/AppData/$AppID/config | /config        | emulatorjs |
-| /DATA/AppData/$AppID/data   | /data          | emulatorjs |
-| /ROMS/nes                   | /data/nes/roms | emulatorjs |
+| No host                       | No container   | Serviço    |
+| ----------------------------- | -------------- | ---------- |
+| /DATA/AppData/$AppID/config   | /config        | emulatorjs |
+| /DATA/AppData/$AppID/data     | /data          | emulatorjs |
+| /DATA/roqueos/shared/ROMS/nes | /data/nes/roms | emulatorjs |
 
 ## Variáveis de ambiente
 

@@ -49,9 +49,9 @@ Abra o app pelo ícone no RoqueOS depois de instalar.
 
 ## Imagens
 
-| Serviço | Imagem                             |
-| ------- | ---------------------------------- |
-| duckdns | lscr.io/linuxserver/duckdns:latest |
+| Serviço | Imagem                                                                                              |
+| ------- | --------------------------------------------------------------------------------------------------- |
+| duckdns | lscr.io/linuxserver/duckdns@sha256:ae24f435009cfa7be1da3ac572b66248b045072f0b4dde97c4b2818bf9a70d57 |
 
 ## Fonte oficial
 

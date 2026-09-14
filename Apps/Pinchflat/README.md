@@ -63,9 +63,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8945/`.
 
 ## Imagens
 
-| Serviço   | Imagem                               |
-| --------- | ------------------------------------ |
-| pinchflat | ghcr.io/kieraneglin/pinchflat:latest |
+| Serviço   | Imagem                                  |
+| --------- | --------------------------------------- |
+| pinchflat | ghcr.io/kieraneglin/pinchflat:v2025.6.6 |
 
 ## Fonte oficial
 

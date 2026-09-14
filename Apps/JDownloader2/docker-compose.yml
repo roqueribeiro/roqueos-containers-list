@@ -1,7 +1,7 @@
 name: jdownloader2
 services:
   jdownloader2:
-    image: jlesage/jdownloader-2:latest
+    image: jlesage/jdownloader-2:v26.08.2
     restart: unless-stopped
     x-casaos:
       volumes:

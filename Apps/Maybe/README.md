@@ -82,12 +82,12 @@ Depois de instalar, abra `http://<endereço-do-servidor>:23000/`.
 
 ## Imagens
 
-| Serviço      | Imagem                             |
-| ------------ | ---------------------------------- |
-| maybe-web    | ghcr.io/maybe-finance/maybe:latest |
-| maybe-worker | ghcr.io/maybe-finance/maybe:latest |
-| maybe-db     | postgres:16                        |
-| maybe-redis  | redis:8.2.1-alpine3.22             |
+| Serviço      | Imagem                                                                                              |
+| ------------ | --------------------------------------------------------------------------------------------------- |
+| maybe-web    | ghcr.io/maybe-finance/maybe@sha256:c2d398bfc334db4d9862f268401dbb46f97848eaaaad8295d1221f2d99d631cc |
+| maybe-worker | ghcr.io/maybe-finance/maybe@sha256:c2d398bfc334db4d9862f268401dbb46f97848eaaaad8295d1221f2d99d631cc |
+| maybe-db     | postgres:16                                                                                         |
+| maybe-redis  | redis:8.2.1-alpine3.22                                                                              |
 
 ## Fonte oficial
 

@@ -2,7 +2,7 @@ version: '3'
 name: firefly
 services:
   firefly:
-    image: uusec/firefly:latest
+    image: uusec/firefly:4.4
     container_name: firefly
     devices:
       - /dev/net/tun:/dev/net/tun

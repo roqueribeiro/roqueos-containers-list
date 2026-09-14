@@ -1,7 +1,7 @@
 name: excalidraw
 services:
   excalidraw:
-    image: excalidraw/excalidraw:latest
+    image: excalidraw/excalidraw@sha256:f7ee194addd607bf831d2af0f0a34463dd4225e426cf35199ef0b12a803398e9
     container_name: excalidraw
     deploy:
       resources:

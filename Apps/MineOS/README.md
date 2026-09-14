@@ -22,9 +22,9 @@ Arquiteturas suportadas: amd64.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                     | No container         | Serviço |
-| --------------------------- | -------------------- | ------- |
-| /var/games/mineos/minecraft | /var/games/minecraft | mineos  |
+| No host                        | No container         | Serviço |
+| ------------------------------ | -------------------- | ------- |
+| /DATA/AppData/$AppID/minecraft | /var/games/minecraft | mineos  |
 
 ## Variáveis de ambiente
 
@@ -47,9 +47,9 @@ Depois de instalar, abra `https://<endereço-do-servidor>:8444/admin/index.html`
 
 ## Imagens
 
-| Serviço | Imagem                  |
-| ------- | ----------------------- |
-| mineos  | hexparrot/mineos:latest |
+| Serviço | Imagem                                                                                   |
+| ------- | ---------------------------------------------------------------------------------------- |
+| mineos  | hexparrot/mineos@sha256:247be835fbdc48932e92dc3dee9e2a9fcee5fa877ce5cbb0edf7abda6f0323f5 |
 
 ## Fonte oficial
 

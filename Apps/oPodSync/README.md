@@ -48,9 +48,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8086/`.
 
 ## Imagens
 
-| Serviço  | Imagem                    |
-| -------- | ------------------------- |
-| opodsync | ganeshlab/opodsync:latest |
+| Serviço  | Imagem                                                                                     |
+| -------- | ------------------------------------------------------------------------------------------ |
+| opodsync | ganeshlab/opodsync@sha256:f4eca588a5893e7700fcd8e4c019a62dd98e79298d5ca6b842d7900e71112c8c |
 
 ## Fonte oficial
 

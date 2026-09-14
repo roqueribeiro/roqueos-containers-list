@@ -3,6 +3,7 @@ services:
   langflow:
     container_name: langflow
     image: langflowai/langflow:1.5.0
+    restart: unless-stopped
     user: "0:0"
     ports:
       - target: 7860
@@ -124,6 +125,7 @@ services:
   langflow-postgres:
     container_name: langflow-postgress
     image: postgres:16
+    restart: unless-stopped
     environment:
       - POSTGRES_USER=langflow
       - POSTGRES_PASSWORD=langflow

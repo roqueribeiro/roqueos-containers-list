@@ -2,7 +2,7 @@ name: maybe
 services:
   maybe-web:
     container_name: maybe-web
-    image: ghcr.io/maybe-finance/maybe:latest
+    image: ghcr.io/maybe-finance/maybe@sha256:c2d398bfc334db4d9862f268401dbb46f97848eaaaad8295d1221f2d99d631cc
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/app/storage
@@ -90,7 +90,7 @@ services:
             ja_jp: Maybeアプリケーションストレージ
   maybe-worker:
     container_name: maybe-worker
-    image: ghcr.io/maybe-finance/maybe:latest
+    image: ghcr.io/maybe-finance/maybe@sha256:c2d398bfc334db4d9862f268401dbb46f97848eaaaad8295d1221f2d99d631cc
     command:
       - bundle
       - exec

@@ -6,7 +6,7 @@ services:
         - container: '7860'
           description:
             en_us: "Web interface for Stable Diffusion"
-    image: johnguan/stable-diffusion-webui:latest
+    image: johnguan/stable-diffusion-webui:v1.7.0
     runtime: nvidia
     ipc: host
     environment:

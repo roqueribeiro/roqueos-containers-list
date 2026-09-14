@@ -55,9 +55,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:17638/`.
 
 ## Imagens
 
-| Serviço    | Imagem                       |
-| ---------- | ---------------------------- |
-| excalidraw | excalidraw/excalidraw:latest |
+| Serviço    | Imagem                                                                                        |
+| ---------- | --------------------------------------------------------------------------------------------- |
+| excalidraw | excalidraw/excalidraw@sha256:f7ee194addd607bf831d2af0f0a34463dd4225e426cf35199ef0b12a803398e9 |
 
 ## Fonte oficial
 

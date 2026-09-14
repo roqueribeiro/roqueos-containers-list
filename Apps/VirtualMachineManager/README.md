@@ -85,9 +85,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8185/`.
 
 ## Imagens
 
-| Serviço      | Imagem                    |
-| ------------ | ------------------------- |
-| virt-manager | mber5/virt-manager:latest |
+| Serviço      | Imagem                                                                                     |
+| ------------ | ------------------------------------------------------------------------------------------ |
+| virt-manager | mber5/virt-manager@sha256:111674d877635e0f85baabfb202bba560e7ec5ccdf0d2f1ebcb48fc9c32bfd48 |
 
 ## Fonte oficial
 

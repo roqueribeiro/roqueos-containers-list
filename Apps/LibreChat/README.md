@@ -127,13 +127,13 @@ Depois de instalar, abra `http://<endereço-do-servidor>:3080/`.
 
 ## Imagens
 
-| Serviço               | Imagem                                                |
-| --------------------- | ----------------------------------------------------- |
-| librechat-api         | ghcr.io/danny-avila/librechat-dev:latest              |
-| librechat-mongodb     | mongo:6.0                                             |
-| librechat-meilisearch | getmeili/meilisearch:v1.12.3                          |
-| librechat-vectordb    | ankane/pgvector:v0.5.1                                |
-| librechat-rag-api     | ghcr.io/danny-avila/librechat-rag-api-dev-lite:v0.6.0 |
+| Serviço               | Imagem                                                                                                    |
+| --------------------- | --------------------------------------------------------------------------------------------------------- |
+| librechat-api         | ghcr.io/danny-avila/librechat-dev@sha256:f51f9c953dbea24607e15d598ebf40f512b88d6130f89371425e293a9fca0daa |
+| librechat-mongodb     | mongo:6.0                                                                                                 |
+| librechat-meilisearch | getmeili/meilisearch:v1.12.3                                                                              |
+| librechat-vectordb    | ankane/pgvector:v0.5.1                                                                                    |
+| librechat-rag-api     | ghcr.io/danny-avila/librechat-rag-api-dev-lite:v0.6.0                                                     |
 
 ## Fonte oficial
 

@@ -3,7 +3,7 @@ services:
   config:
     container_name: dify-config
     restart: unless-stopped
-    image: ns2kracy/dify-config:latest
+    image: ns2kracy/dify-config@sha256:668eb78b044b4382b6b49f667a27b312941890218005807818cfecc4ecbf27a9
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/data/nginx
@@ -194,7 +194,7 @@ services:
     depends_on:
       - config
   ssrf_proxy:
-    image: ubuntu/squid:latest
+    image: ubuntu/squid@sha256:6a097f68bae708cedbabd6188d68c7e2e7a38cedd05a176e1cc0ba29e3bbe029
     container_name: dify-ssrf_proxy
     restart: unless-stopped
     environment:
@@ -216,7 +216,7 @@ services:
         - container: '80'
           description:
             en_us: "Web interface for Dify"
-    image: nginx:latest
+    image: nginx:1.31.5
     container_name: dify-nginx
     restart: unless-stopped
     volumes:

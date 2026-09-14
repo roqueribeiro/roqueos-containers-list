@@ -35,9 +35,9 @@ Abra o app pelo ícone no RoqueOS depois de instalar.
 
 ## Imagens
 
-| Serviço      | Imagem                             |
-| ------------ | ---------------------------------- |
-| playit-agent | ghcr.io/mafen/playit-docker:latest |
+| Serviço      | Imagem                                                                                              |
+| ------------ | --------------------------------------------------------------------------------------------------- |
+| playit-agent | ghcr.io/mafen/playit-docker@sha256:41e7201cd7a08796440343db2b67b5eb4f0effa79418f2da03d412f5b875c0a0 |
 
 ## Fonte oficial
 
