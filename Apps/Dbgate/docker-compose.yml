@@ -1,0 +1,47 @@
+name: dbgate
+services:
+  dbgate:
+    container_name: dbgate
+    image: dbgate/dbgate:7.2.5-alpine@sha256:4d61f9a89f1a39806c25593f0bf160626767456e74e098d06fbf1d6468c4cc18
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/config:/root/.dbgate
+    ports:
+      - "3000:3000"
+    x-casaos:
+      volumes:
+        - container: /root/.dbgate
+          description:
+            en_US: "Container Path: /root/.dbgate"
+            en_us: "Container Path: /root/.dbgate"
+      ports:
+        - container: "3000"
+          description:
+            en_US: "Container Port: 3000"
+            en_us: "Container Port: 3000"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.dbgate
+  main: dbgate
+  description:
+    en_US: Web based UI for managing and exploring SQL database data
+    en_us: Web based UI for managing and exploring SQL database data
+    pt_br: DBGate é uma interface web para administrar e explorar dados em vários bancos SQL, com editor de consulta, comparação de esquema e exportação.
+  tagline:
+    en_US: DBGate
+    en_us: DBGate
+    pt_br: Cliente de banco de dados no navegador
+  developer: dbgate
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Dbgate/icon.png
+  thumbnail: ""
+  title:
+    en_US: DBGate
+    en_us: DBGate
+  category: Developer
+  port_map: "3000"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

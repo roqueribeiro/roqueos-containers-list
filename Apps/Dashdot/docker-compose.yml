@@ -1,0 +1,49 @@
+name: dashdot
+services:
+  app:
+    image: mauricenino/dashdot:6.3.4@sha256:434a54d2937411a06b09c50e55709cc7d3b092c0fe173a9e5c986f9b5a33c7c6
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - /DATA/AppData/$AppID:/mnt/host
+    privileged: true
+    x-casaos:
+      volumes:
+        - container: /mnt/host
+          description:
+            en_US: "Container Path: /mnt/host"
+            en_us: "Container Path: /mnt/host"
+      ports:
+        - container: "3001"
+          description:
+            en_US: "Container Port: 3001"
+            en_us: "Container Port: 3001"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.dashdot
+  main: app
+  description:
+    en_US: About A simple, modern server dashboard, primarily used by smaller private servers.
+    en_us: About A simple, modern server dashboard, primarily used by smaller private servers.
+    pt_br: "dash. é um painel simples e moderno do estado do servidor: CPU, memória, disco, rede e temperatura numa tela só. Feito para servidor doméstico, não para datacenter."
+  tagline:
+    en_US: dash. - a modern server dashboard
+    en_us: dash. - a modern server dashboard
+    pt_br: Painel moderno do servidor, para servidor pequeno
+  developer: mauricenino
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/dashdot.png
+  thumbnail: ""
+  title:
+    en_US: Dashdot
+    en_us: Dashdot
+  category: Utilities
+  port_map: "3001"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true
+  motivo:
+    privileged: le sensores de temperatura e estado dos discos direto do host

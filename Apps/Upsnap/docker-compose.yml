@@ -1,0 +1,48 @@
+name: upsnap
+services:
+  upsnap:
+    container_name: upsnap
+    image: ghcr.io/seriousm4x/upsnap:5.3.4@sha256:f7edc52fe03f5d424182b06faa72962c625f5e78ff3c9e8457e9617f20d0e611
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - /DATA/AppData/$AppID/pb/data:/app/pb_data
+    x-casaos:
+      volumes:
+        - container: /app/pb_data
+          description:
+            en_US: "Container Path: /app/pb_data"
+            en_us: "Container Path: /app/pb_data"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.upsnap
+  main: upsnap
+  description:
+    en_US: A simple wake on lan web app written with SvelteKit, Go and PocketBase.
+    en_us: A simple wake on lan web app written with SvelteKit, Go and PocketBase.
+    pt_br: "UpSnap é um painel de wake-on-LAN: cadastre as máquinas da rede e ligue cada uma por um botão, de qualquer aparelho. Feito com SvelteKit, Go e PocketBase."
+  tagline:
+    en_US: Upsnap
+    en_us: Upsnap
+    pt_br: Liga as máquinas da casa pela rede, do navegador
+  developer: seriousm4x
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/upsnap.png
+  thumbnail: ""
+  tips:
+    before_install:
+      en_US: |
+        Read this before installing: https://community.roqueribeiro.com/t/added-upsnap-to-bigbearcasaos/2279?u=dragonfire1119
+      en_us: |
+        Read this before installing: https://community.roqueribeiro.com/t/added-upsnap-to-bigbearcasaos/2279?u=dragonfire1119
+  title:
+    en_US: Upsnap
+    en_us: Upsnap
+  category: Network
+  port_map: "8090"
+  scheme: http
+x-roqueos:
+  motivo:
+    networkHost: envia pacote wake-on-LAN em broadcast, que nao atravessa a bridge

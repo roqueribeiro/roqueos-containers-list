@@ -1,0 +1,158 @@
+name: speedtest-tracker
+services:
+  speedtest-tracker:
+    container_name: speedtest-tracker
+    ports:
+      - "8080:80"
+      - "8443:443"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DB_CONNECTION=mysql
+      - DB_HOST=speedtest-tracker-db
+      - DB_PORT=3306
+      - DB_DATABASE=speedtest_tracker
+      - DB_USERNAME=casaos
+      - DB_PASSWORD=casaos
+      - TZ=America/Chicago
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/web:/etc/ssl/web
+    image: linuxserver/speedtest-tracker:1.14.7@sha256:31aa3b5db19ec05f392ed53e26ebb06b73e88e1c915a2799d30d436ef4376041
+    restart: unless-stopped
+    depends_on:
+      - speedtest-tracker-db
+    networks:
+      - big_bear_speedtest_tracker_network
+    x-casaos:
+      envs:
+        - container: PUID
+          description:
+            en_US: "Container Variable: PUID"
+            en_us: "Container Variable: PUID"
+        - container: PGID
+          description:
+            en_US: "Container Variable: PGID"
+            en_us: "Container Variable: PGID"
+        - container: DB_CONNECTION
+          description:
+            en_US: "Container Variable: DB_CONNECTION"
+            en_us: "Container Variable: DB_CONNECTION"
+        - container: DB_HOST
+          description:
+            en_US: "Container Variable: DB_HOST"
+            en_us: "Container Variable: DB_HOST"
+        - container: DB_PORT
+          description:
+            en_US: "Container Variable: DB_PORT"
+            en_us: "Container Variable: DB_PORT"
+        - container: DB_DATABASE
+          description:
+            en_US: "Container Variable: DB_DATABASE"
+            en_us: "Container Variable: DB_DATABASE"
+        - container: DB_USERNAME
+          description:
+            en_US: "Container Variable: DB_USERNAME"
+            en_us: "Container Variable: DB_USERNAME"
+        - container: DB_PASSWORD
+          description:
+            en_US: "Container Variable: DB_PASSWORD"
+            en_us: "Container Variable: DB_PASSWORD"
+        - container: TZ
+          description:
+            en_US: "Container Variable: TZ"
+            en_us: "Container Variable: TZ"
+      volumes:
+        - container: /etc/localtime
+          description:
+            en_US: "Container Path: /etc/localtime"
+            en_us: "Container Path: /etc/localtime"
+        - container: /config
+          description:
+            en_US: "Container Path: /config"
+            en_us: "Container Path: /config"
+        - container: /etc/ssl/web
+          description:
+            en_US: "Container Path: /etc/ssl/web"
+            en_us: "Container Path: /etc/ssl/web"
+      ports:
+        - container: "80"
+          description:
+            en_US: "Container Port: 80"
+            en_us: "Container Port: 80"
+        - container: "443"
+          description:
+            en_US: "Container Port: 443"
+            en_us: "Container Port: 443"
+  speedtest-tracker-db:
+    image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
+    container_name: speedtest-tracker-db
+    restart: always
+    environment:
+      - MARIADB_DATABASE=speedtest_tracker
+      - MARIADB_USER=casaos
+      - MARIADB_PASSWORD=roqueos
+      - MARIADB_RANDOM_ROOT_PASSWORD=true
+    volumes:
+      - /DATA/AppData/$AppID/mysql:/var/lib/mysql
+    networks:
+      - big_bear_speedtest_tracker_network
+    x-casaos:
+      envs:
+        - container: MARIADB_DATABASE
+          description:
+            en_US: "Container Variable: MARIADB_DATABASE"
+            en_us: "Container Variable: MARIADB_DATABASE"
+        - container: MARIADB_USER
+          description:
+            en_US: "Container Variable: MARIADB_USER"
+            en_us: "Container Variable: MARIADB_USER"
+        - container: MARIADB_PASSWORD
+          description:
+            en_US: "Container Variable: MARIADB_PASSWORD"
+            en_us: "Container Variable: MARIADB_PASSWORD"
+        - container: MARIADB_RANDOM_ROOT_PASSWORD
+          description:
+            en_US: "Container Variable: MARIADB_RANDOM_ROOT_PASSWORD"
+            en_us: "Container Variable: MARIADB_RANDOM_ROOT_PASSWORD"
+      volumes:
+        - container: /var/lib/mysql
+          description:
+            en_US: "Container Path: /var/lib/mysql"
+            en_us: "Container Path: /var/lib/mysql"
+networks:
+  big_bear_speedtest_tracker_network:
+    driver: bridge
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.speedtest-tracker
+  main: speedtest-tracker
+  description:
+    en_US: A Docker image to check your internet speed using Ookla's Speedtest service. Build using Laravel and the Speedtest CLI.
+    en_us: A Docker image to check your internet speed using Ookla's Speedtest service. Build using Laravel and the Speedtest CLI.
+    pt_br: Speedtest Tracker roda o teste da Ookla no intervalo que você definir e guarda o resultado. Serve para provar à operadora que a velocidade contratada não é a entregue.
+  tagline:
+    en_US: Speedtest Tracker
+    en_us: Speedtest Tracker
+    pt_br: Mede sua internet sozinho, e guarda o histórico
+  developer: alexjustesen
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/alexjustesen/speedtest-tracker/public/img/speedtest-tracker-icon.png
+  thumbnail: ""
+  tips:
+    before_install:
+      en_US: |
+        Default Credentials - Username: admin@example.com and Password: password
+      en_us: |
+        Default Credentials - Username: admin@example.com and Password: password
+  title:
+    en_US: Speedtest Tracker
+    en_us: Speedtest Tracker
+  category: Network
+  port_map: "8080"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

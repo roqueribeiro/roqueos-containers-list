@@ -1,0 +1,47 @@
+name: octoprint
+services:
+  app:
+    container_name: octoprint
+    image: octoprint/octoprint:1.11.8@sha256:5ea0181e476597faa2800c991af4ce16903005f46b4c16666a4080ad606310bb
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/octoprint:/octoprint
+    ports:
+      - "1080:80"
+    x-casaos:
+      volumes:
+        - container: /octoprint
+          description:
+            en_US: "Container Path: /octoprint"
+            en_us: "Container Path: /octoprint"
+      ports:
+        - container: "80"
+          description:
+            en_US: "Container Port: 80"
+            en_us: "Container Port: 80"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.octoprint
+  main: app
+  description:
+    en_US: OctoPrint is the snappy web interface for your 3D printer!
+    en_us: OctoPrint is the snappy web interface for your 3D printer!
+    pt_br: "OctoPrint é a interface web da sua impressora 3D: manda o arquivo, acompanha a impressão pela câmera, ajusta temperatura e para tudo se der errado, de onde você estiver."
+  tagline:
+    en_US: OctoPrint
+    en_us: OctoPrint
+    pt_br: Controle a impressora 3D pelo navegador
+  developer: octoprint
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/octoprint.png
+  thumbnail: ""
+  title:
+    en_US: OctoPrint
+    en_us: OctoPrint
+  category: Home Automation
+  port_map: "1080"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

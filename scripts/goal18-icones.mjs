@@ -59,6 +59,12 @@ const SLUG = {
   Collabora: 'collabora-online',
   MatrixSynapse: 'matrix-synapse',
   StirlingPDF: 'stirling-pdf',
+  ItTools: 'it-tools',
+  KiwixServe: 'kiwix',
+  MusicAssistant: 'music-assistant',
+  Ntfysh: 'ntfy',
+  Pocketid: 'pocket-id',
+  SpeedtestTracker: 'speedtest-tracker',
 }
 
 /** Candidatos de slug, do mais provável ao menos. */

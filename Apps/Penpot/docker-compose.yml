@@ -1,0 +1,201 @@
+name: penpot
+services:
+  penpot-frontend:
+    container_name: penpot-frontend
+    image: penpotapp/frontend:2.17.0@sha256:861989dfff50f12b9de1358c6b0f3cc1e601d7a678db2826f3643d0f93438500
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/assets:/opt/data/assets
+    ports:
+      - "9001:8080"
+    depends_on:
+      - penpot-backend
+      - penpot-exporter
+    networks:
+      - penpot-network
+    x-casaos:
+      volumes:
+        - container: /opt/data/assets
+          description:
+            en_US: "Container Path: /opt/data/assets"
+            en_us: "Container Path: /opt/data/assets"
+      ports:
+        - container: "8080"
+          description:
+            en_US: "Container Port: 8080"
+            en_us: "Container Port: 8080"
+  penpot-backend:
+    image: penpotapp/backend:2.17.0@sha256:471cdebf185be899ef7d7593e9cd7994b908ebd7ffb78ca547e3d843bb83536f
+    container_name: penpot-backend
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/assets:/opt/data/assets
+    depends_on:
+      - penpot-postgres
+      - penpot-redis
+    networks:
+      - penpot-network
+    environment:
+      - PENPOT_FLAGS=enable-registration enable-login-with-password disable-email-verification disable-secure-session-cookies
+      - PENPOT_SECRET_KEY=penpot-secret-key
+      - PENPOT_PUBLIC_URI=http://penpot-frontend:8080
+      - PENPOT_DATABASE_URI=postgresql://penpot-postgres/penpot
+      - PENPOT_DATABASE_USERNAME=bigbear
+      - PENPOT_DATABASE_PASSWORD=casaos
+      - PENPOT_REDIS_URI=redis://penpot-redis/0
+      - PENPOT_ASSETS_STORAGE_BACKEND=assets-fs
+      - PENPOT_STORAGE_ASSETS_FS_DIRECTORY=/opt/data/assets
+      - PENPOT_TELEMETRY_ENABLED=false
+    x-casaos:
+      envs:
+        - container: PENPOT_FLAGS
+          description:
+            en_US: "Container Variable: PENPOT_FLAGS"
+            en_us: "Container Variable: PENPOT_FLAGS"
+        - container: PENPOT_SECRET_KEY
+          description:
+            en_US: "Container Variable: PENPOT_SECRET_KEY"
+            en_us: "Container Variable: PENPOT_SECRET_KEY"
+        - container: PENPOT_PUBLIC_URI
+          description:
+            en_US: "Container Variable: PENPOT_PUBLIC_URI"
+            en_us: "Container Variable: PENPOT_PUBLIC_URI"
+        - container: PENPOT_DATABASE_URI
+          description:
+            en_US: "Container Variable: PENPOT_DATABASE_URI"
+            en_us: "Container Variable: PENPOT_DATABASE_URI"
+        - container: PENPOT_DATABASE_USERNAME
+          description:
+            en_US: "Container Variable: PENPOT_DATABASE_USERNAME"
+            en_us: "Container Variable: PENPOT_DATABASE_USERNAME"
+        - container: PENPOT_DATABASE_PASSWORD
+          description:
+            en_US: "Container Variable: PENPOT_DATABASE_PASSWORD"
+            en_us: "Container Variable: PENPOT_DATABASE_PASSWORD"
+        - container: PENPOT_REDIS_URI
+          description:
+            en_US: "Container Variable: PENPOT_REDIS_URI"
+            en_us: "Container Variable: PENPOT_REDIS_URI"
+        - container: PENPOT_ASSETS_STORAGE_BACKEND
+          description:
+            en_US: "Container Variable: PENPOT_ASSETS_STORAGE_BACKEND"
+            en_us: "Container Variable: PENPOT_ASSETS_STORAGE_BACKEND"
+        - container: PENPOT_STORAGE_ASSETS_FS_DIRECTORY
+          description:
+            en_US: "Container Variable: PENPOT_STORAGE_ASSETS_FS_DIRECTORY"
+            en_us: "Container Variable: PENPOT_STORAGE_ASSETS_FS_DIRECTORY"
+        - container: PENPOT_TELEMETRY_ENABLED
+          description:
+            en_US: "Container Variable: PENPOT_TELEMETRY_ENABLED"
+            en_us: "Container Variable: PENPOT_TELEMETRY_ENABLED"
+      volumes:
+        - container: /opt/data/assets
+          description:
+            en_US: "Container Path: /opt/data/assets"
+            en_us: "Container Path: /opt/data/assets"
+  penpot-exporter:
+    image: penpotapp/exporter:2.17.0@sha256:7e8beb6ef2bdb9d778e9bbcbf7feebf8c99a137b2d9eb3969450c0a1a49e41c5
+    container_name: penpot-exporter
+    restart: unless-stopped
+    networks:
+      - penpot-network
+    environment:
+      - PENPOT_PUBLIC_URI=http://penpot-frontend:8080
+      - PENPOT_REDIS_URI=redis://penpot-redis/0
+    x-casaos:
+      envs:
+        - container: PENPOT_PUBLIC_URI
+          description:
+            en_US: "Container Variable: PENPOT_PUBLIC_URI"
+            en_us: "Container Variable: PENPOT_PUBLIC_URI"
+        - container: PENPOT_REDIS_URI
+          description:
+            en_US: "Container Variable: PENPOT_REDIS_URI"
+            en_us: "Container Variable: PENPOT_REDIS_URI"
+  penpot-postgres:
+    image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
+    restart: unless-stopped
+    container_name: penpot-postgres
+    stop_signal: SIGINT
+    volumes:
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    networks:
+      - penpot-network
+    environment:
+      - POSTGRES_INITDB_ARGS=--data-checksums
+      - POSTGRES_DB=penpot
+      - POSTGRES_USER=bigbear
+      - POSTGRES_PASSWORD=casaos
+    x-casaos:
+      envs:
+        - container: POSTGRES_INITDB_ARGS
+          description:
+            en_US: "Container Variable: POSTGRES_INITDB_ARGS"
+            en_us: "Container Variable: POSTGRES_INITDB_ARGS"
+        - container: POSTGRES_DB
+          description:
+            en_US: "Container Variable: POSTGRES_DB"
+            en_us: "Container Variable: POSTGRES_DB"
+        - container: POSTGRES_USER
+          description:
+            en_US: "Container Variable: POSTGRES_USER"
+            en_us: "Container Variable: POSTGRES_USER"
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Container Variable: POSTGRES_PASSWORD"
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: "Container Path: /var/lib/postgresql/data"
+            en_us: "Container Path: /var/lib/postgresql/data"
+  penpot-redis:
+    image: redis:7.4.6@sha256:d7432711a2a5c99c2e9dd0e006061cd274d7cb7a9e77f07ffe2ea99e21244677
+    container_name: penpot-redis
+    restart: unless-stopped
+    networks:
+      - penpot-network
+  penpot-mailcatch:
+    image: sj26/mailcatcher:latest@sha256:5d153a4daadf0c266f29c3856085741f06ca1e3768671f4267622d3e3ffe5564
+    restart: always
+    expose:
+      - "1025"
+    ports:
+      - "1080:1080"
+    networks:
+      - penpot-network
+    x-casaos:
+      ports:
+        - container: "1080"
+          description:
+            en_US: "Container Port: 1080"
+            en_us: "Container Port: 1080"
+networks:
+  penpot-network:
+    driver: bridge
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.penpot
+  main: penpot-frontend
+  description:
+    en_US: Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.
+    en_us: Designers and developers can finally work in unison to build beautifully designed software experiences that truly scale up.
+    pt_br: Penpot é a ferramenta aberta de design e protótipo em que quem desenha e quem programa trabalham no mesmo arquivo. Usa padrões da web, então o navegador abre sem plugin.
+  tagline:
+    en_US: Bring Design Freedom to your Product Team
+    en_us: Bring Design Freedom to your Product Team
+    pt_br: Design e protótipo aberto, que o time de código também abre
+  developer: penpotapp
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Penpot/icon.png
+  thumbnail: ""
+  title:
+    en_US: Penpot
+    en_us: Penpot
+  category: Productivity
+  port_map: "9001"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

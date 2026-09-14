@@ -1,0 +1,58 @@
+name: gotify
+services:
+  app:
+    image: gotify/server:3.0.0@sha256:d75e89e0e28389c00c2556afe01282a37ee9756b0285799aa25214243aebd5e5
+    restart: unless-stopped
+    ports:
+      - "8091:80"
+    environment:
+      - GOTIFY_DEFAULTUSER_NAME=admin
+      - GOTIFY_DEFAULTUSER_PASS=custom
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/data
+    network_mode: bridge
+    x-casaos:
+      envs:
+        - container: GOTIFY_DEFAULTUSER_NAME
+          description:
+            en_US: "Container Variable: GOTIFY_DEFAULTUSER_NAME"
+            en_us: "Container Variable: GOTIFY_DEFAULTUSER_NAME"
+        - container: GOTIFY_DEFAULTUSER_PASS
+          description:
+            en_US: "Container Variable: GOTIFY_DEFAULTUSER_PASS"
+            en_us: "Container Variable: GOTIFY_DEFAULTUSER_PASS"
+      volumes:
+        - container: /app/data
+          description:
+            en_US: "Container Path: /app/data"
+            en_us: "Container Path: /app/data"
+      ports:
+        - container: "80"
+          description:
+            en_US: "Container Port: 80"
+            en_us: "Container Port: 80"
+x-casaos:
+  architectures:
+    - amd64
+  id: br.com.roqueos.gotify
+  main: app
+  description:
+    en_US: a simple server for sending and receiving messages
+    en_us: a simple server for sending and receiving messages
+    pt_br: Gotify é um servidor pequeno para mandar e receber mensagem. Os seus scripts postam no servidor, e o app no celular recebe. Sem nuvem de terceiro.
+  tagline:
+    en_US: Gotify
+    en_us: Gotify
+    pt_br: Servidor próprio de notificação, simples de operar
+  developer: gotify
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/gotify.png
+  thumbnail: ""
+  title:
+    en_US: Gotify
+    en_us: Gotify
+  category: Communication
+  port_map: "8091"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

@@ -1,0 +1,78 @@
+name: cadvisor
+services:
+  app:
+    image: gcr.io/cadvisor/cadvisor:v0.55.1@sha256:3de2bd5203120b866d74a9b283b2ffb8ec382fbf9dc321814700c6ea6f44ec57
+    container_name: monitoring_cadvisor
+    restart: unless-stopped
+    devices:
+      - /dev/kmsg:/dev/kmsg
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    expose:
+      - 8080
+    ports:
+      - "8085:8080"
+    x-casaos:
+      volumes:
+        - container: /rootfs
+          description:
+            en_US: "Container Path: /rootfs"
+            en_us: "Container Path: /rootfs"
+        - container: /var/run
+          description:
+            en_US: "Container Path: /var/run"
+            en_us: "Container Path: /var/run"
+        - container: /var/run/docker.sock
+          description:
+            en_US: "Container Path: /var/run/docker.sock"
+            en_us: "Container Path: /var/run/docker.sock"
+        - container: /sys
+          description:
+            en_US: "Container Path: /sys"
+            en_us: "Container Path: /sys"
+        - container: /var/lib/docker
+          description:
+            en_US: "Container Path: /var/lib/docker"
+            en_us: "Container Path: /var/lib/docker"
+        - container: /dev/disk
+          description:
+            en_US: "Container Path: /dev/disk"
+            en_us: "Container Path: /dev/disk"
+      ports:
+        - container: "8080"
+          description:
+            en_US: "Container Port: 8080"
+            en_us: "Container Port: 8080"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.cadvisor
+  main: app
+  description:
+    en_US: cAdvisor (Container Advisor) provides container users an understanding of the resource usage and performance characteristics of their running containers. It is a running daemon that collects, aggregates, processes, and exports information about running containers. Specifically, for each container it keeps resource isolation parameters, historical resource usage, histograms of complete historical resource usage and network statistics. This data is exported by container and machine-wide.
+    en_us: cAdvisor (Container Advisor) provides container users an understanding of the resource usage and performance characteristics of their running containers. It is a running daemon that collects, aggregates, processes, and exports information about running containers. Specifically, for each container it keeps resource isolation parameters, historical resource usage, histograms of complete historical resource usage and network statistics. This data is exported by container and machine-wide.
+    pt_br: cAdvisor coleta e expõe o uso de CPU, memória, disco e rede de cada container em execução. É a fonte que Prometheus e Grafana consomem para desenhar o painel.
+  tagline:
+    en_US: cAdvisor
+    en_us: cAdvisor
+    pt_br: Quanto cada container está consumindo, agora
+  developer: cadvisor
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/cadvisor.png
+  thumbnail: ""
+  title:
+    en_US: cAdvisor
+    en_us: cAdvisor
+  category: Developer
+  port_map: "8085"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true
+  motivo:
+    volumeHost: le metricas de todos os containers do host, que e a funcao declarada dele

@@ -15,6 +15,7 @@ Arquiteturas suportadas: amd64, arm64.
 | ---- | --------- | --------- | -------------------------------------------------- | ------- |
 | 8091 | 3000      | tcp       | Porta da interface web (mapeada para 8091 no host) | outline |
 
+> A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
 ## Volumes
 

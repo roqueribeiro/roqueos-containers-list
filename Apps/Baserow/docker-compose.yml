@@ -1,0 +1,57 @@
+name: baserow
+services:
+  app:
+    container_name: baserow
+    image: baserow/baserow:2.3.3@sha256:41adb3493379403946a493f30873f743bb65b19b5f387d630ec75f41e25d5b5b
+    restart: unless-stopped
+    environment:
+      BASEROW_PUBLIC_URL: http://[YOUR_CASAOS_IP]:7350
+    ports:
+      - "7350:80"
+      - "7351:443"
+    volumes:
+      - /DATA/AppData/$AppID/data:/baserow/data
+    x-casaos:
+      envs:
+        - container: BASEROW_PUBLIC_URL
+          description:
+            en_US: "Container Variable: BASEROW_PUBLIC_URL"
+            en_us: "Container Variable: BASEROW_PUBLIC_URL"
+      volumes:
+        - container: /baserow/data
+          description:
+            en_US: "Container Path: /baserow/data"
+            en_us: "Container Path: /baserow/data"
+      ports:
+        - container: "80"
+          description:
+            en_US: "Container Port: 80"
+            en_us: "Container Port: 80"
+        - container: "443"
+          description:
+            en_US: "Container Port: 443"
+            en_us: "Container Port: 443"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.baserow
+  main: app
+  description:
+    en_US: Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.
+    en_us: Create your own online database without technical experience. Our user-friendly no-code tool gives you the powers of a developer without leaving your browser.
+    pt_br: Baserow deixa você criar o seu banco de dados pela tela, sem conhecimento técnico. Alternativa aberta ao Airtable, para rodar no seu servidor.
+  tagline:
+    en_US: Baserow
+    en_us: Baserow
+    pt_br: Banco de dados online sem saber programar
+  developer: baserow
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/baserow.png
+  thumbnail: https://github.com/bram2w/baserow/raw/master/docs/assets/screenshot.png
+  title:
+    en_US: Baserow
+    en_us: Baserow
+  category: Productivity
+  port_map: "7350"
+  scheme: http

@@ -557,3 +557,6 @@ x-casaos:
   title:
     en_US: ConvertX
     en_us: ConvertX
+
+x-roqueos:
+  portaCompartilhada: true

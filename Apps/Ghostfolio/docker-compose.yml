@@ -1,0 +1,180 @@
+name: ghostfolio
+services:
+  ghostfolio:
+    container_name: ghostfolio
+    image: ghostfolio/ghostfolio:3.47.0@sha256:98d873ef174248896b38e3fc287c1c49d2368883eb90c9e41121c3cf1cba8771
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: "3333"
+      ACCESS_TOKEN_SALT: 5a7f9e0d-0e64-4c19-8279-bbe8b4c590f4
+      DATABASE_URL: postgresql://ghostfolio:casaospassword@ghostfolio-db:5432/ghostfolio
+      JWT_SECRET_KEY: 534e820d-da30-4dd3-baf9-0511847c478a
+      POSTGRES_DB: ghostfolio
+      POSTGRES_USER: ghostfolio
+      POSTGRES_PASSWORD: casaospassword
+      REDIS_HOST: ghostfolio-redis
+      REDIS_PASSWORD: casaosredispassword
+      REDIS_PORT: "6379"
+    ports:
+      - "3333:3333"
+    depends_on:
+      ghostfolio-db:
+        condition: service_healthy
+      ghostfolio-redis:
+        condition: service_healthy
+    networks:
+      - big_bear_ghostfolio_network
+    x-casaos:
+      envs:
+        - container: NODE_ENV
+          description:
+            en_US: "Container Variable: NODE_ENV"
+            en_us: "Container Variable: NODE_ENV"
+        - container: HOST
+          description:
+            en_US: "Container Variable: HOST"
+            en_us: "Container Variable: HOST"
+        - container: PORT
+          description:
+            en_US: "Container Variable: PORT"
+            en_us: "Container Variable: PORT"
+        - container: ACCESS_TOKEN_SALT
+          description:
+            en_US: "Container Variable: ACCESS_TOKEN_SALT"
+            en_us: "Container Variable: ACCESS_TOKEN_SALT"
+        - container: DATABASE_URL
+          description:
+            en_US: "Container Variable: DATABASE_URL"
+            en_us: "Container Variable: DATABASE_URL"
+        - container: JWT_SECRET_KEY
+          description:
+            en_US: "Container Variable: JWT_SECRET_KEY"
+            en_us: "Container Variable: JWT_SECRET_KEY"
+        - container: POSTGRES_DB
+          description:
+            en_US: "Container Variable: POSTGRES_DB"
+            en_us: "Container Variable: POSTGRES_DB"
+        - container: POSTGRES_USER
+          description:
+            en_US: "Container Variable: POSTGRES_USER"
+            en_us: "Container Variable: POSTGRES_USER"
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Container Variable: POSTGRES_PASSWORD"
+        - container: REDIS_HOST
+          description:
+            en_US: "Container Variable: REDIS_HOST"
+            en_us: "Container Variable: REDIS_HOST"
+        - container: REDIS_PASSWORD
+          description:
+            en_US: "Container Variable: REDIS_PASSWORD"
+            en_us: "Container Variable: REDIS_PASSWORD"
+        - container: REDIS_PORT
+          description:
+            en_US: "Container Variable: REDIS_PORT"
+            en_us: "Container Variable: REDIS_PORT"
+      ports:
+        - container: "3333"
+          description:
+            en_US: "Container Port: 3333"
+            en_us: "Container Port: 3333"
+  ghostfolio-db:
+    container_name: ghostfolio-db
+    image: postgres:15.4-alpine@sha256:35ce2187f2f7fb75e8e79493e13743596c21eb3789ff41ece145ae04d06e93a5
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ghostfolio
+      POSTGRES_USER: ghostfolio
+      POSTGRES_PASSWORD: casaospassword
+      PGDATA: /var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -d ghostfolio -U ghostfolio
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - /DATA/AppData/$AppID/data/db:/var/lib/postgresql/data
+    networks:
+      - big_bear_ghostfolio_network
+    x-casaos:
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_US: "Container Variable: POSTGRES_DB"
+            en_us: "Container Variable: POSTGRES_DB"
+        - container: POSTGRES_USER
+          description:
+            en_US: "Container Variable: POSTGRES_USER"
+            en_us: "Container Variable: POSTGRES_USER"
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Container Variable: POSTGRES_PASSWORD"
+        - container: PGDATA
+          description:
+            en_US: "Container Variable: PGDATA"
+            en_us: "Container Variable: PGDATA"
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: "Container Path: /var/lib/postgresql/data"
+            en_us: "Container Path: /var/lib/postgresql/data"
+  ghostfolio-redis:
+    container_name: ghostfolio-redis
+    image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
+    restart: unless-stopped
+    command: |
+      --requirepass casaosredispassword
+    healthcheck:
+      test:
+        - CMD
+        - redis-cli
+        - ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    volumes:
+      - /DATA/AppData/$AppID/data/redis:/data
+    networks:
+      - big_bear_ghostfolio_network
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: "Container Path: /data"
+            en_us: "Container Path: /data"
+networks:
+  big_bear_ghostfolio_network:
+    driver: bridge
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.ghostfolio
+  main: ghostfolio
+  description:
+    en_US: Open Source Wealth Management Software. Angular + NestJS + Prisma + Nx + TypeScript 🤍
+    en_us: Open Source Wealth Management Software. Angular + NestJS + Prisma + Nx + TypeScript 🤍
+    pt_br: Ghostfolio é um gerenciador de patrimônio de código aberto. Acompanha carteira, aporte e rendimento em várias moedas, rodando no seu servidor em vez de no de um banco.
+  tagline:
+    en_US: Ghostfolio
+    en_us: Ghostfolio
+    pt_br: Acompanhe seus investimentos sem entregar seus dados
+  developer: ghostfolio
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ghostfolio.png
+  thumbnail: ""
+  title:
+    en_US: Ghostfolio
+    en_us: Ghostfolio
+  category: Finance
+  port_map: "3333"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

@@ -1,0 +1,62 @@
+name: phpmyadmin
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.3@sha256:42a200db07b4e70fbf32c594ad4521cf16399b8e54bbb5adceae98e7566dfbeb
+    restart: unless-stopped
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: "[YOUR-CASAOS-IP]"
+      PMA_PORT: "3306"
+      PMA_USER: bigbear
+      PMA_PASSWORD: change-me-on-first-boot
+    ports:
+      - "8080:80"
+    x-casaos:
+      envs:
+        - container: PMA_HOST
+          description:
+            en_US: "Container Variable: PMA_HOST"
+            en_us: "Container Variable: PMA_HOST"
+        - container: PMA_PORT
+          description:
+            en_US: "Container Variable: PMA_PORT"
+            en_us: "Container Variable: PMA_PORT"
+        - container: PMA_USER
+          description:
+            en_US: "Container Variable: PMA_USER"
+            en_us: "Container Variable: PMA_USER"
+        - container: PMA_PASSWORD
+          description:
+            en_US: "Container Variable: PMA_PASSWORD"
+            en_us: "Container Variable: PMA_PASSWORD"
+      ports:
+        - container: "80"
+          description:
+            en_US: "Container Port: 80"
+            en_us: "Container Port: 80"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.phpmyadmin
+  main: phpmyadmin
+  description:
+    en_US: phpMyAdmin - A web interface for MySQL and MariaDB.
+    en_us: phpMyAdmin - A web interface for MySQL and MariaDB.
+    pt_br: "phpMyAdmin é a interface web mais conhecida para administrar MySQL e MariaDB: roda consulta, edita tabela, importa e exporta dump."
+  tagline:
+    en_US: phpMyAdmin
+    en_us: phpMyAdmin
+    pt_br: A interface clássica de administração de MySQL e MariaDB
+  developer: phpMyAdmin
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/phpmyadmin.png
+  thumbnail: ""
+  title:
+    en_US: phpMyAdmin
+    en_us: phpMyAdmin
+  category: Developer
+  port_map: "8080"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

@@ -1,0 +1,94 @@
+name: umami
+services:
+  app:
+    image: ghcr.io/umami-software/umami:postgresql-latest@sha256:87312d334d009ee67ee0d2fba8fed01435547cc468e452243aef5133a9984d48
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://umami:umami@db:5432/umami
+      DATABASE_TYPE: postgresql
+      APP_SECRET: replace-me-with-a-random-string
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: always
+    x-casaos:
+      envs:
+        - container: DATABASE_URL
+          description:
+            en_US: "Container Variable: DATABASE_URL"
+            en_us: "Container Variable: DATABASE_URL"
+        - container: DATABASE_TYPE
+          description:
+            en_US: "Container Variable: DATABASE_TYPE"
+            en_us: "Container Variable: DATABASE_TYPE"
+        - container: APP_SECRET
+          description:
+            en_US: "Container Variable: APP_SECRET"
+            en_us: "Container Variable: APP_SECRET"
+      ports:
+        - container: "3000"
+          description:
+            en_US: "Container Port: 3000"
+            en_us: "Container Port: 3000"
+  db:
+    image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
+    environment:
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: umami
+    volumes:
+      - /DATA/AppData/$AppID/pgdata:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    x-casaos:
+      envs:
+        - container: POSTGRES_DB
+          description:
+            en_US: "Container Variable: POSTGRES_DB"
+            en_us: "Container Variable: POSTGRES_DB"
+        - container: POSTGRES_USER
+          description:
+            en_US: "Container Variable: POSTGRES_USER"
+            en_us: "Container Variable: POSTGRES_USER"
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Container Variable: POSTGRES_PASSWORD"
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: "Container Path: /var/lib/postgresql/data"
+            en_us: "Container Path: /var/lib/postgresql/data"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.umami
+  main: app
+  description:
+    en_US: Umami is a simple, fast, privacy-focused alternative to Google Analytics.
+    en_us: Umami is a simple, fast, privacy-focused alternative to Google Analytics.
+    pt_br: "Umami é uma alternativa ao Google Analytics: mostra quantas visitas a sua página teve e de onde vieram, sem cookie, sem perfil de pessoa e com o dado no seu servidor."
+  tagline:
+    en_US: Umami is a simple, fast, privacy-focused alternative to Google Analytics.
+    en_us: Umami is a simple, fast, privacy-focused alternative to Google Analytics.
+    pt_br: Análise de visita simples, rápida e sem rastrear ninguém
+  developer: umami-software
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/umami.png
+  thumbnail: ""
+  title:
+    en_US: Umami
+    en_us: Umami
+  category: Developer
+  port_map: "3000"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

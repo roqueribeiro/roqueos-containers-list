@@ -1,0 +1,96 @@
+name: pocketid
+services:
+  pocketid:
+    container_name: pocketid
+    image: ghcr.io/pocket-id/pocket-id:v2.7@sha256:45bdeaf3fcd6d07cf8721e98785d93324bb8e65b586498874c05a3d489c8094e
+    restart: unless-stopped
+    cpu_shares: 90
+    deploy:
+      resources:
+        limits:
+          memory: 2048M
+    environment:
+      - APP_URL=http://localhost:1411
+      - TRUST_PROXY=false
+      - MAXMIND_LICENSE_KEY=
+      - PUID=1000
+      - PGID=1000
+    hostname: pocketid
+    labels:
+      icon: https://pocket-id.org/img/logo.png
+    ports:
+      - target: 1411
+        published: "1411"
+        protocol: tcp
+    volumes:
+      - /DATA/AppData/$AppID/data:/app/data
+    network_mode: bridge
+    privileged: false
+    healthcheck:
+      test: curl -f http://localhost:1411/healthz
+      interval: 1m30s
+      timeout: 5s
+      retries: 2
+      start_period: 10s
+    x-casaos:
+      envs:
+        - container: APP_URL
+          description:
+            en_US: "Container Variable: APP_URL"
+            en_us: "Container Variable: APP_URL"
+        - container: TRUST_PROXY
+          description:
+            en_US: "Container Variable: TRUST_PROXY"
+            en_us: "Container Variable: TRUST_PROXY"
+        - container: MAXMIND_LICENSE_KEY
+          description:
+            en_US: "Container Variable: MAXMIND_LICENSE_KEY"
+            en_us: "Container Variable: MAXMIND_LICENSE_KEY"
+        - container: PUID
+          description:
+            en_US: "Container Variable: PUID"
+            en_us: "Container Variable: PUID"
+        - container: PGID
+          description:
+            en_US: "Container Variable: PGID"
+            en_us: "Container Variable: PGID"
+      volumes:
+        - container: /app/data
+          description:
+            en_US: "Container Path: /app/data"
+            en_us: "Container Path: /app/data"
+      ports:
+        - container: "1411"
+          description:
+            en_US: "Container Port: 1411"
+            en_us: "Container Port: 1411"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.pocketid
+  main: pocketid
+  description:
+    en_US: Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.
+    en_us: Simple and easy-to-use OIDC provider that allows users to authenticate with their passkeys to your services.
+    pt_br: Pocket ID é um provedor OIDC simples em que as pessoas entram com a passkey do próprio aparelho. Serve para colocar login único nos seus serviços sem instalar um Keycloak.
+  tagline:
+    en_US: Passkey-based OIDC authentication
+    en_us: Passkey-based OIDC authentication
+    pt_br: Login por passkey, sem senha e sem servidor gigante
+  developer: pocket-id
+  author: techieanant
+  icon: https://pocket-id.org/img/logo.png
+  thumbnail: ""
+  tips:
+    before_install:
+      en_US: |
+        Before you install read this: https://community.roqueribeiro.com/t/added-pocket-id-to-bigbearcasaos/3552#p-6013-documentation-4
+      en_us: |
+        Before you install read this: https://community.roqueribeiro.com/t/added-pocket-id-to-bigbearcasaos/3552#p-6013-documentation-4
+  title:
+    en_US: Pocket ID
+    en_us: Pocket ID
+  category: Security
+  port_map: "1411"
+  scheme: http

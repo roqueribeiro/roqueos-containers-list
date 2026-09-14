@@ -1,0 +1,54 @@
+name: watchyourlan
+services:
+  watchyourlan:
+    container_name: watchyourlan
+    image: aceberg/watchyourlan:2.1.4@sha256:f77532ca7c3c9a4398cb094df7674013a3d7fcf4699386f1e456c24df6fef00e
+    environment:
+      - IFACES="eth0"
+      - TZ="UTC"
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/data:/data/WatchYourLAN
+    network_mode: host
+    x-casaos:
+      envs:
+        - container: IFACES
+          description:
+            en_US: "Container Variable: IFACES"
+            en_us: "Container Variable: IFACES"
+        - container: TZ
+          description:
+            en_US: "Container Variable: TZ"
+            en_us: "Container Variable: TZ"
+      volumes:
+        - container: /data/WatchYourLAN
+          description:
+            en_US: "Container Path: /data/WatchYourLAN"
+            en_us: "Container Path: /data/WatchYourLAN"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.watchyourlan
+  main: watchyourlan
+  description:
+    en_US: Lightweight network IP scanner. Can be used to notify about new hosts and monitor host online/offline history
+    en_us: Lightweight network IP scanner. Can be used to notify about new hosts and monitor host online/offline history
+    pt_br: WatchYourLAN varre a rede local, lista os dispositivos e avisa quando aparece um host novo. Também acompanha quem está online e quem sumiu.
+  tagline:
+    en_US: WatchYourLAN
+    en_us: WatchYourLAN
+    pt_br: Scanner leve de rede local, com histórico de quem apareceu
+  developer: ajnart
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/watchyourlan.png
+  thumbnail: ""
+  title:
+    en_US: WatchYourLAN
+    en_us: WatchYourLAN
+  category: Network
+  port_map: "8840"
+  scheme: http
+x-roqueos:
+  motivo:
+    networkHost: varre a rede local em busca de dispositivos, e precisa ve-la

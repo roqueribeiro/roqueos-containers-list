@@ -1,0 +1,67 @@
+name: spoolman
+services:
+  app:
+    image: ghcr.io/donkie/spoolman:0.23.1@sha256:c798bcc19194949962044459e4b43c09d667d084ae9c2c2e0187a42c36d43d9e
+    ports:
+      - "7912:8000"
+    volumes:
+      - /DATA/AppData/$AppID/data:/home/app/.local/share/spoolman
+    environment:
+      - TZ=$TZ
+      - SPOOLMAN_DB_TYPE=sqlite
+      - SPOOLMAN_LOGGING_LEVEL=INFO
+      - SPOOLMAN_AUTOMATIC_BACKUP=TRUE
+    restart: unless-stopped
+    network_mode: bridge
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_US: "Container Variable: TZ"
+            en_us: "Container Variable: TZ"
+        - container: SPOOLMAN_DB_TYPE
+          description:
+            en_US: "Container Variable: SPOOLMAN_DB_TYPE"
+            en_us: "Container Variable: SPOOLMAN_DB_TYPE"
+        - container: SPOOLMAN_LOGGING_LEVEL
+          description:
+            en_US: "Container Variable: SPOOLMAN_LOGGING_LEVEL"
+            en_us: "Container Variable: SPOOLMAN_LOGGING_LEVEL"
+        - container: SPOOLMAN_AUTOMATIC_BACKUP
+          description:
+            en_US: "Container Variable: SPOOLMAN_AUTOMATIC_BACKUP"
+            en_us: "Container Variable: SPOOLMAN_AUTOMATIC_BACKUP"
+      volumes:
+        - container: /home/app/.local/share/spoolman
+          description:
+            en_US: "Container Path: /home/app/.local/share/spoolman"
+            en_us: "Container Path: /home/app/.local/share/spoolman"
+      ports:
+        - container: "8000"
+          description:
+            en_US: "Container Port: 8000"
+            en_us: "Container Port: 8000"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.spoolman
+  main: app
+  description:
+    en_US: Keep track of your inventory of 3D-printer filament spools. Spoolman is a self-hosted web service designed to help you efficiently manage your 3D printer filament spools and monitor their usage.
+    en_us: Keep track of your inventory of 3D-printer filament spools. Spoolman is a self-hosted web service designed to help you efficiently manage your 3D printer filament spools and monitor their usage.
+    pt_br: "Spoolman acompanha o seu estoque de filamento: quanto cada carretel tinha, quanto já foi usado e quanto sobrou. Conversa com o OctoPrint e com o Klipper."
+  tagline:
+    en_US: Filament spool inventory management for 3D printing
+    en_us: Filament spool inventory management for 3D printing
+    pt_br: Controle dos carretéis de filamento da impressora 3D
+  developer: Donkie
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/spoolman.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Spoolman/thumbnail.png
+  title:
+    en_US: Spoolman
+    en_us: Spoolman
+  category: Home Automation
+  port_map: "7912"
+  scheme: http

@@ -1,0 +1,47 @@
+name: dozzle
+services:
+  app:
+    container_name: dozzle
+    image: amir20/dozzle:v10.7.1@sha256:a8441e9d2928cc7b30d0023f5eedbb87ef6e234d87f3be02662bd8f417955b8b
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8888:8080"
+    x-casaos:
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_US: "Container Path: /var/run/docker.sock"
+            en_us: "Container Path: /var/run/docker.sock"
+      ports:
+        - container: "8080"
+          description:
+            en_US: "Container Port: 8080"
+            en_us: "Container Port: 8080"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.dozzle
+  main: app
+  description:
+    en_US: Dozzle is a real-time log viewer for docker containers.
+    en_us: Dozzle is a real-time log viewer for docker containers.
+    pt_br: Dozzle mostra o log dos containers Docker em tempo real, sem guardar nada em disco e sem precisar de banco. Abra, veja o que está acontecendo agora, feche.
+  tagline:
+    en_US: Dozzle is a real-time log viewer for docker containers.
+    en_us: Dozzle is a real-time log viewer for docker containers.
+    pt_br: O log dos seus containers, ao vivo, no navegador
+  developer: amir20
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Dozzle/icon.png
+  thumbnail: ""
+  title:
+    en_US: Dozzle
+    en_us: Dozzle
+  category: Developer
+  port_map: "8888"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

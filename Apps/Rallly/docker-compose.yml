@@ -1,0 +1,154 @@
+name: rallly
+services:
+  rallly:
+    container_name: rallly
+    image: lukevella/rallly:4.12.2@sha256:1b5d20f93b531edf6c79c3de038622142e2209ae7f989c8479c75dde99dcf7e6
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@rallly-db/rallly
+      - SECRET_PASSWORD=0f6f292d-c78c-4709-920d-e3b6361eb5b5
+      - NEXT_PUBLIC_BASE_URL=http://[YOUR_CASAOS_IP]:3000
+      - NOREPLY_EMAIL=noreply@example.com
+      - SUPPORT_EMAIL=support@example.com
+      - SMTP_HOST=[YOUR_CASAOS_IP]
+      - SMTP_PORT=1025
+      - SMTP_SECURE=
+      - SMTP_USER=
+      - SMTP_PWD=
+      - SMTP_TLS_ENABLED=
+      - ALLOWED_EMAILS=
+    ports:
+      - "3000:3000"
+    networks:
+      - big_bear_rally_network
+    depends_on:
+      rallly-db:
+        condition: service_healthy
+    x-casaos:
+      envs:
+        - container: DATABASE_URL
+          description:
+            en_US: "Container Variable: DATABASE_URL"
+            en_us: "Container Variable: DATABASE_URL"
+        - container: SECRET_PASSWORD
+          description:
+            en_US: "Container Variable: SECRET_PASSWORD"
+            en_us: "Container Variable: SECRET_PASSWORD"
+        - container: NEXT_PUBLIC_BASE_URL
+          description:
+            en_US: "Container Variable: NEXT_PUBLIC_BASE_URL"
+            en_us: "Container Variable: NEXT_PUBLIC_BASE_URL"
+        - container: NOREPLY_EMAIL
+          description:
+            en_US: "Container Variable: NOREPLY_EMAIL"
+            en_us: "Container Variable: NOREPLY_EMAIL"
+        - container: SUPPORT_EMAIL
+          description:
+            en_US: "Container Variable: SUPPORT_EMAIL"
+            en_us: "Container Variable: SUPPORT_EMAIL"
+        - container: SMTP_HOST
+          description:
+            en_US: "Container Variable: SMTP_HOST"
+            en_us: "Container Variable: SMTP_HOST"
+        - container: SMTP_PORT
+          description:
+            en_US: "Container Variable: SMTP_PORT"
+            en_us: "Container Variable: SMTP_PORT"
+        - container: SMTP_SECURE
+          description:
+            en_US: "Container Variable: SMTP_SECURE"
+            en_us: "Container Variable: SMTP_SECURE"
+        - container: SMTP_USER
+          description:
+            en_US: "Container Variable: SMTP_USER"
+            en_us: "Container Variable: SMTP_USER"
+        - container: SMTP_PWD
+          description:
+            en_US: "Container Variable: SMTP_PWD"
+            en_us: "Container Variable: SMTP_PWD"
+        - container: SMTP_TLS_ENABLED
+          description:
+            en_US: "Container Variable: SMTP_TLS_ENABLED"
+            en_us: "Container Variable: SMTP_TLS_ENABLED"
+        - container: ALLOWED_EMAILS
+          description:
+            en_US: "Container Variable: ALLOWED_EMAILS"
+            en_us: "Container Variable: ALLOWED_EMAILS"
+      ports:
+        - container: "3000"
+          description:
+            en_US: "Container Port: 3000"
+            en_us: "Container Port: 3000"
+  rallly-db:
+    container_name: rallly-db
+    image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/postgresql:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=f87c7126-f816-47ef-9193-2e5eec763fcd
+      - POSTGRES_DB=rallly
+      - POSTGRES_USER=rallly
+    networks:
+      - big_bear_rally_network
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U rallly
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    x-casaos:
+      envs:
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Container Variable: POSTGRES_PASSWORD"
+        - container: POSTGRES_DB
+          description:
+            en_US: "Container Variable: POSTGRES_DB"
+            en_us: "Container Variable: POSTGRES_DB"
+        - container: POSTGRES_USER
+          description:
+            en_US: "Container Variable: POSTGRES_USER"
+            en_us: "Container Variable: POSTGRES_USER"
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: "Container Path: /var/lib/postgresql/data"
+            en_us: "Container Path: /var/lib/postgresql/data"
+networks:
+  big_bear_rally_network:
+    driver: bridge
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.rallly
+  main: rallly
+  description:
+    en_US: Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.
+    en_us: Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.
+    pt_br: "Rallly é uma ferramenta aberta para combinar data: você propõe os horários, cada pessoa marca os que servem, e o melhor aparece sozinho."
+  tagline:
+    en_US: Rallly
+    en_us: Rallly
+    pt_br: Marque a reunião sem as vinte mensagens de ida e volta
+  developer: lukevella
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/rallly.png
+  thumbnail: ""
+  tips:
+    before_install:
+      en_US: |
+        Before you install read this: https://community.roqueribeiro.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3
+      en_us: |
+        Before you install read this: https://community.roqueribeiro.com/t/added-rallly-to-bigbearcasaos/1012#instructions-3
+  title:
+    en_US: Rallly
+    en_us: Rallly
+  category: Productivity
+  port_map: "3000"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

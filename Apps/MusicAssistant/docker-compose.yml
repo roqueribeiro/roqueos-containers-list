@@ -1,0 +1,48 @@
+name: music-assistant
+services:
+  music-assistant-server:
+    container_name: music-assistant-server
+    image: ghcr.io/music-assistant/server:2.8.7@sha256:eef3ee7810d0e4702afa4a0ff55b10bbbfcaa16c98a277fe1b7f4cb6d5d426b4
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    network_mode: host
+    security_opt:
+      - apparmor:unconfined
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    x-casaos:
+      volumes:
+        - container: /data
+          description:
+            en_US: "Container Path: /data"
+            en_us: "Container Path: /data"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.music-assistant
+  main: music-assistant-server
+  description:
+    en_US: Music Assistant is a music library manager for your offline and online music sources which can easily stream your favourite music to a wide range of supported players and be combined with the power of Home Assistant!
+    en_us: Music Assistant is a music library manager for your offline and online music sources which can easily stream your favourite music to a wide range of supported players and be combined with the power of Home Assistant!
+    pt_br: Music Assistant reúne a música que está no seu disco e a dos serviços que você assina, e toca em alto-falantes Chromecast, Sonos, AirPlay e afins. Integra com o Home Assistant.
+  tagline:
+    en_US: Home Automation
+    en_us: Home Automation
+    pt_br: Junta toda a sua música e toca em qualquer caixa da casa
+  developer: music-assistant
+  author: Tofil
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MusicAssistant/icon.png
+  thumbnail: https://www.music-assistant.io/assets/banner.png
+  title:
+    en_US: Music Assistant
+    en_us: Music Assistant
+  category: Media
+  port_map: "8095"
+  scheme: http
+x-roqueos:
+  motivo:
+    networkHost: descoberta de alto-falantes por mDNS e Chromecast na rede local
+    capAdd: capacidade exigida pelo upstream para a descoberta na rede local

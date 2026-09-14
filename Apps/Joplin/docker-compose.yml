@@ -1,0 +1,129 @@
+name: joplin
+services:
+  joplin:
+    container_name: joplin
+    image: joplin/server:3.7.1@sha256:0877bfba41a943017c42c58e90db9d8d548bfe699b5e410248b5b879371734f9
+    restart: unless-stopped
+    environment:
+      - APP_PORT=22300
+      - APP_BASE_URL=http://localhost:22300
+      - DB_CLIENT=pg
+      - POSTGRES_PASSWORD=27a1d42a-a15d-43dd-903c-2a73538647fe
+      - POSTGRES_USER=bigbear
+      - POSTGRES_DATABASE=joplin
+      - POSTGRES_PORT=5432
+      - POSTGRES_HOST=joplin-db
+      - MAX_TIME_DRIFT=0
+    ports:
+      - "22300:22300"
+    networks:
+      - big_bear_joplin_network
+    depends_on:
+      - joplin-db
+    x-casaos:
+      envs:
+        - container: APP_PORT
+          description:
+            en_US: "Container Variable: APP_PORT"
+            en_us: "Container Variable: APP_PORT"
+        - container: APP_BASE_URL
+          description:
+            en_US: "Container Variable: APP_BASE_URL"
+            en_us: "Container Variable: APP_BASE_URL"
+        - container: DB_CLIENT
+          description:
+            en_US: "Container Variable: DB_CLIENT"
+            en_us: "Container Variable: DB_CLIENT"
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Container Variable: POSTGRES_PASSWORD"
+        - container: POSTGRES_USER
+          description:
+            en_US: "Container Variable: POSTGRES_USER"
+            en_us: "Container Variable: POSTGRES_USER"
+        - container: POSTGRES_DATABASE
+          description:
+            en_US: "Container Variable: POSTGRES_DATABASE"
+            en_us: "Container Variable: POSTGRES_DATABASE"
+        - container: POSTGRES_PORT
+          description:
+            en_US: "Container Variable: POSTGRES_PORT"
+            en_us: "Container Variable: POSTGRES_PORT"
+        - container: POSTGRES_HOST
+          description:
+            en_US: "Container Variable: POSTGRES_HOST"
+            en_us: "Container Variable: POSTGRES_HOST"
+        - container: MAX_TIME_DRIFT
+          description:
+            en_US: "Container Variable: MAX_TIME_DRIFT"
+            en_us: "Container Variable: MAX_TIME_DRIFT"
+      ports:
+        - container: "22300"
+          description:
+            en_US: "Container Port: 22300"
+            en_us: "Container Port: 22300"
+  joplin-db:
+    container_name: joplin-db
+    image: postgres:14.2@sha256:2c954f8c5d03da58f8b82645b783b56c1135df17e650b186b296fa1bb71f9cfd
+    volumes:
+      - /DATA/AppData/$AppID/postgresql/data:/var/lib/postgresql/data
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=27a1d42a-a15d-43dd-903c-2a73538647fe
+      - POSTGRES_USER=bigbear
+      - POSTGRES_DB=joplin
+    networks:
+      - big_bear_joplin_network
+    x-casaos:
+      envs:
+        - container: POSTGRES_PASSWORD
+          description:
+            en_US: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Container Variable: POSTGRES_PASSWORD"
+        - container: POSTGRES_USER
+          description:
+            en_US: "Container Variable: POSTGRES_USER"
+            en_us: "Container Variable: POSTGRES_USER"
+        - container: POSTGRES_DB
+          description:
+            en_US: "Container Variable: POSTGRES_DB"
+            en_us: "Container Variable: POSTGRES_DB"
+      volumes:
+        - container: /var/lib/postgresql/data
+          description:
+            en_US: "Container Path: /var/lib/postgresql/data"
+            en_us: "Container Path: /var/lib/postgresql/data"
+networks:
+  big_bear_joplin_network:
+    driver: bridge
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.joplin
+  main: joplin
+  description:
+    en_US: Note taking and to-do application with synchronisation
+    en_us: Note taking and to-do application with synchronisation
+    pt_br: "Joplin é um aplicativo de notas e tarefas que sincroniza entre aparelhos. Este container é o servidor de sincronia: os clientes de desktop e celular conversam com ele."
+  tagline:
+    en_US: joplin
+    en_us: joplin
+    pt_br: Notas e tarefas com sincronia, e criptografia ponta a ponta
+  developer: joplin
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/joplin.png
+  thumbnail: ""
+  tips:
+    before_install:
+      en_US: |
+        Read this before installing: https://community.roqueribeiro.com/t/added-joplin-server-to-bigbearcasaos/800?u=dragonfire1119
+      en_us: |
+        Read this before installing: https://community.roqueribeiro.com/t/added-joplin-server-to-bigbearcasaos/800?u=dragonfire1119
+  title:
+    en_US: joplin
+    en_us: joplin
+  category: Productivity
+  port_map: "22300"
+  scheme: http

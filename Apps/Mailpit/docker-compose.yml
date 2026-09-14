@@ -1,0 +1,57 @@
+name: mailpit
+services:
+  app:
+    image: axllent/mailpit:v1.30@sha256:d5ecbb067db3705fa953d79e1b7f81ef84038df67aba6c52825d8c02a1ea748a
+    container_name: mailpit
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+    environment:
+      - TZ=UTC
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_US: "Container Variable: TZ"
+            en_us: "Container Variable: TZ"
+      volumes:
+        - container: /data
+          description:
+            en_US: "Container Path: /data"
+            en_us: "Container Path: /data"
+      ports:
+        - container: "8025"
+          description:
+            en_US: "Container Port: 8025"
+            en_us: "Container Port: 8025"
+        - container: "1025"
+          description:
+            en_US: "Container Port: 1025"
+            en_us: "Container Port: 1025"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.mailpit
+  main: app
+  description:
+    en_US: Mailpit is a multi-platform email testing tool & API for developers.
+    en_us: Mailpit is a multi-platform email testing tool & API for developers.
+    pt_br: Mailpit captura o e-mail que a sua aplicação manda e mostra numa interface web, sem entregar a ninguém. É como o e-mail vai ficar, antes de sair de verdade.
+  tagline:
+    en_US: Mailpit
+    en_us: Mailpit
+    pt_br: Caixa de e-mail falsa para testar o que seu sistema envia
+  developer: axllent
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mailpit/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Mailpit/icon.png
+  title:
+    en_US: Mailpit
+    en_us: Mailpit
+  category: Developer
+  port_map: "8025"
+  scheme: http

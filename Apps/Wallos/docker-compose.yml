@@ -1,0 +1,65 @@
+name: wallos
+services:
+  wallos:
+    container_name: wallos
+    image: bellamy/wallos:5.4.2@sha256:316f26e13265958e7946ef98ff600516fddc51d698ee98bd1ae1577e5e00789f
+    restart: unless-stopped
+    environment:
+      TZ: UTC
+    volumes:
+      - /DATA/AppData/$AppID/db:/var/www/html/db
+      - /DATA/AppData/$AppID/logos:/var/www/html/images/uploads/logos
+    ports:
+      - "8282:80"
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_US: "Container Variable: TZ"
+            en_us: "Container Variable: TZ"
+      volumes:
+        - container: /var/www/html/db
+          description:
+            en_US: "Container Path: /var/www/html/db"
+            en_us: "Container Path: /var/www/html/db"
+        - container: /var/www/html/images/uploads/logos
+          description:
+            en_US: "Container Path: /var/www/html/images/uploads/logos"
+            en_us: "Container Path: /var/www/html/images/uploads/logos"
+      ports:
+        - container: "80"
+          description:
+            en_US: "Container Port: 80"
+            en_us: "Container Port: 80"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.wallos
+  main: wallos
+  description:
+    en_US: "Wallos: Open-Source Personal Subscription Tracker"
+    en_us: "Wallos: Open-Source Personal Subscription Tracker"
+    pt_br: Wallos acompanha as assinaturas que você paga, quando cada uma renova e quanto tudo junto custa por mês e por ano. Aberto, e roda no seu servidor.
+  tagline:
+    en_US: Wallos
+    en_us: Wallos
+    pt_br: Controle das suas assinaturas, e do quanto elas somam
+  developer: bellamy
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallos.png
+  thumbnail: ""
+  tips:
+    before_install:
+      en_US: |
+        Before you install read this: https://community.roqueribeiro.com/t/added-wallos-to-bigbearcasaos/2139?u=dragonfire1119
+      en_us: |
+        Before you install read this: https://community.roqueribeiro.com/t/added-wallos-to-bigbearcasaos/2139?u=dragonfire1119
+  title:
+    en_US: Wallos
+    en_us: Wallos
+  category: Finance
+  port_map: "8282"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

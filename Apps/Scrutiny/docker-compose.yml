@@ -1,0 +1,80 @@
+name: scrutiny
+services:
+  scrutiny:
+    container_name: scrutiny
+    image: ghcr.io/analogj/scrutiny:master-omnibus@sha256:18689773150d6b8b53c94a435f40f7b6e946fd4a6d40b44c64fa2154a5b38941
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/config:/opt/scrutiny/config
+      - /DATA/AppData/$AppID/influxdb:/opt/scrutiny/influxdb
+      - /run/udev:/run/udev:ro
+    ports:
+      - "38080:8080"
+      - "38086:8086"
+    cap_add:
+      - SYS_RAWIO
+    devices:
+      - /dev/sda:/dev/sda
+      - /dev/nvme0:/dev/nvme0
+    privileged: true
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - "-f"
+        - http://localhost:8080/api/health
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    x-casaos:
+      volumes:
+        - container: /opt/scrutiny/config
+          description:
+            en_US: "Container Path: /opt/scrutiny/config"
+            en_us: "Container Path: /opt/scrutiny/config"
+        - container: /opt/scrutiny/influxdb
+          description:
+            en_US: "Container Path: /opt/scrutiny/influxdb"
+            en_us: "Container Path: /opt/scrutiny/influxdb"
+        - container: /run/udev
+          description:
+            en_US: "Container Path: /run/udev"
+            en_us: "Container Path: /run/udev"
+      ports:
+        - container: "8080"
+          description:
+            en_US: "Container Port: 8080"
+            en_us: "Container Port: 8080"
+        - container: "8086"
+          description:
+            en_US: "Container Port: 8086"
+            en_us: "Container Port: 8086"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.scrutiny
+  main: scrutiny
+  description:
+    en_US: If you run a server with more than a couple of hard drives, you're probably already familiar with S.M.A.R.T and the smartd daemon.
+    en_us: If you run a server with more than a couple of hard drives, you're probably already familiar with S.M.A.R.T and the smartd daemon.
+    pt_br: "Scrutiny lê o S.M.A.R.T. de cada disco e transforma aquele monte de número cru em algo que dá para entender: quais discos estão bem, quais estão degradando e qual vai falhar primeiro."
+  tagline:
+    en_US: Monitor your server's hard disk health
+    en_us: Monitor your server's hard disk health
+    pt_br: A saúde dos discos do servidor, num painel só
+  developer: analogj
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/scrutiny.png
+  thumbnail: ""
+  title:
+    en_US: Scrutiny
+    en_us: Scrutiny
+  category: Storage
+  port_map: "38080"
+  scheme: http
+x-roqueos:
+  motivo:
+    privileged: le a saude S.M.A.R.T. dos discos, que exige acesso ao dispositivo de bloco
+    capAdd: SYS_RAWIO para enviar comandos S.M.A.R.T. ao disco

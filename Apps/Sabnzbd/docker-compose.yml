@@ -104,4 +104,5 @@ x-casaos:
   port_map: '8282'
   scheme: http
 x-roqueos:
+  portaCompartilhada: true
   mountShared: true

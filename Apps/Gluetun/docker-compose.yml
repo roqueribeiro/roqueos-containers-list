@@ -1,0 +1,101 @@
+name: gluetun
+services:
+  gluetun:
+    image: qmcgaw/gluetun:v3.41.3@sha256:fa19cc76b2af13d57a8d3dc3066f2ada061b1c761b8aecf989b3877c0486e027
+    restart: unless-stopped
+    container_name: gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    ports:
+      - 8888:8888/tcp
+      - 8388:8388/tcp
+      - 8388:8388/udp
+    volumes:
+      - /DATA/AppData/$AppID/data:/gluetun
+    environment:
+      - VPN_SERVICE_PROVIDER=custom
+      - VPN_TYPE=openvpn
+      - OPENVPN_USER=
+      - OPENVPN_PASSWORD=
+      - TZ=
+      - UPDATER_PERIOD=
+    x-casaos:
+      envs:
+        - container: VPN_SERVICE_PROVIDER
+          description:
+            en_US: "Container Variable: VPN_SERVICE_PROVIDER"
+            en_us: "Container Variable: VPN_SERVICE_PROVIDER"
+        - container: VPN_TYPE
+          description:
+            en_US: "Container Variable: VPN_TYPE"
+            en_us: "Container Variable: VPN_TYPE"
+        - container: OPENVPN_USER
+          description:
+            en_US: "Container Variable: OPENVPN_USER"
+            en_us: "Container Variable: OPENVPN_USER"
+        - container: OPENVPN_PASSWORD
+          description:
+            en_US: "Container Variable: OPENVPN_PASSWORD"
+            en_us: "Container Variable: OPENVPN_PASSWORD"
+        - container: TZ
+          description:
+            en_US: "Container Variable: TZ"
+            en_us: "Container Variable: TZ"
+        - container: UPDATER_PERIOD
+          description:
+            en_US: "Container Variable: UPDATER_PERIOD"
+            en_us: "Container Variable: UPDATER_PERIOD"
+      volumes:
+        - container: /gluetun
+          description:
+            en_US: "Container Path: /gluetun"
+            en_us: "Container Path: /gluetun"
+      ports:
+        - container: "8888"
+          description:
+            en_US: "Container Port: 8888"
+            en_us: "Container Port: 8888"
+        - container: "8388"
+          description:
+            en_US: "Container Port: 8388"
+            en_us: "Container Port: 8388"
+        - container: "8388"
+          description:
+            en_US: "Container Port: 8388"
+            en_us: "Container Port: 8388"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.gluetun
+  main: gluetun
+  description:
+    en_US: Lightweight swiss-knife-like VPN client to multiple VPN service providers
+    en_us: Lightweight swiss-knife-like VPN client to multiple VPN service providers
+    pt_br: Gluetun é um cliente VPN leve que fala com dezenas de provedores. Outros containers passam a rede por ele, então o tráfego deles sai pelo túnel sem cada um precisar saber disso.
+  tagline:
+    en_US: Gluetun
+    en_us: Gluetun
+    pt_br: Cliente VPN que faz o tráfego dos outros containers passar por ele
+  developer: portainer
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/gluetun.png
+  thumbnail: ""
+  tips:
+    before_install:
+      en_US: |
+        You will need to configure the providers in the environment variables. See: a documentação do Gluetun Docs no projeto original
+      en_us: |
+        You will need to configure the providers in the environment variables. See: a documentação do Gluetun Docs no projeto original
+  title:
+    en_US: Gluetun
+    en_us: Gluetun
+  category: Network
+  port_map: "8888"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true
+  motivo:
+    capAdd: NET_ADMIN para criar a interface do tunel VPN e as rotas dela

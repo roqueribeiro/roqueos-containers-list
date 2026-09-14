@@ -1,0 +1,62 @@
+name: dockge
+services:
+  app:
+    container_name: dockge
+    image: louislam/dockge:1.5.0@sha256:335c6368b880ecc203236ed89e6e5232e0d6578e8ef5920e4a502390451502bf
+    environment:
+      DOCKGE_STACKS_DIR: /DATA/AppData/$AppID/stacks
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /DATA/AppData/$AppID/data:/app/data
+      - /DATA/AppData/$AppID/stacks:/DATA/AppData/$AppID/stacks
+    ports:
+      - "5001:5001"
+    x-casaos:
+      envs:
+        - container: DOCKGE_STACKS_DIR
+          description:
+            en_US: "Container Variable: DOCKGE_STACKS_DIR"
+            en_us: "Container Variable: DOCKGE_STACKS_DIR"
+      volumes:
+        - container: /var/run/docker.sock
+          description:
+            en_US: "Container Path: /var/run/docker.sock"
+            en_us: "Container Path: /var/run/docker.sock"
+        - container: /app/data
+          description:
+            en_US: "Container Path: /app/data"
+            en_us: "Container Path: /app/data"
+        - container: /DATA/AppData/$AppID/stacks
+          description:
+            en_US: "Container Path: /DATA/AppData/$AppID/stacks"
+            en_us: "Container Path: /DATA/AppData/$AppID/stacks"
+      ports:
+        - container: "5001"
+          description:
+            en_US: "Container Port: 5001"
+            en_us: "Container Port: 5001"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.dockge
+  main: app
+  description:
+    en_US: A fancy, easy-to-use and reactive docker `compose.yaml` stack-oriented manager
+    en_us: A fancy, easy-to-use and reactive docker `compose.yaml` stack-oriented manager
+    pt_br: Dockge é um gerenciador de stacks do docker compose com interface reativa. Edita o compose pela tela, sobe, derruba e acompanha o log de cada stack sem sair do navegador.
+  tagline:
+    en_US: Dockge
+    en_us: Dockge
+    pt_br: Gerenciador de stacks docker compose, bonito e direto
+  developer: louislam
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/dockge.png
+  thumbnail: ""
+  title:
+    en_US: Dockge
+    en_us: Dockge
+  category: Developer
+  port_map: "5001"
+  scheme: http

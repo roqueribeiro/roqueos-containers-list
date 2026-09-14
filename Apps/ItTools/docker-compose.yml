@@ -1,0 +1,40 @@
+name: it-tools
+services:
+  app:
+    container_name: it-tools
+    image: corentinth/it-tools:2023.11.2-7d94e11@sha256:30b032f2175e9c4dc5c795cfa44354ce7fe76d9768caee0f24a9a7371948ac0d
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    x-casaos:
+      ports:
+        - container: "80"
+          description:
+            en_US: "Container Port: 80"
+            en_us: "Container Port: 80"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.it-tools
+  main: app
+  description:
+    en_US: Collection of handy online tools for developers, with great UX as a web app.
+    en_us: Collection of handy online tools for developers, with great UX as a web app.
+    pt_br: IT Tools reúne dezenas de utilitários do dia a dia — conversor de base, gerador de hash, formatador de JSON, decodificador de JWT, gerador de QR — numa interface boa e sem mandar seus dados para fora.
+  tagline:
+    en_US: IT Tools
+    en_us: IT Tools
+    pt_br: A caixa de ferramentas de quem programa, offline
+  developer: corentinth
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/it-tools.png
+  thumbnail: ""
+  title:
+    en_US: IT Tools
+    en_us: IT Tools
+  category: Developer
+  port_map: "8080"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

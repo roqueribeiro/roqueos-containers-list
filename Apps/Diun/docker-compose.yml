@@ -1,0 +1,74 @@
+name: diun
+services:
+  diun:
+    container_name: diun
+    image: crazymax/diun:4.33.0@sha256:e324b793eb32dfb7f74d3a39421ebf090141caaadee69b8f78da63112408ee25
+    command:
+      - serve
+    restart: always
+    environment:
+      TZ: UTC
+      DIUN_WATCH_WORKERS: "20"
+      DIUN_WATCH_SCHEDULE: 0 */6 * * *
+      DIUN_WATCH_JITTER: 30s
+      DIUN_PROVIDERS_DOCKER: "true"
+    volumes:
+      - /DATA/AppData/$AppID/data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - diun.enable=true
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_US: "Container Variable: TZ"
+            en_us: "Container Variable: TZ"
+        - container: DIUN_WATCH_WORKERS
+          description:
+            en_US: "Container Variable: DIUN_WATCH_WORKERS"
+            en_us: "Container Variable: DIUN_WATCH_WORKERS"
+        - container: DIUN_WATCH_SCHEDULE
+          description:
+            en_US: "Container Variable: DIUN_WATCH_SCHEDULE"
+            en_us: "Container Variable: DIUN_WATCH_SCHEDULE"
+        - container: DIUN_WATCH_JITTER
+          description:
+            en_US: "Container Variable: DIUN_WATCH_JITTER"
+            en_us: "Container Variable: DIUN_WATCH_JITTER"
+        - container: DIUN_PROVIDERS_DOCKER
+          description:
+            en_US: "Container Variable: DIUN_PROVIDERS_DOCKER"
+            en_us: "Container Variable: DIUN_PROVIDERS_DOCKER"
+      volumes:
+        - container: /data
+          description:
+            en_US: "Container Path: /data"
+            en_us: "Container Path: /data"
+        - container: /var/run/docker.sock
+          description:
+            en_US: "Container Path: /var/run/docker.sock"
+            en_us: "Container Path: /var/run/docker.sock"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.diun
+  main: diun
+  description:
+    en_US: Docker Image Update Notifier is a CLI application written in Go and delivered as a single executable (and a Docker image) to receive notifications when a Docker image is updated on a Docker registry.
+    en_us: Docker Image Update Notifier is a CLI application written in Go and delivered as a single executable (and a Docker image) to receive notifications when a Docker image is updated on a Docker registry.
+    pt_br: Diun acompanha os registros das imagens que você usa e avisa quando sai versão nova, por e-mail, Telegram, ntfy e outros. Escrito em Go e entregue como binário único.
+  tagline:
+    en_US: Docker Image Update Notifier
+    en_us: Docker Image Update Notifier
+    pt_br: Avisa quando sai imagem nova dos seus containers
+  developer: crazymax
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/diun.png
+  thumbnail: ""
+  title:
+    en_US: DIUN
+    en_us: DIUN
+  category: Utilities
+  port_map: ""
+  scheme: http

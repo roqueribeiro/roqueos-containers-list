@@ -1,0 +1,85 @@
+name: readeck
+services:
+  readeck:
+    container_name: readeck
+    image: codeberg.org/readeck/readeck:0.22.3@sha256:ed1c513f8e1d59b1d38fda324ac279eeb65afd0327907e498061ec9fd2f31c15
+    restart: unless-stopped
+    environment:
+      - READECK_LOG_LEVEL=info
+      - READECK_SERVER_HOST=0.0.0.0
+      - READECK_SERVER_PORT=8000
+      - READECK_LOG_FORMAT=text
+    volumes:
+      - /DATA/AppData/$AppID/data:/readeck
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test:
+        - CMD
+        - /bin/readeck
+        - healthcheck
+        - "-config"
+        - config.toml
+      interval: 30s
+      timeout: 2s
+      retries: 3
+    x-casaos:
+      envs:
+        - container: READECK_LOG_LEVEL
+          description:
+            en_US: "Container Variable: READECK_LOG_LEVEL"
+            en_us: "Container Variable: READECK_LOG_LEVEL"
+        - container: READECK_SERVER_HOST
+          description:
+            en_US: "Container Variable: READECK_SERVER_HOST"
+            en_us: "Container Variable: READECK_SERVER_HOST"
+        - container: READECK_SERVER_PORT
+          description:
+            en_US: "Container Variable: READECK_SERVER_PORT"
+            en_us: "Container Variable: READECK_SERVER_PORT"
+        - container: READECK_LOG_FORMAT
+          description:
+            en_US: "Container Variable: READECK_LOG_FORMAT"
+            en_us: "Container Variable: READECK_LOG_FORMAT"
+      volumes:
+        - container: /readeck
+          description:
+            en_US: "Container Path: /readeck"
+            en_us: "Container Path: /readeck"
+      ports:
+        - container: "8000"
+          description:
+            en_US: "Container Port: 8000"
+            en_us: "Container Port: 8000"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.readeck
+  main: readeck
+  description:
+    en_US: Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. It is a self-hosted alternative to Instapaper and Wallabag with a modern interface and powerful features for managing your bookmarks and reading list.
+    en_us: Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. It is a self-hosted alternative to Instapaper and Wallabag with a modern interface and powerful features for managing your bookmarks and reading list.
+    pt_br: Readeck salva o conteúdo legível de uma página e guarda para depois, limpo de anúncio e de banner. É gerenciador de favoritos e leitor de artigo no mesmo lugar.
+  tagline:
+    en_US: Self-hosted bookmark manager and read-it-later app
+    en_us: Self-hosted bookmark manager and read-it-later app
+    pt_br: Guarde o que quer ler depois, sem os anúncios
+  developer: readeck
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/readeck.png
+  thumbnail: ""
+  tips:
+    before_install:
+      en_US: |
+        Read this before installing: https://community.roqueribeiro.com/t/added-readeck-to-bigbearcasaos/5079#p-7723-documentation-3
+      en_us: |
+        Read this before installing: https://community.roqueribeiro.com/t/added-readeck-to-bigbearcasaos/5079#p-7723-documentation-3
+  title:
+    en_US: Readeck
+    en_us: Readeck
+  category: Productivity
+  port_map: "8000"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true

@@ -1,0 +1,60 @@
+name: ntfy
+services:
+  app:
+    image: binwiederhier/ntfy:v2.27.0@sha256:f2419f405127afa868f10985c1a41449e673477cee1eb19994339a5ae8b592e7
+    command:
+      - serve
+    environment:
+      - TZ=UTC
+    ports:
+      - target: 80
+        published: "7200"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/cache:/var/cache/ntfy
+      - /DATA/AppData/$AppID/config:/etc/ntfy
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_US: "Container Variable: TZ"
+            en_us: "Container Variable: TZ"
+      volumes:
+        - container: /var/cache/ntfy
+          description:
+            en_US: "Container Path: /var/cache/ntfy"
+            en_us: "Container Path: /var/cache/ntfy"
+        - container: /etc/ntfy
+          description:
+            en_US: "Container Path: /etc/ntfy"
+            en_us: "Container Path: /etc/ntfy"
+      ports:
+        - container: "80"
+          description:
+            en_US: "Container Port: 80"
+            en_us: "Container Port: 80"
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  id: br.com.roqueos.ntfysh
+  main: app
+  description:
+    en_US: ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, and/or using a REST API. It's infinitely flexible, and 100% free software.
+    en_us: ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, and/or using a REST API. It's infinitely flexible, and 100% free software.
+    pt_br: ntfy manda notificação para o seu celular ou desktop com um simples curl, sem cadastro e sem app de terceiro no meio. Bom para avisar que o backup terminou ou que o disco encheu.
+  tagline:
+    en_US: A simple HTTP-based pub-sub notification service
+    en_us: A simple HTTP-based pub-sub notification service
+    pt_br: Notificação no celular por uma linha de comando
+  developer: binwiederhier
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/ntfy.png
+  thumbnail: https://ntfy.sh/_next/static/media/screenshot-web-3.de6f19af.png
+  title:
+    en_US: Ntfy.sh
+    en_us: Ntfy.sh
+  category: Communication
+  port_map: "7200"
+  scheme: http

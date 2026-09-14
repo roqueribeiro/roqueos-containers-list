@@ -1,0 +1,53 @@
+name: focalboard
+services:
+  app:
+    container_name: focalboard
+    image: mattermost/focalboard:7.11.4@sha256:c935a2879dc7bcb8243a562afea21a30edbb6dbe029b53a9c0ae7ab4b3255c54
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    network_mode: bridge
+    volumes:
+      - /DATA/AppData/$AppID/data:/opt/focalboard/data
+    x-casaos:
+      volumes:
+        - container: /opt/focalboard/data
+          description:
+            en_US: "Container Path: /opt/focalboard/data"
+            en_us: "Container Path: /opt/focalboard/data"
+      ports:
+        - container: "8000"
+          description:
+            en_US: "Container Port: 8000"
+            en_us: "Container Port: 8000"
+x-casaos:
+  architectures:
+    - amd64
+  id: br.com.roqueos.focalboard
+  main: app
+  description:
+    en_US: Focalboard is an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+    en_us: Focalboard is an open source, multilingual, self-hosted project management tool that's an alternative to Trello, Notion, and Asana.
+    pt_br: Focalboard é uma ferramenta aberta de gestão de projeto que roda no seu servidor. Quadros, tabelas, calendário e galeria sobre os mesmos cartões.
+  tagline:
+    en_US: Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.
+    en_us: Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.
+    pt_br: Quadro de projeto aberto, alternativa a Trello e Notion
+  developer: mattermost
+  author: BigBearTechWorld
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/focalboard.png
+  thumbnail: ""
+  tips:
+    before_install:
+      en_US: |
+        Before you can use the application, you will need to create a new account when going to the Focalboard UI.
+      en_us: |
+        Before you can use the application, you will need to create a new account when going to the Focalboard UI.
+  title:
+    en_US: Focalboard
+    en_us: Focalboard
+  category: Productivity
+  port_map: "8000"
+  scheme: http
+x-roqueos:
+  portaCompartilhada: true
