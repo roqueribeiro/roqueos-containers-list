@@ -435,7 +435,29 @@ services:
       - ragflow
     privileged: false
     cpu_shares: 90
+  # Elasticsearch e OpenSearch recusam rodar como root: "can not run
+  # elasticsearch as root", medido em Linux em 14/09/2026 depois de tentar o
+  # conserto padrao. Neles o caminho e o outro: dar o dono certo ao bind que o
+  # instalador cria root:root e deixar cada um com o uid 1000 da propria imagem.
+  ragflow-permissao:
+    image: bash:5.3.15@sha256:a19c811ee9e97fa8a080001d82b8e0ded303f0795cffdb1cbd162731bc8ce208
+    user: "0:0"
+    command:
+      - /bin/sh
+      - -c
+      - chown -R 1000:1000 /es01 /opensearch01 || true
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/es01
+        target: /es01
+      - type: bind
+        source: /DATA/AppData/$AppID/opensearch01
+        target: /opensearch01
+    restart: 'no'
   ragflow-es01:
+    depends_on:
+      ragflow-permissao:
+        condition: service_completed_successfully
     container_name: ragflow-es01
     deploy:
       resources:
@@ -461,7 +483,6 @@ services:
       interval: 10s
       retries: 120
     image: elasticsearch:8.11.3
-    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     ports:
       - target: 9200
         published: "9200"
@@ -1190,6 +1211,9 @@ services:
     privileged: false
     cpu_shares: 90
   ragflow-opensearch01:
+    depends_on:
+      ragflow-permissao:
+        condition: service_completed_successfully
     container_name: ragflow-opensearch-01
     deploy:
       resources:
@@ -1217,7 +1241,6 @@ services:
       interval: 10s
       retries: 120
     image: opensearchproject/opensearch:2.19.1
-    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     ports:
       - target: 9201
         published: "9201"
