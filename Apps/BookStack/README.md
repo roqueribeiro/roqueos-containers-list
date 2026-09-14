@@ -59,8 +59,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8089/`.
 
 | Serviço      | Imagem                        |
 | ------------ | ----------------------------- |
-| bookstack-db | linuxserver/mariadb:11.4.4-r0 |
-| bookstack    | linuxserver/bookstack:24.10.4 |
+| bookstack-db | linuxserver/mariadb:11.8.8    |
+| bookstack    | linuxserver/bookstack:26.05.5 |
 
 ## Fonte oficial
 

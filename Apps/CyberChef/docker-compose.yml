@@ -1,7 +1,7 @@
 name: cyberchef
 services:
   cyberchef:
-    image: mpepping/cyberchef:latest-2025
+    image: mpepping/cyberchef:v11.4.0
     deploy:
       resources:
         reservations:

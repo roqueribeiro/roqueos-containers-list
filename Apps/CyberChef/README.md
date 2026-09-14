@@ -37,9 +37,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8099/`.
 
 ## Imagens
 
-| Serviço   | Imagem                         |
-| --------- | ------------------------------ |
-| cyberchef | mpepping/cyberchef:latest-2025 |
+| Serviço   | Imagem                     |
+| --------- | -------------------------- |
+| cyberchef | mpepping/cyberchef:v11.4.0 |
 
 ## Fonte oficial
 

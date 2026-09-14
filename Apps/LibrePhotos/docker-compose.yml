@@ -17,7 +17,7 @@ services:
     restart: always
     container_name: librephotos-redis
   backend:
-    image: reallibrephotos/librephotos:2024w52
+    image: reallibrephotos/librephotos:1.1.0
     restart: always
     deploy:
       resources:

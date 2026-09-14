@@ -1,7 +1,7 @@
 name: trilium
 services:
   trilium:
-    image: triliumnext/notes:0.91.6
+    image: triliumnext/notes:v0.95.0
     deploy:
       resources:
         reservations:

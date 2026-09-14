@@ -20,10 +20,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                     | No container | Serviço |
-| --------------------------- | ------------ | ------- |
-| /DATA/AppData/$AppID/config | /etc/loki    | loki    |
-| /DATA/AppData/$AppID/data   | /loki        | loki    |
+| No host                     | No container | Serviço      |
+| --------------------------- | ------------ | ------------ |
+| /DATA/AppData/$AppID/config | /semente     | loki-semente |
+| /DATA/AppData/$AppID/config | /etc/loki    | loki         |
+| /DATA/AppData/$AppID/data   | /loki        | loki         |
 
 ## Variáveis de ambiente
 
@@ -41,9 +42,10 @@ Depois de instalar, abra `http://<endereço-do-servidor>:3100/ready`.
 
 ## Imagens
 
-| Serviço | Imagem             |
-| ------- | ------------------ |
-| loki    | grafana/loki:3.3.2 |
+| Serviço      | Imagem             |
+| ------------ | ------------------ |
+| loki-semente | grafana/loki:3.3.2 |
+| loki         | grafana/loki:3.3.2 |
 
 ## Fonte oficial
 

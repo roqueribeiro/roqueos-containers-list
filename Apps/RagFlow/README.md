@@ -58,6 +58,8 @@ Onde os dados deste app ficam no seu servidor.
 | --------------------------------------- | ----------------------------- | -------------------------------- |
 | /DATA/AppData/$AppID/ragflow-logs       | /ragflow/logs                 | ragflow                          |
 | /DATA/AppData/$AppID/history_data_agent | /ragflow/history_data_agent   | ragflow                          |
+| /DATA/AppData/$AppID/es01               | /es01                         | ragflow-permissao                |
+| /DATA/AppData/$AppID/opensearch01       | /opensearch01                 | ragflow-permissao                |
 | /DATA/AppData/$AppID/es01               | /usr/share/elasticsearch/data | ragflow-es01                     |
 | /DATA/AppData/$AppID/infinity           | /var/infinity                 | ragflow-infinity                 |
 | /DATA/AppData/$AppID/minio              | /data                         | ragflow-minio                    |
@@ -129,6 +131,7 @@ Depois de instalar, abra `http://<endereço-do-servidor>:30080/`.
 | Serviço                          | Imagem                                                                                                      |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | ragflow                          | icewhaletech/ragflow:v0.21.1                                                                                |
+| ragflow-permissao                | bash:5.3.15@sha256:a19c811ee9e97fa8a080001d82b8e0ded303f0795cffdb1cbd162731bc8ce208                         |
 | ragflow-es01                     | elasticsearch:8.11.3                                                                                        |
 | ragflow-infinity                 | icewhaletech/ragflow-infinity:v0.6.1                                                                        |
 | ragflow-minio                    | quay.io/minio/minio:RELEASE.2025-06-13T11-33-47Z                                                            |

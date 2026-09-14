@@ -21,9 +21,10 @@ Arquiteturas suportadas: amd64, arm64, arm.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                     | No container | Serviço |
-| --------------------------- | ------------ | ------- |
-| /DATA/AppData/$AppID/config | /config      | whoogle |
+| No host                     | No container | Serviço           |
+| --------------------------- | ------------ | ----------------- |
+| /DATA/AppData/$AppID/config | /config      | whoogle-permissao |
+| /DATA/AppData/$AppID/config | /config      | whoogle           |
 
 ## Variáveis de ambiente
 
@@ -45,9 +46,10 @@ Depois de instalar, abra `http://<endereço-do-servidor>:5000/`.
 
 ## Imagens
 
-| Serviço | Imagem                        |
-| ------- | ----------------------------- |
-| whoogle | benbusby/whoogle-search:0.9.4 |
+| Serviço           | Imagem                        |
+| ----------------- | ----------------------------- |
+| whoogle-permissao | benbusby/whoogle-search:0.9.4 |
+| whoogle           | benbusby/whoogle-search:0.9.4 |
 
 ## Fonte oficial
 

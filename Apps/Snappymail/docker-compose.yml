@@ -1,7 +1,7 @@
 name: snappymail
 services:
   snappymail:
-    image: djmaze/snappymail:2.38.2
+    image: djmaze/snappymail:v2.38.2
     deploy:
       resources:
         reservations:

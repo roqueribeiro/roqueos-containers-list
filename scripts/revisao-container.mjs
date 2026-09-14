@@ -216,6 +216,21 @@ export function premissas(app, conflitos) {
     else if (/:latest$/.test(img)) p.P4.push(`${nomeSvc}: imagem em :latest`)
     else if (!img.includes(':') && !img.includes('@')) p.P4.push(`${nomeSvc}: imagem sem tag`)
     if (!s.restart) p.P4.push(`${nomeSvc}: sem restart`)
+    // Tag fixada que o registry não tem. O install morre no pull, antes de
+    // qualquer coisa: "failed to resolve reference ... not found". Onze imagens
+    // do catálogo estavam assim em 14/09/2026, e algumas tinham sido inventadas
+    // por uma passada de pinagem anterior que nunca conferiu se a tag existia
+    // (`mpepping/cyberchef:latest-2025` era `latest` com o ano colado).
+    //
+    // 404 e 401 reprovam: os dois significam que o pull anônimo do usuário não
+    // traz a imagem. O Docker Hub responde 401 para repositório que sumiu, e
+    // foi assim que o `logseq/logseq-publish-server` apareceu. 429 e falha de
+    // rede são a consulta, não o manifesto, e não reprovam nada.
+    const consultaImg = img ? cacheUidMemo()[img] : null
+    if (typeof consultaImg === 'string' && /^\?404/.test(consultaImg))
+      p.P4.push(`${nomeSvc}: ${img} não existe no registry (404): o install morre no pull`)
+    else if (typeof consultaImg === 'string' && /^\?401/.test(consultaImg))
+      p.P4.push(`${nomeSvc}: ${img} recusa acesso anônimo (401): o usuário não consegue baixar`)
     for (const v of s.volumes || []) {
       const src = typeof v === 'string' ? v.split(':')[0] : v.source
       if (!src || !src.startsWith('/')) continue

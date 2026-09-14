@@ -1,7 +1,8 @@
 name: filestash
 services:
   filestash:
-    image: machines/filestash:v0.7
+    image: machines/filestash@sha256:dabc04f09e6dedebaf667042f840e5117abc616004fafdfa20aea064ca59bbdb
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid filestash
     deploy:
       resources:
         reservations:

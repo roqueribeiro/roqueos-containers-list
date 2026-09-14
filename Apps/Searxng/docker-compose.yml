@@ -1,7 +1,7 @@
 name: searxng
 services:
   searxng:
-    image: searxng/searxng:2024.10.20-72c2496ad
+    image: searxng/searxng:2026.9.14-ef05645f0
     deploy:
       resources:
         reservations:

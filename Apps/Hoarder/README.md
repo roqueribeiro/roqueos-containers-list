@@ -53,11 +53,11 @@ Depois de instalar, abra `http://<endereço-do-servidor>:3000/`.
 
 ## Imagens
 
-| Serviço     | Imagem                              |
-| ----------- | ----------------------------------- |
-| meilisearch | getmeili/meilisearch:v1.11          |
-| chrome      | gcr.io/zenika-hub/alpine-chrome:124 |
-| hoarder     | ghcr.io/hoarder-app/hoarder:0.23.2  |
+| Serviço     | Imagem                             |
+| ----------- | ---------------------------------- |
+| meilisearch | getmeili/meilisearch:v1.11         |
+| chrome      | zenika/alpine-chrome:124           |
+| hoarder     | ghcr.io/hoarder-app/hoarder:0.23.2 |
 
 ## Fonte oficial
 

@@ -46,7 +46,7 @@ Depois de instalar, abra `http://<endereço-do-servidor>:5055/`.
 
 | Serviço    | Imagem                       |
 | ---------- | ---------------------------- |
-| jellyseerr | fallenbagel/jellyseerr:2.4.1 |
+| jellyseerr | fallenbagel/jellyseerr:2.7.3 |
 
 ## Fonte oficial
 

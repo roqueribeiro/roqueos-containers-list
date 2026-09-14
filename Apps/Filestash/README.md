@@ -40,9 +40,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8104/`.
 
 ## Imagens
 
-| Serviço   | Imagem                  |
-| --------- | ----------------------- |
-| filestash | machines/filestash:v0.7 |
+| Serviço   | Imagem                                                                                     |
+| --------- | ------------------------------------------------------------------------------------------ |
+| filestash | machines/filestash@sha256:dabc04f09e6dedebaf667042f840e5117abc616004fafdfa20aea064ca59bbdb |
 
 ## Fonte oficial
 

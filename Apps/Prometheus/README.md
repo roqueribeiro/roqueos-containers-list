@@ -21,10 +21,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                     | No container    | Serviço    |
-| --------------------------- | --------------- | ---------- |
-| /DATA/AppData/$AppID/config | /etc/prometheus | prometheus |
-| /DATA/AppData/$AppID/data   | /prometheus     | prometheus |
+| No host                     | No container    | Serviço            |
+| --------------------------- | --------------- | ------------------ |
+| /DATA/AppData/$AppID/config | /semente        | prometheus-semente |
+| /DATA/AppData/$AppID/config | /etc/prometheus | prometheus         |
+| /DATA/AppData/$AppID/data   | /prometheus     | prometheus         |
 
 ## Variáveis de ambiente
 
@@ -41,9 +42,10 @@ Depois de instalar, abra `http://<endereço-do-servidor>:9090/`.
 
 ## Imagens
 
-| Serviço    | Imagem                 |
-| ---------- | ---------------------- |
-| prometheus | prom/prometheus:v3.1.0 |
+| Serviço            | Imagem                 |
+| ------------------ | ---------------------- |
+| prometheus-semente | prom/prometheus:v3.1.0 |
+| prometheus         | prom/prometheus:v3.1.0 |
 
 ## Fonte oficial
 

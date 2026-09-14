@@ -44,9 +44,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:9101/`.
 
 ## Imagens
 
-| Serviço | Imagem                                   |
-| ------- | ---------------------------------------- |
-| minio   | minio/minio:RELEASE.2024-12-18T13-15-44Z |
+| Serviço | Imagem                                           |
+| ------- | ------------------------------------------------ |
+| minio   | quay.io/minio/minio:RELEASE.2025-06-13T11-33-47Z |
 
 ## Fonte oficial
 

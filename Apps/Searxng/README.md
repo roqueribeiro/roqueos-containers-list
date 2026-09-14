@@ -45,9 +45,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8080/`.
 
 ## Imagens
 
-| Serviço | Imagem                               |
-| ------- | ------------------------------------ |
-| searxng | searxng/searxng:2024.10.20-72c2496ad |
+| Serviço | Imagem                              |
+| ------- | ----------------------------------- |
+| searxng | searxng/searxng:2026.9.14-ef05645f0 |
 
 ## Fonte oficial
 

@@ -26,8 +26,9 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-_Nenhum._
-
+| Variável    | Valor padrão        | Serviço     |
+| ----------- | ------------------- | ----------- |
+| STORAGE_DIR | /app/server/storage | anythingllm |
 
 ## Primeiro acesso
 

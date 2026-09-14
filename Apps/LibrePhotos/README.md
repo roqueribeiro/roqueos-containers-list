@@ -67,11 +67,11 @@ Depois de instalar, abra `http://<endereço-do-servidor>:3000/`.
 
 ## Imagens
 
-| Serviço | Imagem                              |
-| ------- | ----------------------------------- |
-| db      | postgres:13-alpine                  |
-| redis   | redis:6-alpine                      |
-| backend | reallibrephotos/librephotos:2024w52 |
+| Serviço | Imagem                            |
+| ------- | --------------------------------- |
+| db      | postgres:13-alpine                |
+| redis   | redis:6-alpine                    |
+| backend | reallibrephotos/librephotos:1.1.0 |
 
 ## Fonte oficial
 

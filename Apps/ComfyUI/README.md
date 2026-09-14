@@ -40,9 +40,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8188/`.
 
 ## Imagens
 
-| Serviço | Imagem                            |
-| ------- | --------------------------------- |
-| comfyui | yanwk/comfyui-boot:cu124-megapack |
+| Serviço | Imagem                           |
+| ------- | -------------------------------- |
+| comfyui | yanwk/comfyui-boot:cu126-megapak |
 
 ## Fonte oficial
 

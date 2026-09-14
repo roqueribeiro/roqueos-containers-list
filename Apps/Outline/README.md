@@ -37,6 +37,7 @@ Onde os dados deste app ficam no seu servidor.
 | SECRET_KEY                   | replace-with-output-of-openssl-rand-hex-32                   | outline  |
 | UTILS_SECRET                 | replace-with-output-of-openssl-rand-hex-32                   | outline  |
 | DATABASE_URL                 | postgres://outline:change-me-to-a-long-random-string@postgre | outline  |
+| PGSSLMODE                    | disable                                                      | outline  |
 | DATABASE_CONNECTION_POOL_MIN | 0                                                            | outline  |
 | DATABASE_CONNECTION_POOL_MAX | 5                                                            | outline  |
 | REDIS_URL                    | redis://redis:6379                                           | outline  |

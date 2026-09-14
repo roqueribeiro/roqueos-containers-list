@@ -40,9 +40,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8888/`.
 
 ## Imagens
 
-| Serviço    | Imagem                   |
-| ---------- | ------------------------ |
-| snappymail | djmaze/snappymail:2.38.2 |
+| Serviço    | Imagem                    |
+| ---------- | ------------------------- |
+| snappymail | djmaze/snappymail:v2.38.2 |
 
 ## Fonte oficial
 

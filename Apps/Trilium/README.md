@@ -41,9 +41,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8107/`.
 
 ## Imagens
 
-| Serviço | Imagem                   |
-| ------- | ------------------------ |
-| trilium | triliumnext/notes:0.91.6 |
+| Serviço | Imagem                    |
+| ------- | ------------------------- |
+| trilium | triliumnext/notes:v0.95.0 |
 
 ## Fonte oficial
 

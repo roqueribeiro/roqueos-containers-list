@@ -175,7 +175,14 @@ if (isCli) {
     cache = carregaCache()
   }
 
-  const achados = svcs.map((s) => risco(s, cache)).filter(Boolean)
+  // Passa os irmaos: sem eles o veredito ignora o servico de arranque que
+  // conserta a permissao, e acusa app que ja esta consertado.
+  const porApp = new Map()
+  for (const s of svcs) {
+    if (!porApp.has(s.app)) porApp.set(s.app, [])
+    porApp.get(s.app).push(s)
+  }
+  const achados = svcs.map((s) => risco(s, cache, porApp.get(s.app))).filter(Boolean)
   const semCache = svcs.filter((s) => s.imagem && cache[s.imagem] == null).length
   console.log(`servicos: ${svcs.length}  sem cache: ${semCache}  em risco: ${achados.length}`)
   for (const a of achados) {
