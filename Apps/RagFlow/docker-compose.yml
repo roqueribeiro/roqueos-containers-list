@@ -1673,3 +1673,7 @@ x-casaos:
     sv_SE: RagFlow
     tr_TR: RagFlow
     zh_CN: RagFlow
+
+x-roqueos:
+  motivo:
+    privileged: "sandbox de execução de código do RagFlow exige isolamento por namespace próprio"

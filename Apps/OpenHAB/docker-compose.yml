@@ -118,3 +118,7 @@ x-casaos:
   index: /
   port_map: '8080'
   scheme: http
+
+x-roqueos:
+  motivo:
+    networkHost: "descoberta de dispositivos por mDNS e UPnP na rede local"

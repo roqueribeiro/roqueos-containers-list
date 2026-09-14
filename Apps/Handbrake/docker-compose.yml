@@ -75,3 +75,7 @@ x-casaos:
   title:
     en_us: handbrake
   main: handbrake
+
+x-roqueos:
+  motivo:
+    privileged: "acesso a /dev/dri para transcodificação por hardware"

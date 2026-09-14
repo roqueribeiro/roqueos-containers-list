@@ -529,3 +529,7 @@ x-casaos:
   index: /admin
   port_map: '8800'
   scheme: https
+
+x-roqueos:
+  motivo:
+    capAdd: "capacidade exigida pelo upstream para a função declarada do container"

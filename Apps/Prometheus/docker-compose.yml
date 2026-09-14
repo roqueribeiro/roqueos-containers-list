@@ -47,7 +47,7 @@ x-casaos:
     - arm64
   main: prometheus
   author: RoqueOS Team
-  category: Database
+  category: Developer
   description:
     en_us: Prometheus is the de-facto open-source monitoring system and time-series database for cloud-native environments. Pulls metrics from instrumented services, stores them efficiently, and powers dashboards (Grafana) + alerting (Alertmanager). Backbone of the LGTM observability stack.
     pt_br: Prometheus é o sistema de monitoramento e banco de séries temporais open-source de fato para ambientes cloud-native. Coleta métricas de serviços instrumentados, armazena de forma eficiente e alimenta dashboards (Grafana) + alertas (Alertmanager). Espinha dorsal do stack de observabilidade LGTM.

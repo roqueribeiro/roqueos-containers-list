@@ -173,7 +173,7 @@ x-casaos:
     - arm64
   main: nginx
   author: RoqueOS Team
-  category: Chat
+  category: AI
   description:
     en_us: The developer-friendly cloud platform for building and running LLM agents for AI-native applications.
     zh_cn: 开发人员友好的云平台，用于构建和运行AI原生应用程序的LLM代理。

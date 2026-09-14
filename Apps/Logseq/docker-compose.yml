@@ -37,7 +37,7 @@ x-casaos:
     - arm64
   main: logseq
   author: RoqueOS Team
-  category: Notes
+  category: Productivity
   description:
     en_us: 'Logseq Publish Server is the read-only web viewer for Logseq graphs you publish. Important: the Logseq desktop app is an Electron application — there is NO self-hosted Logseq server for editing. Use this container to share your knowledge graph with collaborators or publish a personal wiki online. For editing, use the desktop app (https://logseq.com/) and sync via Git, Logseq Sync (alpha), or any cloud storage backend.'
     pt_br: 'Logseq Publish Server é o visualizador web em modo leitura para grafos Logseq que você publica. Importante: o app desktop do Logseq é uma aplicação Electron — NÃO existe servidor Logseq auto-hospedado para edição. Use este container para compartilhar seu grafo de conhecimento com colaboradores ou publicar um wiki pessoal online. Para edição, use o app desktop (https://logseq.com/) e sincronize via Git, Logseq Sync (alpha) ou qualquer cloud storage.'

@@ -58,7 +58,7 @@ x-casaos:
     - arm64
   main: photoprism
   author: RoqueOS Team
-  category: Gallery
+  category: Media
   description:
     en_us: |
       Your AI-Powered Photos App for the Decentralized Web

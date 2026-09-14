@@ -58,7 +58,7 @@ x-casaos:
     - arm64
   main: mylar3
   author: RoqueOS Team
-  category: Downloader
+  category: Utilities
   description:
     en_us: Mylar is an automated Comic Book (cbr/cbz) downloader program for use with NZB and torrents. Mylar allows you to create a watchlist of series that it monitors for various things (new issues, updated information, etc). It will grab, sort, and rename downloaded issues. It will also allow you to monitor weekly pull-lists for items belonging to said watchlisted series to download, as well as being able to monitor and maintain story-arcs.
     zh_cn: Mylar是一个自动化的漫画（cbr/cbz）下载程序，可与NZB和torrents一起使用。 Mylar允许您创建监视列表，用于监视各种事物（新问题，更新信息等）。 它将抓取，排序和重命名下载的问题。 它还允许您监视周拉列表，以下载属于所述监视列表系列的项目，以及能够监视和维护故事弧线。

@@ -24,7 +24,7 @@ x-casaos:
     - arm64
   main: chatbot-ui
   author: RoqueOS Team
-  category: Chat
+  category: AI
   description:
     en_us: Chatbot UI is an open source chat UI for AI models.
     zh_cn: Chatbot UI是一个开源的AI模型聊天界面。

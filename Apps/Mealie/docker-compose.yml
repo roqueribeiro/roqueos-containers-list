@@ -44,7 +44,7 @@ x-casaos:
     - arm64
   main: mealie
   author: RoqueOS Team
-  category: Other
+  category: Productivity
   description:
     en_us: Mealie is a self-hosted recipe manager and meal planner with a beautiful UI. Import recipes from any URL with one click (parses 100+ recipe sites), plan weekly meals, generate shopping lists, scale ingredients, store cooking timers. Mobile-friendly. Optional Open Food Facts integration for nutrition data.
     pt_br: Mealie é um gerenciador de receitas e planejador de refeições auto-hospedado com UI bonita. Importa receitas de qualquer URL com um clique (suporta 100+ sites de receitas), planeja refeições semanais, gera listas de compras, escala ingredientes, armazena timers de cozinha. Mobile-friendly. Integração opcional Open Food Facts para dados nutricionais.

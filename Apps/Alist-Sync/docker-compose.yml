@@ -32,7 +32,7 @@ x-casaos:
     - arm64
   main: alist-sync
   author: xjxjin
-  category: Cloud
+  category: Storage
   description:
     en_us: |
       Alist-Sync is a storage synchronization tool based on the Web interface. It can achieve data synchronization and mutual backup among multiple network disks, and also has practical functions such as multi-task management, scheduled synchronization and difference handling.

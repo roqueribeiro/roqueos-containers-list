@@ -16,7 +16,7 @@ x-casaos:
     - arm64
     - arm
   main: holoplay
-  category: WEB
+  category: Media
   description:
     en_us: HoloPlay is a web based self-hosted using Invidious API for listening Youtube audio source.
     fr_fr: HoloPlay est une alternative qui utilise l'API Invidious pour écouter des sources audio de Youtube.
@@ -41,3 +41,7 @@ x-casaos:
   index: /
   port_map: '3000'
   scheme: http
+
+x-roqueos:
+  motivo:
+    privileged: "acesso a /dev/dri e ao display para renderização"

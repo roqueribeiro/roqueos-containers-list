@@ -88,3 +88,5 @@ x-casaos:
   main: emulatorjs
 x-roqueos:
   mountShared: true
+  motivo:
+    privileged: "acesso direto a dispositivos de entrada (gamepad) via /dev/input"

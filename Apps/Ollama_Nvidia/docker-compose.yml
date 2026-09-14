@@ -65,7 +65,7 @@ x-casaos:
     - amd64
     - arm64
   main: ollama
-  category: Chat
+  category: AI
   developer: ollama
   author: ollama
   tagline:

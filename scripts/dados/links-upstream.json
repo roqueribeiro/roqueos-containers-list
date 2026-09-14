@@ -1,0 +1,26 @@
+{
+  "N8n": {
+    "support": "https://community.n8n.io",
+    "website": "https://n8n.io"
+  },
+  "OpenSpeedTest": {
+    "support": "https://openspeedtest.com/Contact-us.php",
+    "website": "https://openspeedtest.com"
+  },
+  "Tautulli": {
+    "support": "https://discord.com/invite/tQcWEUp",
+    "website": "https://tautulli.com/"
+  },
+  "Twingate": {
+    "support": "https://help.twingate.com/hc/en-us",
+    "website": "https://www.twingate.com"
+  },
+  "Vaultwarden": {
+    "support": "https://discord.gg/knqAbbBbeX",
+    "website": "https://github.com/dani-garcia/vaultwarden"
+  },
+  "VoceChat": {
+    "support": "https://doc.voce.chat/",
+    "website": "https://voce.chat"
+  }
+}

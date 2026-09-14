@@ -14,7 +14,7 @@ services:
       SERVER_PORT: 8443
       USER_NAME: mc
       USER_UID: 1000
-      USER_PASSWORD: root
+      USER_PASSWORD: $default_pwd
     ports:
       - 8444:8443/tcp
       - 25565-25570:25565-25570/tcp
@@ -103,7 +103,7 @@ x-casaos:
     - amd64
   main: mineos
   author: Chàra Rose
-  category: Games
+  category: Gaming
   description:
     en_us: MineOS is a server front-end to ease managing Minecraft administrative tasks. This iteration using Node.js aims to enhance previous MineOS scripts (Python-based), by leveraging the event-triggering, asyncronous model of Node.JS and websockets.
     zh_cn: MineOS是一个服务器前端，用于简化Minecraft管理任务。这个使用Node.js的迭代旨在通过利用Node.JS和websockets的事件触发、异步模型来增强以前的MineOS脚本（基于Python）。

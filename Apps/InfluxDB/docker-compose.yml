@@ -52,7 +52,7 @@ x-casaos:
     - arm64
   main: influxdb
   author: RoqueOS Team
-  category: Database
+  category: Developer
   description:
     en_us: InfluxDB is the leading open-source time-series database, optimized for fast, high-availability storage and retrieval of time-stamped data. Used for metrics, IoT sensor data, application monitoring, and analytics. Pairs naturally with Telegraf (collection), Chronograf (UI), and Grafana (dashboards).
     pt_br: InfluxDB é o principal banco de séries temporais open-source, otimizado para armazenamento e leitura rápida e altamente disponível de dados com timestamp. Usado para métricas, dados de sensores IoT, monitoramento de aplicações e analytics. Combina naturalmente com Telegraf (coleta), Chronograf (UI) e Grafana (dashboards).

@@ -427,3 +427,8 @@ x-casaos:
   index: /
   title:
     en_US: Tailscale
+
+x-roqueos:
+  motivo:
+    capAdd: "NET_ADMIN e NET_RAW para criar e configurar a interface de rede da VPN"
+    networkHost: "cria a interface de rede da VPN no host, e ela precisa existir no host"

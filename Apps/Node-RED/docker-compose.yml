@@ -392,3 +392,7 @@ x-casaos:
   index: /
   port_map: '1880'
   scheme: http
+
+x-roqueos:
+  motivo:
+    networkHost: "descoberta e controle de dispositivos IoT na rede local"

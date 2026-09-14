@@ -55,7 +55,7 @@ x-casaos:
     - arm64
   main: lychee
   author: RoqueOS Team
-  category: Gallery
+  category: Media
   description:
     en_us: Lychee is a free, open-source photo management tool that runs on your server. Upload, manage and share photos like in any other app — but with the added benefit of being on your own server. Album organization, sharing via link, EXIF/GPS data display, geotagging map, slideshow, and a clean responsive UI.
     pt_br: Lychee é uma ferramenta gratuita e open-source de gerenciamento de fotos que roda no seu servidor. Suba, organize e compartilhe fotos como em qualquer outro app — mas com a vantagem de estar no seu servidor. Organização por álbuns, compartilhamento por link, exibição de EXIF/GPS, mapa de geotagging, slideshow e UI responsiva e limpa.

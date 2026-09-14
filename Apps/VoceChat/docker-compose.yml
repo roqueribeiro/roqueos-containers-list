@@ -40,7 +40,7 @@ x-casaos:
     - amd64
   main: vocechat
   author: Privoce
-  category: Chat
+  category: Communication
   description:
     en_US: |
       VoceChat is a secure chat software designed for independent deployment, offering a flexible solution for seamless communication. It combines instant messaging with channel-based group chats, allowing you to engage in one-on-one conversations or create themed channels for group discussions.

@@ -23,7 +23,7 @@ x-casaos:
     - arm64
   main: adminer
   author: Tim Düsterhus
-  category: Database
+  category: Developer
   description:
     en_us: Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP. Conversely to phpMyAdmin, it consist of a single file ready to deploy to the target server. Adminer is available for MySQL, PostgreSQL, SQLite, MS SQL, Oracle, Firebird, SimpleDB, Elasticsearch and MongoDB.
     zh_cn: Adminer（前身为phpMinAdmin）是一个用PHP编写的功能齐全的数据库管理工具。区别于phpMyAdmin，它仅为单个部署到目标服务器的文件（轻量）。Adminer可用于MySQL、PostgreSQL、SQLite、MS SQL、Oracle、Firebird、SimpleDB、Elasticsearch和MongoDB。

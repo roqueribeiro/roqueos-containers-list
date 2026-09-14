@@ -69,7 +69,7 @@ x-casaos:
     - arm64
   main: paperlessngx
   author: RoqueOS Team
-  category: Documents
+  category: Productivity
   description:
     en_us: Paperless-ngx is a community-maintained document management system that transforms physical documents into searchable archives. Drop scans into the consume folder; OCR and tagging happen automatically. Full-text search, mobile scanner apps integration, smart filing rules. Communities of accountants, lawyers, and home users keep their paperwork in Paperless.
     pt_br: Paperless-ngx é um sistema de gerenciamento de documentos mantido pela comunidade que transforma documentos físicos em arquivos pesquisáveis. Coloque scans na pasta consume; OCR e tagging acontecem automaticamente. Busca full-text, integração com apps de scanner mobile, regras inteligentes de arquivamento. Contadores, advogados e usuários domésticos mantêm seus papéis no Paperless.

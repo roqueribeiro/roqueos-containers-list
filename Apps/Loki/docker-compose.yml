@@ -43,7 +43,7 @@ x-casaos:
     - arm64
   main: loki
   author: RoqueOS Team
-  category: Database
+  category: Developer
   description:
     en_us: Loki is the log aggregation system from Grafana Labs — like Prometheus, but for logs. Indexes only metadata (labels) instead of full text, making it lighter and faster than Elasticsearch for log streaming. Pairs with Promtail (collector) and Grafana (UI) to complete the LGTM observability stack.
     pt_br: Loki é o sistema de agregação de logs do Grafana Labs — como Prometheus, mas para logs. Indexa apenas metadata (labels) em vez do texto completo, tornando-o mais leve e rápido que Elasticsearch para streaming de logs. Combina com Promtail (coletor) e Grafana (UI) para completar o stack de observabilidade LGTM.

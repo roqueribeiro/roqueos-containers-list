@@ -59,3 +59,7 @@ x-casaos:
     zh_cn: 支持内网穿透，作为开源第三方客户端支持客户端远程管理casaOS、zimaOS，远程访问你的所有应用。
   title:
     en_us: gateway-go
+
+x-roqueos:
+  motivo:
+    networkHost: "atua como gateway de rede do host"

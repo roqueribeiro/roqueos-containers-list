@@ -68,7 +68,7 @@ x-casaos:
     - arm64
   main: pyload
   author: joaobosconff
-  category: Downloader
+  category: Utilities
   description:
     en_us: pyLoad is a Free and Open Source download manager written in Python and designed to be extremely lightweight, easily extensible and fully manageable via web.
     zh_cn: pyLoad是一款用Python编写的免费开源下载管理器，设计极轻量，易于扩展，并通过Web完全可管理。

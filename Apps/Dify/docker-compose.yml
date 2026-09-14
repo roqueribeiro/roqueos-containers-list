@@ -237,7 +237,7 @@ x-casaos:
   main: nginx
   author: IceWhaleTech
   developer: LangGenius
-  category: Chat
+  category: AI
   description:
     en_us: Dify is an open-source large language model (LLM) application development platform. It combines the concepts of Backend-as-a-Service and LLMOps to enable developers to quickly build production-grade generative AI applications. Even non-technical personnel can participate in the definition and data operations of AI applications.
     en_uk: Dify is an open-source large language model (LLM) application development platform. It combines the concepts of Backend-as-a-Service and LLMOps to enable developers to quickly build production-grade generative AI applications. Even non-technical personnel can participate in the definition and data operations of AI applications.

@@ -481,3 +481,8 @@ x-casaos:
   index: /
   port_map: '8123'
   scheme: http
+
+x-roqueos:
+  motivo:
+    privileged: "acesso a rádios USB (Zigbee, Z-Wave) e descoberta na rede local"
+    networkHost: "descoberta de dispositivos por mDNS, SSDP e DHCP na rede local"

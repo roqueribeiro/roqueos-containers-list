@@ -45,3 +45,7 @@ x-casaos:
   port_map: '16601'
   scheme: http
   store_app_id: lucky
+
+x-roqueos:
+  motivo:
+    networkHost: "faz port forwarding e DDNS a partir do IP do host"

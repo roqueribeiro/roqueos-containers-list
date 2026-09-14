@@ -251,3 +251,7 @@ x-casaos:
     en_us: Cloudflared
   port_map: '14333'
   scheme: http
+
+x-roqueos:
+  motivo:
+    networkHost: "o túnel precisa alcançar serviços em qualquer porta do host"

@@ -37,7 +37,7 @@ x-casaos:
     - arm64
   main: trilium
   author: RoqueOS Team
-  category: Notes
+  category: Productivity
   description:
     en_us: Trilium Notes is a hierarchical note-taking application with infinite tree of notes, rich WYSIWYG editor, code notes with syntax highlighting, scripting (JavaScript/Python), embedded images/files, encryption per-note, full-text search, sync between server and desktop clients, relations and attributes for knowledge graphs. Now maintained as TriliumNext after the original was archived.
     pt_br: Trilium Notes é uma aplicação de notas hierárquica com árvore infinita de notas, editor WYSIWYG rico, code notes com syntax highlighting, scripting (JavaScript/Python), imagens/arquivos embutidos, criptografia por nota, busca full-text, sincronização entre servidor e clientes desktop, relations e atributos para grafos de conhecimento. Agora mantido como TriliumNext após o original ter sido arquivado.

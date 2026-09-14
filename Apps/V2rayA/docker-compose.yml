@@ -380,3 +380,8 @@ x-casaos:
   index: /
   title:
     en_US: V2rayA
+
+x-roqueos:
+  motivo:
+    privileged: "manipula tabelas de roteamento do host para o modo transparente"
+    networkHost: "o proxy transparente só intercepta o tráfego que passa pela rede do host"

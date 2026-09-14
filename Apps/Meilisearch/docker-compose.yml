@@ -43,7 +43,7 @@ x-casaos:
     - arm64
   main: meilisearch
   author: RoqueOS Team
-  category: Development
+  category: Developer
   description:
     en_us: Meilisearch is a lightning-fast, hyper-relevant search engine you can run on your own infrastructure. Typo-tolerant, returns results in under 50ms, RESTful API, perfect drop-in replacement for Elasticsearch on small-to-medium datasets.
     pt_br: Meilisearch é um mecanismo de busca extremamente rápido e altamente relevante que você roda na sua própria infraestrutura. Tolerante a erros de digitação, retorna resultados em menos de 50ms, API RESTful, substituto natural do Elasticsearch para datasets pequenos e médios.

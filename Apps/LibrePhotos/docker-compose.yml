@@ -87,7 +87,7 @@ x-casaos:
     - amd64
   main: backend
   author: RoqueOS Team
-  category: Gallery
+  category: Media
   description:
     en_us: LibrePhotos is a self-hosted, open-source Google Photos alternative. AI-powered face recognition, automatic event detection, location maps, smart album generation, things detection (pets, food, landscapes), and a clean React UI. Heavy on RAM/CPU due to ML inference — recommend 4 GB+ RAM and a recent CPU.
     pt_br: LibrePhotos é uma alternativa auto-hospedada e open-source ao Google Fotos. Reconhecimento facial com IA, detecção automática de eventos, mapas de localização, geração inteligente de álbuns, detecção de objetos (pets, comida, paisagens) e UI moderna em React. Pesado em RAM/CPU pela inferência ML — recomendamos 4 GB+ de RAM e CPU recente.

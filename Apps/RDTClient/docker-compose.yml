@@ -36,7 +36,7 @@ x-casaos:
     - arm
     - arm64
   author: calganaygun
-  category: Downloader
+  category: Utilities
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RDTClient/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/RDTClient/screenshot-1.png

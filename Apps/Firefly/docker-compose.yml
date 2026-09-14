@@ -27,7 +27,7 @@ x-casaos:
     - arm
   main: firefly
   store_app_id: firefly
-  category: VPN
+  category: Network
   author: Cp0204
   developer: Safe3
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Firefly/icon.png
@@ -50,3 +50,8 @@ x-casaos:
   port_map: '50121'
   scheme: http
   index: /
+
+x-roqueos:
+  motivo:
+    networkHost: "compose herdado do upstream; a interface é publicada direto na rede do host"
+    capAdd: "capacidade exigida pelo upstream para a função declarada do container"

@@ -50,7 +50,7 @@ x-casaos:
     - arm
   main: memos
   author: usememos Team
-  category: Notes
+  category: Productivity
   description:
     en_US: |
       Memos is a lightweight, open-source, self-hosted note-taking application that offers a secure and streamlined solution for users prioritizing privacy and data control. All notes are stored on the user’s own server, eliminating risks associated with third-party cloud services. Its minimalist Web interface supports Markdown syntax and tag-based organization, enabling effortless capture of ideas, personal knowledge management, or small-scale team collaboration. The open-source design ensures transparency, long-term maintainability, and no subscription costs, making it ideal for users seeking data ownership and cost efficiency.

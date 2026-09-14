@@ -61,7 +61,7 @@ x-casaos:
     - arm64
   main: kopia
   author: RoqueOS Team
-  category: Backup
+  category: Storage
   description:
     en_us: Kopia is a fast and secure open-source backup tool with deduplication, compression, encryption (AES-256-GCM), and a beautiful web UI. Backs up to local disk, S3, B2, GCS, Azure, SFTP, WebDAV, rclone — anywhere. Snapshot-based with content-addressable storage. Cross-platform clients (Linux/macOS/Windows) can share repositories.
     pt_br: Kopia é uma ferramenta de backup open-source rápida e segura com deduplicação, compressão, criptografia (AES-256-GCM) e uma UI web bonita. Faz backup para disco local, S3, B2, GCS, Azure, SFTP, WebDAV, rclone — para qualquer lugar. Baseada em snapshots com armazenamento content-addressable. Clientes multiplataforma (Linux/macOS/Windows) podem compartilhar repositórios.

@@ -36,3 +36,7 @@ x-casaos:
   index: /
   port_map: '8581'
   scheme: http
+
+x-roqueos:
+  motivo:
+    networkHost: "o HomeKit exige mDNS na mesma rede física dos acessórios"

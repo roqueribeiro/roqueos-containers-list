@@ -63,7 +63,7 @@ x-casaos:
     - arm64
   main: qbittorrent
   author: RoqueOS Team
-  category: Downloader
+  category: Utilities
   description:
     en_us: |
       **Elevate Your Home Media Experience**. qBittorrent transforms your home media setup with a polished interface reminiscent of µTorrent, minus the ads. Unlike traditional download tools, it offers a streamlined, efficient, and ad-free experience. This makes it a perfect fit for those seeking a hassle-free way to manage and enjoy their media collections at home.

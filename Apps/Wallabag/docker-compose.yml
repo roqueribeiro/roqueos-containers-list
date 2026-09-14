@@ -107,7 +107,7 @@ x-casaos:
     - amd64
     - arm64
   main: wallabag
-  category: Notes
+  category: Productivity
   developer: wallabag
   author: RoqueOS Team
   tagline:

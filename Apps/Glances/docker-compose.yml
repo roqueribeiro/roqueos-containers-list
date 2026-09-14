@@ -59,7 +59,7 @@ x-casaos:
     - arm64
   main: glances
   author: joaobosconff
-  category: Utility
+  category: Utilities
   description:
     en_us: Glances is an open-source system cross-platform monitoring tool. It allows real-time monitoring of various aspects of your system such as CPU, memory, disk, network usage etc.
     zh_cn: "Glances\_是一个开源的跨平台系统监控工具。它允许实时监控系统的各个方面，如 CPU、内存、磁盘、网络使用情况等。"

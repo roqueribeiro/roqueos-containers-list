@@ -31,7 +31,7 @@ x-casaos:
     - amd64
   main: open-webui-ollama
   developer: Tim J. Baek
-  category: Chat
+  category: AI
   description:
     en_US: |
       Open WebUI is a feature-rich, user-friendly self-hosted AI platform designed for fully offline operation, supporting multiple large language model runners and API integration. Its intuitive Web interface provides powerful AI deployment capabilities, ideal for developers, researchers, and AI enthusiasts building localized intelligent applications.

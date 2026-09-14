@@ -40,7 +40,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Databag/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Databag/screenshot-2.png
   author: Pierre Balzack
-  category: Chat
+  category: Communication
   title:
     en_us: Databag
   port_map: '7000'

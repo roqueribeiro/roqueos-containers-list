@@ -70,3 +70,7 @@ x-casaos:
     en_us: duckdns
   index: /
   scheme: http
+
+x-roqueos:
+  motivo:
+    networkHost: "precisa do IP público real do host, não do IP da bridge"

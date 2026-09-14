@@ -4,7 +4,10 @@
   "title": "RoqueOS / CasaOS App Manifest",
   "description": "docker-compose.yml superset used by the RoqueOS Server catalog. Compatible with CasaOS App Store; adds the optional x-roqueos namespace for RoqueOS-specific metadata. See CONTRIBUTING.md for the full contributor guide.",
   "type": "object",
-  "required": ["name", "services"],
+  "required": [
+    "name",
+    "services"
+  ],
   "additionalProperties": true,
   "properties": {
     "name": {
@@ -19,41 +22,88 @@
       "patternProperties": {
         "^[a-zA-Z0-9_-]+$": {
           "type": "object",
-          "required": ["image"],
+          "required": [
+            "image"
+          ],
           "properties": {
             "image": {
               "type": "string",
               "description": "Image reference. Must include an explicit tag or digest (no bare names). Accepted shapes: 'name:tag', 'name@sha256:...', 'name:tag@sha256:...'. :latest is allowed but discouraged — the fix-manifests script reports it as 'manual review' so contributors can pin to stable tags during normal maintenance.",
               "pattern": "^\\S+[:@]\\S+$"
             },
-            "container_name": { "type": "string" },
+            "container_name": {
+              "type": "string"
+            },
             "restart": {
               "type": "string",
-              "enum": ["no", "always", "on-failure", "unless-stopped"]
+              "enum": [
+                "no",
+                "always",
+                "on-failure",
+                "unless-stopped"
+              ]
             },
             "ports": {
               "type": "array",
               "items": {
                 "oneOf": [
-                  { "type": "string" },
+                  {
+                    "type": "string"
+                  },
                   {
                     "type": "object",
-                    "required": ["target"],
+                    "required": [
+                      "target"
+                    ],
                     "properties": {
-                      "target": { "type": ["integer", "string"] },
-                      "published": { "type": ["integer", "string"] },
-                      "protocol": { "type": "string", "enum": ["tcp", "udp"] }
+                      "target": {
+                        "type": [
+                          "integer",
+                          "string"
+                        ]
+                      },
+                      "published": {
+                        "type": [
+                          "integer",
+                          "string"
+                        ]
+                      },
+                      "protocol": {
+                        "type": "string",
+                        "enum": [
+                          "tcp",
+                          "udp"
+                        ]
+                      }
                     }
                   }
                 ]
               }
             },
-            "volumes": { "type": "array" },
-            "environment": { "type": ["array", "object"] },
-            "devices": { "type": "array" },
-            "privileged": { "type": "boolean" },
-            "network_mode": { "type": "string" },
-            "depends_on": { "type": ["array", "object"] },
+            "volumes": {
+              "type": "array"
+            },
+            "environment": {
+              "type": [
+                "array",
+                "object"
+              ]
+            },
+            "devices": {
+              "type": "array"
+            },
+            "privileged": {
+              "type": "boolean"
+            },
+            "network_mode": {
+              "type": "string"
+            },
+            "depends_on": {
+              "type": [
+                "array",
+                "object"
+              ]
+            },
             "x-casaos": {
               "type": "object",
               "description": "Per-service metadata (port descriptions, env hints, volume hints).",
@@ -62,15 +112,28 @@
                   "type": "array",
                   "items": {
                     "type": "object",
-                    "required": ["container"],
+                    "required": [
+                      "container"
+                    ],
                     "properties": {
-                      "container": { "type": ["string", "integer"] },
-                      "description": { "$ref": "#/definitions/i18nString" }
+                      "container": {
+                        "type": [
+                          "string",
+                          "integer"
+                        ]
+                      },
+                      "description": {
+                        "$ref": "#/definitions/i18nString"
+                      }
                     }
                   }
                 },
-                "envs": { "type": "array" },
-                "volumes": { "type": "array" }
+                "envs": {
+                  "type": "array"
+                },
+                "volumes": {
+                  "type": "array"
+                }
               }
             }
           },
@@ -81,7 +144,12 @@
     "x-casaos": {
       "type": "object",
       "description": "App-level metadata consumed by RoqueOS Server (catalog parser) and CasaOS-compatible clients.",
-      "required": ["architectures", "main", "category", "scheme"],
+      "required": [
+        "architectures",
+        "main",
+        "category",
+        "scheme"
+      ],
       "properties": {
         "architectures": {
           "type": "array",
@@ -141,36 +209,84 @@
         },
         "scheme": {
           "type": "string",
-          "enum": ["http", "https"],
+          "enum": [
+            "http",
+            "https"
+          ],
           "description": "Protocol the WebUI speaks. Used by the proxy to construct the open URL."
         },
         "port_map": {
           "type": "string",
           "description": "Canonical published host port the proxy should open by default. Required when the principal service exposes 2+ ports (otherwise the proxy heuristic guesses)."
         },
-        "developer": { "type": "string" },
-        "author": { "type": "string" },
-        "icon": { "type": "string" },
-        "thumbnail": { "type": ["string", "array", "null"] },
+        "developer": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "thumbnail": {
+          "type": [
+            "string",
+            "array",
+            "null"
+          ]
+        },
         "screenshot_link": {
           "oneOf": [
-            { "type": "null" },
-            { "type": "string" },
-            { "type": "array", "items": { "type": "string" } }
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
           ]
         },
         "tagline": {
           "oneOf": [
-            { "type": "null" },
-            { "type": "string" },
-            { "$ref": "#/definitions/i18nString" }
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "#/definitions/i18nString"
+            }
           ]
         },
-        "description": { "$ref": "#/definitions/i18nString" },
-        "title": { "$ref": "#/definitions/i18nString" },
-        "tips": { "type": ["object", "string", "null"] },
-        "index": { "type": ["string", "array", "null"] },
-        "store_app_id": { "type": "string" }
+        "description": {
+          "$ref": "#/definitions/i18nString"
+        },
+        "title": {
+          "$ref": "#/definitions/i18nString"
+        },
+        "tips": {
+          "type": [
+            "object",
+            "string",
+            "null"
+          ]
+        },
+        "index": {
+          "type": [
+            "string",
+            "array",
+            "null"
+          ]
+        },
+        "store_app_id": {
+          "type": "string"
+        }
       }
     },
     "x-roqueos": {
@@ -181,6 +297,29 @@
         "mountShared": {
           "type": "boolean",
           "description": "When true, the RoqueOS Server bind-mounts /data/roqueos/shared at /shared inside the container (rw). Use for media servers, downloaders, and file managers that benefit from cross-app access to a shared filesystem."
+        },
+        "motivo": {
+          "type": "object",
+          "description": "Por que este app precisa de privilegio elevado. Documental: o server ignora, o gate de revisao (scripts/revisao-container.mjs, Goal 18) exige. A regra da casa nao e remover privileged, network_mode host ou cap_add de quem precisa deles, e sim obrigar quem os usa a dizer por que.",
+          "additionalProperties": false,
+          "properties": {
+            "privileged": {
+              "type": "string",
+              "minLength": 10
+            },
+            "networkHost": {
+              "type": "string",
+              "minLength": 10
+            },
+            "capAdd": {
+              "type": "string",
+              "minLength": 10
+            }
+          }
+        },
+        "portaCompartilhada": {
+          "type": "boolean",
+          "description": "Declara que a porta host deste app e sabidamente disputada com outro app do catalogo. O instalador realoca, mas a loja precisa saber para avisar."
         }
       }
     }
@@ -190,7 +329,9 @@
       "type": "object",
       "description": "Multi-locale string keyed by language code (e.g. en_US, pt_BR, es_ES). At minimum en_US should be present.",
       "patternProperties": {
-        "^[a-z]{2}(_[A-Z]{2})?$": { "type": "string" }
+        "^[a-z]{2}(_[A-Z]{2})?$": {
+          "type": "string"
+        }
       }
     }
   }

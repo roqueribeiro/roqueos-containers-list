@@ -97,3 +97,7 @@ x-casaos:
   index: /
   port_map: '5000'
   scheme: http
+
+x-roqueos:
+  motivo:
+    privileged: "acesso ao acelerador de inferência (Coral TPU / GPU) em /dev"

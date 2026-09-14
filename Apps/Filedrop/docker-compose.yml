@@ -93,7 +93,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Filedrop/screenshot-1.png
   title:
     en_us: FileDrop
-  category: Cloud
+  category: Storage
   port_map: '8000'
   scheme: http
 x-roqueos:

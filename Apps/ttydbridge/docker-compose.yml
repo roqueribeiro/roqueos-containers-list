@@ -67,3 +67,7 @@ x-casaos:
         [官方文档](https://hub.docker.com/r/cp0204/ttydbridge)
   title:
     en_us: ttydBridge
+
+x-roqueos:
+  motivo:
+    privileged: "expõe um shell do host, que é a função declarada do container"

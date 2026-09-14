@@ -115,4 +115,6 @@ x-casaos:
   port_map: '32400'
   scheme: http
 x-roqueos:
+  motivo:
+    networkHost: "descoberta por GDM e DLNA exige a mesma rede física dos clientes"
   mountShared: true

@@ -61,7 +61,7 @@ x-casaos:
     - amd64
   main: seafile
   author: RoqueOS Team
-  category: Cloud
+  category: Storage
   description:
     en_us: Seafile is a high-performance, self-hosted file sync and share solution focused on reliability and performance. Stores files in libraries (versioned), client-side AES-256 encryption, mobile + desktop sync apps for all major platforms, server-side OnlyOffice/Collabora integration, granular permissions per-library and per-folder.
     pt_br: Seafile é uma solução de sync e compartilhamento de arquivos auto-hospedada de alta performance, focada em confiabilidade e desempenho. Armazena arquivos em bibliotecas (versionadas), criptografia AES-256 client-side, apps de sync mobile + desktop para todas as plataformas principais, integração server-side OnlyOffice/Collabora, permissões granulares por biblioteca e pasta.

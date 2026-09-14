@@ -22,7 +22,7 @@ x-casaos:
     - amd64
   main: anythingllm
   developer: Mintplex Labs
-  category: Chat
+  category: AI
   description:
     en_us: AnythingLLM is the easiest to use, all-in-one AI application that can do RAG, AI Agents, and much more with no code or infrastructure headaches.
     en_uk: AnythingLLM is the easiest to use, all-in-one AI application that can do RAG, AI Agents, and much more with no code or infrastructure headaches.
@@ -62,3 +62,7 @@ x-casaos:
     ja_jp: AnythingLLM
   index: /
   port_map: '3051'
+
+x-roqueos:
+  motivo:
+    capAdd: "capacidade exigida pelo upstream para a função declarada do container"

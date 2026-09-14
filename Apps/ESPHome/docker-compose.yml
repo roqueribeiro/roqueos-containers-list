@@ -67,3 +67,7 @@ x-casaos:
   store_app_id: esphome
   title:
     en_us: ESPHome
+
+x-roqueos:
+  motivo:
+    networkHost: "descoberta mDNS e flash OTA de dispositivos na rede local"

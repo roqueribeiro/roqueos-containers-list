@@ -81,7 +81,7 @@ x-casaos:
     - arm64
   main: syncthing
   author: RoqueOS Team
-  category: Backup
+  category: Storage
   description:
     en_US: |
       # Unlocking the True Potential of Data Backup

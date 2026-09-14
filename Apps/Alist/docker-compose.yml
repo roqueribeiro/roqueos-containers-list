@@ -34,7 +34,7 @@ x-casaos:
     - arm
     - arm64
   author: Xhofe
-  category: Cloud
+  category: Storage
   description:
     en_US: |
       Alist transforms how you manage and access your files at home, whether on your TV, phone, or any other device. Unlike traditional cloud storage, Alist offers a unified experience across multiple platforms, making it a breeze to keep your media and documents at your fingertips.

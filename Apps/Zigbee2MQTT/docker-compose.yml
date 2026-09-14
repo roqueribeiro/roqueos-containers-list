@@ -77,3 +77,7 @@ x-casaos:
   index: /
   port_map: '8095'
   scheme: http
+
+x-roqueos:
+  motivo:
+    privileged: "acesso ao adaptador Zigbee em /dev/ttyACM ou /dev/ttyUSB"

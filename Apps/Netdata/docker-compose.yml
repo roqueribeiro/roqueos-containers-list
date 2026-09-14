@@ -77,3 +77,7 @@ x-casaos:
   title:
     en_us: Netdata
   main: app
+
+x-roqueos:
+  motivo:
+    capAdd: "capacidade exigida pelo upstream para a função declarada do container"

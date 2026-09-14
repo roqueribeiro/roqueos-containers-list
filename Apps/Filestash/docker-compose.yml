@@ -36,7 +36,7 @@ x-casaos:
     - arm64
   main: filestash
   author: RoqueOS Team
-  category: Cloud
+  category: Storage
   description:
     en_us: Filestash is a self-hosted file manager that connects to S3, FTP, SFTP, WebDAV, Google Drive, Dropbox, OneDrive, Backblaze B2, Storj, Nextcloud, MySQL, MongoDB and a dozen other backends. One unified UI for all storages — drag-drop, video preview, document viewer, image gallery, ZIP archive support, terminal-like browse via SSH/SFTP.
     pt_br: Filestash é um gerenciador de arquivos auto-hospedado que conecta a S3, FTP, SFTP, WebDAV, Google Drive, Dropbox, OneDrive, Backblaze B2, Storj, Nextcloud, MySQL, MongoDB e dezenas de outros backends. UI unificada para todos os storages — drag-drop, preview de vídeo, viewer de documentos, galeria de imagens, suporte a ZIP, browsing tipo terminal via SSH/SFTP.

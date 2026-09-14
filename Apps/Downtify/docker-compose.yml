@@ -41,7 +41,7 @@ x-casaos:
     - arm64
   main: downtify
   author: Henrique Sebastião
-  category: Downloader
+  category: Utilities
   description:
     en_us: |
       With Downtify you can download Spotify musics containing album art, track names, album title and other metadata about the songs. Just copy the Spotify link, whether it's a single song, an album, etc. As soon as your downloads are complete you will be notified!

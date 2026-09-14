@@ -136,7 +136,7 @@ x-casaos:
     - amd64
     - arm64
   main: obsidian
-  category: Notes
+  category: Productivity
   developer: linuxserver
   author: RoqueOS Team
   tagline:

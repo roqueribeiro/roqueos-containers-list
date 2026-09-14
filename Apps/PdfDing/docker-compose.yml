@@ -85,7 +85,7 @@ x-casaos:
     - amd64
     - arm64
   author: mrmn2
-  category: Documents
+  category: Productivity
   description:
     en_US: |
       PdfDing is a selfhosted PDF manager, viewer and editor offering a seamless user experience on multiple devices. It's designed to be minimal, fast, and easy to set up using Docker.

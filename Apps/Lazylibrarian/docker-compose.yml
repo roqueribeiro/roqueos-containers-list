@@ -62,7 +62,7 @@ x-casaos:
     - arm64
   main: lazylibrarian
   author: RoqueOS Team
-  category: Downloader
+  category: Utilities
   description:
     en_us: Lazylibrarian is a program to follow authors and grab metadata for all your digital reading needs. It uses a combination of Goodreads Librarything and optionally GoogleBooks as sources for author info and book info. This container is based on the DobyTang fork.
     zh_cn: Lazylibrarian是一个程序，用于跟踪作者并获取所有数字阅读需求的元数据。它使用Goodreads Librarything和可选的GoogleBooks作为作者信息和书籍信息的来源。此容器基于DobyTang分支。

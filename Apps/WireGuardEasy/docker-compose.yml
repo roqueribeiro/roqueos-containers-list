@@ -108,3 +108,7 @@ x-casaos:
     en_us: WireGuard Easy
   port_map: '51821'
   scheme: http
+
+x-roqueos:
+  motivo:
+    capAdd: "capacidade exigida pelo upstream para a função declarada do container"

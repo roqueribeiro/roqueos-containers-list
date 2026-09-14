@@ -69,3 +69,7 @@ x-casaos:
   index: /
   port_map: '8080'
   scheme: http
+
+x-roqueos:
+  motivo:
+    capAdd: "capacidade exigida pelo upstream para a função declarada do container"

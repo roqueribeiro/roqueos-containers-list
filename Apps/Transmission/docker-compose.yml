@@ -86,7 +86,7 @@ x-casaos:
     - arm64
   main: transmission
   author: RoqueOS Team
-  category: Downloader
+  category: Utilities
   description:
     en_US: |
       Transmission is a BitTorrent client designed for simplicity and powerful performance, delivering an efficient and user-friendly downloading experience. It comes equipped with all the essential features you expect, including encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.

@@ -78,7 +78,7 @@ x-casaos:
     - arm64
   main: deluge
   author: RoqueOS Team
-  category: Downloader
+  category: Utilities
   description:
     en_us: Deluge contains the common features to BitTorrent clients such as Protocol Encryption, DHT, Local Peer Discovery (LSD), Peer Exchange (PEX), UPnP, NAT-PMP, Proxy support, Web seeds, global and per-torrent speed limits. As Deluge heavily utilises the ​libtorrent library it has a comprehensive list of the ​features provided.
     zh_cn: Deluge 包含 BitTorrent 客户端的常见功能，如协议加密、DHT、本地对等发现（LSD）、对等交换（PEX）、UPnP、NAT-PMP、代理支持、Web 种子、全局和每个 torrent 速度限制。由于 Deluge 大量利用了 libtorrent 库，因此它具有提供的功能的详细列表。

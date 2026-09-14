@@ -46,7 +46,7 @@ x-casaos:
     - s390x
   main: nextcloud
   author: RoqueOS Team
-  category: Cloud
+  category: Storage
   description:
     en_us: |
       Discover the ultimate solution for remote collaboration with Nextcloud. Unlike traditional office software, Nextcloud seamlessly integrates files, communication, and productivity tools into one platform, enhancing teamwork and streamlining your workflow. Say goodbye to the limitations of conventional tools and embrace a new era of collaboration.

@@ -93,7 +93,7 @@ x-casaos:
     - arm64
   main: immich-server
   store_app_id: immich
-  category: Gallery
+  category: Media
   author: Cp0204
   developer: alextran1502
   icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Immich/icon.png

@@ -45,7 +45,7 @@ x-casaos:
     - arm64
   main: piwigo
   author: RoqueOS Team
-  category: Gallery
+  category: Media
   description:
     en_us: Piwigo is a CMS for photo galleries — open-source since 2002, used by photographers, families, schools, museums, and organizations. Album hierarchy, tags, search, EXIF, ratings, comments, customizable themes, mobile apps, plugin ecosystem with 350+ extensions.
     pt_br: Piwigo é um CMS para galerias de fotos — open-source desde 2002, usado por fotógrafos, famílias, escolas, museus e organizações. Hierarquia de álbuns, tags, busca, EXIF, avaliações, comentários, temas customizáveis, apps mobile, ecossistema de plugins com 350+ extensões.

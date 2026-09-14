@@ -92,7 +92,7 @@ x-casaos:
     - arm64
   main: crafty
   author: Chàra Rose
-  category: Games
+  category: Gaming
   description:
     en_us: Crafty is an open source Minecraft control panel built using Tornado and AdminLTE, featuring server scheduling, a interactive console and the ability to run almost any type of Minecraft server
     es_es: Crafty es un panel de control de Minecraft de código abierto creado con Tornado y AdminLTE, que incluye programación de servidores, una consola interactiva y la capacidad de ejecutar casi cualquier tipo de servidor de Minecraft.

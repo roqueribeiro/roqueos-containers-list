@@ -59,7 +59,7 @@ x-casaos:
     - arm
   main: filebrowser
   author: RoqueOS Team
-  category: Cloud
+  category: Storage
   description:
     en_us: File Browser - Webbased File Browser including sharing functions etc.
     zh_cn: File Browser - 包含分享功能等的Webbased文件浏览器

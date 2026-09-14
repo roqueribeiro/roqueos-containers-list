@@ -63,7 +63,7 @@ x-casaos:
     sv_se: Frigör kraften i sömlös filsynkronisering.
     uk_ua: Розкрийте потужність безперервної синхронізації файлів.
   author: self
-  category: File Sync
+  category: Storage
   hostname: ''
   index: /
   port_map: '8888'
