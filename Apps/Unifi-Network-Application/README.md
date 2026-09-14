@@ -19,13 +19,13 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve                                  | Serviço                   |
-| ----- | --------- | --------- | ----------------------------------------------- | ------------------------- |
-| 8443  | 8443      | tcp       | WebUI HTTP Port                                 | unifi-network-application |
-| 3478  | 3478      | udp       | Service port 3478 of unifi-network-application  | unifi-network-application |
-| 10001 | 10001     | udp       | Service port 10001 of unifi-network-application | unifi-network-application |
-| 8080  | 8080      | tcp       | Service port 8080 of unifi-network-application  | unifi-network-application |
-| 27017 | 27017     | tcp       | —                                               | unifi-db                  |
+| Host  | Container | Protocolo | Para que serve                                                      | Serviço                   |
+| ----- | --------- | --------- | ------------------------------------------------------------------- | ------------------------- |
+| 8443  | 8443      | tcp       | WebUI HTTP Port                                                     | unifi-network-application |
+| 3478  | 3478      | udp       | Service port 3478 of unifi-network-application                      | unifi-network-application |
+| 10001 | 10001     | udp       | Service port 10001 of unifi-network-application                     | unifi-network-application |
+| 8080  | 8080      | tcp       | Service port 8080 of unifi-network-application                      | unifi-network-application |
+| 27017 | 27017     | tcp       | MongoDB used only by the Unifi controller; keep it off the internet | unifi-db                  |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 
@@ -40,19 +40,19 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável     | Valor padrão | Serviço                   |
-| ------------ | ------------ | ------------------------- |
-| MONGO_DBNAME | unifi-db     | unifi-network-application |
-| MONGO_HOST   | unifi-db     | unifi-network-application |
-| MONGO_PASS   | pass         | unifi-network-application |
-| MONGO_PORT   | 27017        | unifi-network-application |
-| MONGO_USER   | unifi        | unifi-network-application |
-| PGID         | $PGID        | unifi-network-application |
-| PUID         | $PUID        | unifi-network-application |
-| TZ           | $TZ          | unifi-network-application |
-| PGID         | $PGID        | unifi-db                  |
-| PUID         | $PUID        | unifi-db                  |
-| TZ           | $TZ          | unifi-db                  |
+| Variável     | Valor padrão            | Serviço                   |
+| ------------ | ----------------------- | ------------------------- |
+| MONGO_DBNAME | unifi-db                | unifi-network-application |
+| MONGO_HOST   | unifi-db                | unifi-network-application |
+| MONGO_PASS   | change-me-on-first-boot | unifi-network-application |
+| MONGO_PORT   | 27017                   | unifi-network-application |
+| MONGO_USER   | unifi                   | unifi-network-application |
+| PGID         | $PGID                   | unifi-network-application |
+| PUID         | $PUID                   | unifi-network-application |
+| TZ           | $TZ                     | unifi-network-application |
+| PGID         | $PGID                   | unifi-db                  |
+| PUID         | $PUID                   | unifi-db                  |
+| TZ           | $TZ                     | unifi-db                  |
 
 ## Primeiro acesso
 

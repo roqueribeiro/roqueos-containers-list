@@ -14,7 +14,7 @@ services:
       SERVER_PORT: 8443
       USER_NAME: mc
       USER_UID: 1000
-      USER_PASSWORD: $default_pwd
+      USER_PASSWORD: change-me-on-first-boot
     ports:
       - 8444:8443/tcp
       - 25565-25570:25565-25570/tcp

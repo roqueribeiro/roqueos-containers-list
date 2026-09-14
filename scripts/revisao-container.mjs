@@ -56,8 +56,20 @@ function conferirMapaDoServer() {
   return faltando.length || sobrando.length ? { faltando, sobrando } : null
 }
 
-const SEGREDO = /(PASSWORD|PASSWD|SECRET|TOKEN|API_KEY|APIKEY|ROOT_PASSWORD|ADMIN_PASS)/i
-const FRACO = /^(admin|password|123456|changeme|secret|root|toor|test|guest|pass|1234)$/i
+// Larga de proposito: MONGO_PASS=pass passou pela primeira versao, que so
+// procurava PASSWORD inteiro. O que importa e o valor ser adivinhavel, nao o
+// nome da variavel seguir um padrao.
+const SEGREDO = /(PASS|SECRET|TOKEN|KEY|CREDENTIAL|AUTH)/i
+const FRACO = /^(admin|password|123456|changeme|secret|root|toor|test|guest|pass|1234|unifi|user|demo)$/i
+
+/**
+ * Placeholder com `$` so vale se alguem substituir. `$default_pwd` nao e
+ * convencao do CasaOS nem do RoqueOS Server: foi inventado numa passada deste
+ * goal e nada o resolvia, o que e pior que a senha fraca que ele substituiu.
+ * O padrao da casa e `change-me-on-first-boot`, que ja aparece em 12 apps, mais
+ * a tip dizendo para trocar.
+ */
+const PLACEHOLDER_MORTO = /^\$(default_pwd|password|pwd|secret)$/i
 
 /** Largura e altura de um PNG pelo cabeçalho IHDR. Sem dependência de imagem. */
 export function dimensoesPng(arquivo) {
@@ -137,6 +149,8 @@ function premissas(app, conflitos) {
       const valor = String(v ?? '').trim()
       if (SEGREDO.test(k) && valor && !valor.startsWith('$') && FRACO.test(valor))
         p.P3.push(`${nomeSvc}: ${k} com segredo literal fraco`)
+      if (PLACEHOLDER_MORTO.test(valor))
+        p.P3.push(`${nomeSvc}: ${k}=${valor} é um placeholder que ninguém substitui`)
     }
   }
 

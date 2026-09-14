@@ -9,7 +9,7 @@ services:
     environment:
       - MONGO_DBNAME=unifi-db
       - MONGO_HOST=unifi-db
-      - MONGO_PASS=pass
+      - MONGO_PASS=change-me-on-first-boot
       - MONGO_PORT=27017
       - MONGO_USER=unifi
       - PGID=$PGID
@@ -80,6 +80,11 @@ services:
       - target: 27017
         published: '27017'
         protocol: tcp
+    x-casaos:
+      ports:
+        - container: '27017'
+          description:
+            en_us: "MongoDB used only by the Unifi controller; keep it off the internet"
     restart: unless-stopped
     volumes:
       - type: bind
@@ -94,8 +99,8 @@ networks:
 configs:
   init-mongo.js:
     content: |
-      db.getSiblingDB("unifi-db").createUser({user: "unifi", pwd: "pass", roles: [{role: "dbOwner", db: "unifi-db"}]}); 
-      db.getSiblingDB("unifi-db_stat").createUser({user: "unifi", pwd: "pass", roles: [{role: "dbOwner", db: "unifi-db_stat"}]});
+      db.getSiblingDB("unifi-db").createUser({user: "unifi", pwd: "change-me-on-first-boot", roles: [{role: "dbOwner", db: "unifi-db"}]}); 
+      db.getSiblingDB("unifi-db_stat").createUser({user: "unifi", pwd: "change-me-on-first-boot", roles: [{role: "dbOwner", db: "unifi-db_stat"}]});
 x-casaos:
   architectures:
     - amd64
