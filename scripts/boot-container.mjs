@@ -96,10 +96,26 @@ function estados(projeto) {
 
 function logs(projeto, servico) {
   try {
-    return sh('docker', ['compose', '-p', projeto, 'logs', '--tail', '15', servico]).trim()
+    return sh('docker', ['compose', '-p', projeto, 'logs', '--tail', '25', servico]).trim()
   } catch {
     return ''
   }
+}
+
+// Nem toda falha do laboratório é falha do app. Um sandbox sem IPv6 no kernel
+// derruba qualquer nginx que escute em [::], e um sandbox que não deixa subir
+// rlimit derruba qualquer stack que peça ulimit. Chamar isso de app quebrado
+// seria mentir na direção contrária à do Grafana — e gate que mente em qualquer
+// direção ensina a ignorar gate.
+export const LIMITE_DO_LABORATORIO = [
+  { re: /Address family not supported by protocol/i, motivo: 'kernel do laboratório sem IPv6' },
+  { re: /error setting rlimit/i, motivo: 'laboratório não permite levantar rlimit' },
+  { re: /operation not permitted.*rlimit/i, motivo: 'laboratório não permite levantar rlimit' },
+]
+
+export function inconclusivo(erro) {
+  for (const l of LIMITE_DO_LABORATORIO) if (l.re.test(erro || '')) return l.motivo
+  return null
 }
 
 function espera(ms) {
@@ -122,7 +138,16 @@ export function testa(app) {
   // catálogo é assunto da P2, que é estática e não depende de subir nada.
   writeFileSync(join(dir, 'docker-compose.yml'), semPortas(texto))
 
-  const res = { app, projeto, ok: false, etapa: null, erro: null, servicos: [], segundos: 0 }
+  const res = {
+    app,
+    projeto,
+    ok: false,
+    inconclusivo: null,
+    etapa: null,
+    erro: null,
+    servicos: [],
+    segundos: 0,
+  }
   try {
     try {
       sh('docker', ['compose', '-p', projeto, 'up', '-d', '--quiet-pull'], {
@@ -136,6 +161,7 @@ export function testa(app) {
         .split('\n')
         .slice(-6)
         .join('\n')
+      res.inconclusivo = inconclusivo(res.erro)
       return res
     }
 
@@ -154,6 +180,7 @@ export function testa(app) {
         .map((s) => `${s.service}: ${s.status}\n${logs(projeto, s.service)}`)
         .join('\n---\n')
     }
+    res.inconclusivo = res.ok ? null : inconclusivo(res.erro)
     return res
   } finally {
     res.segundos = Math.round((Date.now() - inicio) / 1000)
@@ -181,7 +208,14 @@ if (isCli) {
     process.exit(2)
   }
   mkdirSync(EVID, { recursive: true })
-  const resumo = { host: host.os, quando: new Date().toISOString(), total: alvo.length, ok: 0, falhas: [] }
+  const resumo = {
+    host: host.os,
+    quando: new Date().toISOString(),
+    total: alvo.length,
+    ok: 0,
+    inconclusivos: [],
+    falhas: [],
+  }
   for (const app of alvo) {
     if (!existsSync(join(APPS, app, 'docker-compose.yml'))) {
       console.log(`SKIP ${app} (sem manifesto)`)
@@ -190,11 +224,17 @@ if (isCli) {
     const r = testa(app)
     writeFileSync(join(EVID, `${app}.json`), JSON.stringify(r, null, 2) + '\n')
     if (r.ok) resumo.ok += 1
+    else if (r.inconclusivo) resumo.inconclusivos.push({ app, motivo: r.inconclusivo })
     else resumo.falhas.push({ app, etapa: r.etapa, erro: (r.erro || '').slice(0, 400) })
-    console.log(`${r.ok ? 'OK  ' : 'FALHA'} ${app} (${r.segundos}s)`)
-    if (!r.ok) console.log((r.erro || '').split('\n').slice(0, 6).join('\n'))
+    const marca = r.ok ? 'OK   ' : r.inconclusivo ? '?    ' : 'FALHA'
+    console.log(`${marca} ${app} (${r.segundos}s)${r.inconclusivo ? ' — ' + r.inconclusivo : ''}`)
+    if (!r.ok && !r.inconclusivo) console.log((r.erro || '').split('\n').slice(0, 8).join('\n'))
   }
   writeFileSync(join(EVID, 'resumo.json'), JSON.stringify(resumo, null, 2) + '\n')
-  console.log(`\nP10: ${resumo.ok}/${resumo.total} subiram. Falhas: ${resumo.falhas.length}`)
+  console.log(
+    `\nP10: ${resumo.ok}/${resumo.total} subiram. ` +
+      `Falhas: ${resumo.falhas.length}. Inconclusivos: ${resumo.inconclusivos.length}`,
+  )
+  for (const i of resumo.inconclusivos) console.log(`  ? ${i.app}: ${i.motivo}`)
   process.exit(resumo.falhas.length ? 1 : 0)
 }

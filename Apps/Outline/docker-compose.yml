@@ -45,6 +45,11 @@ services:
       SECRET_KEY: replace-with-output-of-openssl-rand-hex-32
       UTILS_SECRET: replace-with-output-of-openssl-rand-hex-32
       DATABASE_URL: postgres://outline:change-me-to-a-long-random-string@postgres:5432/outline
+      # O Outline tenta SSL por padrão e o Postgres do próprio stack não tem
+      # SSL: sem isto ele reinicia para sempre com "The database does not
+      # support SSL connections". Medido em Linux em 14/09/2026. O tráfego não
+      # sai da rede interna do compose.
+      PGSSLMODE: disable
       DATABASE_CONNECTION_POOL_MIN: '0'
       DATABASE_CONNECTION_POOL_MAX: '5'
       REDIS_URL: redis://redis:6379
