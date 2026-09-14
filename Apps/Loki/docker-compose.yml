@@ -2,6 +2,7 @@ name: loki
 services:
   loki:
     image: grafana/loki:3.3.2
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 10001
     deploy:
       resources:
         reservations:

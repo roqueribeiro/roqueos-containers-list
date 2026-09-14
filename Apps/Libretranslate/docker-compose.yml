@@ -3,6 +3,7 @@ services:
   libretranslate:
     container_name: libretranslate
     image: libretranslate/libretranslate:v1.9.6@sha256:1de2d7056bb8ad607a412f4563d9abe324ff632b43b5be9428bcc8e213aebb32
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid libretranslate
     restart: unless-stopped
     environment:
       - LT_API_KEYS=true

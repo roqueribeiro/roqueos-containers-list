@@ -2,6 +2,7 @@ name: docmost
 services:
   docmost:
     image: docmost/docmost:0.21.0
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid node
     container_name: docmost
     deploy:
       resources:

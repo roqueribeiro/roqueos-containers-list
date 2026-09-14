@@ -2,6 +2,7 @@ name: 2fauth
 services:
   2fauth:
     image: 2fauth/2fauth:5.4.3
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     deploy:
       resources:
         reservations:

@@ -8,6 +8,7 @@ services:
           description:
             en_us: Web interface for AnythingLLM
     image: mintplexlabs/anythingllm:1.16.1
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid anythingllm
     container_name: anythingllm
     ports:
       - target: 3001

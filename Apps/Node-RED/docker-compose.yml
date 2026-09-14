@@ -2,6 +2,7 @@ name: node-red
 services:
   node-red:
     image: nodered/node-red:4.1.2
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid node-red
     deploy:
       resources:
         reservations:

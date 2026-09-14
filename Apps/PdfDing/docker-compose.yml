@@ -2,6 +2,7 @@ name: pdfding
 services:
   pdfding:
     image: mrmn/pdfding:v1.3.1
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid nonroot
     deploy:
       resources:
         reservations:

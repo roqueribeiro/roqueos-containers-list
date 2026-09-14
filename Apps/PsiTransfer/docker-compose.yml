@@ -2,6 +2,7 @@ name: psitransfer
 services:
   psitransfer:
     image: psitrax/psitransfer:v2.4.1
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid node
     container_name: psitransfer
     ports:
       - target: "3000"

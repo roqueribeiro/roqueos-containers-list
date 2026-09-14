@@ -1,0 +1,83 @@
+name: Boot
+
+# P10 de verdade: liga o container e olha se ele fica de pe.
+#
+# Por que vive num workflow separado, e nao junto do Validate: isto baixa imagem
+# e leva minutos por app. As premissas estaticas continuam rapidas.
+#
+# Por que roda so aqui e nao na maquina de quem desenvolve: o runner do GitHub e
+# Linux, e Linux e o unico lugar onde a falha aparece. No Docker Desktop do
+# macOS o compartilhamento de arquivo entrega o bind com permissao frouxa e o
+# Grafana quebrado SOBE — verde falso exatamente na falha que este job existe
+# para pegar. Medido em 14/09/2026, mesmo manifesto e mesma imagem.
+#
+# O laboratorio reescreve o caminho do bind para uma pasta descartavel e tira as
+# portas publicadas: o que se mede aqui e o container ficar de pe, nao a porta.
+
+on:
+  workflow_dispatch:
+    inputs:
+      apps:
+        description: 'Apps separados por espaco (vazio = os que mudaram no PR)'
+        required: false
+        default: ''
+  pull_request:
+    paths:
+      - 'Apps/**/docker-compose.yml'
+  schedule:
+    # Uma varredura completa por semana pega a imagem que quebrou sozinha
+    # depois que o manifesto ja estava verde.
+    - cron: '17 4 * * 0'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: boot-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  boot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - run: npm install --no-save js-yaml@^4
+
+      # O Docker Hub limita pull anonimo por IP. O espelho do Google serve as
+      # mesmas imagens sem esse teto e sem credencial nenhuma.
+      - name: Espelho de registry
+        run: |
+          echo '{"registry-mirrors":["https://mirror.gcr.io"]}' | sudo tee /etc/docker/daemon.json
+          sudo systemctl restart docker
+          docker info --format '{{.RegistryConfig.Mirrors}}'
+
+      - name: Quais apps testar
+        id: alvo
+        run: |
+          if [ -n "${{ github.event.inputs.apps }}" ]; then
+            echo "apps=${{ github.event.inputs.apps }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            echo "apps=--todos" >> "$GITHUB_OUTPUT"
+          else
+            LISTA=$(git diff --name-only origin/${{ github.base_ref }}...HEAD \
+              | grep '^Apps/.*/docker-compose.yml$' \
+              | cut -d/ -f2 | sort -u | tr '\n' ' ')
+            echo "apps=$LISTA" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Sobe cada container e confere o estado
+        if: steps.alvo.outputs.apps != ''
+        run: node scripts/boot-container.mjs ${{ steps.alvo.outputs.apps }}
+
+      - name: Evidencia por app
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: boot
+          path: .boot/

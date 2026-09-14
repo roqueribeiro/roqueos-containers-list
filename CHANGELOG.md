@@ -12,6 +12,45 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — P10: a premissa que liga o container (2026-09-14)
+
+- **`yarn boot` — o teste que faltava.** `scripts/boot-container.mjs` sobe o container de verdade e confere o estado depois de esperar. As nove premissas anteriores liam o manifesto; nenhuma delas ligava nada, e foi assim que o Grafana chegou à casa do founder com manifesto impecável e container que nunca subia.
+
+  Evidência, medida em daemon Linux em 14/09/2026 com o manifesto que estava publicado:
+
+  ```
+  estado: Restarting (1) 6 seconds ago
+  dono do diretório: drwxr-xr-x 0 0 /DATA/AppData/grafana/data
+  GF_PATHS_DATA='/var/lib/grafana' is not writable.
+  mkdir: can't create directory '/var/lib/grafana/plugins': Permission denied
+  ```
+
+  O Docker cria a origem de um bind que não existe como `root:root 0755`. A imagem do Grafana escreve como uid 472. O container reinicia para sempre.
+
+- **O teste recusa rodar fora de Linux.** No Docker Desktop do macOS o mesmo manifesto quebrado **sobe** (`running restarts=0`, plugin instalado), porque o compartilhamento de arquivo da VM entrega o bind com permissão frouxa. Um teste de boot rodado no Mac daria verde falso exatamente na falha que ele existe para pegar. Por isso o workflow `Boot` roda no runner Linux do GitHub, com espelho de registry para não esbarrar no limite de pull anônimo do Docker Hub.
+
+- **P10 no gate estático** (`yarn revisao`): acusa, sem subir nada, o serviço cuja imagem larga privilégio para um uid fixo e escreve em bind sem `user:` nem `PUID`. Lê o `USER` declarado na imagem a partir de `scripts/dados/uid-imagens.json`, cache commitado das 313 imagens do catálogo.
+
+- **`scripts/registry-user.mjs`**: descobre o `USER` da imagem falando direto com o registry — sem docker, sem baixar camada, sem login. Segue o `WWW-Authenticate` do 401, então vale para Docker Hub, ghcr.io, lscr.io, quay.io e registro próprio.
+
+### Fixed — 28 apps que nunca subiam
+
+- **32 serviços em 28 apps** tinham imagem que larga privilégio para um uid fixo sobre bind que o instalador cria `root:root`: 2FAuth, AnythingLLM, Authentik, BeaverHabitTracker, DDNS-Updater, Docmost, Etherpad, Focalboard, Grafana, InvoiceNinja, LibreChat, Libretranslate, Loki, Mattermost, Maybe, N8n, Node-RED, OpenList, Outline, PdfDing, Penpot, Prometheus, PsiTransfer, RagFlow, SFTPGo, Sure, Vikunja e Whoogle.
+
+  Sete deles já traziam `user: "1000:1000"` e afins escritos no próprio manifesto — mesma falha, e a primeira versão da P10 passava batido por eles.
+
+- **A correção é `user: "0:0"`, e as alternativas foram medidas, não escolhidas por gosto:**
+
+  | tentativa | resultado no Linux |
+  |---|---|
+  | sem nada | `Restarting (1)`, "is not writable" |
+  | `user: "472"` | igual: o diretório continua `root:root` |
+  | volume nomeado | funciona, mas tira o dado de `/DATA/AppData` e quebra a convenção de backup |
+  | volume local `type=none,o=bind` | `failed to populate volume: no such file or directory` quando o diretório não existe, que é sempre no primeiro install |
+  | `user: "0:0"` | `Up`, plugin instalado, dado em `/DATA` |
+
+  O preço está escrito no cabeçalho de `scripts/goal18-permissao.mjs` para não virar folclore: o processo roda como root dentro do container e o dado fica com dono root. Num servidor de casa com um dono só, é o que o ecossistema CasaOS já faz. A alternativa que preserva o privilégio reduzido é o instalador criar o diretório com o dono certo antes do `compose up` — isso exige mexer no `roqueos-server` e deixaria o catálogo quebrado em qualquer outro host CasaOS.
+
 ### Added — Goal 18: revisão container a container (2026-09-14)
 
 - **`yarn revisao` — o critério de aceite da loja, app a app.** `scripts/revisao-container.mjs` checa nove premissas por app e grava o veredito em `.revisao/<app>.json`. Sai 1 enquanto houver pendente, o que permite a um loop parar por evidência em vez de por opinião. Entrou na CI e no manifesto `compose-catalog` do `roqueos-kit` (2.18.0).

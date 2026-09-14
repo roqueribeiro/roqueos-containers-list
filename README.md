@@ -130,6 +130,9 @@ This repo is **data + tooling only** — no runtime. The `appstore.zip` produced
 │     └── screenshot-*.png (optional) scripts/                       │
 │                                      ├── validate-manifests.mjs    │
 │   category-list.json                 ├── revisao-container.mjs     │
+│                                      ├── boot-container.mjs       │
+│                                      ├── uid-imagem.mjs           │
+│                                      ├── registry-user.mjs        │
 │   recommend-list.json                ├── gera-readme.mjs           │
 │   featured-apps.json                 └── rebrand-casaos.mjs       │
 └────────────────────────────────────┬───────────────────────────────┘
@@ -157,7 +160,9 @@ This repo is **data + tooling only** — no runtime. The `appstore.zip` produced
 **No build step, no tests for the catalog itself** — quality control happens via:
 
 - **Schema validation** (`yarn validate`) — JSON Schema + cross-field invariants. `:latest` is rejected: pinned tag or digest only. CI gate.
-- **Store review** (`yarn revisao`) — **CI gate.** The nine store premises, app by app, with a verdict in `.revisao/<app>.json`. Exits 1 while anything is open. This is what proves an app is ready to ship, not just that its YAML parses. It also rejects descriptions that merely restate the field (`Container Path: /app/data` for the volume `/app/data`): a filled field that says nothing is worse than an empty one, because it looks done.
+- **Store review** (`yarn revisao`) — **CI gate.** The ten store premises, app by app, with a verdict in `.revisao/<app>.json`. Exits 1 while anything is open. This is what proves an app is ready to ship, not just that its YAML parses. It also rejects descriptions that merely restate the field (`Container Path: /app/data` for the volume `/app/data`): a filled field that says nothing is worse than an empty one, because it looks done.
+- **Boot test** (`yarn boot <App>`, `yarn boot:todos`) — **CI gate, Linux only.** Starts each container for real and checks it stays up. P1–P9 read the manifest and none of them boots anything, which is how Grafana shipped with a manifest that passed every check and a container that never came up: Docker creates a missing bind source as `root:root 0755` and the image writes as uid 472. The script refuses to run outside Linux: on macOS Docker Desktop the same broken manifest comes up fine, so the test would be a false green exactly where it matters. Runs in the `Boot` workflow on GitHub's Linux runners.
+- **Image user lookup** (`yarn uid`, `yarn uid:atualiza`) — reads each image's declared `USER` straight from the registry (no docker, no pull, no login) into `scripts/dados/uid-imagens.json`, so premise P10 gives the same verdict offline and in CI.
 - **Auto-fixer** (`yarn fix`) — backfills `scheme`, `mountShared`, `main` on single-service stacks.
 - **Store listing** (`yarn readme`) — regenerates every `Apps/*/README.md` from its manifest.
 - **i18n gap report** (`yarn enrichment`) — read-only. Use this, **not** `yarn audit`: yarn has its own `audit` subcommand and it wins, so `yarn audit` never runs this repo's script.
@@ -178,7 +183,8 @@ How this catalog compares to other CasaOS-compatible app stores:
 | **i18n gap tooling**                      | ✅ `yarn enrichment` + gate on pt_BR     | ❌              | ❌              | ❌           |
 | **Rebrand pipeline for upstream imports** | ✅ idempotent `yarn rebrand`             | n/a             | n/a             | n/a          |
 | **`x-roqueos.mountShared` extension**     | ✅ opt-in `/shared` filesystem mount     | ❌              | ❌              | ❌           |
-| **Per-app store review gate**             | ✅ `yarn revisao`, nine premises          | ❌              | ❌              | ❌           |
+| **Per-app store review gate**             | ✅ `yarn revisao`, ten premises           | ❌              | ❌              | ❌           |
+| **Boot test on Linux CI**                 | ✅ `yarn boot`                            | ❌              | ❌              | ❌           |
 | **Privilege justified in the manifest**   | ✅ `x-roqueos.motivo` required            | ❌              | ❌              | ❌           |
 | **Semver releases**                       | ✅ since v1.0.0 (May 2026)               | ❌ rolling      | ❌ rolling      | ❌ rolling   |
 | **MIT-licensed**                          | ✅                                       | ✅              | ✅              | ✅           |
@@ -353,7 +359,9 @@ yarn validate       # ajv + cross-field checks. CI runs this on every PR.
 yarn fix:dry        # preview auto-fixes (scheme, mountShared, main on single-service)
 yarn fix            # apply them
 yarn enrichment     # report i18n gaps (NAO use `yarn audit`: o yarn tem o dele e ele ganha)
-yarn revisao        # as nove premissas da loja, app a app
+yarn revisao        # as dez premissas da loja, app a app
+yarn boot Grafana   # sobe o container e olha o estado (so Linux)
+yarn uid:atualiza   # atualiza o cache de USER das imagens
 yarn audit:verbose  # list every app missing translations
 yarn audit:csv      # CSV output (for spreadsheet prioritization)
 yarn rebrand:dry    # preview CasaOS → RoqueOS sweep

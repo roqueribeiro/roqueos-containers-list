@@ -20,6 +20,9 @@ on:
       - '.github/workflows/validate-schema.yml'
       - 'scripts/validate-manifests.mjs'
       - 'scripts/revisao-container.mjs'
+      - 'scripts/uid-imagem.mjs'
+      - 'scripts/registry-user.mjs'
+      - 'scripts/dados/uid-imagens.json'
       - 'Apps/**/README.md'
       - 'Apps/**/icon.png'
   pull_request:
@@ -29,6 +32,9 @@ on:
       - '.github/workflows/validate-schema.yml'
       - 'scripts/validate-manifests.mjs'
       - 'scripts/revisao-container.mjs'
+      - 'scripts/uid-imagem.mjs'
+      - 'scripts/registry-user.mjs'
+      - 'scripts/dados/uid-imagens.json'
       - 'Apps/**/README.md'
       - 'Apps/**/icon.png'
 
@@ -65,9 +71,14 @@ jobs:
       - name: Install deps
         run: npm install --no-save js-yaml@^4
       # O schema prova que o YAML e um compose. Isto prova que o app esta pronto
-      # para a loja: as nove premissas do Goal 18, uma por app, com veredito em
+      # para a loja: as dez premissas do Goal 18, uma por app, com veredito em
       # .revisao/<app>.json. Sai 1 enquanto houver pendente.
-      - name: As nove premissas da loja
+      #
+      # A P10 le scripts/dados/uid-imagens.json, que e cache commitado: aqui ela
+      # roda sem rede e da o mesmo veredito que na maquina de quem desenvolve.
+      # Quem liga o container de verdade e o workflow Boot, que so faz sentido
+      # em Linux.
+      - name: As dez premissas da loja
         run: node scripts/revisao-container.mjs --todos
       - name: Evidencia por app
         if: always()

@@ -3,6 +3,7 @@ services:
   maybe-web:
     container_name: maybe-web
     image: ghcr.io/maybe-finance/maybe@sha256:c2d398bfc334db4d9862f268401dbb46f97848eaaaad8295d1221f2d99d631cc
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/app/storage

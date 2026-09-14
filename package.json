@@ -20,6 +20,10 @@
     "revisao": "node scripts/revisao-container.mjs --todos",
     "revisao:app": "node scripts/revisao-container.mjs --app",
     "revisao:pendentes": "node scripts/revisao-container.mjs --pendentes",
+    "boot": "node scripts/boot-container.mjs",
+    "boot:todos": "node scripts/boot-container.mjs --todos",
+    "uid": "node scripts/uid-imagem.mjs",
+    "uid:atualiza": "node scripts/uid-imagem.mjs --atualiza",
     "enrichment": "node scripts/audit-enrichment.mjs",
     "readme": "node scripts/gera-readme.mjs"
   },

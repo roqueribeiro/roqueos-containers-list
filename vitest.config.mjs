@@ -30,6 +30,7 @@ export default defineConfig({
         "scripts/goal18-importa.mjs",
         "scripts/goal18-importa-bigbear.mjs",
         "scripts/goal18-descricoes.mjs",
+        "scripts/goal18-permissao.mjs",
       ],
       reporter: ["text", "json", "html"],
       // Realistic thresholds — we test the pure helpers and core logic.

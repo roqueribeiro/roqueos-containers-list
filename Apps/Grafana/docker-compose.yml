@@ -2,6 +2,7 @@ name: grafana
 services:
   grafana:
     image: grafana/grafana:12.1.4
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 472
     deploy:
       resources:
         reservations:

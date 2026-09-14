@@ -3,6 +3,7 @@ services:
   penpot-frontend:
     container_name: penpot-frontend
     image: penpotapp/frontend:2.17.0@sha256:861989dfff50f12b9de1358c6b0f3cc1e601d7a678db2826f3643d0f93438500
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid penpot
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/assets:/opt/data/assets
@@ -25,6 +26,7 @@ services:
             en_us: Web interface for Penpot
   penpot-backend:
     image: penpotapp/backend:2.17.0@sha256:471cdebf185be899ef7d7593e9cd7994b908ebd7ffb78ca547e3d843bb83536f
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid penpot
     container_name: penpot-backend
     restart: unless-stopped
     volumes:

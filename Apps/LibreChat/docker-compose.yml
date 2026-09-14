@@ -8,6 +8,7 @@ services:
       - librechat-mongodb
       - librechat-rag-api
     image: ghcr.io/danny-avila/librechat-dev@sha256:f51f9c953dbea24607e15d598ebf40f512b88d6130f89371425e293a9fca0daa
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid node
     restart: unless-stopped
     extra_hosts:
       - host.docker.internal:host-gateway
@@ -540,7 +541,7 @@ services:
     container_name: librechat-meilisearch
     image: getmeili/meilisearch:v1.12.3
     restart: unless-stopped
-    user: "1000:1000"
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     environment:
       - MEILI_HOST=http://librechat-meilisearch:7700
       - MEILI_NO_ANALYTICS=true

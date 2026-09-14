@@ -27,6 +27,7 @@ services:
     container_name: outline-postgres
   outline:
     image: outlinewiki/outline:0.81.1
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid nodejs
     restart: always
     deploy:
       resources:

@@ -21,3 +21,9 @@ coverage/
 
 # Evidência da revisão do Goal 18: regerada por scripts/revisao-container.mjs
 .revisao/
+
+# Evidência do teste de boot (P10): regerada por scripts/boot-container.mjs.
+# Vale por execução e por host — o mesmo manifesto dá verde no macOS e vermelho
+# no Linux —, então commitar o resultado seria commitar uma meia-verdade. O
+# workflow Boot publica isto como artefato.
+.boot/

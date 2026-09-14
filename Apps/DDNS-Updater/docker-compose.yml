@@ -2,6 +2,7 @@ name: ddns-updater
 services:
   ddns-updater:
     image: qmcgaw/ddns-updater:v2.9.0
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     network_mode: bridge
     command:
       - touch /data/config.json

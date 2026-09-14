@@ -2,6 +2,7 @@ name: prometheus
 services:
   prometheus:
     image: prom/prometheus:v3.1.0
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid nobody
     deploy:
       resources:
         reservations:

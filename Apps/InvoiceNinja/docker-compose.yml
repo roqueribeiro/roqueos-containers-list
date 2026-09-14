@@ -4,7 +4,7 @@ services:
     image: invoiceninja/invoiceninja:5.13.31@sha256:c0526fc0242f4bd145d0d225bb40e174841f67597a57215723f20f2c00c0698f
     container_name: invoice-ninja
     restart: unless-stopped
-    user: "1500:1500"
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1500
     environment:
       - IN_USER_EMAIL=admin@roqueribeiro.com
       - IN_PASSWORD=ad178c4b-302f-44e6-937f-8c7808f23795

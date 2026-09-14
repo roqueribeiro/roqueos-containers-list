@@ -19,6 +19,7 @@ services:
     container_name: mattermost-postgres
   mattermost:
     image: mattermost/mattermost-team-edition:10.2
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid mattermost
     restart: always
     deploy:
       resources:

@@ -10,7 +10,7 @@ services:
         reservations:
           memory: 128M
     restart: unless-stopped
-    user: "1000:1000"
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     ports:
       - target: 8080
         published: "15580"

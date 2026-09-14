@@ -3,6 +3,7 @@ services:
   sure-web:
     container_name: sure-web
     image: ghcr.io/we-promise/sure:0.6.5-hotfix.1
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/app/storage
@@ -93,6 +94,7 @@ services:
   sure-worker:
     container_name: sure-worker
     image: ghcr.io/we-promise/sure:0.6.5-hotfix.1
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     command:
       - bundle
       - exec

@@ -10,7 +10,7 @@ This is one of the **nine repos** that form RoqueOS. The ecosystem map (sibling 
 - `yarn validate` — **CI gate.** `ajv` schema check + cross-field invariants (`scripts/validate-manifests.mjs`)
 - `yarn fix:dry` — preview auto-fixes (scheme, mountShared, main on single-service)
 - `yarn fix` — apply auto-fixes (idempotent, `scripts/fix-manifests.mjs`)
-- `yarn revisao` — **CI gate.** As nove premissas da loja, app a app (`scripts/revisao-container.mjs`). Sai 1 enquanto houver pendente; evidencia em `.revisao/<app>.json`
+- `yarn revisao` — **CI gate.** As dez premissas da loja, app a app (`scripts/revisao-container.mjs`). Sai 1 enquanto houver pendente; evidencia em `.revisao/<app>.json`
 - `yarn revisao:app <App>` — o veredito de um app so, no terminal
 - `yarn revisao:pendentes` — a fila, um nome por linha
 - `yarn enrichment` — relatorio de lacuna de i18n. Use ESTE, nao `yarn audit`: o yarn tem um subcomando `audit` proprio e ele ganha, entao `yarn audit` nunca roda o script do repo
@@ -78,7 +78,7 @@ Cross-repo doc-sync mapping (changed X → update Y) lives in [`../roqueos-front
 
 This catalog is the **producer** in the `front ← containers-list` contract: `roqueos-server` fetches the published `appstore.zip` on boot (24h cache), parses each `x-casaos` manifest, and exposes the apps via `/catalog`; the RoqueOS App Store renders them. When changing the schema (renamed/removed fields, new enum values), change **this repo first**, then the server parser + the front, keeping rules and CHANGELOGs in sync, see ordering in [`../roqueos-ecosystem/README.md`](../roqueos-ecosystem/README.md).
 
-## O padrão da loja: as nove premissas
+## O padrão da loja: as dez premissas
 
 `yarn validate` prova que o YAML é um compose. **`yarn revisao` prova que o app
 está pronto para a loja.** Em 14/09/2026 o repo estava `205 ok, 0 failed` no
@@ -97,8 +97,12 @@ descrição.
 | P7 | Texto | `tagline` e `description` em `en_us` **e** `pt_br`, nessa grafia |
 | P8 | Ícone | PNG quadrado de no mínimo 192px que **existe no repo** |
 | P9 | Coerência | sem `appfile.json`: formato morto que ninguém consome |
+| P10 | Permissão do dado | imagem que larga privilégio para um uid fixo **não** pode escrever em bind sem `user:` ou `PUID` — o instalador cria esse diretório `root:root 0755` e o container reinicia para sempre |
 
-### Três armadilhas que já custaram caro aqui
+`yarn boot` é a décima premissa executada de verdade: sobe o container e olha o
+estado. **Só vale em Linux** (veja a quarta armadilha).
+
+### Quatro armadilhas que já custaram caro aqui
 
 **Confira a coisa, não o campo.** O `audit-enrichment.mjs` dizia `icon present
 205/205` enquanto 54 apps davam 404 no CDN: ele conferia se o campo existia no
@@ -114,6 +118,18 @@ está pronto.
 traziam 326 descrições no formato `Container Path: /app/data` para o volume
 `/app/data`. Passava em toda checagem de "tem descrição?" e não informava nada.
 A P2 agora reprova isso, não só a descrição ausente.
+
+**Gate que só lê manifesto não sabe se o app sobe.** Em 14/09/2026 o Grafana
+estava fechado nas nove premissas e nunca subiu na casa do founder:
+`GF_PATHS_DATA='/var/lib/grafana' is not writable`. O Docker cria a origem de um
+bind inexistente como `root:root 0755`; a imagem do Grafana escreve como uid
+472. Nenhuma das nove ligava um container. Daí vieram a P10 e o `yarn boot`.
+
+**Teste de boot no macOS dá verde falso.** O mesmo manifesto quebrado sobe
+normalmente no Docker Desktop, porque o compartilhamento de arquivo da VM
+entrega o bind com permissão frouxa. Medido nos dois lados no mesmo dia: `Up` no
+macOS, `Restarting (1)` no Linux. Por isso `scripts/boot-container.mjs` se
+recusa a rodar fora de Linux, e o workflow `Boot` roda no runner do GitHub.
 
 **Gate que cobra o invisível ensina a ignorar gate.** `thumbnail` e
 `screenshot` saíram da P8 porque o server não os lê e a loja não os desenha.

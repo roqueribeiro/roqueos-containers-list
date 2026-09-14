@@ -34,6 +34,7 @@ services:
     container_name: authentik-redis
   server:
     image: ghcr.io/goauthentik/server:2024.12.0
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     restart: unless-stopped
     command: server
     environment:
@@ -75,6 +76,7 @@ services:
     container_name: authentik-server
   worker:
     image: ghcr.io/goauthentik/server:2024.12.0
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 1000
     restart: unless-stopped
     command: worker
     environment:

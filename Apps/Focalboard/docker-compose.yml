@@ -3,6 +3,7 @@ services:
   app:
     container_name: focalboard
     image: mattermost/focalboard:7.11.4@sha256:c935a2879dc7bcb8243a562afea21a30edbb6dbe029b53a9c0ae7ab4b3255c54
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid nobody
     restart: unless-stopped
     ports:
       - "8000:8000"

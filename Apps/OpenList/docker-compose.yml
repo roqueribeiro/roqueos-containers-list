@@ -9,7 +9,7 @@ services:
           memory: 256M
     network_mode: bridge
     restart: unless-stopped
-    user: "999:1000"
+    user: "0:0" # roda como root: o instalador cria o bind root:root e a imagem escreve como uid 999
     ports:
       - target: 5244
         published: "5244"

@@ -2,8 +2,12 @@
 // REVISÃO CONTAINER A CONTAINER — o critério de aceite do Goal 18.
 //
 // `yarn validate` prova que o YAML é um compose. Este script prova que o app
-// está pronto para a loja: nove premissas, uma por dimensão que o founder pediu
-// em 14/09/2026, cada uma verificável sem opinião.
+// está pronto para a loja: dez premissas, cada uma verificável sem opinião.
+//
+// P1..P9 leem o manifesto. A P10 nasceu em 14/09/2026, quando o Grafana passou
+// nas nove e mesmo assim não subiu na casa do founder: nenhuma delas olhava se
+// a imagem consegue escrever no diretório que o instalador cria. Quem liga o
+// container de verdade é scripts/boot-container.mjs, e só em host Linux.
 //
 //   node scripts/revisao-container.mjs --todos        # varre os 205, grava .revisao/
 //   node scripts/revisao-container.mjs --app Frigate  # um só, saída no terminal
@@ -14,6 +18,11 @@ import fs from 'node:fs'
 import path from 'node:path'
 import yaml from 'js-yaml'
 import { pathToFileURL } from 'node:url'
+import {
+  carregaCache,
+  risco as riscoUid,
+  servicos as servicosDoApp,
+} from './uid-imagem.mjs'
 
 const APPS = 'Apps'
 const SAIDA = '.revisao'
@@ -136,6 +145,13 @@ export function carregar(nome) {
     return { dir, nome, yamlQuebrado: e.message }
   }
   return { dir, nome, compose, x: compose['x-casaos'] || {}, xr: compose['x-roqueos'] || {} }
+}
+
+let _cacheUid = null
+/** O cache de uid é um arquivo só; ler 252 vezes é desperdício. */
+function cacheUidMemo() {
+  if (!_cacheUid) _cacheUid = carregaCache()
+  return _cacheUid
 }
 
 /** Uma premissa fechada devolve []; aberta devolve as razões. */
@@ -281,6 +297,29 @@ export function premissas(app, conflitos) {
       if (imgApp && imgCompose && imgApp !== imgCompose)
         p.P9.push(`appfile diz ${imgApp}, compose diz ${imgCompose}`)
     }
+  }
+
+  // P10 — permissão do dado: a imagem consegue escrever onde o manifesto manda?
+  //
+  // O Docker cria a origem de um bind que não existe como root:root 0755. Se a
+  // imagem larga o privilégio para um uid fixo (Grafana = 472), o processo não
+  // escreve no próprio dado e o container reinicia para sempre. Medido em
+  // 14/09/2026 num daemon Linux: Grafana 12.1.4, manifesto sem `user:`, estado
+  // "Restarting (1)" e "GF_PATHS_DATA='/var/lib/grafana' is not writable".
+  //
+  // P1..P9 liam o manifesto e nenhuma ligava o container. Esta lê o USER da
+  // imagem no índice do registry, guardado em scripts/dados/uid-imagens.json
+  // por scripts/uid-imagem.mjs, para o veredito ser o mesmo aqui e na CI.
+  p.P10 = []
+  const cacheUid = cacheUidMemo()
+  for (const [nomeSvc] of servicos) {
+    const svc = servicosDoApp(app.nome, path.dirname(dir)).find((s) => s.servico === nomeSvc)
+    if (!svc) continue
+    const r = riscoUid(svc, cacheUid)
+    if (r)
+      p.P10.push(
+        `${nomeSvc}: imagem roda como uid ${r.uid} e escreve em ${r.binds.join(', ')}, que o instalador cria root:root — sem user: nem PUID o container não sobe`,
+      )
   }
 
   return p

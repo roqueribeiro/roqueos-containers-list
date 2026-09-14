@@ -1,0 +1,195 @@
+#!/usr/bin/env node
+// P10 — a premissa que liga o container.
+//
+// P1..P9 leem o manifesto. Nenhuma delas sobe nada, e por isso deixaram passar
+// o Grafana: manifesto impecavel, container que nunca sobe porque o Docker cria
+// o diretorio do bind como root:root 0755 e a imagem escreve como uid 472.
+//
+// Esta premissa liga de verdade e olha o estado depois de esperar.
+//
+// ONDE RODA: so em host Linux. No Docker Desktop do macOS o compartilhamento de
+// arquivo entrega o diretorio com permissao frouxa e o Grafana quebrado SOBE,
+// ou seja, o teste daria verde falso exatamente na falha que ele existe para
+// pegar. Medido em 14/09/2026: mesmo manifesto, mesma imagem, verde no macOS e
+// "Restarting (1)" no Linux. Por isso o script recusa rodar fora do Linux.
+
+import { execFileSync } from 'node:child_process'
+import yaml from 'js-yaml'
+import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs'
+import { join, dirname } from 'node:path'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import { todosOsApps } from './uid-imagem.mjs'
+
+const AQUI = dirname(fileURLToPath(import.meta.url))
+const RAIZ = join(AQUI, '..')
+const APPS = join(RAIZ, 'Apps')
+const EVID = join(RAIZ, '.boot')
+
+const ESPERA_MS = Number(process.env.BOOT_ESPERA_MS || 45000)
+const INTERVALO_MS = 3000
+
+export function hostLinux() {
+  try {
+    const os = execFileSync('docker', ['info', '--format', '{{.OperatingSystem}}'], {
+      encoding: 'utf8',
+    }).trim()
+    return { os, linux: !/Docker Desktop/i.test(os) }
+  } catch (e) {
+    return { os: `indisponivel: ${String(e.message || e).split('\n')[0]}`, linux: false }
+  }
+}
+
+function sh(cmd, args, opts = {}) {
+  return execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], ...opts })
+}
+
+// O compose do catalogo usa $AppID. O instalador troca pelo id do app; aqui
+// fazemos o mesmo, para o teste rodar o mesmo texto que o usuario instala.
+export function renderiza(texto, appId) {
+  return texto.replaceAll('$AppID', appId).replaceAll('${AppID}', appId)
+}
+
+export function veredito(estados) {
+  const ruins = estados.filter(
+    (s) => s.state !== 'running' || s.restarts > 0 || /Restarting/i.test(s.status),
+  )
+  return { ok: ruins.length === 0, ruins }
+}
+
+// O teste NUNCA escreve em /DATA. O caminho do bind e reescrito para dentro de
+// uma caixa de areia em /tmp, que e o unico lugar que o script apaga. Numa
+// maquina RoqueOS de verdade /DATA/AppData e o dado do usuario.
+export function caixa(texto, raiz) {
+  return texto.replaceAll('/DATA/', `${raiz}/DATA/`)
+}
+
+export function semPortas(texto) {
+  const doc = yaml.load(texto)
+  for (const s of Object.values(doc?.services || {})) if (s) delete s.ports
+  return yaml.dump(doc)
+}
+
+function estados(projeto) {
+  const txt = sh('docker', [
+    'compose',
+    '-p',
+    projeto,
+    'ps',
+    '-a',
+    '--format',
+    '{{.Service}}\t{{.State}}\t{{.Status}}',
+  ])
+  return txt
+    .split('\n')
+    .filter(Boolean)
+    .map((l) => {
+      const [service, state, status = ''] = l.split('\t')
+      const m = /Restarting \((\d+)\)/.exec(status)
+      return { service, state, status, restarts: m ? Number(m[1]) : 0 }
+    })
+}
+
+function logs(projeto, servico) {
+  try {
+    return sh('docker', ['compose', '-p', projeto, 'logs', '--tail', '15', servico]).trim()
+  } catch {
+    return ''
+  }
+}
+
+function espera(ms) {
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms)
+}
+
+const SANDBOX = process.env.BOOT_SANDBOX || '/tmp/boot-roqueos'
+
+export function testa(app) {
+  const projeto = `bt-${app.toLowerCase().replace(/[^a-z0-9]/g, '')}`
+  const dir = join(SANDBOX, projeto)
+  const origem = join(APPS, app, 'docker-compose.yml')
+  const inicio = Date.now()
+  rmSync(dir, { recursive: true, force: true })
+  mkdirSync(dir, { recursive: true })
+  const texto = caixa(renderiza(readFileSync(origem, 'utf8'), app.toLowerCase()), dir)
+  // A porta publicada não faz parte do que a P10 mede, e no laboratório ela só
+  // colide com o que já escuta na máquina — o 2FAuth falhou assim, por causa da
+  // 8000 ocupada, e não por causa do app. Conflito de porta entre apps do
+  // catálogo é assunto da P2, que é estática e não depende de subir nada.
+  writeFileSync(join(dir, 'docker-compose.yml'), semPortas(texto))
+
+  const res = { app, projeto, ok: false, etapa: null, erro: null, servicos: [], segundos: 0 }
+  try {
+    try {
+      sh('docker', ['compose', '-p', projeto, 'up', '-d', '--quiet-pull'], {
+        cwd: dir,
+        timeout: 15 * 60 * 1000,
+      })
+    } catch (e) {
+      res.etapa = 'up'
+      res.erro = String(e.stderr || e.message || e)
+        .trim()
+        .split('\n')
+        .slice(-6)
+        .join('\n')
+      return res
+    }
+
+    let v = { ok: false, ruins: [] }
+    const limite = Date.now() + ESPERA_MS
+    for (;;) {
+      res.servicos = estados(projeto)
+      v = veredito(res.servicos)
+      if (Date.now() > limite) break
+      espera(INTERVALO_MS)
+    }
+    res.ok = v.ok
+    if (!v.ok) {
+      res.etapa = 'estado'
+      res.erro = v.ruins
+        .map((s) => `${s.service}: ${s.status}\n${logs(projeto, s.service)}`)
+        .join('\n---\n')
+    }
+    return res
+  } finally {
+    res.segundos = Math.round((Date.now() - inicio) / 1000)
+    try {
+      sh('docker', ['compose', '-p', projeto, 'down', '-v', '-t', '5'], { cwd: dir })
+    } catch {}
+    rmSync(dir, { recursive: true, force: true })
+  }
+}
+
+const isCli = import.meta.url === pathToFileURL(process.argv[1] || '').href
+if (isCli) {
+  const forca = process.argv.includes('--forca')
+  const host = hostLinux()
+  if (!host.linux && !forca) {
+    console.error(`P10 so vale em host Linux. Aqui: ${host.os}`)
+    console.error('No Docker Desktop do macOS a permissao do bind e frouxa e o teste da verde falso.')
+    process.exit(2)
+  }
+  const alvo = process.argv.includes('--todos')
+    ? todosOsApps()
+    : process.argv.slice(2).filter((a) => !a.startsWith('--'))
+  if (!alvo.length) {
+    console.error('uso: node scripts/boot-container.mjs <App> [App...] | --todos')
+    process.exit(2)
+  }
+  mkdirSync(EVID, { recursive: true })
+  const resumo = { host: host.os, quando: new Date().toISOString(), total: alvo.length, ok: 0, falhas: [] }
+  for (const app of alvo) {
+    if (!existsSync(join(APPS, app, 'docker-compose.yml'))) {
+      console.log(`SKIP ${app} (sem manifesto)`)
+      continue
+    }
+    const r = testa(app)
+    writeFileSync(join(EVID, `${app}.json`), JSON.stringify(r, null, 2) + '\n')
+    if (r.ok) resumo.ok += 1
+    else resumo.falhas.push({ app, etapa: r.etapa, erro: (r.erro || '').slice(0, 400) })
+    console.log(`${r.ok ? 'OK  ' : 'FALHA'} ${app} (${r.segundos}s)`)
+    if (!r.ok) console.log((r.erro || '').split('\n').slice(0, 6).join('\n'))
+  }
+  writeFileSync(join(EVID, 'resumo.json'), JSON.stringify(resumo, null, 2) + '\n')
+  console.log(`\nP10: ${resumo.ok}/${resumo.total} subiram. Falhas: ${resumo.falhas.length}`)
+  process.exit(resumo.falhas.length ? 1 : 0)
+}
