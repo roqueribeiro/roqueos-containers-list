@@ -13,6 +13,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import yaml from 'js-yaml'
+import { pathToFileURL } from 'node:url'
 
 const APPS = 'Apps'
 const seco = process.argv.includes('--dry-run')
@@ -22,9 +23,9 @@ const LINKS = fs.existsSync('scripts/dados/links-upstream.json')
   : {}
 
 /** Texto do x-casaos no idioma pedido, com a cadeia de fallback do catálogo. */
-const txt = (campo, l) => campo?.[l] || campo?.en_us || campo?.en_US || ''
+export const txt = (campo, l) => campo?.[l] || campo?.en_us || campo?.en_US || ''
 
-function tabela(cabecalho, linhas) {
+export function tabela(cabecalho, linhas) {
   if (!linhas.length) return '_Nenhum._\n'
   const larg = cabecalho.map((c, i) => Math.max(c.length, ...linhas.map((l) => String(l[i]).length)))
   const linha = (cols) => '| ' + cols.map((c, i) => String(c).padEnd(larg[i])).join(' | ') + ' |'
@@ -35,8 +36,8 @@ function tabela(cabecalho, linhas) {
   ].join('\n')
 }
 
-function gerar(nome) {
-  const dir = path.join(APPS, nome)
+export function gerar(nome, APPS_DIR = APPS) {
+  const dir = path.join(APPS_DIR, nome)
   const arq = path.join(dir, 'docker-compose.yml')
   if (!fs.existsSync(arq)) return null
   const doc = yaml.load(fs.readFileSync(arq, 'utf8'))
@@ -157,18 +158,23 @@ alguém lembrou de escrever._
 `
 }
 
-const nomes = um
-  ? [um]
-  : fs.readdirSync(APPS).filter((n) => fs.statSync(path.join(APPS, n)).isDirectory())
-let n = 0
-for (const nome of nomes) {
-  const md = gerar(nome)
-  if (!md) continue
-  if (um && seco) {
-    console.log(md)
-    process.exit(0)
+/** O CLI só corre quando ESTE arquivo é o executável, nunca quando é importado. */
+const isCli = import.meta.url === pathToFileURL(process.argv[1] || '').href
+if (isCli) {
+  const nomes = um
+    ? [um]
+    : fs.readdirSync(APPS).filter((n) => fs.statSync(path.join(APPS, n)).isDirectory())
+  let n = 0
+  for (const nome of nomes) {
+    const md = gerar(nome)
+    if (!md) continue
+    if (um && seco) {
+      console.log(md)
+      process.exit(0)
+    }
+    if (!seco) fs.writeFileSync(path.join(APPS, nome, 'README.md'), md)
+    n++
   }
-  if (!seco) fs.writeFileSync(path.join(APPS, nome, 'README.md'), md)
-  n++
+  console.log(`${seco ? '(dry run) ' : ''}README gerado para ${n} app(s)`)
+
 }
-console.log(`${seco ? '(dry run) ' : ''}README gerado para ${n} app(s)`)

@@ -13,6 +13,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import yaml from 'js-yaml'
+import { pathToFileURL } from 'node:url'
 
 const APPS = 'Apps'
 const SAIDA = '.revisao'
@@ -25,7 +26,7 @@ const SAIDA = '.revisao'
  * em silêncio. Eram 57 apps assim quando este script nasceu. A cópia é conferida
  * contra o server por `conferirMapaDoServer()` quando ele está ao lado.
  */
-const CATEGORIAS = new Set([
+export const CATEGORIAS = new Set([
   'Utilities',
   'Media',
   'Network',
@@ -52,7 +53,7 @@ const SERVER = '../roqueos-server/src/modules/catalog/catalog.service.ts'
  * fuso horário e o resto era /proc, /sys e módulos de kernel. Cobrar disso é
  * ruído; o que interessa é o caminho que só existe na máquina de quem empacotou.
  */
-const SISTEMA = [
+export const SISTEMA = [
   /^\/etc\/(localtime|timezone|passwd|group|os-release|resolv\.conf)$/,
   /^\/var\/run\/docker\.sock$/,
   /^\/var\/run\/libvirt\//,
@@ -83,8 +84,8 @@ function conferirMapaDoServer() {
 // Larga de proposito: MONGO_PASS=pass passou pela primeira versao, que so
 // procurava PASSWORD inteiro. O que importa e o valor ser adivinhavel, nao o
 // nome da variavel seguir um padrao.
-const SEGREDO = /(PASS|SECRET|TOKEN|KEY|CREDENTIAL|AUTH)/i
-const FRACO = /^(admin|password|123456|changeme|secret|root|toor|test|guest|pass|1234|unifi|user|demo)$/i
+export const SEGREDO = /(PASS|SECRET|TOKEN|KEY|CREDENTIAL|AUTH)/i
+export const FRACO = /^(admin|password|123456|changeme|secret|root|toor|test|guest|pass|1234|unifi|user|demo)$/i
 
 /**
  * Placeholder com `$` so vale se alguem substituir. `$default_pwd` nao e
@@ -93,7 +94,7 @@ const FRACO = /^(admin|password|123456|changeme|secret|root|toor|test|guest|pass
  * O padrao da casa e `change-me-on-first-boot`, que ja aparece em 12 apps, mais
  * a tip dizendo para trocar.
  */
-const PLACEHOLDER_MORTO = /^\$(default_pwd|password|pwd|secret)$/i
+export const PLACEHOLDER_MORTO = /^\$(default_pwd|password|pwd|secret)$/i
 
 /** Largura e altura de um PNG pelo cabeçalho IHDR. Sem dependência de imagem. */
 export function dimensoesPng(arquivo) {
@@ -103,7 +104,7 @@ export function dimensoesPng(arquivo) {
 }
 
 /** As seções que a ficha da loja precisa ter no README. */
-const SECOES = [
+export const SECOES = [
   { chave: 'oque', re: /^##+\s*(o que é|what is|sobre)/im },
   { chave: 'portas', re: /^##+\s*(portas?|ports?)/im },
   { chave: 'volumes', re: /^##+\s*(volumes?|dados|data)/im },
@@ -113,7 +114,7 @@ const SECOES = [
 ]
 
 /** Lê o app do disco. Devolve null quando não há compose (não é um app). */
-function carregar(nome) {
+export function carregar(nome) {
   const dir = path.join(APPS, nome)
   const arq = path.join(dir, 'docker-compose.yml')
   if (!fs.existsSync(arq)) return null
@@ -127,7 +128,7 @@ function carregar(nome) {
 }
 
 /** Uma premissa fechada devolve []; aberta devolve as razões. */
-function premissas(app, conflitos) {
+export function premissas(app, conflitos) {
   const { dir, compose, x, xr } = app
   const servicos = Object.entries(compose.services || {})
   const principal = x.main ? compose.services?.[x.main] : null
@@ -273,7 +274,7 @@ function premissas(app, conflitos) {
 }
 
 /** Mapa porta-host -> apps, para a checagem de conflito da P2. */
-function mapaDeConflitos(nomes) {
+export function mapaDeConflitos(nomes) {
   const portas = new Map()
   for (const n of nomes) {
     const app = carregar(n)
@@ -290,74 +291,79 @@ function mapaDeConflitos(nomes) {
   return new Map([...portas].map(([k, v]) => [k, [...v]]))
 }
 
-const args = process.argv.slice(2)
-const nomes = fs
-  .readdirSync(APPS)
-  .filter((n) => fs.statSync(path.join(APPS, n)).isDirectory())
-  .sort()
-const conflitos = mapaDeConflitos(nomes)
+/** O CLI só corre quando ESTE arquivo é o executável, nunca quando é importado. */
+const isCli = import.meta.url === pathToFileURL(process.argv[1] || '').href
+if (isCli) {
+  const args = process.argv.slice(2)
+  const nomes = fs
+    .readdirSync(APPS)
+    .filter((n) => fs.statSync(path.join(APPS, n)).isDirectory())
+    .sort()
+  const conflitos = mapaDeConflitos(nomes)
 
-const alvo = args.includes('--app') ? [args[args.indexOf('--app') + 1]] : nomes
-const vereditos = []
+  const alvo = args.includes('--app') ? [args[args.indexOf('--app') + 1]] : nomes
+  const vereditos = []
 
-for (const n of alvo) {
-  const app = carregar(n)
-  if (!app) continue
-  if (app.yamlQuebrado) {
-    vereditos.push({ app: n, fechado: false, abertas: { YAML: [app.yamlQuebrado] } })
-    continue
+  for (const n of alvo) {
+    const app = carregar(n)
+    if (!app) continue
+    if (app.yamlQuebrado) {
+      vereditos.push({ app: n, fechado: false, abertas: { YAML: [app.yamlQuebrado] } })
+      continue
+    }
+    const p = premissas(app, conflitos)
+    const abertas = Object.fromEntries(Object.entries(p).filter(([, v]) => v.length))
+    vereditos.push({ app: n, fechado: !Object.keys(abertas).length, premissas: p, abertas })
   }
-  const p = premissas(app, conflitos)
-  const abertas = Object.fromEntries(Object.entries(p).filter(([, v]) => v.length))
-  vereditos.push({ app: n, fechado: !Object.keys(abertas).length, premissas: p, abertas })
-}
 
-if (args.includes('--pendentes')) {
-  for (const v of vereditos) if (!v.fechado) console.log(v.app)
-  process.exit(0)
-}
-
-if (args.includes('--app')) {
-  const v = vereditos[0]
-  if (!v) {
-    console.error(`app não encontrado`)
-    process.exit(2)
+  if (args.includes('--pendentes')) {
+    for (const v of vereditos) if (!v.fechado) console.log(v.app)
+    process.exit(0)
   }
-  console.log(`\n${v.app}: ${v.fechado ? '✓ fechado' : '✗ aberto'}`)
-  for (const [k, razoes] of Object.entries(v.abertas))
-    for (const r of razoes) console.log(`  ${k}  ${r}`)
-  process.exit(v.fechado ? 0 : 1)
+
+  if (args.includes('--app')) {
+    const v = vereditos[0]
+    if (!v) {
+      console.error(`app não encontrado`)
+      process.exit(2)
+    }
+    console.log(`\n${v.app}: ${v.fechado ? '✓ fechado' : '✗ aberto'}`)
+    for (const [k, razoes] of Object.entries(v.abertas))
+      for (const r of razoes) console.log(`  ${k}  ${r}`)
+    process.exit(v.fechado ? 0 : 1)
+  }
+
+  // --todos: grava a evidência por app e o resumo
+  fs.mkdirSync(SAIDA, { recursive: true })
+  for (const v of vereditos)
+    fs.writeFileSync(path.join(SAIDA, `${v.app}.json`), JSON.stringify(v, null, 1) + '\n')
+
+  const porPremissa = {}
+  for (const v of vereditos)
+    for (const k of Object.keys(v.abertas || {})) porPremissa[k] = (porPremissa[k] || 0) + 1
+
+  const pendentes = vereditos.filter((v) => !v.fechado).map((v) => v.app)
+  const drift = conferirMapaDoServer()
+  const resumo = {
+    medidoEm: new Date().toISOString(),
+    apps: vereditos.length,
+    fechados: vereditos.length - pendentes.length,
+    pendentes: pendentes.length,
+    abertasPorPremissa: porPremissa,
+    portasEmConflito: [...conflitos].filter(([, a]) => a.length > 1).length,
+    mapaDeCategoriasDivergeDoServer: drift,
+    fila: pendentes,
+  }
+  fs.writeFileSync(path.join(SAIDA, 'resumo.json'), JSON.stringify(resumo, null, 1) + '\n')
+
+  console.log(`\nrevisão container a container — ${resumo.apps} apps`)
+  console.log(`  fechados:  ${resumo.fechados}`)
+  console.log(`  pendentes: ${resumo.pendentes}`)
+  console.log(`\n  abertas por premissa:`)
+  for (const [k, n] of Object.entries(porPremissa).sort())
+    console.log(`    ${k}  ${String(n).padStart(3)} app(s)`)
+  if (drift) console.log(`\n  ATENÇÃO: CATEGORIAS diverge do server:`, JSON.stringify(drift))
+  console.log(`\n  evidência em ${SAIDA}/<app>.json e ${SAIDA}/resumo.json`)
+  process.exit(resumo.pendentes ? 1 : 0)
+
 }
-
-// --todos: grava a evidência por app e o resumo
-fs.mkdirSync(SAIDA, { recursive: true })
-for (const v of vereditos)
-  fs.writeFileSync(path.join(SAIDA, `${v.app}.json`), JSON.stringify(v, null, 1) + '\n')
-
-const porPremissa = {}
-for (const v of vereditos)
-  for (const k of Object.keys(v.abertas || {})) porPremissa[k] = (porPremissa[k] || 0) + 1
-
-const pendentes = vereditos.filter((v) => !v.fechado).map((v) => v.app)
-const drift = conferirMapaDoServer()
-const resumo = {
-  medidoEm: new Date().toISOString(),
-  apps: vereditos.length,
-  fechados: vereditos.length - pendentes.length,
-  pendentes: pendentes.length,
-  abertasPorPremissa: porPremissa,
-  portasEmConflito: [...conflitos].filter(([, a]) => a.length > 1).length,
-  mapaDeCategoriasDivergeDoServer: drift,
-  fila: pendentes,
-}
-fs.writeFileSync(path.join(SAIDA, 'resumo.json'), JSON.stringify(resumo, null, 1) + '\n')
-
-console.log(`\nrevisão container a container — ${resumo.apps} apps`)
-console.log(`  fechados:  ${resumo.fechados}`)
-console.log(`  pendentes: ${resumo.pendentes}`)
-console.log(`\n  abertas por premissa:`)
-for (const [k, n] of Object.entries(porPremissa).sort())
-  console.log(`    ${k}  ${String(n).padStart(3)} app(s)`)
-if (drift) console.log(`\n  ATENÇÃO: CATEGORIAS diverge do server:`, JSON.stringify(drift))
-console.log(`\n  evidência em ${SAIDA}/<app>.json e ${SAIDA}/resumo.json`)
-process.exit(resumo.pendentes ? 1 : 0)
