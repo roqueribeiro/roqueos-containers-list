@@ -16,7 +16,7 @@
 import { execFileSync } from 'node:child_process'
 import yaml from 'js-yaml'
 import { mkdirSync, readdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs'
-import { join, dirname } from 'node:path'
+import { join, dirname, basename } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { todosOsApps } from './uid-imagem.mjs'
 
@@ -207,12 +207,36 @@ export function respondeNaPorta(projeto, alvo) {
   }
 }
 
+// O container escreve no bind como root. Quem roda o teste nem sempre e root: no
+// runner do GitHub o usuario e comum, e a limpeza morre com
+// "EACCES, Permission denied: /tmp/boot-roqueos/bt-2fauth". Entao a limpeza cai
+// para um container root, com o caminho da caixa de areia montado e nada mais.
+//
+// O alvo e SEMPRE um diretorio dentro de SANDBOX, nunca /DATA. Numa maquina
+// RoqueOS de verdade /DATA/AppData e o dado de quem mora na casa.
+function limpaCaixa(dir) {
+  try {
+    rmSync(dir, { recursive: true, force: true })
+    return
+  } catch (e) {
+    if (e?.code !== 'EACCES' && e?.code !== 'EPERM') throw e
+  }
+  const base = basename(dir)
+  if (!dir.startsWith(SANDBOX + '/') || !base || base === '.' || base === '..') {
+    throw new Error(`recusando limpar fora da caixa de areia: ${dir}`)
+  }
+  sh('docker', [
+    'run', '--rm', '-v', `${SANDBOX}:/caixa`, 'alpine:3.21',
+    'rm', '-rf', `/caixa/${base}`,
+  ])
+}
+
 export function testa(app) {
   const projeto = `bt-${app.toLowerCase().replace(/[^a-z0-9]/g, '')}`
   const dir = join(SANDBOX, projeto)
   const origem = join(APPS, app, 'docker-compose.yml')
   const inicio = Date.now()
-  rmSync(dir, { recursive: true, force: true })
+  limpaCaixa(dir)
   mkdirSync(dir, { recursive: true })
   const texto = caixa(renderiza(readFileSync(origem, 'utf8'), app.toLowerCase()), dir)
   // A porta publicada não faz parte do que a P10 mede, e no laboratório ela só
@@ -281,7 +305,9 @@ export function testa(app) {
     try {
       sh('docker', ['compose', '-p', projeto, 'down', '-v', '-t', '5'], { cwd: dir })
     } catch {}
-    rmSync(dir, { recursive: true, force: true })
+    try {
+      limpaCaixa(dir)
+    } catch {}
     // Sem isto uma varredura do catálogo inteiro enche o disco do runner por
     // volta do vigésimo app, e a partir daí toda falha é falha de disco.
     if (process.env.BOOT_SEM_PODA !== '1') {
