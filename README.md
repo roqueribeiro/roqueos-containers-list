@@ -157,7 +157,7 @@ This repo is **data + tooling only** — no runtime. The `appstore.zip` produced
 **No build step, no tests for the catalog itself** — quality control happens via:
 
 - **Schema validation** (`yarn validate`) — JSON Schema + cross-field invariants. `:latest` is rejected: pinned tag or digest only. CI gate.
-- **Store review** (`yarn revisao`) — **CI gate.** The nine store premises, app by app, with a verdict in `.revisao/<app>.json`. Exits 1 while anything is open. This is what proves an app is ready to ship, not just that its YAML parses.
+- **Store review** (`yarn revisao`) — **CI gate.** The nine store premises, app by app, with a verdict in `.revisao/<app>.json`. Exits 1 while anything is open. This is what proves an app is ready to ship, not just that its YAML parses. It also rejects descriptions that merely restate the field (`Container Path: /app/data` for the volume `/app/data`): a filled field that says nothing is worse than an empty one, because it looks done.
 - **Auto-fixer** (`yarn fix`) — backfills `scheme`, `mountShared`, `main` on single-service stacks.
 - **Store listing** (`yarn readme`) — regenerates every `Apps/*/README.md` from its manifest.
 - **i18n gap report** (`yarn enrichment`) — read-only. Use this, **not** `yarn audit`: yarn has its own `audit` subcommand and it wins, so `yarn audit` never runs this repo's script.

@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço |
-| ---- | --------- | --------- | -------------------- | ------- |
-| 3000 | 3000      | tcp       | Container Port: 3000 | app     |
+| Host | Container | Protocolo | Para que serve          | Serviço |
+| ---- | --------- | --------- | ----------------------- | ------- |
+| 3000 | 3000      | tcp       | Web interface for Umami | app     |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

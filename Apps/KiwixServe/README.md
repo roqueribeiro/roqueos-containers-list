@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço     |
-| ---- | --------- | --------- | -------------------- | ----------- |
-| 8080 | 8080      | tcp       | Container Port: 8080 | kiwix-serve |
+| Host | Container | Protocolo | Para que serve                 | Serviço     |
+| ---- | --------- | --------- | ------------------------------ | ----------- |
+| 8080 | 8080      | tcp       | Web interface for Kiwix Server | kiwix-serve |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

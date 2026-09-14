@@ -12,13 +12,11 @@ services:
       volumes:
         - container: /root/.dbgate
           description:
-            en_US: "Container Path: /root/.dbgate"
-            en_us: "Container Path: /root/.dbgate"
+            en_us: Per-user settings the app writes
       ports:
         - container: "3000"
           description:
-            en_US: "Container Port: 3000"
-            en_us: "Container Port: 3000"
+            en_us: Web interface for DBGate
 x-casaos:
   architectures:
     - amd64

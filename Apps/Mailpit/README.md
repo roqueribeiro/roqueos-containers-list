@@ -11,10 +11,10 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço |
-| ---- | --------- | --------- | -------------------- | ------- |
-| 8025 | 8025      | tcp       | Container Port: 8025 | app     |
-| 1025 | 1025      | tcp       | Container Port: 1025 | app     |
+| Host | Container | Protocolo | Para que serve                                                              | Serviço |
+| ---- | --------- | --------- | --------------------------------------------------------------------------- | ------- |
+| 8025 | 8025      | tcp       | Web interface for Mailpit                                                   | app     |
+| 1025 | 1025      | tcp       | SMTP server that captures the mail your app sends, instead of delivering it | app     |
 
 
 ## Volumes

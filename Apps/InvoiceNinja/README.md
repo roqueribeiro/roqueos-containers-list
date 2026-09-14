@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve     | Serviço           |
-| ---- | --------- | --------- | ------------------ | ----------------- |
-| 8080 | 80        | tcp       | Container Port: 80 | invoice-ninja-web |
+| Host | Container | Protocolo | Para que serve                  | Serviço           |
+| ---- | --------- | --------- | ------------------------------- | ----------------- |
+| 8080 | 80        | tcp       | Web interface for Invoice Ninja | invoice-ninja-web |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

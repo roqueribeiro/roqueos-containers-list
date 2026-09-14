@@ -24,45 +24,35 @@ services:
       envs:
         - container: APP_PORT
           description:
-            en_US: "Container Variable: APP_PORT"
-            en_us: "Container Variable: APP_PORT"
+            en_us: Port the app listens on inside the container
         - container: APP_BASE_URL
           description:
-            en_US: "Container Variable: APP_BASE_URL"
-            en_us: "Container Variable: APP_BASE_URL"
+            en_us: Public address the app answers on
         - container: DB_CLIENT
           description:
-            en_US: "Container Variable: DB_CLIENT"
-            en_us: "Container Variable: DB_CLIENT"
+            en_us: Database connection setting
         - container: POSTGRES_PASSWORD
           description:
-            en_US: "Container Variable: POSTGRES_PASSWORD"
-            en_us: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: POSTGRES_USER
           description:
-            en_US: "Container Variable: POSTGRES_USER"
-            en_us: "Container Variable: POSTGRES_USER"
+            en_us: Database connection setting
         - container: POSTGRES_DATABASE
           description:
-            en_US: "Container Variable: POSTGRES_DATABASE"
-            en_us: "Container Variable: POSTGRES_DATABASE"
+            en_us: Database connection setting
         - container: POSTGRES_PORT
           description:
-            en_US: "Container Variable: POSTGRES_PORT"
-            en_us: "Container Variable: POSTGRES_PORT"
+            en_us: Database connection setting
         - container: POSTGRES_HOST
           description:
-            en_US: "Container Variable: POSTGRES_HOST"
-            en_us: "Container Variable: POSTGRES_HOST"
+            en_us: Database connection setting
         - container: MAX_TIME_DRIFT
           description:
-            en_US: "Container Variable: MAX_TIME_DRIFT"
-            en_us: "Container Variable: MAX_TIME_DRIFT"
+            en_us: Size or limit the app enforces
       ports:
         - container: "22300"
           description:
-            en_US: "Container Port: 22300"
-            en_us: "Container Port: 22300"
+            en_us: Web interface for joplin
   joplin-db:
     container_name: joplin-db
     image: postgres:14.2@sha256:2c954f8c5d03da58f8b82645b783b56c1135df17e650b186b296fa1bb71f9cfd
@@ -79,21 +69,17 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_US: "Container Variable: POSTGRES_PASSWORD"
-            en_us: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: POSTGRES_USER
           description:
-            en_US: "Container Variable: POSTGRES_USER"
-            en_us: "Container Variable: POSTGRES_USER"
+            en_us: Database connection setting
         - container: POSTGRES_DB
           description:
-            en_US: "Container Variable: POSTGRES_DB"
-            en_us: "Container Variable: POSTGRES_DB"
+            en_us: Database connection setting
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_US: "Container Path: /var/lib/postgresql/data"
-            en_us: "Container Path: /var/lib/postgresql/data"
+            en_us: "Application data: this is what you back up"
 networks:
   big_bear_joplin_network:
     driver: bridge

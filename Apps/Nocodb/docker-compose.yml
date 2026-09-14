@@ -18,26 +18,21 @@ services:
       envs:
         - container: DATABASE_URL
           description:
-            en_US: "Container Variable: DATABASE_URL"
-            en_us: "Container Variable: DATABASE_URL"
+            en_us: Database connection setting
         - container: NC_AUTH_JWT_SECRET
           description:
-            en_US: "Container Variable: NC_AUTH_JWT_SECRET"
-            en_us: "Container Variable: NC_AUTH_JWT_SECRET"
+            en_us: "Secret: generate a long random value, never ship the default"
         - container: NC_REDIS_URL
           description:
-            en_US: "Container Variable: NC_REDIS_URL"
-            en_us: "Container Variable: NC_REDIS_URL"
+            en_us: Public address the app answers on
       volumes:
         - container: /usr/src/app/data
           description:
-            en_US: "Container Path: /usr/src/app/data"
-            en_us: "Container Path: /usr/src/app/data"
+            en_us: "Application data: this is what you back up"
       ports:
         - container: "8080"
           description:
-            en_US: "Container Port: 8080"
-            en_us: "Container Port: 8080"
+            en_us: Web interface for NocoDB
   nocodb-db:
     container_name: nocodb-db
     image: postgres:13@sha256:4689940c683801b4ab839ab3b0a0a3555a5fe425371422310944e89eca7d8068
@@ -54,21 +49,17 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_US: "Container Variable: POSTGRES_DB"
-            en_us: "Container Variable: POSTGRES_DB"
+            en_us: Database connection setting
         - container: POSTGRES_USER
           description:
-            en_US: "Container Variable: POSTGRES_USER"
-            en_us: "Container Variable: POSTGRES_USER"
+            en_us: Database connection setting
         - container: POSTGRES_PASSWORD
           description:
-            en_US: "Container Variable: POSTGRES_PASSWORD"
-            en_us: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Password: change it before the first boot"
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_US: "Container Path: /var/lib/postgresql/data"
-            en_us: "Container Path: /var/lib/postgresql/data"
+            en_us: "Application data: this is what you back up"
   nocodb-redis:
     image: redis:8.2.2-alpine@sha256:1c78f5e7512cc8b22b0edc95c20e7abd9e1fd832e5dfd5c3c6b59ce82fb238d0
     container_name: nocodb-redis
@@ -93,8 +84,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_US: "Container Path: /data"
-            en_us: "Container Path: /data"
+            en_us: "Application data: this is what you back up"
 networks:
   nocodb-network:
     driver: bridge

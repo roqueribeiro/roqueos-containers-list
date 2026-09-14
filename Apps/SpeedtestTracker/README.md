@@ -11,10 +11,10 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve      | Serviço           |
-| ---- | --------- | --------- | ------------------- | ----------------- |
-| 8080 | 80        | tcp       | Container Port: 80  | speedtest-tracker |
-| 8443 | 443       | tcp       | Container Port: 443 | speedtest-tracker |
+| Host | Container | Protocolo | Para que serve                      | Serviço           |
+| ---- | --------- | --------- | ----------------------------------- | ----------------- |
+| 8080 | 80        | tcp       | Web interface for Speedtest Tracker | speedtest-tracker |
+| 8443 | 443       | tcp       | HTTPS (port 443)                    | speedtest-tracker |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

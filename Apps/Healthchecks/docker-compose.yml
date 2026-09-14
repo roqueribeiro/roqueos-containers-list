@@ -36,40 +36,32 @@ services:
       envs:
         - container: PUID
           description:
-            en_US: "Container Variable: PUID"
-            en_us: "Container Variable: PUID"
+            en_us: User ID that owns the files the app writes
         - container: PGID
           description:
-            en_US: "Container Variable: PGID"
-            en_us: "Container Variable: PGID"
+            en_us: Group ID that owns the files the app writes
         - container: TZ
           description:
-            en_US: "Container Variable: TZ"
-            en_us: "Container Variable: TZ"
+            en_us: Timezone, e.g. America/Sao_Paulo
         - container: SITE_ROOT
           description:
             en_US: "Container Variable: SITE_ROOT"
             en_us: "Container Variable: SITE_ROOT"
         - container: SITE_NAME
           description:
-            en_US: "Container Variable: SITE_NAME"
-            en_us: "Container Variable: SITE_NAME"
+            en_us: Connection setting for a service this app depends on
         - container: SUPERUSER_EMAIL
           description:
-            en_US: "Container Variable: SUPERUSER_EMAIL"
-            en_us: "Container Variable: SUPERUSER_EMAIL"
+            en_us: Outgoing e-mail setting
         - container: SUPERUSER_PASSWORD
           description:
-            en_US: "Container Variable: SUPERUSER_PASSWORD"
-            en_us: "Container Variable: SUPERUSER_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: ALLOWED_HOSTS
           description:
-            en_US: "Container Variable: ALLOWED_HOSTS"
-            en_us: "Container Variable: ALLOWED_HOSTS"
+            en_us: Feature switch
         - container: APPRISE_ENABLED
           description:
-            en_US: "Container Variable: APPRISE_ENABLED"
-            en_us: "Container Variable: APPRISE_ENABLED"
+            en_us: Feature switch
         - container: CSRF_TRUSTED_ORIGINS
           description:
             en_US: "Container Variable: CSRF_TRUSTED_ORIGINS"
@@ -80,62 +72,50 @@ services:
             en_us: "Container Variable: DEBUG"
         - container: DEFAULT_FROM_EMAIL
           description:
-            en_US: "Container Variable: DEFAULT_FROM_EMAIL"
-            en_us: "Container Variable: DEFAULT_FROM_EMAIL"
+            en_us: Outgoing e-mail setting
         - container: EMAIL_HOST
           description:
-            en_US: "Container Variable: EMAIL_HOST"
-            en_us: "Container Variable: EMAIL_HOST"
+            en_us: Outgoing e-mail setting
         - container: EMAIL_PORT
           description:
-            en_US: "Container Variable: EMAIL_PORT"
-            en_us: "Container Variable: EMAIL_PORT"
+            en_us: Outgoing e-mail setting
         - container: EMAIL_HOST_USER
           description:
-            en_US: "Container Variable: EMAIL_HOST_USER"
-            en_us: "Container Variable: EMAIL_HOST_USER"
+            en_us: Outgoing e-mail setting
         - container: EMAIL_HOST_PASSWORD
           description:
-            en_US: "Container Variable: EMAIL_HOST_PASSWORD"
-            en_us: "Container Variable: EMAIL_HOST_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: EMAIL_USE_TLS
           description:
-            en_US: "Container Variable: EMAIL_USE_TLS"
-            en_us: "Container Variable: EMAIL_USE_TLS"
+            en_us: Outgoing e-mail setting
         - container: INTEGRATIONS_ALLOW_PRIVATE_IPS
           description:
             en_US: "Container Variable: INTEGRATIONS_ALLOW_PRIVATE_IPS"
             en_us: "Container Variable: INTEGRATIONS_ALLOW_PRIVATE_IPS"
         - container: PING_EMAIL_DOMAIN
           description:
-            en_US: "Container Variable: PING_EMAIL_DOMAIN"
-            en_us: "Container Variable: PING_EMAIL_DOMAIN"
+            en_us: Outgoing e-mail setting
         - container: RP_ID
           description:
             en_US: "Container Variable: RP_ID"
             en_us: "Container Variable: RP_ID"
         - container: SECRET_KEY
           description:
-            en_US: "Container Variable: SECRET_KEY"
-            en_us: "Container Variable: SECRET_KEY"
+            en_us: "Secret: generate a long random value, never ship the default"
         - container: SITE_LOGO_URL
           description:
-            en_US: "Container Variable: SITE_LOGO_URL"
-            en_us: "Container Variable: SITE_LOGO_URL"
+            en_us: Public address the app answers on
       volumes:
         - container: /config
           description:
-            en_US: "Container Path: /config"
-            en_us: "Container Path: /config"
+            en_us: Configuration files, kept between updates
       ports:
         - container: "8000"
           description:
-            en_US: "Container Port: 8000"
-            en_us: "Container Port: 8000"
+            en_us: Web interface for Healthchecks
         - container: "2525"
           description:
-            en_US: "Container Port: 2525"
-            en_us: "Container Port: 2525"
+            en_us: "SMTP listener: lets a cron job ping by sending an e-mail"
 x-casaos:
   architectures:
     - amd64

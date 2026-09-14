@@ -22,8 +22,7 @@ services:
       ports:
         - container: "8080"
           description:
-            en_US: "Container Port: 8080"
-            en_us: "Container Port: 8080"
+            en_us: Web interface for Penpot
   penpot-backend:
     image: penpotapp/backend:2.17.0@sha256:471cdebf185be899ef7d7593e9cd7994b908ebd7ffb78ca547e3d843bb83536f
     container_name: penpot-backend
@@ -54,40 +53,31 @@ services:
             en_us: "Container Variable: PENPOT_FLAGS"
         - container: PENPOT_SECRET_KEY
           description:
-            en_US: "Container Variable: PENPOT_SECRET_KEY"
-            en_us: "Container Variable: PENPOT_SECRET_KEY"
+            en_us: "Secret: generate a long random value, never ship the default"
         - container: PENPOT_PUBLIC_URI
           description:
-            en_US: "Container Variable: PENPOT_PUBLIC_URI"
-            en_us: "Container Variable: PENPOT_PUBLIC_URI"
+            en_us: Public address the app answers on
         - container: PENPOT_DATABASE_URI
           description:
-            en_US: "Container Variable: PENPOT_DATABASE_URI"
-            en_us: "Container Variable: PENPOT_DATABASE_URI"
+            en_us: Public address the app answers on
         - container: PENPOT_DATABASE_USERNAME
           description:
-            en_US: "Container Variable: PENPOT_DATABASE_USERNAME"
-            en_us: "Container Variable: PENPOT_DATABASE_USERNAME"
+            en_us: Account name the app uses
         - container: PENPOT_DATABASE_PASSWORD
           description:
-            en_US: "Container Variable: PENPOT_DATABASE_PASSWORD"
-            en_us: "Container Variable: PENPOT_DATABASE_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: PENPOT_REDIS_URI
           description:
-            en_US: "Container Variable: PENPOT_REDIS_URI"
-            en_us: "Container Variable: PENPOT_REDIS_URI"
+            en_us: Public address the app answers on
         - container: PENPOT_ASSETS_STORAGE_BACKEND
           description:
-            en_US: "Container Variable: PENPOT_ASSETS_STORAGE_BACKEND"
-            en_us: "Container Variable: PENPOT_ASSETS_STORAGE_BACKEND"
+            en_us: Which backend the app talks to
         - container: PENPOT_STORAGE_ASSETS_FS_DIRECTORY
           description:
-            en_US: "Container Variable: PENPOT_STORAGE_ASSETS_FS_DIRECTORY"
-            en_us: "Container Variable: PENPOT_STORAGE_ASSETS_FS_DIRECTORY"
+            en_us: Path the app reads from or writes to
         - container: PENPOT_TELEMETRY_ENABLED
           description:
-            en_US: "Container Variable: PENPOT_TELEMETRY_ENABLED"
-            en_us: "Container Variable: PENPOT_TELEMETRY_ENABLED"
+            en_us: Feature switch
       volumes:
         - container: /opt/data/assets
           description:
@@ -106,12 +96,10 @@ services:
       envs:
         - container: PENPOT_PUBLIC_URI
           description:
-            en_US: "Container Variable: PENPOT_PUBLIC_URI"
-            en_us: "Container Variable: PENPOT_PUBLIC_URI"
+            en_us: Public address the app answers on
         - container: PENPOT_REDIS_URI
           description:
-            en_US: "Container Variable: PENPOT_REDIS_URI"
-            en_us: "Container Variable: PENPOT_REDIS_URI"
+            en_us: Public address the app answers on
   penpot-postgres:
     image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
     restart: unless-stopped
@@ -130,25 +118,20 @@ services:
       envs:
         - container: POSTGRES_INITDB_ARGS
           description:
-            en_US: "Container Variable: POSTGRES_INITDB_ARGS"
-            en_us: "Container Variable: POSTGRES_INITDB_ARGS"
+            en_us: Database connection setting
         - container: POSTGRES_DB
           description:
-            en_US: "Container Variable: POSTGRES_DB"
-            en_us: "Container Variable: POSTGRES_DB"
+            en_us: Database connection setting
         - container: POSTGRES_USER
           description:
-            en_US: "Container Variable: POSTGRES_USER"
-            en_us: "Container Variable: POSTGRES_USER"
+            en_us: Database connection setting
         - container: POSTGRES_PASSWORD
           description:
-            en_US: "Container Variable: POSTGRES_PASSWORD"
-            en_us: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Password: change it before the first boot"
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_US: "Container Path: /var/lib/postgresql/data"
-            en_us: "Container Path: /var/lib/postgresql/data"
+            en_us: "Application data: this is what you back up"
   penpot-redis:
     image: redis:7.4.6@sha256:d7432711a2a5c99c2e9dd0e006061cd274d7cb7a9e77f07ffe2ea99e21244677
     container_name: penpot-redis
@@ -168,8 +151,7 @@ services:
       ports:
         - container: "1080"
           description:
-            en_US: "Container Port: 1080"
-            en_us: "Container Port: 1080"
+            en_us: "Mail catcher web interface: shows the e-mail Penpot would have sent"
 networks:
   penpot-network:
     driver: bridge

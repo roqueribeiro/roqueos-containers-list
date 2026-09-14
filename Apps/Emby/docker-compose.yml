@@ -49,10 +49,10 @@ services:
       ports:
         - container: "8096"
           description:
-            en_us: "Web interface for Emby"
+            en_us: Web interface for Emby
         - container: "8920"
           description:
-            en_us: "Service port 8920 of emby"
+            en_us: HTTPS web interface
       volumes:
         - container: /config
           description:

@@ -25,24 +25,19 @@ services:
       envs:
         - container: VPN_SERVICE_PROVIDER
           description:
-            en_US: "Container Variable: VPN_SERVICE_PROVIDER"
-            en_us: "Container Variable: VPN_SERVICE_PROVIDER"
+            en_us: "VPN provider setting: see the app docs for the accepted values"
         - container: VPN_TYPE
           description:
-            en_US: "Container Variable: VPN_TYPE"
-            en_us: "Container Variable: VPN_TYPE"
+            en_us: "VPN provider setting: see the app docs for the accepted values"
         - container: OPENVPN_USER
           description:
-            en_US: "Container Variable: OPENVPN_USER"
-            en_us: "Container Variable: OPENVPN_USER"
+            en_us: "VPN provider setting: see the app docs for the accepted values"
         - container: OPENVPN_PASSWORD
           description:
-            en_US: "Container Variable: OPENVPN_PASSWORD"
-            en_us: "Container Variable: OPENVPN_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: TZ
           description:
-            en_US: "Container Variable: TZ"
-            en_us: "Container Variable: TZ"
+            en_us: Timezone, e.g. America/Sao_Paulo
         - container: UPDATER_PERIOD
           description:
             en_US: "Container Variable: UPDATER_PERIOD"
@@ -55,16 +50,13 @@ services:
       ports:
         - container: "8888"
           description:
-            en_US: "Container Port: 8888"
-            en_us: "Container Port: 8888"
+            en_us: Web interface for Gluetun
         - container: "8388"
           description:
-            en_US: "Container Port: 8388"
-            en_us: "Container Port: 8388"
+            en_us: "Shadowsocks proxy: point other apps here to route through the VPN"
         - container: "8388"
           description:
-            en_US: "Container Port: 8388"
-            en_us: "Container Port: 8388"
+            en_us: "Shadowsocks proxy: point other apps here to route through the VPN"
 x-casaos:
   architectures:
     - amd64

@@ -11,10 +11,10 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço      |
-| ---- | --------- | --------- | -------------------- | ------------ |
-| 8000 | 8000      | tcp       | Container Port: 8000 | healthchecks |
-| 2525 | 2525      | tcp       | Container Port: 2525 | healthchecks |
+| Host | Container | Protocolo | Para que serve                                           | Serviço      |
+| ---- | --------- | --------- | -------------------------------------------------------- | ------------ |
+| 8000 | 8000      | tcp       | Web interface for Healthchecks                           | healthchecks |
+| 2525 | 2525      | tcp       | SMTP listener: lets a cron job ping by sending an e-mail | healthchecks |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

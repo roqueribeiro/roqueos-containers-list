@@ -18,8 +18,7 @@ services:
       envs:
         - container: TZ
           description:
-            en_US: "Container Variable: TZ"
-            en_us: "Container Variable: TZ"
+            en_us: Timezone, e.g. America/Sao_Paulo
       volumes:
         - container: /var/cache/ntfy
           description:
@@ -32,8 +31,7 @@ services:
       ports:
         - container: "80"
           description:
-            en_US: "Container Port: 80"
-            en_us: "Container Port: 80"
+            en_us: Web interface for Ntfy.sh
 x-casaos:
   architectures:
     - amd64

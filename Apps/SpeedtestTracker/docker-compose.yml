@@ -29,49 +29,38 @@ services:
       envs:
         - container: PUID
           description:
-            en_US: "Container Variable: PUID"
-            en_us: "Container Variable: PUID"
+            en_us: User ID that owns the files the app writes
         - container: PGID
           description:
-            en_US: "Container Variable: PGID"
-            en_us: "Container Variable: PGID"
+            en_us: Group ID that owns the files the app writes
         - container: DB_CONNECTION
           description:
-            en_US: "Container Variable: DB_CONNECTION"
-            en_us: "Container Variable: DB_CONNECTION"
+            en_us: Database connection setting
         - container: DB_HOST
           description:
-            en_US: "Container Variable: DB_HOST"
-            en_us: "Container Variable: DB_HOST"
+            en_us: Database connection setting
         - container: DB_PORT
           description:
-            en_US: "Container Variable: DB_PORT"
-            en_us: "Container Variable: DB_PORT"
+            en_us: Database connection setting
         - container: DB_DATABASE
           description:
-            en_US: "Container Variable: DB_DATABASE"
-            en_us: "Container Variable: DB_DATABASE"
+            en_us: Database connection setting
         - container: DB_USERNAME
           description:
-            en_US: "Container Variable: DB_USERNAME"
-            en_us: "Container Variable: DB_USERNAME"
+            en_us: Database connection setting
         - container: DB_PASSWORD
           description:
-            en_US: "Container Variable: DB_PASSWORD"
-            en_us: "Container Variable: DB_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: TZ
           description:
-            en_US: "Container Variable: TZ"
-            en_us: "Container Variable: TZ"
+            en_us: Timezone, e.g. America/Sao_Paulo
       volumes:
         - container: /etc/localtime
           description:
-            en_US: "Container Path: /etc/localtime"
-            en_us: "Container Path: /etc/localtime"
+            en_us: The host's clock, so timestamps match the server
         - container: /config
           description:
-            en_US: "Container Path: /config"
-            en_us: "Container Path: /config"
+            en_us: Configuration files, kept between updates
         - container: /etc/ssl/web
           description:
             en_US: "Container Path: /etc/ssl/web"
@@ -79,12 +68,10 @@ services:
       ports:
         - container: "80"
           description:
-            en_US: "Container Port: 80"
-            en_us: "Container Port: 80"
+            en_us: Web interface for Speedtest Tracker
         - container: "443"
           description:
-            en_US: "Container Port: 443"
-            en_us: "Container Port: 443"
+            en_us: HTTPS (port 443)
   speedtest-tracker-db:
     image: mariadb:10@sha256:be981e4113326ada8d6004174dd09eeaefc03094037f811182a52d4f2e737350
     container_name: speedtest-tracker-db
@@ -106,21 +93,17 @@ services:
             en_us: "Container Variable: MARIADB_DATABASE"
         - container: MARIADB_USER
           description:
-            en_US: "Container Variable: MARIADB_USER"
-            en_us: "Container Variable: MARIADB_USER"
+            en_us: Account name the app uses
         - container: MARIADB_PASSWORD
           description:
-            en_US: "Container Variable: MARIADB_PASSWORD"
-            en_us: "Container Variable: MARIADB_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: MARIADB_RANDOM_ROOT_PASSWORD
           description:
-            en_US: "Container Variable: MARIADB_RANDOM_ROOT_PASSWORD"
-            en_us: "Container Variable: MARIADB_RANDOM_ROOT_PASSWORD"
+            en_us: "Password: change it before the first boot"
       volumes:
         - container: /var/lib/mysql
           description:
-            en_US: "Container Path: /var/lib/mysql"
-            en_us: "Container Path: /var/lib/mysql"
+            en_us: "Application data: this is what you back up"
 networks:
   big_bear_speedtest_tracker_network:
     driver: bridge

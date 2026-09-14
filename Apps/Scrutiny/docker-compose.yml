@@ -44,12 +44,10 @@ services:
       ports:
         - container: "8080"
           description:
-            en_US: "Container Port: 8080"
-            en_us: "Container Port: 8080"
+            en_us: Web interface for Scrutiny
         - container: "8086"
           description:
-            en_US: "Container Port: 8086"
-            en_us: "Container Port: 8086"
+            en_us: InfluxDB that ships with Scrutiny and stores the disk history
 x-casaos:
   architectures:
     - amd64

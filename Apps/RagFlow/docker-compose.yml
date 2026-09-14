@@ -1591,9 +1591,9 @@ services:
           create_host_path: true
     x-casaos:
       ports:
-        - container: '9385'
+        - container: "9385"
           description:
-            en_us: "Service port 9385 of ragflow-sandbox-executor-manager"
+            en_us: "Sandbox executor: runs the code the agent generates, isolated"
       envs:
         - container: TZ
           description:

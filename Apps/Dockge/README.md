@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço |
-| ---- | --------- | --------- | -------------------- | ------- |
-| 5001 | 5001      | tcp       | Container Port: 5001 | app     |
+| Host | Container | Protocolo | Para que serve           | Serviço |
+| ---- | --------- | --------- | ------------------------ | ------- |
+| 5001 | 5001      | tcp       | Web interface for Dockge | app     |
 
 
 ## Volumes

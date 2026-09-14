@@ -11,10 +11,10 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve      | Serviço |
-| ---- | --------- | --------- | ------------------- | ------- |
-| 7350 | 80        | tcp       | Container Port: 80  | app     |
-| 7351 | 443       | tcp       | Container Port: 443 | app     |
+| Host | Container | Protocolo | Para que serve            | Serviço |
+| ---- | --------- | --------- | ------------------------- | ------- |
+| 7350 | 80        | tcp       | Web interface for Baserow | app     |
+| 7351 | 443       | tcp       | HTTPS (port 443)          | app     |
 
 
 ## Volumes

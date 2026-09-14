@@ -18,13 +18,11 @@ services:
             en_us: "Container Variable: IFACES"
         - container: TZ
           description:
-            en_US: "Container Variable: TZ"
-            en_us: "Container Variable: TZ"
+            en_us: Timezone, e.g. America/Sao_Paulo
       volumes:
         - container: /data/WatchYourLAN
           description:
-            en_US: "Container Path: /data/WatchYourLAN"
-            en_us: "Container Path: /data/WatchYourLAN"
+            en_us: "Application data: this is what you back up"
 x-casaos:
   architectures:
     - amd64

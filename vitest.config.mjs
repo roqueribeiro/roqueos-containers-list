@@ -28,6 +28,8 @@ export default defineConfig({
         "scripts/goal18-portas.mjs",
         "scripts/goal18-icones.mjs",
         "scripts/goal18-importa.mjs",
+        "scripts/goal18-importa-bigbear.mjs",
+        "scripts/goal18-descricoes.mjs",
       ],
       reporter: ["text", "json", "html"],
       // Realistic thresholds — we test the pure helpers and core logic.

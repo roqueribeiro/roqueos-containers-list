@@ -34,7 +34,7 @@ services:
       ports:
         - container: "4001"
           description:
-            en_us: Service port 4001 of emulatorjs
+            en_us: Backend API that serves the ROM library to the player
         - container: "80"
           description:
             en_us: Play Game

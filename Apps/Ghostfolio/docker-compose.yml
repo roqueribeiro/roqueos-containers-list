@@ -30,57 +30,44 @@ services:
       envs:
         - container: NODE_ENV
           description:
-            en_US: "Container Variable: NODE_ENV"
-            en_us: "Container Variable: NODE_ENV"
+            en_us: "Runtime mode: production or development"
         - container: HOST
           description:
-            en_US: "Container Variable: HOST"
-            en_us: "Container Variable: HOST"
+            en_us: Address the app binds to inside the container
         - container: PORT
           description:
-            en_US: "Container Variable: PORT"
-            en_us: "Container Variable: PORT"
+            en_us: Port the app listens on inside the container
         - container: ACCESS_TOKEN_SALT
           description:
-            en_US: "Container Variable: ACCESS_TOKEN_SALT"
-            en_us: "Container Variable: ACCESS_TOKEN_SALT"
+            en_us: "Secret: generate a long random value, never ship the default"
         - container: DATABASE_URL
           description:
-            en_US: "Container Variable: DATABASE_URL"
-            en_us: "Container Variable: DATABASE_URL"
+            en_us: Database connection setting
         - container: JWT_SECRET_KEY
           description:
-            en_US: "Container Variable: JWT_SECRET_KEY"
-            en_us: "Container Variable: JWT_SECRET_KEY"
+            en_us: "Secret: generate a long random value, never ship the default"
         - container: POSTGRES_DB
           description:
-            en_US: "Container Variable: POSTGRES_DB"
-            en_us: "Container Variable: POSTGRES_DB"
+            en_us: Database connection setting
         - container: POSTGRES_USER
           description:
-            en_US: "Container Variable: POSTGRES_USER"
-            en_us: "Container Variable: POSTGRES_USER"
+            en_us: Database connection setting
         - container: POSTGRES_PASSWORD
           description:
-            en_US: "Container Variable: POSTGRES_PASSWORD"
-            en_us: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: REDIS_HOST
           description:
-            en_US: "Container Variable: REDIS_HOST"
-            en_us: "Container Variable: REDIS_HOST"
+            en_us: Connection setting for a service this app depends on
         - container: REDIS_PASSWORD
           description:
-            en_US: "Container Variable: REDIS_PASSWORD"
-            en_us: "Container Variable: REDIS_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: REDIS_PORT
           description:
-            en_US: "Container Variable: REDIS_PORT"
-            en_us: "Container Variable: REDIS_PORT"
+            en_us: Port the app listens on inside the container
       ports:
         - container: "3333"
           description:
-            en_US: "Container Port: 3333"
-            en_us: "Container Port: 3333"
+            en_us: Web interface for Ghostfolio
   ghostfolio-db:
     container_name: ghostfolio-db
     image: postgres:15.4-alpine@sha256:35ce2187f2f7fb75e8e79493e13743596c21eb3789ff41ece145ae04d06e93a5
@@ -105,16 +92,13 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_US: "Container Variable: POSTGRES_DB"
-            en_us: "Container Variable: POSTGRES_DB"
+            en_us: Database connection setting
         - container: POSTGRES_USER
           description:
-            en_US: "Container Variable: POSTGRES_USER"
-            en_us: "Container Variable: POSTGRES_USER"
+            en_us: Database connection setting
         - container: POSTGRES_PASSWORD
           description:
-            en_US: "Container Variable: POSTGRES_PASSWORD"
-            en_us: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: PGDATA
           description:
             en_US: "Container Variable: PGDATA"
@@ -122,8 +106,7 @@ services:
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_US: "Container Path: /var/lib/postgresql/data"
-            en_us: "Container Path: /var/lib/postgresql/data"
+            en_us: "Application data: this is what you back up"
   ghostfolio-redis:
     container_name: ghostfolio-redis
     image: redis:7.4.6-alpine@sha256:7a7c6b5c49a6896d0a58ee0c6dc0dcabe14f30f0a2f7d2d1362d276fa2d43166
@@ -147,8 +130,7 @@ services:
       volumes:
         - container: /data
           description:
-            en_US: "Container Path: /data"
-            en_us: "Container Path: /data"
+            en_us: "Application data: this is what you back up"
 networks:
   big_bear_ghostfolio_network:
     driver: bridge

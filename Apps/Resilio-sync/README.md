@@ -11,10 +11,10 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve                     | Serviço      |
-| ----- | --------- | --------- | ---------------------------------- | ------------ |
-| 55555 | 55555     | tcp       | Service port 55555 of resilio-sync | resilio-sync |
-| 8888  | 8888      | tcp       | Web interface for resilio-sync     | resilio-sync |
+| Host  | Container | Protocolo | Para que serve                                                  | Serviço      |
+| ----- | --------- | --------- | --------------------------------------------------------------- | ------------ |
+| 55555 | 55555     | tcp       | Peer listening port: other Resilio devices connect here to sync | resilio-sync |
+| 8888  | 8888      | tcp       | Web interface for resilio-sync                                  | resilio-sync |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

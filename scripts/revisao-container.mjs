@@ -84,6 +84,17 @@ function conferirMapaDoServer() {
 // Larga de proposito: MONGO_PASS=pass passou pela primeira versao, que so
 // procurava PASSWORD inteiro. O que importa e o valor ser adivinhavel, nao o
 // nome da variavel seguir um padrao.
+/**
+ * Descricao que repete o proprio campo nao e descricao.
+ *
+ * 46 apps importados de upstream traziam 326 descricoes no formato
+ * `Container Path: /app/data` para o volume `/app/data`. Isso passa em qualquer
+ * checagem de "tem descricao?" e nao informa nada — e entrou nos READMEs de
+ * ficha, onde a coluna "Para que serve" repetia a coluna ao lado. Um campo
+ * preenchido com tautologia e pior que um campo vazio, porque parece pronto.
+ */
+export const TAUTOLOGIA = /^(Container (Path|Variable|Port)\s*:|Service port \d+ of )/i
+
 export const SEGREDO = /(PASS|SECRET|TOKEN|KEY|CREDENTIAL|AUTH)/i
 export const FRACO = /^(admin|password|123456|changeme|secret|root|toor|test|guest|pass|1234|unifi|user|demo)$/i
 
@@ -155,6 +166,8 @@ export function premissas(app, conflitos) {
       const host = String(porta.published ?? String(porta).split(':')[0]).split('/')[0]
       if (!descritas.has(alvo) || !descritas.get(alvo))
         p.P2.push(`${nomeSvc}: porta ${alvo} sem descrição em x-casaos.ports`)
+      else if (TAUTOLOGIA.test(descritas.get(alvo)))
+        p.P2.push(`${nomeSvc}: porta ${alvo} com descrição que só repete o campo`)
       const outros = (conflitos.get(host) || []).filter((a) => a !== app.nome)
       if (outros.length && !xr.portaCompartilhada)
         p.P2.push(

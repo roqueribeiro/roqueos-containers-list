@@ -14,9 +14,9 @@ Arquiteturas suportadas: amd64, arm64.
 | Host  | Container | Protocolo | Para que serve                                                      | Serviço                   |
 | ----- | --------- | --------- | ------------------------------------------------------------------- | ------------------------- |
 | 8443  | 8443      | tcp       | WebUI HTTP Port                                                     | unifi-network-application |
-| 3478  | 3478      | udp       | Service port 3478 of unifi-network-application                      | unifi-network-application |
-| 10001 | 10001     | udp       | Service port 10001 of unifi-network-application                     | unifi-network-application |
-| 8080  | 8080      | tcp       | Service port 8080 of unifi-network-application                      | unifi-network-application |
+| 3478  | 3478      | udp       | STUN: how devices find their way back to the controller             | unifi-network-application |
+| 10001 | 10001     | udp       | Device discovery on the local network                               | unifi-network-application |
+| 8080  | 8080      | tcp       | Device inform: where access points report in                        | unifi-network-application |
 | 27017 | 27017     | tcp       | MongoDB used only by the Unifi controller; keep it off the internet | unifi-db                  |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.

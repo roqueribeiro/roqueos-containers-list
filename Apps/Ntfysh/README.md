@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve     | Serviço |
-| ---- | --------- | --------- | ------------------ | ------- |
-| 7200 | 80        | tcp       | Container Port: 80 | app     |
+| Host | Container | Protocolo | Para que serve            | Serviço |
+| ---- | --------- | --------- | ------------------------- | ------- |
+| 7200 | 80        | tcp       | Web interface for Ntfy.sh | app     |
 
 
 ## Volumes

@@ -16,21 +16,17 @@ services:
       envs:
         - container: DATABASE_URL
           description:
-            en_US: "Container Variable: DATABASE_URL"
-            en_us: "Container Variable: DATABASE_URL"
+            en_us: Database connection setting
         - container: DATABASE_TYPE
           description:
-            en_US: "Container Variable: DATABASE_TYPE"
-            en_us: "Container Variable: DATABASE_TYPE"
+            en_us: Database connection setting
         - container: APP_SECRET
           description:
-            en_US: "Container Variable: APP_SECRET"
-            en_us: "Container Variable: APP_SECRET"
+            en_us: "Secret: generate a long random value, never ship the default"
       ports:
         - container: "3000"
           description:
-            en_US: "Container Port: 3000"
-            en_us: "Container Port: 3000"
+            en_us: Web interface for Umami
   db:
     image: postgres:15-alpine@sha256:3d0f7584ed7d04e27fa050d6683a74746608faf21f202be78460d679cc56461f
     environment:
@@ -51,21 +47,17 @@ services:
       envs:
         - container: POSTGRES_DB
           description:
-            en_US: "Container Variable: POSTGRES_DB"
-            en_us: "Container Variable: POSTGRES_DB"
+            en_us: Database connection setting
         - container: POSTGRES_USER
           description:
-            en_US: "Container Variable: POSTGRES_USER"
-            en_us: "Container Variable: POSTGRES_USER"
+            en_us: Database connection setting
         - container: POSTGRES_PASSWORD
           description:
-            en_US: "Container Variable: POSTGRES_PASSWORD"
-            en_us: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Password: change it before the first boot"
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_US: "Container Path: /var/lib/postgresql/data"
-            en_us: "Container Path: /var/lib/postgresql/data"
+            en_us: "Application data: this is what you back up"
 x-casaos:
   architectures:
     - amd64

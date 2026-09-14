@@ -11,10 +11,10 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço          |
-| ---- | --------- | --------- | -------------------- | ---------------- |
-| 9001 | 8080      | tcp       | Container Port: 8080 | penpot-frontend  |
-| 1080 | 1080      | tcp       | Container Port: 1080 | penpot-mailcatch |
+| Host | Container | Protocolo | Para que serve                                                      | Serviço          |
+| ---- | --------- | --------- | ------------------------------------------------------------------- | ---------------- |
+| 9001 | 8080      | tcp       | Web interface for Penpot                                            | penpot-frontend  |
+| 1080 | 1080      | tcp       | Mail catcher web interface: shows the e-mail Penpot would have sent | penpot-mailcatch |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

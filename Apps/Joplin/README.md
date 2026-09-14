@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve        | Serviço |
-| ----- | --------- | --------- | --------------------- | ------- |
-| 22300 | 22300     | tcp       | Container Port: 22300 | joplin  |
+| Host  | Container | Protocolo | Para que serve           | Serviço |
+| ----- | --------- | --------- | ------------------------ | ------- |
+| 22300 | 22300     | tcp       | Web interface for joplin | joplin  |
 
 
 ## Volumes

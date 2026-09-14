@@ -13,13 +13,11 @@ services:
       volumes:
         - container: /opt/focalboard/data
           description:
-            en_US: "Container Path: /opt/focalboard/data"
-            en_us: "Container Path: /opt/focalboard/data"
+            en_us: "Application data: this is what you back up"
       ports:
         - container: "8000"
           description:
-            en_US: "Container Port: 8000"
-            en_us: "Container Port: 8000"
+            en_us: Web interface for Focalboard
 x-casaos:
   architectures:
     - amd64

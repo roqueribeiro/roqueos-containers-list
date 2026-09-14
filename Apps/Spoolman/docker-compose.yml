@@ -17,8 +17,7 @@ services:
       envs:
         - container: TZ
           description:
-            en_US: "Container Variable: TZ"
-            en_us: "Container Variable: TZ"
+            en_us: Timezone, e.g. America/Sao_Paulo
         - container: SPOOLMAN_DB_TYPE
           description:
             en_US: "Container Variable: SPOOLMAN_DB_TYPE"
@@ -39,8 +38,7 @@ services:
       ports:
         - container: "8000"
           description:
-            en_US: "Container Port: 8000"
-            en_us: "Container Port: 8000"
+            en_us: Web interface for Spoolman
 x-casaos:
   architectures:
     - amd64

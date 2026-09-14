@@ -23,12 +23,10 @@ services:
       envs:
         - container: LT_API_KEYS
           description:
-            en_US: "Container Variable: LT_API_KEYS"
-            en_us: "Container Variable: LT_API_KEYS"
+            en_us: "Secret: generate a long random value, never ship the default"
         - container: LT_API_KEYS_DB_PATH
           description:
-            en_US: "Container Variable: LT_API_KEYS_DB_PATH"
-            en_us: "Container Variable: LT_API_KEYS_DB_PATH"
+            en_us: "Secret: generate a long random value, never ship the default"
         - container: LT_UPDATE_MODELS
           description:
             en_US: "Container Variable: LT_UPDATE_MODELS"
@@ -40,8 +38,7 @@ services:
       volumes:
         - container: /app/db
           description:
-            en_US: "Container Path: /app/db"
-            en_us: "Container Path: /app/db"
+            en_us: "Application data: this is what you back up"
         - container: /home/libretranslate/.local
           description:
             en_US: "Container Path: /home/libretranslate/.local"
@@ -49,8 +46,7 @@ services:
       ports:
         - container: "5000"
           description:
-            en_US: "Container Port: 5000"
-            en_us: "Container Port: 5000"
+            en_us: Web interface for LibreTranslate
 x-casaos:
   architectures:
     - amd64

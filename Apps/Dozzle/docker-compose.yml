@@ -12,13 +12,11 @@ services:
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_US: "Container Path: /var/run/docker.sock"
-            en_us: "Container Path: /var/run/docker.sock"
+            en_us: The host's Docker socket, so the app can see and manage containers
       ports:
         - container: "8080"
           description:
-            en_US: "Container Port: 8080"
-            en_us: "Container Port: 8080"
+            en_us: Web interface for Dozzle
 x-casaos:
   architectures:
     - amd64

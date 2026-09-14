@@ -28,57 +28,44 @@ services:
       envs:
         - container: DATABASE_URL
           description:
-            en_US: "Container Variable: DATABASE_URL"
-            en_us: "Container Variable: DATABASE_URL"
+            en_us: Database connection setting
         - container: SECRET_PASSWORD
           description:
-            en_US: "Container Variable: SECRET_PASSWORD"
-            en_us: "Container Variable: SECRET_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: NEXT_PUBLIC_BASE_URL
           description:
-            en_US: "Container Variable: NEXT_PUBLIC_BASE_URL"
-            en_us: "Container Variable: NEXT_PUBLIC_BASE_URL"
+            en_us: Public address the app answers on
         - container: NOREPLY_EMAIL
           description:
-            en_US: "Container Variable: NOREPLY_EMAIL"
-            en_us: "Container Variable: NOREPLY_EMAIL"
+            en_us: Outgoing e-mail setting
         - container: SUPPORT_EMAIL
           description:
-            en_US: "Container Variable: SUPPORT_EMAIL"
-            en_us: "Container Variable: SUPPORT_EMAIL"
+            en_us: Outgoing e-mail setting
         - container: SMTP_HOST
           description:
-            en_US: "Container Variable: SMTP_HOST"
-            en_us: "Container Variable: SMTP_HOST"
+            en_us: Outgoing e-mail setting
         - container: SMTP_PORT
           description:
-            en_US: "Container Variable: SMTP_PORT"
-            en_us: "Container Variable: SMTP_PORT"
+            en_us: Outgoing e-mail setting
         - container: SMTP_SECURE
           description:
-            en_US: "Container Variable: SMTP_SECURE"
-            en_us: "Container Variable: SMTP_SECURE"
+            en_us: Outgoing e-mail setting
         - container: SMTP_USER
           description:
-            en_US: "Container Variable: SMTP_USER"
-            en_us: "Container Variable: SMTP_USER"
+            en_us: Outgoing e-mail setting
         - container: SMTP_PWD
           description:
-            en_US: "Container Variable: SMTP_PWD"
-            en_us: "Container Variable: SMTP_PWD"
+            en_us: Outgoing e-mail setting
         - container: SMTP_TLS_ENABLED
           description:
-            en_US: "Container Variable: SMTP_TLS_ENABLED"
-            en_us: "Container Variable: SMTP_TLS_ENABLED"
+            en_us: Outgoing e-mail setting
         - container: ALLOWED_EMAILS
           description:
-            en_US: "Container Variable: ALLOWED_EMAILS"
-            en_us: "Container Variable: ALLOWED_EMAILS"
+            en_us: Outgoing e-mail setting
       ports:
         - container: "3000"
           description:
-            en_US: "Container Port: 3000"
-            en_us: "Container Port: 3000"
+            en_us: Web interface for Rallly
   rallly-db:
     container_name: rallly-db
     image: postgres:14@sha256:9e279cc7fc6e908da071befe389c576bd6752dbd295a9c078f96a75bab03e54c
@@ -102,21 +89,17 @@ services:
       envs:
         - container: POSTGRES_PASSWORD
           description:
-            en_US: "Container Variable: POSTGRES_PASSWORD"
-            en_us: "Container Variable: POSTGRES_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: POSTGRES_DB
           description:
-            en_US: "Container Variable: POSTGRES_DB"
-            en_us: "Container Variable: POSTGRES_DB"
+            en_us: Database connection setting
         - container: POSTGRES_USER
           description:
-            en_US: "Container Variable: POSTGRES_USER"
-            en_us: "Container Variable: POSTGRES_USER"
+            en_us: Database connection setting
       volumes:
         - container: /var/lib/postgresql/data
           description:
-            en_US: "Container Path: /var/lib/postgresql/data"
-            en_us: "Container Path: /var/lib/postgresql/data"
+            en_us: "Application data: this is what you back up"
 networks:
   big_bear_rally_network:
     driver: bridge

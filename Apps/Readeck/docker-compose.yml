@@ -35,8 +35,7 @@ services:
             en_us: "Container Variable: READECK_SERVER_HOST"
         - container: READECK_SERVER_PORT
           description:
-            en_US: "Container Variable: READECK_SERVER_PORT"
-            en_us: "Container Variable: READECK_SERVER_PORT"
+            en_us: Port the app listens on inside the container
         - container: READECK_LOG_FORMAT
           description:
             en_US: "Container Variable: READECK_LOG_FORMAT"
@@ -49,8 +48,7 @@ services:
       ports:
         - container: "8000"
           description:
-            en_US: "Container Port: 8000"
-            en_us: "Container Port: 8000"
+            en_us: Web interface for Readeck
 x-casaos:
   architectures:
     - amd64

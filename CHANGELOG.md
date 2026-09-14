@@ -44,6 +44,43 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - **35 apps sem uma palavra de português** na loja, escritos à mão. `LabelStudio` usava a descrição inteira de 300 caracteres como tagline; `EmulatorJS` e `Medusa` não tinham tagline em idioma nenhum; `Twingate` se descrevia como `It's a connector for Twingate"`, com aspa solta.
 
+### Added — ampliação do catálogo (2026-09-14)
+
+- **12 apps da loja oficial do CasaOS**, catálogo 205 → 217: OpenClaw, NetBird, Teable, CopyParty, PodFetch, Blinko, Karakeep, OpenList, BentoPDF, LibreDBStudio, PsiTransfer e RoonServer. `scripts/goal18-importa.mjs`.
+
+- **35 apps do `big-bear-casaos`** (MIT, formato CasaOS), catálogo 217 → **252**: Dockge, Dozzle, Diun, Scrutiny, SpeedtestTracker, Watchyourlan, Upsnap, Healthchecks, cAdvisor, dash., Joplin, Readeck, Wallos, InvoiceNinja, Ghostfolio, Rallly, Focalboard, MicroBin, IT-Tools, Gluetun, Pocket ID, Mailpit, ntfy, Gotify, Music Assistant, Spoolman, OctoPrint, Kiwix, LibreTranslate, NocoDB, Baserow, DBGate, phpMyAdmin, Penpot e Umami. `scripts/goal18-importa-bigbear.mjs`.
+
+  Dos 244 apps deles, 184 não estavam aqui, mas boa parte era ruído: `__tests__`, navegador em container, e variantes do mesmo app (`dashy` e `dashy-v4`, `ollama-amd` e `ollama-cpu`). Os 35 escolhidos não duplicam nada nosso.
+
+  O manifesto do Big Bear carimba a marca em tudo — `name: big-bear-dockge`, `container_name` igual, e `/DATA/AppData/big-bear-x` escrito à mão no lugar de `$AppID`. Copiar assim instalaria no servidor de quem usa RoqueOS um app chamado `big-bear-x`, guardando dado numa pasta de outra marca. Também saíram o CDN deles como fonte de ícone e os ids `com.bigbeartechworld.*`.
+
+  O gate barrou os 35 na entrada: nenhum declarava `scheme`, 22 vinham com categoria fora do enum (14 em `Others`), MicroBin e phpMyAdmin traziam senha adivinhável, sete usavam privilégio sem justificar, o Gluetun expunha três portas sem `port_map`, e os 35 chegaram sem uma palavra de português.
+
+### Fixed — a esteira Test, quebrada por doze pushes
+
+- **A CI ficou vermelha do primeiro commit do Goal 18 até este.** Não era teste quebrado: os 117 passavam. Os oito scripts novos entraram em `scripts/`, que o `vitest.config` inclui na cobertura, e a cobertura global caiu de 35%+ para **9,23%**.
+
+  Não apareceu antes porque o gate local deste repo **nunca rodou vitest**: o manifesto `compose-catalog` do kit não tinha gate de teste. Corrigido no kit 2.18.1, com o mesmo comando da CI — gate local que roda comando diferente do da CI não é gate, é ensaio.
+
+  As sete migrações de uma vez só saíram do denominador de cobertura; `revisao-container.mjs` e `gera-readme.mjs` **não** saíram, e ganharam 42 casos de teste. Cada caso congela um defeito real: `MONGO_PASS=pass` que o regex antigo deixou passar, `en_US` que para o server não existe, descrição de porta vazia que parecia preenchida, o hash de volume do Jenkin, e o socket do Docker que **não** é defeito.
+
+  159 testes. Cobertura 44/45/47/45 contra limiares de 35/40/40/35.
+
+- **326 descrições que só repetiam o próprio campo.** 46 apps importados de upstream traziam `Container Path: /app/data` como descrição do volume `/app/data`, e `Container Variable: TZ` para a variável `TZ`. Passava em qualquer checagem de "tem descrição?" sem informar nada, e tinha entrado nos 252 READMEs, onde a coluna "Para que serve" repetia a coluna ao lado.
+
+  254 viraram texto com significado, derivado do que o caminho, a porta ou o nome da variável de fato são — `/var/run/docker.sock` passa a dizer que é o socket do Docker do host, `/app/data` que é o que se faz backup. As 28 portas específicas de app foram escritas uma a uma: 853 e 784 do AdGuard Home são DNS-over-TLS e DNS-over-QUIC, 51413 do Transmission é a porta de peer do BitTorrent, 3478 do Unifi é o STUN.
+
+  A P2 do gate passa a **reprovar** tautologia, não só descrição ausente: campo preenchido com o próprio nome é pior que campo vazio, porque parece pronto.
+
+- **`audit-enrichment.mjs` media a coisa errada, duas vezes.** Reportava `title.en_US` — a grafia que o `roqueos-server` não lê — e dizia 100% enquanto 44 apps apareciam na loja com o nome da pasta. E media `icon present` pelo campo do manifesto, dizendo `205/205` com 54 ícones dando 404. Agora mede `en_us` e confere o arquivo no disco.
+
+### Known issues
+
+- **`Hoarder` e `Karakeep` são o mesmo projeto.** O upstream renomeou `hoarder-app/hoarder` para `karakeep-app/karakeep`; os dois estão no catálogo, em categorias diferentes. Escolher qual fica apaga o outro, e é decisão de produto.
+- **`Mongo` e `MongoDB4`** servem a mesma imagem em versões diferentes (8.2.2 e 4.4.22). Proposital enquanto houver app que só roda no 4.
+- **100 descrições de variável de ambiente** continuam genéricas por falta de regra: são específicas do app (`DIUN_WATCH_JITTER`, `VPN_SERVICE_PROVIDER`) e precisam de quem conhece aquele app. O gate não as reprova porque não são tautologia — dizem algo, só não dizem o bastante.
+- **`thumbnail` e `screenshot`** aparecem no relatório do `yarn enrichment` como lacuna, mas não são cobrados por nada: a App Store desenha o ícone e o server não lê esses campos.
+
 ### Removed
 
 - **Os 51 `appfile.json`.** Formato morto: busca no `roqueos-server/src` e no `roqueos-front/src` não acha uma referência sequer, e 44 dos 51 já divergiam do compose (`2FAuth` dizia `:latest`, o compose dizia `5.4.3`); um tinha vírgula sobrando e JSON inválido. Antes de apagar, conferido que nenhuma `tips.before_install` se perdia — todo compose com appfile já tinha as suas em `x-casaos.tips`. Os 6 links upstream que só existiam ali foram guardados e entraram na seção "fonte oficial" dos READMEs.

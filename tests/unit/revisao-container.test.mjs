@@ -8,6 +8,7 @@ import {
   SISTEMA,
   mapaDeConflitos,
   premissas,
+  TAUTOLOGIA,
 } from "../../scripts/revisao-container.mjs";
 
 /**
@@ -89,6 +90,34 @@ describe("P2 — portas", () => {
       conflitosVazios,
     );
     expect(p.P2.join(" ")).toMatch(/sem descrição/);
+  });
+
+  it("reprova descricao que so repete o campo", () => {
+    // 46 apps importados traziam `Container Port: 8080` como descricao da porta
+    // 8080. Passava em toda checagem de "tem descricao?" e nao informava nada.
+    const p = premissas(
+      app({
+        servico: {
+          "x-casaos": { ports: [{ container: "8080", description: { en_us: "Container Port: 8080" } }] },
+        },
+      }),
+      conflitosVazios,
+    );
+    expect(p.P2.join(" ")).toMatch(/só repete o campo/);
+  });
+
+  it("aceita descricao que diz algo de verdade", () => {
+    const p = premissas(
+      app({
+        servico: {
+          "x-casaos": {
+            ports: [{ container: "8080", description: { en_us: "BitTorrent peer port: forward it on the router" } }],
+          },
+        },
+      }),
+      conflitosVazios,
+    );
+    expect(p.P2).toEqual([]);
   });
 
   it("reprova conflito de porta host nao declarado, e aceita quando declarado", () => {
@@ -233,6 +262,15 @@ describe("P6 — README de ficha", () => {
   it("reprova app sem README", () => {
     const p = premissas(app({ dir: "/pasta/que/nao/existe" }), conflitosVazios);
     expect(p.P6.join(" ")).toMatch(/sem README/);
+  });
+});
+
+describe("TAUTOLOGIA", () => {
+  it("pega as tres formas que o upstream gera, e nao pega texto de gente", () => {
+    for (const t of ["Container Path: /app/data", "Container Variable: TZ", "Container Port: 8080", "Service port 9000 of app"])
+      expect(TAUTOLOGIA.test(t), t).toBe(true);
+    for (const t of ["Web interface for Dockge", "DNS-over-TLS", "Application data: this is what you back up"])
+      expect(TAUTOLOGIA.test(t), t).toBe(false);
   });
 });
 

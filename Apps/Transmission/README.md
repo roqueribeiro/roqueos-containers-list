@@ -14,11 +14,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve                     | Serviço      |
-| ----- | --------- | --------- | ---------------------------------- | ------------ |
-| 9091  | 9091      | tcp       | Web interface for Transmission     | transmission |
-| 51413 | 51413     | tcp       | Service port 51413 of transmission | transmission |
-| 51413 | 51413     | udp       | Service port 51413 of transmission | transmission |
+| Host  | Container | Protocolo | Para que serve                                                   | Serviço      |
+| ----- | --------- | --------- | ---------------------------------------------------------------- | ------------ |
+| 9091  | 9091      | tcp       | Web interface for Transmission                                   | transmission |
+| 51413 | 51413     | tcp       | BitTorrent peer port: forward it on the router for better speeds | transmission |
+| 51413 | 51413     | udp       | BitTorrent peer port: forward it on the router for better speeds | transmission |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

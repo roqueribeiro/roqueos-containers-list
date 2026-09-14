@@ -12,13 +12,11 @@ services:
       volumes:
         - container: /mnt/host
           description:
-            en_US: "Container Path: /mnt/host"
-            en_us: "Container Path: /mnt/host"
+            en_us: The host filesystem, mounted read-only so the app can inspect it
       ports:
         - container: "3001"
           description:
-            en_US: "Container Port: 3001"
-            en_us: "Container Port: 3001"
+            en_us: Web interface for Dashdot
 x-casaos:
   architectures:
     - amd64

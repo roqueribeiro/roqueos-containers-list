@@ -27,11 +27,11 @@ Arquiteturas suportadas: amd64, arm, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve                       | Serviço   |
-| ---- | --------- | --------- | ------------------------------------ | --------- |
-| 8000 | 8000      | tcp       | Service port 8000 of portainer       | portainer |
-| 9000 | 9000      | tcp       | Porta Interface Web Portainer        | portainer |
-| 9443 | 9443      | tcp       | Porta Interface Web Portainer(https) | portainer |
+| Host | Container | Protocolo | Para que serve                                            | Serviço   |
+| ---- | --------- | --------- | --------------------------------------------------------- | --------- |
+| 8000 | 8000      | tcp       | Edge agent tunnel: how remote agents reach this Portainer | portainer |
+| 9000 | 9000      | tcp       | Porta Interface Web Portainer                             | portainer |
+| 9443 | 9443      | tcp       | Porta Interface Web Portainer(https)                      | portainer |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

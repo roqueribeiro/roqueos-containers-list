@@ -21,33 +21,26 @@ services:
       envs:
         - container: TZ
           description:
-            en_US: "Container Variable: TZ"
-            en_us: "Container Variable: TZ"
+            en_us: Timezone, e.g. America/Sao_Paulo
         - container: DIUN_WATCH_WORKERS
           description:
-            en_US: "Container Variable: DIUN_WATCH_WORKERS"
-            en_us: "Container Variable: DIUN_WATCH_WORKERS"
+            en_us: How much work runs at the same time
         - container: DIUN_WATCH_SCHEDULE
           description:
-            en_US: "Container Variable: DIUN_WATCH_SCHEDULE"
-            en_us: "Container Variable: DIUN_WATCH_SCHEDULE"
+            en_us: How often the job runs
         - container: DIUN_WATCH_JITTER
           description:
-            en_US: "Container Variable: DIUN_WATCH_JITTER"
-            en_us: "Container Variable: DIUN_WATCH_JITTER"
+            en_us: How much work runs at the same time
         - container: DIUN_PROVIDERS_DOCKER
           description:
-            en_US: "Container Variable: DIUN_PROVIDERS_DOCKER"
-            en_us: "Container Variable: DIUN_PROVIDERS_DOCKER"
+            en_us: Which backend the app talks to
       volumes:
         - container: /data
           description:
-            en_US: "Container Path: /data"
-            en_us: "Container Path: /data"
+            en_us: "Application data: this is what you back up"
         - container: /var/run/docker.sock
           description:
-            en_US: "Container Path: /var/run/docker.sock"
-            en_us: "Container Path: /var/run/docker.sock"
+            en_us: The host's Docker socket, so the app can see and manage containers
 x-casaos:
   architectures:
     - amd64

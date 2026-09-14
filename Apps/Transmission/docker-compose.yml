@@ -61,13 +61,13 @@ services:
       ports:
         - container: "9091"
           description:
-            en_us: "Web interface for Transmission"
+            en_us: Web interface for Transmission
         - container: "51413"
           description:
-            en_us: "Service port 51413 of transmission"
+            en_us: "BitTorrent peer port: forward it on the router for better speeds"
         - container: "51413"
           description:
-            en_us: "Service port 51413 of transmission"
+            en_us: "BitTorrent peer port: forward it on the router for better speeds"
           protocol: udp
       volumes:
         - container: /config

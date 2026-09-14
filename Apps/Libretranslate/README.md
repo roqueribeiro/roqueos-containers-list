@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço        |
-| ---- | --------- | --------- | -------------------- | -------------- |
-| 5000 | 5000      | tcp       | Container Port: 5000 | libretranslate |
+| Host | Container | Protocolo | Para que serve                   | Serviço        |
+| ---- | --------- | --------- | -------------------------------- | -------------- |
+| 5000 | 5000      | tcp       | Web interface for LibreTranslate | libretranslate |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

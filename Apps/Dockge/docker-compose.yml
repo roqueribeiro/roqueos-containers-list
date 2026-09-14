@@ -16,26 +16,21 @@ services:
       envs:
         - container: DOCKGE_STACKS_DIR
           description:
-            en_US: "Container Variable: DOCKGE_STACKS_DIR"
-            en_us: "Container Variable: DOCKGE_STACKS_DIR"
+            en_us: Path the app reads from or writes to
       volumes:
         - container: /var/run/docker.sock
           description:
-            en_US: "Container Path: /var/run/docker.sock"
-            en_us: "Container Path: /var/run/docker.sock"
+            en_us: The host's Docker socket, so the app can see and manage containers
         - container: /app/data
           description:
-            en_US: "Container Path: /app/data"
-            en_us: "Container Path: /app/data"
+            en_us: "Application data: this is what you back up"
         - container: /DATA/AppData/$AppID/stacks
           description:
-            en_US: "Container Path: /DATA/AppData/$AppID/stacks"
-            en_us: "Container Path: /DATA/AppData/$AppID/stacks"
+            en_us: "Application data: this is what you back up"
       ports:
         - container: "5001"
           description:
-            en_US: "Container Port: 5001"
-            en_us: "Container Port: 5001"
+            en_us: Web interface for Dockge
 x-casaos:
   architectures:
     - amd64

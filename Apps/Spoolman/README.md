@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço |
-| ---- | --------- | --------- | -------------------- | ------- |
-| 7912 | 8000      | tcp       | Container Port: 8000 | app     |
+| Host | Container | Protocolo | Para que serve             | Serviço |
+| ---- | --------- | --------- | -------------------------- | ------- |
+| 7912 | 8000      | tcp       | Web interface for Spoolman | app     |
 
 
 ## Volumes

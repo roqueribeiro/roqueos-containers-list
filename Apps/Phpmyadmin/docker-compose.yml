@@ -15,25 +15,20 @@ services:
       envs:
         - container: PMA_HOST
           description:
-            en_US: "Container Variable: PMA_HOST"
-            en_us: "Container Variable: PMA_HOST"
+            en_us: Connection setting for a service this app depends on
         - container: PMA_PORT
           description:
-            en_US: "Container Variable: PMA_PORT"
-            en_us: "Container Variable: PMA_PORT"
+            en_us: Port the app listens on inside the container
         - container: PMA_USER
           description:
-            en_US: "Container Variable: PMA_USER"
-            en_us: "Container Variable: PMA_USER"
+            en_us: Account name the app uses
         - container: PMA_PASSWORD
           description:
-            en_US: "Container Variable: PMA_PASSWORD"
-            en_us: "Container Variable: PMA_PASSWORD"
+            en_us: "Password: change it before the first boot"
       ports:
         - container: "80"
           description:
-            en_US: "Container Port: 80"
-            en_us: "Container Port: 80"
+            en_us: Web interface for phpMyAdmin
 x-casaos:
   architectures:
     - amd64

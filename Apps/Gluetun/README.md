@@ -11,11 +11,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço |
-| ---- | --------- | --------- | -------------------- | ------- |
-| 8888 | 8888      | tcp       | Container Port: 8888 | gluetun |
-| 8388 | 8388      | tcp       | Container Port: 8388 | gluetun |
-| 8388 | 8388      | tcp       | Container Port: 8388 | gluetun |
+| Host | Container | Protocolo | Para que serve                                                    | Serviço |
+| ---- | --------- | --------- | ----------------------------------------------------------------- | ------- |
+| 8888 | 8888      | tcp       | Web interface for Gluetun                                         | gluetun |
+| 8388 | 8388      | tcp       | Shadowsocks proxy: point other apps here to route through the VPN | gluetun |
+| 8388 | 8388      | tcp       | Shadowsocks proxy: point other apps here to route through the VPN | gluetun |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

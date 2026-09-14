@@ -11,17 +11,17 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve                              | Serviço          |
-| ----- | --------- | --------- | ------------------------------------------- | ---------------- |
-| 3478  | 3478      | udp       | Service port 3478 of unifi-controller       | unifi-controller |
-| 10001 | 10001     | udp       | Service port 10001 of unifi-controller      | unifi-controller |
-| 8383  | 8080      | tcp       | Web interface for Unifi-controller [legacy] | unifi-controller |
-| 8443  | 8443      | tcp       | Service port 8443 of unifi-controller       | unifi-controller |
-| 1900  | 1900      | udp       | Service port 1900 of unifi-controller       | unifi-controller |
-| 8843  | 8843      | tcp       | Service port 8843 of unifi-controller       | unifi-controller |
-| 8880  | 8880      | tcp       | Service port 8880 of unifi-controller       | unifi-controller |
-| 6789  | 6789      | tcp       | Service port 6789 of unifi-controller       | unifi-controller |
-| 5514  | 5514      | udp       | Service port 5514 of unifi-controller       | unifi-controller |
+| Host  | Container | Protocolo | Para que serve                                          | Serviço          |
+| ----- | --------- | --------- | ------------------------------------------------------- | ---------------- |
+| 3478  | 3478      | udp       | STUN: how devices find their way back to the controller | unifi-controller |
+| 10001 | 10001     | udp       | Device discovery on the local network                   | unifi-controller |
+| 8383  | 8080      | tcp       | Web interface for Unifi-controller [legacy]             | unifi-controller |
+| 8443  | 8443      | tcp       | HTTPS web interface                                     | unifi-controller |
+| 1900  | 1900      | udp       | L2 discovery by SSDP                                    | unifi-controller |
+| 8843  | 8843      | tcp       | Guest portal over HTTPS                                 | unifi-controller |
+| 8880  | 8880      | tcp       | Guest portal over HTTP                                  | unifi-controller |
+| 6789  | 6789      | tcp       | Speed test between controller and device                | unifi-controller |
+| 5514  | 5514      | udp       | Remote syslog from the devices                          | unifi-controller |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

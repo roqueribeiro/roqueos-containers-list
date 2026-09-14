@@ -110,6 +110,11 @@ fallback do server.
 para ele. Ao importar app de upstream, rode `yarn revisao` antes de achar que
 está pronto.
 
+**Campo preenchido com tautologia é pior que campo vazio.** 46 apps importados
+traziam 326 descrições no formato `Container Path: /app/data` para o volume
+`/app/data`. Passava em toda checagem de "tem descrição?" e não informava nada.
+A P2 agora reprova isso, não só a descrição ausente.
+
 **Gate que cobra o invisível ensina a ignorar gate.** `thumbnail` e
 `screenshot` saíram da P8 porque o server não os lê e a loja não os desenha.
 Quando passar a desenhar, a checagem volta — com significado.

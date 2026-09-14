@@ -25,7 +25,7 @@ services:
             en_us: Web interface for Crafty
         - container: "8123"
           description:
-            en_us: Service port 8123 of crafty
+            en_us: "Dynmap: the live web map of the Minecraft world"
         - container: 25500-25600
           description:
             en_us: Service port 25500-25600 of crafty

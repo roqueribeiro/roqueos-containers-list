@@ -11,10 +11,10 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve       | Serviço  |
-| ----- | --------- | --------- | -------------------- | -------- |
-| 38080 | 8080      | tcp       | Container Port: 8080 | scrutiny |
-| 38086 | 8086      | tcp       | Container Port: 8086 | scrutiny |
+| Host  | Container | Protocolo | Para que serve                                                | Serviço  |
+| ----- | --------- | --------- | ------------------------------------------------------------- | -------- |
+| 38080 | 8080      | tcp       | Web interface for Scrutiny                                    | scrutiny |
+| 38086 | 8086      | tcp       | InfluxDB that ships with Scrutiny and stores the disk history | scrutiny |
 
 
 ## Volumes

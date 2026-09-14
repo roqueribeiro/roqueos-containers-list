@@ -29,24 +29,24 @@ Arquiteturas suportadas: amd64.
 
 ## Portas
 
-| Host  | Container | Protocolo | Para que serve                                        | Serviço                          |
-| ----- | --------- | --------- | ----------------------------------------------------- | -------------------------------- |
-| 9380  | 9380      | tcp       | Porta API RagFlow                                     | ragflow                          |
-| 30080 | 80        | tcp       | Porta HTTP RagFlow                                    | ragflow                          |
-| 10443 | 443       | tcp       | Porta HTTPS RagFlow                                   | ragflow                          |
-| 5678  | 5678      | tcp       | Porta de Debug RagFlow                                | ragflow                          |
-| 5679  | 5679      | tcp       | Porta WebSocket RagFlow                               | ragflow                          |
-| 9382  | 9382      | tcp       | Porta MCP RagFlow                                     | ragflow                          |
-| 9200  | 9200      | tcp       | Porta HTTP Elasticsearch                              | ragflow-es01                     |
-| 23817 | 23817     | tcp       | Porta de Admin Infinity                               | ragflow-infinity                 |
-| 23820 | 23820     | tcp       | Porta API Infinity                                    | ragflow-infinity                 |
-| 15432 | 5432      | tcp       | Porta PostgreSQL Infinity                             | ragflow-infinity                 |
-| 9000  | 9000      | tcp       | Porta API MinIO                                       | ragflow-minio                    |
-| 9001  | 9001      | tcp       | Porta da Consola MinIO                                | ragflow-minio                    |
-| 5455  | 3306      | tcp       | Porta MySQL                                           | ragflow-mysql                    |
-| 9201  | 9201      | tcp       | Porta HTTP OpenSearch                                 | ragflow-opensearch01             |
-| 6379  | 6379      | tcp       | Porta Redis                                           | ragflow-redis                    |
-| 9385  | 9385      | tcp       | Service port 9385 of ragflow-sandbox-executor-manager | ragflow-sandbox-executor-manager |
+| Host  | Container | Protocolo | Para que serve                                                | Serviço                          |
+| ----- | --------- | --------- | ------------------------------------------------------------- | -------------------------------- |
+| 9380  | 9380      | tcp       | Porta API RagFlow                                             | ragflow                          |
+| 30080 | 80        | tcp       | Porta HTTP RagFlow                                            | ragflow                          |
+| 10443 | 443       | tcp       | Porta HTTPS RagFlow                                           | ragflow                          |
+| 5678  | 5678      | tcp       | Porta de Debug RagFlow                                        | ragflow                          |
+| 5679  | 5679      | tcp       | Porta WebSocket RagFlow                                       | ragflow                          |
+| 9382  | 9382      | tcp       | Porta MCP RagFlow                                             | ragflow                          |
+| 9200  | 9200      | tcp       | Porta HTTP Elasticsearch                                      | ragflow-es01                     |
+| 23817 | 23817     | tcp       | Porta de Admin Infinity                                       | ragflow-infinity                 |
+| 23820 | 23820     | tcp       | Porta API Infinity                                            | ragflow-infinity                 |
+| 15432 | 5432      | tcp       | Porta PostgreSQL Infinity                                     | ragflow-infinity                 |
+| 9000  | 9000      | tcp       | Porta API MinIO                                               | ragflow-minio                    |
+| 9001  | 9001      | tcp       | Porta da Consola MinIO                                        | ragflow-minio                    |
+| 5455  | 3306      | tcp       | Porta MySQL                                                   | ragflow-mysql                    |
+| 9201  | 9201      | tcp       | Porta HTTP OpenSearch                                         | ragflow-opensearch01             |
+| 6379  | 6379      | tcp       | Porta Redis                                                   | ragflow-redis                    |
+| 9385  | 9385      | tcp       | Sandbox executor: runs the code the agent generates, isolated | ragflow-sandbox-executor-manager |
 
 > A porta host deste app é sabidamente disputada com outro app do catálogo. O instalador realoca; se você instalar os dois, confira o endereço na tela do app.
 

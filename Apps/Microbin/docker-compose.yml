@@ -53,12 +53,10 @@ services:
       envs:
         - container: MICROBIN_ADMIN_USERNAME
           description:
-            en_US: "Container Variable: MICROBIN_ADMIN_USERNAME"
-            en_us: "Container Variable: MICROBIN_ADMIN_USERNAME"
+            en_us: Account name the app uses
         - container: MICROBIN_ADMIN_PASSWORD
           description:
-            en_US: "Container Variable: MICROBIN_ADMIN_PASSWORD"
-            en_us: "Container Variable: MICROBIN_ADMIN_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: MICROBIN_EDITABLE
           description:
             en_US: "Container Variable: MICROBIN_EDITABLE"
@@ -89,8 +87,7 @@ services:
             en_us: "Container Variable: MICROBIN_HIGHLIGHTSYNTAX"
         - container: MICROBIN_PORT
           description:
-            en_US: "Container Variable: MICROBIN_PORT"
-            en_us: "Container Variable: MICROBIN_PORT"
+            en_us: Port the app listens on inside the container
         - container: MICROBIN_BIND
           description:
             en_US: "Container Variable: MICROBIN_BIND"
@@ -105,24 +102,20 @@ services:
             en_us: "Container Variable: MICROBIN_PURE_HTML"
         - container: MICROBIN_DATA_DIR
           description:
-            en_US: "Container Variable: MICROBIN_DATA_DIR"
-            en_us: "Container Variable: MICROBIN_DATA_DIR"
+            en_us: Path the app reads from or writes to
         - container: MICROBIN_JSON_DB
           description:
             en_US: "Container Variable: MICROBIN_JSON_DB"
             en_us: "Container Variable: MICROBIN_JSON_DB"
         - container: MICROBIN_PUBLIC_PATH
           description:
-            en_US: "Container Variable: MICROBIN_PUBLIC_PATH"
-            en_us: "Container Variable: MICROBIN_PUBLIC_PATH"
+            en_us: Path the app reads from or writes to
         - container: MICROBIN_SHORT_PATH
           description:
-            en_US: "Container Variable: MICROBIN_SHORT_PATH"
-            en_us: "Container Variable: MICROBIN_SHORT_PATH"
+            en_us: Path the app reads from or writes to
         - container: MICROBIN_UPLOADER_PASSWORD
           description:
-            en_US: "Container Variable: MICROBIN_UPLOADER_PASSWORD"
-            en_us: "Container Variable: MICROBIN_UPLOADER_PASSWORD"
+            en_us: "Password: change it before the first boot"
         - container: MICROBIN_READONLY
           description:
             en_US: "Container Variable: MICROBIN_READONLY"
@@ -137,16 +130,14 @@ services:
             en_us: "Container Variable: MICROBIN_TITLE"
         - container: MICROBIN_THREADS
           description:
-            en_US: "Container Variable: MICROBIN_THREADS"
-            en_us: "Container Variable: MICROBIN_THREADS"
+            en_us: How much work runs at the same time
         - container: MICROBIN_GC_DAYS
           description:
             en_US: "Container Variable: MICROBIN_GC_DAYS"
             en_us: "Container Variable: MICROBIN_GC_DAYS"
         - container: MICROBIN_ENABLE_BURN_AFTER
           description:
-            en_US: "Container Variable: MICROBIN_ENABLE_BURN_AFTER"
-            en_us: "Container Variable: MICROBIN_ENABLE_BURN_AFTER"
+            en_us: Feature switch
         - container: MICROBIN_DEFAULT_BURN_AFTER
           description:
             en_US: "Container Variable: MICROBIN_DEFAULT_BURN_AFTER"
@@ -165,8 +156,7 @@ services:
             en_us: "Container Variable: MICROBIN_ETERNAL_PASTA"
         - container: MICROBIN_ENABLE_READONLY
           description:
-            en_US: "Container Variable: MICROBIN_ENABLE_READONLY"
-            en_us: "Container Variable: MICROBIN_ENABLE_READONLY"
+            en_us: Feature switch
         - container: MICROBIN_DEFAULT_EXPIRY
           description:
             en_US: "Container Variable: MICROBIN_DEFAULT_EXPIRY"
@@ -193,20 +183,16 @@ services:
             en_us: "Container Variable: MICROBIN_ENCRYPTION_SERVER_SIDE"
         - container: MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB
           description:
-            en_US: "Container Variable: MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB"
-            en_us: "Container Variable: MICROBIN_MAX_FILE_SIZE_ENCRYPTED_MB"
+            en_us: Size or limit the app enforces
         - container: MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB
           description:
-            en_US: "Container Variable: MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB"
-            en_us: "Container Variable: MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB"
+            en_us: Size or limit the app enforces
         - container: MICROBIN_DISABLE_UPDATE_CHECKING
           description:
-            en_US: "Container Variable: MICROBIN_DISABLE_UPDATE_CHECKING"
-            en_us: "Container Variable: MICROBIN_DISABLE_UPDATE_CHECKING"
+            en_us: Feature switch
         - container: MICROBIN_DISABLE_TELEMETRY
           description:
-            en_US: "Container Variable: MICROBIN_DISABLE_TELEMETRY"
-            en_us: "Container Variable: MICROBIN_DISABLE_TELEMETRY"
+            en_us: Feature switch
         - container: MICROBIN_LIST_SERVER
           description:
             en_US: "Container Variable: MICROBIN_LIST_SERVER"
@@ -219,8 +205,7 @@ services:
       ports:
         - container: "8080"
           description:
-            en_US: "Container Port: 8080"
-            en_us: "Container Port: 8080"
+            en_us: Web interface for Microbin
 x-casaos:
   architectures:
     - amd64

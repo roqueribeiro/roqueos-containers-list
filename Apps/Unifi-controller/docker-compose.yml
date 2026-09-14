@@ -2,10 +2,10 @@ name: unifi-controller
 services:
   unifi-controller:
     environment:
-      MEM_LIMIT: '1024'
-      MEM_STARTUP: '1024'
-      PGID: '1000'
-      PUID: '1000'
+      MEM_LIMIT: "1024"
+      MEM_STARTUP: "1024"
+      PGID: "1000"
+      PUID: "1000"
     image: linuxserver/unifi-controller:8.0.7
     deploy:
       resources:
@@ -14,31 +14,31 @@ services:
     network_mode: bridge
     ports:
       - target: 3478
-        published: '3478'
+        published: "3478"
         protocol: udp
       - target: 10001
-        published: '10001'
+        published: "10001"
         protocol: udp
       - target: 8080
-        published: '8383'
+        published: "8383"
         protocol: tcp
       - target: 8443
-        published: '8443'
+        published: "8443"
         protocol: tcp
       - target: 1900
-        published: '1900'
+        published: "1900"
         protocol: udp
       - target: 8843
-        published: '8843'
+        published: "8843"
         protocol: tcp
       - target: 8880
-        published: '8880'
+        published: "8880"
         protocol: tcp
       - target: 6789
-        published: '6789'
+        published: "6789"
         protocol: tcp
       - target: 5514
-        published: '5514'
+        published: "5514"
         protocol: udp
     restart: unless-stopped
     volumes:
@@ -49,52 +49,52 @@ services:
       envs:
         - container: PUID
           description:
-            en_us: ''
+            en_us: ""
         - container: PGID
           description:
-            en_us: ''
+            en_us: ""
         - container: MEM_LIMIT
           description:
-            en_us: ''
+            en_us: ""
         - container: MEM_STARTUP
           description:
-            en_us: ''
+            en_us: ""
       ports:
-        - container: '3478'
+        - container: "3478"
           description:
-            en_us: "Service port 3478 of unifi-controller"
+            en_us: "STUN: how devices find their way back to the controller"
           protocol: udp
-        - container: '10001'
+        - container: "10001"
           description:
-            en_us: "Service port 10001 of unifi-controller"
+            en_us: Device discovery on the local network
           protocol: udp
-        - container: '8080'
+        - container: "8080"
           description:
-            en_us: "Web interface for Unifi-controller [legacy]"
-        - container: '8443'
+            en_us: Web interface for Unifi-controller [legacy]
+        - container: "8443"
           description:
-            en_us: "Service port 8443 of unifi-controller"
-        - container: '1900'
+            en_us: HTTPS web interface
+        - container: "1900"
           description:
-            en_us: "Service port 1900 of unifi-controller"
+            en_us: L2 discovery by SSDP
           protocol: udp
-        - container: '8843'
+        - container: "8843"
           description:
-            en_us: "Service port 8843 of unifi-controller"
-        - container: '8880'
+            en_us: Guest portal over HTTPS
+        - container: "8880"
           description:
-            en_us: "Service port 8880 of unifi-controller"
-        - container: '6789'
+            en_us: Guest portal over HTTP
+        - container: "6789"
           description:
-            en_us: "Service port 6789 of unifi-controller"
-        - container: '5514'
+            en_us: Speed test between controller and device
+        - container: "5514"
           description:
-            en_us: "Service port 5514 of unifi-controller"
+            en_us: Remote syslog from the devices
           protocol: udp
       volumes:
         - container: /config
           description:
-            en_us: ''
+            en_us: ""
     container_name: unifi-controller
 x-casaos:
   architectures:
@@ -143,8 +143,7 @@ x-casaos:
     en_us: Unifi-controller [legacy]
     zh_cn: Unifi控制器 [legacy]
   index: /
-  port_map: '8383'
+  port_map: "8383"
   scheme: http
-
 x-roqueos:
   portaCompartilhada: true

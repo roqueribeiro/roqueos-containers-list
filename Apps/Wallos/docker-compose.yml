@@ -15,13 +15,11 @@ services:
       envs:
         - container: TZ
           description:
-            en_US: "Container Variable: TZ"
-            en_us: "Container Variable: TZ"
+            en_us: Timezone, e.g. America/Sao_Paulo
       volumes:
         - container: /var/www/html/db
           description:
-            en_US: "Container Path: /var/www/html/db"
-            en_us: "Container Path: /var/www/html/db"
+            en_us: "Application data: this is what you back up"
         - container: /var/www/html/images/uploads/logos
           description:
             en_US: "Container Path: /var/www/html/images/uploads/logos"
@@ -29,8 +27,7 @@ services:
       ports:
         - container: "80"
           description:
-            en_US: "Container Port: 80"
-            en_us: "Container Port: 80"
+            en_us: Web interface for Wallos
 x-casaos:
   architectures:
     - amd64

@@ -15,22 +15,18 @@ services:
       envs:
         - container: TZ
           description:
-            en_US: "Container Variable: TZ"
-            en_us: "Container Variable: TZ"
+            en_us: Timezone, e.g. America/Sao_Paulo
       volumes:
         - container: /data
           description:
-            en_US: "Container Path: /data"
-            en_us: "Container Path: /data"
+            en_us: "Application data: this is what you back up"
       ports:
         - container: "8025"
           description:
-            en_US: "Container Port: 8025"
-            en_us: "Container Port: 8025"
+            en_us: Web interface for Mailpit
         - container: "1025"
           description:
-            en_US: "Container Port: 1025"
-            en_us: "Container Port: 1025"
+            en_us: SMTP server that captures the mail your app sends, instead of delivering it
 x-casaos:
   architectures:
     - amd64

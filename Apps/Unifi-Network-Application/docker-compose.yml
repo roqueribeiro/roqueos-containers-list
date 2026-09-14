@@ -55,13 +55,13 @@ services:
             en_us: banco MongoDB (port 27017)
         - container: "3478"
           description:
-            en_us: Service port 3478 of unifi-network-application
+            en_us: "STUN: how devices find their way back to the controller"
         - container: "10001"
           description:
-            en_us: Service port 10001 of unifi-network-application
+            en_us: Device discovery on the local network
         - container: "8080"
           description:
-            en_us: Service port 8080 of unifi-network-application
+            en_us: "Device inform: where access points report in"
         - container: "8443"
           description:
             en_us: WebUI HTTP Port

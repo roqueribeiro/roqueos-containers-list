@@ -21,33 +21,26 @@ services:
       volumes:
         - container: /rootfs
           description:
-            en_US: "Container Path: /rootfs"
-            en_us: "Container Path: /rootfs"
+            en_us: The host filesystem, mounted read-only so the app can inspect it
         - container: /var/run
           description:
-            en_US: "Container Path: /var/run"
-            en_us: "Container Path: /var/run"
+            en_us: Runtime sockets the app talks to
         - container: /var/run/docker.sock
           description:
-            en_US: "Container Path: /var/run/docker.sock"
-            en_us: "Container Path: /var/run/docker.sock"
+            en_us: The host's Docker socket, so the app can see and manage containers
         - container: /sys
           description:
-            en_US: "Container Path: /sys"
-            en_us: "Container Path: /sys"
+            en_us: Host kernel information the app reads
         - container: /var/lib/docker
           description:
-            en_US: "Container Path: /var/lib/docker"
-            en_us: "Container Path: /var/lib/docker"
+            en_us: "Application data: this is what you back up"
         - container: /dev/disk
           description:
-            en_US: "Container Path: /dev/disk"
-            en_us: "Container Path: /dev/disk"
+            en_us: Hardware device the app needs direct access to
       ports:
         - container: "8080"
           description:
-            en_US: "Container Port: 8080"
-            en_us: "Container Port: 8080"
+            en_us: Web interface for cAdvisor
 x-casaos:
   architectures:
     - amd64

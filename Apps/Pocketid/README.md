@@ -11,9 +11,9 @@ Arquiteturas suportadas: amd64, arm64.
 
 ## Portas
 
-| Host | Container | Protocolo | Para que serve       | Serviço  |
-| ---- | --------- | --------- | -------------------- | -------- |
-| 1411 | 1411      | tcp       | Container Port: 1411 | pocketid |
+| Host | Container | Protocolo | Para que serve              | Serviço  |
+| ---- | --------- | --------- | --------------------------- | -------- |
+| 1411 | 1411      | tcp       | Web interface for Pocket ID | pocketid |
 
 
 ## Volumes

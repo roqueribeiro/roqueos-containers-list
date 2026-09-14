@@ -19,18 +19,15 @@ services:
             en_us: "Container Variable: GOTIFY_DEFAULTUSER_NAME"
         - container: GOTIFY_DEFAULTUSER_PASS
           description:
-            en_US: "Container Variable: GOTIFY_DEFAULTUSER_PASS"
-            en_us: "Container Variable: GOTIFY_DEFAULTUSER_PASS"
+            en_us: "Password: change it before the first boot"
       volumes:
         - container: /app/data
           description:
-            en_US: "Container Path: /app/data"
-            en_us: "Container Path: /app/data"
+            en_us: "Application data: this is what you back up"
       ports:
         - container: "80"
           description:
-            en_US: "Container Port: 80"
-            en_us: "Container Port: 80"
+            en_us: Web interface for Gotify
 x-casaos:
   architectures:
     - amd64

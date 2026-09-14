@@ -3,12 +3,12 @@ services:
   resilio-sync:
     x-casaos:
       ports:
-        - container: '55555'
+        - container: "55555"
           description:
-            en_us: "Service port 55555 of resilio-sync"
-        - container: '8888'
+            en_us: "Peer listening port: other Resilio devices connect here to sync"
+        - container: "8888"
           description:
-            en_us: "Web interface for resilio-sync"
+            en_us: Web interface for resilio-sync
     environment:
       - PGID=$PGID
       - PUID=$PUID
@@ -17,10 +17,10 @@ services:
     network_mode: bridge
     ports:
       - target: 55555
-        published: '55555'
+        published: "55555"
         protocol: tcp
       - target: 8888
-        published: '8888'
+        published: "8888"
         protocol: tcp
     restart: unless-stopped
     volumes:
@@ -72,9 +72,9 @@ x-casaos:
     uk_ua: Розкрийте потужність безперервної синхронізації файлів.
   author: self
   category: Storage
-  hostname: ''
+  hostname: ""
   index: /
-  port_map: '8888'
+  port_map: "8888"
   scheme: http
   store_app_id: resilio-sync
   title:
