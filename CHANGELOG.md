@@ -12,6 +12,50 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Goal 18: revisão container a container (2026-09-14)
+
+- **`yarn revisao` — o critério de aceite da loja, app a app.** `scripts/revisao-container.mjs` checa nove premissas por app e grava o veredito em `.revisao/<app>.json`. Sai 1 enquanto houver pendente, o que permite a um loop parar por evidência em vez de por opinião. Entrou na CI e no manifesto `compose-catalog` do `roqueos-kit` (2.18.0).
+
+  No dia em que nasceu, o repo estava `205 ok, 0 failed` no `yarn validate` e **0 de 205 fechado** aqui. O schema prova que o YAML é um compose; ele não prova que o app está pronto para uma loja.
+
+- **12 apps novos** vindos da loja oficial do CasaOS, catálogo 205 → 217: OpenClaw, NetBird, Teable, CopyParty, PodFetch, Blinko, Karakeep, OpenList, BentoPDF, LibreDBStudio, PsiTransfer e RoonServer. Todos passaram pelas nove premissas antes de entrar. `scripts/goal18-importa.mjs` faz a importação.
+
+- **217 READMEs de ficha de loja**, gerados do manifesto por `yarn readme`: portas, volumes, variáveis, primeiro acesso, justificativa de privilégio e fonte oficial. Antes não havia nenhum.
+
+- **`x-roqueos.motivo`** no schema: quem usa `privileged`, `network_mode: host`, `cap_add` ou volume de host declara por quê. A regra não é remover a capacidade de quem precisa dela, é obrigar quem a usa a dizer o motivo. 28 serviços declararam.
+
+- **`x-roqueos.portaCompartilhada`**: 85 apps declaram que a porta host é disputada com outro app do catálogo.
+
+### Fixed — o que estava quebrado em produção
+
+- **54 apps com ícone quebrado na App Store.** O manifesto apontava `cdn.jsdelivr.net/.../icon.png` e o arquivo não estava no repo: 404 no CDN. 64 ícones vieram de `homarr-labs/dashboard-icons` (Apache 2.0, ícone para identificação e sem endosso), 3 do próprio projeto. 4 ícones tinham 48 px e 9 não eram quadrados.
+
+  O `audit-enrichment.mjs` dizia `icon present 205/205` o tempo todo, porque conferia se o CAMPO existia no manifesto e não se o ARQUIVO existia.
+
+- **56 apps mostravam `<app> Docker application` como descrição e 44 mostravam o nome da pasta como título.** O catálogo escrevia português de três formas (`pt_br`, `pt_PT`, `pt_BR`) e inglês de quatro; o `roqueos-server` lê `casaos.title?.en_us` e `casaos.description?.en_us`, minúsculo, e o que não bate cai no fallback. 473 blocos de i18n normalizados em 55 apps, com prova de que o sentido não mudou: 205 manifestos comparados objeto a objeto antes e depois.
+
+- **57 apps caíam em `other` na loja.** A categoria deles não existia no `CATEGORY_MAP` do server. 58 manifestos remapeados; onde a regra por categoria errava, o app mandou: Ollama, OpenWebUI, Dify, AnythingLLM, ChatbotUI e TaskingAI estavam em `Chat` e foram para `AI`, não para `Communication`.
+
+- **24 serviços em `:latest`.** 9 ganharam tag de versão consultada no registro, 15 foram fixados por digest porque o upstream só publica `latest`. O schema passa a **recusar** `:latest`: o cabeçalho do workflow já afirmava isso e era mentira.
+
+- **Caminhos de host que não existem em servidor nenhum.** Jenkin montava `/var/lib/docker/volumes/b098c98b…/_data`, um hash de volume da máquina de quem empacotou. WebDav montava `/media/ZimaOS-HD/Media`, caminho do ZimaOS vazado do upstream.
+
+- **Senhas adivinháveis em manifesto.** `MineOS/USER_PASSWORD=root`, `Unifi/MONGO_PASS=pass` (que aparecia no env **e** no script de init do banco, e as duas tinham que mudar juntas) e `PsiTransfer/PSITRANSFER_ADMIN_PASS`. Todas viraram `change-me-on-first-boot`, que o repo já usava em 12 apps.
+
+- **35 apps sem uma palavra de português** na loja, escritos à mão. `LabelStudio` usava a descrição inteira de 300 caracteres como tagline; `EmulatorJS` e `Medusa` não tinham tagline em idioma nenhum; `Twingate` se descrevia como `It's a connector for Twingate"`, com aspa solta.
+
+### Removed
+
+- **Os 51 `appfile.json`.** Formato morto: busca no `roqueos-server/src` e no `roqueos-front/src` não acha uma referência sequer, e 44 dos 51 já divergiam do compose (`2FAuth` dizia `:latest`, o compose dizia `5.4.3`); um tinha vírgula sobrando e JSON inválido. Antes de apagar, conferido que nenhuma `tips.before_install` se perdia — todo compose com appfile já tinha as suas em `x-casaos.tips`. Os 6 links upstream que só existiam ali foram guardados e entraram na seção "fonte oficial" dos READMEs.
+
+- **`thumbnail` e `screenshot` saíram do critério de aceite.** A App Store desenha o ícone; o `catalog.service.ts` do server não toca em `thumbnail` nem em `screenshot_link`. Eram 138 thumbnails e 63 telas faltando: gerar isso seria trabalho que nenhum usuário veria, e gate que cobra o invisível ensina a ignorar gate. Quando a loja passar a mostrar, a checagem volta com significado.
+
+### Deprecated
+
+- **`yarn audit` nunca rodou o script deste repo.** O yarn tem um subcomando `audit` próprio e ele ganha. Use `yarn enrichment`.
+
+### Adicionado antes do Goal 18
+
 ### Added
 
 - **53 new apps across 4 themed waves** (catalog 152 → 205+ valid manifests). Closes critical category gaps identified in the 2026-05-03 audit and surpasses the CasaOS Official catalog (~180 apps), narrowing the gap to Big Bear (~250). All 53 manifests follow the RoqueOS branding policy: pinned image tags (no `:latest`), `tagline` + `description` in **en_us + pt_br**, `category` from the schema enum, `tips.before_install` populated with deployment hints (replace default secrets, configure OAuth, etc.), `author: RoqueOS Team`, `developer:` pointing to the upstream maintainer.

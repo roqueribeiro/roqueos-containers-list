@@ -1,6 +1,6 @@
 # RoqueOS Containers List
 
-Self-hosted **Docker app catalog** for RoqueOS — 205+ ready-to-deploy apps in CasaOS-compatible Docker Compose manifests (`x-casaos` namespace). The catalog itself is the `Apps/` directory; this repo also ships the Node tooling that validates, auto-fixes, audits and rebrands those manifests. A semver tag publishes `appstore.zip`, consumed by the RoqueOS App Store (via `roqueos-server`) and by any CasaOS-compatible client.
+Self-hosted **Docker app catalog** for RoqueOS — 217 ready-to-deploy apps in CasaOS-compatible Docker Compose manifests (`x-casaos` namespace). The catalog itself is the `Apps/` directory; this repo also ships the Node tooling that validates, auto-fixes, audits and rebrands those manifests. A semver tag publishes `appstore.zip`, consumed by the RoqueOS App Store (via `roqueos-server`) and by any CasaOS-compatible client.
 
 This is one of the **nine repos** that form RoqueOS. The ecosystem map (sibling repos, how they connect, cross-repo change ordering) is [`../roqueos-ecosystem/README.md`](../roqueos-ecosystem/README.md), and the cross-repo rules are in `../roqueos-ecosystem/rules/`. Neither is auto-loaded: read them on demand when a task crosses repos.
 

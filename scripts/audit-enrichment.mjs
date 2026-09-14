@@ -3,12 +3,17 @@
 // Surfaces gaps so contributors can prioritize translation/description work.
 //
 // What it checks (per app):
-//   - x-casaos.title    has en_US OR en_us
-//   - x-casaos.tagline  has en_US OR en_us (string form also OK)
-//   - x-casaos.tagline  has pt_BR OR pt_br
-//   - x-casaos.description has en_US OR en_us
-//   - x-casaos.description has pt_BR OR pt_br
-//   - x-casaos.icon present (non-empty string)
+//   - x-casaos.title    has en_us (a grafia que o roqueos-server le)
+//   - x-casaos.tagline  has en_us (string form also OK)
+//   - x-casaos.tagline  has pt_br
+//   - x-casaos.description has en_us
+//   - x-casaos.description has pt_br
+//   - x-casaos.icon present E o ARQUIVO icon.png existe no disco
+//
+//     A versao anterior media so o campo, e por isso dizia `icon present
+//     205/205 (100.0%)` enquanto 54 apps davam 404 no CDN e apareciam sem
+//     icone na App Store. Campo preenchido apontando para arquivo que nao
+//     existe e pior que campo vazio: parece pronto.
 //   - x-casaos.thumbnail present (non-empty string or array)
 //   - x-casaos.screenshot_link has at least one entry
 //
@@ -20,6 +25,7 @@
 // flow is: run audit → pick highest-impact gaps → edit YAML by hand.
 
 import { readFile, readdir, access } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, resolve, join } from "node:path";
 import yaml from "js-yaml";
@@ -43,7 +49,16 @@ export async function findComposePath(appDir) {
   return null;
 }
 
-// CasaOS catalog uses both en_US/en_us and pt_BR/pt_br interchangeably.
+// ATENCAO: NAO sao intercambiaveis para quem consome.
+//
+// O roqueos-server le `casaos.title?.en_us` e `casaos.description?.en_us`,
+// minusculo, e cai no fallback quando nao acha. Em 14/09/2026 este audit dizia
+// 100% em title.en_US enquanto 44 apps apareciam na App Store com o NOME DA
+// PASTA e 56 com a frase "<app> Docker application": todos tinham a chave em
+// en_US, que para o server nao existe.
+//
+// Por isso o audit agora mede a grafia CANONICA (en_us, pt_br) e reporta a
+// outra em separado, como divida a pagar — e nao como se fosse a mesma coisa.
 export function hasLocale(field, ...candidates) {
   if (!field) return false;
   if (typeof field === "string") return field.trim().length > 0;
@@ -86,12 +101,15 @@ if (isCli) {
     const xc = doc?.["x-casaos"] || {};
 
     const checks = {
-      titleEn: hasLocale(xc.title, "en_US", "en_us"),
-      taglineEn: hasLocale(xc.tagline, "en_US", "en_us"),
-      taglinePt: hasLocale(xc.tagline, "pt_BR", "pt_br"),
-      descEn: hasLocale(xc.description, "en_US", "en_us"),
-      descPt: hasLocale(xc.description, "pt_BR", "pt_br"),
-      icon: nonEmptyString(xc.icon),
+      titleEn: hasLocale(xc.title, "en_us"),
+      titleSoMaiusculo: !hasLocale(xc.title, "en_us") && hasLocale(xc.title, "en_US"),
+      taglineEn: hasLocale(xc.tagline, "en_us"),
+      taglinePt: hasLocale(xc.tagline, "pt_br"),
+      descEn: hasLocale(xc.description, "en_us"),
+      descSoMaiusculo: !hasLocale(xc.description, "en_us") && hasLocale(xc.description, "en_US"),
+      descPt: hasLocale(xc.description, "pt_br"),
+      icon: nonEmptyString(xc.icon) && existsSync(join(APPS_DIR, app, "icon.png")),
+      iconSoNoCampo: nonEmptyString(xc.icon) && !existsSync(join(APPS_DIR, app, "icon.png")),
       thumbnail:
         nonEmptyString(xc.thumbnail) ||
         (Array.isArray(xc.thumbnail) && xc.thumbnail.length > 0),
@@ -142,12 +160,15 @@ if (isCli) {
     );
   };
 
-  r("title.en_US present", c("titleEn"));
-  r("tagline.en_US present", c("taglineEn"));
-  r("tagline.pt_BR present", c("taglinePt"));
-  r("description.en_US present", c("descEn"));
-  r("description.pt_BR present", c("descPt"));
-  r("icon present", c("icon"));
+  r("title.en_us present (a grafia que o server le)", c("titleEn"));
+  r("  ...so em en_US, invisivel para o server", c("titleSoMaiusculo"));
+  r("  ...description so em en_US, invisivel", c("descSoMaiusculo"));
+  r("tagline.en_us present", c("taglineEn"));
+  r("tagline.pt_br present", c("taglinePt"));
+  r("description.en_us present", c("descEn"));
+  r("description.pt_br present", c("descPt"));
+  r("icon: campo E arquivo no disco", c("icon"));
+  r("  ...campo aponta arquivo que nao existe", c("iconSoNoCampo"));
   r("thumbnail present", c("thumbnail"));
   r("screenshot_link populated", c("screenshots"));
 
