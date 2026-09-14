@@ -8,7 +8,7 @@ name: Validate Manifests
 # - missing/invalid x-casaos.architectures, .main, .category, .scheme
 # - port_map declared but pointing at a port that isn't published
 # - main: declared but the named service doesn't exist
-# - image without an explicit tag (`foo`, `foo:latest` both rejected — pinned tags only)
+# - image without an explicit tag, and `foo:latest` (pinned tag or digest only)
 # - x-roqueos.mountShared with anything other than a boolean
 
 on:
@@ -19,12 +19,18 @@ on:
       - 'schema/**'
       - '.github/workflows/validate-schema.yml'
       - 'scripts/validate-manifests.mjs'
+      - 'scripts/revisao-container.mjs'
+      - 'Apps/**/README.md'
+      - 'Apps/**/icon.png'
   pull_request:
     paths:
       - 'Apps/**/docker-compose.yml'
       - 'schema/**'
       - '.github/workflows/validate-schema.yml'
       - 'scripts/validate-manifests.mjs'
+      - 'scripts/revisao-container.mjs'
+      - 'Apps/**/README.md'
+      - 'Apps/**/icon.png'
 
 permissions:
   contents: read
@@ -46,3 +52,26 @@ jobs:
         run: npm install --no-save ajv@^8 ajv-formats@^3 js-yaml@^4
       - name: Validate every manifest against the schema
         run: node scripts/validate-manifests.mjs
+
+  revisao:
+    name: Revisao container a container (Goal 18)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Install deps
+        run: npm install --no-save js-yaml@^4
+      # O schema prova que o YAML e um compose. Isto prova que o app esta pronto
+      # para a loja: as nove premissas do Goal 18, uma por app, com veredito em
+      # .revisao/<app>.json. Sai 1 enquanto houver pendente.
+      - name: As nove premissas da loja
+        run: node scripts/revisao-container.mjs --todos
+      - name: Evidencia por app
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: revisao
+          path: .revisao/

@@ -28,8 +28,11 @@
           "properties": {
             "image": {
               "type": "string",
-              "description": "Image reference. Must include an explicit tag or digest (no bare names). Accepted shapes: 'name:tag', 'name@sha256:...', 'name:tag@sha256:...'. :latest is allowed but discouraged — the fix-manifests script reports it as 'manual review' so contributors can pin to stable tags during normal maintenance.",
-              "pattern": "^\\S+[:@]\\S+$"
+              "description": "Referencia da imagem. Precisa de tag explicita ou digest. Formas aceitas: 'nome:tag', 'nome@sha256:...', 'nome:tag@sha256:...'. ':latest' e RECUSADO: com ele, dois servidores rodam software diferente com o mesmo manifesto, e uma atualizacao de terceiro quebra quem ja tinha instalado. Imagem cujo upstream so publica latest deve ser fixada por digest — foi o que o Goal 18 fez com as 15 que nao publicam versao.",
+              "pattern": "^\\S+[:@]\\S+$",
+              "not": {
+                "pattern": ":latest$"
+              }
             },
             "container_name": {
               "type": "string"
