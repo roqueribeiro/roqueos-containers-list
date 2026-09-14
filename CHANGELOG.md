@@ -51,6 +51,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
   O preço está escrito no cabeçalho de `scripts/goal18-permissao.mjs` para não virar folclore: o processo roda como root dentro do container e o dado fica com dono root. Num servidor de casa com um dono só, é o que o ecossistema CasaOS já faz. A alternativa que preserva o privilégio reduzido é o instalador criar o diretório com o dono certo antes do `compose up` — isso exige mexer no `roqueos-server` e deixaria o catálogo quebrado em qualquer outro host CasaOS.
 
+### Fixed — o que o teste de boot achou depois (2026-09-14)
+
+Com a P10 ligando container de verdade, apareceram cinco classes que nenhuma leitura de manifesto pegaria. Tudo medido em daemon Linux nativo.
+
+- **Bind que esconde o arquivo que a imagem traz** — `Prometheus` e `Loki`. O `/etc/prometheus` e o `/etc/loki` das imagens vêm com o arquivo de configuração dentro; o bind cobre isso com o diretório vazio que o instalador acabou de criar. Os dois reiniciavam para sempre (`open /etc/prometheus/prometheus.yml: no such file or directory`, `failed parsing config: /etc/loki/local-config.yaml does not exist`). Conserto: um serviço de semente copia o arquivo da própria imagem para dentro do bind com `cp -n` e sai — depois da primeira vez quem manda é o arquivo do usuário.
+
+- **App que derruba capability não aceita root** — `Whoogle`. Com `cap_drop: ALL` e sem `DAC_OVERRIDE`, nem root escapa da permissão de arquivo: `user: "0:0"` quebrava dentro da própria imagem (`PermissionError: /whoogle/app/static/css/search.css`). Aqui o conserto não é rodar como root, é dar o dono certo ao bind e deixar o processo com o usuário que a imagem escolheu. A P10 passa a reconhecer esse padrão: mesmo bind, usuário root, `chown` na linha de comando.
+
+- **Variável que a imagem exige e ninguém passou** — `AnythingLLM` (`STORAGE_DIR`, morria com `TypeError: The "paths[0]" argument must be of type string`) e `Outline` (`PGSSLMODE`, reiniciava contra o Postgres do próprio stack com `The database does not support SSL connections`).
+
+- **Segredo compartilhado publicado no catálogo** — `LibreChat`. O manifesto trazia os quatro valores de exemplo do `.env.example` do upstream: todo mundo que instalasse recebia a mesma chave de assinatura de sessão. A própria imagem passou a recusar (`[credentials] JWT_SECRET uses a retired default value`) e o container nunca subia. Agora os quatro são gerados na primeira subida com o `crypto` do node e guardados em `/config/segredos.env` com `umask 077`, dentro do `/DATA` do usuário. A P3 não pegou porque os valores parecem aleatórios: ela procurava senha adivinhável, não segredo compartilhado.
+
+- **App que exige chave de terceiro para subir** — o RAG do `LibreChat` nascia apontando para a OpenAI e morria em `The api_key client option must be set`. A variante `lite` da imagem só fala com OpenAI (não traz `langchain_huggingface`), então foi trocada pela completa, com modelo de embedding local.
+
+### Known issues — decisão do founder
+
+- **`InvoiceNinja` não instala.** Herdado do BigBear, ele espera arquivos que o pacote não traz: o nginx faz bind de `invoice-ninja.conf` num caminho que não existe (o Docker cria diretório e o bind falha: `not a directory`) e o serviço de init aborta em `Error: /tmp/data/init/init.sh not found!`. Empacotar direito significa escrever a configuração do nginx, os dois `php.ini` e o `init.sh` num serviço de semente. Enquanto isso não acontece, ele é um app da loja que não instala.
+
+- **48 outros serviços trazem segredo literal fixo** no manifesto, no mesmo formato que quebrou o LibreChat. Não são senhas fracas — a P3 passa neles —, são valores iguais para toda instalação, publicados aqui. Levantamento feito, correção não.
+
+- **`Penpot` e `RagFlow` sem veredito.** Caem no laboratório por limitação dele (kernel sem IPv6, disco), não por defeito medido. Precisam de outra máquina.
+
 ### Added — Goal 18: revisão container a container (2026-09-14)
 
 - **`yarn revisao` — o critério de aceite da loja, app a app.** `scripts/revisao-container.mjs` checa nove premissas por app e grava o veredito em `.revisao/<app>.json`. Sai 1 enquanto houver pendente, o que permite a um loop parar por evidência em vez de por opinião. Entrou na CI e no manifesto `compose-catalog` do `roqueos-kit` (2.18.0).

@@ -113,6 +113,12 @@ export const LIMITE_DO_LABORATORIO = [
   { re: /operation not permitted.*rlimit/i, motivo: 'laboratório não permite levantar rlimit' },
   { re: /no space left on device/i, motivo: 'disco do laboratório acabou durante o pull' },
   { re: /toomanyrequests|rate limit/i, motivo: 'registry recusou por limite de pull' },
+  // Um proxy que intercepta TLS envenena qualquer app que busque algo ao subir.
+  // Isso nao acontece na rede de casa de ninguem: e o laboratorio, nao o app.
+  {
+    re: /SELF_SIGNED_CERT_IN_CHAIN|self-signed certificate in certificate chain|CERTIFICATE_VERIFY_FAILED|unable to get local issuer certificate/i,
+    motivo: 'proxy do laboratório intercepta TLS',
+  },
 ]
 
 export function inconclusivo(erro) {
