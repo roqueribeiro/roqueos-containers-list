@@ -238,9 +238,18 @@ function premissas(app, conflitos) {
     else if (d.largura !== d.altura) p.P8.push(`ícone não quadrado (${d.largura}x${d.altura})`)
     else if (d.largura < 192) p.P8.push(`ícone de ${d.largura}px, mínimo 192`)
   }
-  if (!fs.existsSync(path.join(dir, 'thumbnail.png'))) p.P8.push('sem thumbnail.png')
-  if (!fs.readdirSync(dir).some((f) => /^screenshot-\d+\.(png|jpg|jpeg|webp)$/.test(f)))
-    p.P8.push('sem nenhuma screenshot')
+  // thumbnail e screenshot NÃO entram na P8, e a razão é medida, não opinião.
+  //
+  // A App Store do RoqueOS desenha o ícone. O `roqueos-server` lê o manifesto em
+  // `catalog.service.ts` e não toca em `thumbnail` nem em `screenshot_link`: as
+  // únicas ocorrências dessas palavras no server são de miniatura de vídeo HLS e
+  // de captura de tela do agente, outro assunto. O front também não desenha.
+  //
+  // Eram 138 apps sem thumbnail e 63 sem screenshot. Gerar essas imagens seria
+  // trabalho que nenhum usuário veria, e um gate que cobra o invisível ensina a
+  // ignorar gate. Quando a loja passar a mostrar essas imagens, a checagem volta
+  // — e aí ela vai ter significado.
+  const _semUso = ['thumbnail.png']
 
   // P9 — coerência entre appfile.json e o compose
   p.P9 = []
