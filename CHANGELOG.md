@@ -71,7 +71,13 @@ Com a P10 ligando container de verdade, apareceram cinco classes que nenhuma lei
 
 - **48 outros serviços trazem segredo literal fixo** no manifesto, no mesmo formato que quebrou o LibreChat. Não são senhas fracas — a P3 passa neles —, são valores iguais para toda instalação, publicados aqui. Levantamento feito, correção não.
 
-- **`Penpot` e `RagFlow` sem veredito.** Caem no laboratório por limitação dele (kernel sem IPv6, disco), não por defeito medido. Precisam de outra máquina.
+- **`Authelia` não instala.** A imagem não traz configuração padrão e o manifesto não manda nenhuma, então ela morre na validação: `storage: option 'encryption_key' is required`, `authentication_backend: you must ensure either the 'file' or 'ldap'...`. Escrever essa configuração não é preencher campo: é decidir como o gateway de autenticação da casa se comporta. Precisa de decisão, não de conserto mecânico.
+
+- **`RagFlow` continua sem veredito.** O `chown` resolveu o `can not run elasticsearch as root`, e o Elasticsearch passou a carregar módulo e nomear nó — mas o container morre com 137 nos dois laboratórios, que é falta de memória. Ele precisa de uma máquina com RAM de verdade para ter veredito.
+
+- **`Penpot` fechou.** Caía só por falta de IPv6 no laboratório da nuvem; sobe no laboratório Linux do Mac, que tem IPv6. Mesmo caso do `ActualBudget`.
+
+
 
 ### Added — Goal 18: revisão container a container (2026-09-14)
 
