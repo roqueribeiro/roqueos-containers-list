@@ -67,13 +67,43 @@ services:
       - ALLOW_UNVERIFIED_EMAIL_LOGIN=true
       - SESSION_EXPIRY=1000 * 60 * 15
       - REFRESH_TOKEN_EXPIRY=(1000 * 60 * 60 * 24) * 7
-      - JWT_SECRET=16f8c0ef4a5d391b26034086c628469d3f9f497f08163ab9b40137092f2909ef
-      - JWT_REFRESH_SECRET=eaa5191f2914e30b9387fd84e254e4ba6fc51b4654968a9b0803b456a54b8418
-      - CREDS_KEY=f34be427ebb29de8d88c107a71546019685ed8b241d8f2ed00c3df97ad2566f0
-      - CREDS_IV=e2341419ec3dd3d19b13a1a87fafcbfb
+      # JWT_SECRET, JWT_REFRESH_SECRET, CREDS_KEY e CREDS_IV NAO ficam aqui.
+      # Ate 14/09/2026 este manifesto trazia os quatro valores de exemplo do
+      # .env.example do LibreChat, iguais para todo mundo que instalasse da
+      # nossa loja: o segredo que assina o token de sessao era publico. A
+      # propria imagem passou a recusar: "[credentials] JWT_SECRET uses a
+      # retired default value" — e o container nunca subia.
+      #
+      # Agora o command abaixo gera os quatro na primeira subida e guarda em
+      # /config/segredos.env, com umask 077, dentro do /DATA do usuario. Cada
+      # instalacao tem os seus, e eles sobrevivem a restart e a update.
+      #
+      # Uma replica so: sem isto o agendador nao arma e as rotas de schedule
+      # respondem 503 para sempre.
+      - SCHEDULES_SINGLE_PROCESS=true
       - DEBUG_PLUGINS=true
       - DEBUG_OPENAI=false
+    command:
+      - /bin/sh
+      - -c
+      - |
+        if [ ! -f /config/segredos.env ]; then
+          umask 077
+          {
+            echo "JWT_SECRET=$(node -e 'console.log(require("crypto").randomBytes(32).toString("hex"))')"
+            echo "JWT_REFRESH_SECRET=$(node -e 'console.log(require("crypto").randomBytes(32).toString("hex"))')"
+            echo "CREDS_KEY=$(node -e 'console.log(require("crypto").randomBytes(32).toString("hex"))')"
+            echo "CREDS_IV=$(node -e 'console.log(require("crypto").randomBytes(16).toString("hex"))')"
+          } > /config/segredos.env
+        fi
+        set -a
+        . /config/segredos.env
+        set +a
+        exec npm run backend
     volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
       - type: bind
         source: /DATA/AppData/$AppID/images
         target: /app/client/public/images
