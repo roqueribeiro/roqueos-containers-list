@@ -237,3 +237,6 @@ x-casaos:
       ja_jp: インストール後、コンテナログで初期パスワードを確認してください（設定 - 右上 - ターミナルとログ - ログ）。
   title:
     en_us: Alist
+
+x-roqueos:
+  portaCompartilhada: true
