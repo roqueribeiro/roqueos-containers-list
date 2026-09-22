@@ -43,6 +43,11 @@
 
 ---
 
+<div align="center">
+  <img src="docs/screenshots/app-store.png" alt="O app Containers do RoqueOS na aba Loja: as categorias à esquerda, os cartões de cada aplicação com o botão Instalar, a busca no topo e o servidor conectado no canto" width="860" />
+  <p><em>É assim que os manifestos deste repositório chegam ao usuário: o <code>roqueos-server</code> baixa o catálogo e o app Containers desenha a loja.</em></p>
+</div>
+
 ## ✨ Features
 
 - **249 Pre-configured Apps** — Media servers, development tools, home automation, AI tools, and more
@@ -170,6 +175,23 @@ This repo is **data + tooling only** — no runtime. The `appstore.zip` produced
 - **Import** (`node scripts/goal18-importa.mjs <App>`) — pulls an app from the official CasaOS store and tells you which pipeline to run before `yarn revisao` will accept it.
 
 ---
+
+### Como um app sai daqui e chega no Launchpad
+
+```mermaid
+flowchart TD
+    A["Apps/<Nome>/docker-compose.yml<br/>+ x-casaos + icon.png"] --> B["Schema valida<br/>pin de imagem, categoria,<br/>port_map, sem segredo padrão"]
+    B --> C["Release zipado<br/>do catálogo"]
+    C --> D["roqueos-server<br/>baixa e parseia"]
+    D --> E["App Store no app Containers"]
+    E --> F["1 clique: o servidor<br/>sobe o container"]
+    F --> G["Ícone no Launchpad<br/>com proxy reverso pronto"]
+```
+
+⚠️ **O schema deste repo é contrato com o `roqueos-server`.** Campo novo aqui
+sem o parser do outro lado aparece como defeito na tela da App Store dias
+depois, sem ninguém ligar as duas coisas — é o caso de **fan-out** do
+`roqueos-graph blast`, e a mudança desce daqui para lá.
 
 ## 🆚 Comparison
 
