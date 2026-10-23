@@ -1,0 +1,3 @@
+# Preferência de projeto; o runtime e as opções da tarefa têm autoridade.
+model = "gpt-6-astra"
+model_reasoning_effort = "ultra"
