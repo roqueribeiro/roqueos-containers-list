@@ -228,7 +228,7 @@ function ipDoContainer(projeto, servico) {
 export function argsCurl(url, prazoMs) {
   const segundos = Math.max(15, Math.round(prazoMs / 1000))
   return [
-    '-s', '-k', '-o', '/dev/null', '-w', '%{http_code}',
+    '-sS', '-k', '-o', '/dev/null', '-w', '%{http_code}',
     '--max-time', '10',
     '--retry', String(Math.ceil(segundos / 5)),
     '--retry-delay', '5',
@@ -250,7 +250,17 @@ export function respondeNaPorta(projeto, alvo) {
     ]).trim()
     return { medido: true, ok: codigo !== '000', codigo, url }
   } catch (e) {
-    return { medido: true, ok: false, codigo: '000', url, erro: String(e.message || e).slice(0, 120) }
+    // O que o curl disse (stderr) e o codigo de saida dele: "000" sozinho nao
+    // separa porta fechada, conexao recusada, timeout e servidor que fecha a conexao.
+    const saida = String(e.stdout || '').trim()
+    const stderr = String(e.stderr || '').trim().split('\n').slice(-2).join(' ')
+    return {
+      medido: true,
+      ok: false,
+      codigo: saida || '000',
+      url,
+      erro: `saida ${e.status ?? '?'} ${stderr}`.trim().slice(0, 300),
+    }
   }
 }
 
@@ -337,7 +347,7 @@ export function testa(app) {
       if (res.http.medido && !res.http.ok) {
         res.ok = false
         res.etapa = 'porta'
-        res.erro = `container de pe, mas ${res.http.url} nao respondeu (codigo ${res.http.codigo})\n${logs(projeto, alvo.servico)}`
+        res.erro = `container de pe, mas ${res.http.url} nao respondeu (codigo ${res.http.codigo})${res.http.erro ? `\ncurl: ${res.http.erro}` : ''}\n${logs(projeto, alvo.servico)}`
       }
       // Olha o estado de novo depois da porta. App que responde e cai logo em
       // seguida (o Activepieces em 15/11 respondeu e reiniciou) nao esta de pe.
