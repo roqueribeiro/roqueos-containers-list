@@ -1,0 +1,34 @@
+{
+  "$comment": "Fonte dos textos do banner e do social preview. A versão NÃO mora aqui: o gen.py lê do package.json e grava em versao_gerada. Nenhum texto traz a contagem de apps, que muda a cada PR: a contagem viva está no README e na docs/QUALITY.md.",
+  "versao_gerada": "1.0.0",
+  "eyebrow": {
+    "en": "OPEN SOURCE · MIT · SELF-HOSTED APPS",
+    "pt": "CÓDIGO ABERTO · MIT · APPS SELF-HOSTED"
+  },
+  "chips": {
+    "en": [
+      "curated",
+      "amd64 · arm64",
+      "booted on Linux"
+    ],
+    "pt": [
+      "curada",
+      "amd64 · arm64",
+      "testada no Linux"
+    ]
+  },
+  "lema": {
+    "en": [
+      "An app that doesn't boot isn't in the store.",
+      "Every app has to prove it runs."
+    ],
+    "pt": [
+      "App que não sobe não entra na loja.",
+      "Todo app tem que provar que roda."
+    ]
+  },
+  "descricao": {
+    "en": "The curated catalog of self-hosted apps behind the RoqueOS App Store.",
+    "pt": "O catálogo curado de apps self-hosted por trás da loja do RoqueOS."
+  }
+}

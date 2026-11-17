@@ -1,4 +1,8 @@
 <p align="center">
+  <a href="https://github.com/roqueribeiro/roqueos-containers-list"><img src="docs/assets/marca/banner.en.jpg" alt="RoqueOS App Store: the curated catalog of self-hosted apps behind the RoqueOS App Store. An app that doesn't boot isn't in the store; every app has to prove it runs." width="100%"></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/roqueribeiro/roqueos-containers-list/actions/workflows/validate-schema.yml"><img alt="Validate Manifests" src="https://github.com/roqueribeiro/roqueos-containers-list/actions/workflows/validate-schema.yml/badge.svg"></a>
   <a href="https://github.com/roqueribeiro/roqueos-containers-list/actions/workflows/test.yml"><img alt="Test" src="https://github.com/roqueribeiro/roqueos-containers-list/actions/workflows/test.yml/badge.svg"></a>
   <a href="https://github.com/roqueribeiro/roqueos-containers-list/actions/workflows/boot.yml"><img alt="Boot" src="https://github.com/roqueribeiro/roqueos-containers-list/actions/workflows/boot.yml/badge.svg"></a>
