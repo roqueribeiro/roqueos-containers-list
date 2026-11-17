@@ -29,19 +29,19 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável       | Valor padrão                      | Serviço |
-| -------------- | --------------------------------- | ------- |
-| KOPIA_PASSWORD | change-me-to-a-long-random-string | kopia   |
+| Variável       | Valor padrão      | Serviço |
+| -------------- | ----------------- | ------- |
+| KOPIA_PASSWORD | ${KOPIA_PASSWORD} | kopia   |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:51515/`.
 
 - ANTES DO PRIMEIRO BOOT:
-- 1. SUBSTITUA o valor de `--server-password` E KOPIA_PASSWORD por strings aleatórias longas.
-- 2. KOPIA_PASSWORD criptografa o repositório — perdê-la significa perder todos os backups.
+- 1. A senha da interface web (usuário roqueos-admin) e a KOPIA_PASSWORD são geradas pelo RoqueOS na instalação, únicas para este servidor, e aparecem uma vez logo depois de instalar: guarde as duas.
+- 2. KOPIA_PASSWORD criptografa o repositório: perdê-la significa perder todos os backups.
 - 3. Após boot, configure um repositório em http://SEU_IP:51515 (path filesystem /data, bucket S3, etc.).
-- 4. /data está montado em modo leitura a partir de /DATA no host — Kopia lê os arquivos de origem dali.
+- 4. /data está montado em modo leitura a partir de /DATA no host: Kopia lê os arquivos de origem dali.
 
 ## Imagens
 

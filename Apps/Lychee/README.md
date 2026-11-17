@@ -30,18 +30,18 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável      | Valor padrão                                    | Serviço |
-| ------------- | ----------------------------------------------- | ------- |
-| DB_CONNECTION | sqlite                                          | lychee  |
-| APP_KEY       | replace-with-output-of-php-artisan-key-generate | lychee  |
-| APP_NAME      | Lychee                                          | lychee  |
+| Variável      | Valor padrão | Serviço |
+| ------------- | ------------ | ------- |
+| DB_CONNECTION | sqlite       | lychee  |
+| APP_KEY       | ${APP_KEY}   | lychee  |
+| APP_NAME      | Lychee       | lychee  |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8086/`.
 
-- SUBSTITUA APP_KEY antes do primeiro boot. Gere com `docker run --rm lycheeorg/lychee php artisan key:generate --show`.
-- Default usa SQLite — para 1000+ fotos, mude para MySQL/PostgreSQL via variável DB_CONNECTION.
+- APP_KEY é gerada pelo RoqueOS na instalação, única para este servidor.
+- Default usa SQLite: para 1000+ fotos, mude para MySQL/PostgreSQL via variável DB_CONNECTION.
 
 ## Imagens
 

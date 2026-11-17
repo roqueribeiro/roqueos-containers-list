@@ -31,7 +31,7 @@ Onde os dados deste app ficam no seu servidor.
 | PGID       | 1000                  | duckdns |
 | TZ         | Etc/UTC               | duckdns |
 | SUBDOMAINS | subdomain1,subdomain2 | duckdns |
-| TOKEN      | token                 | duckdns |
+| TOKEN      | —                     | duckdns |
 | UPDATE_IP  | ipv6                  | duckdns |
 | LOG_FILE   | false                 | duckdns |
 

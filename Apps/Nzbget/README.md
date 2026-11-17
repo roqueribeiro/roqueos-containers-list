@@ -28,22 +28,20 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável    | Valor padrão  | Serviço |
-| ----------- | ------------- | ------- |
-| NZBGET_PASS | tegbzn6789    | nzbget  |
-| NZBGET_USER | nzbget        | nzbget  |
-| PGID        | 1000          | nzbget  |
-| PUID        | 1000          | nzbget  |
-| TZ          | Europe/London | nzbget  |
+| Variável    | Valor padrão   | Serviço |
+| ----------- | -------------- | ------- |
+| NZBGET_PASS | ${NZBGET_PASS} | nzbget  |
+| NZBGET_USER | nzbget         | nzbget  |
+| PGID        | 1000           | nzbget  |
+| PUID        | 1000           | nzbget  |
+| TZ          | Europe/London  | nzbget  |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:6789/`.
 
-- Default Account
-- | Username | Password |
-- | -------- | -------- |
-- | nzbget   | tegbzn6789 |
+- Usuário: `nzbget`
+- A senha é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ## Imagens
 

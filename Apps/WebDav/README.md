@@ -29,7 +29,7 @@ Onde os dados deste app ficam no seu servidor.
 | Variável | Valor padrão  | Serviço |
 | -------- | ------------- | ------- |
 | GID      | 1000          | webdav  |
-| PASSWORD | roqueos       | webdav  |
+| PASSWORD | ${PASSWORD}   | webdav  |
 | TZ       | Europe/Madrid | webdav  |
 | UDI      | 1000          | webdav  |
 | USERNAME | roqueos       | webdav  |
@@ -38,10 +38,8 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:5005/`.
 
-- Default Account
-- | Username | Password |
-- |----------|----------|
-- | `roqueos`    | `roqueos` |
+- Usuário: `roqueos`
+- A senha é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ## Imagens
 

@@ -27,34 +27,33 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável             | Valor padrão                               | Serviço      |
-| -------------------- | ------------------------------------------ | ------------ |
-| POSTGRES_DB          | activepieces                               | postgres     |
-| POSTGRES_USER        | activepieces                               | postgres     |
-| POSTGRES_PASSWORD    | change-me-to-a-long-random-string          | postgres     |
-| AP_API_KEY           | replace-with-output-of-openssl-rand-hex-32 | activepieces |
-| AP_ENCRYPTION_KEY    | replace-with-output-of-openssl-rand-hex-16 | activepieces |
-| AP_JWT_SECRET        | replace-with-output-of-openssl-rand-hex-32 | activepieces |
-| AP_FRONTEND_URL      | http://localhost:8105                      | activepieces |
-| AP_POSTGRES_HOST     | postgres                                   | activepieces |
-| AP_POSTGRES_PORT     | 5432                                       | activepieces |
-| AP_POSTGRES_DATABASE | activepieces                               | activepieces |
-| AP_POSTGRES_USERNAME | activepieces                               | activepieces |
-| AP_POSTGRES_PASSWORD | change-me-to-a-long-random-string          | activepieces |
-| AP_REDIS_HOST        | redis                                      | activepieces |
-| AP_REDIS_PORT        | 6379                                       | activepieces |
-| AP_TELEMETRY_ENABLED | false                                      | activepieces |
-| AP_QUEUE_MODE        | REDIS                                      | activepieces |
+| Variável             | Valor padrão          | Serviço      |
+| -------------------- | --------------------- | ------------ |
+| POSTGRES_DB          | activepieces          | postgres     |
+| POSTGRES_USER        | activepieces          | postgres     |
+| POSTGRES_PASSWORD    | ${POSTGRES_PASSWORD}  | postgres     |
+| AP_API_KEY           | ${AP_API_KEY}         | activepieces |
+| AP_ENCRYPTION_KEY    | ${AP_ENCRYPTION_KEY}  | activepieces |
+| AP_JWT_SECRET        | ${AP_JWT_SECRET}      | activepieces |
+| AP_FRONTEND_URL      | http://localhost:8105 | activepieces |
+| AP_POSTGRES_HOST     | postgres              | activepieces |
+| AP_POSTGRES_PORT     | 5432                  | activepieces |
+| AP_POSTGRES_DATABASE | activepieces          | activepieces |
+| AP_POSTGRES_USERNAME | activepieces          | activepieces |
+| AP_POSTGRES_PASSWORD | ${POSTGRES_PASSWORD}  | activepieces |
+| AP_REDIS_HOST        | redis                 | activepieces |
+| AP_REDIS_PORT        | 6379                  | activepieces |
+| AP_TELEMETRY_ENABLED | false                 | activepieces |
+| AP_QUEUE_MODE        | REDIS                 | activepieces |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8105/`.
 
 - ANTES DO PRIMEIRO BOOT:
-- 1. SUBSTITUA POSTGRES_PASSWORD E AP_POSTGRES_PASSWORD (devem ser iguais) por string aleatória longa.
-- 2. Gere AP_API_KEY, AP_JWT_SECRET (`openssl rand -hex 32`) e AP_ENCRYPTION_KEY (`openssl rand -hex 16`).
-- 3. Configure AP_FRONTEND_URL com sua URL pública — necessário para callbacks OAuth.
-- 4. O primeiro usuário registrado em http://SEU_IP:8105 é o admin.
+- 1. POSTGRES_PASSWORD (usada também como AP_POSTGRES_PASSWORD), AP_API_KEY, AP_JWT_SECRET e AP_ENCRYPTION_KEY são gerados pelo RoqueOS na instalação, únicos para este servidor. Não há nada para substituir.
+- 2. Configure AP_FRONTEND_URL com sua URL pública: necessário para callbacks OAuth.
+- 3. O primeiro usuário registrado em http://SEU_IP:8105 é o admin.
 
 ## Imagens
 

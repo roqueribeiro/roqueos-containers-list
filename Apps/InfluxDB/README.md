@@ -28,21 +28,21 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                      | Valor padrão            | Serviço  |
-| ----------------------------- | ----------------------- | -------- |
-| DOCKER_INFLUXDB_INIT_MODE     | setup                   | influxdb |
-| DOCKER_INFLUXDB_INIT_USERNAME | admin                   | influxdb |
-| DOCKER_INFLUXDB_INIT_PASSWORD | change-me-on-first-boot | influxdb |
-| DOCKER_INFLUXDB_INIT_ORG      | roqueos                 | influxdb |
-| DOCKER_INFLUXDB_INIT_BUCKET   | default                 | influxdb |
+| Variável                      | Valor padrão                     | Serviço  |
+| ----------------------------- | -------------------------------- | -------- |
+| DOCKER_INFLUXDB_INIT_MODE     | setup                            | influxdb |
+| DOCKER_INFLUXDB_INIT_USERNAME | admin                            | influxdb |
+| DOCKER_INFLUXDB_INIT_PASSWORD | ${DOCKER_INFLUXDB_INIT_PASSWORD} | influxdb |
+| DOCKER_INFLUXDB_INIT_ORG      | roqueos                          | influxdb |
+| DOCKER_INFLUXDB_INIT_BUCKET   | default                          | influxdb |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8086/`.
 
-- SUBSTITUA DOCKER_INFLUXDB_INIT_PASSWORD antes do primeiro boot.
+- DOCKER_INFLUXDB_INIT_PASSWORD (o login inicial do admin) é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 - Após init, gere API tokens via UI para clientes (Telegraf, Grafana, etc.).
-- Org padrão "roqueos" + bucket "default" — ajuste para o seu ambiente.
+- Org padrão "roqueos" + bucket "default": ajuste para o seu ambiente.
 
 ## Imagens
 

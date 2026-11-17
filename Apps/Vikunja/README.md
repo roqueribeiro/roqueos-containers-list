@@ -27,20 +27,20 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                  | Valor padrão                               | Serviço |
-| ------------------------- | ------------------------------------------ | ------- |
-| VIKUNJA_SERVICE_PUBLICURL | http://localhost:3456                      | vikunja |
-| VIKUNJA_SERVICE_JWTSECRET | replace-with-output-of-openssl-rand-hex-32 | vikunja |
-| VIKUNJA_DATABASE_TYPE     | sqlite                                     | vikunja |
-| VIKUNJA_DATABASE_PATH     | /app/vikunja/files/vikunja.db              | vikunja |
-| VIKUNJA_FILES_BASEPATH    | /app/vikunja/files                         | vikunja |
+| Variável                  | Valor padrão                  | Serviço |
+| ------------------------- | ----------------------------- | ------- |
+| VIKUNJA_SERVICE_PUBLICURL | http://localhost:3456         | vikunja |
+| VIKUNJA_SERVICE_JWTSECRET | ${VIKUNJA_SERVICE_JWTSECRET}  | vikunja |
+| VIKUNJA_DATABASE_TYPE     | sqlite                        | vikunja |
+| VIKUNJA_DATABASE_PATH     | /app/vikunja/files/vikunja.db | vikunja |
+| VIKUNJA_FILES_BASEPATH    | /app/vikunja/files            | vikunja |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:3456/`.
 
-- SUBSTITUA VIKUNJA_SERVICE_JWTSECRET antes do primeiro boot. Gere com `openssl rand -hex 32`.
-- Configure VIKUNJA_SERVICE_PUBLICURL com sua URL pública — necessário para emails de reset de senha e OAuth.
+- VIKUNJA_SERVICE_JWTSECRET é gerado pelo RoqueOS na instalação, único para este servidor.
+- Configure VIKUNJA_SERVICE_PUBLICURL com sua URL pública: necessário para emails de reset de senha e OAuth.
 - O primeiro usuário criado via signup é o admin (depois desative signup em config.yml se for privado).
 
 ## Imagens

@@ -26,15 +26,15 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável         | Valor padrão | Serviço |
-| ---------------- | ------------ | ------- |
-| FIREFLY_PASSWORD | firefly      | firefly |
+| Variável         | Valor padrão        | Serviço |
+| ---------------- | ------------------- | ------- |
+| FIREFLY_PASSWORD | ${FIREFLY_PASSWORD} | firefly |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:50121/`.
 
-- Default password for admin background `firefly`, you can modify it in environment variables.
+- A senha do admin é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ### Por que este app pede privilégio
 

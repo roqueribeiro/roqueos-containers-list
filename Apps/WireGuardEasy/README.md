@@ -29,7 +29,7 @@ Onde os dados deste app ficam no seu servidor.
 
 | Variável       | Valor padrão  | Serviço |
 | -------------- | ------------- | ------- |
-| PASSWORD       | roqueos       | wg-easy |
+| PASSWORD       | ${PASSWORD}   | wg-easy |
 | WG_HOST        | roqueos.local | wg-easy |
 | WG_PORT        | 51820         | wg-easy |
 | WG_DEFAULT_DNS | 1.1.1.1       | wg-easy |
@@ -38,12 +38,12 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:51821/`.
 
-- 🔧 Settings
-- Default password: `roqueos`
-- ⚠️ Warning!
-- You need to change at least change the mandatory parameter `WG_HOST` for this app to work properly.
-- It's value has to be a domain (or an IP address) that points to this server (accesible from WAN).
-- Same applies to the `WG_PORT` parameter. Change it to the port accessible from outside your LAN if it differs from the default 51820.
+- 🔧 Configurações
+- A senha da interface web é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
+- ⚠️ Atenção!
+- Você precisa ajustar pelo menos o parâmetro obrigatório `WG_HOST` para o app funcionar.
+- O valor tem que ser um domínio (ou um endereço IP) que aponte para este servidor (acessível pela internet).
+- O mesmo vale para o parâmetro `WG_PORT`. Troque pela porta acessível de fora da sua rede local se ela for diferente da padrão 51820.
 
 ### Por que este app pede privilégio
 

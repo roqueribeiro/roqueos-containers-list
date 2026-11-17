@@ -30,18 +30,18 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável    | Valor padrão                               | Serviço    |
-| ----------- | ------------------------------------------ | ---------- |
-| JWT_ENABLED | true                                       | onlyoffice |
-| JWT_SECRET  | replace-with-output-of-openssl-rand-hex-32 | onlyoffice |
-| JWT_HEADER  | Authorization                              | onlyoffice |
+| Variável    | Valor padrão  | Serviço    |
+| ----------- | ------------- | ---------- |
+| JWT_ENABLED | true          | onlyoffice |
+| JWT_SECRET  | ${JWT_SECRET} | onlyoffice |
+| JWT_HEADER  | Authorization | onlyoffice |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8084/`.
 
-- SUBSTITUA JWT_SECRET antes do primeiro boot — exigido pelos conectores Nextcloud/ownCloud.
-- Configure WOPI_URL no painel admin do Nextcloud (ou ownCloud) apontando para http://SEU_IP:8084 com o mesmo JWT_SECRET acima. Depois disso, arquivos abrem inline no OnlyOffice.
+- JWT_SECRET é gerado pelo RoqueOS na instalação, único para este servidor, e aparece uma vez logo depois de instalar: guarde-o, os conectores Nextcloud/ownCloud exigem esse valor.
+- Configure WOPI_URL no painel admin do Nextcloud (ou ownCloud) apontando para http://SEU_IP:8084 com o mesmo valor de JWT_SECRET. Depois disso, arquivos abrem inline no OnlyOffice.
 
 ## Imagens
 

@@ -19,10 +19,10 @@ services:
         source: /DATA/AppData/$AppID/storage
         target: /var/www/html/storage
     environment:
-      APP_KEY: ChangeMeBy32KeyLengthOrGenerated
+      APP_KEY: ${APP_KEY}
       DB_HOST: monica-db
       DB_USERNAME: monicauser
-      DB_PASSWORD: monicasecret
+      DB_PASSWORD: ${DB_PASSWORD}
     networks:
       - monica_network
     depends_on:
@@ -196,7 +196,7 @@ services:
       MARIADB_RANDOM_ROOT_PASSWORD: true
       MARIADB_DATABASE: monica
       MARIADB_USER: monicauser
-      MARIADB_PASSWORD: monicasecret
+      MARIADB_PASSWORD: ${DB_PASSWORD}
     restart: unless-stopped
     networks:
       - monica_network
@@ -836,3 +836,10 @@ x-casaos:
   title:
     en_US: Monica
     en_us: Monica
+x-roqueos:
+  gerar:
+    APP_KEY:
+      formato: laravel
+    DB_PASSWORD:
+      formato: senha
+      tamanho: 24

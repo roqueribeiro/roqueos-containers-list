@@ -26,19 +26,19 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                    | Valor padrão            | Serviço  |
-| --------------------------- | ----------------------- | -------- |
-| LD_SUPERUSER_NAME           | admin                   | linkding |
-| LD_SUPERUSER_PASSWORD       | change-me-on-first-boot | linkding |
-| LD_DISABLE_BACKGROUND_TASKS | False                   | linkding |
-| LD_DISABLE_URL_VALIDATION   | False                   | linkding |
-| LD_ENABLE_AUTH_PROXY        | False                   | linkding |
+| Variável                    | Valor padrão             | Serviço  |
+| --------------------------- | ------------------------ | -------- |
+| LD_SUPERUSER_NAME           | admin                    | linkding |
+| LD_SUPERUSER_PASSWORD       | ${LD_SUPERUSER_PASSWORD} | linkding |
+| LD_DISABLE_BACKGROUND_TASKS | False                    | linkding |
+| LD_DISABLE_URL_VALIDATION   | False                    | linkding |
+| LD_ENABLE_AUTH_PROXY        | False                    | linkding |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:9092/`.
 
-- SUBSTITUA LD_SUPERUSER_PASSWORD antes do primeiro boot. O valor padrão é inseguro.
+- LD_SUPERUSER_PASSWORD (usuário admin) é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 - Após o boot, instale a extensão Linkding no navegador e aponte para http://SEU_IP:9092.
 
 ## Imagens

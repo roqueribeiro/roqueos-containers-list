@@ -14,6 +14,7 @@
 // "Restarting (1)" no Linux. Por isso o script recusa rodar fora do Linux.
 
 import { execFileSync } from 'node:child_process'
+import { randomBytes, randomUUID } from 'node:crypto'
 import yaml from 'js-yaml'
 import { mkdirSync, readdirSync, writeFileSync, rmSync, existsSync, readFileSync } from 'node:fs'
 import { join, dirname, basename } from 'node:path'
@@ -57,12 +58,36 @@ function sh(cmd, args, opts = {}) {
 // PUID vazio, que nao e o que o usuario recebe.
 export const SISTEMA = { PUID: '1000', PGID: '1000', TZ: 'America/Sao_Paulo' }
 
-export function renderiza(texto, appId) {
+export function renderiza(texto, appId, segredos = segredosDoLaboratorio(texto)) {
   let t = texto.replaceAll('$AppID', appId).replaceAll('${AppID}', appId)
-  for (const [k, v] of Object.entries(SISTEMA)) {
+  for (const [k, v] of Object.entries({ ...SISTEMA, ...segredos })) {
     t = t.replaceAll('${' + k + '}', v).replace(new RegExp('\\$' + k + '(?![A-Za-z0-9_])', 'g'), v)
   }
   return t
+}
+
+// Os segredos de x-roqueos.gerar, que o RoqueOS Server gera na instalação (Goal 31).
+// Sem gerá-los aqui, o compose do laboratório subiria com ${NOME} vazio, que não é o
+// que o usuário recebe. O formato respeita o que o app valida (Laravel quer "base64:",
+// o Activepieces quer hex de 32), e todo valor começa com letra: o laboratório troca
+// no texto, e um hex como "12345e10" viraria número no YAML.
+export function segredosDoLaboratorio(texto) {
+  let gerar = {}
+  try {
+    gerar = yaml.load(texto)?.['x-roqueos']?.gerar || {}
+  } catch {
+    return {}
+  }
+  const out = {}
+  for (const [nome, s] of Object.entries(gerar)) {
+    const n = Number(s?.tamanho) || 0
+    if (s?.formato === 'laravel') out[nome] = 'base64:' + randomBytes(32).toString('base64')
+    else if (s?.formato === 'uuid') out[nome] = randomUUID()
+    else if (s?.formato === 'base64') out[nome] = randomBytes(n || 32).toString('base64')
+    else if (s?.formato === 'hex') out[nome] = ('a' + randomBytes(64).toString('hex')).slice(0, n || 64)
+    else out[nome] = ('r' + randomBytes(48).toString('hex')).slice(0, n || 24)
+  }
+  return out
 }
 
 export function veredito(estados, sementes = new Set()) {
@@ -228,7 +253,10 @@ function ipDoContainer(projeto, servico) {
 export function argsCurl(url, prazoMs) {
   const segundos = Math.max(15, Math.round(prazoMs / 1000))
   return [
-    '-sS', '-k', '-o', '/dev/null', '-w', '%{http_code}',
+    // -o num arquivo de verdade: ao tentar de novo, o curl trunca a saida, e
+    // /dev/null nao trunca. Resultado: saida 23 ja na segunda tentativa, e o
+    // 2FAuth e o Authentik, que respondiam 503 enquanto migravam, davam "000".
+    '-sS', '-k', '-o', '/tmp/corpo', '-w', '%{http_code}',
     '--max-time', '10',
     '--retry', String(Math.ceil(segundos / 5)),
     '--retry-delay', '5',

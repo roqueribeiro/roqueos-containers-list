@@ -36,7 +36,7 @@ Onde os dados deste app ficam no seu servidor.
 
 | Variável | Valor padrão  | Serviço      |
 | -------- | ------------- | ------------ |
-| PASS     | roqueos       | transmission |
+| PASS     | ${PASS}       | transmission |
 | PEERPORT | 51413         | transmission |
 | PGID     | 1000          | transmission |
 | PUID     | 1000          | transmission |
@@ -47,9 +47,8 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:9091/`.
 
-- | nome de utilizador | palavra-passe |
-- | ----------------- | ------------- |
-- | `roqueos` | `roqueos` |
+- Usuário: `roqueos`
+- A senha é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ## Imagens
 

@@ -27,14 +27,16 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                | Valor padrão | Serviço |
-| ----------------------- | ------------ | ------- |
-| GOTIFY_DEFAULTUSER_NAME | admin        | app     |
-| GOTIFY_DEFAULTUSER_PASS | custom       | app     |
+| Variável                | Valor padrão               | Serviço |
+| ----------------------- | -------------------------- | ------- |
+| GOTIFY_DEFAULTUSER_NAME | admin                      | app     |
+| GOTIFY_DEFAULTUSER_PASS | ${GOTIFY_DEFAULTUSER_PASS} | app     |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8091/`.
+
+- A senha do admin (usuário admin) é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ## Imagens
 

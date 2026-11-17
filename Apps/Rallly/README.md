@@ -27,23 +27,23 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável             | Valor padrão                                                 | Serviço   |
-| -------------------- | ------------------------------------------------------------ | --------- |
-| DATABASE_URL         | postgres://rallly:f87c7126-f816-47ef-9193-2e5eec763fcd@ralll | rallly    |
-| SECRET_PASSWORD      | 0f6f292d-c78c-4709-920d-e3b6361eb5b5                         | rallly    |
-| NEXT_PUBLIC_BASE_URL | http://[YOUR_CASAOS_IP]:3000                                 | rallly    |
-| NOREPLY_EMAIL        | noreply@example.com                                          | rallly    |
-| SUPPORT_EMAIL        | support@example.com                                          | rallly    |
-| SMTP_HOST            | [YOUR_CASAOS_IP]                                             | rallly    |
-| SMTP_PORT            | 1025                                                         | rallly    |
-| SMTP_SECURE          | —                                                            | rallly    |
-| SMTP_USER            | —                                                            | rallly    |
-| SMTP_PWD             | —                                                            | rallly    |
-| SMTP_TLS_ENABLED     | —                                                            | rallly    |
-| ALLOWED_EMAILS       | —                                                            | rallly    |
-| POSTGRES_PASSWORD    | f87c7126-f816-47ef-9193-2e5eec763fcd                         | rallly-db |
-| POSTGRES_DB          | rallly                                                       | rallly-db |
-| POSTGRES_USER        | rallly                                                       | rallly-db |
+| Variável             | Valor padrão                                            | Serviço   |
+| -------------------- | ------------------------------------------------------- | --------- |
+| DATABASE_URL         | postgres://rallly:${POSTGRES_PASSWORD}@rallly-db/rallly | rallly    |
+| SECRET_PASSWORD      | ${SECRET_PASSWORD}                                      | rallly    |
+| NEXT_PUBLIC_BASE_URL | http://localhost:3000                                   | rallly    |
+| NOREPLY_EMAIL        | noreply@example.com                                     | rallly    |
+| SUPPORT_EMAIL        | support@example.com                                     | rallly    |
+| SMTP_HOST            | —                                                       | rallly    |
+| SMTP_PORT            | 1025                                                    | rallly    |
+| SMTP_SECURE          | —                                                       | rallly    |
+| SMTP_USER            | —                                                       | rallly    |
+| SMTP_PWD             | —                                                       | rallly    |
+| SMTP_TLS_ENABLED     | —                                                       | rallly    |
+| ALLOWED_EMAILS       | —                                                       | rallly    |
+| POSTGRES_PASSWORD    | ${POSTGRES_PASSWORD}                                    | rallly-db |
+| POSTGRES_DB          | rallly                                                  | rallly-db |
+| POSTGRES_USER        | rallly                                                  | rallly-db |
 
 ## Primeiro acesso
 

@@ -20,7 +20,7 @@ services:
         source: /DATA/AppData/$AppID/storage
         target: /root
     environment:
-      CLI_ARGS: '--listen 0.0.0.0 --port 8188'
+      CLI_ARGS: '--listen 0.0.0.0 --port 8188 --cpu'
     x-casaos:
       ports:
         - container: '8188'

@@ -48,17 +48,17 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                       | Valor padrão | Serviço |
-| ------------------------------ | ------------ | ------- |
-| TZ                             | $TZ          | pihole  |
-| FTLCONF_webserver_api_password | roqueos      | pihole  |
-| FTLCONF_dns_listeningMode      | all          | pihole  |
+| Variável                       | Valor padrão                      | Serviço |
+| ------------------------------ | --------------------------------- | ------- |
+| TZ                             | $TZ                               | pihole  |
+| FTLCONF_webserver_api_password | ${FTLCONF_WEBSERVER_API_PASSWORD} | pihole  |
+| FTLCONF_dns_listeningMode      | all                               | pihole  |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `https://<endereço-do-servidor>:8800/admin`.
 
-- Palavra-passe padrão: `roqueos`
+- A senha da interface web é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ### Por que este app pede privilégio
 

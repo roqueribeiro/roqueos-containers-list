@@ -26,12 +26,9 @@ _Nenhum._
 
 ## Variáveis de ambiente
 
-| Variável     | Valor padrão            | Serviço    |
-| ------------ | ----------------------- | ---------- |
-| PMA_HOST     | [YOUR-CASAOS-IP]        | phpmyadmin |
-| PMA_PORT     | 3306                    | phpmyadmin |
-| PMA_USER     | bigbear                 | phpmyadmin |
-| PMA_PASSWORD | change-me-on-first-boot | phpmyadmin |
+| Variável      | Valor padrão | Serviço    |
+| ------------- | ------------ | ---------- |
+| PMA_ARBITRARY | 1            | phpmyadmin |
 
 ## Primeiro acesso
 

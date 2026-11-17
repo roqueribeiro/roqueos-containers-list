@@ -51,12 +51,12 @@ Onde os dados deste app ficam no seu servidor.
 | Variável          | Valor padrão                                                 | Serviço    |
 | ----------------- | ------------------------------------------------------------ | ---------- |
 | APP_URL           | http://localhost:3000                                        | docmost    |
-| APP_SECRET        | gxahngf9wc9ak9ahgpjp03zp1akcr7ry                             | docmost    |
-| DATABASE_URL      | postgresql://docmost:jcui51lw747yuuk4zrpm@docmost-db:5432/do | docmost    |
+| APP_SECRET        | ${APP_SECRET}                                                | docmost    |
+| DATABASE_URL      | postgresql://docmost:${POSTGRES_PASSWORD}@docmost-db:5432/do | docmost    |
 | REDIS_URL         | redis://docmost-redis:6379                                   | docmost    |
 | POSTGRES_DB       | docmost                                                      | docmost-db |
 | POSTGRES_USER     | docmost                                                      | docmost-db |
-| POSTGRES_PASSWORD | jcui51lw747yuuk4zrpm                                         | docmost-db |
+| POSTGRES_PASSWORD | ${POSTGRES_PASSWORD}                                         | docmost-db |
 
 ## Primeiro acesso
 

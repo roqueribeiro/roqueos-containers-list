@@ -27,33 +27,34 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável            | Valor padrão                      | Serviço      |
-| ------------------- | --------------------------------- | ------------ |
-| PUID                | 1000                              | bookstack-db |
-| PGID                | 1000                              | bookstack-db |
-| TZ                  | America/Sao_Paulo                 | bookstack-db |
-| MYSQL_ROOT_PASSWORD | change-me-on-first-boot           | bookstack-db |
-| MYSQL_DATABASE      | bookstackapp                      | bookstack-db |
-| MYSQL_USER          | bookstack                         | bookstack-db |
-| MYSQL_PASSWORD      | change-me-to-a-long-random-string | bookstack-db |
-| PUID                | 1000                              | bookstack    |
-| PGID                | 1000                              | bookstack    |
-| TZ                  | America/Sao_Paulo                 | bookstack    |
-| APP_URL             | http://localhost:8089             | bookstack    |
-| DB_HOST             | bookstack-db                      | bookstack    |
-| DB_PORT             | 3306                              | bookstack    |
-| DB_USERNAME         | bookstack                         | bookstack    |
-| DB_PASSWORD         | change-me-to-a-long-random-string | bookstack    |
-| DB_DATABASE         | bookstackapp                      | bookstack    |
+| Variável            | Valor padrão           | Serviço      |
+| ------------------- | ---------------------- | ------------ |
+| PUID                | 1000                   | bookstack-db |
+| PGID                | 1000                   | bookstack-db |
+| TZ                  | America/Sao_Paulo      | bookstack-db |
+| MYSQL_ROOT_PASSWORD | ${MYSQL_ROOT_PASSWORD} | bookstack-db |
+| MYSQL_DATABASE      | bookstackapp           | bookstack-db |
+| MYSQL_USER          | bookstack              | bookstack-db |
+| MYSQL_PASSWORD      | ${MYSQL_PASSWORD}      | bookstack-db |
+| PUID                | 1000                   | bookstack    |
+| PGID                | 1000                   | bookstack    |
+| TZ                  | America/Sao_Paulo      | bookstack    |
+| APP_URL             | http://localhost:8089  | bookstack    |
+| APP_KEY             | ${APP_KEY}             | bookstack    |
+| DB_HOST             | bookstack-db           | bookstack    |
+| DB_PORT             | 3306                   | bookstack    |
+| DB_USERNAME         | bookstack              | bookstack    |
+| DB_PASSWORD         | ${MYSQL_PASSWORD}      | bookstack    |
+| DB_DATABASE         | bookstackapp           | bookstack    |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8089/`.
 
 - ANTES DO PRIMEIRO BOOT:
-- 1. SUBSTITUA MYSQL_ROOT_PASSWORD, MYSQL_PASSWORD e DB_PASSWORD (os 2 últimos devem ser iguais) por strings aleatórias longas.
+- 1. As senhas do banco (MYSQL_ROOT_PASSWORD, e MYSQL_PASSWORD, que o DB_PASSWORD reaproveita) são geradas pelo RoqueOS na instalação, únicas para este servidor.
 - 2. Configure APP_URL com a URL pública onde vai acessar (deve ser HTTPS em produção).
-- 3. Credenciais padrão: admin@admin.com / password — TROQUE no primeiro login.
+- 3. Credenciais padrão: admin@admin.com / password. TROQUE no primeiro login.
 
 ## Imagens
 

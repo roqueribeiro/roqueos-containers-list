@@ -26,9 +26,9 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável | Valor padrão                 | Serviço |
-| -------- | ---------------------------- | ------- |
-| CLI_ARGS | --listen 0.0.0.0 --port 8188 | comfyui |
+| Variável | Valor padrão                       | Serviço |
+| -------- | ---------------------------------- | ------- |
+| CLI_ARGS | --listen 0.0.0.0 --port 8188 --cpu | comfyui |
 
 ## Primeiro acesso
 

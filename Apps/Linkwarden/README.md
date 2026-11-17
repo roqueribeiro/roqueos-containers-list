@@ -32,9 +32,9 @@ Onde os dados deste app ficam no seu servidor.
 | ----------------- | ------------------------------------------------------------ | ---------- |
 | POSTGRES_DB       | linkwarden                                                   | postgres   |
 | POSTGRES_USER     | linkwarden                                                   | postgres   |
-| POSTGRES_PASSWORD | change-me-to-a-long-random-string                            | postgres   |
-| DATABASE_URL      | postgresql://linkwarden:change-me-to-a-long-random-string@po | linkwarden |
-| NEXTAUTH_SECRET   | replace-with-output-of-openssl-rand-hex-32                   | linkwarden |
+| POSTGRES_PASSWORD | ${POSTGRES_PASSWORD}                                         | postgres   |
+| DATABASE_URL      | postgresql://linkwarden:${POSTGRES_PASSWORD}@postgres:5432/l | linkwarden |
+| NEXTAUTH_SECRET   | ${NEXTAUTH_SECRET}                                           | linkwarden |
 | NEXTAUTH_URL      | http://localhost:3000/api/v1/auth                            | linkwarden |
 
 ## Primeiro acesso
@@ -42,9 +42,8 @@ Onde os dados deste app ficam no seu servidor.
 Depois de instalar, abra `http://<endereço-do-servidor>:3000/`.
 
 - ANTES DO PRIMEIRO BOOT:
-- 1. Substitua POSTGRES_PASSWORD E a senha em DATABASE_URL (devem ser iguais) por uma string aleatória longa.
-- 2. Substitua NEXTAUTH_SECRET pela saída de `openssl rand -hex 32`.
-- 3. Configure NEXTAUTH_URL com a URL pública onde vai acessar o Linkwarden (deve bater exatamente, incluindo http/https).
+- 1. POSTGRES_PASSWORD (usada também em DATABASE_URL) e NEXTAUTH_SECRET são gerados pelo RoqueOS na instalação, únicos para este servidor.
+- 2. Configure NEXTAUTH_URL com a URL pública onde vai acessar o Linkwarden (deve bater exatamente, incluindo http/https).
 
 ## Imagens
 

@@ -4,7 +4,7 @@ services:
     environment:
       HOME: /home/node
       TERM: xterm-256color
-      OPENCLAW_GATEWAY_TOKEN: casaos
+      OPENCLAW_GATEWAY_TOKEN: ${OPENCLAW_GATEWAY_TOKEN}
     network_mode: bridge
     deploy:
       resources:
@@ -861,5 +861,9 @@ x-casaos:
   support: https://github.com/openclaw/openclaw/issues
   docs: https://docs.openclaw.ai/
 x-roqueos:
+  gerar:
+    OPENCLAW_GATEWAY_TOKEN:
+      formato: hex
+      tamanho: 64
   motivo:
     privileged: o agente controla um desktop próprio dentro do container e precisa de acesso a dispositivos de entrada e vídeo

@@ -42,25 +42,25 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável           | Valor padrão                        | Serviço              |
-| ------------------ | ----------------------------------- | -------------------- |
-| MEILI_ADDR         | http://karakeep-meilisearch:7700    | karakeep             |
-| BROWSER_WEB_URL    | http://karakeep-chrome:9222         | karakeep             |
-| DATA_DIR           | /data                               | karakeep             |
-| NEXTAUTH_URL       | http://localhost:14592              | karakeep             |
-| NEXTAUTH_SECRET    | change_this_to_a_long_random_string | karakeep             |
-| MEILI_MASTER_KEY   | change_this_to_a_long_random_string | karakeep             |
-| OPENAI_API_KEY     | —                                   | karakeep             |
-| MEILI_MASTER_KEY   | change_this_to_a_long_random_string | karakeep-meilisearch |
-| MEILI_NO_ANALYTICS | true                                | karakeep-meilisearch |
+| Variável           | Valor padrão                     | Serviço              |
+| ------------------ | -------------------------------- | -------------------- |
+| MEILI_ADDR         | http://karakeep-meilisearch:7700 | karakeep             |
+| BROWSER_WEB_URL    | http://karakeep-chrome:9222      | karakeep             |
+| DATA_DIR           | /data                            | karakeep             |
+| NEXTAUTH_URL       | http://localhost:14592           | karakeep             |
+| NEXTAUTH_SECRET    | ${NEXTAUTH_SECRET}               | karakeep             |
+| MEILI_MASTER_KEY   | ${MEILI_MASTER_KEY}              | karakeep             |
+| OPENAI_API_KEY     | —                                | karakeep             |
+| MEILI_MASTER_KEY   | ${MEILI_MASTER_KEY}              | karakeep-meilisearch |
+| MEILI_NO_ANALYTICS | true                             | karakeep-meilisearch |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:14592/`.
 
-- Defina `NEXTAUTH_URL` para o endereço que vai usar para aceder ao Karakeep.
-- Use cadeias aleatórias longas para `NEXTAUTH_SECRET` e `MEILI_MASTER_KEY`, e mantenha o mesmo `MEILI_MASTER_KEY` em `karakeep` e `meilisearch`.
-- O primeiro utilizador a registar-se na sua instância torna-se administrador.
+- Defina `NEXTAUTH_URL` com o endereço que você vai usar para acessar o Karakeep.
+- `NEXTAUTH_SECRET` e `MEILI_MASTER_KEY` são gerados pelo RoqueOS na instalação, únicos para este servidor, e `karakeep` e `meilisearch` já usam a mesma chave.
+- O primeiro usuário que se cadastrar na sua instância vira o admin.
 
 ## Imagens
 

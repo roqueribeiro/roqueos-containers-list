@@ -33,18 +33,18 @@ Onde os dados deste app ficam no seu servidor.
 | NODE_ENV          | production                                                   | ghostfolio    |
 | HOST              | 0.0.0.0                                                      | ghostfolio    |
 | PORT              | 3333                                                         | ghostfolio    |
-| ACCESS_TOKEN_SALT | 5a7f9e0d-0e64-4c19-8279-bbe8b4c590f4                         | ghostfolio    |
-| DATABASE_URL      | postgresql://ghostfolio:casaospassword@ghostfolio-db:5432/gh | ghostfolio    |
-| JWT_SECRET_KEY    | 534e820d-da30-4dd3-baf9-0511847c478a                         | ghostfolio    |
+| ACCESS_TOKEN_SALT | ${ACCESS_TOKEN_SALT}                                         | ghostfolio    |
+| DATABASE_URL      | postgresql://ghostfolio:${POSTGRES_PASSWORD}@ghostfolio-db:5 | ghostfolio    |
+| JWT_SECRET_KEY    | ${JWT_SECRET_KEY}                                            | ghostfolio    |
 | POSTGRES_DB       | ghostfolio                                                   | ghostfolio    |
 | POSTGRES_USER     | ghostfolio                                                   | ghostfolio    |
-| POSTGRES_PASSWORD | casaospassword                                               | ghostfolio    |
+| POSTGRES_PASSWORD | ${POSTGRES_PASSWORD}                                         | ghostfolio    |
 | REDIS_HOST        | ghostfolio-redis                                             | ghostfolio    |
-| REDIS_PASSWORD    | casaosredispassword                                          | ghostfolio    |
+| REDIS_PASSWORD    | ${REDIS_PASSWORD}                                            | ghostfolio    |
 | REDIS_PORT        | 6379                                                         | ghostfolio    |
 | POSTGRES_DB       | ghostfolio                                                   | ghostfolio-db |
 | POSTGRES_USER     | ghostfolio                                                   | ghostfolio-db |
-| POSTGRES_PASSWORD | casaospassword                                               | ghostfolio-db |
+| POSTGRES_PASSWORD | ${POSTGRES_PASSWORD}                                         | ghostfolio-db |
 | PGDATA            | /var/lib/postgresql/data                                     | ghostfolio-db |
 
 ## Primeiro acesso

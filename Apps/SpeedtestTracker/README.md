@@ -40,18 +40,21 @@ Onde os dados deste app ficam no seu servidor.
 | DB_PORT                      | 3306                 | speedtest-tracker    |
 | DB_DATABASE                  | speedtest_tracker    | speedtest-tracker    |
 | DB_USERNAME                  | casaos               | speedtest-tracker    |
-| DB_PASSWORD                  | casaos               | speedtest-tracker    |
+| DB_PASSWORD                  | ${DB_PASSWORD}       | speedtest-tracker    |
+| APP_KEY                      | ${APP_KEY}           | speedtest-tracker    |
+| ADMIN_EMAIL                  | admin@example.com    | speedtest-tracker    |
+| ADMIN_PASSWORD               | ${ADMIN_PASSWORD}    | speedtest-tracker    |
 | TZ                           | America/Chicago      | speedtest-tracker    |
 | MARIADB_DATABASE             | speedtest_tracker    | speedtest-tracker-db |
 | MARIADB_USER                 | casaos               | speedtest-tracker-db |
-| MARIADB_PASSWORD             | roqueos              | speedtest-tracker-db |
+| MARIADB_PASSWORD             | ${DB_PASSWORD}       | speedtest-tracker-db |
 | MARIADB_RANDOM_ROOT_PASSWORD | true                 | speedtest-tracker-db |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8080/`.
 
-- Default Credentials - Username: admin@example.com and Password: password
+- Login: admin@example.com. A senha é gerada pelo RoqueOS para o seu servidor e aparece uma vez, logo depois de instalar: guarde.
 
 ## Imagens
 

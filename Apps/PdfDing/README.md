@@ -33,13 +33,13 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável              | Valor padrão         | Serviço |
-| --------------------- | -------------------- | ------- |
-| HOST_NAME             | *                    | pdfding |
-| SECRET_KEY            | your_secret_key_here | pdfding |
-| CSRF_COOKIE_SECURE    | FALSE                | pdfding |
-| SESSION_COOKIE_SECURE | FALSE                | pdfding |
-| DEBUG                 | FALSE                | pdfding |
+| Variável              | Valor padrão  | Serviço |
+| --------------------- | ------------- | ------- |
+| HOST_NAME             | *             | pdfding |
+| SECRET_KEY            | ${SECRET_KEY} | pdfding |
+| CSRF_COOKIE_SECURE    | FALSE         | pdfding |
+| SESSION_COOKIE_SECURE | FALSE         | pdfding |
+| DEBUG                 | FALSE         | pdfding |
 
 ## Primeiro acesso
 

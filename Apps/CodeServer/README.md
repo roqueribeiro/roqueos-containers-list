@@ -28,22 +28,22 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável          | Valor padrão            | Serviço    |
-| ----------------- | ----------------------- | ---------- |
-| PUID              | 1000                    | codeserver |
-| PGID              | 1000                    | codeserver |
-| TZ                | America/Sao_Paulo       | codeserver |
-| PASSWORD          | change-me-on-first-boot | codeserver |
-| SUDO_PASSWORD     | change-me-on-first-boot | codeserver |
-| DEFAULT_WORKSPACE | /workspaces             | codeserver |
+| Variável          | Valor padrão      | Serviço    |
+| ----------------- | ----------------- | ---------- |
+| PUID              | 1000              | codeserver |
+| PGID              | 1000              | codeserver |
+| TZ                | America/Sao_Paulo | codeserver |
+| PASSWORD          | ${PASSWORD}       | codeserver |
+| SUDO_PASSWORD     | ${SUDO_PASSWORD}  | codeserver |
+| DEFAULT_WORKSPACE | /workspaces       | codeserver |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8443/`.
 
-- SUBSTITUA PASSWORD e SUDO_PASSWORD antes do primeiro boot — ambos defaults são placeholders inseguros.
+- PASSWORD (o login web) e SUDO_PASSWORD são geradas pelo RoqueOS na instalação, únicas para este servidor, e aparecem uma vez logo depois de instalar: guarde as duas.
 - Para produção, exponha apenas atrás de reverse proxy com HTTPS (Nginx Proxy Manager já está no catálogo).
-- Mount padrão de workspaces é /DATA/Workspaces — ajuste se você guarda código em outro lugar.
+- Mount padrão de workspaces é /DATA/Workspaces: ajuste se você guarda código em outro lugar.
 
 ## Imagens
 

@@ -52,22 +52,22 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável               | Valor padrão | Serviço |
-| ---------------------- | ------------ | ------- |
-| DB_HOST                | romm-db      | romm    |
-| DB_NAME                | romm         | romm    |
-| DB_USER                | romm-user    | romm    |
-| DB_PASSWD              | roqueos      | romm    |
-| ROMM_AUTH_SECRET_KEY   | ""           | romm    |
-| IGDB_CLIENT_ID         | ""           | romm    |
-| IGDB_CLIENT_SECRET     | ""           | romm    |
-| SCREENSCRAPER_USER     | ""           | romm    |
-| SCREENSCRAPER_PASSWORD | ""           | romm    |
-| STEAMGRIDDB_API_KEY    | ""           | romm    |
-| MARIADB_ROOT_PASSWORD  | roqueos      | romm-db |
-| MARIADB_DATABASE       | romm         | romm-db |
-| MARIADB_USER           | romm-user    | romm-db |
-| MARIADB_PASSWORD       | roqueos      | romm-db |
+| Variável               | Valor padrão             | Serviço |
+| ---------------------- | ------------------------ | ------- |
+| DB_HOST                | romm-db                  | romm    |
+| DB_NAME                | romm                     | romm    |
+| DB_USER                | romm-user                | romm    |
+| DB_PASSWD              | ${DB_PASSWD}             | romm    |
+| ROMM_AUTH_SECRET_KEY   | ${ROMM_AUTH_SECRET_KEY}  | romm    |
+| IGDB_CLIENT_ID         | ""                       | romm    |
+| IGDB_CLIENT_SECRET     | ""                       | romm    |
+| SCREENSCRAPER_USER     | ""                       | romm    |
+| SCREENSCRAPER_PASSWORD | ""                       | romm    |
+| STEAMGRIDDB_API_KEY    | ""                       | romm    |
+| MARIADB_ROOT_PASSWORD  | ${MARIADB_ROOT_PASSWORD} | romm-db |
+| MARIADB_DATABASE       | romm                     | romm-db |
+| MARIADB_USER           | romm-user                | romm-db |
+| MARIADB_PASSWORD       | ${DB_PASSWD}             | romm-db |
 
 ## Primeiro acesso
 

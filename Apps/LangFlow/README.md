@@ -46,10 +46,10 @@ Onde os dados deste app ficam no seu servidor.
 
 | Variável              | Valor padrão                                                 | Serviço           |
 | --------------------- | ------------------------------------------------------------ | ----------------- |
-| LANGFLOW_DATABASE_URL | postgresql://langflow:langflow@langflow-postgres:5432/langfl | langflow          |
+| LANGFLOW_DATABASE_URL | postgresql://langflow:${POSTGRES_PASSWORD}@langflow-postgres | langflow          |
 | LANGFLOW_CONFIG_DIR   | /app/langflow                                                | langflow          |
 | POSTGRES_USER         | langflow                                                     | langflow-postgres |
-| POSTGRES_PASSWORD     | langflow                                                     | langflow-postgres |
+| POSTGRES_PASSWORD     | ${POSTGRES_PASSWORD}                                         | langflow-postgres |
 | POSTGRES_DB           | langflow                                                     | langflow-postgres |
 
 ## Primeiro acesso

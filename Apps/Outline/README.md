@@ -32,11 +32,11 @@ Onde os dados deste app ficam no seu servidor.
 | Variável                     | Valor padrão                                                 | Serviço  |
 | ---------------------------- | ------------------------------------------------------------ | -------- |
 | POSTGRES_USER                | outline                                                      | postgres |
-| POSTGRES_PASSWORD            | change-me-to-a-long-random-string                            | postgres |
+| POSTGRES_PASSWORD            | ${POSTGRES_PASSWORD}                                         | postgres |
 | POSTGRES_DB                  | outline                                                      | postgres |
-| SECRET_KEY                   | replace-with-output-of-openssl-rand-hex-32                   | outline  |
-| UTILS_SECRET                 | replace-with-output-of-openssl-rand-hex-32                   | outline  |
-| DATABASE_URL                 | postgres://outline:change-me-to-a-long-random-string@postgre | outline  |
+| SECRET_KEY                   | ${SECRET_KEY}                                                | outline  |
+| UTILS_SECRET                 | ${UTILS_SECRET}                                              | outline  |
+| DATABASE_URL                 | postgres://outline:${POSTGRES_PASSWORD}@postgres:5432/outlin | outline  |
 | PGSSLMODE                    | disable                                                      | outline  |
 | DATABASE_CONNECTION_POOL_MIN | 0                                                            | outline  |
 | DATABASE_CONNECTION_POOL_MAX | 5                                                            | outline  |
@@ -55,10 +55,9 @@ Onde os dados deste app ficam no seu servidor.
 Depois de instalar, abra `http://<endereço-do-servidor>:8091/`.
 
 - ANTES DO PRIMEIRO BOOT:
-- 1. SUBSTITUA POSTGRES_PASSWORD E a senha em DATABASE_URL (devem ser iguais) por uma string aleatória longa.
-- 2. SUBSTITUA SECRET_KEY e UTILS_SECRET — ambos pela saída de `openssl rand -hex 32`.
-- 3. Configure URL com a URL pública (deve bater exatamente, incluindo http/https — necessário para OAuth).
-- 4. Outline exige um provedor OAuth (Google/Slack/GitHub/Microsoft/OIDC) — configure via variáveis antes do primeiro boot.
+- 1. POSTGRES_PASSWORD (usada também em DATABASE_URL), SECRET_KEY e UTILS_SECRET são gerados pelo RoqueOS na instalação, únicos para este servidor.
+- 2. Configure URL com a URL pública (deve bater exatamente, incluindo http/https: necessário para OAuth).
+- 3. Outline exige um provedor OAuth (Google/Slack/GitHub/Microsoft/OIDC): configure via variáveis antes do primeiro boot.
 
 ## Imagens
 

@@ -40,18 +40,18 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                   | Valor padrão                                          | Serviço   |
-| -------------------------- | ----------------------------------------------------- | --------- |
-| TZ                         | $TZ                                                   | teable    |
-| NEXT_ENV_IMAGES_ALL_REMOTE | true                                                  | teable    |
-| PUBLIC_ORIGIN              | http://127.0.0.1:3000                                 | teable    |
-| PRISMA_DATABASE_URL        | postgresql://example:example@teable-db:5432/teable-db | teable    |
-| BACKEND_CACHE_PROVIDER     | redis                                                 | teable    |
-| BACKEND_CACHE_REDIS_URI    | redis://default:password@teable-cache:6379/0          | teable    |
-| TZ                         | $TZ                                                   | teable-db |
-| POSTGRES_DB                | teable-db                                             | teable-db |
-| POSTGRES_USER              | example                                               | teable-db |
-| POSTGRES_PASSWORD          | example                                               | teable-db |
+| Variável                   | Valor padrão                                                 | Serviço   |
+| -------------------------- | ------------------------------------------------------------ | --------- |
+| TZ                         | $TZ                                                          | teable    |
+| NEXT_ENV_IMAGES_ALL_REMOTE | true                                                         | teable    |
+| PUBLIC_ORIGIN              | http://127.0.0.1:3000                                        | teable    |
+| PRISMA_DATABASE_URL        | postgresql://example:${POSTGRES_PASSWORD}@teable-db:5432/tea | teable    |
+| BACKEND_CACHE_PROVIDER     | redis                                                        | teable    |
+| BACKEND_CACHE_REDIS_URI    | redis://default:${REDIS_PASSWORD}@teable-cache:6379/0        | teable    |
+| TZ                         | $TZ                                                          | teable-db |
+| POSTGRES_DB                | teable-db                                                    | teable-db |
+| POSTGRES_USER              | example                                                      | teable-db |
+| POSTGRES_PASSWORD          | ${POSTGRES_PASSWORD}                                         | teable-db |
 
 ## Primeiro acesso
 

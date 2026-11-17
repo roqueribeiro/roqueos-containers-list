@@ -34,10 +34,10 @@ Onde os dados deste app ficam no seu servidor.
 | Variável                   | Valor padrão                                                 | Serviço    |
 | -------------------------- | ------------------------------------------------------------ | ---------- |
 | POSTGRES_USER              | mmuser                                                       | postgres   |
-| POSTGRES_PASSWORD          | change-me-to-a-long-random-string                            | postgres   |
+| POSTGRES_PASSWORD          | ${POSTGRES_PASSWORD}                                         | postgres   |
 | POSTGRES_DB                | mattermost                                                   | postgres   |
 | MM_SQLSETTINGS_DRIVERNAME  | postgres                                                     | mattermost |
-| MM_SQLSETTINGS_DATASOURCE  | postgres://mmuser:change-me-to-a-long-random-string@postgres | mattermost |
+| MM_SQLSETTINGS_DATASOURCE  | postgres://mmuser:${POSTGRES_PASSWORD}@postgres:5432/matterm | mattermost |
 | MM_SERVICESETTINGS_SITEURL | http://localhost:8065                                        | mattermost |
 | TZ                         | America/Sao_Paulo                                            | mattermost |
 
@@ -46,7 +46,7 @@ Onde os dados deste app ficam no seu servidor.
 Depois de instalar, abra `http://<endereço-do-servidor>:8065/`.
 
 - ANTES DO PRIMEIRO BOOT:
-- 1. SUBSTITUA POSTGRES_PASSWORD E a senha em MM_SQLSETTINGS_DATASOURCE (devem ser iguais) por uma string aleatória longa.
+- 1. POSTGRES_PASSWORD (usada também em MM_SQLSETTINGS_DATASOURCE) é gerada pelo RoqueOS na instalação, única para este servidor.
 - 2. Configure MM_SERVICESETTINGS_SITEURL com sua URL pública (deve bater exatamente).
 - 3. O primeiro usuário criado via signup em http://SEU_IP:8065 é o System Admin.
 - 4. Para apps desktop/mobile, aponte-os para seu SiteURL.

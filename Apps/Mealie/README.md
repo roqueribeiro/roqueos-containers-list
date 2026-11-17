@@ -36,7 +36,7 @@ Onde os dados deste app ficam no seu servidor.
 | WEB_CONCURRENCY | 1                     | mealie  |
 | BASE_URL        | http://localhost:9095 | mealie  |
 | DEFAULT_GROUP   | Home                  | mealie  |
-| DEFAULT_EMAIL   | changeme@example.com  | mealie  |
+| DEFAULT_EMAIL   | admin@example.com     | mealie  |
 
 ## Primeiro acesso
 

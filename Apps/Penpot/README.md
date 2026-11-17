@@ -33,11 +33,11 @@ Onde os dados deste app ficam no seu servidor.
 | Variável                           | Valor padrão                                                 | Serviço         |
 | ---------------------------------- | ------------------------------------------------------------ | --------------- |
 | PENPOT_FLAGS                       | enable-registration enable-login-with-password disable-email | penpot-backend  |
-| PENPOT_SECRET_KEY                  | penpot-secret-key                                            | penpot-backend  |
+| PENPOT_SECRET_KEY                  | ${PENPOT_SECRET_KEY}                                         | penpot-backend  |
 | PENPOT_PUBLIC_URI                  | http://penpot-frontend:8080                                  | penpot-backend  |
 | PENPOT_DATABASE_URI                | postgresql://penpot-postgres/penpot                          | penpot-backend  |
 | PENPOT_DATABASE_USERNAME           | bigbear                                                      | penpot-backend  |
-| PENPOT_DATABASE_PASSWORD           | casaos                                                       | penpot-backend  |
+| PENPOT_DATABASE_PASSWORD           | ${PENPOT_DATABASE_PASSWORD}                                  | penpot-backend  |
 | PENPOT_REDIS_URI                   | redis://penpot-redis/0                                       | penpot-backend  |
 | PENPOT_ASSETS_STORAGE_BACKEND      | assets-fs                                                    | penpot-backend  |
 | PENPOT_STORAGE_ASSETS_FS_DIRECTORY | /opt/data/assets                                             | penpot-backend  |
@@ -47,7 +47,7 @@ Onde os dados deste app ficam no seu servidor.
 | POSTGRES_INITDB_ARGS               | --data-checksums                                             | penpot-postgres |
 | POSTGRES_DB                        | penpot                                                       | penpot-postgres |
 | POSTGRES_USER                      | bigbear                                                      | penpot-postgres |
-| POSTGRES_PASSWORD                  | casaos                                                       | penpot-postgres |
+| POSTGRES_PASSWORD                  | ${PENPOT_DATABASE_PASSWORD}                                  | penpot-postgres |
 
 ## Primeiro acesso
 

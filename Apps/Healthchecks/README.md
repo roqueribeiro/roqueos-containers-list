@@ -28,25 +28,25 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável           | Valor padrão                           | Serviço      |
-| ------------------ | -------------------------------------- | ------------ |
-| PUID               | 1000                                   | healthchecks |
-| PGID               | 1000                                   | healthchecks |
-| TZ                 | $TZ                                    | healthchecks |
-| SITE_ROOT          | http://localhost:8000                  | healthchecks |
-| SITE_NAME          | "RoqueOS HealthChecks"                 | healthchecks |
-| SUPERUSER_EMAIL    | user@example.com                       | healthchecks |
-| SUPERUSER_PASSWORD | 8a4c087a-2652-4d12-a6cc-feeb60e59dd4   | healthchecks |
-| ALLOWED_HOSTS      | *                                      | healthchecks |
-| APPRISE_ENABLED    | False                                  | healthchecks |
-| DEBUG              | False                                  | healthchecks |
-| SECRET_KEY         | "b2ea4094-c950-4890-b85f-301d8a777af2" | healthchecks |
+| Variável           | Valor padrão           | Serviço      |
+| ------------------ | ---------------------- | ------------ |
+| PUID               | 1000                   | healthchecks |
+| PGID               | 1000                   | healthchecks |
+| TZ                 | $TZ                    | healthchecks |
+| SITE_ROOT          | http://localhost:8000  | healthchecks |
+| SITE_NAME          | "RoqueOS HealthChecks" | healthchecks |
+| SUPERUSER_EMAIL    | user@example.com       | healthchecks |
+| SUPERUSER_PASSWORD | ${SUPERUSER_PASSWORD}  | healthchecks |
+| ALLOWED_HOSTS      | *                      | healthchecks |
+| APPRISE_ENABLED    | False                  | healthchecks |
+| DEBUG              | False                  | healthchecks |
+| SECRET_KEY         | "${SECRET_KEY}"        | healthchecks |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8000/`.
 
-- Antes de instalar, troque SUPERUSER_PASSWORD (a senha do admin) e SECRET_KEY por valores seus: os padrões deste arquivo são públicos.
+- SUPERUSER_PASSWORD (a senha do admin) e SECRET_KEY são gerados pelo RoqueOS na instalação, únicos para este servidor. A senha do admin aparece uma vez logo depois de instalar: guarde-a.
 - O usuário admin é o e-mail de SUPERUSER_EMAIL. SITE_ROOT é o endereço usado nos links que o Healthchecks envia; ponha o endereço do seu servidor se usar alerta por e-mail.
 
 ## Imagens

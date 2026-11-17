@@ -116,6 +116,54 @@ export const FRACO = /^(admin|password|123456|changeme|secret|root|toor|test|gue
  */
 export const PLACEHOLDER_MORTO = /^\$(default_pwd|password|pwd|secret)$/i
 
+/**
+ * O repo e publico. Senha ou chave escrita no manifesto e a mesma em toda
+ * instalacao, e qualquer um a le: em 17/11/2026, 62 apps traziam JWT, chave de
+ * sessao ou senha de banco literal, e cinco deles (Docmost, Nocodb, Sure,
+ * Ghostfolio, Healthchecks) permitiam forjar a sessao de qualquer instalacao.
+ * Desde o Goal 31 a regra e uma so: segredo e gerado pelo instalador, declarado
+ * em x-roqueos.gerar e referenciado como ${NOME}. O antigo padrao da casa,
+ * `change-me-on-first-boot` mais a tip mandando trocar, passava no gate e
+ * ninguem trocava.
+ */
+export const NOME_DE_SEGREDO =
+  /(^|_)(PASS|PASSWD|PASSWORD|PWD|SECRET|TOKEN|SALT|JWT|KEY|APIKEY|MASTER_KEY|KEY_BASE|AUTH_CODE)(_|$)/i
+/** Nomes que contem a palavra mas guardam outra coisa: host, usuario, prazo, caminho. */
+export const NAO_E_SEGREDO = /_(HOST|USER|USERNAME|NAME|EXPIRY|EXPIRES|FILE|PATH|URL|ENABLED|TTL|LENGTH|TYPE|ID|HEADER)$/i
+/** Valores que nao sao segredo mesmo num nome de segredo. */
+export const VALOR_INOFENSIVO = /^(true|false|yes|no|on|off|none|\d+|\/.*|https?:\/\/.*|user_provided)$/i
+export const PLACEHOLDER = /change.?me|replace.?with|replace.?me|your[-_ ]?(secret|password|key|token)|\[YOUR[-_]|<your/i
+/** As variaveis que o instalador sempre troca: o contrato do CasaOS. */
+export const VARIAVEIS_DO_SISTEMA = new Set(['AppID', 'PUID', 'PGID', 'TZ'])
+
+/** Toda referencia $NOME ou ${NOME} num texto. `$$NOME` e escape do compose e fica de fora. */
+export function referencias(texto) {
+  const out = []
+  for (const m of String(texto).matchAll(/(\$+)\{?([A-Za-z_][A-Za-z0-9_]*)\}?/g)) {
+    if (m[1].length % 2 === 0) continue
+    out.push(m[2])
+  }
+  return out
+}
+
+function textosDe(no, saida = []) {
+  if (typeof no === 'string') saida.push(no)
+  else if (Array.isArray(no)) for (const n of no) textosDe(n, saida)
+  else if (no && typeof no === 'object')
+    for (const [k, v] of Object.entries(no)) if (k !== 'x-casaos') textosDe(v, saida)
+  return saida
+}
+
+export function paresDeAmbiente(environment) {
+  if (Array.isArray(environment))
+    return environment.map((e) => {
+      const t = String(e)
+      const i = t.indexOf('=')
+      return i < 0 ? [t, ''] : [t.slice(0, i), t.slice(i + 1)]
+    })
+  return Object.entries(environment || {}).map(([k, v]) => [k, v == null ? '' : String(v)])
+}
+
 /** Largura e altura de um PNG pelo cabeçalho IHDR. Sem dependência de imagem. */
 export function dimensoesPng(arquivo) {
   const b = fs.readFileSync(arquivo)
@@ -192,21 +240,42 @@ export function premissas(app, conflitos) {
     }
   }
 
-  // P3 — variáveis
+  // P3, variáveis: segredo só gerado, e nenhuma variável sem origem
   p.P3 = []
+  const gerar = xr.gerar && typeof xr.gerar === 'object' ? xr.gerar : {}
+  const declaradas = new Set(Object.keys(gerar))
+  const usadas = new Set()
   for (const [nomeSvc, s] of servicos) {
-    const envs = Array.isArray(s.environment)
-      ? s.environment.map((e) => String(e).split('='))
-      : Object.entries(s.environment || {})
-    for (const [k, v] of envs) {
-      if (!k) continue
-      const valor = String(v ?? '').trim()
-      if (SEGREDO.test(k) && valor && !valor.startsWith('$') && FRACO.test(valor))
-        p.P3.push(`${nomeSvc}: ${k} com segredo literal fraco`)
-      if (PLACEHOLDER_MORTO.test(valor))
-        p.P3.push(`${nomeSvc}: ${k}=${valor} é um placeholder que ninguém substitui`)
+    for (const t of textosDe(s)) {
+      for (const ref of referencias(t)) {
+        usadas.add(ref)
+        if (!VARIAVEIS_DO_SISTEMA.has(ref) && !declaradas.has(ref))
+          p.P3.push(`${nomeSvc}: $${ref} não vem do sistema nem de x-roqueos.gerar, e chega vazia`)
+      }
+      const url = /:\/\/[^:/\s@]+:([^@\s]+)@/.exec(t)
+      if (url && !url[1].startsWith('$'))
+        p.P3.push(`${nomeSvc}: senha literal dentro de uma URL; use \${NOME} de x-roqueos.gerar`)
     }
+    for (const [k, v] of paresDeAmbiente(s.environment)) {
+      if (!k) continue
+      const valor = String(v ?? '').trim().replace(/^["']|["']$/g, '')
+      if (PLACEHOLDER_MORTO.test(valor) || PLACEHOLDER.test(valor)) {
+        p.P3.push(`${nomeSvc}: ${k}=${valor} é um placeholder que ninguém substitui`)
+        continue
+      }
+      if (!valor || valor.startsWith('$') || VALOR_INOFENSIVO.test(valor)) continue
+      if (NOME_DE_SEGREDO.test(k) && !NAO_E_SEGREDO.test(k))
+        p.P3.push(`${nomeSvc}: ${k} com segredo literal, igual em toda instalação; gere com x-roqueos.gerar`)
+    }
+    const cmd = [s.command, s.entrypoint].flat().filter(Boolean).join(' ')
+    // requirepass: o redis do Ghostfolio levava a senha antiga no command depois
+    // que o app passou a usar a gerada, e o app nao conectaria.
+    const flag = /(password|passwd|requirepass|auth.?code|token|secret)[=\s]+([^\s"']+)/i.exec(cmd)
+    if (flag && !flag[2].startsWith('$'))
+      p.P3.push(`${nomeSvc}: segredo literal no command (${flag[1]}); use \${NOME} de x-roqueos.gerar`)
   }
+  for (const nome of declaradas)
+    if (!usadas.has(nome)) p.P3.push(`x-roqueos.gerar.${nome} declarado e nunca usado`)
 
   // P4 — configuração
   p.P4 = []

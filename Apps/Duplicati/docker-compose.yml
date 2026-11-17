@@ -4,7 +4,12 @@ services:
     environment:
       PGID: '1000'
       PUID: '1000'
-      TZ: Europe/London
+      TZ: $TZ
+      # A 2.1 recusa subir sem a chave que cifra o banco de configuracao, e sem
+      # senha da interface gera uma aleatoria que so aparece no log (boot do CI
+      # de 17/11/2026: "Missing encryption key").
+      SETTINGS_ENCRYPTION_KEY: ${SETTINGS_ENCRYPTION_KEY}
+      DUPLICATI__WEBSERVICE_PASSWORD: ${DUPLICATI_SENHA}
     image: linuxserver/duplicati:2.1.0
     deploy:
       resources:
@@ -101,4 +106,15 @@ x-casaos:
   port_map: '8200'
   scheme: http
 x-roqueos:
+  gerar:
+    SETTINGS_ENCRYPTION_KEY:
+      formato: hex
+      tamanho: 64
+    DUPLICATI_SENHA:
+      formato: senha
+      tamanho: 24
+      mostrar: true
+      descricao:
+        en_us: Password of the web interface
+        pt_br: Senha da interface web
   mountShared: true

@@ -29,7 +29,7 @@ _Nenhum._
 | ------------ | --------------------------------------------- | --------- |
 | domain       | cloud\\.example\\.com                         | collabora |
 | username     | admin                                         | collabora |
-| password     | change-me-on-first-boot                       | collabora |
+| password     | ${PASSWORD}                                   | collabora |
 | extra_params | --o:ssl.enable=false --o:ssl.termination=true | collabora |
 
 ## Primeiro acesso
@@ -38,7 +38,7 @@ Depois de instalar, abra `http://<endereço-do-servidor>:9980/`.
 
 - ANTES DO PRIMEIRO BOOT:
 - 1. SUBSTITUA `domain` (regex) com o host Nextcloud/ownCloud escapado (ex: `nextcloud\\.example\\.com`).
-- 2. SUBSTITUA `password` do console admin em /browser/dist/admin/admin.html.
+- 2. A senha do console admin (/browser/dist/admin/admin.html, usuário admin) é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 - 3. No admin do Nextcloud: instale o app "Nextcloud Office", configure URL do Collabora para http://SEU_IP:9980.
 
 ### Por que este app pede privilégio

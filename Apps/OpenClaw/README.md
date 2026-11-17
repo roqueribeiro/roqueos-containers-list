@@ -27,11 +27,11 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável               | Valor padrão   | Serviço  |
-| ---------------------- | -------------- | -------- |
-| HOME                   | /home/node     | openclaw |
-| TERM                   | xterm-256color | openclaw |
-| OPENCLAW_GATEWAY_TOKEN | casaos         | openclaw |
+| Variável               | Valor padrão              | Serviço  |
+| ---------------------- | ------------------------- | -------- |
+| HOME                   | /home/node                | openclaw |
+| TERM                   | xterm-256color            | openclaw |
+| OPENCLAW_GATEWAY_TOKEN | ${OPENCLAW_GATEWAY_TOKEN} | openclaw |
 
 ## Primeiro acesso
 

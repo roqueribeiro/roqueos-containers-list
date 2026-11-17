@@ -65,3 +65,10 @@ describe('argsCurl', () => {
     expect(a[a.indexOf('--retry-max-time') + 1]).toBe('15')
   })
 })
+
+describe('argsCurl e o arquivo de saida', () => {
+  it('nunca escreve em /dev/null: na segunda tentativa o curl trunca a saida e sai com 23', () => {
+    const a = argsCurl('http://x/', 60000)
+    expect(a[a.indexOf('-o') + 1]).not.toBe('/dev/null')
+  })
+})

@@ -49,11 +49,11 @@ Onde os dados deste app ficam no seu servidor.
 | NODE_ENV             | production                                                   | blinko          |
 | NEXTAUTH_URL         | http://localhost:1111                                        | blinko          |
 | NEXT_PUBLIC_BASE_URL | http://localhost:1111                                        | blinko          |
-| NEXTAUTH_SECRET      | 22PhaGVvvBTEC5E5G+U+5O1xqdmuzZKzjLeDMvdvB7I=                 | blinko          |
-| DATABASE_URL         | postgresql://postgres:JWD9bxUR7Um9PaGg7FQZ@blinko-postgres:5 | blinko          |
+| NEXTAUTH_SECRET      | ${NEXTAUTH_SECRET}                                           | blinko          |
+| DATABASE_URL         | postgresql://postgres:${POSTGRES_PASSWORD}@blinko-postgres:5 | blinko          |
 | POSTGRES_DB          | postgres                                                     | blinko-postgres |
 | POSTGRES_USER        | postgres                                                     | blinko-postgres |
-| POSTGRES_PASSWORD    | JWD9bxUR7Um9PaGg7FQZ                                         | blinko-postgres |
+| POSTGRES_PASSWORD    | ${POSTGRES_PASSWORD}                                         | blinko-postgres |
 | TZ                   | $TZ                                                          | blinko-postgres |
 
 ## Primeiro acesso

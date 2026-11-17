@@ -30,21 +30,18 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-_Nenhum._
-
+| Variável               | Valor padrão          | Serviço           |
+| ---------------------- | --------------------- | ----------------- |
+| INITIAL_ADMIN_EMAIL    | admin@example.com     | nginxproxymanager |
+| INITIAL_ADMIN_PASSWORD | ${NPM_ADMIN_PASSWORD} | nginxproxymanager |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `https://<endereço-do-servidor>:81/`.
 
-- ⚠️ Warning!
-- This is a technical app, please make sure you know what you are doing.
-- Nginx Proxy Manager occupies ports 80 and 443 by default for built-in Nginx use. It occupies port 81 for the admin page.
-- Please change the RoqueOS WebUI port to a port other than 80/81/443. And pay attention to whether the ports conflict with other apps. Otherwise, it may cause your RoqueOS to run abnormally.
-- Default Administrator User
-- | Username | Password |
-- | -------- | -------- |
-- | `admin@example.com` | `changeme` |
+- Atenção: este é um app técnico.
+- O Nginx Proxy Manager usa as portas 80 e 443 para o Nginx embutido, e a 81 para a página de administração. Troque a porta da interface do RoqueOS para uma que não seja 80, 81 ou 443, e confira se não há conflito com outros apps.
+- Usuário administrador: `admin@example.com`. A senha é gerada pelo RoqueOS para o seu servidor e aparece uma vez, logo depois de instalar: guarde.
 
 ## Imagens
 
