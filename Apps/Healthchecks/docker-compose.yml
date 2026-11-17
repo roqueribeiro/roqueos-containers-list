@@ -7,26 +7,15 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
-      - SITE_ROOT=http://[YOUR_CASAOS_IP]
+      - TZ=$TZ
+      - SITE_ROOT=http://localhost:8000
       - SITE_NAME="RoqueOS HealthChecks"
       - SUPERUSER_EMAIL=user@example.com
       - SUPERUSER_PASSWORD=8a4c087a-2652-4d12-a6cc-feeb60e59dd4
-      - ALLOWED_HOSTS=
+      - ALLOWED_HOSTS=*
       - APPRISE_ENABLED=False
-      - CSRF_TRUSTED_ORIGINS=
-      - DEBUG=True
-      - DEFAULT_FROM_EMAIL=
-      - EMAIL_HOST=
-      - EMAIL_PORT=
-      - EMAIL_HOST_USER=
-      - EMAIL_HOST_PASSWORD=
-      - EMAIL_USE_TLS=
-      - INTEGRATIONS_ALLOW_PRIVATE_IPS=
-      - PING_EMAIL_DOMAIN=
-      - RP_ID=
+      - DEBUG=False
       - SECRET_KEY="b2ea4094-c950-4890-b85f-301d8a777af2"
-      - SITE_LOGO_URL=
     volumes:
       - /DATA/AppData/$AppID/config:/config
     ports:
@@ -45,8 +34,9 @@ services:
             en_us: Timezone, e.g. America/Sao_Paulo
         - container: SITE_ROOT
           description:
-            en_US: "Container Variable: SITE_ROOT"
-            en_us: "Container Variable: SITE_ROOT"
+            en_US: Address Healthchecks uses in the links it sends (e-mail, badges)
+            en_us: Address Healthchecks uses in the links it sends (e-mail, badges)
+            pt_br: Endereço que o Healthchecks usa nos links que envia (e-mail, selos)
         - container: SITE_NAME
           description:
             en_us: Connection setting for a service this app depends on
@@ -62,49 +52,13 @@ services:
         - container: APPRISE_ENABLED
           description:
             en_us: Feature switch
-        - container: CSRF_TRUSTED_ORIGINS
-          description:
-            en_US: "Container Variable: CSRF_TRUSTED_ORIGINS"
-            en_us: "Container Variable: CSRF_TRUSTED_ORIGINS"
         - container: DEBUG
           description:
             en_US: "Container Variable: DEBUG"
             en_us: "Container Variable: DEBUG"
-        - container: DEFAULT_FROM_EMAIL
-          description:
-            en_us: Outgoing e-mail setting
-        - container: EMAIL_HOST
-          description:
-            en_us: Outgoing e-mail setting
-        - container: EMAIL_PORT
-          description:
-            en_us: Outgoing e-mail setting
-        - container: EMAIL_HOST_USER
-          description:
-            en_us: Outgoing e-mail setting
-        - container: EMAIL_HOST_PASSWORD
-          description:
-            en_us: "Password: change it before the first boot"
-        - container: EMAIL_USE_TLS
-          description:
-            en_us: Outgoing e-mail setting
-        - container: INTEGRATIONS_ALLOW_PRIVATE_IPS
-          description:
-            en_US: "Container Variable: INTEGRATIONS_ALLOW_PRIVATE_IPS"
-            en_us: "Container Variable: INTEGRATIONS_ALLOW_PRIVATE_IPS"
-        - container: PING_EMAIL_DOMAIN
-          description:
-            en_us: Outgoing e-mail setting
-        - container: RP_ID
-          description:
-            en_US: "Container Variable: RP_ID"
-            en_us: "Container Variable: RP_ID"
         - container: SECRET_KEY
           description:
             en_us: "Secret: generate a long random value, never ship the default"
-        - container: SITE_LOGO_URL
-          description:
-            en_us: Public address the app answers on
       volumes:
         - container: /config
           description:
@@ -139,6 +93,14 @@ x-casaos:
     en_us: Healthchecks
   category: Utilities
   port_map: "8000"
+  tips:
+    before_install:
+      en_us: |
+        Before installing, change SUPERUSER_PASSWORD (the admin login) and SECRET_KEY to values of your own: the defaults in this file are public.
+        The admin user is the SUPERUSER_EMAIL address. SITE_ROOT is the address used in the links Healthchecks sends; set it to your server address if you use e-mail alerts.
+      pt_br: |
+        Antes de instalar, troque SUPERUSER_PASSWORD (a senha do admin) e SECRET_KEY por valores seus: os padrões deste arquivo são públicos.
+        O usuário admin é o e-mail de SUPERUSER_EMAIL. SITE_ROOT é o endereço usado nos links que o Healthchecks envia; ponha o endereço do seu servidor se usar alerta por e-mail.
   scheme: http
 x-roqueos:
   portaCompartilhada: true

@@ -58,10 +58,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                      | No container | Serviço |
-| ---------------------------- | ------------ | ------- |
-| /DATA/AppData/$AppID/project | /project     | hugo    |
-| /DATA/AppData/$AppID/cache   | /cache       | hugo    |
+| No host                      | No container | Serviço      |
+| ---------------------------- | ------------ | ------------ |
+| /DATA/AppData/$AppID/project | /project     | hugo-semente |
+| /DATA/AppData/$AppID/project | /project     | hugo         |
+| /DATA/AppData/$AppID/cache   | /cache       | hugo         |
 
 ## Variáveis de ambiente
 
@@ -76,9 +77,10 @@ Depois de instalar, abra `http://<endereço-do-servidor>:1313/`.
 
 ## Imagens
 
-| Serviço | Imagem                         |
-| ------- | ------------------------------ |
-| hugo    | ghcr.io/gohugoio/hugo:v0.152.2 |
+| Serviço      | Imagem                         |
+| ------------ | ------------------------------ |
+| hugo-semente | ghcr.io/gohugoio/hugo:v0.152.2 |
+| hugo         | ghcr.io/gohugoio/hugo:v0.152.2 |
 
 ## Fonte oficial
 

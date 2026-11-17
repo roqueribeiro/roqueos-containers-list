@@ -21,16 +21,15 @@ Arquiteturas suportadas: amd64, arm64.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                   | No container       | Serviço      |
-| ------------------------- | ------------------ | ------------ |
-| /DATA/AppData/$AppID/data | /label-studio/data | label-studio |
+| No host                   | No container       | Serviço              |
+| ------------------------- | ------------------ | -------------------- |
+| /DATA/AppData/$AppID/data | /semente           | label-studio-semente |
+| /DATA/AppData/$AppID/data | /label-studio/data | label-studio         |
 
 ## Variáveis de ambiente
 
 | Variável | Valor padrão | Serviço      |
 | -------- | ------------ | ------------ |
-| PGID     | $PGID        | label-studio |
-| PUID     | $PUID        | label-studio |
 | TZ       | $TZ          | label-studio |
 
 ## Primeiro acesso
@@ -39,9 +38,10 @@ Depois de instalar, abra `http://<endereço-do-servidor>:3080/`.
 
 ## Imagens
 
-| Serviço      | Imagem                         |
-| ------------ | ------------------------------ |
-| label-studio | heartexlabs/label-studio:1.9.2 |
+| Serviço              | Imagem                          |
+| -------------------- | ------------------------------- |
+| label-studio-semente | heartexlabs/label-studio:1.23.2 |
+| label-studio         | heartexlabs/label-studio:1.23.2 |
 
 ## Fonte oficial
 

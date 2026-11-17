@@ -12,6 +12,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed: os apps que nao subiam no Linux (Goal 30, 2026-11-17)
+
+O boot semanal do CI falhava nos mesmos 16 apps desde setembro, e ninguem olhava. A auditoria de 17/11/2026 confirmou outros restart-loops no codigo upstream. Cada um agora tem conserto ou saiu da loja com motivo.
+
+- **Emby, Emby_Nvidia, Jellyfin e Jellyfin_Nvidia nem criavam o container.** O manifesto entregava `/dev/vchiq`, `/dev/vcsm` e `/dev/video10-12`, que so existem no Raspberry Pi, e o Docker recusa device que o host nao tem. Sai a lista de devices; a transcodificacao por hardware vira passo opcional explicado na ficha.
+- **Glance e Hugo reiniciavam para sempre** porque o instalador entrega a pasta vazia e os dois saem com erro sem configuracao. Cada um ganha uma semente que escreve a configuracao inicial uma vez, o mesmo padrao do Loki e do Prometheus.
+- **Baserow e Healthchecks quebravam ao subir** com `[YOUR_CASAOS_IP]` dentro da URL. O Healthchecks tambem vinha com `DEBUG=True` e `ALLOWED_HOSTS` vazio.
+- **Anaconda3** rodava `conda install` a cada start, sem necessidade: o JupyterLab 4.2.5 ja vem na imagem.
+- **ComfyUI** usava a imagem CUDA e reiniciava em servidor sem placa; passa para a variante `cpu`.
+- **Forgejo perdia o dado ao recriar o container:** montava `/var/lib/gitea`, o layout da imagem rootless, numa imagem rootful que grava em `/data`. Sobe tambem de 9.0.3 (sem suporte) para 15.0.11.
+- **LabelStudio** rodava como uid 1001 sobre uma pasta `root:root`; a P10 dava verde porque o manifesto tinha `PUID`, que a imagem ignora. Ganha uma semente que entrega a pasta ao uid 1001, e sobe de 1.9.2 para 1.23.2.
+- **Siyuan-Note** 3.0.1 ignorava `PUID`; a 3.8.10 respeita.
+- **Readeck** apontava para uma tag que sumiu do registry (0.22.3, MANIFEST_UNKNOWN); vai para 0.23.5. **OpenHands** apontava para um registry que nao resolve mais (`docker.all-hands.dev`); vai para o ghcr.io. **Roundcube** usava a imagem `fpm`, que escuta na 9000, numa ficha que promete a 80; vai para a `1.6.21-apache`.
+- **Sete apps saem da loja ate voltar com conserto** (Gluetun, Twingate, Zigbee2MQTT, MatrixSynapse, Dify, RagFlow, LibrePhotos): cinco precisam de configuracao que a instalacao ainda nao pede, e dois precisam ser reescritos do compose oficial. O motivo e a condicao de volta de cada um estao em [`docs/APOSENTADOS.md`](docs/APOSENTADOS.md). Catalogo 228 para 221, e `UNPINNED_IMAGE_ALLOWLIST` 18 para 16 (saem Dify e RagFlow).
+- **O laboratorio de boot mede certo.** Esperava 45 s fixos pela porta e reprovava app sadio no meio da primeira migracao (2FAuth, Authentik, BookStack, Duplicati); agora tenta a porta por ate 180 s e olha o estado de novo depois que ela responde, para pegar o app que responde e cai. Troca `$PUID`, `$PGID` e `$TZ` como o contrato CasaOS manda (63 manifestos usam `$TZ`), e marca como inconclusivo, e nao como falha, o app de GPU num laboratorio sem placa. `Exited (0)` so conta como sucesso para a semente (servico com `restart: 'no'`): o app principal que sai limpo nao esta de pe.
+
 ### Removed: 21 apps sem upstream saem da loja (Goal 29, 2026-11-17)
 
 - **Catalogo 249 para 228.** A auditoria de 17/11/2026 conferiu, app a app, se o projeto original e a imagem ainda existem. 21 nao passaram: upstream arquivado (FlowiseAi, FileBrowser, MinIO, Overseerr, Readarr, Pingvin-Share, Whoogle, HoloPlay, Maybe), imagem descontinuada (EmulatorJS, Embystat, Snapdrop, Unifi-controller), projeto parado ha anos (ChatbotUI, Focalboard, MineOS, Petio, TaskingAI, Filedrop, Alist-Sync) ou duplicata com nome antigo (Hoarder, que e o Karakeep).

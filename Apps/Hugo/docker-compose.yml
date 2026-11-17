@@ -1,8 +1,26 @@
 name: hugo
 services:
+  # "hugo server" numa pasta sem site sai com erro: restart-loop medido no boot
+  # do CI em 15/11/2026. A semente cria um site vazio na primeira vez e nunca
+  # mais mexe no projeto de quem usa.
+  hugo-semente:
+    image: ghcr.io/gohugoio/hugo:v0.152.2
+    user: "0:0"
+    entrypoint:
+      - /bin/sh
+      - -c
+      - '[ -f /project/hugo.toml ] || [ -f /project/config.toml ] || [ -f /project/hugo.yaml ] || hugo new site /project --force'
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/project
+        target: /project
+    restart: 'no'
   hugo:
     image: ghcr.io/gohugoio/hugo:v0.152.2
     container_name: hugo
+    depends_on:
+      hugo-semente:
+        condition: service_completed_successfully
     deploy:
       resources:
         reservations:

@@ -26,6 +26,12 @@ const APPS = join(RAIZ, 'Apps')
 const EVID = join(RAIZ, '.boot')
 
 const ESPERA_MS = Number(process.env.BOOT_ESPERA_MS || 45000)
+// Quanto tempo a porta da ficha tem para comecar a responder depois que o
+// container ficou de pe. 45 s fixos reprovavam app sadio e lento: na varredura
+// de 15/11/2026 o 2FAuth, o Authentik, o BookStack e o Duplicati estavam no meio
+// da primeira migracao quando o teste desistiu, e o log mostra o servidor
+// subindo logo depois. O usuario espera esse tempo na primeira vez; o teste tambem.
+const HTTP_MS = Number(process.env.BOOT_HTTP_MS || 180000)
 const INTERVALO_MS = 3000
 
 export function hostLinux() {
@@ -45,20 +51,40 @@ function sh(cmd, args, opts = {}) {
 
 // O compose do catalogo usa $AppID. O instalador troca pelo id do app; aqui
 // fazemos o mesmo, para o teste rodar o mesmo texto que o usuario instala.
+//
+// O contrato do CasaOS tem mais tres variaveis de sistema, e 63 manifestos usam
+// $TZ, 42 usam $PUID e $PGID. Sem troca-las o teste subia o Jellyfin com
+// PUID vazio, que nao e o que o usuario recebe.
+export const SISTEMA = { PUID: '1000', PGID: '1000', TZ: 'America/Sao_Paulo' }
+
 export function renderiza(texto, appId) {
-  return texto.replaceAll('$AppID', appId).replaceAll('${AppID}', appId)
+  let t = texto.replaceAll('$AppID', appId).replaceAll('${AppID}', appId)
+  for (const [k, v] of Object.entries(SISTEMA)) {
+    t = t.replaceAll('${' + k + '}', v).replace(new RegExp('\\$' + k + '(?![A-Za-z0-9_])', 'g'), v)
+  }
+  return t
 }
 
-export function veredito(estados) {
+export function veredito(estados, sementes = new Set()) {
   const ruins = estados.filter((s) => {
     if (/Restarting/i.test(s.status) || s.restarts > 0) return true
     if (s.state === 'running') return false
     // Serviço de semente termina e fica assim de propósito: ele copia o
     // arquivo de configuração que a imagem traz para dentro do bind vazio que o
-    // instalador criou, e sai. Sair com 0 é o sucesso dele.
-    return !/Exited \(0\)/.test(s.status)
+    // instalador criou, e sai. Sair com 0 é o sucesso dele, e SÓ dele: o app
+    // que sai limpo não está de pé, mesmo com código 0.
+    return !(sementes.has(s.service) && /Exited \(0\)/.test(s.status))
   })
   return { ok: ruins.length === 0, ruins }
+}
+
+/** Os serviços de semente de um compose: os que declaram restart "no". */
+export function sementesDe(compose) {
+  return new Set(
+    Object.entries(compose?.services || {})
+      .filter(([, s]) => String(s?.restart ?? '') === 'no')
+      .map(([nome]) => nome),
+  )
 }
 
 // O teste NUNCA escreve em /DATA. O caminho do bind e reescrito para dentro de
@@ -120,6 +146,13 @@ export const LIMITE_DO_LABORATORIO = [
   { re: /operation not permitted.*rlimit/i, motivo: 'laboratório não permite levantar rlimit' },
   { re: /no space left on device/i, motivo: 'disco do laboratório acabou durante o pull' },
   { re: /toomanyrequests|rate limit/i, motivo: 'registry recusou por limite de pull' },
+  // App de GPU (as variantes _Nvidia) pede o driver da NVIDIA, e o runner do
+  // GitHub nao tem placa. Isso diz que o laboratorio nao tem GPU, nao que o app
+  // esta quebrado; quem prova esses apps e uma maquina com placa.
+  {
+    re: /could not select device driver "nvidia"|unknown or invalid runtime name: nvidia|nvidia-container-cli/i,
+    motivo: 'laboratório sem GPU NVIDIA',
+  },
   // Um proxy que intercepta TLS envenena qualquer app que busque algo ao subir.
   // Isso nao acontece na rede de casa de ninguem: e o laboratorio, nao o app.
   {
@@ -189,6 +222,22 @@ function ipDoContainer(projeto, servico) {
   return null
 }
 
+// A pergunta a porta: tenta de novo a cada 5 s ate o prazo, porque app lento na
+// primeira subida e app sadio. O prazo e o mesmo para todos, nunca por app: um
+// prazo por app viraria o jeito de esconder app que nao sobe.
+export function argsCurl(url, prazoMs) {
+  const segundos = Math.max(15, Math.round(prazoMs / 1000))
+  return [
+    '-s', '-k', '-o', '/dev/null', '-w', '%{http_code}',
+    '--max-time', '10',
+    '--retry', String(Math.ceil(segundos / 5)),
+    '--retry-delay', '5',
+    '--retry-max-time', String(segundos),
+    '--retry-all-errors',
+    url,
+  ]
+}
+
 export function respondeNaPorta(projeto, alvo) {
   if (!alvo) return { medido: false, motivo: 'manifesto nao declara porta principal' }
   const end = ipDoContainer(projeto, alvo.servico)
@@ -197,9 +246,7 @@ export function respondeNaPorta(projeto, alvo) {
   try {
     const codigo = sh('docker', [
       'run', '--rm', '--network', end.rede, 'curlimages/curl:8.11.1',
-      '-s', '-k', '-o', '/dev/null', '-w', '%{http_code}',
-      '--max-time', '12', '--retry', '3', '--retry-delay', '3', '--retry-all-errors',
-      url,
+      ...argsCurl(url, HTTP_MS),
     ]).trim()
     return { medido: true, ok: codigo !== '000', codigo, url }
   } catch (e) {
@@ -273,11 +320,12 @@ export function testa(app) {
       return res
     }
 
+    const sementes = sementesDe(yaml.load(texto))
     let v = { ok: false, ruins: [] }
     const limite = Date.now() + ESPERA_MS
     for (;;) {
       res.servicos = estados(projeto)
-      v = veredito(res.servicos)
+      v = veredito(res.servicos, sementes)
       if (Date.now() > limite) break
       espera(INTERVALO_MS)
     }
@@ -290,6 +338,13 @@ export function testa(app) {
         res.ok = false
         res.etapa = 'porta'
         res.erro = `container de pe, mas ${res.http.url} nao respondeu (codigo ${res.http.codigo})\n${logs(projeto, alvo.servico)}`
+      }
+      // Olha o estado de novo depois da porta. App que responde e cai logo em
+      // seguida (o Activepieces em 15/11 respondeu e reiniciou) nao esta de pe.
+      if (res.ok) {
+        res.servicos = estados(projeto)
+        v = veredito(res.servicos, sementes)
+        res.ok = v.ok
       }
     }
     if (!v.ok) {

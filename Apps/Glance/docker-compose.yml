@@ -1,7 +1,43 @@
 name: glance
 services:
+  # Sem glance.yml o Glance sai com erro e o restart o religa para sempre:
+  # restart-loop medido no boot do CI em 15/11/2026. O instalador cria o bind
+  # vazio, entao a semente escreve uma pagina inicial uma vez e nunca mais.
+  glance-semente:
+    image: glanceapp/glance:v0.7.4
+    user: "0:0"
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        [ -f /semente/glance.yml ] || cat > /semente/glance.yml <<'YML'
+        pages:
+          - name: Home
+            columns:
+              - size: small
+                widgets:
+                  - type: calendar
+              - size: full
+                widgets:
+                  - type: clock
+                    hour-format: 24h
+                  - type: bookmarks
+                    groups:
+                      - title: RoqueOS
+                        links:
+                          - title: Glance docs
+                            url: https://github.com/glanceapp/glance/blob/main/docs/configuration.md
+        YML
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID
+        target: /semente
+    restart: 'no'
   glance:
     image: glanceapp/glance:v0.7.4
+    depends_on:
+      glance-semente:
+        condition: service_completed_successfully
     deploy:
       resources:
         reservations:
@@ -11,7 +47,7 @@ services:
       - target: 8080
         published: '8106'
         protocol: tcp
-    restart: always
+    restart: unless-stopped
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID

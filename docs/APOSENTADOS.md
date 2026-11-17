@@ -10,6 +10,22 @@ Cada linha registra a data, o motivo, a evidência que sustentou a decisão e o
 que instalar no lugar. O manifesto antigo continua no histórico do git, no
 commit anterior ao da remoção.
 
+Há dois tipos de saída. **Aposentado** é definitivo: o projeto acabou.
+**Fora da loja até voltar** é temporário: o projeto está vivo, mas o app não sobe
+com um clique do jeito que está, e volta quando o conserto abaixo estiver feito.
+
+## Fora da loja até voltar (Goal 30, 17/11/2026)
+
+| App | Por que não sobe com um clique | Evidência | Volta quando |
+| --- | --- | --- | --- |
+| Gluetun | Sem as credenciais do provedor de VPN o container sai com erro e reinicia para sempre | boot do CI em 15/11/2026: `gluetun: Restarting (1)` | a instalação pedir provedor e credenciais antes de subir |
+| Twingate | Sem o token da rede Twingate o conector não sobe; a tag `:1` ainda era flutuante | manifesto com `TWINGATE_ACCESS_TOKEN: ""` | a instalação pedir o token, com a imagem fixada em versão exata |
+| Zigbee2MQTT | Precisa de um adaptador Zigbee no USB e de um broker MQTT; a configuração padrão aponta para `mqtt://localhost` e `/dev/ttyACM0` | configuração padrão da imagem | a instalação pedir o adaptador e o broker |
+| MatrixSynapse | O nome do servidor é escolhido no primeiro boot e não muda depois; com o padrão `matrix.example.com` a instalação nasce errada. Sem `homeserver.yaml` a imagem também se recusa a subir | `docker/start.py` do Synapse: "no longer supports generating a config file on-the-fly" | a instalação pedir o domínio e gerar a configuração com Postgres |
+| Dify | Manifesto preso na 0.12.1 (o upstream está na 1.19), com semente de terceiro só amd64 e o `ssrf_proxy` reiniciando | boot do CI em 15/11/2026: `ssrf_proxy: Restarting (1)` | o manifesto for reescrito a partir do compose oficial 1.x |
+| RagFlow | Pede uns 16 GB de RAM, sobe Elasticsearch e OpenSearch juntos, usa espelho só amd64 na v0.21.1 (o upstream está na v1.0.0) e publica o banco no host com a senha padrão | `.boot/RagFlow.json`: `ragflow-es01: Restarting (137)` | o manifesto for reescrito a partir do compose oficial |
+| LibrePhotos | O manifesto só tem o backend: a porta da ficha cai num serviço que escuta em outra porta, sem frontend nem proxy | entrypoint do `librephotos-docker`: o backend escuta em 8001 | o manifesto trouxer frontend, proxy e banco do compose oficial |
+
 ## Goal 29, 17/11/2026 (21 apps, catálogo 249 para 228)
 
 Evidência levantada em 17/11/2026 por consulta de leitura à API do GitHub e aos

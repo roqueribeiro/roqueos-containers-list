@@ -1,7 +1,10 @@
 name: comfyui
 services:
   comfyui:
-    image: yanwk/comfyui-boot:cu126-megapak
+    # A imagem cu126 exige placa NVIDIA e reiniciava sem parar em servidor sem
+    # GPU (boot do CI em 15/11/2026). A variante cpu sobe em qualquer servidor
+    # amd64; quem tem placa troca a imagem pela cu126 depois.
+    image: yanwk/comfyui-boot:cpu-20261116
     deploy:
       resources:
         reservations:
@@ -11,7 +14,7 @@ services:
       - target: 8188
         published: '8188'
         protocol: tcp
-    restart: always
+    restart: unless-stopped
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/storage
@@ -50,13 +53,13 @@ x-casaos:
   tips:
     before_install:
       en_us: |
-        REQUIRES Nvidia GPU passthrough — install `nvidia-container-toolkit` on the host first, then add `runtime: nvidia` and `deploy.resources.reservations.devices` to this compose.
-        First boot downloads ~6 GB of base SD models — be patient. Custom workflows can be loaded from the web UI's "Load" button.
-        ComfyUI Manager (community node manager) is included in this image — install custom node packs from the UI.
+        This version runs on the CPU, so it installs on any amd64 server. Image generation on the CPU is slow: minutes per image.
+        With an NVIDIA card and the NVIDIA Container Toolkit on the server, switch the image to yanwk/comfyui-boot:cu126-megapak and give the container the GPU.
+        First use downloads the base models (several GB). ComfyUI Manager comes in the image, so custom nodes install from the UI.
       pt_br: |
-        EXIGE GPU Nvidia com passthrough — instale `nvidia-container-toolkit` no host primeiro, depois adicione `runtime: nvidia` e `deploy.resources.reservations.devices` neste compose.
-        O primeiro boot baixa ~6 GB de modelos base SD — seja paciente. Workflows custom podem ser carregados pelo botão "Load" da UI.
-        ComfyUI Manager (gerenciador comunitário de nodes) já vem incluso nesta imagem — instale packs customizados pela UI.
+        Esta versão roda na CPU, então instala em qualquer servidor amd64. Gerar imagem na CPU é lento: minutos por imagem.
+        Com placa NVIDIA e o NVIDIA Container Toolkit no servidor, troque a imagem por yanwk/comfyui-boot:cu126-megapak e entregue a GPU ao container.
+        O primeiro uso baixa os modelos base (vários GB). O ComfyUI Manager vem na imagem, então nós customizados instalam pela interface.
   title:
     en_us: ComfyUI
   index: /

@@ -1,12 +1,6 @@
 name: emby
 services:
   emby:
-    devices:
-      - /dev/dri:/dev/dri
-      - /dev/vchiq:/dev/vchiq
-      - /dev/video10:/dev/video10
-      - /dev/video11:/dev/video11
-      - /dev/video12:/dev/video12
     environment:
       PGID: "1000"
       PUID: "1000"
@@ -563,7 +557,12 @@ x-casaos:
     ru_ru: Emby объединяет ваши личные видео, музыку, фотографии и прямое телевидение.
     ja_jp: Embyは個人ビデオ、音楽、写真、ライブテレビをまとめます。
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/thumbnail.png
-  tips: {}
+  tips:
+    before_install:
+      en_us: |
+        Hardware transcoding is off by default, so the app installs on any server. To use an Intel or AMD GPU, add the device /dev/dri to the container after installing. On a Raspberry Pi, software transcoding is the supported path.
+      pt_br: |
+        A transcodificação por hardware vem desligada, para o app instalar em qualquer servidor. Para usar a GPU Intel ou AMD, adicione o dispositivo /dev/dri ao container depois de instalar. No Raspberry Pi, o caminho suportado é a transcodificação por software.
   title:
     en_US: Emby
     en_us: Emby

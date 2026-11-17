@@ -31,3 +31,15 @@ describe('inconclusivo', () => {
     expect(inconclusivo('')).toBe(null)
   })
 })
+
+describe('inconclusivo: GPU', () => {
+  it('nao acusa a variante _Nvidia quando o laboratorio nao tem placa', () => {
+    const log = 'Error response from daemon: could not select device driver "nvidia" with capabilities: [[gpu]]'
+    expect(inconclusivo(log)).toMatch(/GPU/)
+  })
+
+  it('device de Raspberry ausente continua sendo falha do manifesto, nao do laboratorio', () => {
+    const log = 'error gathering device information while adding custom device "/dev/vchiq": no such file or directory'
+    expect(inconclusivo(log)).toBeNull()
+  })
+})

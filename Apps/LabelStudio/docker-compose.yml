@@ -1,11 +1,27 @@
 name: label-studio
 services:
+  # A imagem roda como uid 1001 e ignora PUID. O instalador cria o bind como
+  # root:root 0755, e o Label Studio nao consegue escrever o banco: a P10 dava
+  # verde porque o manifesto tinha PUID. A semente entrega a pasta ao uid 1001.
+  label-studio-semente:
+    image: heartexlabs/label-studio:1.23.2
+    user: "0:0"
+    entrypoint:
+      - /bin/sh
+      - -c
+      - chown -R 1001:0 /semente
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /semente
+    restart: 'no'
   label-studio:
+    depends_on:
+      label-studio-semente:
+        condition: service_completed_successfully
     environment:
-      PGID: $PGID
-      PUID: $PUID
       TZ: $TZ
-    image: heartexlabs/label-studio:1.9.2
+    image: heartexlabs/label-studio:1.23.2
     deploy:
       resources:
         reservations:

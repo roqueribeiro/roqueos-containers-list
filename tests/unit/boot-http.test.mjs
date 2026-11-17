@@ -2,7 +2,7 @@
 // dentro, ou escutando em lugar nenhum. Estes casos travam a escolha da porta
 // que o teste vai bater, que e a mesma que a ficha da loja promete ao usuario.
 import { describe, it, expect } from 'vitest'
-import { alvoHttp } from '../../scripts/boot-container.mjs'
+import { alvoHttp, argsCurl } from '../../scripts/boot-container.mjs'
 
 const compose = (extra = {}, xcasaos = {}) => ({
   services: {
@@ -47,5 +47,21 @@ describe('alvoHttp', () => {
     const c = compose()
     c.services.db.ports = [{ target: 5432, published: '5432' }]
     expect(alvoHttp(c).servico).toBe('app')
+  })
+})
+
+describe('argsCurl', () => {
+  it('tenta a porta ate o prazo, de 5 em 5 s, e nao para no primeiro 000', () => {
+    const a = argsCurl('http://10.0.0.2:8000/', 180000)
+    expect(a.at(-1)).toBe('http://10.0.0.2:8000/')
+    expect(a[a.indexOf('--retry-max-time') + 1]).toBe('180')
+    expect(a[a.indexOf('--retry-delay') + 1]).toBe('5')
+    expect(Number(a[a.indexOf('--retry') + 1])).toBe(36)
+    expect(a).toContain('--retry-all-errors')
+  })
+
+  it('nunca encolhe o prazo abaixo de 15 s', () => {
+    const a = argsCurl('http://x/', 1000)
+    expect(a[a.indexOf('--retry-max-time') + 1]).toBe('15')
   })
 })

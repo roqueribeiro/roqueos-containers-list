@@ -27,13 +27,15 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável           | Valor padrão                 | Serviço |
-| ------------------ | ---------------------------- | ------- |
-| BASEROW_PUBLIC_URL | http://[YOUR_CASAOS_IP]:7350 | app     |
+| Variável           | Valor padrão          | Serviço |
+| ------------------ | --------------------- | ------- |
+| BASEROW_PUBLIC_URL | http://localhost:7350 | app     |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:7350/`.
+
+- Para abrir o Baserow de outro aparelho, troque BASEROW_PUBLIC_URL pelo endereço do seu servidor (por exemplo http://192.168.0.10:7350). Com o valor padrão ele só funciona no próprio servidor.
 
 ## Imagens
 

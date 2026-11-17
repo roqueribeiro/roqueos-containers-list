@@ -48,9 +48,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8092/`.
 
 ## Imagens
 
-| Serviço   | Imagem                                   |
-| --------- | ---------------------------------------- |
-| roundcube | roundcube/roundcubemail:1.6.9-fpm-alpine |
+| Serviço   | Imagem                                |
+| --------- | ------------------------------------- |
+| roundcube | roundcube/roundcubemail:1.6.21-apache |
 
 ## Fonte oficial
 
