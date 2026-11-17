@@ -38,7 +38,7 @@ Onde os dados deste app ficam no seu servidor.
 | MYSQL_DATABASE      | roqueos                | mariadb |
 | MYSQL_USER          | roqueos                | mariadb |
 | MYSQL_PASSWORD      | ${MYSQL_PASSWORD}      | mariadb |
-| REMOTE_SQL          | —                      | mariadb |
+| REMOTE_SQL          | -                      | mariadb |
 
 ## Primeiro acesso
 

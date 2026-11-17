@@ -36,7 +36,7 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8104/`.
 
 - O primeiro boot em http://SEU_IP:8104 pede para criar a senha admin (sem bootstrap por env var — interativo).
 - Após setup do admin, configure backends em Settings → Connect para seu S3/SFTP/Drive/etc.
-- Útil como "painel único" sobre uma combinação MinIO + SFTPGo + Nextcloud existente (também no catálogo).
+- Útil como "painel único" sobre armazenamento S3, SFTPGo e Nextcloud que você já tem (SFTPGo e Nextcloud também estão no catálogo).
 
 ## Imagens
 

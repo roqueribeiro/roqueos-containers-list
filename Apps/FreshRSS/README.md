@@ -29,7 +29,7 @@ Onde os dados deste app ficam no seu servidor.
 
 | Variável | Valor padrão | Serviço  |
 | -------- | ------------ | -------- |
-| TZ       | —            | freshrss |
+| TZ       | -            | freshrss |
 | CRON_MIN | 1,31         | freshrss |
 
 ## Primeiro acesso

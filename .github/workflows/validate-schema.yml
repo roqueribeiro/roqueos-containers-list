@@ -1,7 +1,7 @@
 name: Validate Manifests
 
 # Runs on every push and PR. Fails when any Apps/*/docker-compose.yml drifts
-# from schema/casaos-app.schema.json — the contract that the RoqueOS Server
+# from schema/casaos-app.schema.json, the contract that the RoqueOS Server
 # parser depends on. PRs that add/edit a manifest must keep it green.
 #
 # What triggers a fail:
@@ -55,7 +55,7 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Install validator deps
-        run: npm install --no-save ajv@^8 ajv-formats@^3 js-yaml@^4
+        run: yarn install --frozen-lockfile
       - name: Validate every manifest against the schema
         run: node scripts/validate-manifests.mjs
 
@@ -69,7 +69,7 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Install deps
-        run: npm install --no-save js-yaml@^4
+        run: yarn install --frozen-lockfile
       # O schema prova que o YAML e um compose. Isto prova que o app esta pronto
       # para a loja: as dez premissas do Goal 18, uma por app, com veredito em
       # .revisao/<app>.json. Sai 1 enquanto houver pendente.

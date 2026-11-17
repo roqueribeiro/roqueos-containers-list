@@ -30,7 +30,7 @@ Onde os dados deste app ficam no seu servidor.
 | ------------------- | --------------------- | -------- |
 | APP_URL             | http://localhost:1411 | pocketid |
 | TRUST_PROXY         | false                 | pocketid |
-| MAXMIND_LICENSE_KEY | —                     | pocketid |
+| MAXMIND_LICENSE_KEY | -                     | pocketid |
 | PUID                | 1000                  | pocketid |
 | PGID                | 1000                  | pocketid |
 

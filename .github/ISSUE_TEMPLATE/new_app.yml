@@ -1,0 +1,61 @@
+name: New app
+description: Suggest an app for the store, or check that it fits before you write the manifest.
+title: "[new app] <App>"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The store is curated. The fit criteria are in [docs/ADDING-AN-APP.md](https://github.com/roqueribeiro/roqueos-containers-list/blob/main/docs/ADDING-AN-APP.md#before-you-start-is-it-a-fit), and [docs/RETIRED.md](https://github.com/roqueribeiro/roqueos-containers-list/blob/main/docs/RETIRED.md) says why an app left, if it did. If you already have the manifest, open a pull request directly.
+
+  - type: input
+    id: name
+    attributes:
+      label: App name
+      placeholder: ExampleApp
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source repository
+      placeholder: https://github.com/example/exampleapp
+    validations:
+      required: true
+
+  - type: input
+    id: image
+    attributes:
+      label: Official image and the version to pin
+      placeholder: example/exampleapp:2.4.1
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: License
+      placeholder: AGPL-3.0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: fit
+    attributes:
+      label: Fit
+      options:
+        - label: The project had a release in the last twelve months and the repository is not archived.
+          required: true
+        - label: The image is published by the project, or by a maintainer with a track record (for example linuxserver.io).
+          required: true
+        - label: It starts without an account, a token, a domain or special hardware filled in first.
+        - label: The image publishes arm64 as well as amd64.
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it belongs in the store
+      description: What it does, for whom, and what the catalog does not cover today.
+    validations:
+      required: true

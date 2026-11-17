@@ -1,0 +1,70 @@
+name: Broken app
+description: An app from the store does not start, keeps restarting, or does not do what its card says.
+title: "[broken] <App>: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. [docs/WHEN-IT-BREAKS.md](https://github.com/roqueribeiro/roqueos-containers-list/blob/main/docs/WHEN-IT-BREAKS.md) lists the failures we already know, with the fix.
+
+        **An exposed secret or a malicious image is a security report**: follow [SECURITY.md](https://github.com/roqueribeiro/roqueos-containers-list/blob/main/SECURITY.md) instead.
+
+  - type: input
+    id: app
+    attributes:
+      label: App
+      description: The folder name under `Apps/`.
+      placeholder: Jellyfin
+    validations:
+      required: true
+
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where did you install it?
+      options:
+        - RoqueOS App Store
+        - A CasaOS-compatible dashboard
+        - docker compose by hand
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: arch
+    attributes:
+      label: Server architecture
+      options:
+        - amd64 (x86_64)
+        - arm64 (Raspberry Pi 4/5, Apple silicon, ARM server)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you expected, and what you saw instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: ps
+    attributes:
+      label: Output of `docker compose ps` (or `docker ps -a`)
+      render: shell
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: The last lines of the log
+      description: Remove passwords, tokens and addresses before pasting.
+      render: shell
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Server OS, Docker version, GPU, what you already tried.

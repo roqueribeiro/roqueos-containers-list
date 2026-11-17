@@ -31,7 +31,7 @@ Onde os dados deste app ficam no seu servidor.
 | ------------------------- | ------------- | ------------ |
 | BACKUP_DIRECTORY          | /updater/data | ddns-updater |
 | BACKUP_PERIOD             | 0             | ddns-updater |
-| CONFIG                    | —             | ddns-updater |
+| CONFIG                    | -             | ddns-updater |
 | HTTP_TIMEOUT              | 10s           | ddns-updater |
 | LISTENING_ADDRESS         | :8000         | ddns-updater |
 | LOG_CALLER                | hidden        | ddns-updater |
@@ -44,7 +44,7 @@ Onde os dados deste app ficam no seu servidor.
 | PUBLICIPV4_HTTP_PROVIDERS | all           | ddns-updater |
 | PUBLICIPV6_HTTP_PROVIDERS | all           | ddns-updater |
 | ROOT_URL                  | /             | ddns-updater |
-| SHOUTRRR_ADDRESSES        | —             | ddns-updater |
+| SHOUTRRR_ADDRESSES        | -             | ddns-updater |
 | UPDATE_COOLDOWN_PERIOD    | 5m            | ddns-updater |
 
 ## Primeiro acesso

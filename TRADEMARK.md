@@ -6,10 +6,10 @@ The **MIT License** that governs the source code in this repository grants you b
 
 The following names and logos are trademarks of **LEVELHARD** (Brazil):
 
-- **RoqueOS** — the name, word mark, and associated logos (including the app icons in `Apps/*/icon.png` when they depict RoqueOS branding).
-- **LEVELHARD** — the company name and logo.
-- **OpenClaw** — the name and logo of the AI agent component.
-- **Roque Code**, **Roqueman**, **Roquebase**, **KaRoque** — product and feature names.
+- **RoqueOS**: the name, word mark, and associated logos (including the app icons in `Apps/*/icon.png` when they depict RoqueOS branding).
+- **LEVELHARD**: the company name and logo.
+- **OpenClaw**: the name and logo of the AI agent component.
+- **Roque Code**, **Roqueman**, **Roquebase**, **KaRoque**: product and feature names.
 
 Formal registration is in progress at the Brazilian Instituto Nacional da Propriedade Industrial (INPI).
 
@@ -18,11 +18,11 @@ Formal registration is in progress at the Brazilian Instituto Nacional da Propri
 - Truthfully refer to RoqueOS and related products in your own writing (news articles, blog posts, technical documentation, README files of compatible tools). Example: "works with RoqueOS", "compatible with RoqueOS Server".
 - Link to <https://roqueos.com.br/> and <https://levelhard.com.br/> in any reasonable context.
 - Use the word "RoqueOS" in commit messages, issue titles, and PR descriptions when genuinely discussing the project.
-- Fork this repository under its current name — the fork itself inherits this trademark policy.
+- Fork this repository under its current name; the fork itself inherits this trademark policy.
 
 ## What you may not do
 
-- Name a fork, derivative, paid service, Docker image, SaaS offering, company, product, mobile app, browser extension, or domain in a way that suggests endorsement by or affiliation with LEVELHARD — for example: "RoqueOS Pro", "RoqueOS Plus", "RoqueOS Cloud by X", "Better RoqueOS".
+- Name a fork, derivative, paid service, Docker image, SaaS offering, company, product, mobile app, browser extension, or domain in a way that suggests endorsement by or affiliation with LEVELHARD, for example: "RoqueOS Pro", "RoqueOS Plus", "RoqueOS Cloud by X", "Better RoqueOS".
 - Use the RoqueOS or LEVELHARD logos in marketing, advertising, or merchandise.
 - Register domains, app-store listings, or social-media handles that contain "RoqueOS" or "LEVELHARD" in a confusing or impersonating way.
 - Modify this repository's content and redistribute it **under the RoqueOS name** as if it were official.
@@ -38,7 +38,7 @@ Include: a description of your intended use, where it will appear, the duration,
 
 ## Enforcement
 
-LEVELHARD reserves the right to pursue reasonable legal remedies to protect these marks, including takedown requests, domain disputes, and, where warranted, litigation. We prefer to resolve issues through friendly conversation first — please reach out.
+LEVELHARD reserves the right to pursue reasonable legal remedies to protect these marks, including takedown requests, domain disputes, and, where warranted, litigation. We prefer to resolve issues through friendly conversation first, please reach out.
 
 ## Attribution
 

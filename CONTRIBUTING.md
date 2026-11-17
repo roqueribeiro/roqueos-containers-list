@@ -1,245 +1,96 @@
 # Contributing to RoqueOS Containers List
 
-Thanks for considering a contribution! This catalog ships **155+ Docker apps** to RoqueOS users with a single click. Quality and security of each manifest matter — the validator and the agents below help keep the bar high.
+*Also available in [Brazilian Portuguese](docs/pt-BR/CONTRIBUTING.md).*
 
-## 📋 Code of Conduct
+Thank you for considering a contribution. The catalog gains from new apps, fixes to apps that broke, better store cards, translations and reports of what does not work.
 
-This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to its terms.
+## Code of Conduct
 
-## 🚀 Quick contribution flow
+This project follows the [Contributor Covenant 2.1](CODE_OF_CONDUCT.md). By taking part you agree to it.
+
+## Found a vulnerability?
+
+Do not open a public issue. Follow [SECURITY.md](SECURITY.md).
+
+## The project's rule
+
+**An app is in the store because something proved it works, not because its manifest parses.** Every check in this repository exists because a broken app once passed the checks before it. A pull request that makes a check weaker, grows an allowlist or skips a premise to turn the CI green is sent back, even when the app is right.
+
+## Ways to contribute
+
+| You want to | Do this |
+| --- | --- |
+| Suggest an app | open a **New app** issue; the fit criteria are in [docs/ADDING-AN-APP.md](docs/ADDING-AN-APP.md) |
+| Add an app | follow [docs/ADDING-AN-APP.md](docs/ADDING-AN-APP.md) step by step |
+| Report an app that does not start or does not work | open a **Broken app** issue; [docs/WHEN-IT-BREAKS.md](docs/WHEN-IT-BREAKS.md) may already have the fix |
+| Report a bug in the tooling (a false positive, a crash) | open a **Bug report** issue |
+| Improve a store card or a translation | edit the manifest, then `yarn readme --app <App>` |
+| Propose an app for retirement | open a **Broken app** issue with the evidence (archived repository, image gone, last release date) |
+
+## Development setup
+
+Node 24 (the version in [`.nvmrc`](.nvmrc)) and Yarn. **Yarn only**: no `npm`, no `npx`, no `package-lock.json`.
 
 ```bash
-# 1. Fork + clone
-git clone https://github.com/<you>/roqueos-containers-list.git
+git clone https://github.com/roqueribeiro/roqueos-containers-list.git
 cd roqueos-containers-list
-
-# 2. Install validator dependencies (one-time)
 yarn install
+```
 
-# 3. Add your app
-mkdir -p Apps/<AppName>
-# ... edit Apps/<AppName>/docker-compose.yml + add icon.png + screenshot-1.png
+The checks a pull request must pass:
 
-# 4. Validate locally (CI runs this — must be green)
+```bash
 yarn validate
-
-# 5. Auto-fix what can be (scheme, mountShared, main on single-service)
-yarn fix:dry             # preview
-yarn fix                 # apply
-
-# 6. Audit i18n gaps
-yarn audit               # report missing en_US / pt_BR
-
-# 7. Commit + open PR
-git add Apps/<AppName>/
-git commit -m "feat(catalog): add <AppName>"
-git push origin <branch>
+yarn revisao
+yarn test
+yarn docs:check
 ```
 
-## 🛠️ Tooling reference
+On Linux, `yarn boot <App>` starts an app for real. On any other system the pull request runs it on a GitHub Linux runner. Every command is in [docs/REFERENCE.md](docs/REFERENCE.md).
 
-The repo ships **4 Node scripts** (no global installs — `yarn install` once):
+## Conventions
 
-| Command              | Script                                           | Purpose                                                                                  |
-| -------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| `yarn validate`      | `scripts/validate-manifests.mjs`                 | **CI gate.** ajv schema check + cross-field invariants. Fails CI if any manifest drifts. |
-| `yarn fix:dry`       | `scripts/fix-manifests.mjs --dry-run --verbose`  | Preview auto-fixes (scheme, mountShared, main on single-service).                        |
-| `yarn fix`           | `scripts/fix-manifests.mjs`                      | Apply auto-fixes (idempotent).                                                           |
-| `yarn audit`         | `scripts/audit-enrichment.mjs`                   | Report i18n gaps (missing en_US / pt_BR in tagline + description). Read-only.            |
-| `yarn audit:verbose` | same                                             | List every app missing translations.                                                     |
-| `yarn audit:csv`     | same                                             | CSV output (for spreadsheet prioritization).                                             |
-| `yarn rebrand:dry`   | `scripts/rebrand-casaos.mjs --dry-run --verbose` | Preview CasaOS → RoqueOS sweep (when importing apps from upstream).                      |
-| `yarn rebrand`       | `scripts/rebrand-casaos.mjs`                     | Apply rebrand (idempotent).                                                              |
+- **Pinned images**, never `:latest`. Prefer the image the upstream project publishes.
+- **No secret in the manifest.** Declare it in `x-roqueos.gerar` ([docs/ADDING-AN-APP.md](docs/ADDING-AN-APP.md#3-secrets)).
+- **Two languages.** `tagline` and `description` in `en_us` and `pt_br`, the Portuguese written as people in Brazil say it. Other languages the upstream already ships are kept.
+- **`author: RoqueOS Team`** and `developer:` naming the upstream maintainer.
+- **The store card is generated.** Never edit `Apps/<App>/README.md` by hand.
+- **Shared folder.** `x-roqueos.mountShared: true` only for media servers, downloaders, file managers and library managers; add the app to `MOUNT_SHARED_APPS` in [`scripts/fix-manifests.mjs`](scripts/fix-manifests.mjs) too, so `yarn fix` keeps it.
+- **Documentation without dashes.** Markdown under the repository root and `docs/` uses no em dash or en dash; `yarn docs:check` fails on them.
+- **Every number in the documentation comes from the repository.** The counts in the README are checked against `Apps/`, and [docs/QUALITY.md](docs/QUALITY.md) is generated.
 
-### What `yarn validate` enforces
+## Tooling changes
 
-Read [`schema/casaos-app.schema.json`](schema/casaos-app.schema.json) for the full contract. Highlights:
+A change to `scripts/` or `schema/` comes with a test in `tests/unit/` that fails without the change. A new check is introduced with a test that fails when the check is removed. Update [CHANGELOG.md](CHANGELOG.md) and the matching page under `docs/`, in English and in Portuguese.
 
-- `services.*.image` must include `:tag` OR `@sha256:digest`. **Bare names AND `:latest` are rejected** by the validator. A small allowlist (`UNPINNED_IMAGE_ALLOWLIST` in `scripts/validate-manifests.mjs`) grandfathers 21 legacy apps; new contributions cannot use `:latest` and existing entries should migrate to pinned tags or digests over time.
-- `x-casaos.architectures[]` ≥ 1 from enum: `amd64, arm, arm64, 386, mips64le, ppc64le, s390x, riscv64`.
-- `x-casaos.main` references a real service (required when multi-service).
-- `x-casaos.category` from canonical enum (28 values; see schema).
-- `x-casaos.scheme` is `http` or `https`.
-- `x-casaos.port_map` matches a HOST port published by the principal service (or `network_mode: host`).
-- Multi-port principal service requires `port_map` declared.
-- `x-roqueos.mountShared` is strictly boolean.
+A new field in the manifest is a contract with `roqueos-server`: read [docs/HOW-IT-SHIPS.md](docs/HOW-IT-SHIPS.md#a-change-that-crosses-repositories) before using it in an app.
 
-Common error messages and fixes are documented in [`.github/ISSUE_TEMPLATE/new_app.md`](.github/ISSUE_TEMPLATE/new_app.md). For deeper troubleshooting, run with `--verbose`:
+## Importing an app from the CasaOS store
 
 ```bash
-node scripts/validate-manifests.mjs   # default verbose
-```
-
-## 📁 App structure
-
-Each app lives in its own directory under `Apps/`:
-
-```text
-Apps/
-└── MyApp/
-    ├── docker-compose.yml   # Required — accepted: .yml or .yaml
-    ├── icon.png             # Required — 192×192 transparent PNG
-    ├── screenshot-1.png     # Required — at least one (1280×720)
-    ├── screenshot-2.png     # Optional — additional screenshots
-    ├── screenshot-3.png     # Optional
-    └── thumbnail.png        # Optional — 784×442, for featured apps
-```
-
-## 📄 Manifest template
-
-```yaml
-name: myapp # lowercase, alphanumeric + - _
-
-services:
-  myapp:
-    container_name: myapp
-    image: vendor/myapp:1.2.3 # PINNED tag (no :latest, no bare name)
-    restart: unless-stopped
-    ports:
-      - target: 8080 # container port
-        published: "8080" # host port (string)
-        protocol: tcp # tcp | udp (lowercase only)
-    environment:
-      PUID: $PUID # placeholders resolved by the server
-      PGID: $PGID
-      TZ: $TZ
-    volumes:
-      - type: bind
-        source: /DATA/AppData/$AppID/config # standard pattern for persistent config
-        target: /config
-    deploy:
-      resources:
-        reservations:
-          memory: 256M
-
-x-casaos:
-  architectures:
-    - amd64 # check upstream image: docker buildx imagetools inspect <image>
-    - arm64
-  main: myapp # required if multi-service
-  category: Productivity # see CONTRIBUTING.md → Categories
-  scheme: http # http | https
-  port_map: "8080" # required if multi-port (must match `published` above)
-  developer: Upstream Vendor
-  author: RoqueOS Team
-  icon: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MyApp/icon.png
-  screenshot_link:
-    - https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/MyApp/screenshot-1.png
-  tagline:
-    en_US: One-line description (max ~80 chars, no period)
-    pt_BR: Descrição curta de uma linha
-  description:
-    en_US: |
-      Long-form description. What it does, who it's for.
-      Markdown OK — links, lists, code blocks.
-    pt_BR: |
-      Descrição longa traduzida.
-  title:
-    en_US: My App
-  index: /
-
-# RoqueOS extension (opt-in). Set to true ONLY for media servers,
-# downloaders, file managers — apps that benefit from /shared cross-app
-# filesystem access. See README → Tooling.
-x-roqueos:
-  mountShared: false
-```
-
-## ✅ Quality bar (PR checklist)
-
-### Required
-
-- [ ] `yarn validate` passes locally
-- [ ] `icon.png` is 192×192 transparent PNG
-- [ ] At least one `screenshot-1.png` (1280×720)
-- [ ] Image is **pinned** (`:tag` or `@digest`, not `:latest` or bare)
-- [ ] `architectures` matches what the upstream image actually publishes
-- [ ] `category` from the canonical enum
-- [ ] `tagline.en_US` + `description.en_US` present (gates discoverability)
-
-### Encouraged
-
-- [ ] `tagline.pt_BR` + `description.pt_BR` (RoqueOS is BR-first)
-- [ ] `thumbnail.png` if the app deserves featured placement
-- [ ] Default credentials documented in `tips.before_install`
-- [ ] No hardcoded real secrets in `environment:` (use `$PUID`-style placeholders or empty)
-- [ ] Review against [SECURITY.md](SECURITY.md) — no `/var/run/docker.sock` unless app is Portainer-class, no `privileged: true` without inline justification, no bind on system paths (`/`, `/etc`, `/var/lib`)
-
-## 🌍 i18n policy
-
-- **Mandatory**: `en_US` in `tagline` + `description`.
-- **Encouraged**: `pt_BR` (RoqueOS is BR-first; ~89 apps still need pt_BR — sweep by category in batches).
-- **Bonus**: any locale already provided by upstream (es_ES, zh_CN, ja_JP, ko_KR, fr_FR, de_DE, etc.) — keep them.
-- **Don't translate to all 10 RoqueOS UI languages.** Maintenance cost is real; en_US + pt_BR is the realistic target.
-
-Run `yarn audit:verbose` to see the current pt_BR backlog.
-
-## 🐳 Importing an app from upstream CasaOS-AppStore
-
-```bash
-# 1. Copy the directory
 cp -r path/to/CasaOS-AppStore/Apps/<AppName> Apps/
-
-# 2. Rebrand (CasaOS → RoqueOS sweep, idempotent)
 yarn rebrand
-
-# 3. Apply auto-fixes (scheme, mountShared if curated, main if single-service)
 yarn fix
-
-# 4. Validate
 yarn validate
-
-# 5. Audit i18n
-yarn audit
+yarn revisao:app <AppName>
 ```
 
-The `rebrand` script handles **author**, CDN URLs, default credentials, free-text mentions in descriptions/tips. It **does not** touch the `x-casaos:` YAML namespace (that's the parser contract — see [SECURITY.md](SECURITY.md) for what stays preserved).
+`yarn rebrand` rewrites the author, the CDN URLs and mentions in the text; it never touches the `x-casaos` namespace. An imported app still has to close the ten premises like any other.
 
-## 🏷️ Categories
+## Pull request workflow
 
-```
-Utilities, Utility, Media, Gallery, Network, VPN, WEB,
-Developer, Development, Database, Home Automation, HomeAutomation,
-Productivity, Notes, Documents, Storage, Cloud, Backup, File Sync,
-Downloader, Security, AI, Gaming, Games, Communication, Chat,
-Finance, Other
-```
+1. Fork, then branch from `main`.
+2. Keep one subject per pull request: one app, or one tooling change.
+3. Write the title as a [Conventional Commit](https://www.conventionalcommits.org/): `feat(catalog): add <App>`, `fix(<App>): ...`, `docs: ...`, `chore(release): vX.Y.Z`.
+4. Fill in the template, including how you tested and on which architecture.
+5. The CI must be green. A maintainer from [CODEOWNERS](.github/CODEOWNERS) reviews every merge.
 
-Variants (e.g., `Utility` ↔ `Utilities`, `Games` ↔ `Gaming`) are normalized by the server. For new apps, **prefer the plural canonical form** (`Utilities`, `Games`).
+Once merged, the change reaches the RoqueOS store from `main` within a day ([docs/HOW-IT-SHIPS.md](docs/HOW-IT-SHIPS.md)).
 
-## 🌐 `x-roqueos.mountShared` — when to opt in
+## Releasing (maintainers only)
 
-Set `mountShared: true` only when the app benefits from cross-app `/shared` filesystem access:
+Move the **Unreleased** section of the [CHANGELOG](CHANGELOG.md) under the new version, then push a tag `vX.Y.Z`. The `Build AppStore` workflow checks the manifests and publishes `appstore.zip` as a release. The version policy is in [docs/HOW-IT-SHIPS.md](docs/HOW-IT-SHIPS.md#releases).
 
-- **Media servers** — read media from `/shared/media`
-- **Downloaders** — write to `/shared/downloads`
-- **File managers / sync** — explicit shared workspace
-- **\*arr stack** companions — verify links
-- **Game library managers** — read ROMs from `/shared/roms`
+## Trademarks and credit
 
-If you add a new app to one of these categories, also add it to the `MOUNT_SHARED_APPS` set in [`scripts/fix-manifests.mjs`](scripts/fix-manifests.mjs) so future contributors can rely on `yarn fix` to auto-inject the field.
-
-## 📝 Commit style
-
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
-
-- `feat(catalog): add <AppName>`
-- `fix(<App>): correct port_map mismatch`
-- `chore(catalog): rebrand 5 imports from upstream`
-- `docs(contributing): clarify validation flow`
-
-## 🐛 Reporting issues
-
-Use [Issues](https://github.com/roqueribeiro/roqueos-containers-list/issues/new/choose) with the appropriate template:
-
-- 🐛 **Bug Report** — broken manifest, validator false positive
-- 📦 **New App** — suggest adding an app you'd like
-- 🚨 **Security** — for malicious image / supply-chain concerns, see [SECURITY.md](SECURITY.md). **Don't open public issue.**
-
-## 📜 Trademarks
-
-The "RoqueOS" name and logo are trademarks of LEVELHARD. See [TRADEMARK.md](TRADEMARK.md) for usage rules.
-
-## 🙏 Acknowledgments
-
-This catalog format is compatible with [CasaOS-AppStore](https://github.com/IceWhaleTech/CasaOS-AppStore) — credit to **IceWhaleTech** for the original `x-casaos` manifest specification.
+"RoqueOS" and its logo are trademarks of LEVELHARD; see [TRADEMARK.md](TRADEMARK.md). The `x-casaos` manifest format comes from [CasaOS-AppStore](https://github.com/IceWhaleTech/CasaOS-AppStore), by IceWhaleTech.

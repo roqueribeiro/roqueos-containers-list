@@ -31,8 +31,8 @@ _Nenhum._
 | PGID      | $PGID                  | chatgpt-next-web |
 | PUID      | $PUID                  | chatgpt-next-web |
 | TZ        | $TZ                    | chatgpt-next-web |
-| CODE      | —                      | chatgpt-next-web |
-| PROXY_URL | —                      | chatgpt-next-web |
+| CODE      | -                      | chatgpt-next-web |
+| PROXY_URL | -                      | chatgpt-next-web |
 | BASE_URL  | https://api.openai.com | chatgpt-next-web |
 
 ## Primeiro acesso

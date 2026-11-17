@@ -50,7 +50,7 @@ Onde os dados deste app ficam no seu servidor.
 | NEXTAUTH_URL       | http://localhost:14592           | karakeep             |
 | NEXTAUTH_SECRET    | ${NEXTAUTH_SECRET}               | karakeep             |
 | MEILI_MASTER_KEY   | ${MEILI_MASTER_KEY}              | karakeep             |
-| OPENAI_API_KEY     | —                                | karakeep             |
+| OPENAI_API_KEY     | -                                | karakeep             |
 | MEILI_MASTER_KEY   | ${MEILI_MASTER_KEY}              | karakeep-meilisearch |
 | MEILI_NO_ANALYTICS | true                             | karakeep-meilisearch |
 

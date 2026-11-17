@@ -35,8 +35,8 @@ Onde os dados deste app ficam no seu servidor.
 | USER_ID                   | $PUID        | jdownloader2 |
 | GROUP_ID                  | $PGID        | jdownloader2 |
 | TZ                        | $TZ          | jdownloader2 |
-| MYJDOWNLOADER_EMAIL       | —            | jdownloader2 |
-| MYJDOWNLOADER_PASSWORD    | —            | jdownloader2 |
+| MYJDOWNLOADER_EMAIL       | -            | jdownloader2 |
+| MYJDOWNLOADER_PASSWORD    | -            | jdownloader2 |
 | MYJDOWNLOADER_DEVICE_NAME | RoqueOS      | jdownloader2 |
 | JDOWNLOADER_HEADLESS      | 0            | jdownloader2 |
 

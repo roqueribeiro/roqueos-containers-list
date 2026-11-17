@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "private": true,
-  "description": "Tooling for the RoqueOS Containers List catalog. The catalog itself is the Apps/ directory — these scripts validate and migrate manifests.",
+  "description": "Tooling for the RoqueOS Containers List catalog. The catalog itself is the Apps/ directory; these scripts validate, review, boot and document the manifests.",
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-manifests.mjs",
@@ -25,7 +25,10 @@
     "uid": "node scripts/uid-imagem.mjs",
     "uid:atualiza": "node scripts/uid-imagem.mjs --atualiza",
     "enrichment": "node scripts/audit-enrichment.mjs",
-    "readme": "node scripts/gera-readme.mjs"
+    "readme": "node scripts/gera-readme.mjs",
+    "docs:check": "node scripts/check-docs.mjs",
+    "docs:quality": "node scripts/gera-qualidade.mjs",
+    "evidencia": "node scripts/evidencia-boot.mjs"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^4.1.5",
