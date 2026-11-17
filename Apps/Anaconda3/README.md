@@ -37,7 +37,7 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8888/`.
 
-- After installation, please check the token in the container log (Settings - TopRight - Terminal and Logs - Logs).
+- Depois de instalar, o token de acesso aparece no log do container.
 
 ## Imagens
 

@@ -1,7 +1,7 @@
 name: roundcube
 services:
   roundcube:
-    image: roundcube/roundcubemail:1.6.9-fpm-alpine
+    image: roundcube/roundcubemail:1.6.21-apache
     deploy:
       resources:
         reservations:
@@ -11,7 +11,7 @@ services:
       - target: 80
         published: '8092'
         protocol: tcp
-    restart: always
+    restart: unless-stopped
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/www

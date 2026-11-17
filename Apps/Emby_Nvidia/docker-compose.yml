@@ -1,12 +1,6 @@
 name: emby-nvidia
 services:
   emby:
-    devices:
-      - /dev/dri:/dev/dri
-      - /dev/vchiq:/dev/vchiq
-      - /dev/video10:/dev/video10
-      - /dev/video11:/dev/video11
-      - /dev/video12:/dev/video12
     environment:
       PGID: "1000"
       PUID: "1000"
@@ -113,7 +107,12 @@ x-casaos:
     sv_se: TA DINA MEDIA VAR SOM HELST MED EMBY
     uk_ua: ВЗЯТИ СЕБЕ МЕДІА ВСЮДИ З EMBY
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Emby/thumbnail.png
-  tips: {}
+  tips:
+    before_install:
+      en_us: |
+        This variant needs an NVIDIA graphics card and the NVIDIA Container Toolkit on the server. Without them the container does not start; install the regular version instead.
+      pt_br: |
+        Esta versão precisa de placa de vídeo NVIDIA e do NVIDIA Container Toolkit no servidor. Sem isso o container não sobe; instale a versão comum.
   title:
     en_us: Emby(Nvidia GPU)
   index: /

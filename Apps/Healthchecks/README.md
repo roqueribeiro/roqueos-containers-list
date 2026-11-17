@@ -28,34 +28,26 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                       | Valor padrão                           | Serviço      |
-| ------------------------------ | -------------------------------------- | ------------ |
-| PUID                           | 1000                                   | healthchecks |
-| PGID                           | 1000                                   | healthchecks |
-| TZ                             | Etc/UTC                                | healthchecks |
-| SITE_ROOT                      | http://[YOUR_CASAOS_IP]                | healthchecks |
-| SITE_NAME                      | "RoqueOS HealthChecks"                 | healthchecks |
-| SUPERUSER_EMAIL                | user@example.com                       | healthchecks |
-| SUPERUSER_PASSWORD             | 8a4c087a-2652-4d12-a6cc-feeb60e59dd4   | healthchecks |
-| ALLOWED_HOSTS                  | —                                      | healthchecks |
-| APPRISE_ENABLED                | False                                  | healthchecks |
-| CSRF_TRUSTED_ORIGINS           | —                                      | healthchecks |
-| DEBUG                          | True                                   | healthchecks |
-| DEFAULT_FROM_EMAIL             | —                                      | healthchecks |
-| EMAIL_HOST                     | —                                      | healthchecks |
-| EMAIL_PORT                     | —                                      | healthchecks |
-| EMAIL_HOST_USER                | —                                      | healthchecks |
-| EMAIL_HOST_PASSWORD            | —                                      | healthchecks |
-| EMAIL_USE_TLS                  | —                                      | healthchecks |
-| INTEGRATIONS_ALLOW_PRIVATE_IPS | —                                      | healthchecks |
-| PING_EMAIL_DOMAIN              | —                                      | healthchecks |
-| RP_ID                          | —                                      | healthchecks |
-| SECRET_KEY                     | "b2ea4094-c950-4890-b85f-301d8a777af2" | healthchecks |
-| SITE_LOGO_URL                  | —                                      | healthchecks |
+| Variável           | Valor padrão                           | Serviço      |
+| ------------------ | -------------------------------------- | ------------ |
+| PUID               | 1000                                   | healthchecks |
+| PGID               | 1000                                   | healthchecks |
+| TZ                 | $TZ                                    | healthchecks |
+| SITE_ROOT          | http://localhost:8000                  | healthchecks |
+| SITE_NAME          | "RoqueOS HealthChecks"                 | healthchecks |
+| SUPERUSER_EMAIL    | user@example.com                       | healthchecks |
+| SUPERUSER_PASSWORD | 8a4c087a-2652-4d12-a6cc-feeb60e59dd4   | healthchecks |
+| ALLOWED_HOSTS      | *                                      | healthchecks |
+| APPRISE_ENABLED    | False                                  | healthchecks |
+| DEBUG              | False                                  | healthchecks |
+| SECRET_KEY         | "b2ea4094-c950-4890-b85f-301d8a777af2" | healthchecks |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8000/`.
+
+- Antes de instalar, troque SUPERUSER_PASSWORD (a senha do admin) e SECRET_KEY por valores seus: os padrões deste arquivo são públicos.
+- O usuário admin é o e-mail de SUPERUSER_EMAIL. SITE_ROOT é o endereço usado nos links que o Healthchecks envia; ponha o endereço do seu servidor se usar alerta por e-mail.
 
 ## Imagens
 

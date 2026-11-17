@@ -26,23 +26,23 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável | Valor padrão                 | Serviço |
-| -------- | ---------------------------- | ------- |
-| CLI_ARGS | --listen 0.0.0.0 --port 8188 | comfyui |
+| Variável | Valor padrão                       | Serviço |
+| -------- | ---------------------------------- | ------- |
+| CLI_ARGS | --listen 0.0.0.0 --port 8188 --cpu | comfyui |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8188/`.
 
-- EXIGE GPU Nvidia com passthrough — instale `nvidia-container-toolkit` no host primeiro, depois adicione `runtime: nvidia` e `deploy.resources.reservations.devices` neste compose.
-- O primeiro boot baixa ~6 GB de modelos base SD — seja paciente. Workflows custom podem ser carregados pelo botão "Load" da UI.
-- ComfyUI Manager (gerenciador comunitário de nodes) já vem incluso nesta imagem — instale packs customizados pela UI.
+- Esta versão roda na CPU, então instala em qualquer servidor amd64. Gerar imagem na CPU é lento: minutos por imagem.
+- Com placa NVIDIA e o NVIDIA Container Toolkit no servidor, troque a imagem por yanwk/comfyui-boot:cu126-megapak e entregue a GPU ao container.
+- O primeiro uso baixa os modelos base (vários GB). O ComfyUI Manager vem na imagem, então nós customizados instalam pela interface.
 
 ## Imagens
 
-| Serviço | Imagem                           |
-| ------- | -------------------------------- |
-| comfyui | yanwk/comfyui-boot:cu126-megapak |
+| Serviço | Imagem                          |
+| ------- | ------------------------------- |
+| comfyui | yanwk/comfyui-boot:cpu-20261116 |
 
 ## Fonte oficial
 

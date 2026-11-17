@@ -1,13 +1,6 @@
 name: jellyfin-nvidia
 services:
   jellyfin:
-    devices:
-      - /dev/dri:/dev/dri
-      - /dev/vcsm:/dev/vcsm
-      - /dev/vchiq:/dev/vchiq
-      - /dev/video10:/dev/video10
-      - /dev/video11:/dev/video11
-      - /dev/video12:/dev/video12
     environment:
       PGID: $PGID
       PUID: $PUID
@@ -150,7 +143,12 @@ x-casaos:
     sv_se: Lägger dig i centrum av dina medier.
     uk_ua: Помагає вам контролювати вашу медіаінформацію.
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Jellyfin/thumbnail.png
-  tips: {}
+  tips:
+    before_install:
+      en_us: |
+        This variant needs an NVIDIA graphics card and the NVIDIA Container Toolkit on the server. Without them the container does not start; install the regular version instead.
+      pt_br: |
+        Esta versão precisa de placa de vídeo NVIDIA e do NVIDIA Container Toolkit no servidor. Sem isso o container não sobe; instale a versão comum.
   title:
     en_us: Jellyfin(Nvidia GPU)
   index: /

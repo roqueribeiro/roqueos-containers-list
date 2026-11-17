@@ -44,6 +44,8 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8097/`.
 
+- Esta versão precisa de placa de vídeo NVIDIA e do NVIDIA Container Toolkit no servidor. Sem isso o container não sobe; instale a versão comum.
+
 ## Imagens
 
 | Serviço  | Imagem                       |

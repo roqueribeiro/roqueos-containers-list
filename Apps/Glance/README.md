@@ -20,9 +20,10 @@ Arquiteturas suportadas: amd64, arm64, arm.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host              | No container | Serviço |
-| -------------------- | ------------ | ------- |
-| /DATA/AppData/$AppID | /app/config  | glance  |
+| No host              | No container | Serviço        |
+| -------------------- | ------------ | -------------- |
+| /DATA/AppData/$AppID | /semente     | glance-semente |
+| /DATA/AppData/$AppID | /app/config  | glance         |
 
 ## Variáveis de ambiente
 
@@ -40,9 +41,10 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8106/`.
 
 ## Imagens
 
-| Serviço | Imagem                  |
-| ------- | ----------------------- |
-| glance  | glanceapp/glance:v0.7.4 |
+| Serviço        | Imagem                  |
+| -------------- | ----------------------- |
+| glance-semente | glanceapp/glance:v0.7.4 |
+| glance         | glanceapp/glance:v0.7.4 |
 
 ## Fonte oficial
 

@@ -1,7 +1,7 @@
 name: forgejo
 services:
   forgejo:
-    image: codeberg.org/forgejo/forgejo:9.0.3
+    image: codeberg.org/forgejo/forgejo:15.0.11
     deploy:
       resources:
         reservations:
@@ -14,14 +14,14 @@ services:
       - target: 22
         published: '2222'
         protocol: tcp
-    restart: always
+    restart: unless-stopped
+    # A imagem rootful do Forgejo guarda repositorios, banco e app.ini em /data.
+    # O manifesto antigo montava /var/lib/gitea e /etc/gitea, o layout da imagem
+    # rootless: o dado ficava na camada do container e sumia ao recria-lo.
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/data
-        target: /var/lib/gitea
-      - type: bind
-        source: /DATA/AppData/$AppID/config
-        target: /etc/gitea
+        target: /data
       - type: bind
         source: /etc/timezone
         target: /etc/timezone
@@ -44,14 +44,10 @@ services:
             en_us: SSH port for git push/pull (mapped to 2222 host)
             pt_br: Porta SSH para git push/pull (mapeada para 2222 no host)
       volumes:
-        - container: /var/lib/gitea
+        - container: /data
           description:
             en_us: Repositories, attachments, avatars
             pt_br: Repositórios, anexos, avatares
-        - container: /etc/gitea
-          description:
-            en_us: app.ini configuration file
-            pt_br: Arquivo de configuração app.ini
     container_name: forgejo
 x-casaos:
   architectures:

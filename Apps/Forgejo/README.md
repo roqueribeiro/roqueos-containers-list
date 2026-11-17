@@ -22,12 +22,11 @@ Arquiteturas suportadas: amd64, arm64.
 
 Onde os dados deste app ficam no seu servidor.
 
-| No host                     | No container   | Serviço |
-| --------------------------- | -------------- | ------- |
-| /DATA/AppData/$AppID/data   | /var/lib/gitea | forgejo |
-| /DATA/AppData/$AppID/config | /etc/gitea     | forgejo |
-| /etc/timezone               | /etc/timezone  | forgejo |
-| /etc/localtime              | /etc/localtime | forgejo |
+| No host                   | No container   | Serviço |
+| ------------------------- | -------------- | ------- |
+| /DATA/AppData/$AppID/data | /data          | forgejo |
+| /etc/timezone             | /etc/timezone  | forgejo |
+| /etc/localtime            | /etc/localtime | forgejo |
 
 ## Variáveis de ambiente
 
@@ -46,9 +45,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8094/`.
 
 ## Imagens
 
-| Serviço | Imagem                             |
-| ------- | ---------------------------------- |
-| forgejo | codeberg.org/forgejo/forgejo:9.0.3 |
+| Serviço | Imagem                               |
+| ------- | ------------------------------------ |
+| forgejo | codeberg.org/forgejo/forgejo:15.0.11 |
 
 ## Fonte oficial
 

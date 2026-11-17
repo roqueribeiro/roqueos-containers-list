@@ -41,9 +41,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:6806/`.
 
 ## Imagens
 
-| Serviço     | Imagem              |
-| ----------- | ------------------- |
-| siyuan-note | b3log/siyuan:v3.0.1 |
+| Serviço     | Imagem               |
+| ----------- | -------------------- |
+| siyuan-note | b3log/siyuan:v3.8.10 |
 
 ## Fonte oficial
 

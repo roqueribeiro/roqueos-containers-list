@@ -36,7 +36,6 @@ const SCHEMA_PATH = join(ROOT, "schema", "casaos-app.schema.json");
 export const UNPINNED_IMAGE_ALLOWLIST = new Set([
   "AnythingLLM",
   "ArchiveBox",
-  "Dify",
   "DuckDNS",
   "Excalidraw",
   "Firefly",
@@ -44,7 +43,6 @@ export const UNPINNED_IMAGE_ALLOWLIST = new Set([
   "JDownloader2",
   "LibreChat",
   "Pinchflat",
-  "RagFlow",
   "RetroArch",
   "StableDiffusionWebUI",
   "Threadfin",

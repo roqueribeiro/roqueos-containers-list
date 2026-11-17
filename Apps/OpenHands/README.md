@@ -42,10 +42,10 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                        | Valor padrão                                            | Serviço   |
-| ------------------------------- | ------------------------------------------------------- | --------- |
-| SANDBOX_RUNTIME_CONTAINER_IMAGE | docker.all-hands.dev/all-hands-ai/runtime:0.49-nikolaik | openhands |
-| WORKSPACE_MOUNT_PATH            | /DATA/AppData/$AppID/workspace                          | openhands |
+| Variável                        | Valor padrão                                 | Serviço   |
+| ------------------------------- | -------------------------------------------- | --------- |
+| SANDBOX_RUNTIME_CONTAINER_IMAGE | ghcr.io/all-hands-ai/runtime:0.49.1-nikolaik | openhands |
+| WORKSPACE_MOUNT_PATH            | /DATA/AppData/$AppID/workspace               | openhands |
 
 ## Primeiro acesso
 
@@ -53,9 +53,9 @@ Depois de instalar, abra `http://<endereço-do-servidor>:13333/`.
 
 ## Imagens
 
-| Serviço   | Imagem                                           |
-| --------- | ------------------------------------------------ |
-| openhands | docker.all-hands.dev/all-hands-ai/openhands:0.49 |
+| Serviço   | Imagem                                |
+| --------- | ------------------------------------- |
+| openhands | ghcr.io/all-hands-ai/openhands:0.49.1 |
 
 ## Fonte oficial
 

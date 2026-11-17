@@ -47,6 +47,8 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8097/`.
 
+- A transcodificação por hardware vem desligada, para o app instalar em qualquer servidor. Para usar a GPU Intel ou AMD, adicione o dispositivo /dev/dri ao container depois de instalar. No Raspberry Pi, o caminho suportado é a transcodificação por software.
+
 ## Imagens
 
 | Serviço  | Imagem                       |

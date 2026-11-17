@@ -81,3 +81,6 @@ jobs:
         with:
           name: boot
           path: .boot/
+          # .boot/ e pasta oculta: sem isto o upload-artifact@v4 nao enviava nada,
+          # e a evidencia de toda varredura semanal se perdia ("No files were found").
+          include-hidden-files: true

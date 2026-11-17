@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { renderiza, caixa, semPortas, veredito } from '../../scripts/boot-container.mjs'
+import { renderiza, caixa, semPortas, veredito, sementesDe } from '../../scripts/boot-container.mjs'
 
 describe('renderiza', () => {
   it('troca $AppID como o instalador troca', () => {
@@ -9,6 +9,14 @@ describe('renderiza', () => {
   })
   it('entende a forma com chaves', () => {
     expect(renderiza('/DATA/AppData/${AppID}/x', 'loki')).toBe('/DATA/AppData/loki/x')
+  })
+  it('troca as variaveis de sistema do contrato CasaOS: PUID, PGID e TZ', () => {
+    expect(renderiza('PUID: $PUID\nPGID: ${PGID}\nTZ: $TZ', 'jellyfin')).toBe(
+      'PUID: 1000\nPGID: 1000\nTZ: America/Sao_Paulo',
+    )
+  })
+  it('nao mexe em variavel que so comeca igual', () => {
+    expect(renderiza('$TZDATA $PUIDX', 'a')).toBe('$TZDATA $PUIDX')
   })
 })
 
@@ -47,6 +55,27 @@ describe('veredito', () => {
   })
   it('abre quando o container saiu', () => {
     expect(veredito([{ state: 'exited', status: 'Exited (1)', restarts: 0 }]).ok).toBe(false)
+  })
+  it('semente que saiu com 0 e o sucesso dela', () => {
+    const v = veredito(
+      [
+        { service: 'glance-semente', state: 'exited', status: 'Exited (0) 5 seconds ago', restarts: 0 },
+        { service: 'glance', state: 'running', status: 'Up 40 seconds', restarts: 0 },
+      ],
+      new Set(['glance-semente']),
+    )
+    expect(v.ok).toBe(true)
+  })
+  it('o app principal que saiu com 0 nao esta de pe', () => {
+    const v = veredito(
+      [{ service: 'glance', state: 'exited', status: 'Exited (0) 5 seconds ago', restarts: 0 }],
+      new Set(['glance-semente']),
+    )
+    expect(v.ok).toBe(false)
+  })
+  it('acha a semente pelo restart "no"', () => {
+    const c = { services: { s: { restart: 'no' }, app: { restart: 'unless-stopped' }, x: {} } }
+    expect([...sementesDe(c)]).toEqual(['s'])
   })
   // "Up" com contador de reinicio nao e saude: e um laco de falha mais lento.
   it('abre quando esta de pe mas ja reiniciou', () => {
