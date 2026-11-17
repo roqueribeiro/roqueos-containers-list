@@ -136,6 +136,15 @@ ${
     : 'Abra o app pelo ícone no RoqueOS depois de instalar.'
 }
 ${tips.length ? '\n' + tips.map((t) => `- ${t}`).join('\n') + '\n' : ''}${
+    // Goal 34: o login padrao que a imagem cria fica dito na ficha, nao so numa tip.
+    xr.senhaPadraoDaImagem
+      ? `\n> **Login padrão.** ${xr.senhaPadraoDaImagem}\n`
+      : ''
+  }${
+    Object.values(xr.gerar || {}).some((s) => s && s.mostrar)
+      ? '\n> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.\n'
+      : ''
+  }${
     motivos.length
       ? '\n### Por que este app pede privilégio\n\n' +
         motivos.map(([k, v]) => `- \`${k}\`: ${v}`).join('\n') +

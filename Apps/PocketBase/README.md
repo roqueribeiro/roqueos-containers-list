@@ -39,6 +39,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8090/_/`.
 - | ----- | -------- |
 - | `roqueos@admin.local` | `adminpocketbase` |
 
+> **Login padrão.** roqueos@admin.local / adminpocketbase: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app.
+
 ## Imagens
 
 | Serviço    | Imagem                     |

@@ -56,6 +56,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8089/`.
 - 2. Configure APP_URL com a URL pública onde vai acessar (deve ser HTTPS em produção).
 - 3. Credenciais padrão: admin@admin.com / password. TROQUE no primeiro login.
 
+> **Login padrão.** admin@admin.com / password: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app.
+
 ## Imagens
 
 | Serviço      | Imagem                        |

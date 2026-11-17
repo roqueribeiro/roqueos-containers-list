@@ -108,5 +108,6 @@ x-casaos:
   port_map: '8083'
   scheme: http
 x-roqueos:
+  senhaPadraoDaImagem: "admin / admin123: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app."
   portaCompartilhada: true
   mountShared: true

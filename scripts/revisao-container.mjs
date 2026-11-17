@@ -133,6 +133,24 @@ export const NAO_E_SEGREDO = /_(HOST|USER|USERNAME|NAME|EXPIRY|EXPIRES|FILE|PATH
 /** Valores que nao sao segredo mesmo num nome de segredo. */
 export const VALOR_INOFENSIVO = /^(true|false|yes|no|on|off|none|\d+|\/.*|https?:\/\/.*|user_provided)$/i
 export const PLACEHOLDER = /change.?me|replace.?with|replace.?me|your[-_ ]?(secret|password|key|token)|\[YOUR[-_]|<your/i
+/**
+ * Senha padrao fraca escrita numa tip: a credencial que a propria imagem cria no
+ * primeiro boot (Grafana admin/admin, Deluge "deluge", Shiori shiori/gopher). Nao
+ * esta no environment, entao a P3 de segredo nao via, e o gate dava 221/221 com
+ * essas tips (Goal 34). A forma conta: tabela usuario | senha, "Password: x",
+ * password "x" e usuario / senha.
+ */
+const FRACAS = 'admin|admin123|password|changeme|deluge|gopher|casaos|roqueos|root|123456|adminpocketbase|pass|secret|toor|guest'
+export const SENHA_PADRAO_NA_TIP = [
+  new RegExp('\\|\\s*`[^`|]+`\\s*\\|\\s*`(' + FRACAS + ')`\\s*\\|', 'i'),
+  new RegExp('(password|senha|passwort|mot de passe)\\s*[:=]\\s*[`"\']?(' + FRACAS + ')[`"\']?(\\s|$|[.,;)])', 'i'),
+  new RegExp('(password|senha)\\s+[`"\'](' + FRACAS + ')[`"\']', 'i'),
+  new RegExp('\\S+@\\S+\\s*/\\s*(' + FRACAS + ')\\b', 'i'),
+  // Qualquer valor citado depois de "senha padrao": a lista acima e fechada, e o
+  // Lucky ensinava `666` / `666` sem cair em nenhuma (revisao do Goal 34).
+  new RegExp('(default|padr[aã]o|initial|inicial)[^\\n]{0,30}(password|senha|passwort)[^\\n`"\']{0,12}[`"\']([^`"\'\\s]{1,32})[`"\']', 'i'),
+]
+
 /** As variaveis que o instalador sempre troca: o contrato do CasaOS. */
 export const VARIAVEIS_DO_SISTEMA = new Set(['AppID', 'PUID', 'PGID', 'TZ'])
 
@@ -276,6 +294,12 @@ export function premissas(app, conflitos) {
   }
   for (const nome of declaradas)
     if (!usadas.has(nome)) p.P3.push(`x-roqueos.gerar.${nome} declarado e nunca usado`)
+  const tips = textosDe(x.tips || {}).join('\n')
+  const padrao = SENHA_PADRAO_NA_TIP.map((r) => r.exec(tips)).find(Boolean)
+  if (padrao && !xr.senhaPadraoDaImagem)
+    p.P3.push(
+      `tip mostra senha padrão (${padrao[0].trim().slice(0, 40)}): gere com x-roqueos.gerar ou declare x-roqueos.senhaPadraoDaImagem`,
+    )
 
   // P4 — configuração
   p.P4 = []

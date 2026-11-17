@@ -329,6 +329,11 @@
           "type": "boolean",
           "description": "Declara que a porta host deste app e sabidamente disputada com outro app do catalogo. O instalador realoca, mas a loja precisa saber para avisar."
         },
+        "senhaPadraoDaImagem": {
+          "type": "string",
+          "minLength": 20,
+          "description": "A imagem cria um login padrao fixo no primeiro boot e nao aceita outro por variavel, entao x-roqueos.gerar nao alcanca. Diga qual e a credencial e o que fazer (trocar no primeiro acesso). Existe para o padrao fraco ficar declarado, e nao escondido numa tip: a P3 reprova tip que mostra senha padrao sem esta declaracao (Goal 34)."
+        },
         "gerar": {
           "type": "object",
           "description": "Segredos que o RoqueOS Server gera na instalacao, um valor por servidor. O manifesto referencia cada um como ${NOME} (em environment, command ou numa URL), e o server troca pelo valor gerado e guardado, reaproveitado numa reinstalacao para o banco que ficou continuar abrindo. Com mostrar: true o valor volta para a pessoa uma vez, depois de instalar (a senha do admin). Existe porque o repo e publico: senha ou chave escrita no manifesto e a mesma em toda instalacao e qualquer um a le.",

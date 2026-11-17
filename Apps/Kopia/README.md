@@ -43,6 +43,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:51515/`.
 - 3. Após boot, configure um repositório em http://SEU_IP:51515 (path filesystem /data, bucket S3, etc.).
 - 4. /data está montado em modo leitura a partir de /DATA no host: Kopia lê os arquivos de origem dali.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço | Imagem             |

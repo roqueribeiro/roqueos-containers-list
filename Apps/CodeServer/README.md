@@ -45,6 +45,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8443/`.
 - Para produção, exponha apenas atrás de reverse proxy com HTTPS (Nginx Proxy Manager já está no catálogo).
 - Mount padrão de workspaces é /DATA/Workspaces: ajuste se você guarda código em outro lugar.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço    | Imagem                         |

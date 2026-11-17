@@ -48,5 +48,6 @@ x-casaos:
   scheme: http
   store_app_id: lucky
 x-roqueos:
+  senhaPadraoDaImagem: "666 / 666: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app."
   motivo:
     networkHost: faz port forwarding e DDNS a partir do IP do host

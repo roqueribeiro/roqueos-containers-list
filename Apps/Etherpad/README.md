@@ -41,6 +41,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:9001/`.
 - Painel admin: http://SEU_IP:9001/admin (usuário "admin" + essa senha).
 - Para 50+ usuários simultâneos, configure PostgreSQL/MySQL via variáveis DB_TYPE/DB_HOST/etc.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço  | Imagem                  |

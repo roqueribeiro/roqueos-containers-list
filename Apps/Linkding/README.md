@@ -41,6 +41,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:9092/`.
 - LD_SUPERUSER_PASSWORD (usuário admin) é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 - Após o boot, instale a extensão Linkding no navegador e aponte para http://SEU_IP:9092.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço  | Imagem                       |

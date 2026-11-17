@@ -151,5 +151,6 @@ x-casaos:
   port_map: '8112'
   scheme: http
 x-roqueos:
+  senhaPadraoDaImagem: "deluge: senha da interface web com que a imagem vem; troque no primeiro acesso, antes de expor o app."
   portaCompartilhada: true
   mountShared: true

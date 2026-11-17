@@ -37,6 +37,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:6806/`.
 
 - O código de acesso (accessAuthCode) é gerado pelo RoqueOS na instalação, único para este servidor, e aparece uma vez logo depois de instalar: guarde-o.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço     | Imagem               |

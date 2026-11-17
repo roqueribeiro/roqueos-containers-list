@@ -78,6 +78,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8888/`.
 - A lista completa de variáveis de ambiente do Microbin e o que cada uma faz está em:
 - https://github.com/szabodanika/microbin/blob/master/.env
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço  | Imagem                                                                                               |

@@ -54,6 +54,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8084/`.
 - |----------------------|-------|-------------------|---------------|
 - | ZimaOS IP            | `3493` | `monuser` | `secret` |
 
+> **Login padrão.** monuser / secret: é o login padrão do servidor NUT do ZimaOS que o Peanut consulta, não do Peanut; use o login real do seu servidor NUT.
+
 ## Imagens
 
 | Serviço | Imagem                   |

@@ -52,6 +52,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8100/`.
 - 3. Configure SEAFILE_SERVER_HOSTNAME com seu domínio real. Com SEAFILE_SERVER_LETSENCRYPT=true, Seafile emite certs automaticamente (só funciona se o domínio aponta para este servidor).
 - 4. Combine com OnlyOffice ou Collabora (já no catálogo) para edição de documentos no navegador.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço   | Imagem                        |

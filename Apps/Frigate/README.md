@@ -46,6 +46,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:5000/`.
 - 3. Para aceleração de IA, anexe um Coral USB Accelerator (ganho enorme) ou use passthrough de GPU Intel/Nvidia.
 - 4. Use junto com Home Assistant (já no catálogo) para integração completa de automação residencial.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ### Por que este app pede privilégio
 
 - `privileged`: acesso ao acelerador de inferência (Coral TPU / GPU) em /dev

@@ -38,6 +38,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8083/`.
 - No primeiro boot, as credenciais padrão são usuário "shiori" e senha "gopher". TROQUE AMBAS após login em http://SEU_IP:8083.
 - Extensões para Chrome e Firefox: ver docs oficiais em https://github.com/go-shiori/shiori
 
+> **Login padrão.** shiori / gopher: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app.
+
 ## Imagens
 
 | Serviço | Imagem                          |

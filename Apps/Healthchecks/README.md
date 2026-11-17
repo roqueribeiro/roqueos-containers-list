@@ -49,6 +49,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8000/`.
 - SUPERUSER_PASSWORD (a senha do admin) e SECRET_KEY são gerados pelo RoqueOS na instalação, únicos para este servidor. A senha do admin aparece uma vez logo depois de instalar: guarde-a.
 - O usuário admin é o e-mail de SUPERUSER_EMAIL. SITE_ROOT é o endereço usado nos links que o Healthchecks envia; ponha o endereço do seu servidor se usar alerta por e-mail.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço      | Imagem                                                                                                        |

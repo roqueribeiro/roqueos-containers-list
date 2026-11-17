@@ -59,6 +59,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:29708/`.
 - Para modificar o nome de utilizador e a palavra-passe predefinidos, pode configurá-lo mapeando o caminho `/cfg/` e adicionando um ficheiro de configuração `copyparty.conf` nesse diretório.
 - Para a configuração específica, consulte: [example](https://github.com/9001/copyparty/blob/hovudstraum/docs/example.conf)
 
+> **Login padrão.** casaos / casaos: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app.
+
 ## Imagens
 
 | Serviço   | Imagem                         |

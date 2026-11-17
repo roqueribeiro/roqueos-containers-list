@@ -51,6 +51,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8112/`.
 - The paths of other DATA subdirectories in RoqueOS are also similar.
 - Please make sure you use the correct path when using Deluge.
 
+> **Login padrão.** deluge: senha da interface web com que a imagem vem; troque no primeiro acesso, antes de expor o app.
+
 ## Imagens
 
 | Serviço | Imagem                   |

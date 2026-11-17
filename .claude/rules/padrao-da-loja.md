@@ -19,7 +19,7 @@ descrição.
 |---|----------|--------------------|
 | P1 | Compatibilidade | `x-casaos.main` resolve um serviço, `architectures` não vazio, e a categoria existe no `CATEGORY_MAP` do `roqueos-server` — o que não existe lá cai em `other` na loja, em silêncio |
 | P2 | Portas | toda porta publicada tem descrição; porta host disputada com outro app é declarada em `x-roqueos.portaCompartilhada` |
-| P3 | Variáveis | segredo só gerado: declarado em `x-roqueos.gerar` e usado como `${NOME}`, que o server gera por instalação. Nenhum literal em nome de segredo, nenhum placeholder (`change-me`, `[YOUR_…]`), nenhuma senha em URL ou em `command`, e nenhuma `$VAR` que não seja do sistema (`AppID`, `PUID`, `PGID`, `TZ`) ou de `gerar` |
+| P3 | Variáveis | segredo só gerado: declarado em `x-roqueos.gerar` e usado como `${NOME}`, que o server gera por instalação. Nenhum literal em nome de segredo, nenhum placeholder (`change-me`, `[YOUR_…]`), nenhuma senha em URL ou em `command`, e nenhuma `$VAR` que não seja do sistema (`AppID`, `PUID`, `PGID`, `TZ`) ou de `gerar`. Tip que mostra senha padrão da imagem exige `x-roqueos.senhaPadraoDaImagem` |
 | P4 | Configuração | imagem com tag exata ou digest, nunca `:latest`; volume sob `/DATA/` ou montagem de sistema conhecida; `restart` presente |
 | P5 | Privilégio | `privileged`, `network_mode: host`, `cap_add` e volume de host só com motivo escrito em `x-roqueos.motivo` — a regra não é remover de quem precisa, é obrigar a dizer por quê |
 | P6 | README | a ficha da loja, com o quê, portas, volumes, variáveis, primeiro acesso e fonte oficial |

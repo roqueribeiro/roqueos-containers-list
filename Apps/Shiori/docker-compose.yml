@@ -64,4 +64,5 @@ x-casaos:
   scheme: http
 
 x-roqueos:
+  senhaPadraoDaImagem: "shiori / gopher: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app."
   portaCompartilhada: true

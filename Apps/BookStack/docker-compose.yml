@@ -93,6 +93,7 @@ x-casaos:
   port_map: '8089'
   scheme: http
 x-roqueos:
+  senhaPadraoDaImagem: "admin@admin.com / password: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app."
   gerar:
     APP_KEY:
       formato: laravel
