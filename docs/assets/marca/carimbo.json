@@ -8,13 +8,13 @@
   "chips": {
     "en": [
       "curated",
-      "amd64 · arm64",
-      "booted on Linux"
+      "schema validated",
+      "booted on amd64"
     ],
     "pt": [
       "curada",
-      "amd64 · arm64",
-      "testada no Linux"
+      "schema validado",
+      "testada em amd64"
     ]
   },
   "lema": {
