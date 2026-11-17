@@ -97,7 +97,6 @@ x-casaos:
     pt_br: Leitor de notícias binárias gratuito e fácil de usar
     sv_se: Gratis och enkel binär nyhetsläsare
     uk_ua: Безкоштовний і простий бінарний новинний читач
-  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/thumbnail.png
   tips: {}
   title:
     en_us: Sabnzbd

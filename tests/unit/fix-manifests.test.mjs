@@ -7,7 +7,11 @@ import {
 } from "../../scripts/fix-manifests.mjs";
 import { mkdtemp, writeFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { join, dirname } from "node:path";
+import { readdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+
+const RAIZ = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
 describe("pickScheme", () => {
   it('returns "https" when port 443 is published as object form', () => {
@@ -96,9 +100,16 @@ describe("isImagePinned", () => {
 });
 
 describe("MOUNT_SHARED_APPS curated set", () => {
-  it("is a Set with at least 49 entries (matches the documented curated count)", () => {
+  it("is a Set with exactly 39 entries (the curated count; change it in the same PR that changes the set)", () => {
+    // 49 ate o Goal 29; 10 membros sairam junto com os apps aposentados.
     expect(MOUNT_SHARED_APPS).toBeInstanceOf(Set);
-    expect(MOUNT_SHARED_APPS.size).toBeGreaterThanOrEqual(49);
+    expect(MOUNT_SHARED_APPS.size).toBe(39);
+  });
+
+  it("only names apps that exist in Apps/ (a retired app leaves the set too)", () => {
+    const apps = new Set(readdirSync(join(RAIZ, "Apps")));
+    const orfaos = [...MOUNT_SHARED_APPS].filter((a) => !apps.has(a));
+    expect(orfaos).toEqual([]);
   });
 
   it("contains canonical media servers", () => {
@@ -120,13 +131,12 @@ describe("MOUNT_SHARED_APPS curated set", () => {
   });
 
   it("contains canonical file managers", () => {
-    expect(MOUNT_SHARED_APPS.has("FileBrowser")).toBe(true);
+    expect(MOUNT_SHARED_APPS.has("Syncthing")).toBe(true);
     expect(MOUNT_SHARED_APPS.has("Nextcloud")).toBe(true);
   });
 
   it("contains game library managers (special non-Media category)", () => {
     expect(MOUNT_SHARED_APPS.has("RomM")).toBe(true);
-    expect(MOUNT_SHARED_APPS.has("EmulatorJS")).toBe(true);
   });
 
   it("does NOT contain streaming clients (not media servers)", () => {
