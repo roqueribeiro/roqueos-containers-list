@@ -61,7 +61,7 @@ Onde os dados deste app ficam no seu servidor.
 | DB_HOST             | sure-db                   | sure-web    |
 | DB_PORT             | 5432                      | sure-web    |
 | REDIS_URL           | redis://sure-redis:6379/1 | sure-web    |
-| OPENAI_ACCESS_TOKEN | —                         | sure-web    |
+| OPENAI_ACCESS_TOKEN | -                         | sure-web    |
 | POSTGRES_USER       | sure_user                 | sure-worker |
 | POSTGRES_PASSWORD   | ${POSTGRES_PASSWORD}      | sure-worker |
 | POSTGRES_DB         | sure_production           | sure-worker |
@@ -72,7 +72,7 @@ Onde os dados deste app ficam no seu servidor.
 | DB_HOST             | sure-db                   | sure-worker |
 | DB_PORT             | 5432                      | sure-worker |
 | REDIS_URL           | redis://sure-redis:6379/1 | sure-worker |
-| OPENAI_ACCESS_TOKEN | —                         | sure-worker |
+| OPENAI_ACCESS_TOKEN | -                         | sure-worker |
 | POSTGRES_USER       | sure_user                 | sure-db     |
 | POSTGRES_PASSWORD   | ${POSTGRES_PASSWORD}      | sure-db     |
 | POSTGRES_DB         | sure_production           | sure-db     |

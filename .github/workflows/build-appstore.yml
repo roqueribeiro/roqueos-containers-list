@@ -1,7 +1,7 @@
 name: Build AppStore
 
 # Builds appstore.zip on every push to main and on PR (CI artifact only).
-# Releases are now triggered EXPLICITLY by pushing semver tags (vX.Y.Z) —
+# Releases are now triggered EXPLICITLY by pushing semver tags (vX.Y.Z):
 # no more automatic timestamp tags on every commit, which made it
 # impossible to pin a stable catalog version in roqueos-server consumers.
 #
@@ -42,7 +42,7 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Install validator deps
-        run: npm install --no-save ajv@^8 ajv-formats@^3 js-yaml@^4
+        run: yarn install --frozen-lockfile
       - name: Validate every manifest against the schema
         run: node scripts/validate-manifests.mjs
 

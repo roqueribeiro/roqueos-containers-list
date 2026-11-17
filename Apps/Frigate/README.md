@@ -28,7 +28,7 @@ Onde os dados deste app ficam no seu servidor.
 | ---------------------------- | -------------- | ------- |
 | /DATA/AppData/$AppID/config  | /config        | frigate |
 | /DATA/AppData/$AppID/storage | /media/frigate | frigate |
-| —                            | /tmp/cache     | frigate |
+| -                            | /tmp/cache     | frigate |
 
 ## Variáveis de ambiente
 

@@ -1,0 +1,49 @@
+name: Bug report
+description: A bug in the tooling (validate, revisao, boot, readme), the schema, the workflows or the documentation.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For an app that does not start, use **Broken app** instead. **Do not report security vulnerabilities here**: see [SECURITY.md](https://github.com/roqueribeiro/roqueos-containers-list/blob/main/SECURITY.md).
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A false positive, a check that missed something, a crash, a wrong page.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      placeholder: the output of git rev-parse --short HEAD
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Command output
+      render: shell

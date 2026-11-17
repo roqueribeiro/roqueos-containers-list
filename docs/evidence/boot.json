@@ -1,0 +1,495 @@
+{
+  "origem": "workflow Boot (.github/workflows/boot.yml), runner Linux do GitHub",
+  "runs": [
+    {
+      "run": 44111305750,
+      "quando": "2026-11-17T15:10:40Z"
+    },
+    {
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    {
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    }
+  ],
+  "apps": {
+    "Activepieces": {
+      "resultado": "ok",
+      "segundos": 102,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Anaconda3": {
+      "resultado": "ok",
+      "segundos": 88,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "ArchiveBox": {
+      "resultado": "ok",
+      "segundos": 74,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Authentik": {
+      "resultado": "ok",
+      "segundos": 113,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Baserow": {
+      "resultado": "ok",
+      "segundos": 64,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Blinko": {
+      "resultado": "ok",
+      "segundos": 72,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "BookStack": {
+      "resultado": "ok",
+      "segundos": 57,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "CodeServer": {
+      "resultado": "ok",
+      "segundos": 59,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Collabora": {
+      "resultado": "ok",
+      "segundos": 60,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "ComfyUI": {
+      "resultado": "ok",
+      "segundos": 109,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "ConvertX": {
+      "resultado": "ok",
+      "segundos": 84,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Docmost": {
+      "resultado": "ok",
+      "segundos": 68,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "DuckDNS": {
+      "resultado": "ok",
+      "segundos": 48,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Duplicati": {
+      "resultado": "ok",
+      "segundos": 53,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Emby": {
+      "resultado": "ok",
+      "segundos": 56,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Emby_Nvidia": {
+      "resultado": "inconclusivo",
+      "segundos": 8,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z",
+      "motivo": "laboratório sem GPU NVIDIA"
+    },
+    "Etherpad": {
+      "resultado": "ok",
+      "segundos": 53,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Firefly": {
+      "resultado": "ok",
+      "segundos": 48,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Forgejo": {
+      "resultado": "ok",
+      "segundos": 59,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Frigate": {
+      "resultado": "ok",
+      "segundos": 72,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Ghostfolio": {
+      "resultado": "ok",
+      "segundos": 78,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Glance": {
+      "resultado": "ok",
+      "segundos": 51,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Gotify": {
+      "resultado": "ok",
+      "segundos": 50,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Healthchecks": {
+      "resultado": "ok",
+      "segundos": 52,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Hugo": {
+      "resultado": "ok",
+      "segundos": 55,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Immich": {
+      "resultado": "ok",
+      "segundos": 79,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "InfluxDB": {
+      "resultado": "ok",
+      "segundos": 50,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "JDownloader2": {
+      "resultado": "ok",
+      "segundos": 54,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Jellyfin": {
+      "resultado": "ok",
+      "segundos": 56,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Jellyfin_Nvidia": {
+      "resultado": "inconclusivo",
+      "segundos": 7,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z",
+      "motivo": "laboratório sem GPU NVIDIA"
+    },
+    "Joplin": {
+      "resultado": "ok",
+      "segundos": 118,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Karakeep": {
+      "resultado": "ok",
+      "segundos": 73,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Kopia": {
+      "resultado": "ok",
+      "segundos": 51,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "LabelStudio": {
+      "resultado": "ok",
+      "segundos": 61,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "LangFlow": {
+      "resultado": "ok",
+      "segundos": 84,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "LibreChat": {
+      "resultado": "ok",
+      "segundos": 198,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "LibreDBStudio": {
+      "resultado": "ok",
+      "segundos": 58,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Linkding": {
+      "resultado": "ok",
+      "segundos": 56,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Linkwarden": {
+      "resultado": "ok",
+      "segundos": 114,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Lychee": {
+      "resultado": "ok",
+      "segundos": 69,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "MariaDB": {
+      "resultado": "ok",
+      "segundos": 230,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Mattermost": {
+      "resultado": "ok",
+      "segundos": 96,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Mealie": {
+      "resultado": "ok",
+      "segundos": 55,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Meilisearch": {
+      "resultado": "ok",
+      "segundos": 50,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Microbin": {
+      "resultado": "ok",
+      "segundos": 50,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Monica": {
+      "resultado": "ok",
+      "segundos": 59,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "NginxProxyManager": {
+      "resultado": "ok",
+      "segundos": 60,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Nocodb": {
+      "resultado": "ok",
+      "segundos": 68,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Nzbget": {
+      "resultado": "ok",
+      "segundos": 52,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "OnlyOffice": {
+      "resultado": "ok",
+      "segundos": 74,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "OpenClaw": {
+      "resultado": "ok",
+      "segundos": 92,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "OpenHands": {
+      "resultado": "ok",
+      "segundos": 71,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "OpenList": {
+      "resultado": "ok",
+      "segundos": 50,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Outline": {
+      "resultado": "ok",
+      "segundos": 99,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "PaperlessNgx": {
+      "resultado": "ok",
+      "segundos": 66,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "PdfDing": {
+      "resultado": "ok",
+      "segundos": 53,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Penpot": {
+      "resultado": "ok",
+      "segundos": 74,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "PhotoPrism": {
+      "resultado": "ok",
+      "segundos": 65,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Phpmyadmin": {
+      "resultado": "ok",
+      "segundos": 58,
+      "run": 44111436007,
+      "quando": "2026-11-17T15:11:21Z"
+    },
+    "Pihole": {
+      "resultado": "ok",
+      "segundos": 48,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "PostgreSQL": {
+      "resultado": "ok",
+      "segundos": 231,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "PsiTransfer": {
+      "resultado": "ok",
+      "segundos": 49,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Rallly": {
+      "resultado": "ok",
+      "segundos": 244,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Readeck": {
+      "resultado": "ok",
+      "segundos": 52,
+      "run": 44111305750,
+      "quando": "2026-11-17T15:10:40Z"
+    },
+    "RomM": {
+      "resultado": "ok",
+      "segundos": 65,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Roundcube": {
+      "resultado": "ok",
+      "segundos": 54,
+      "run": 44111305750,
+      "quando": "2026-11-17T15:10:40Z"
+    },
+    "SFTPGo": {
+      "resultado": "ok",
+      "segundos": 50,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Seafile": {
+      "resultado": "ok",
+      "segundos": 244,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Siyuan-Note": {
+      "resultado": "ok",
+      "segundos": 49,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "SpeedtestTracker": {
+      "resultado": "ok",
+      "segundos": 54,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Sure": {
+      "resultado": "ok",
+      "segundos": 67,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Transmission": {
+      "resultado": "ok",
+      "segundos": 48,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Umami": {
+      "resultado": "ok",
+      "segundos": 65,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Unifi-Network-Application": {
+      "resultado": "ok",
+      "segundos": 57,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Vikunja": {
+      "resultado": "ok",
+      "segundos": 48,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "WebDav": {
+      "resultado": "ok",
+      "segundos": 49,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "WikiJS": {
+      "resultado": "ok",
+      "segundos": 89,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "WireGuardEasy": {
+      "resultado": "ok",
+      "segundos": 49,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    },
+    "Ztnet": {
+      "resultado": "ok",
+      "segundos": 56,
+      "run": 44160694546,
+      "quando": "2026-11-17T19:38:10Z"
+    }
+  }
+}

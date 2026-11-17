@@ -1,39 +1,39 @@
 # RoqueOS Containers List
 
-Self-hosted **Docker app catalog** for RoqueOS: 220 ready-to-deploy apps in CasaOS-compatible Docker Compose manifests (`x-casaos` namespace). The catalog itself is the `Apps/` directory; this repo also ships the Node tooling that validates, auto-fixes, audits and rebrands those manifests. A semver tag publishes `appstore.zip`, consumed by the RoqueOS App Store (via `roqueos-server`) and by any CasaOS-compatible client.
+Self-hosted **Docker app catalog** for RoqueOS: 220 ready-to-deploy apps in CasaOS-compatible Docker Compose manifests (`x-casaos` namespace). The catalog itself is the `Apps/` directory; this repo also ships the Node tooling that validates, auto-fixes, audits and rebrands those manifests. The RoqueOS App Store (via `roqueos-server`) reads `main` directly, so a merge is production; a `vX.Y.Z` tag publishes `appstore.zip` for CasaOS-compatible clients that pin a release (none cut yet, see `docs/HOW-IT-SHIPS.md`).
 
 This is one of the repos that form RoqueOS. The ecosystem map (sibling repos, how they connect, cross-repo change ordering) is [`../roqueos-ecosystem/README.md`](../roqueos-ecosystem/README.md), and the cross-repo rules are in `../roqueos-ecosystem/rules/`. Neither is auto-loaded: read them on demand when a task crosses repos.
 
 ## Commands
 
-- `yarn install` — install validator deps (one-time; no global installs)
-- `yarn validate` — **CI gate.** `ajv` schema check + cross-field invariants (`scripts/validate-manifests.mjs`)
-- `yarn fix:dry` — preview auto-fixes (scheme, mountShared, main on single-service)
-- `yarn fix` — apply auto-fixes (idempotent, `scripts/fix-manifests.mjs`)
-- `yarn revisao` — **CI gate.** As dez premissas da loja, app a app (`scripts/revisao-container.mjs`). Sai 1 enquanto houver pendente; evidencia em `.revisao/<app>.json`
-- `yarn revisao:app <App>` — o veredito de um app so, no terminal
-- `yarn revisao:pendentes` — a fila, um nome por linha
-- `yarn enrichment` — relatorio de lacuna de i18n. Use ESTE, nao `yarn audit`: o yarn tem um subcomando `audit` proprio e ele ganha, entao `yarn audit` nunca roda o script do repo
-- `yarn audit:verbose` — list every app missing translations
-- `yarn audit:csv` — CSV output (spreadsheet prioritization)
-- `yarn rebrand:dry` — preview CasaOS → RoqueOS sweep (importing upstream apps)
-- `yarn rebrand` — apply rebrand (idempotent, `scripts/rebrand-casaos.mjs`)
-- `yarn test` — Vitest unit tests for the validator/fixer scripts
-- `yarn test:coverage` — coverage report
+- `yarn install`: install validator deps (one-time; no global installs)
+- `yarn validate`: **CI gate.** `ajv` schema check + cross-field invariants (`scripts/validate-manifests.mjs`)
+- `yarn fix:dry`: preview auto-fixes (scheme, mountShared, main on single-service)
+- `yarn fix`: apply auto-fixes (idempotent, `scripts/fix-manifests.mjs`)
+- `yarn revisao`: **CI gate.** As dez premissas da loja, app a app (`scripts/revisao-container.mjs`). Sai 1 enquanto houver pendente; evidencia em `.revisao/<app>.json`
+- `yarn revisao:app <App>`: o veredito de um app so, no terminal
+- `yarn revisao:pendentes`: a fila, um nome por linha
+- `yarn enrichment`: relatorio de lacuna de i18n. Use ESTE, nao `yarn audit`: o yarn tem um subcomando `audit` proprio e ele ganha, entao `yarn audit` nunca roda o script do repo
+- `yarn audit:verbose`: list every app missing translations
+- `yarn audit:csv`: CSV output (spreadsheet prioritization)
+- `yarn rebrand:dry`: preview CasaOS → RoqueOS sweep (importing upstream apps)
+- `yarn rebrand`: apply rebrand (idempotent, `scripts/rebrand-casaos.mjs`)
+- `yarn test`: Vitest unit tests for the validator/fixer scripts
+- `yarn test:coverage`: coverage report
 - IMPORTANT: **Yarn only.** No `npm` / `npx`, no `package-lock.json`.
 
 ## Repo shape
 
-This repo is **data + tooling only** — no runtime, no build step for the catalog itself.
+This repo is **data + tooling only**, no runtime, no build step for the catalog itself.
 
 ```text
 Apps/<AppName>/         # one dir per app
-  ├── docker-compose.yml   # required — Docker Compose v3.x with x-casaos metadata
-  ├── icon.png             # required — PNG quadrado, minimo 192px (usamos 512)
-  ├── README.md            # required — a ficha da loja, gerada por yarn readme
-  ├── screenshot-1.png     # opcional — a loja nao desenha (ver Goal 18)
-  └── thumbnail.png        # optional — 784×442, for featured apps
-schema/casaos-app.schema.json   # JSON Schema Draft-07 — the CI gate
+  ├── docker-compose.yml   # required, Docker Compose v3.x with x-casaos metadata
+  ├── icon.png             # required, PNG quadrado, minimo 192px (usamos 512)
+  ├── README.md            # required, a ficha da loja, gerada por yarn readme
+  ├── screenshot-1.png     # opcional, a loja nao desenha (ver Goal 18)
+  └── thumbnail.png        # optional, 784×442, for featured apps
+schema/casaos-app.schema.json   # JSON Schema Draft-07, the CI gate
 scripts/*.mjs                   # validate / fix / audit / rebrand
 category-list.json              # category definitions
 recommend-list.json             # recommended apps
@@ -42,23 +42,23 @@ featured-apps.json              # featured apps for the App Store homepage
 
 ## Schema contract (highlights)
 
-`schema/casaos-app.schema.json` (Draft-07) is the source of truth — `yarn validate` enforces it:
+`schema/casaos-app.schema.json` (Draft-07) is the source of truth: `yarn validate` enforces it:
 
 - `services.*.image` must be pinned with `:tag` OR `@sha256:digest`. Bare names **and** `:latest` are rejected (a small `UNPINNED_IMAGE_ALLOWLIST` in `validate-manifests.mjs` grandfathers legacy apps; new apps cannot use `:latest`).
-- `x-casaos.architectures[]` — ≥ 1 from the enum (`amd64, arm, arm64, 386, mips64le, ppc64le, s390x, riscv64`).
-- `x-casaos.main` — must reference a real service (required when multi-service).
-- `x-casaos.category` — from the canonical enum (see schema; mirrored in `category-list.json`).
-- `x-casaos.scheme` — `http` or `https`.
-- `x-casaos.port_map` — matches a HOST port published by the principal service (required when multi-port, or with `network_mode: host`).
-- `x-roqueos.mountShared` — strictly boolean (opt-in `/shared` filesystem bind; the RoqueOS-specific extension CasaOS clients ignore gracefully).
+- `x-casaos.architectures[]`: ≥ 1 from the enum (`amd64, arm, arm64, 386, mips64le, ppc64le, s390x, riscv64`).
+- `x-casaos.main`: must reference a real service (required when multi-service).
+- `x-casaos.category`: from the canonical enum (see schema; mirrored in `category-list.json`).
+- `x-casaos.scheme`: `http` or `https`.
+- `x-casaos.port_map`: matches a HOST port published by the principal service (required when multi-port, or with `network_mode: host`).
+- `x-roqueos.mountShared`: strictly boolean (opt-in `/shared` filesystem bind; the RoqueOS-specific extension CasaOS clients ignore gracefully).
 
 ## Conventions
 
-- **i18n** — `en_US` is mandatory in every `tagline` + `description`; `pt_BR` is encouraged (RoqueOS is BR-first). `yarn audit` reports gaps (advisory, never blocks merge).
-- **Branding** — pinned image tags, `author: RoqueOS Team`, `developer:` pointing to the upstream maintainer, `tips.before_install` with deployment hints (replace default secrets, configure OAuth, etc.).
-- **Conventional commits** — `feat(catalog): add <App>`, `fix(catalog): …`, `docs:`, `chore(release): vX.Y.Z`.
-- **Versioning / releases** — semver tags only publish a release `appstore.zip` (PATCH = app add/fix, MINOR = new field/invariant/category, MAJOR = breaking schema change — coordinate with `roqueos-server`). Push to `main` runs CI but does not tag. See `CHANGELOG.md` (Keep a Changelog).
-- **Git** — commit/push only when asked. Do not propose git commands unprompted.
+- **i18n**: `en_us` and `pt_br` are both required in `tagline` + `description` (premise P7, blocks the CI). `yarn enrichment` reports other locales (advisory).
+- **Branding**: pinned image tags, `author: RoqueOS Team`, `developer:` pointing to the upstream maintainer, `tips.before_install` with deployment hints (replace default secrets, configure OAuth, etc.).
+- **Conventional commits**: `feat(catalog): add <App>`, `fix(catalog): …`, `docs:`, `chore(release): vX.Y.Z`.
+- **Versioning / releases**: semver tags only publish a release `appstore.zip` (PATCH = app add/fix, MINOR = new field/invariant/category, MAJOR = breaking schema change, coordinate with `roqueos-server`). Push to `main` runs CI, does not tag, and is what the store reads. See `CHANGELOG.md` (Keep a Changelog).
+- **Git**: commit/push only when asked. Do not propose git commands unprompted.
 
 ## Detailed rules (cross-repo)
 

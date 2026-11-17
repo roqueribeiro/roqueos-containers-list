@@ -1,55 +1,41 @@
 <!--
-Thanks for contributing to the RoqueOS Containers List!
-Please fill out the sections below so maintainers can review your PR quickly.
+Thanks for the contribution. Read CONTRIBUTING.md first.
+For a security fix, do not open a pull request before a maintainer has answered
+your private report (SECURITY.md).
 -->
+
+## What and why
+
+<!-- What changes, and the reason. For a new app: what it is and why it belongs in the store. -->
+
+## Apps touched
+
+<!-- One per line, the folder name under Apps/. "none" for a tooling or documentation change. -->
 
 ## Type of change
 
-- [ ] 📦 New app (`Apps/NewApp/`)
-- [ ] 🔧 Fix or update existing app manifest
-- [ ] 🖼️ Update assets (icon, screenshots, thumbnail)
-- [ ] 📄 Documentation / tooling change
-- [ ] 🤖 CI / release workflow change
+- [ ] New app
+- [ ] Fix to an app
+- [ ] App removed (the reason and evidence are in docs/RETIRED.md and docs/pt-BR/APOSENTADOS.md)
+- [ ] Tooling, schema or workflow
+- [ ] Documentation only
 
-## Affected app(s)
+## How it was tested
 
-<!-- e.g. Apps/Jellyfin -->
-
-## Summary
-
-<!-- One short paragraph: what changed and why. -->
+<!--
+Paste the output, not a summary. Say on which architecture the app was started:
+"yarn boot <App> on Ubuntu 24.04 amd64", "the Boot workflow of this pull request",
+"installed from the RoqueOS store on a Raspberry Pi 5". Say what you did not test.
+-->
 
 ## Checklist
 
-### For new / updated app submissions
-
-- [ ] Folder name matches the app's canonical name (PascalCase, no spaces).
-- [ ] `docker-compose.yml` includes valid `x-casaos` metadata (title, main, icon, tagline, category, developer, author, port_map).
-- [ ] `icon.png` is 192×192, transparent PNG.
-- [ ] At least one `screenshot-1.png` exists, ~1280×720 (no logos/watermarks).
-- [ ] App boots cleanly on my local RoqueOS Server or CasaOS install.
-- [ ] I have verified the upstream image exists on Docker Hub / GHCR and the tag I pinned is stable.
-- [ ] Environment variables and volumes use safe, documented defaults (no hardcoded secrets, no privileged mode unless strictly required).
-- [ ] I have the right to redistribute this app (license-compatible or explicit permission).
-
-### For all PRs
-
-- [ ] Title follows `Conventional Commits` style (`feat(apps): add Jellyfin`, `fix(jellyfin): pin 10.9.0`, etc.).
-- [ ] No binary files unrelated to the app (no `.DS_Store`, `.idea/`, etc.).
-- [ ] CI is passing (GitHub Actions build + validation).
-
-## Testing
-
-<!-- How did you test the change? Include commands, screenshots, or videos where helpful. -->
-
-## Additional notes
-
-<!-- Links to upstream issues, breaking changes, migration notes. -->
-
----
-
-By submitting this PR I confirm that:
-
-- My contribution is released under the project's **MIT License**.
-- I have read the [Code of Conduct](../CODE_OF_CONDUCT.md) and [Trademark Policy](../TRADEMARK.md).
-- I am not granting, and will not claim, any right to use the **RoqueOS** or **LEVELHARD** trademarks beyond what is allowed in `TRADEMARK.md`.
+- [ ] `yarn validate` passes.
+- [ ] `yarn revisao:app <App>` closes the ten premises for every app touched.
+- [ ] `yarn test` passes, and a tooling change comes with a test that fails without it.
+- [ ] `yarn docs:check` passes.
+- [ ] The image is pinned to an exact tag or digest, and `architectures` lists only what it publishes.
+- [ ] No secret is written in the manifest: each one is in `x-roqueos.gerar`.
+- [ ] `tagline` and `description` are in `en_us` and `pt_br`.
+- [ ] The store card was regenerated with `yarn readme --app <App>`.
+- [ ] `CHANGELOG.md` has an entry under `[Unreleased]`.

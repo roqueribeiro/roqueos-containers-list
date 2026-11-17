@@ -32,7 +32,7 @@ Onde os dados deste app ficam no seu servidor.
 | ND_SCANSCHEDULE   | 1h           | navidrome |
 | ND_LOGLEVEL       | info         | navidrome |
 | ND_SESSIONTIMEOUT | 24h          | navidrome |
-| ND_BASEURL        | —            | navidrome |
+| ND_BASEURL        | -            | navidrome |
 | TZ                | $TZ          | navidrome |
 
 ## Primeiro acesso

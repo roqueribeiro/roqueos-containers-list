@@ -59,7 +59,7 @@ export function gerar(nome, APPS_DIR = APPS) {
     for (const p of s.ports || []) {
       const alvo = String(p.target ?? String(p).split(':').slice(-1)[0]).split('/')[0]
       const host = String(p.published ?? String(p).split(':')[0]).split('/')[0]
-      portas.push([host, alvo, p.protocol || 'tcp', desc.get(alvo) || '—', ns])
+      portas.push([host, alvo, p.protocol || 'tcp', desc.get(alvo) || '-', ns])
     }
   }
 
@@ -68,7 +68,7 @@ export function gerar(nome, APPS_DIR = APPS) {
     for (const v of s.volumes || []) {
       const src = typeof v === 'string' ? v.split(':')[0] : v.source
       const dst = typeof v === 'string' ? v.split(':')[1] : v.target
-      volumes.push([src || '—', dst || '—', ns])
+      volumes.push([src || '-', dst || '-', ns])
     }
 
   const envs = []
@@ -76,10 +76,10 @@ export function gerar(nome, APPS_DIR = APPS) {
     const lista = Array.isArray(s.environment)
       ? s.environment.map((e) => String(e).split(/=(.*)/s).slice(0, 2))
       : Object.entries(s.environment || {})
-    for (const [k, v] of lista) if (k) envs.push([k, String(v ?? '').slice(0, 60) || '—', ns])
+    for (const [k, v] of lista) if (k) envs.push([k, String(v ?? '').slice(0, 60) || '-', ns])
   }
 
-  const imagens = servicos.map(([ns, s]) => [ns, s.image || '—'])
+  const imagens = servicos.map(([ns, s]) => [ns, s.image || '-'])
   const upstream = LINKS[nome]?.website || x.developer || ''
   const porta = x.port_map || portas[0]?.[0] || ''
   const esquema = x.scheme || 'http'

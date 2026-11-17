@@ -32,7 +32,7 @@ Onde os dados deste app ficam no seu servidor.
 | MICROBIN_ADMIN_USERNAME               | admin                      | microbin |
 | MICROBIN_ADMIN_PASSWORD               | ${MICROBIN_ADMIN_PASSWORD} | microbin |
 | MICROBIN_EDITABLE                     | true                       | microbin |
-| MICROBIN_FOOTER_TEXT                  | —                          | microbin |
+| MICROBIN_FOOTER_TEXT                  | -                          | microbin |
 | MICROBIN_HIDE_HEADER                  | false                      | microbin |
 | MICROBIN_HIDE_FOOTER                  | false                      | microbin |
 | MICROBIN_HIDE_LOGO                    | false                      | microbin |
@@ -44,12 +44,12 @@ Onde os dados deste app ficam no seu servidor.
 | MICROBIN_PURE_HTML                    | false                      | microbin |
 | MICROBIN_DATA_DIR                     | microbin_data              | microbin |
 | MICROBIN_JSON_DB                      | false                      | microbin |
-| MICROBIN_PUBLIC_PATH                  | —                          | microbin |
-| MICROBIN_SHORT_PATH                   | —                          | microbin |
-| MICROBIN_UPLOADER_PASSWORD            | —                          | microbin |
+| MICROBIN_PUBLIC_PATH                  | -                          | microbin |
+| MICROBIN_SHORT_PATH                   | -                          | microbin |
+| MICROBIN_UPLOADER_PASSWORD            | -                          | microbin |
 | MICROBIN_READONLY                     | false                      | microbin |
 | MICROBIN_SHOW_READ_STATS              | true                       | microbin |
-| MICROBIN_TITLE                        | —                          | microbin |
+| MICROBIN_TITLE                        | -                          | microbin |
 | MICROBIN_THREADS                      | 1                          | microbin |
 | MICROBIN_GC_DAYS                      | 90                         | microbin |
 | MICROBIN_ENABLE_BURN_AFTER            | true                       | microbin |
@@ -60,7 +60,7 @@ Onde os dados deste app ficam no seu servidor.
 | MICROBIN_ENABLE_READONLY              | true                       | microbin |
 | MICROBIN_DEFAULT_EXPIRY               | 24hour                     | microbin |
 | MICROBIN_NO_FILE_UPLOAD               | false                      | microbin |
-| MICROBIN_CUSTOM_CSS                   | —                          | microbin |
+| MICROBIN_CUSTOM_CSS                   | -                          | microbin |
 | MICROBIN_HASH_IDS                     | false                      | microbin |
 | MICROBIN_ENCRYPTION_CLIENT_SIDE       | true                       | microbin |
 | MICROBIN_ENCRYPTION_SERVER_SIDE       | true                       | microbin |

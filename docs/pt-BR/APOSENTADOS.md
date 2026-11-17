@@ -1,5 +1,7 @@
 # Apps aposentados
 
+*Tradução de [RETIRED.md](../RETIRED.md), a versão principal, em inglês. Se as duas divergirem, vale a em inglês.*
+
 Um app sai da loja quando deixa de ser seguro ou útil recomendá-lo: o projeto
 original foi arquivado, a imagem parou de ser publicada ou sumiu do registry, ou
 o app não faz mais o que a ficha promete. Sair da loja **não apaga nada** de quem
@@ -14,7 +16,7 @@ Há dois tipos de saída. **Aposentado** é definitivo: o projeto acabou.
 **Fora da loja até voltar** é temporário: o projeto está vivo, mas o app não sobe
 com um clique do jeito que está, e volta quando o conserto abaixo estiver feito.
 
-## Fora da loja até voltar (Goal 30, 17/11/2026)
+## Fora da loja até voltar (17/11/2026)
 
 | App | Por que não sobe com um clique | Evidência | Volta quando |
 | --- | --- | --- | --- |
@@ -23,11 +25,11 @@ com um clique do jeito que está, e volta quando o conserto abaixo estiver feito
 | Zigbee2MQTT | Precisa de um adaptador Zigbee no USB e de um broker MQTT; a configuração padrão aponta para `mqtt://localhost` e `/dev/ttyACM0` | configuração padrão da imagem | a instalação pedir o adaptador e o broker |
 | MatrixSynapse | O nome do servidor é escolhido no primeiro boot e não muda depois; com o padrão `matrix.example.com` a instalação nasce errada. Sem `homeserver.yaml` a imagem também se recusa a subir | `docker/start.py` do Synapse: "no longer supports generating a config file on-the-fly" | a instalação pedir o domínio e gerar a configuração com Postgres |
 | Dify | Manifesto preso na 0.12.1 (o upstream está na 1.19), com semente de terceiro só amd64 e o `ssrf_proxy` reiniciando | boot do CI em 15/11/2026: `ssrf_proxy: Restarting (1)` | o manifesto for reescrito a partir do compose oficial 1.x |
-| RagFlow | Pede uns 16 GB de RAM, sobe Elasticsearch e OpenSearch juntos, usa espelho só amd64 na v0.21.1 (o upstream está na v1.0.0) e publica o banco no host com a senha padrão | `.boot/RagFlow.json`: `ragflow-es01: Restarting (137)` | o manifesto for reescrito a partir do compose oficial |
+| RagFlow | Pede uns 16 GB de RAM, sobe Elasticsearch e OpenSearch juntos, usa espelho só amd64 na v0.21.1 (o upstream está na v1.0.0) e publica o banco no host com a senha padrão | boot do CI em 15/11/2026: `ragflow-es01: Restarting (137)` | o manifesto for reescrito a partir do compose oficial |
 | Teable | A imagem fixada só por digest falha numa consulta ao banco na inicialização e nunca abre a porta 3000 | boot do CI de 17/11/2026: `Raw query failed`, Prisma `P2010` em `SystemFieldBackfillService` | o manifesto for refeito com uma versão marcada do compose oficial |
 | LibrePhotos | O manifesto só tem o backend: a porta da ficha cai num serviço que escuta em outra porta, sem frontend nem proxy | entrypoint do `librephotos-docker`: o backend escuta em 8001 | o manifesto trouxer frontend, proxy e banco do compose oficial |
 
-## Goal 29, 17/11/2026 (21 apps, catálogo 249 para 228)
+## Aposentados em 17/11/2026 (21 apps, catálogo de 249 para 228)
 
 Evidência levantada em 17/11/2026 por consulta de leitura à API do GitHub e aos
 registries (Docker Hub, ghcr.io, quay.io).
@@ -56,7 +58,7 @@ registries (Docker Hub, ghcr.io, quay.io).
 | Unifi-controller | Imagem descontinuada desde 01/2024 | README de `linuxserver/docker-unifi-controller`: "deprecated... migrate to our Unifi Network Application" | Unifi-Network-Application |
 | Whoogle | O projeto anunciou o fim: o Google bloqueou a busca sem JavaScript e o Whoogle não devolve mais resultados | `benbusby/whoogle-search` arquivado; aviso no README de 24/07/2026 | SearXNG |
 
-## Antes do Goal 29
+## Saídas anteriores
 
 | App | Saiu em | Commit |
 | --- | --- | --- |

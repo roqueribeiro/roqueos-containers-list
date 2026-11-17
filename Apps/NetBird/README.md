@@ -27,8 +27,8 @@ Onde os dados deste app ficam no seu servidor.
 
 | Variável            | Valor padrão | Serviço |
 | ------------------- | ------------ | ------- |
-| NB_SETUP_KEY        | —            | netbird |
-| NB_MANAGEMENT_URL   | —            | netbird |
+| NB_SETUP_KEY        | -            | netbird |
+| NB_MANAGEMENT_URL   | -            | netbird |
 | NB_HOSTNAME         | Zima         | netbird |
 | NB_ENABLE_SSH_ROOT  | true         | netbird |
 | NB_ALLOW_SERVER_SSH | true         | netbird |
