@@ -54,11 +54,11 @@ x-casaos:
       en_us: |
         First boot at http://YOUR_IP:8104 prompts you to create the admin password (no env-var bootstrap — interactive).
         After admin setup, configure backends via Settings → Connect to your S3/SFTP/Drive/etc.
-        Useful as a "single pane of glass" frontend over an existing MinIO + SFTPGo + Nextcloud combo (also in catalog).
+        Useful as a "single pane of glass" frontend over existing S3, SFTPGo and Nextcloud storage (SFTPGo and Nextcloud are also in the catalog).
       pt_br: |
         O primeiro boot em http://SEU_IP:8104 pede para criar a senha admin (sem bootstrap por env var — interativo).
         Após setup do admin, configure backends em Settings → Connect para seu S3/SFTP/Drive/etc.
-        Útil como "painel único" sobre uma combinação MinIO + SFTPGo + Nextcloud existente (também no catálogo).
+        Útil como "painel único" sobre armazenamento S3, SFTPGo e Nextcloud que você já tem (SFTPGo e Nextcloud também estão no catálogo).
   title:
     en_us: Filestash
   index: /

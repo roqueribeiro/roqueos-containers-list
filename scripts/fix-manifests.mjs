@@ -50,7 +50,7 @@ const DRY = process.argv.includes("--dry-run");
 //
 // Why a list and not a heuristic by category alone: many "Media" entries
 // are streaming clients (Stremio, Tautulli) that don't need /shared, and
-// some apps in other categories (Pingvin-Share in Storage, RomM in Gaming)
+// some apps in other categories (Syncthing in Storage, RomM in Gaming)
 // genuinely do.
 export const MOUNT_SHARED_APPS = new Set([
   // Media servers — read media from /shared
@@ -60,8 +60,6 @@ export const MOUNT_SHARED_APPS = new Set([
   "Plex_Nvidia",
   "Emby",
   "Emby_Nvidia",
-  "Embystat",
-  "Petio",
   "Komga",
   "Calibre-web",
   "Lazylibrarian",
@@ -82,7 +80,6 @@ export const MOUNT_SHARED_APPS = new Set([
   "Lidarr",
   "Radarr",
   "Sonarr",
-  "Readarr",
   "Bazarr",
   "Prowlarr",
   "Jackett",
@@ -91,22 +88,15 @@ export const MOUNT_SHARED_APPS = new Set([
   "Autobrr",
   // *arr companions / request UIs (use /shared to verify links)
   "Ombi",
-  "Overseerr",
   "RDTClient",
   // File managers / sync — explicit shared workspace
-  "FileBrowser",
-  "Filedrop",
   "Nextcloud",
   "Syncthing",
   "Resilio-sync",
-  "Pingvin-Share",
-  "Snapdrop",
   "WebDav",
-  "Alist-Sync",
   "Duplicati",
   // Game library managers (read ROMs from /shared)
   "RomM",
-  "EmulatorJS",
 ]);
 
 const summary = {

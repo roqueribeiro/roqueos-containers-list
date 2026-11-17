@@ -12,6 +12,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Removed: 21 apps sem upstream saem da loja (Goal 29, 2026-11-17)
+
+- **Catalogo 249 para 228.** A auditoria de 17/11/2026 conferiu, app a app, se o projeto original e a imagem ainda existem. 21 nao passaram: upstream arquivado (FlowiseAi, FileBrowser, MinIO, Overseerr, Readarr, Pingvin-Share, Whoogle, HoloPlay, Maybe), imagem descontinuada (EmulatorJS, Embystat, Snapdrop, Unifi-controller), projeto parado ha anos (ChatbotUI, Focalboard, MineOS, Petio, TaskingAI, Filedrop, Alist-Sync) ou duplicata com nome antigo (Hoarder, que e o Karakeep).
+- **O registro mora em [`docs/APOSENTADOS.md`](docs/APOSENTADOS.md):** data, motivo, a evidencia consultada e o que instalar no lugar. A remocao de Logseq, InvoiceNinja e Authelia em 14/09 nao deixou esse rastro fora do CHANGELOG; daqui para frente todo app que sai ganha uma linha la.
+- **Quem ja instalou nao perde nada.** O container continua rodando; o app so deixa de aparecer para instalacao nova.
+- **Listas curadas sem orfao.** `MOUNT_SHARED_APPS` (49 para 39) e `UNPINNED_IMAGE_ALLOWLIST` (21 para 18) perderam os nomes que sairam, e dois testes novos reprovam qualquer nome dessas listas que nao exista em `Apps/`. Sabnzbd e Sickchill apontavam o `thumbnail` para o arquivo do Readarr e deixaram de apontar. `recommend-list.json` troca `filebrowser` por `syncthing`.
+
 ### Added — P10: a premissa que liga o container (2026-09-14)
 
 - **`yarn boot` — o teste que faltava.** `scripts/boot-container.mjs` sobe o container de verdade e confere o estado depois de esperar. As nove premissas anteriores liam o manifesto; nenhuma delas ligava nada, e foi assim que o Grafana chegou à casa do founder com manifesto impecável e container que nunca subia.

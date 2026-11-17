@@ -109,7 +109,6 @@ x-casaos:
     pt_br: Gerenciador automático de bibliotecas de vídeo para programas de TV
     sv_se: Automatisk videobibliotekshanterare för TV-program
     uk_ua: Автоматичний менеджер відеобібліотек для телевізійних шоу
-  thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Readarr/thumbnail.png
   tips: {}
   title:
     en_us: Sickchill

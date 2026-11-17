@@ -3,7 +3,7 @@
   "recommend": [
     "portainer",
     "heimdall",
-    "filebrowser",
+    "syncthing",
     "code-server",
     "nextcloud",
     "jellyfin",

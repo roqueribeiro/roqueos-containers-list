@@ -4,6 +4,11 @@ import {
   imagePinningCheck,
   UNPINNED_IMAGE_ALLOWLIST,
 } from "../../scripts/validate-manifests.mjs";
+import { readdirSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const RAIZ = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
 /**
  * Image pinning regression spec — guards the supply-chain rule in
@@ -103,11 +108,17 @@ describe("imagePinningCheck", () => {
 });
 
 describe("UNPINNED_IMAGE_ALLOWLIST contract", () => {
-  it("contains the 21 apps frozen on 2026-05-03 — adding to this set is a regression", () => {
+  it("contains the 18 apps left from the 2026-05-03 freeze — adding to this set is a regression", () => {
     // This test exists to make any addition to the allowlist visible in
     // PR review. The number on the right is intentional: if you remove
     // an entry (good!) the count drops. Update the assertion to match.
-    expect(UNPINNED_IMAGE_ALLOWLIST.size).toBe(21);
+    // 21 em 2026-05-03; Maybe, MineOS e Pingvin-Share sairam do catalogo no Goal 29.
+    expect(UNPINNED_IMAGE_ALLOWLIST.size).toBe(18);
+  });
+
+  it("only names apps that exist in Apps/", () => {
+    const apps = new Set(readdirSync(join(RAIZ, "Apps")));
+    expect([...UNPINNED_IMAGE_ALLOWLIST].filter((a) => !apps.has(a))).toEqual([]);
   });
 
   it("includes the known offenders from the 2026-05-03 audit", () => {
