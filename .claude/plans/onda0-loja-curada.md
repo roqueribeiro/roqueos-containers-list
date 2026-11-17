@@ -13,7 +13,7 @@
 | 31 | segredo no catálogo | Nenhum segredo escrito no repo público | `x-roqueos.gerar` no schema; P3 reprova literal, placeholder, senha em URL ou `command`, `$VAR` sem origem; 221/221 fechados | testes da P3 com mutante, revisor |
 | 32 | server instala o compose inteiro | A loja instala todos os serviços, com `$AppID` e segredo gerado | instalação real num Docker Linux: app e banco sobem, dados em `/DATA/AppData/<app>`, zero reinício, HTTP 200, credencial devolvida uma vez, remoção leva o stack | roqueos-server PR #48, gate do server, prova em dind |
 | 33 | front mostra a credencial | A senha gerada aparece uma vez, fora da janela | teste que fecha o App Manager no meio da instalação e a senha continua no aviso | roqueos-front PR #136 |
-| 34 | senha padrão da imagem | Nenhum app com senha fraca embutida sem dizer | ver abaixo | a definir no goal |
+| 34 | senha padrão da imagem | Nenhum app com senha fraca embutida sem dizer | P3 lê as tips; Grafana gera; os outros oito declaram `senhaPadraoDaImagem`, e a ficha mostra | testes da P3 e da ficha |
 
 ## Goal 34, descoberto no Goal 31
 

@@ -43,6 +43,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8083/`.
 - | -------- | -------- |
 - | `admin`    | `admin123` |
 
+> **Login padrão.** admin / admin123: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app.
+
 ## Imagens
 
 | Serviço     | Imagem                         |

@@ -35,6 +35,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:16601/`.
 
 - Default login account `666`, Default login password `666`,tips:`Before each update, remember to back up the configuration`.
 
+> **Login padrão.** 666 / 666: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app.
+
 ### Por que este app pede privilégio
 
 - `networkHost`: faz port forwarding e DDNS a partir do IP do host

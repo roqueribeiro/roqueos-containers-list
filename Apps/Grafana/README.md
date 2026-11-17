@@ -28,16 +28,18 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-_Nenhum._
-
+| Variável                   | Valor padrão              | Serviço |
+| -------------------------- | ------------------------- | ------- |
+| GF_SECURITY_ADMIN_USER     | admin                     | grafana |
+| GF_SECURITY_ADMIN_PASSWORD | ${GRAFANA_ADMIN_PASSWORD} | grafana |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:3003/`.
 
-- | username | password |
-- | -------- | -------- |
-- | `admin`    | `admin`    |
+- Usuário `admin`. A senha é gerada pelo RoqueOS para o seu servidor e aparece uma vez, logo depois de instalar: guarde.
+
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
 
 ## Imagens
 

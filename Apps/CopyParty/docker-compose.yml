@@ -931,3 +931,5 @@ x-casaos:
         デフォルトのユーザー名とパスワードを変更するには、`/cfg/` パスをマッピングし、そのディレクトリに `copyparty.conf` 設定ファイルを追加することで設定できます。
 
         具体的な設定については、以下を参照してください：[example](https://github.com/9001/copyparty/blob/hovudstraum/docs/example.conf)
+x-roqueos:
+  senhaPadraoDaImagem: "casaos / casaos: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app."

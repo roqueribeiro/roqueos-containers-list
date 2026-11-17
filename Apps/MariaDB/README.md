@@ -48,6 +48,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:3306/`.
 - Banco padrão: `roqueos`
 - As senhas do usuário `roqueos` (MYSQL_PASSWORD) e do root (MYSQL_ROOT_PASSWORD) são geradas pelo RoqueOS na instalação, únicas para este servidor, e aparecem uma vez logo depois de instalar: guarde as duas.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço | Imagem                     |

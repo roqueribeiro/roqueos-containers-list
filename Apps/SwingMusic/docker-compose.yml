@@ -387,3 +387,5 @@ x-casaos:
   index: /
   port_map: "1970"
   scheme: http
+x-roqueos:
+  senhaPadraoDaImagem: "admin / admin: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app."

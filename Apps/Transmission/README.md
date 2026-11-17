@@ -50,6 +50,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:9091/`.
 - Usuário: `roqueos`
 - A senha é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço      | Imagem                         |

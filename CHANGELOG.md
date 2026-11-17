@@ -12,6 +12,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Security: senha padrao da imagem fica dita, ou some (Goal 34, 2026-11-17)
+
+- **A P3 passa a ler as tips.** O gate dava 221/221 com tip ensinando `admin/admin`, `deluge`, `shiori/gopher`, porque o login padrao que a propria imagem cria nao esta no environment. Agora tip que mostra senha padrao (tabela usuario e senha, `Password: x`, `usuario / senha`) reprova, a menos que o app declare `x-roqueos.senhaPadraoDaImagem`.
+- **Grafana** recebe a senha do admin gerada por instalacao (`GF_SECURITY_ADMIN_PASSWORD`), mostrada uma vez. O `restart` vai de `always` para `unless-stopped`, o padrao da loja (217 apps): quem para o app pelo RoqueOS nao o ve voltar sozinho depois de reiniciar o servidor.
+- **Nove apps declaram o login que a imagem cria** e nao aceita trocar por variavel: BookStack, Calibre-web, CopyParty, Deluge, Lucky, PocketBase, Shiori, SwingMusic, e Peanut (que mostra o login do servidor NUT, nao o dele). A P3 pega tambem senha padrao fora da lista de palavras fracas (o `666` do Lucky).
+- **A ficha de cada app diz isso em destaque.** `yarn readme` escreve "Login padrao" com a credencial e o que fazer, e "Senha gerada" quando o RoqueOS gera a senha e a mostra uma vez.
+
 ### Security: segredo gerado por instalacao, nunca escrito no repo (Goal 31, 2026-11-17)
 
 - **62 apps traziam segredo literal no manifesto publico**, igual em toda instalacao: JWT e chave de sessao (Docmost, Nocodb, Sure, Ghostfolio, Healthchecks, Blinko, ConvertX, Ztnet e outros, em que ler o repo bastava para forjar a sessao de qualquer servidor), senha de banco, senha de admin e o placeholder `change-me-on-first-boot` que a tip mandava trocar e ninguem trocava.

@@ -48,6 +48,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8102/`.
 - SFTP escuta na porta 2022 (use `sftp -P 2022 user@seu-host`); FTP em 2121; WebDAV em 8103.
 - Para backend PostgreSQL/MySQL (vs SQLite padrão), configure SFTPGO_DATA_PROVIDER__DRIVER e variáveis relacionadas.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço | Imagem                        |

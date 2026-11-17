@@ -46,6 +46,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:1970/`.
 - | -------- | -------- |
 - | `admin` | `admin` |
 
+> **Login padrão.** admin / admin: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app.
+
 ## Imagens
 
 | Serviço    | Imagem                            |

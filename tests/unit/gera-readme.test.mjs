@@ -168,3 +168,39 @@ describe("gerar — a ficha sai do manifesto, nao de invencao", () => {
     expect(md.length).toBeGreaterThan(400);
   });
 });
+
+describe("gerar — credencial na ficha (Goal 34)", () => {
+  const base = (xr) => `name: c
+services:
+  web:
+    image: x:1
+    restart: unless-stopped
+x-casaos:
+  main: web
+  title:
+    en_us: C
+x-roqueos:
+${xr}`;
+
+  const ficha = (xr) => {
+    mkdirSync(join(raiz, "Cred"), { recursive: true });
+    writeFileSync(join(raiz, "Cred", "docker-compose.yml"), base(xr));
+    return gerar("Cred", raiz);
+  };
+
+  it("mostra o login padrao que a imagem cria", () => {
+    const md = ficha('  senhaPadraoDaImagem: "admin / admin: troque no primeiro acesso"\n');
+    expect(md).toContain("Login padrão.** admin / admin: troque no primeiro acesso");
+  });
+
+  it("avisa que a senha e gerada quando ha segredo com mostrar", () => {
+    const md = ficha("  gerar:\n    SENHA:\n      formato: senha\n      mostrar: true\n");
+    expect(md).toContain("Senha gerada.");
+  });
+
+  it("nao avisa nada quando o segredo gerado e interno", () => {
+    const md = ficha("  gerar:\n    CHAVE:\n      formato: hex\n");
+    expect(md).not.toContain("Senha gerada.");
+    expect(md).not.toContain("Login padrão");
+  });
+});

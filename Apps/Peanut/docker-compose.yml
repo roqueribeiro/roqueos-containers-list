@@ -627,4 +627,5 @@ x-casaos:
   thumbnail: https://cdn.jsdelivr.net/gh/roqueribeiro/roqueos-containers-list@main/Apps/Peanut/thumbnail.png
 
 x-roqueos:
+  senhaPadraoDaImagem: "monuser / secret: é o login padrão do servidor NUT do ZimaOS que o Peanut consulta, não do Peanut; use o login real do seu servidor NUT."
   portaCompartilhada: true

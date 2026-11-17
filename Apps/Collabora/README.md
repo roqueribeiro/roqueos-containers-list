@@ -41,6 +41,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:9980/`.
 - 2. A senha do console admin (/browser/dist/admin/admin.html, usuário admin) é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 - 3. No admin do Nextcloud: instale o app "Nextcloud Office", configure URL do Collabora para http://SEU_IP:9980.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ### Por que este app pede privilégio
 
 - `capAdd`: capacidade exigida pelo upstream para a função declarada do container

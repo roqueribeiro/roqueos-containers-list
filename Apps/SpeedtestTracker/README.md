@@ -56,6 +56,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8080/`.
 
 - Login: admin@example.com. A senha é gerada pelo RoqueOS para o seu servidor e aparece uma vez, logo depois de instalar: guarde.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço              | Imagem                                                                                                       |

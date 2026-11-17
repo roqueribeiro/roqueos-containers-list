@@ -49,6 +49,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8088/`.
 - Coloque documentos em /consume: Paperless faz OCR + tag + arquivamento automaticamente.
 - Idiomas padrão de OCR: Português + Inglês (PAPERLESS_OCR_LANGUAGES). Adicione mais de `apt-cache search 'tesseract-ocr-'`.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço      | Imagem                                     |

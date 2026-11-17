@@ -43,6 +43,8 @@ Depois de instalar, abra `http://<endereço-do-servidor>:8084/`.
 - JWT_SECRET é gerado pelo RoqueOS na instalação, único para este servidor, e aparece uma vez logo depois de instalar: guarde-o, os conectores Nextcloud/ownCloud exigem esse valor.
 - Configure WOPI_URL no painel admin do Nextcloud (ou ownCloud) apontando para http://SEU_IP:8084 com o mesmo valor de JWT_SECRET. Depois disso, arquivos abrem inline no OnlyOffice.
 
+> **Senha gerada.** O RoqueOS gera a senha de acesso para o seu servidor na instalação e a mostra uma vez, logo depois de instalar. Guarde.
+
 ## Imagens
 
 | Serviço    | Imagem                          |

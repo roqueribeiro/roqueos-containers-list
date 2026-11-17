@@ -60,4 +60,5 @@ x-casaos:
   scheme: http
 
 x-roqueos:
+  senhaPadraoDaImagem: "roqueos@admin.local / adminpocketbase: a imagem vem com esse login; troque no primeiro acesso, antes de expor o app."
   portaCompartilhada: true
