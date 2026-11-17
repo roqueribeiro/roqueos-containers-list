@@ -1,7 +1,8 @@
 name: siyuan-note
 services:
   siyuan-note:
-    command: "--accessAuthCode=roqueos --workspace=/siyuan/workspace/"
+    # A 3.8 trocou a linha de comando: sem o subcomando serve, as flags so imprimem a ajuda.
+    command: "serve --workspace=/siyuan/workspace/ --accessAuthCode=roqueos"
     environment:
       PUID: "1000"
       PGID: "1000"
