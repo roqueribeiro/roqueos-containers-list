@@ -266,6 +266,13 @@ export function argsCurl(url, prazoMs) {
   ]
 }
 
+// Saidas do curl que provam que a conexao foi aceita por um servidor que nao
+// fala HTTP: 1 (HTTP/0.9, MariaDB), 52 (resposta vazia, Postgres), 56 (conexao
+// fechada no meio). 35 (TLS) fica de fora: em porta da ficha e defeito de scheme.
+export function falaOutraCoisa(status, scheme) {
+  return [1, 52, 56].includes(Number(status)) && scheme !== 'https'
+}
+
 export function respondeNaPorta(projeto, alvo) {
   if (!alvo) return { medido: false, motivo: 'manifesto nao declara porta principal' }
   const end = ipDoContainer(projeto, alvo.servico)
@@ -278,6 +285,14 @@ export function respondeNaPorta(projeto, alvo) {
     ]).trim()
     return { medido: true, ok: codigo !== '000', codigo, url }
   } catch (e) {
+    // Servidor que atende mas nao fala HTTP: banco (MariaDB devolve HTTP/0.9,
+    // Postgres fecha sem resposta) ou TLS onde se esperava texto. A conexao foi
+    // aceita, entao ha servidor na porta, que e o que se mede aqui. Mas TLS numa
+    // ficha que promete http, ou texto numa que promete https, e defeito do
+    // manifesto (o botao Abrir da loja falha), e nao conta.
+    if (falaOutraCoisa(e.status, alvo.scheme)) {
+      return { medido: true, ok: true, codigo: 'nao-http', url }
+    }
     // O que o curl disse (stderr) e o codigo de saida dele: "000" sozinho nao
     // separa porta fechada, conexao recusada, timeout e servidor que fecha a conexao.
     const saida = String(e.stdout || '').trim()

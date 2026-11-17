@@ -2,7 +2,7 @@
 // dentro, ou escutando em lugar nenhum. Estes casos travam a escolha da porta
 // que o teste vai bater, que e a mesma que a ficha da loja promete ao usuario.
 import { describe, it, expect } from 'vitest'
-import { alvoHttp, argsCurl } from '../../scripts/boot-container.mjs'
+import { alvoHttp, argsCurl, falaOutraCoisa } from '../../scripts/boot-container.mjs'
 
 const compose = (extra = {}, xcasaos = {}) => ({
   services: {
@@ -70,5 +70,17 @@ describe('argsCurl e o arquivo de saida', () => {
   it('nunca escreve em /dev/null: na segunda tentativa o curl trunca a saida e sai com 23', () => {
     const a = argsCurl('http://x/', 60000)
     expect(a[a.indexOf('-o') + 1]).not.toBe('/dev/null')
+  })
+})
+
+describe('falaOutraCoisa', () => {
+  it('banco que atende sem falar HTTP conta como servidor na porta', () => {
+    expect(falaOutraCoisa(1, 'http')).toBe(true) // MariaDB: HTTP/0.9
+    expect(falaOutraCoisa(52, 'http')).toBe(true) // Postgres: resposta vazia
+  })
+  it('conexao recusada, timeout e TLS errado continuam reprovando', () => {
+    expect(falaOutraCoisa(7, 'http')).toBe(false)
+    expect(falaOutraCoisa(28, 'http')).toBe(false)
+    expect(falaOutraCoisa(35, 'https')).toBe(false)
   })
 })

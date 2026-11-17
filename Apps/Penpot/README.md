@@ -44,6 +44,7 @@ Onde os dados deste app ficam no seu servidor.
 | PENPOT_TELEMETRY_ENABLED           | false                                                        | penpot-backend  |
 | PENPOT_PUBLIC_URI                  | http://penpot-frontend:8080                                  | penpot-exporter |
 | PENPOT_REDIS_URI                   | redis://penpot-redis/0                                       | penpot-exporter |
+| PENPOT_SECRET_KEY                  | ${PENPOT_SECRET_KEY}                                         | penpot-exporter |
 | POSTGRES_INITDB_ARGS               | --data-checksums                                             | penpot-postgres |
 | POSTGRES_DB                        | penpot                                                       | penpot-postgres |
 | POSTGRES_USER                      | bigbear                                                      | penpot-postgres |
