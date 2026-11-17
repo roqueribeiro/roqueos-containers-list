@@ -96,6 +96,9 @@ services:
     environment:
       - PENPOT_PUBLIC_URI=http://penpot-frontend:8080
       - PENPOT_REDIS_URI=redis://penpot-redis/0
+      # O exporter exige a mesma chave do backend e reiniciava sem ela
+      # (boot do CI de 17/11/2026: ":secret-key :string").
+      - PENPOT_SECRET_KEY=${PENPOT_SECRET_KEY}
     x-casaos:
       envs:
         - container: PENPOT_PUBLIC_URI

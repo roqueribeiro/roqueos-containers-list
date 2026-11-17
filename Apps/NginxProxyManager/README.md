@@ -37,7 +37,7 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Primeiro acesso
 
-Depois de instalar, abra `https://<endereço-do-servidor>:81/`.
+Depois de instalar, abra `http://<endereço-do-servidor>:81/`.
 
 - Atenção: este é um app técnico.
 - O Nginx Proxy Manager usa as portas 80 e 443 para o Nginx embutido, e a 81 para a página de administração. Troque a porta da interface do RoqueOS para uma que não seja 80, 81 ou 443, e confira se não há conflito com outros apps.

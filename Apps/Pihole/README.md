@@ -56,7 +56,7 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Primeiro acesso
 
-Depois de instalar, abra `https://<endereço-do-servidor>:8800/admin`.
+Depois de instalar, abra `http://<endereço-do-servidor>:8800/admin`.
 
 - A senha da interface web é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
