@@ -32,19 +32,19 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável     | Valor padrão            | Serviço                   |
-| ------------ | ----------------------- | ------------------------- |
-| MONGO_DBNAME | unifi-db                | unifi-network-application |
-| MONGO_HOST   | unifi-db                | unifi-network-application |
-| MONGO_PASS   | change-me-on-first-boot | unifi-network-application |
-| MONGO_PORT   | 27017                   | unifi-network-application |
-| MONGO_USER   | unifi                   | unifi-network-application |
-| PGID         | $PGID                   | unifi-network-application |
-| PUID         | $PUID                   | unifi-network-application |
-| TZ           | $TZ                     | unifi-network-application |
-| PGID         | $PGID                   | unifi-db                  |
-| PUID         | $PUID                   | unifi-db                  |
-| TZ           | $TZ                     | unifi-db                  |
+| Variável     | Valor padrão  | Serviço                   |
+| ------------ | ------------- | ------------------------- |
+| MONGO_DBNAME | unifi-db      | unifi-network-application |
+| MONGO_HOST   | unifi-db      | unifi-network-application |
+| MONGO_PASS   | ${MONGO_PASS} | unifi-network-application |
+| MONGO_PORT   | 27017         | unifi-network-application |
+| MONGO_USER   | unifi         | unifi-network-application |
+| PGID         | $PGID         | unifi-network-application |
+| PUID         | $PUID         | unifi-network-application |
+| TZ           | $TZ           | unifi-network-application |
+| PGID         | $PGID         | unifi-db                  |
+| PUID         | $PUID         | unifi-db                  |
+| TZ           | $TZ           | unifi-db                  |
 
 ## Primeiro acesso
 

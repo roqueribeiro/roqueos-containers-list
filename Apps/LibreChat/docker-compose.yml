@@ -575,7 +575,7 @@ services:
     environment:
       - MEILI_HOST=http://librechat-meilisearch:7700
       - MEILI_NO_ANALYTICS=true
-      - MEILI_MASTER_KEY=DrhYf7zENyR6AlUCKmnz0eYASOQdl6zxH7s7MKFSfFCt
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY}
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/meili_data_v1.12
@@ -691,7 +691,7 @@ services:
     environment:
       POSTGRES_DB: mydatabase
       POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     restart: unless-stopped
     volumes:
       - /DATA/AppData/$AppID/postgresql/data:/var/lib/postgresql/data
@@ -1360,4 +1360,11 @@ x-casaos:
       [カスタムAIエンドポイント](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints)のドキュメントを参照して、Anyscale、ApiPie、Cohere、Deepseek、Databricks、Fireworks、Groq、HuggingFace、Mistral、OpenRouter、Perplexity、ShuttleAI、TogetherAI、Unify、およびxAIのAPIを呼び出すための関連ファイルを設定できます。
 
 x-roqueos:
+  gerar:
+    MEILI_MASTER_KEY:
+      formato: hex
+      tamanho: 64
+    POSTGRES_PASSWORD:
+      formato: senha
+      tamanho: 24
   portaCompartilhada: true

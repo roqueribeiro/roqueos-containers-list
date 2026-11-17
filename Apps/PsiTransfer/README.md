@@ -26,13 +26,15 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável               | Valor padrão            | Serviço     |
-| ---------------------- | ----------------------- | ----------- |
-| PSITRANSFER_ADMIN_PASS | change-me-on-first-boot | psitransfer |
+| Variável               | Valor padrão              | Serviço     |
+| ---------------------- | ------------------------- | ----------- |
+| PSITRANSFER_ADMIN_PASS | ${PSITRANSFER_ADMIN_PASS} | psitransfer |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:13001/`.
+
+- A senha do admin da página /admin é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ## Imagens
 

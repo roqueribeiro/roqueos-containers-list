@@ -46,20 +46,20 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável              | Valor padrão            | Serviço        |
-| --------------------- | ----------------------- | -------------- |
-| ZT_ADDR               | http://172.17.0.1:9993  | ztnet          |
-| POSTGRES_HOST         | ztnet-postgres          | ztnet          |
-| POSTGRES_PORT         | 5432                    | ztnet          |
-| POSTGRES_USER         | ztnet                   | ztnet          |
-| POSTGRES_PASSWORD     | ztnetbl5hbv98wl89x9v    | ztnet          |
-| POSTGRES_DB           | ztnet                   | ztnet          |
-| NEXTAUTH_URL          | http://0.0.0.0:3050     | ztnet          |
-| NEXTAUTH_SECRET       | mn6vor005ncgnu9iuqxn8bg | ztnet          |
-| NEXTAUTH_URL_INTERNAL | http://ztnet:3000       | ztnet          |
-| POSTGRES_USER         | ztnet                   | ztnet-postgres |
-| POSTGRES_PASSWORD     | ztnetbl5hbv98wl89x9v    | ztnet-postgres |
-| POSTGRES_DB           | ztnet                   | ztnet-postgres |
+| Variável              | Valor padrão           | Serviço        |
+| --------------------- | ---------------------- | -------------- |
+| ZT_ADDR               | http://172.17.0.1:9993 | ztnet          |
+| POSTGRES_HOST         | ztnet-postgres         | ztnet          |
+| POSTGRES_PORT         | 5432                   | ztnet          |
+| POSTGRES_USER         | ztnet                  | ztnet          |
+| POSTGRES_PASSWORD     | ${POSTGRES_PASSWORD}   | ztnet          |
+| POSTGRES_DB           | ztnet                  | ztnet          |
+| NEXTAUTH_URL          | http://0.0.0.0:3050    | ztnet          |
+| NEXTAUTH_SECRET       | ${NEXTAUTH_SECRET}     | ztnet          |
+| NEXTAUTH_URL_INTERNAL | http://ztnet:3000      | ztnet          |
+| POSTGRES_USER         | ztnet                  | ztnet-postgres |
+| POSTGRES_PASSWORD     | ${POSTGRES_PASSWORD}   | ztnet-postgres |
+| POSTGRES_DB           | ztnet                  | ztnet-postgres |
 
 ## Primeiro acesso
 

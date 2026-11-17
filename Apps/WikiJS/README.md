@@ -27,23 +27,23 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável          | Valor padrão                      | Serviço |
-| ----------------- | --------------------------------- | ------- |
-| POSTGRES_DB       | wiki                              | db      |
-| POSTGRES_USER     | wikijs                            | db      |
-| POSTGRES_PASSWORD | change-me-to-a-long-random-string | db      |
-| DB_TYPE           | postgres                          | wikijs  |
-| DB_HOST           | db                                | wikijs  |
-| DB_PORT           | 5432                              | wikijs  |
-| DB_USER           | wikijs                            | wikijs  |
-| DB_PASS           | change-me-to-a-long-random-string | wikijs  |
-| DB_NAME           | wiki                              | wikijs  |
+| Variável          | Valor padrão         | Serviço |
+| ----------------- | -------------------- | ------- |
+| POSTGRES_DB       | wiki                 | db      |
+| POSTGRES_USER     | wikijs               | db      |
+| POSTGRES_PASSWORD | ${POSTGRES_PASSWORD} | db      |
+| DB_TYPE           | postgres             | wikijs  |
+| DB_HOST           | db                   | wikijs  |
+| DB_PORT           | 5432                 | wikijs  |
+| DB_USER           | wikijs               | wikijs  |
+| DB_PASS           | ${POSTGRES_PASSWORD} | wikijs  |
+| DB_NAME           | wiki                 | wikijs  |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8090/`.
 
-- SUBSTITUA POSTGRES_PASSWORD E DB_PASS (devem ser iguais) por uma string aleatória longa antes do primeiro boot.
+- POSTGRES_PASSWORD (usada também como DB_PASS) é gerada pelo RoqueOS na instalação, única para este servidor.
 - Wizard inicial em http://SEU_IP:8090 cria a conta admin.
 - Para storage backends (Git/S3/FS local), configure em admin > Storage após o primeiro login.
 

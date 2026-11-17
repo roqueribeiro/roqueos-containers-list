@@ -28,11 +28,13 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável | Valor padrão  | Serviço   |
-| -------- | ------------- | --------- |
-| PGID     | 1000          | duplicati |
-| PUID     | 1000          | duplicati |
-| TZ       | Europe/London | duplicati |
+| Variável                       | Valor padrão               | Serviço   |
+| ------------------------------ | -------------------------- | --------- |
+| PGID                           | 1000                       | duplicati |
+| PUID                           | 1000                       | duplicati |
+| TZ                             | $TZ                        | duplicati |
+| SETTINGS_ENCRYPTION_KEY        | ${SETTINGS_ENCRYPTION_KEY} | duplicati |
+| DUPLICATI__WEBSERVICE_PASSWORD | ${DUPLICATI_SENHA}         | duplicati |
 
 ## Primeiro acesso
 

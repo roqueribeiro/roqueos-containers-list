@@ -17,8 +17,8 @@ services:
       NODE_ENV: production
       NEXTAUTH_URL: http://localhost:1111
       NEXT_PUBLIC_BASE_URL: http://localhost:1111
-      NEXTAUTH_SECRET: 22PhaGVvvBTEC5E5G+U+5O1xqdmuzZKzjLeDMvdvB7I=
-      DATABASE_URL: postgresql://postgres:JWD9bxUR7Um9PaGg7FQZ@blinko-postgres:5432/postgres
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@blinko-postgres:5432/postgres
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/blinko_data
@@ -217,7 +217,7 @@ services:
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: JWD9bxUR7Um9PaGg7FQZ
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       TZ: $TZ
     networks:
       - blinko-net
@@ -931,3 +931,11 @@ x-casaos:
   repo: https://github.com/blinkospace/blinko
   support: ""
   docs: https://docs.blinko.space/en/introduction
+x-roqueos:
+  gerar:
+    NEXTAUTH_SECRET:
+      formato: hex
+      tamanho: 64
+    POSTGRES_PASSWORD:
+      formato: senha
+      tamanho: 24

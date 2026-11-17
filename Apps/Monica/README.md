@@ -46,16 +46,16 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                     | Valor padrão                     | Serviço   |
-| ---------------------------- | -------------------------------- | --------- |
-| APP_KEY                      | ChangeMeBy32KeyLengthOrGenerated | monica    |
-| DB_HOST                      | monica-db                        | monica    |
-| DB_USERNAME                  | monicauser                       | monica    |
-| DB_PASSWORD                  | monicasecret                     | monica    |
-| MARIADB_RANDOM_ROOT_PASSWORD | true                             | monica-db |
-| MARIADB_DATABASE             | monica                           | monica-db |
-| MARIADB_USER                 | monicauser                       | monica-db |
-| MARIADB_PASSWORD             | monicasecret                     | monica-db |
+| Variável                     | Valor padrão   | Serviço   |
+| ---------------------------- | -------------- | --------- |
+| APP_KEY                      | ${APP_KEY}     | monica    |
+| DB_HOST                      | monica-db      | monica    |
+| DB_USERNAME                  | monicauser     | monica    |
+| DB_PASSWORD                  | ${DB_PASSWORD} | monica    |
+| MARIADB_RANDOM_ROOT_PASSWORD | true           | monica-db |
+| MARIADB_DATABASE             | monica         | monica-db |
+| MARIADB_USER                 | monicauser     | monica-db |
+| MARIADB_PASSWORD             | ${DB_PASSWORD} | monica-db |
 
 ## Primeiro acesso
 

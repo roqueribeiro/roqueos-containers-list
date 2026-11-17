@@ -27,14 +27,14 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável          | Valor padrão                           | Serviço |
-| ----------------- | -------------------------------------- | ------- |
-| DATABASE_URL      | postgresql://umami:umami@db:5432/umami | app     |
-| DATABASE_TYPE     | postgresql                             | app     |
-| APP_SECRET        | replace-me-with-a-random-string        | app     |
-| POSTGRES_DB       | umami                                  | db      |
-| POSTGRES_USER     | umami                                  | db      |
-| POSTGRES_PASSWORD | umami                                  | db      |
+| Variável          | Valor padrão                                          | Serviço |
+| ----------------- | ----------------------------------------------------- | ------- |
+| DATABASE_URL      | postgresql://umami:${POSTGRES_PASSWORD}@db:5432/umami | app     |
+| DATABASE_TYPE     | postgresql                                            | app     |
+| APP_SECRET        | ${APP_SECRET}                                         | app     |
+| POSTGRES_DB       | umami                                                 | db      |
+| POSTGRES_USER     | umami                                                 | db      |
+| POSTGRES_PASSWORD | ${POSTGRES_PASSWORD}                                  | db      |
 
 ## Primeiro acesso
 

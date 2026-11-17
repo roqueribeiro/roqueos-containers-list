@@ -5,26 +5,15 @@ services:
     restart: unless-stopped
     container_name: phpmyadmin
     environment:
-      PMA_HOST: "[YOUR-CASAOS-IP]"
-      PMA_PORT: "3306"
-      PMA_USER: bigbear
-      PMA_PASSWORD: change-me-on-first-boot
+      PMA_ARBITRARY: "1"
     ports:
       - "8080:80"
     x-casaos:
       envs:
-        - container: PMA_HOST
+        - container: PMA_ARBITRARY
           description:
-            en_us: Connection setting for a service this app depends on
-        - container: PMA_PORT
-          description:
-            en_us: Port the app listens on inside the container
-        - container: PMA_USER
-          description:
-            en_us: Account name the app uses
-        - container: PMA_PASSWORD
-          description:
-            en_us: "Password: change it before the first boot"
+            en_us: The login screen asks which database server to open
+            pt_br: A tela de login pergunta qual servidor de banco abrir
       ports:
         - container: "80"
           description:

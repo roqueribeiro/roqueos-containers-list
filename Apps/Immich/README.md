@@ -40,12 +40,12 @@ Onde os dados deste app ficam no seu servidor.
 | Variável             | Valor padrão     | Serviço                 |
 | -------------------- | ---------------- | ----------------------- |
 | DB_DATABASE_NAME     | immich           | immich-server           |
-| DB_PASSWORD          | postgres         | immich-server           |
+| DB_PASSWORD          | ${DB_PASSWORD}   | immich-server           |
 | DB_USERNAME          | postgres         | immich-server           |
 | DB_DATABASE_NAME     | immich           | immich-machine-learning |
-| DB_PASSWORD          | postgres         | immich-machine-learning |
+| DB_PASSWORD          | ${DB_PASSWORD}   | immich-machine-learning |
 | DB_USERNAME          | postgres         | immich-machine-learning |
-| POSTGRES_PASSWORD    | postgres         | database                |
+| POSTGRES_PASSWORD    | ${DB_PASSWORD}   | database                |
 | POSTGRES_USER        | postgres         | database                |
 | POSTGRES_DB          | immich           | database                |
 | POSTGRES_INITDB_ARGS | --data-checksums | database                |

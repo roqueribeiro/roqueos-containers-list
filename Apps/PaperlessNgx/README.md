@@ -30,23 +30,23 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                 | Valor padrão                               | Serviço      |
-| ------------------------ | ------------------------------------------ | ------------ |
-| PAPERLESS_REDIS          | redis://redis:6379                         | paperlessngx |
-| PAPERLESS_TIME_ZONE      | America/Sao_Paulo                          | paperlessngx |
-| PAPERLESS_OCR_LANGUAGES  | por eng                                    | paperlessngx |
-| PAPERLESS_OCR_LANGUAGE   | por                                        | paperlessngx |
-| PAPERLESS_ADMIN_USER     | admin                                      | paperlessngx |
-| PAPERLESS_ADMIN_PASSWORD | change-me-on-first-boot                    | paperlessngx |
-| PAPERLESS_SECRET_KEY     | replace-with-output-of-openssl-rand-hex-32 | paperlessngx |
-| PAPERLESS_URL            | http://localhost:8088                      | paperlessngx |
+| Variável                 | Valor padrão                | Serviço      |
+| ------------------------ | --------------------------- | ------------ |
+| PAPERLESS_REDIS          | redis://redis:6379          | paperlessngx |
+| PAPERLESS_TIME_ZONE      | America/Sao_Paulo           | paperlessngx |
+| PAPERLESS_OCR_LANGUAGES  | por eng                     | paperlessngx |
+| PAPERLESS_OCR_LANGUAGE   | por                         | paperlessngx |
+| PAPERLESS_ADMIN_USER     | admin                       | paperlessngx |
+| PAPERLESS_ADMIN_PASSWORD | ${PAPERLESS_ADMIN_PASSWORD} | paperlessngx |
+| PAPERLESS_SECRET_KEY     | ${PAPERLESS_SECRET_KEY}     | paperlessngx |
+| PAPERLESS_URL            | http://localhost:8088       | paperlessngx |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8088/`.
 
-- SUBSTITUA PAPERLESS_ADMIN_PASSWORD e PAPERLESS_SECRET_KEY antes do primeiro boot.
-- Coloque documentos em /consume — Paperless faz OCR + tag + arquivamento automaticamente.
+- PAPERLESS_ADMIN_PASSWORD (usuário admin) e PAPERLESS_SECRET_KEY são gerados pelo RoqueOS na instalação, únicos para este servidor. A senha do admin aparece uma vez logo depois de instalar: guarde-a.
+- Coloque documentos em /consume: Paperless faz OCR + tag + arquivamento automaticamente.
 - Idiomas padrão de OCR: Português + Inglês (PAPERLESS_OCR_LANGUAGES). Adicione mais de `apt-cache search 'tesseract-ocr-'`.
 
 ## Imagens

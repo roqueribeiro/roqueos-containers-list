@@ -29,25 +29,24 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável            | Valor padrão | Serviço |
-| ------------------- | ------------ | ------- |
-| PUID                | $PUID        | mariadb |
-| PGID                | $PGID        | mariadb |
-| TZ                  | $TZ          | mariadb |
-| MYSQL_ROOT_PASSWORD | roqueos      | mariadb |
-| MYSQL_DATABASE      | roqueos      | mariadb |
-| MYSQL_USER          | roqueos      | mariadb |
-| MYSQL_PASSWORD      | roqueos      | mariadb |
-| REMOTE_SQL          | —            | mariadb |
+| Variável            | Valor padrão           | Serviço |
+| ------------------- | ---------------------- | ------- |
+| PUID                | $PUID                  | mariadb |
+| PGID                | $PGID                  | mariadb |
+| TZ                  | $TZ                    | mariadb |
+| MYSQL_ROOT_PASSWORD | ${MYSQL_ROOT_PASSWORD} | mariadb |
+| MYSQL_DATABASE      | roqueos                | mariadb |
+| MYSQL_USER          | roqueos                | mariadb |
+| MYSQL_PASSWORD      | ${MYSQL_PASSWORD}      | mariadb |
+| REMOTE_SQL          | —                      | mariadb |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:3306/`.
 
-- Default user: `roqueos`
-- Default password: `roqueos`
-- Default database: `roqueos`
-- Default root password: `roqueos`
+- Usuário padrão: `roqueos`
+- Banco padrão: `roqueos`
+- As senhas do usuário `roqueos` (MYSQL_PASSWORD) e do root (MYSQL_ROOT_PASSWORD) são geradas pelo RoqueOS na instalação, únicas para este servidor, e aparecem uma vez logo depois de instalar: guarde as duas.
 
 ## Imagens
 

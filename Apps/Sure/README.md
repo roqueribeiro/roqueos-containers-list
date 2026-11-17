@@ -49,33 +49,33 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável            | Valor padrão                                                 | Serviço     |
-| ------------------- | ------------------------------------------------------------ | ----------- |
-| POSTGRES_USER       | sure_user                                                    | sure-web    |
-| POSTGRES_PASSWORD   | sure_password                                                | sure-web    |
-| POSTGRES_DB         | sure_production                                              | sure-web    |
-| SECRET_KEY_BASE     | a7523c3d0ae56415046ad8abae168d71074a79534a7062258f8d1d51ac2f | sure-web    |
-| SELF_HOSTED         | true                                                         | sure-web    |
-| RAILS_FORCE_SSL     | false                                                        | sure-web    |
-| RAILS_ASSUME_SSL    | false                                                        | sure-web    |
-| DB_HOST             | sure-db                                                      | sure-web    |
-| DB_PORT             | 5432                                                         | sure-web    |
-| REDIS_URL           | redis://sure-redis:6379/1                                    | sure-web    |
-| OPENAI_ACCESS_TOKEN | ${OPENAI_ACCESS_TOKEN}                                       | sure-web    |
-| POSTGRES_USER       | sure_user                                                    | sure-worker |
-| POSTGRES_PASSWORD   | sure_password                                                | sure-worker |
-| POSTGRES_DB         | sure_production                                              | sure-worker |
-| SECRET_KEY_BASE     | a7523c3d0ae56415046ad8abae168d71074a79534a7062258f8d1d51ac2f | sure-worker |
-| SELF_HOSTED         | true                                                         | sure-worker |
-| RAILS_FORCE_SSL     | false                                                        | sure-worker |
-| RAILS_ASSUME_SSL    | false                                                        | sure-worker |
-| DB_HOST             | sure-db                                                      | sure-worker |
-| DB_PORT             | 5432                                                         | sure-worker |
-| REDIS_URL           | redis://sure-redis:6379/1                                    | sure-worker |
-| OPENAI_ACCESS_TOKEN | ${OPENAI_ACCESS_TOKEN}                                       | sure-worker |
-| POSTGRES_USER       | sure_user                                                    | sure-db     |
-| POSTGRES_PASSWORD   | sure_password                                                | sure-db     |
-| POSTGRES_DB         | sure_production                                              | sure-db     |
+| Variável            | Valor padrão              | Serviço     |
+| ------------------- | ------------------------- | ----------- |
+| POSTGRES_USER       | sure_user                 | sure-web    |
+| POSTGRES_PASSWORD   | ${POSTGRES_PASSWORD}      | sure-web    |
+| POSTGRES_DB         | sure_production           | sure-web    |
+| SECRET_KEY_BASE     | ${SECRET_KEY_BASE}        | sure-web    |
+| SELF_HOSTED         | true                      | sure-web    |
+| RAILS_FORCE_SSL     | false                     | sure-web    |
+| RAILS_ASSUME_SSL    | false                     | sure-web    |
+| DB_HOST             | sure-db                   | sure-web    |
+| DB_PORT             | 5432                      | sure-web    |
+| REDIS_URL           | redis://sure-redis:6379/1 | sure-web    |
+| OPENAI_ACCESS_TOKEN | —                         | sure-web    |
+| POSTGRES_USER       | sure_user                 | sure-worker |
+| POSTGRES_PASSWORD   | ${POSTGRES_PASSWORD}      | sure-worker |
+| POSTGRES_DB         | sure_production           | sure-worker |
+| SECRET_KEY_BASE     | ${SECRET_KEY_BASE}        | sure-worker |
+| SELF_HOSTED         | true                      | sure-worker |
+| RAILS_FORCE_SSL     | false                     | sure-worker |
+| RAILS_ASSUME_SSL    | false                     | sure-worker |
+| DB_HOST             | sure-db                   | sure-worker |
+| DB_PORT             | 5432                      | sure-worker |
+| REDIS_URL           | redis://sure-redis:6379/1 | sure-worker |
+| OPENAI_ACCESS_TOKEN | —                         | sure-worker |
+| POSTGRES_USER       | sure_user                 | sure-db     |
+| POSTGRES_PASSWORD   | ${POSTGRES_PASSWORD}      | sure-db     |
+| POSTGRES_DB         | sure_production           | sure-db     |
 
 ## Primeiro acesso
 

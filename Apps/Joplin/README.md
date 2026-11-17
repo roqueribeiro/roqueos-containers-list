@@ -26,20 +26,20 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável          | Valor padrão                         | Serviço   |
-| ----------------- | ------------------------------------ | --------- |
-| APP_PORT          | 22300                                | joplin    |
-| APP_BASE_URL      | http://localhost:22300               | joplin    |
-| DB_CLIENT         | pg                                   | joplin    |
-| POSTGRES_PASSWORD | 27a1d42a-a15d-43dd-903c-2a73538647fe | joplin    |
-| POSTGRES_USER     | bigbear                              | joplin    |
-| POSTGRES_DATABASE | joplin                               | joplin    |
-| POSTGRES_PORT     | 5432                                 | joplin    |
-| POSTGRES_HOST     | joplin-db                            | joplin    |
-| MAX_TIME_DRIFT    | 0                                    | joplin    |
-| POSTGRES_PASSWORD | 27a1d42a-a15d-43dd-903c-2a73538647fe | joplin-db |
-| POSTGRES_USER     | bigbear                              | joplin-db |
-| POSTGRES_DB       | joplin                               | joplin-db |
+| Variável          | Valor padrão           | Serviço   |
+| ----------------- | ---------------------- | --------- |
+| APP_PORT          | 22300                  | joplin    |
+| APP_BASE_URL      | http://localhost:22300 | joplin    |
+| DB_CLIENT         | pg                     | joplin    |
+| POSTGRES_PASSWORD | ${POSTGRES_PASSWORD}   | joplin    |
+| POSTGRES_USER     | bigbear                | joplin    |
+| POSTGRES_DATABASE | joplin                 | joplin    |
+| POSTGRES_PORT     | 5432                   | joplin    |
+| POSTGRES_HOST     | joplin-db              | joplin    |
+| MAX_TIME_DRIFT    | 0                      | joplin    |
+| POSTGRES_PASSWORD | ${POSTGRES_PASSWORD}   | joplin-db |
+| POSTGRES_USER     | bigbear                | joplin-db |
+| POSTGRES_DB       | joplin                 | joplin-db |
 
 ## Primeiro acesso
 

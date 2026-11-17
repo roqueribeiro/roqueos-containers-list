@@ -19,7 +19,7 @@ descrição.
 |---|----------|--------------------|
 | P1 | Compatibilidade | `x-casaos.main` resolve um serviço, `architectures` não vazio, e a categoria existe no `CATEGORY_MAP` do `roqueos-server` — o que não existe lá cai em `other` na loja, em silêncio |
 | P2 | Portas | toda porta publicada tem descrição; porta host disputada com outro app é declarada em `x-roqueos.portaCompartilhada` |
-| P3 | Variáveis | nenhum segredo literal adivinhável, e nenhum placeholder que ninguém substitui |
+| P3 | Variáveis | segredo só gerado: declarado em `x-roqueos.gerar` e usado como `${NOME}`, que o server gera por instalação. Nenhum literal em nome de segredo, nenhum placeholder (`change-me`, `[YOUR_…]`), nenhuma senha em URL ou em `command`, e nenhuma `$VAR` que não seja do sistema (`AppID`, `PUID`, `PGID`, `TZ`) ou de `gerar` |
 | P4 | Configuração | imagem com tag exata ou digest, nunca `:latest`; volume sob `/DATA/` ou montagem de sistema conhecida; `restart` presente |
 | P5 | Privilégio | `privileged`, `network_mode: host`, `cap_add` e volume de host só com motivo escrito em `x-roqueos.motivo` — a regra não é remover de quem precisa, é obrigar a dizer por quê |
 | P6 | README | a ficha da loja, com o quê, portas, volumes, variáveis, primeiro acesso e fonte oficial |
@@ -66,6 +66,14 @@ normalmente no Docker Desktop, porque o compartilhamento de arquivo da VM
 entrega o bind com permissão frouxa. Medido nos dois lados no mesmo dia: `Up` no
 macOS, `Restarting (1)` no Linux. Por isso `scripts/boot-container.mjs` se
 recusa a rodar fora de Linux, e o workflow `Boot` roda no runner do GitHub.
+
+**Repo público não guarda segredo.** Até o Goal 31 o padrão da casa era
+`change-me-on-first-boot` mais uma tip mandando trocar, e a P3 só reprovava
+senha óbvia como `admin`. Em 17/11/2026, 62 apps traziam JWT, chave de sessão ou
+senha de banco literal, iguais em toda instalação; em cinco deles, ler o repo
+bastava para forjar a sessão de qualquer servidor. Ninguém troca o que a
+instalação não pede. Segredo agora é `${NOME}` em `x-roqueos.gerar`, e o
+`roqueos-server` gera, guarda e, com `mostrar: true`, mostra uma vez.
 
 **Gate que cobra o invisível ensina a ignorar gate.** `thumbnail` e
 `screenshot` saíram da P8 porque o server não os lê e a loja não os desenha.

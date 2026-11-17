@@ -12,6 +12,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Security: segredo gerado por instalacao, nunca escrito no repo (Goal 31, 2026-11-17)
+
+- **62 apps traziam segredo literal no manifesto publico**, igual em toda instalacao: JWT e chave de sessao (Docmost, Nocodb, Sure, Ghostfolio, Healthchecks, Blinko, ConvertX, Ztnet e outros, em que ler o repo bastava para forjar a sessao de qualquer servidor), senha de banco, senha de admin e o placeholder `change-me-on-first-boot` que a tip mandava trocar e ninguem trocava.
+- **Campo novo `x-roqueos.gerar`** (MINOR, compativel com cliente CasaOS, que ignora `x-roqueos`): cada segredo e declarado com `formato` (`hex`, `base64`, `senha`, `uuid`, `laravel`), `tamanho` e, para senha de login, `mostrar: true`. O manifesto usa `${NOME}`; o `roqueos-server` (Goal 32) gera o valor na instalacao, guarda para a reinstalacao abrir o banco que ficou, e mostra uma vez os marcados `mostrar`. O mesmo segredo usado por dois servicos (o banco e o app) e uma variavel so.
+- **A P3 ficou dura.** Reprova literal em nome de segredo, placeholder (`change-me`, `replace-with`, `[YOUR_...]`, `[YOUR-...]`), senha dentro de URL, segredo em argumento de `command`, `$VAR` que nao vem do sistema (`AppID`, `PUID`, `PGID`, `TZ`) nem de `gerar` (chegava vazia), e entrada de `gerar` que ninguem usa. O teste que aceitava `change-me-on-first-boot` como padrao da casa passou a reprova-lo.
+- **Conversoes que nao eram so trocar o valor:** SpeedtestTracker usava senhas diferentes no app e no banco (`casaos` x `roqueos`) e nao tinha o `APP_KEY` obrigatorio; Phpmyadmin vinha com `[YOUR-CASAOS-IP]` e usuario `bigbear`, e agora pede o servidor na tela de login; DuckDNS e JDownloader2 recebem o token e a conta da pessoa (vazios ate ela preencher); Kopia e Siyuan levavam a senha num argumento do `command`; Nocodb e Teable tinham a senha do Redis no `command` e na URL.
+- **O laboratorio de boot gera os segredos** do mesmo jeito que o instalador, para o CI subir o app que o usuario recebe.
+- **Boot dos 64 apps convertidos no Linux:** 59 de pe com os segredos gerados (Activepieces, Authentik, BookStack e Duplicati, que antes nao subiam, entre eles). Dos cinco que falharam, MariaDB e PostgreSQL estavam de pe e so nao falam HTTP (o laboratorio passa a aceitar servidor que atende sem HTTP); NginxProxyManager e Pihole declaravam `scheme: https` numa porta HTTP, e o botao Abrir da loja falharia; o exporter do Penpot nao recebia a chave secreta e reiniciava. O Teable falha numa consulta ao banco na inicialização e sai da loja ate voltar (catalogo 221 para 220).
+
 ### Fixed: os apps que nao subiam no Linux (Goal 30, 2026-11-17)
 
 O boot semanal do CI falhava nos mesmos 16 apps desde setembro, e ninguem olhava. A auditoria de 17/11/2026 confirmou outros restart-loops no codigo upstream. Cada um agora tem conserto ou saiu da loja com motivo.

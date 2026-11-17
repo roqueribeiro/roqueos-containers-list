@@ -22,10 +22,10 @@ services:
       POSTGRES_HOST: ztnet-postgres
       POSTGRES_PORT: 5432
       POSTGRES_USER: ztnet
-      POSTGRES_PASSWORD: ztnetbl5hbv98wl89x9v
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ztnet
       NEXTAUTH_URL: http://0.0.0.0:3050
-      NEXTAUTH_SECRET: mn6vor005ncgnu9iuqxn8bg
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
       NEXTAUTH_URL_INTERNAL: http://ztnet:3000
     networks:
       - ztnet-network
@@ -316,7 +316,7 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: ztnet
-      POSTGRES_PASSWORD: ztnetbl5hbv98wl89x9v
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ztnet
     volumes:
       - type: bind
@@ -1015,4 +1015,11 @@ x-casaos:
     en_us: ZTnet
 
 x-roqueos:
+  gerar:
+    POSTGRES_PASSWORD:
+      formato: senha
+      tamanho: 24
+    NEXTAUTH_SECRET:
+      formato: hex
+      tamanho: 64
   portaCompartilhada: true

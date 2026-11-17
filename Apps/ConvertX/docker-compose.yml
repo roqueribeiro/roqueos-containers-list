@@ -11,7 +11,7 @@ services:
     ports:
       - "3333:3000"
     environment:
-      - JWT_SECRET=aLongAndSecretStringUsedToSignTheJSONWebToken1234
+      - JWT_SECRET=${JWT_SECRET}
       - HTTP_ALLOWED=true
     volumes:
       - type: bind
@@ -559,4 +559,8 @@ x-casaos:
     en_us: ConvertX
 
 x-roqueos:
+  gerar:
+    JWT_SECRET:
+      formato: hex
+      tamanho: 64
   portaCompartilhada: true

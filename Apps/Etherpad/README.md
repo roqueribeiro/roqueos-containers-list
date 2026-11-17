@@ -29,7 +29,7 @@ Onde os dados deste app ficam no seu servidor.
 
 | Variável         | Valor padrão                                                 | Serviço  |
 | ---------------- | ------------------------------------------------------------ | -------- |
-| ADMIN_PASSWORD   | change-me-on-first-boot                                      | etherpad |
+| ADMIN_PASSWORD   | ${ADMIN_PASSWORD}                                            | etherpad |
 | DEFAULT_PAD_TEXT | Welcome to Etherpad on RoqueOS! This pad text is configurabl | etherpad |
 | TRUST_PROXY      | true                                                         | etherpad |
 
@@ -37,8 +37,8 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:9001/`.
 
-- SUBSTITUA ADMIN_PASSWORD antes do primeiro boot.
-- Painel admin: http://SEU_IP:9001/admin (usuário "admin" + senha configurada acima).
+- ADMIN_PASSWORD é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
+- Painel admin: http://SEU_IP:9001/admin (usuário "admin" + essa senha).
 - Para 50+ usuários simultâneos, configure PostgreSQL/MySQL via variáveis DB_TYPE/DB_HOST/etc.
 
 ## Imagens

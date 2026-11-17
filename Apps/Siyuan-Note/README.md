@@ -35,9 +35,7 @@ Onde os dados deste app ficam no seu servidor.
 
 Depois de instalar, abra `http://<endereço-do-servidor>:6806/`.
 
-- | accessAuthCode |
-- | -------- |
-- | `roqueos`    |
+- O código de acesso (accessAuthCode) é gerado pelo RoqueOS na instalação, único para este servidor, e aparece uma vez logo depois de instalar: guarde-o.
 
 ## Imagens
 

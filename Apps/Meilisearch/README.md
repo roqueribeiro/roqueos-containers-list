@@ -26,17 +26,17 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável           | Valor padrão                                     | Serviço     |
-| ------------------ | ------------------------------------------------ | ----------- |
-| MEILI_ENV          | production                                       | meilisearch |
-| MEILI_MASTER_KEY   | change-me-with-a-strong-key-of-at-least-16-bytes | meilisearch |
-| MEILI_NO_ANALYTICS | true                                             | meilisearch |
+| Variável           | Valor padrão        | Serviço     |
+| ------------------ | ------------------- | ----------- |
+| MEILI_ENV          | production          | meilisearch |
+| MEILI_MASTER_KEY   | ${MEILI_MASTER_KEY} | meilisearch |
+| MEILI_NO_ANALYTICS | true                | meilisearch |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:7700/`.
 
-- SUBSTITUA MEILI_MASTER_KEY antes do deploy. O valor padrão é inseguro.
+- MEILI_MASTER_KEY é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a, seus clientes precisam dela para conectar.
 - Após o boot, faça GET /health na porta 7700 para confirmar. O mini-dashboard web está em GET /.
 
 ## Imagens

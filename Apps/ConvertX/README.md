@@ -43,10 +43,10 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável     | Valor padrão                                      | Serviço  |
-| ------------ | ------------------------------------------------- | -------- |
-| JWT_SECRET   | aLongAndSecretStringUsedToSignTheJSONWebToken1234 | convertx |
-| HTTP_ALLOWED | true                                              | convertx |
+| Variável     | Valor padrão  | Serviço  |
+| ------------ | ------------- | -------- |
+| JWT_SECRET   | ${JWT_SECRET} | convertx |
+| HTTP_ALLOWED | true          | convertx |
 
 ## Primeiro acesso
 

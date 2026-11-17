@@ -31,19 +31,19 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                                   | Valor padrão            | Serviço |
-| ------------------------------------------ | ----------------------- | ------- |
-| SFTPGO_DATA_PROVIDER__CREATE_DEFAULT_ADMIN | true                    | sftpgo  |
-| SFTPGO_DEFAULT_ADMIN_USERNAME              | admin                   | sftpgo  |
-| SFTPGO_DEFAULT_ADMIN_PASSWORD              | change-me-on-first-boot | sftpgo  |
-| SFTPGO_HTTPD__BINDINGS__0__ADDRESS         | 0.0.0.0                 | sftpgo  |
-| SFTPGO_HTTPD__BINDINGS__0__PORT            | 8080                    | sftpgo  |
+| Variável                                   | Valor padrão                     | Serviço |
+| ------------------------------------------ | -------------------------------- | ------- |
+| SFTPGO_DATA_PROVIDER__CREATE_DEFAULT_ADMIN | true                             | sftpgo  |
+| SFTPGO_DEFAULT_ADMIN_USERNAME              | admin                            | sftpgo  |
+| SFTPGO_DEFAULT_ADMIN_PASSWORD              | ${SFTPGO_DEFAULT_ADMIN_PASSWORD} | sftpgo  |
+| SFTPGO_HTTPD__BINDINGS__0__ADDRESS         | 0.0.0.0                          | sftpgo  |
+| SFTPGO_HTTPD__BINDINGS__0__PORT            | 8080                             | sftpgo  |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8102/`.
 
-- SUBSTITUA SFTPGO_DEFAULT_ADMIN_PASSWORD antes do primeiro boot.
+- SFTPGO_DEFAULT_ADMIN_PASSWORD (usuário admin) é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 - Após boot, login em http://SEU_IP:8102 para criar usuários, pastas virtuais e configurar cotas.
 - SFTP escuta na porta 2022 (use `sftp -P 2022 user@seu-host`); FTP em 2121; WebDAV em 8103.
 - Para backend PostgreSQL/MySQL (vs SQLite padrão), configure SFTPGO_DATA_PROVIDER__DRIVER e variáveis relacionadas.

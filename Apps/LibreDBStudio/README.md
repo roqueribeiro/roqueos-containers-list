@@ -26,18 +26,20 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável            | Valor padrão                                                 | Serviço        |
-| ------------------- | ------------------------------------------------------------ | -------------- |
-| ADMIN_EMAIL         | admin@libredb.org                                            | libredb-studio |
-| ADMIN_PASSWORD      | changeme123                                                  | libredb-studio |
-| JWT_SECRET          | libredb-studio-change-this-to-a-long-random-secret-value-min | libredb-studio |
-| STORAGE_PROVIDER    | sqlite                                                       | libredb-studio |
-| STORAGE_SQLITE_PATH | /app/data/libredb-storage.db                                 | libredb-studio |
-| AUTH_COOKIE_SECURE  | false                                                        | libredb-studio |
+| Variável            | Valor padrão                 | Serviço        |
+| ------------------- | ---------------------------- | -------------- |
+| ADMIN_EMAIL         | admin@libredb.org            | libredb-studio |
+| ADMIN_PASSWORD      | ${ADMIN_PASSWORD}            | libredb-studio |
+| JWT_SECRET          | ${JWT_SECRET}                | libredb-studio |
+| STORAGE_PROVIDER    | sqlite                       | libredb-studio |
+| STORAGE_SQLITE_PATH | /app/data/libredb-storage.db | libredb-studio |
+| AUTH_COOKIE_SECURE  | false                        | libredb-studio |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:3016/`.
+
+- A senha do admin (login admin@libredb.org) é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ## Imagens
 

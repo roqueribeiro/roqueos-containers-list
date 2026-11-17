@@ -28,27 +28,27 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                   | Valor padrão                               | Serviço |
-| -------------------------- | ------------------------------------------ | ------- |
-| MYSQL_ROOT_PASSWORD        | change-me-to-a-long-random-string          | db      |
-| MYSQL_LOG_CONSOLE          | true                                       | db      |
-| MARIADB_AUTO_UPGRADE       | 1                                          | db      |
-| DB_HOST                    | db                                         | seafile |
-| DB_ROOT_PASSWD             | change-me-to-a-long-random-string          | seafile |
-| TIME_ZONE                  | America/Sao_Paulo                          | seafile |
-| SEAFILE_ADMIN_EMAIL        | admin@example.com                          | seafile |
-| SEAFILE_ADMIN_PASSWORD     | change-me-on-first-boot                    | seafile |
-| SEAFILE_SERVER_HOSTNAME    | localhost                                  | seafile |
-| SEAFILE_SERVER_LETSENCRYPT | false                                      | seafile |
-| JWT_PRIVATE_KEY            | replace-with-output-of-openssl-rand-hex-32 | seafile |
+| Variável                   | Valor padrão              | Serviço |
+| -------------------------- | ------------------------- | ------- |
+| MYSQL_ROOT_PASSWORD        | ${MYSQL_ROOT_PASSWORD}    | db      |
+| MYSQL_LOG_CONSOLE          | true                      | db      |
+| MARIADB_AUTO_UPGRADE       | 1                         | db      |
+| DB_HOST                    | db                        | seafile |
+| DB_ROOT_PASSWD             | ${MYSQL_ROOT_PASSWORD}    | seafile |
+| TIME_ZONE                  | America/Sao_Paulo         | seafile |
+| SEAFILE_ADMIN_EMAIL        | admin@example.com         | seafile |
+| SEAFILE_ADMIN_PASSWORD     | ${SEAFILE_ADMIN_PASSWORD} | seafile |
+| SEAFILE_SERVER_HOSTNAME    | localhost                 | seafile |
+| SEAFILE_SERVER_LETSENCRYPT | false                     | seafile |
+| JWT_PRIVATE_KEY            | ${JWT_PRIVATE_KEY}        | seafile |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:8100/`.
 
 - ANTES DO PRIMEIRO BOOT:
-- 1. SUBSTITUA MYSQL_ROOT_PASSWORD E DB_ROOT_PASSWD (devem ser iguais) por string aleatória longa.
-- 2. SUBSTITUA SEAFILE_ADMIN_PASSWORD e JWT_PRIVATE_KEY.
+- 1. MYSQL_ROOT_PASSWORD (usada também como DB_ROOT_PASSWD) e JWT_PRIVATE_KEY são gerados pelo RoqueOS na instalação, únicos para este servidor.
+- 2. A senha do admin (login SEAFILE_ADMIN_EMAIL) também é gerada e aparece uma vez logo depois de instalar: guarde-a.
 - 3. Configure SEAFILE_SERVER_HOSTNAME com seu domínio real. Com SEAFILE_SERVER_LETSENCRYPT=true, Seafile emite certs automaticamente (só funciona se o domínio aponta para este servidor).
 - 4. Combine com OnlyOffice ou Collabora (já no catálogo) para edição de documentos no navegador.
 

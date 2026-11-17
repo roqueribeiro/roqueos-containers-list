@@ -31,22 +31,22 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável          | Valor padrão | Serviço    |
-| ----------------- | ------------ | ---------- |
-| PUID              | $PUID        | postgresql |
-| PGID              | $PGID        | postgresql |
-| TZ                | $TZ          | postgresql |
-| POSTGRES_USER     | roqueos      | postgresql |
-| POSTGRES_PASSWORD | roqueos      | postgresql |
-| POSTGRES_DB       | roqueos      | postgresql |
+| Variável          | Valor padrão         | Serviço    |
+| ----------------- | -------------------- | ---------- |
+| PUID              | $PUID                | postgresql |
+| PGID              | $PGID                | postgresql |
+| TZ                | $TZ                  | postgresql |
+| POSTGRES_USER     | roqueos              | postgresql |
+| POSTGRES_PASSWORD | ${POSTGRES_PASSWORD} | postgresql |
+| POSTGRES_DB       | roqueos              | postgresql |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:5432/`.
 
-- Default user: `roqueos`
-- Default password: `roqueos`
-- Default database: `roqueos`
+- Usuário padrão: `roqueos`
+- Banco padrão: `roqueos`
+- A senha é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ## Imagens
 

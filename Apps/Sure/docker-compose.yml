@@ -15,16 +15,16 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_USER: sure_user
-      POSTGRES_PASSWORD: sure_password
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: sure_production
-      SECRET_KEY_BASE: a7523c3d0ae56415046ad8abae168d71074a79534a7062258f8d1d51ac2f76d3c3bc86d86b6b0b307df30d9a6a90a2066a3fa9e67c5e6f374dbd7dd4e0778e13
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
       SELF_HOSTED: "true"
       RAILS_FORCE_SSL: "false"
       RAILS_ASSUME_SSL: "false"
       DB_HOST: sure-db
       DB_PORT: 5432
       REDIS_URL: redis://sure-redis:6379/1
-      OPENAI_ACCESS_TOKEN: ${OPENAI_ACCESS_TOKEN}
+      OPENAI_ACCESS_TOKEN: ""
     depends_on:
       sure-db:
         condition: service_healthy
@@ -109,16 +109,16 @@ services:
         condition: service_healthy
     environment:
       POSTGRES_USER: sure_user
-      POSTGRES_PASSWORD: sure_password
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: sure_production
-      SECRET_KEY_BASE: a7523c3d0ae56415046ad8abae168d71074a79534a7062258f8d1d51ac2f76d3c3bc86d86b6b0b307df30d9a6a90a2066a3fa9e67c5e6f374dbd7dd4e0778e13
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE}
       SELF_HOSTED: "true"
       RAILS_FORCE_SSL: "false"
       RAILS_ASSUME_SSL: "false"
       DB_HOST: sure-db
       DB_PORT: 5432
       REDIS_URL: redis://sure-redis:6379/1
-      OPENAI_ACCESS_TOKEN: ${OPENAI_ACCESS_TOKEN}
+      OPENAI_ACCESS_TOKEN: ""
     networks:
       - sure_net
     deploy:
@@ -135,7 +135,7 @@ services:
         target: /var/lib/postgresql/data
     environment:
       POSTGRES_USER: sure_user
-      POSTGRES_PASSWORD: sure_password
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: sure_production
     healthcheck:
       test:
@@ -783,4 +783,11 @@ x-casaos:
     ja_jp: Sure
 
 x-roqueos:
+  gerar:
+    POSTGRES_PASSWORD:
+      formato: senha
+      tamanho: 24
+    SECRET_KEY_BASE:
+      formato: hex
+      tamanho: 64
   portaCompartilhada: true

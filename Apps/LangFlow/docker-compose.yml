@@ -14,7 +14,7 @@ services:
     networks:
       - langflow-net
     environment:
-      - LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@langflow-postgres:5432/langflow
+      - LANGFLOW_DATABASE_URL=postgresql://langflow:${POSTGRES_PASSWORD}@langflow-postgres:5432/langflow
       - LANGFLOW_CONFIG_DIR=/app/langflow
     volumes:
       - /DATA/AppData/$AppID/backend:/app/langflow
@@ -128,7 +128,7 @@ services:
     restart: unless-stopped
     environment:
       - POSTGRES_USER=langflow
-      - POSTGRES_PASSWORD=langflow
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=langflow
     networks:
       - langflow-net
@@ -721,3 +721,8 @@ x-casaos:
     it_it: Langflow
     ru_ru: Langflow
     ja_jp: Langflow
+x-roqueos:
+  gerar:
+    POSTGRES_PASSWORD:
+      formato: senha
+      tamanho: 24

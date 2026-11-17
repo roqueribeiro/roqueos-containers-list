@@ -51,75 +51,75 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                     | Valor padrão                                 | Serviço               |
-| ---------------------------- | -------------------------------------------- | --------------------- |
-| ASSISTANTS_API_KEY           | user_provided                                | librechat-api         |
-| OPENAI_API_KEY               | user_provided                                | librechat-api         |
-| GOOGLE_KEY                   | user_provided                                | librechat-api         |
-| ANTHROPIC_API_KEY            | user_provided                                | librechat-api         |
-| HOST                         | 0.0.0.0                                      | librechat-api         |
-| PORT                         | 3080                                         | librechat-api         |
-| DOMAIN_CLIENT                | http://0.0.0.0:3080                          | librechat-api         |
-| DOMAIN_SERVER                | http://0.0.0.0:3080                          | librechat-api         |
-| NO_INDEX                     | true                                         | librechat-api         |
-| TRUST_PROXY                  | 1                                            | librechat-api         |
-| CONSOLE_JSON                 | false                                        | librechat-api         |
-| DEBUG_LOGGING                | true                                         | librechat-api         |
-| DEBUG_CONSOLE                | false                                        | librechat-api         |
-| MONGO_URI                    | mongodb://librechat-mongodb:27017/LibreChat  | librechat-api         |
-| MEILI_HOST                   | http://librechat-meilisearch:7700            | librechat-api         |
-| RAG_PORT                     | 8000                                         | librechat-api         |
-| RAG_API_URL                  | http://librechat-rag-api:8000                | librechat-api         |
-| SEARCH                       | true                                         | librechat-api         |
-| MEILI_NO_ANALYTICS           | true                                         | librechat-api         |
-| OPENAI_MODERATION            | false                                        | librechat-api         |
-| BAN_VIOLATIONS               | true                                         | librechat-api         |
-| BAN_DURATION                 | 1000 * 60 * 60 * 2                           | librechat-api         |
-| BAN_INTERVAL                 | 20                                           | librechat-api         |
-| LOGIN_VIOLATION_SCORE        | 1                                            | librechat-api         |
-| REGISTRATION_VIOLATION_SCORE | 1                                            | librechat-api         |
-| CONCURRENT_VIOLATION_SCORE   | 1                                            | librechat-api         |
-| MESSAGE_VIOLATION_SCORE      | 1                                            | librechat-api         |
-| NON_BROWSER_VIOLATION_SCORE  | 20                                           | librechat-api         |
-| TTS_VIOLATION_SCORE          | 0                                            | librechat-api         |
-| STT_VIOLATION_SCORE          | 0                                            | librechat-api         |
-| FORK_VIOLATION_SCORE         | 0                                            | librechat-api         |
-| IMPORT_VIOLATION_SCORE       | 0                                            | librechat-api         |
-| FILE_UPLOAD_VIOLATION_SCORE  | 0                                            | librechat-api         |
-| LOGIN_MAX                    | 7                                            | librechat-api         |
-| LOGIN_WINDOW                 | 5                                            | librechat-api         |
-| REGISTER_MAX                 | 5                                            | librechat-api         |
-| REGISTER_WINDOW              | 60                                           | librechat-api         |
-| LIMIT_CONCURRENT_MESSAGES    | true                                         | librechat-api         |
-| CONCURRENT_MESSAGE_MAX       | 2                                            | librechat-api         |
-| LIMIT_MESSAGE_IP             | true                                         | librechat-api         |
-| MESSAGE_IP_MAX               | 40                                           | librechat-api         |
-| MESSAGE_IP_WINDOW            | 1                                            | librechat-api         |
-| LIMIT_MESSAGE_USER           | false                                        | librechat-api         |
-| MESSAGE_USER_MAX             | 40                                           | librechat-api         |
-| MESSAGE_USER_WINDOW          | 1                                            | librechat-api         |
-| ILLEGAL_MODEL_REQ_SCORE      | 5                                            | librechat-api         |
-| ALLOW_EMAIL_LOGIN            | true                                         | librechat-api         |
-| ALLOW_REGISTRATION           | true                                         | librechat-api         |
-| ALLOW_SOCIAL_LOGIN           | false                                        | librechat-api         |
-| ALLOW_SOCIAL_REGISTRATION    | false                                        | librechat-api         |
-| ALLOW_PASSWORD_RESET         | false                                        | librechat-api         |
-| ALLOW_UNVERIFIED_EMAIL_LOGIN | true                                         | librechat-api         |
-| SESSION_EXPIRY               | 1000 * 60 * 15                               | librechat-api         |
-| REFRESH_TOKEN_EXPIRY         | (1000 * 60 * 60 * 24) * 7                    | librechat-api         |
-| SCHEDULES_SINGLE_PROCESS     | true                                         | librechat-api         |
-| DEBUG_PLUGINS                | true                                         | librechat-api         |
-| DEBUG_OPENAI                 | false                                        | librechat-api         |
-| MEILI_HOST                   | http://librechat-meilisearch:7700            | librechat-meilisearch |
-| MEILI_NO_ANALYTICS           | true                                         | librechat-meilisearch |
-| MEILI_MASTER_KEY             | DrhYf7zENyR6AlUCKmnz0eYASOQdl6zxH7s7MKFSfFCt | librechat-meilisearch |
-| POSTGRES_DB                  | mydatabase                                   | librechat-vectordb    |
-| POSTGRES_USER                | myuser                                       | librechat-vectordb    |
-| POSTGRES_PASSWORD            | mypassword                                   | librechat-vectordb    |
-| DB_HOST                      | librechat-vectordb                           | librechat-rag-api     |
-| RAG_PORT                     | 8000                                         | librechat-rag-api     |
-| EMBEDDINGS_PROVIDER          | huggingface                                  | librechat-rag-api     |
-| EMBEDDINGS_MODEL             | sentence-transformers/all-MiniLM-L6-v2       | librechat-rag-api     |
+| Variável                     | Valor padrão                                | Serviço               |
+| ---------------------------- | ------------------------------------------- | --------------------- |
+| ASSISTANTS_API_KEY           | user_provided                               | librechat-api         |
+| OPENAI_API_KEY               | user_provided                               | librechat-api         |
+| GOOGLE_KEY                   | user_provided                               | librechat-api         |
+| ANTHROPIC_API_KEY            | user_provided                               | librechat-api         |
+| HOST                         | 0.0.0.0                                     | librechat-api         |
+| PORT                         | 3080                                        | librechat-api         |
+| DOMAIN_CLIENT                | http://0.0.0.0:3080                         | librechat-api         |
+| DOMAIN_SERVER                | http://0.0.0.0:3080                         | librechat-api         |
+| NO_INDEX                     | true                                        | librechat-api         |
+| TRUST_PROXY                  | 1                                           | librechat-api         |
+| CONSOLE_JSON                 | false                                       | librechat-api         |
+| DEBUG_LOGGING                | true                                        | librechat-api         |
+| DEBUG_CONSOLE                | false                                       | librechat-api         |
+| MONGO_URI                    | mongodb://librechat-mongodb:27017/LibreChat | librechat-api         |
+| MEILI_HOST                   | http://librechat-meilisearch:7700           | librechat-api         |
+| RAG_PORT                     | 8000                                        | librechat-api         |
+| RAG_API_URL                  | http://librechat-rag-api:8000               | librechat-api         |
+| SEARCH                       | true                                        | librechat-api         |
+| MEILI_NO_ANALYTICS           | true                                        | librechat-api         |
+| OPENAI_MODERATION            | false                                       | librechat-api         |
+| BAN_VIOLATIONS               | true                                        | librechat-api         |
+| BAN_DURATION                 | 1000 * 60 * 60 * 2                          | librechat-api         |
+| BAN_INTERVAL                 | 20                                          | librechat-api         |
+| LOGIN_VIOLATION_SCORE        | 1                                           | librechat-api         |
+| REGISTRATION_VIOLATION_SCORE | 1                                           | librechat-api         |
+| CONCURRENT_VIOLATION_SCORE   | 1                                           | librechat-api         |
+| MESSAGE_VIOLATION_SCORE      | 1                                           | librechat-api         |
+| NON_BROWSER_VIOLATION_SCORE  | 20                                          | librechat-api         |
+| TTS_VIOLATION_SCORE          | 0                                           | librechat-api         |
+| STT_VIOLATION_SCORE          | 0                                           | librechat-api         |
+| FORK_VIOLATION_SCORE         | 0                                           | librechat-api         |
+| IMPORT_VIOLATION_SCORE       | 0                                           | librechat-api         |
+| FILE_UPLOAD_VIOLATION_SCORE  | 0                                           | librechat-api         |
+| LOGIN_MAX                    | 7                                           | librechat-api         |
+| LOGIN_WINDOW                 | 5                                           | librechat-api         |
+| REGISTER_MAX                 | 5                                           | librechat-api         |
+| REGISTER_WINDOW              | 60                                          | librechat-api         |
+| LIMIT_CONCURRENT_MESSAGES    | true                                        | librechat-api         |
+| CONCURRENT_MESSAGE_MAX       | 2                                           | librechat-api         |
+| LIMIT_MESSAGE_IP             | true                                        | librechat-api         |
+| MESSAGE_IP_MAX               | 40                                          | librechat-api         |
+| MESSAGE_IP_WINDOW            | 1                                           | librechat-api         |
+| LIMIT_MESSAGE_USER           | false                                       | librechat-api         |
+| MESSAGE_USER_MAX             | 40                                          | librechat-api         |
+| MESSAGE_USER_WINDOW          | 1                                           | librechat-api         |
+| ILLEGAL_MODEL_REQ_SCORE      | 5                                           | librechat-api         |
+| ALLOW_EMAIL_LOGIN            | true                                        | librechat-api         |
+| ALLOW_REGISTRATION           | true                                        | librechat-api         |
+| ALLOW_SOCIAL_LOGIN           | false                                       | librechat-api         |
+| ALLOW_SOCIAL_REGISTRATION    | false                                       | librechat-api         |
+| ALLOW_PASSWORD_RESET         | false                                       | librechat-api         |
+| ALLOW_UNVERIFIED_EMAIL_LOGIN | true                                        | librechat-api         |
+| SESSION_EXPIRY               | 1000 * 60 * 15                              | librechat-api         |
+| REFRESH_TOKEN_EXPIRY         | (1000 * 60 * 60 * 24) * 7                   | librechat-api         |
+| SCHEDULES_SINGLE_PROCESS     | true                                        | librechat-api         |
+| DEBUG_PLUGINS                | true                                        | librechat-api         |
+| DEBUG_OPENAI                 | false                                       | librechat-api         |
+| MEILI_HOST                   | http://librechat-meilisearch:7700           | librechat-meilisearch |
+| MEILI_NO_ANALYTICS           | true                                        | librechat-meilisearch |
+| MEILI_MASTER_KEY             | ${MEILI_MASTER_KEY}                         | librechat-meilisearch |
+| POSTGRES_DB                  | mydatabase                                  | librechat-vectordb    |
+| POSTGRES_USER                | myuser                                      | librechat-vectordb    |
+| POSTGRES_PASSWORD            | ${POSTGRES_PASSWORD}                        | librechat-vectordb    |
+| DB_HOST                      | librechat-vectordb                          | librechat-rag-api     |
+| RAG_PORT                     | 8000                                        | librechat-rag-api     |
+| EMBEDDINGS_PROVIDER          | huggingface                                 | librechat-rag-api     |
+| EMBEDDINGS_MODEL             | sentence-transformers/all-MiniLM-L6-v2      | librechat-rag-api     |
 
 ## Primeiro acesso
 

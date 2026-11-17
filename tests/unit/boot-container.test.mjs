@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { renderiza, caixa, semPortas, veredito, sementesDe } from '../../scripts/boot-container.mjs'
+import { renderiza, caixa, semPortas, veredito, sementesDe, segredosDoLaboratorio } from '../../scripts/boot-container.mjs'
 
 describe('renderiza', () => {
   it('troca $AppID como o instalador troca', () => {
@@ -82,5 +82,45 @@ describe('veredito', () => {
     expect(veredito([{ state: 'running', status: 'Restarting (2) 1s ago', restarts: 2 }]).ok).toBe(
       false,
     )
+  })
+})
+
+describe('segredos do laboratorio', () => {
+  const compose = `services:
+  app:
+    image: x:1
+    environment:
+      APP_KEY: \${APP_KEY}
+      CHAVE: \${CHAVE}
+      SENHA: \${SENHA}
+x-roqueos:
+  gerar:
+    APP_KEY:
+      formato: laravel
+    CHAVE:
+      formato: hex
+      tamanho: 32
+    SENHA:
+      formato: senha
+`
+
+  it('gera cada segredo de x-roqueos.gerar no formato que o app valida', () => {
+    const s = segredosDoLaboratorio(compose)
+    expect(s.APP_KEY).toMatch(/^base64:/)
+    expect(s.CHAVE).toMatch(/^[0-9a-f]{32}$/)
+    expect(s.SENHA).toHaveLength(24)
+  })
+
+  it('o compose do laboratorio nao sobe com ${NOME} vazio', () => {
+    const t = renderiza(compose, 'app')
+    expect(t).not.toMatch(/\$\{(APP_KEY|CHAVE|SENHA)\}/)
+  })
+
+  it('todo valor comeca com letra, para o YAML nao o ler como numero', () => {
+    for (let i = 0; i < 20; i++) {
+      const s = segredosDoLaboratorio(compose)
+      expect(s.CHAVE[0]).toMatch(/[a-z]/)
+      expect(s.SENHA[0]).toMatch(/[a-z]/)
+    }
   })
 })

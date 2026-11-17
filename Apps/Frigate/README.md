@@ -32,17 +32,17 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável              | Valor padrão            | Serviço |
-| --------------------- | ----------------------- | ------- |
-| FRIGATE_RTSP_PASSWORD | change-me-on-first-boot | frigate |
+| Variável              | Valor padrão             | Serviço |
+| --------------------- | ------------------------ | ------- |
+| FRIGATE_RTSP_PASSWORD | ${FRIGATE_RTSP_PASSWORD} | frigate |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:5000/`.
 
 - ANTES DO PRIMEIRO BOOT:
-- 1. SUBSTITUA FRIGATE_RTSP_PASSWORD por uma string aleatória longa.
-- 2. Monte um config.yml em /config — Frigate não inicia sem ele. Exemplo mínimo: https://docs.frigate.video/configuration/
+- 1. FRIGATE_RTSP_PASSWORD é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
+- 2. Monte um config.yml em /config: Frigate não inicia sem ele. Exemplo mínimo: https://docs.frigate.video/configuration/
 - 3. Para aceleração de IA, anexe um Coral USB Accelerator (ganho enorme) ou use passthrough de GPU Intel/Nvidia.
 - 4. Use junto com Home Assistant (já no catálogo) para integração completa de automação residencial.
 

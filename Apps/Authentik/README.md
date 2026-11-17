@@ -34,31 +34,30 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                       | Valor padrão                               | Serviço    |
-| ------------------------------ | ------------------------------------------ | ---------- |
-| POSTGRES_DB                    | authentik                                  | postgresql |
-| POSTGRES_USER                  | authentik                                  | postgresql |
-| POSTGRES_PASSWORD              | change-me-to-a-long-random-string          | postgresql |
-| AUTHENTIK_REDIS__HOST          | redis                                      | server     |
-| AUTHENTIK_POSTGRESQL__HOST     | postgresql                                 | server     |
-| AUTHENTIK_POSTGRESQL__USER     | authentik                                  | server     |
-| AUTHENTIK_POSTGRESQL__NAME     | authentik                                  | server     |
-| AUTHENTIK_POSTGRESQL__PASSWORD | change-me-to-a-long-random-string          | server     |
-| AUTHENTIK_SECRET_KEY           | replace-with-output-of-openssl-rand-hex-32 | server     |
-| AUTHENTIK_REDIS__HOST          | redis                                      | worker     |
-| AUTHENTIK_POSTGRESQL__HOST     | postgresql                                 | worker     |
-| AUTHENTIK_POSTGRESQL__USER     | authentik                                  | worker     |
-| AUTHENTIK_POSTGRESQL__NAME     | authentik                                  | worker     |
-| AUTHENTIK_POSTGRESQL__PASSWORD | change-me-to-a-long-random-string          | worker     |
-| AUTHENTIK_SECRET_KEY           | replace-with-output-of-openssl-rand-hex-32 | worker     |
+| Variável                       | Valor padrão            | Serviço    |
+| ------------------------------ | ----------------------- | ---------- |
+| POSTGRES_DB                    | authentik               | postgresql |
+| POSTGRES_USER                  | authentik               | postgresql |
+| POSTGRES_PASSWORD              | ${POSTGRES_PASSWORD}    | postgresql |
+| AUTHENTIK_REDIS__HOST          | redis                   | server     |
+| AUTHENTIK_POSTGRESQL__HOST     | postgresql              | server     |
+| AUTHENTIK_POSTGRESQL__USER     | authentik               | server     |
+| AUTHENTIK_POSTGRESQL__NAME     | authentik               | server     |
+| AUTHENTIK_POSTGRESQL__PASSWORD | ${POSTGRES_PASSWORD}    | server     |
+| AUTHENTIK_SECRET_KEY           | ${AUTHENTIK_SECRET_KEY} | server     |
+| AUTHENTIK_REDIS__HOST          | redis                   | worker     |
+| AUTHENTIK_POSTGRESQL__HOST     | postgresql              | worker     |
+| AUTHENTIK_POSTGRESQL__USER     | authentik               | worker     |
+| AUTHENTIK_POSTGRESQL__NAME     | authentik               | worker     |
+| AUTHENTIK_POSTGRESQL__PASSWORD | ${POSTGRES_PASSWORD}    | worker     |
+| AUTHENTIK_SECRET_KEY           | ${AUTHENTIK_SECRET_KEY} | worker     |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:9000/`.
 
 - ANTES DO PRIMEIRO BOOT:
-- 1. Substitua POSTGRES_PASSWORD e AUTHENTIK_POSTGRESQL__PASSWORD (devem ser iguais) por uma string aleatória longa.
-- 2. Substitua AUTHENTIK_SECRET_KEY (em 2 lugares — server + worker) pela saída de `openssl rand -hex 32`.
+- 1. POSTGRES_PASSWORD (usada também como AUTHENTIK_POSTGRESQL__PASSWORD) e AUTHENTIK_SECRET_KEY são gerados pelo RoqueOS na instalação, únicos para este servidor. O server e o worker já usam os mesmos valores.
 - Wizard inicial em http://SEU_IP:9000/if/flow/initial-setup/ cria o usuário akadmin.
 
 ## Imagens

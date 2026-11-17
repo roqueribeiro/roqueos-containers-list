@@ -140,10 +140,84 @@ describe("P3 — variaveis", () => {
     expect(p.P3.join(" ")).toMatch(/placeholder/);
   });
 
-  it("aceita o padrao da casa e substituicao de verdade", () => {
-    for (const valor of ["change-me-on-first-boot", "$SENHA_DO_INSTALADOR"]) {
-      const p = premissas(app({ servico: { environment: [`ADMIN_PASSWORD=${valor}`] } }), conflitosVazios);
-      expect(p.P3, valor).toEqual([]);
+  // Ate o Goal 31 este teste aceitava `change-me-on-first-boot` mais uma tip
+  // mandando trocar: 62 apps saiam assim e ninguem trocava. O padrao agora e um so.
+  it("aceita so segredo gerado: ${NOME} declarado em x-roqueos.gerar", () => {
+    const p = premissas(
+      app({
+        servico: { environment: ["ADMIN_PASSWORD=${ADMIN_SENHA}"] },
+        roqueos: { gerar: { ADMIN_SENHA: { formato: "senha", mostrar: true } } },
+      }),
+      conflitosVazios,
+    );
+    expect(p.P3).toEqual([]);
+  });
+
+  it("reprova o antigo padrao da casa, change-me-on-first-boot", () => {
+    const p = premissas(app({ servico: { environment: ["ADMIN_PASSWORD=change-me-on-first-boot"] } }), conflitosVazios);
+    expect(p.P3.join(" ")).toMatch(/placeholder/);
+  });
+
+  it("reprova segredo que parece aleatorio mas e o mesmo em toda instalacao", () => {
+    // O Sure, o Docmost e o Nocodb traziam assim: forjar sessao bastava ler o repo.
+    const p = premissas(app({ servico: { environment: { SECRET_KEY_BASE: "a7523c3d0ae56415046ad8ab" } } }), conflitosVazios);
+    expect(p.P3.join(" ")).toMatch(/SECRET_KEY_BASE com segredo literal/);
+  });
+
+  it("reprova variavel que nao vem do sistema nem de x-roqueos.gerar, porque chega vazia", () => {
+    const p = premissas(app({ servico: { environment: ["TOKEN=$TOKEN_DO_INSTALADOR"] } }), conflitosVazios);
+    expect(p.P3.join(" ")).toMatch(/TOKEN_DO_INSTALADOR não vem do sistema/);
+  });
+
+  it("aceita as variaveis de sistema e o escape $$ do compose", () => {
+    const p = premissas(
+      app({ servico: { environment: { TZ: "$TZ", UID: "${PUID}" }, command: ["sh", "-c", "echo $$HOME"] } }),
+      conflitosVazios,
+    );
+    expect(p.P3).toEqual([]);
+  });
+
+  it("reprova senha literal dentro de uma URL", () => {
+    const p = premissas(
+      app({ servico: { environment: ["DATABASE_URL=postgres://app:segredo123@db:5432/app"] } }),
+      conflitosVazios,
+    );
+    expect(p.P3.join(" ")).toMatch(/URL/);
+  });
+
+  it("reprova segredo literal no command", () => {
+    // Siyuan e Kopia levavam a senha num argumento.
+    const p = premissas(app({ servico: { command: "--accessAuthCode=roqueos --workspace=/w" } }), conflitosVazios);
+    expect(p.P3.join(" ")).toMatch(/command/);
+  });
+
+  it("reprova a senha do redis escrita no command", () => {
+    const p = premissas(app({ servico: { command: "--requirepass casaosredispassword\n" } }), conflitosVazios);
+    expect(p.P3.join(" ")).toMatch(/requirepass/);
+  });
+
+  it("reprova segredo declarado e nunca usado", () => {
+    const p = premissas(app({ roqueos: { gerar: { SOBRA: { formato: "hex" } } } }), conflitosVazios);
+    expect(p.P3.join(" ")).toMatch(/SOBRA declarado e nunca usado/);
+  });
+
+  it("nao confunde host, usuario, cabecalho ou chave vazia com segredo", () => {
+    const env = {
+      AUTHENTIK_REDIS__HOST: "redis",
+      DB_USER: "app",
+      JWT_HEADER: "Authorization",
+      OPENAI_API_KEY: "",
+      ASSISTANTS_API_KEY: "user_provided",
+      TOKEN_TTL: "3600",
+    };
+    const p = premissas(app({ servico: { environment: env } }), conflitosVazios);
+    expect(p.P3).toEqual([]);
+  });
+
+  it("pega placeholder de IP entre colchetes, com hifen ou sublinhado", () => {
+    for (const v of ["http://[YOUR_CASAOS_IP]:3000", "[YOUR-CASAOS-IP]"]) {
+      const p = premissas(app({ servico: { environment: { PUBLIC_URL: v } } }), conflitosVazios);
+      expect(p.P3.join(" "), v).toMatch(/placeholder/);
     }
   });
 

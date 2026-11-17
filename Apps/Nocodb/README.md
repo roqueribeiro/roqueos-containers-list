@@ -29,14 +29,14 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável           | Valor padrão                                   | Serviço   |
-| ------------------ | ---------------------------------------------- | --------- |
-| DATABASE_URL       | postgres://nocodb:nocodb@nocodb-db:5432/nocodb | nocodb    |
-| NC_AUTH_JWT_SECRET | 899499fc-36a0-4131-b077-7bb9f051ac9b           | nocodb    |
-| NC_REDIS_URL       | redis://default:casaos@nocodb-redis:6379       | nocodb    |
-| POSTGRES_DB        | nocodb                                         | nocodb-db |
-| POSTGRES_USER      | nocodb                                         | nocodb-db |
-| POSTGRES_PASSWORD  | nocodb                                         | nocodb-db |
+| Variável           | Valor padrão                                                 | Serviço   |
+| ------------------ | ------------------------------------------------------------ | --------- |
+| DATABASE_URL       | postgres://nocodb:${POSTGRES_PASSWORD}@nocodb-db:5432/nocodb | nocodb    |
+| NC_AUTH_JWT_SECRET | ${NC_AUTH_JWT_SECRET}                                        | nocodb    |
+| NC_REDIS_URL       | redis://default:${REDIS_PASSWORD}@nocodb-redis:6379          | nocodb    |
+| POSTGRES_DB        | nocodb                                                       | nocodb-db |
+| POSTGRES_USER      | nocodb                                                       | nocodb-db |
+| POSTGRES_PASSWORD  | ${POSTGRES_PASSWORD}                                         | nocodb-db |
 
 ## Primeiro acesso
 

@@ -49,35 +49,34 @@ Onde os dados deste app ficam no seu servidor.
 
 ## Variáveis de ambiente
 
-| Variável                 | Valor padrão       | Serviço              |
-| ------------------------ | ------------------ | -------------------- |
-| ADMIN_USERNAME           | roqueos            | archivebox           |
-| ADMIN_PASSWORD           | roqueos            | archivebox           |
-| ALLOWED_HOSTS            | *                  | archivebox           |
-| CSRF_TRUSTED_ORIGINS     | *                  | archivebox           |
-| PUBLIC_INDEX             | True               | archivebox           |
-| PUBLIC_SNAPSHOTS         | True               | archivebox           |
-| PUBLIC_ADD_VIEW          | False              | archivebox           |
-| SEARCH_BACKEND_ENGINE    | sonic              | archivebox           |
-| SEARCH_BACKEND_HOST_NAME | archivebox_sonic   | archivebox           |
-| SEARCH_BACKEND_PASSWORD  | SomeSecretPassword | archivebox           |
-| TIMEOUT                  | 120                | archivebox_scheduler |
-| SEARCH_BACKEND_ENGINE    | sonic              | archivebox_scheduler |
-| SEARCH_BACKEND_HOST_NAME | archivebox_sonic   | archivebox_scheduler |
-| SEARCH_BACKEND_PASSWORD  | SomeSecretPassword | archivebox_scheduler |
-| SEARCH_BACKEND_PASSWORD  | SomeSecretPassword | archivebox_sonic     |
-| DISPLAY_WIDTH            | 1920               | archivebox_novnc     |
-| DISPLAY_HEIGHT           | 1080               | archivebox_novnc     |
-| RUN_XTERM                | no                 | archivebox_novnc     |
+| Variável                 | Valor padrão               | Serviço              |
+| ------------------------ | -------------------------- | -------------------- |
+| ADMIN_USERNAME           | roqueos                    | archivebox           |
+| ADMIN_PASSWORD           | ${ADMIN_PASSWORD}          | archivebox           |
+| ALLOWED_HOSTS            | *                          | archivebox           |
+| CSRF_TRUSTED_ORIGINS     | *                          | archivebox           |
+| PUBLIC_INDEX             | True                       | archivebox           |
+| PUBLIC_SNAPSHOTS         | True                       | archivebox           |
+| PUBLIC_ADD_VIEW          | False                      | archivebox           |
+| SEARCH_BACKEND_ENGINE    | sonic                      | archivebox           |
+| SEARCH_BACKEND_HOST_NAME | archivebox_sonic           | archivebox           |
+| SEARCH_BACKEND_PASSWORD  | ${SEARCH_BACKEND_PASSWORD} | archivebox           |
+| TIMEOUT                  | 120                        | archivebox_scheduler |
+| SEARCH_BACKEND_ENGINE    | sonic                      | archivebox_scheduler |
+| SEARCH_BACKEND_HOST_NAME | archivebox_sonic           | archivebox_scheduler |
+| SEARCH_BACKEND_PASSWORD  | ${SEARCH_BACKEND_PASSWORD} | archivebox_scheduler |
+| SEARCH_BACKEND_PASSWORD  | ${SEARCH_BACKEND_PASSWORD} | archivebox_sonic     |
+| DISPLAY_WIDTH            | 1920                       | archivebox_novnc     |
+| DISPLAY_HEIGHT           | 1080                       | archivebox_novnc     |
+| RUN_XTERM                | no                         | archivebox_novnc     |
 
 ## Primeiro acesso
 
 Depois de instalar, abra `http://<endereço-do-servidor>:18010/`.
 
-- **Conta Padrão**
-- | Nome de Utilizador | Palavra-passe |
-- |--------------------|----------------|
-- | `roqueos`           | `roqueos`       |
+- **Conta de admin**
+- Usuário: `roqueos`
+- A senha é gerada pelo RoqueOS na instalação, única para este servidor, e aparece uma vez logo depois de instalar: guarde-a.
 
 ## Imagens
 
