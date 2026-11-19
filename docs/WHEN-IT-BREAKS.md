@@ -2,7 +2,22 @@
 
 *Also available in [Brazilian Portuguese](pt-BR/QUANDO-QUEBRA.md).*
 
+> **For:** whoever has an app that does not start, or starts and does not work, from this catalog.
+> **What is here:** a first diagnostic, then symptom, cause, fix and the check that now catches it, by area.
+> **Where to go for the rest:** what each check proves in [TESTING.md](TESTING.md); how to undo a merge in [HOW-IT-SHIPS.md](HOW-IT-SHIPS.md#undoing).
+
 Each row is a failure that already happened in this catalog, what caused it, and what fixes it. Look up the symptom; the right column says which check now catches it.
+
+## First look
+
+Two commands tell most stories: the verdict of the ten premises for the app, and a real start on a Linux Docker host.
+
+```bash
+yarn revisao:app <App>
+yarn boot <App>
+```
+
+On the server where it is installed, `docker compose ps` and the last lines of `docker compose logs` of the stack show which service fails and the literal message to look up below.
 
 ## It does not start
 

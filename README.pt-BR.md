@@ -157,8 +157,10 @@ Tudo começa no [docs/pt-BR/INDEX.md](docs/pt-BR/INDEX.md). Todo documento exist
 | Adicionar um app ou consertar um | [ADICIONAR-UM-APP.md](docs/pt-BR/ADICIONAR-UM-APP.md) e [CONTRIBUTING.md](docs/pt-BR/CONTRIBUTING.md) |
 | Saber o que está provado e como | [CRITERIOS-DE-TESTE.md](docs/pt-BR/CRITERIOS-DE-TESTE.md) |
 | Ver o estado de cada app | [QUALIDADE.md](docs/pt-BR/QUALIDADE.md) |
+| Entender como o catálogo é feito por dentro | [ARQUITETURA.md](docs/pt-BR/ARQUITETURA.md) |
 | Consultar um campo do manifesto, um comando ou um workflow | [REFERENCIA.md](docs/pt-BR/REFERENCIA.md) |
-| Entender como uma mudança chega à loja | [COMO-CHEGA.md](docs/pt-BR/COMO-CHEGA.md) |
+| Ler o catálogo a partir de outro sistema | [INTEGRACOES.md](docs/pt-BR/INTEGRACOES.md) |
+| Entender como uma mudança chega à loja, ou operar | [COMO-CHEGA.md](docs/pt-BR/COMO-CHEGA.md) |
 | Consertar um app que não sobe | [QUANDO-QUEBRA.md](docs/pt-BR/QUANDO-QUEBRA.md) |
 | Saber por que um app saiu | [APOSENTADOS.md](docs/pt-BR/APOSENTADOS.md) |
 | Achar um termo | [GLOSSARIO.md](docs/pt-BR/GLOSSARIO.md) |

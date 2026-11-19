@@ -2,6 +2,10 @@
 
 *Also available in [Brazilian Portuguese](pt-BR/GLOSSARIO.md).*
 
+> **For:** anyone who meets a word here that seems to mean something specific.
+> **What is here:** the terms of the catalog and of its checks, with where they live.
+> **Where to go for the rest:** the fields themselves in [REFERENCE.md](REFERENCE.md).
+
 | Term | Meaning |
 | --- | --- |
 | **App** | a folder under `Apps/`: a manifest, an icon and a store card |

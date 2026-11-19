@@ -2,6 +2,10 @@
 
 *Also available in [Brazilian Portuguese](pt-BR/REFERENCIA.md).*
 
+> **For:** whoever writes or reviews a manifest, or needs a command or a workflow.
+> **What is here:** every manifest field, the system variables, the commands, the workflows and the files at the root, as tables.
+> **Where to go for the rest:** why things are built this way in [ARCHITECTURE.md](ARCHITECTURE.md); how other systems read it in [INTEGRATIONS.md](INTEGRATIONS.md).
+
 The contract of a manifest, the commands of the repository and the workflows. The source of truth for the manifest is [`schema/casaos-app.schema.json`](../schema/casaos-app.schema.json); this page explains it.
 
 ## The manifest

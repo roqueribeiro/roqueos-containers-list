@@ -2,6 +2,10 @@
 
 *Tradução de [RETIRED.md](../RETIRED.md), a versão principal, em inglês. Se as duas divergirem, vale a em inglês.*
 
+> **Para quem:** quem procura um app que não está mais na loja, ou propõe um que já saiu antes.
+> **O que tem aqui:** cada saída com a data, o motivo, a evidência e o que usar no lugar.
+> **Onde ir para o resto:** como trazer um app de volta no [ADICIONAR-UM-APP.md](ADICIONAR-UM-APP.md).
+
 Um app sai da loja quando deixa de ser seguro ou útil recomendá-lo: o projeto
 original foi arquivado, a imagem parou de ser publicada ou sumiu do registry, ou
 o app não faz mais o que a ficha promete. Sair da loja **não apaga nada** de quem

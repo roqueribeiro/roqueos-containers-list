@@ -2,6 +2,10 @@
 
 *Tradução de [REFERENCE.md](../REFERENCE.md), a versão principal, em inglês. Se as duas divergirem, vale a em inglês.*
 
+> **Para quem:** quem escreve ou revisa um manifesto, ou precisa de um comando ou de um workflow.
+> **O que tem aqui:** cada campo do manifesto, as variáveis de sistema, os comandos, os workflows e os arquivos da raiz, em tabelas.
+> **Onde ir para o resto:** por que as coisas são feitas assim na [ARQUITETURA.md](ARQUITETURA.md); como outros sistemas leem nas [INTEGRACOES.md](INTEGRACOES.md).
+
 O contrato de um manifesto, os comandos do repositório e os workflows. A fonte de verdade do manifesto é o [`schema/casaos-app.schema.json`](../../schema/casaos-app.schema.json); esta página explica o que ele diz.
 
 ## O manifesto

@@ -2,6 +2,10 @@
 
 *Tradução de [INDEX.md](../INDEX.md), a versão principal, em inglês. Se as duas divergirem, vale a em inglês.*
 
+> **Para quem:** quem chega na documentação e quer a página que responde a sua pergunta.
+> **O que tem aqui:** cada documento do repositório pelo que ele responde, os arquivos de evidência, e os diagramas com as fontes.
+> **Onde ir para o resto:** a visão geral é o [README](../../README.pt-BR.md); o manifesto deste conjunto é o [`docs.json`](../docs.json).
+
 Por onde começar depende do que você quer. Todo documento abaixo tem um par em inglês em [`docs/`](../INDEX.md); o em inglês é a versão principal.
 
 | Eu quero... | Leia |
@@ -11,8 +15,10 @@ Por onde começar depende do que você quer. Todo documento abaixo tem um par em
 | **Contribuir de forma geral** | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | **Saber o que está provado e como** | [CRITERIOS-DE-TESTE.md](CRITERIOS-DE-TESTE.md): as dez premissas, o teste de boot, o que ainda não tem cobertura automática |
 | **Ver o estado de cada app** | [QUALIDADE.md](QUALIDADE.md): gerado a partir do repositório, app a app |
+| **Entender como o catálogo é feito por dentro** | [ARQUITETURA.md](ARQUITETURA.md): quem lê, as ferramentas, os fluxos, as decisões e os limites |
 | **Consultar um campo do manifesto, um comando ou um workflow** | [REFERENCIA.md](REFERENCIA.md) |
-| **Entender como uma mudança chega à loja** | [COMO-CHEGA.md](COMO-CHEGA.md): a `main`, o cache do servidor, o arquivo do CasaOS, a ordem entre repositórios |
+| **Ler o catálogo a partir de outro sistema** | [INTEGRACOES.md](INTEGRACOES.md): as URLs, o que o servidor do RoqueOS lê, como sai uma mudança de contrato |
+| **Entender como uma mudança chega à loja, ou operar** | [COMO-CHEGA.md](COMO-CHEGA.md): a `main`, o cache do servidor, releases, a rotina, desfazer, backup, o que vigiar |
 | **Consertar um app que não sobe** | [QUANDO-QUEBRA.md](QUANDO-QUEBRA.md): sintoma, causa, o que fazer |
 | **Saber por que um app saiu da loja** | [APOSENTADOS.md](APOSENTADOS.md) |
 | **Achar um termo** | [GLOSSARIO.md](GLOSSARIO.md) |
@@ -28,3 +34,12 @@ Por onde começar depende do que você quer. Todo documento abaixo tem um par em
 | `Apps/<App>/README.md` | a ficha de cada app na loja | `yarn readme` |
 
 O `yarn docs:check` regenera as páginas geradas em memória e reprova quando a versão commitada é diferente, então esses arquivos não conseguem se afastar dos manifestos.
+
+## Diagramas
+
+| Diagrama | Fonte | Explicado em |
+| --- | --- | --- |
+| Contexto: quem lê o catálogo | Mermaid na [ARQUITETURA.md](ARQUITETURA.md#2-contexto-quem-lê-e-do-que-depende) | a mesma seção |
+| Sequência: do pull request à loja | Mermaid na [ARQUITETURA.md](ARQUITETURA.md#5-fluxo-do-pull-request-à-loja) | a mesma seção |
+| Sequência: o teste de boot | Mermaid na [ARQUITETURA.md](ARQUITETURA.md#6-fluxo-o-teste-de-boot) | a mesma seção e os [CRITERIOS-DE-TESTE.md](CRITERIOS-DE-TESTE.md) |
+| Banner e marca do README | `docs/assets/marca/gen.py`, a partir do `carimbo.json` | `docs/assets/marca/README.md` (só em português) |
