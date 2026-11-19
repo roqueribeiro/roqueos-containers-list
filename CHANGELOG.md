@@ -12,6 +12,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Documentation: o padrão de documentação da família (2026-11-18)
+
+- **`docs/docs.json` declara o conjunto**: inglês como principal, par em `docs/pt-BR/`, cada documento com o papel que tem; o kit de marca em `docs/assets/marca/` fica em `fora`. `roqueos-docs` sai `ok` e os hashes dos principais estão em `docs/.docs-hash.json`.
+- **Arquitetura nova** (`docs/ARCHITECTURE.md` e `docs/pt-BR/ARQUITETURA.md`): quem lê o catálogo, os processos, os componentes com o arquivo de cada um, o fluxo do pull request e o do boot em Mermaid, os dados que cada passo grava, os segredos, as decisões de design com data e os limites conhecidos.
+- **Integrações nova** (`docs/INTEGRATIONS.md` e `docs/pt-BR/INTEGRACOES.md`): as URLs pelas quais outro sistema lê o catálogo e o que o `roqueos-server` lê de cada manifesto, conferido no código dele em 18/11/2026.
+- **`HOW-IT-SHIPS` vira também o documento de operação**: a rotina, como atualizar a evidência de boot, cortar uma release, desfazer cada passo, backup e o que vigiar.
+- **Cada documento abre com Para quem, O que tem aqui e Onde ir para o resto**; o índice ganha a tabela dos diagramas; `WHEN-IT-BREAKS` ganha o primeiro diagnóstico.
+- **`scripts/check-docs.mjs` registra os dois pares novos em `PARES`**, sem mudar nenhuma regra.
+
 ### Documentation: documentação no padrão dos repositórios RoqueOS (2026-11-17)
 
 - **README em inglês com par em português**, no mesmo formato dos outros repositórios RoqueOS: o que é, como começar, como um app entra na loja, o que o mantém honesto, o estado medido e os limites conhecidos. A contagem de apps do README é conferida contra `Apps/`.

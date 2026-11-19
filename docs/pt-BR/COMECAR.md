@@ -2,6 +2,10 @@
 
 *Tradução de [GETTING-STARTED.md](../GETTING-STARTED.md), a versão principal, em inglês. Se as duas divergirem, vale a em inglês.*
 
+> **Para quem:** quem usa o catálogo pela primeira vez: para instalar um app, apontar um painel para ele, ou trabalhar nele.
+> **O que tem aqui:** os três caminhos de entrada, cada comando, e como saber que deu certo.
+> **Onde ir para o resto:** as checagens explicadas nos [CRITERIOS-DE-TESTE.md](CRITERIOS-DE-TESTE.md); uma primeira falha no [QUANDO-QUEBRA.md](QUANDO-QUEBRA.md); cada comando na [REFERENCIA.md](REFERENCIA.md).
+
 Tem três jeitos de usar este catálogo: instalar apps dele no RoqueOS, adicioná-lo a um painel compatível com o CasaOS, ou trabalhar nele.
 
 ## 1. Instalar um app no RoqueOS

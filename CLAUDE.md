@@ -4,6 +4,8 @@ Self-hosted **Docker app catalog** for RoqueOS: 220 ready-to-deploy apps in Casa
 
 This is one of the repos that form RoqueOS. The ecosystem map (sibling repos, how they connect, cross-repo change ordering) is [`../roqueos-ecosystem/README.md`](../roqueos-ecosystem/README.md), and the cross-repo rules are in `../roqueos-ecosystem/rules/`. Neither is auto-loaded: read them on demand when a task crosses repos.
 
+Documentation starts at [`docs/INDEX.md`](docs/INDEX.md) (English main, pair in `docs/pt-BR/`, declared in `docs/docs.json`).
+
 ## Commands
 
 - `yarn install`: install validator deps (one-time; no global installs)

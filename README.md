@@ -157,8 +157,10 @@ Everything starts at [docs/INDEX.md](docs/INDEX.md). Every document exists in En
 | Add an app or fix one | [ADDING-AN-APP.md](docs/ADDING-AN-APP.md) and [CONTRIBUTING.md](CONTRIBUTING.md) |
 | Know what is proven and how | [TESTING.md](docs/TESTING.md) |
 | See the state of every app | [QUALITY.md](docs/QUALITY.md) |
+| Understand how the catalog is built inside | [ARCHITECTURE.md](docs/ARCHITECTURE.md) |
 | Look up a manifest field, a command or a workflow | [REFERENCE.md](docs/REFERENCE.md) |
-| Understand how a change reaches the store | [HOW-IT-SHIPS.md](docs/HOW-IT-SHIPS.md) |
+| Read the catalog from another system | [INTEGRATIONS.md](docs/INTEGRATIONS.md) |
+| Understand how a change reaches the store, or operate it | [HOW-IT-SHIPS.md](docs/HOW-IT-SHIPS.md) |
 | Fix an app that does not start | [WHEN-IT-BREAKS.md](docs/WHEN-IT-BREAKS.md) |
 | Know why an app left | [RETIRED.md](docs/RETIRED.md) |
 | Find a term | [GLOSSARY.md](docs/GLOSSARY.md) |

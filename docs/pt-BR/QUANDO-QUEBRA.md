@@ -2,7 +2,22 @@
 
 *Tradução de [WHEN-IT-BREAKS.md](../WHEN-IT-BREAKS.md), a versão principal, em inglês. Se as duas divergirem, vale a em inglês.*
 
+> **Para quem:** quem tem um app deste catálogo que não sobe, ou sobe e não funciona.
+> **O que tem aqui:** um primeiro diagnóstico, depois sintoma, causa, conserto e a checagem que agora pega, por área.
+> **Onde ir para o resto:** o que cada checagem prova nos [CRITERIOS-DE-TESTE.md](CRITERIOS-DE-TESTE.md); como desfazer um merge no [COMO-CHEGA.md](COMO-CHEGA.md#desfazer).
+
 Cada linha é uma falha que já aconteceu neste catálogo, o que a causou e o que conserta. Procure o sintoma; a coluna da direita diz qual checagem pega o problema agora.
+
+## Primeiro olhar
+
+Dois comandos contam a maior parte das histórias: o veredito das dez premissas para o app, e uma subida de verdade num host Docker Linux.
+
+```bash
+yarn revisao:app <App>
+yarn boot <App>
+```
+
+No servidor onde ele está instalado, `docker compose ps` e as últimas linhas de `docker compose logs` da stack mostram qual serviço falha e a mensagem literal para procurar abaixo.
 
 ## Não sobe
 

@@ -24,6 +24,8 @@ export const PARES = {
   'CONTRIBUTING.md': 'docs/pt-BR/CONTRIBUTING.md',
   'docs/INDEX.md': 'docs/pt-BR/INDEX.md',
   'docs/GETTING-STARTED.md': 'docs/pt-BR/COMECAR.md',
+  'docs/ARCHITECTURE.md': 'docs/pt-BR/ARQUITETURA.md',
+  'docs/INTEGRATIONS.md': 'docs/pt-BR/INTEGRACOES.md',
   'docs/ADDING-AN-APP.md': 'docs/pt-BR/ADICIONAR-UM-APP.md',
   'docs/TESTING.md': 'docs/pt-BR/CRITERIOS-DE-TESTE.md',
   'docs/REFERENCE.md': 'docs/pt-BR/REFERENCIA.md',

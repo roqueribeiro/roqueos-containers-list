@@ -2,6 +2,10 @@
 
 *Also available in [Brazilian Portuguese](pt-BR/APOSENTADOS.md).*
 
+> **For:** whoever looks for an app that is no longer in the store, or proposes one that left before.
+> **What is here:** every departure with the date, the reason, the evidence and what to use instead.
+> **Where to go for the rest:** how to bring an app back in [ADDING-AN-APP.md](ADDING-AN-APP.md).
+
 An app leaves the store when recommending it stops being safe or useful: the upstream project was archived, the image stopped being published or disappeared from the registry, or the app no longer does what its card promises. Leaving the store **deletes nothing** for people who already installed it: the container keeps running where it is. What changes is that nobody new installs it, and the card is no longer shown.
 
 Each row records the date, the reason, the evidence behind the decision and what to install instead. The old manifest stays in the git history, in the commit before the removal.

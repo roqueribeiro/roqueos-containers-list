@@ -2,6 +2,10 @@
 
 *Also available in [Brazilian Portuguese](pt-BR/CRITERIOS-DE-TESTE.md).*
 
+> **For:** whoever reviews a pull request, or wants to know what a green CI really proves.
+> **What is here:** the three layers (schema, ten premises, boot), what each proves and what fails it, and what is not covered.
+> **Where to go for the rest:** the commands in [REFERENCE.md](REFERENCE.md); failures seen in practice in [WHEN-IT-BREAKS.md](WHEN-IT-BREAKS.md).
+
 Three layers stand between a manifest and the store. Each one says what it proves, how, and what makes it fail. The last section says what none of them covers yet, because a check that claims more than it measures is how a broken app reached the store before.
 
 ## Layer 1: the schema (`yarn validate`)
