@@ -78,7 +78,7 @@ Cross-repo doc-sync mapping (changed X → update Y) lives in [`../roqueos-front
 
 ## Cross-repo
 
-This catalog is the **producer** in the `front ← containers-list` contract: `roqueos-server` fetches the published `appstore.zip` on boot (24h cache), parses each `x-casaos` manifest, and exposes the apps via `/catalog`; the RoqueOS App Store renders them. When changing the schema (renamed/removed fields, new enum values), change **this repo first**, then the server parser + the front, keeping rules and CHANGELOGs in sync, see ordering in [`../roqueos-ecosystem/README.md`](../roqueos-ecosystem/README.md).
+This catalog is the **producer** in the `front ← containers-list` contract: `roqueos-server` lists `Apps/` on `main` through the GitHub contents API (it only takes a zip when the configured URL ends in `.zip`; see `docs/ARCHITECTURE.md`), parses each `x-casaos` manifest, and exposes the apps via `/catalog`; the RoqueOS App Store renders them. When changing the schema (renamed/removed fields, new enum values), change **this repo first**, then the server parser + the front, keeping rules and CHANGELOGs in sync, see ordering in [`../roqueos-ecosystem/README.md`](../roqueos-ecosystem/README.md).
 
 ## O padrão da loja
 
