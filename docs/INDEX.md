@@ -2,6 +2,10 @@
 
 *Also available in [Brazilian Portuguese](pt-BR/INDEX.md).*
 
+> **For:** anyone who arrives at the documentation and wants the one page that answers their question.
+> **What is here:** every document of the repository by what it answers, the evidence files, and the diagrams with their sources.
+> **Where to go for the rest:** the overview is the [README](../README.md); the manifest of this set is [`docs.json`](docs.json).
+
 Where to start depends on what you want. Every document below has a pair under [`docs/pt-BR/`](pt-BR/INDEX.md); the English one is the main version.
 
 | I want to... | Read |
@@ -11,8 +15,10 @@ Where to start depends on what you want. Every document below has a pair under [
 | **Contribute in general** | [../CONTRIBUTING.md](../CONTRIBUTING.md) |
 | **Know what is proven and how** | [TESTING.md](TESTING.md): the ten premises, the boot test, what still has no automatic coverage |
 | **See the state of every app** | [QUALITY.md](QUALITY.md): generated from the repository, app by app |
+| **Understand how the catalog is built inside** | [ARCHITECTURE.md](ARCHITECTURE.md): who reads it, the tooling, the flows, the decisions and the limits |
 | **Look up a manifest field, a command or a workflow** | [REFERENCE.md](REFERENCE.md) |
-| **Understand how a change reaches the store** | [HOW-IT-SHIPS.md](HOW-IT-SHIPS.md): `main`, the server cache, the CasaOS archive, cross-repository order |
+| **Read the catalog from another system** | [INTEGRATIONS.md](INTEGRATIONS.md): the URLs, what the RoqueOS server reads, how a contract change ships |
+| **Understand how a change reaches the store, or operate it** | [HOW-IT-SHIPS.md](HOW-IT-SHIPS.md): `main`, the server cache, releases, the routine, undoing, backup, what to watch |
 | **Fix an app that does not start** | [WHEN-IT-BREAKS.md](WHEN-IT-BREAKS.md): symptom, cause, what to do |
 | **Know why an app left the store** | [RETIRED.md](RETIRED.md) |
 | **Find a term** | [GLOSSARY.md](GLOSSARY.md) |
@@ -28,3 +34,12 @@ Where to start depends on what you want. Every document below has a pair under [
 | `Apps/<App>/README.md` | each app's store card | `yarn readme` |
 
 `yarn docs:check` regenerates the generated pages in memory and fails when the committed version differs, so these files cannot drift from the manifests.
+
+## Diagrams
+
+| Diagram | Source | Explained in |
+| --- | --- | --- |
+| Context: who reads the catalog | Mermaid in [ARCHITECTURE.md](ARCHITECTURE.md#2-context-who-reads-it-and-what-it-depends-on) | the same section |
+| Sequence: from a pull request to the store | Mermaid in [ARCHITECTURE.md](ARCHITECTURE.md#5-flow-from-a-pull-request-to-the-store) | the same section |
+| Sequence: the boot test | Mermaid in [ARCHITECTURE.md](ARCHITECTURE.md#6-flow-the-boot-test) | the same section and [TESTING.md](TESTING.md) |
+| README banner and brand | `docs/assets/marca/gen.py`, from `carimbo.json` | `docs/assets/marca/README.md` (Portuguese only) |

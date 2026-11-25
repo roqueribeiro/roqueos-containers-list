@@ -2,6 +2,10 @@
 
 *Tradução de [TESTING.md](../TESTING.md), a versão principal, em inglês. Se as duas divergirem, vale a em inglês.*
 
+> **Para quem:** quem revisa um pull request, ou quer saber o que um CI verde prova de verdade.
+> **O que tem aqui:** as três camadas (schema, dez premissas, boot), o que cada uma prova e o que a reprova, e o que não tem cobertura.
+> **Onde ir para o resto:** os comandos na [REFERENCIA.md](REFERENCIA.md); falhas vistas na prática no [QUANDO-QUEBRA.md](QUANDO-QUEBRA.md).
+
 Três camadas ficam entre um manifesto e a loja. Cada uma diz o que prova, como, e o que a faz reprovar. A última seção diz o que nenhuma delas cobre ainda, porque uma checagem que afirma mais do que mede foi exatamente como um app quebrado chegou à loja antes.
 
 ## Camada 1: o schema (`yarn validate`)

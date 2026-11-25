@@ -2,6 +2,10 @@
 
 *Also available in [Brazilian Portuguese](pt-BR/ADICIONAR-UM-APP.md).*
 
+> **For:** whoever wants to put a new app in the store, or fix one.
+> **What is here:** the fit criteria, the folder, the manifest, the secrets, the store card, the checks and the pull request.
+> **Where to go for the rest:** what each check proves in [TESTING.md](TESTING.md); every field in [REFERENCE.md](REFERENCE.md); the general rules in [CONTRIBUTING.md](../CONTRIBUTING.md).
+
 This is the path from an idea to an app in the RoqueOS App Store. Each step names the check that holds it, so you know before the pull request what the CI will say.
 
 ## Before you start: is it a fit?

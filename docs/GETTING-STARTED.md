@@ -2,6 +2,10 @@
 
 *Also available in [Brazilian Portuguese](pt-BR/COMECAR.md).*
 
+> **For:** anyone using the catalog for the first time: to install an app, to point a dashboard at it, or to work on it.
+> **What is here:** the three ways in, each command, and how to know it worked.
+> **Where to go for the rest:** the checks explained in [TESTING.md](TESTING.md); a first failure in [WHEN-IT-BREAKS.md](WHEN-IT-BREAKS.md); every command in [REFERENCE.md](REFERENCE.md).
+
 There are three ways to use this catalog: install apps from it in RoqueOS, add it to a CasaOS-compatible dashboard, or work on it.
 
 ## 1. Install an app in RoqueOS

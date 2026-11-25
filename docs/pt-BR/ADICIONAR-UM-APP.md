@@ -2,6 +2,10 @@
 
 *Tradução de [ADDING-AN-APP.md](../ADDING-AN-APP.md), a versão principal, em inglês. Se as duas divergirem, vale a em inglês.*
 
+> **Para quem:** quem quer pôr um app novo na loja, ou consertar um.
+> **O que tem aqui:** os critérios de encaixe, a pasta, o manifesto, os segredos, a ficha da loja, as checagens e o pull request.
+> **Onde ir para o resto:** o que cada checagem prova nos [CRITERIOS-DE-TESTE.md](CRITERIOS-DE-TESTE.md); cada campo na [REFERENCIA.md](REFERENCIA.md); as regras gerais no [CONTRIBUTING.md](CONTRIBUTING.md).
+
 Este é o caminho de uma ideia até um app na App Store do RoqueOS. Cada passo diz qual checagem o segura, para você saber antes do pull request o que o CI vai dizer.
 
 ## Antes de começar: ele se encaixa?

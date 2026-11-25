@@ -2,6 +2,10 @@
 
 *Tradução de [GLOSSARY.md](../GLOSSARY.md), a versão principal, em inglês. Se as duas divergirem, vale a em inglês.*
 
+> **Para quem:** quem encontra aqui uma palavra que parece significar algo específico.
+> **O que tem aqui:** os termos do catálogo e das checagens, com onde moram.
+> **Onde ir para o resto:** os próprios campos na [REFERENCIA.md](REFERENCIA.md).
+
 | Termo | Significado |
 | --- | --- |
 | **App** | uma pasta em `Apps/`: um manifesto, um ícone e uma ficha da loja |
