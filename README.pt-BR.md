@@ -57,7 +57,16 @@ https://github.com/roqueribeiro/roqueos-containers-list/archive/refs/heads/main.
 
 Os manifestos usam o namespace `x-casaos`, então os clientes CasaOS leem tudo como está e ignoram as extensões do RoqueOS em `x-roqueos`.
 
-**Para trabalhar no catálogo**, com Node 24 e Yarn:
+### Pré-requisitos
+
+Node 24 e Yarn para trabalhar no catálogo, e Docker em Linux para o teste de boot.
+
+**Para trabalhar no catálogo:**
+
+1. Instale as dependências com `yarn install`.
+2. Confira os manifestos contra o schema com `yarn validate`.
+3. Rode as dez premissas com `yarn revisao`.
+4. Rode os testes com `yarn test`.
 
 ```bash
 yarn install
@@ -65,6 +74,21 @@ yarn validate && yarn revisao && yarn test
 ```
 
 O caminho completo, incluindo o teste de boot que só roda em Linux, está no [COMECAR.md](docs/pt-BR/COMECAR.md).
+
+### Estrutura do repositório
+
+| Caminho | O que guarda |
+| --- | --- |
+| `Apps/<App>/` | Um app por pasta: `docker-compose.yml`, `icon.png` e o `README.md` gerado |
+| `schema/` | O JSON Schema contra o qual todo manifesto é conferido |
+| `scripts/` | Validação, as dez premissas, o teste de boot e os geradores |
+| `tests/` | Suíte Vitest dos scripts |
+| `category-list.json`, `featured-apps.json`, `recommend-list.json` | Categorias e destaques da loja |
+| `docs/` | Como começar, como publica, como adicionar um app, e o resto do padrão da família |
+
+### Onde ele se encaixa na família
+
+O servidor do RoqueOS lê `Apps/` e instala o que o usuário escolhe; a App Store do front do RoqueOS é onde o usuário vê o catálogo. Painéis compatíveis com o CasaOS usam o mesmo catálogo.
 
 ## Por que existe
 
@@ -75,6 +99,16 @@ O catálogo começou como uma importação grande de manifestos da comunidade. N
 > **Um app está na loja porque alguma coisa provou que ele funciona, não porque nada provou que ele está quebrado.**
 
 ## Como um app entra na loja
+
+```mermaid
+flowchart LR
+  manifesto[Manifesto<br/>Apps/App] --> schema[Schema<br/>yarn validate]
+  schema --> premissas[Dez premissas<br/>yarn revisao]
+  premissas --> boot[Boot em Linux<br/>workflow Boot]
+  boot --> revisao[Revisão<br/>pull request]
+  revisao --> main[main]
+  main --> servidor[Servidor do RoqueOS<br/>instala o app]
+```
 
 | Etapa | O que acontece | Onde |
 | --- | --- | --- |

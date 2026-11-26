@@ -57,7 +57,16 @@ https://github.com/roqueribeiro/roqueos-containers-list/archive/refs/heads/main.
 
 Manifests use the `x-casaos` namespace, so CasaOS clients read them as they are and ignore the RoqueOS extensions under `x-roqueos`.
 
-**To work on the catalog**, with Node 24 and Yarn:
+### Requirements
+
+Node 24 and Yarn to work on the catalog, and Docker on Linux for the boot test.
+
+**To work on the catalog:**
+
+1. Install the dependencies with `yarn install`.
+2. Check the manifests against the schema with `yarn validate`.
+3. Run the ten premises with `yarn revisao`.
+4. Run the tests with `yarn test`.
 
 ```bash
 yarn install
@@ -65,6 +74,21 @@ yarn validate && yarn revisao && yarn test
 ```
 
 The full path, including the boot test that only runs on Linux, is in [GETTING-STARTED.md](docs/GETTING-STARTED.md).
+
+### Project structure
+
+| Path | What it holds |
+| --- | --- |
+| `Apps/<App>/` | One app per folder: `docker-compose.yml`, `icon.png` and the generated `README.md` |
+| `schema/` | The JSON Schema every manifest is checked against |
+| `scripts/` | Validation, the ten premises, the boot test and the generators |
+| `tests/` | Vitest suite for the scripts |
+| `category-list.json`, `featured-apps.json`, `recommend-list.json` | Store categories and highlights |
+| `docs/` | Getting started, how it ships, adding an app, and the rest of the family standard |
+
+### Where it fits in the family
+
+The RoqueOS server reads `Apps/` and installs what the user picks; the App Store in the RoqueOS front is where the user sees it. CasaOS-compatible dashboards can use the same catalog.
 
 ## Why it exists
 
@@ -75,6 +99,16 @@ The catalog started as a large import of community manifests. Measured on 17/11/
 > **An app is in the store because something proved it works, not because nothing proved it broken.**
 
 ## How an app gets into the store
+
+```mermaid
+flowchart LR
+  manifest[Manifest<br/>Apps/App] --> schema[Schema<br/>yarn validate]
+  schema --> premises[Ten premises<br/>yarn revisao]
+  premises --> boot[Boot on Linux<br/>workflow Boot]
+  boot --> review[Review<br/>pull request]
+  review --> main[main]
+  main --> server[RoqueOS server<br/>installs the app]
+```
 
 | Step | What happens | Where |
 | --- | --- | --- |
